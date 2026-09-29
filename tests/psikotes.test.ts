@@ -43,7 +43,7 @@ describe('evaluateKraepelinResults', () => {
     columns: { correct: number; wrong: number; avgTimeMs: number }[]
   ): KraepelinInput[] {
     const inputs: KraepelinInput[] = [];
-    for (const [ci, col] of columns.entries()) {
+    columns.forEach((col, ci) => {
       let pairIdx = 0;
       for (let i = 0; i < col.correct; i++, pairIdx++) {
         inputs.push({
@@ -65,7 +65,7 @@ describe('evaluateKraepelinResults', () => {
           timeSpentMs: col.avgTimeMs,
         });
       }
-    }
+    });
     return inputs;
   }
 
