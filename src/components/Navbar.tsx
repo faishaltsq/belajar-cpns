@@ -16,6 +16,7 @@ export default function Navbar() {
   useEffect(() => {
     fetch('/api/auth/me')
       .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null)
       .then((d) => {
         if (d?.user) setUser(d.user);
       })

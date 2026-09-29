@@ -65,6 +65,15 @@ export default function MiniTryout() {
         </div>
       )}
 
+      {selected !== null && (
+        <button
+          onClick={() => setSelected(null)}
+          className="clay-button mt-4 text-sm font-medium px-4 py-2 bg-white/70 text-slate-600 mx-auto block"
+        >
+          Coba lagi &rarr;
+        </button>
+      )}
+
       <Link
         href="/simulasi/tryout-1"
         className="inline-flex items-center gap-1.5 text-purple-600 font-semibold text-sm hover:text-purple-500 transition"
