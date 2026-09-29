@@ -9,6 +9,10 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   const [result, setResult] = useState<ExamResult | null>(null);
   const [notFound, setNotFound] = useState(false);
 
+  // Extract tryout ID from resultId (format: tryoutId + '-' + timestamp)
+  const tryoutId = params.resultId.split('-').slice(0, -1).join('-');
+  const retryPath = tryoutId ? `/simulasi/${tryoutId}` : '/simulasi/tryout-1';
+
   useEffect(() => {
     try {
       const raw = localStorage.getItem(`exam_result_${params.resultId}`);
@@ -28,7 +32,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
         <div className="text-center">
           <p className="text-lg mb-4">Hasil ujian tidak ditemukan.</p>
           <Link
-            href="/simulasi/tryout-1"
+            href={retryPath}
             className="text-blue-400 hover:underline"
           >
             Kembali ke simulasi
@@ -152,7 +156,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
 
         {/* CTA */}
         <Link
-          href="/simulasi/tryout-1"
+          href={retryPath}
           className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition"
         >
           <RotateCcw className="w-4 h-4" />

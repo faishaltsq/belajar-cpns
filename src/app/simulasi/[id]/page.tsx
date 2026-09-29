@@ -23,6 +23,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
   const [answers, setAnswers] = useState<Map<number, ExamAnswer>>(() => new Map());
   const [showModal, setShowModal] = useState(false);
   const [hydrated, setHydrated] = useState(false);
+  const submittingRef = useRef(false);
 
   // Restore from localStorage on mount
   useEffect(() => {
@@ -48,12 +49,12 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     }
   }, [startKey]);
 
-  const saveAnswers = useCallback(
-    (map: Map<number, ExamAnswer>) => {
-      localStorage.setItem(storageKey, JSON.stringify(Array.from(map.values())));
-    },
-    [storageKey]
-  );
+  // Autosave answers to localStorage whenever they change (after hydration)
+  useEffect(() => {
+    if (!hydrated) return;
+    const obj: ExamAnswer[] = Array.from(answers.values());
+    localStorage.setItem(storageKey, JSON.stringify(obj));
+  }, [answers, storageKey, hydrated]);
 
   const handleSelectOption = (optionId: string) => {
     setAnswers((prev) => {
@@ -65,7 +66,6 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         selectedOptionId: optionId,
         isFlagged: existing?.isFlagged ?? false,
       });
-      saveAnswers(next);
       return next;
     });
   };
@@ -80,13 +80,14 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         selectedOptionId: existing?.selectedOptionId ?? null,
         isFlagged: !existing?.isFlagged,
       });
-      saveAnswers(next);
       return next;
     });
   };
 
   const submitExam = useCallback(
     (answersMap: Map<number, ExamAnswer>) => {
+      if (submittingRef.current) return;
+      submittingRef.current = true;
       const startTime = Number(localStorage.getItem(startKey) ?? Date.now());
       const durationSeconds = Math.min(
         Math.floor((Date.now() - startTime) / 1000),
