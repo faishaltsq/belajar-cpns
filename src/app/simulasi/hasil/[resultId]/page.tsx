@@ -87,9 +87,9 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
         >
           <div className="flex justify-center mb-3">
             {result.isPassedAll ? (
-              <Trophy className="w-12 h-12 text-emerald-500" weight="duotone" />
+              <Trophy size={48} className="text-emerald-500" weight="duotone" />
             ) : (
-              <XCircle className="w-12 h-12 text-red-400" weight="duotone" />
+              <XCircle size={48} className="text-red-400" weight="duotone" />
             )}
           </div>
           <h1 className="text-2xl font-bold mb-1 text-slate-800">
@@ -129,9 +129,9 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
                     {label}
                   </span>
                   {data.isPassed ? (
-                    <CheckCircle className="w-5 h-5 text-emerald-500" weight="duotone" />
+                    <CheckCircle size={20} className="text-emerald-500" weight="duotone" />
                   ) : (
-                    <XCircle className="w-5 h-5 text-red-400" weight="duotone" />
+                    <XCircle size={20} className="text-red-400" weight="duotone" />
                   )}
                 </div>
                 <div>
@@ -159,7 +159,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
           href={retryPath}
           className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-purple-500 hover:bg-purple-400 text-white font-semibold rounded-2xl transition clay-button"
         >
-          <ArrowCounterClockwise className="w-4 h-4" weight="bold" />
+          <ArrowCounterClockwise size={16} weight="bold" />
           Coba Simulasi Lagi
         </Link>
       </div>

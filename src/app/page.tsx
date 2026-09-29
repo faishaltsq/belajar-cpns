@@ -54,7 +54,7 @@ export default function LandingPage() {
             className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white font-semibold text-base flex items-center justify-center gap-2 transition clay-button"
           >
             <span>Mulai Simulasi 100 Menit</span>
-            <ArrowRight className="w-5 h-5" weight="bold" />
+            <ArrowRight size={20} weight="bold" />
           </Link>
           <Link
             href="/login"
@@ -76,7 +76,7 @@ export default function LandingPage() {
         {/* Feature Highlights */}
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
           <div className="clay-card p-6">
-            <Timer className="w-8 h-8 text-blue-500 mb-4" weight="duotone" />
+            <Timer size={32} className="text-blue-500 mb-4" weight="duotone" />
             <h3 className="font-bold text-lg mb-2 text-slate-800">Timer Presisi 100 Menit</h3>
             <p className="text-sm text-slate-500 leading-relaxed">
               Countdown tahan reload halaman. Peringatan merah saat waktu tersisa kurang dari 5 menit.
@@ -84,7 +84,7 @@ export default function LandingPage() {
           </div>
 
           <div className="clay-card p-6">
-            <Trophy className="w-8 h-8 text-emerald-500 mb-4" weight="duotone" />
+            <Trophy size={32} className="text-emerald-500 mb-4" weight="duotone" />
             <h3 className="font-bold text-lg mb-2 text-slate-800">Penilaian CAT BKN Otomatis</h3>
             <p className="text-sm text-slate-500 leading-relaxed">
               Skor TWK (PG 65), TIU (PG 80), TKP skala 1–5 (PG 166) — sesuai ambang batas nasional.
@@ -92,7 +92,7 @@ export default function LandingPage() {
           </div>
 
           <div className="clay-card p-6">
-            <ShieldCheck className="w-8 h-8 text-purple-500 mb-4" weight="duotone" />
+            <ShieldCheck size={32} className="text-purple-500 mb-4" weight="duotone" />
             <h3 className="font-bold text-lg mb-2 text-slate-800">Login HP Tanpa Biaya SMS</h3>
             <p className="text-sm text-slate-500 leading-relaxed">
               Daftar cukup dengan nomor HP dan PIN 6 digit. Tidak ada biaya OTP SMS.
@@ -103,7 +103,7 @@ export default function LandingPage() {
         {/* Passing Grades Table */}
         <div className="mt-16 clay-card p-6 text-left">
           <h2 className="font-bold text-base mb-4 flex items-center gap-2 text-slate-800">
-            <BookOpen className="w-5 h-5 text-slate-500" weight="duotone" />
+            <BookOpen size={20} className="text-slate-500" weight="duotone" />
             <span>Nilai Ambang Batas SKD CPNS (Kepmen PANRB 321/2024)</span>
           </h2>
           <table className="w-full text-sm">
@@ -151,7 +151,7 @@ export default function LandingPage() {
             className="inline-flex items-center gap-2 text-purple-500 hover:text-purple-400 font-medium text-sm transition"
           >
             <span>Mulai latihan sekarang, gratis</span>
-            <CaretRight className="w-4 h-4" weight="bold" />
+            <CaretRight size={16} weight="bold" />
           </Link>
         </div>
       </main>

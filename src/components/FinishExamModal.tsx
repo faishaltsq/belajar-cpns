@@ -34,7 +34,7 @@ export function FinishExamModal({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center gap-3 text-amber-500 mb-4">
-          <Warning className="w-6 h-6" weight="duotone" />
+          <Warning size={24} weight="duotone" />
           <h3 className="font-bold text-lg text-slate-800">Konfirmasi Selesai Ujian</h3>
         </div>
 
@@ -70,7 +70,7 @@ export function FinishExamModal({
             className="flex-1 py-2.5 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-medium flex items-center justify-center gap-1.5 transition"
             style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.1), -2px -2px 6px rgba(255,255,255,0.8)' }}
           >
-            <CheckCircle className="w-4 h-4" weight="duotone" />
+            <CheckCircle size={16} weight="duotone" />
             <span>Kumpulkan</span>
           </button>
         </div>

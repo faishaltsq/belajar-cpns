@@ -58,7 +58,7 @@ export default function LoginPage() {
         <div className="clay-card p-8">
           <div className="text-center mb-8">
             <div className="inline-flex p-3 rounded-2xl bg-purple-100 text-purple-500 mb-3">
-              <ShieldCheck className="w-8 h-8" weight="duotone" />
+              <ShieldCheck size={32} weight="duotone" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-800">
               {isRegister ? 'Daftar Akun Baru' : 'Masuk ke CPNSMaster'}
@@ -96,7 +96,7 @@ export default function LoginPage() {
                 Nomor Handphone
               </label>
               <div className="relative">
-                <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
+                <Phone size={16} className="text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
                 <input
                   id="phone"
                   type="tel"
@@ -115,7 +115,7 @@ export default function LoginPage() {
                 PIN Keamanan (6 Digit)
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
+                <Lock size={16} className="text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
                 <input
                   id="pin"
                   type={showPin ? 'text' : 'password'}
@@ -135,7 +135,7 @@ export default function LoginPage() {
                   className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition"
                   aria-label={showPin ? 'Sembunyikan PIN' : 'Tampilkan PIN'}
                 >
-                  {showPin ? <EyeSlash className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  {showPin ? <EyeSlash size={16} weight="duotone" /> : <Eye size={16} weight="duotone" />}
                 </button>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function LoginPage() {
               className="w-full py-3 px-4 rounded-2xl bg-purple-500 hover:bg-purple-400 disabled:opacity-50 text-white font-semibold text-sm flex items-center justify-center gap-2 transition mt-2 clay-button"
             >
               <span>{loading ? 'Memproses...' : isRegister ? 'Daftar Sekarang' : 'Masuk Akun'}</span>
-              {!loading && <ArrowRight className="w-4 h-4" weight="bold" />}
+              {!loading && <ArrowRight size={16} weight="bold" />}
             </button>
           </form>
 

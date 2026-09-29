@@ -186,17 +186,16 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
               disabled={currentIndex === 0}
               className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl clay-card-flat text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed text-slate-700"
             >
-              <CaretLeft className="w-4 h-4" weight="bold" />
+              <CaretLeft size={16} weight="bold" />
               Sebelumnya
             </button>
             <button
               onClick={() => setCurrentIndex((i) => Math.min(QUESTIONS.length - 1, i + 1))}
               disabled={currentIndex === QUESTIONS.length - 1}
-              className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed"
-              style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.1), -2px -2px 6px rgba(255,255,255,0.8)' }}
+              className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed clay-button"
             >
               Selanjutnya
-              <CaretRight className="w-4 h-4" weight="bold" />
+              <CaretRight size={16} weight="bold" />
             </button>
           </div>
         </div>

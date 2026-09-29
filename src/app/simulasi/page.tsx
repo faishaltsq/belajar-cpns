@@ -15,17 +15,17 @@ export default function SimulasiPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             <div className="clay-card-flat p-4 text-center">
-              <BookOpen className="w-6 h-6 mx-auto mb-2 text-blue-500" weight="duotone" />
+              <BookOpen size={24} className="mx-auto mb-2 text-blue-500" weight="duotone" />
               <div className="text-2xl font-bold text-slate-800">110</div>
               <div className="text-xs text-slate-400 mt-1">Total Soal</div>
             </div>
             <div className="clay-card-flat p-4 text-center">
-              <Timer className="w-6 h-6 mx-auto mb-2 text-amber-500" weight="duotone" />
+              <Timer size={24} className="mx-auto mb-2 text-amber-500" weight="duotone" />
               <div className="text-2xl font-bold text-slate-800">100</div>
               <div className="text-xs text-slate-400 mt-1">Menit</div>
             </div>
             <div className="clay-card-flat p-4 text-center">
-              <Target className="w-6 h-6 mx-auto mb-2 text-emerald-500" weight="duotone" />
+              <Target size={24} className="mx-auto mb-2 text-emerald-500" weight="duotone" />
               <div className="text-2xl font-bold text-slate-800">311</div>
               <div className="text-xs text-slate-400 mt-1">Total Passing Grade</div>
             </div>
@@ -54,7 +54,7 @@ export default function SimulasiPage() {
             className="w-full py-3 px-6 bg-purple-500 hover:bg-purple-400 text-white font-semibold rounded-2xl flex items-center justify-center gap-2 transition clay-button"
           >
             Mulai Simulasi
-            <ArrowRight className="w-5 h-5" weight="bold" />
+            <ArrowRight size={20} weight="bold" />
           </Link>
         </div>
       </div>

@@ -45,7 +45,7 @@ export function Timer({ initialSeconds, onTimeUp }: TimerProps) {
         boxShadow: '2px 2px 6px rgba(0,0,0,0.06), -2px -2px 5px rgba(255,255,255,0.9)'
       }}
     >
-      <TimerIcon className="w-4 h-4 sm:w-5 sm:h-5" weight="duotone" />
+      <TimerIcon size={18} weight="duotone" />
       <span>
         {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:
         {String(seconds).padStart(2, '0')}
