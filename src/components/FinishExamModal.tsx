@@ -25,8 +25,14 @@ export function FinishExamModal({
   const unansweredCount = totalQuestions - answeredCount;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-md w-full p-6 shadow-2xl">
+    <div
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+      onClick={onCancel}
+    >
+      <div
+        className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-md w-full p-6 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="flex items-center gap-3 text-amber-400 mb-4">
           <AlertTriangle className="w-6 h-6" />
           <h3 className="font-bold text-lg text-white">Konfirmasi Selesai Ujian</h3>

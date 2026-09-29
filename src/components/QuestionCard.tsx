@@ -20,7 +20,7 @@ export function QuestionCard({
   onSelectOption,
   onToggleFlag,
 }: QuestionCardProps) {
-  const categoryBadgeColors = {
+  const categoryBadgeColors: Record<'TWK' | 'TIU' | 'TKP', string> = {
     TWK: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
     TIU: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
     TKP: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',

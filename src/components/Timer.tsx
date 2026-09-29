@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Clock } from 'lucide-react';
 
 interface TimerProps {
@@ -10,6 +10,11 @@ interface TimerProps {
 
 export function Timer({ initialSeconds, onTimeUp }: TimerProps) {
   const [secondsLeft, setSecondsLeft] = useState<number>(initialSeconds);
+  const onTimeUpRef = useRef(onTimeUp);
+
+  useEffect(() => {
+    onTimeUpRef.current = onTimeUp;
+  }, [onTimeUp]);
 
   useEffect(() => {
     const targetTimestamp = Date.now() + initialSeconds * 1000;
@@ -18,11 +23,11 @@ export function Timer({ initialSeconds, onTimeUp }: TimerProps) {
       setSecondsLeft(remaining);
       if (remaining <= 0) {
         clearInterval(interval);
-        onTimeUp();
+        onTimeUpRef.current();
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, [initialSeconds, onTimeUp]);
+  }, [initialSeconds]);
 
   const hours = Math.floor(secondsLeft / 3600);
   const minutes = Math.floor((secondsLeft % 3600) / 60);
