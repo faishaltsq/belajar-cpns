@@ -1,14 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Phone, Lock, ArrowRight, ShieldCheck, Eye, EyeSlash, ChartLineUp, Trophy, Brain, SpinnerGap } from '@phosphor-icons/react';
 
-export default function LoginPage() {
+function LoginFormContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirect = searchParams.get('redirect') || '/simulasi/tryout-1';
+  const raw = searchParams.get('redirect') || '/simulasi/tryout-1';
+  const redirect = raw.startsWith('/') && !raw.startsWith('//') ? raw : '/simulasi/tryout-1';
   const [isRegister, setIsRegister] = useState(false);
   const [phone, setPhone] = useState('');
   const [pin, setPin] = useState('');
@@ -194,5 +195,13 @@ export default function LoginPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-slate-400">Memuat...</div>}>
+      <LoginFormContent />
+    </Suspense>
   );
 }

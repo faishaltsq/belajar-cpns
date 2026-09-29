@@ -35,10 +35,11 @@ export function useUser() {
   const logout = useCallback(async () => {
     try {
       await fetch('/api/auth/logout', { method: 'POST' });
+    } catch {
+      // ignore network error
+    } finally {
       setUser(null);
       window.location.href = '/';
-    } catch {
-      setUser(null);
     }
   }, []);
 
