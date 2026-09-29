@@ -1,10 +1,12 @@
 import bcrypt from 'bcryptjs';
 import { SignJWT, jwtVerify } from 'jose';
 
-// ponytail: static fallback secret for dev; set JWT_SECRET env in prod
-const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'belajar-cpns-super-secret-key-2026-xyz123'
-);
+const secret = process.env.JWT_SECRET;
+if (!secret && process.env.NODE_ENV === 'production') {
+  throw new Error('JWT_SECRET env var is required in production');
+}
+// ponytail: fallback only safe for dev; set JWT_SECRET in prod or deploy will throw above
+const JWT_SECRET = new TextEncoder().encode(secret || 'dev-only-cpns-secret-do-not-use-in-prod');
 
 export async function hashPin(pin: string): Promise<string> {
   const salt = await bcrypt.genSalt(10);

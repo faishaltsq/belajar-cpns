@@ -16,14 +16,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Nomor HP sudah terdaftar. Silakan login.' }, { status: 409 });
     }
     const pinHash = await hashPin(pin);
-    const userId = `usr_${Date.now()}`;
+    const userId = `usr_${crypto.randomUUID()}`;
     localUsers.set(validation.phone, { id: userId, phone: validation.phone, pinHash, name: name || 'Peserta CPNS' });
     const token = await createToken({ phone: validation.phone, userId });
     const response = NextResponse.json({ success: true, user: { id: userId, phone: validation.phone, name: name || 'Peserta CPNS' } });
     response.cookies.set('cpns_token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', path: '/', maxAge: 7 * 24 * 60 * 60 });
     return response;
   } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : 'Internal Server Error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    if (error instanceof Error) console.error('[auth]', error.message);
+    return NextResponse.json({ error: 'Terjadi kesalahan server. Silakan coba lagi.' }, { status: 500 });
   }
 }

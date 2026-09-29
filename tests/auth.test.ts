@@ -6,7 +6,7 @@ describe('Auth Security Helper', () => {
     const pin = '123456';
     const hash = await hashPin(pin);
     expect(hash).not.toBe(pin);
-    expect(hash.length).toBeGreaterThan(20);
+    expect(hash).toMatch(/^\$2[aby]\$.{56}$/);
 
     const isMatch = await verifyPin(pin, hash);
     expect(isMatch).toBe(true);
