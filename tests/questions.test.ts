@@ -44,4 +44,14 @@ describe('SKD Question Bank', () => {
       expect(q.explanation.length).toBeGreaterThan(0)
     }
   })
+
+  it('TWK questions do not all share identical option A texts', () => {
+    const optionATexts = new Set(twk.map((q) => q.options.find((o) => o.id === 'A')?.text))
+    expect(optionATexts.size).toBeGreaterThan(1)
+  })
+
+  it('TIU questions do not all share identical question texts', () => {
+    const tiuTexts = new Set(tiu.map((q) => q.text))
+    expect(tiuTexts.size).toBe(tiu.length)
+  })
 })
