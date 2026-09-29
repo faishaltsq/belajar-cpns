@@ -25,6 +25,7 @@ export function evaluateKraepelinResults(
   totalColumns: number,
   columnDurationSeconds: number
 ): KraepelinOverallResult {
+  if (columnDurationSeconds <= 0) throw new Error('columnDurationSeconds must be > 0');
   // Group by column
   const byColumn = new Map<number, KraepelinInput[]>();
   for (const inp of inputs) {
@@ -71,6 +72,7 @@ export function evaluateKraepelinResults(
 
   // Work pace trend: compare avg of first half vs second half
   const mid = Math.floor(speedPerColumn.length / 2);
+  // ponytail: for odd totalColumns, middle column goes to secondHalf — acceptable asymmetry
   const firstHalf = speedPerColumn.slice(0, mid);
   const secondHalf = speedPerColumn.slice(mid);
   const avgFirst = firstHalf.reduce((a, b) => a + b, 0) / (firstHalf.length || 1);

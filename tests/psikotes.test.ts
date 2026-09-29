@@ -137,4 +137,20 @@ describe('evaluateKraepelinResults', () => {
     const result = evaluateKraepelinResults(inputs, 2, 60);
     expect(result.stabilityScore).toBe(0);
   });
+
+  it('throws for zero duration seconds', () => {
+    expect(() => evaluateKraepelinResults([], 3, 0)).toThrow('columnDurationSeconds must be > 0');
+  });
+
+  it('handles empty input array', () => {
+    const result = evaluateKraepelinResults([], 3, 60);
+    expect(result.totalQuestionsAnswered).toBe(0);
+    expect(result.totalCorrect).toBe(0);
+    expect(result.overallAccuracy).toBe(0);
+    expect(result.columnResults).toHaveLength(3);
+  });
+
+  it('throws for negative duration seconds', () => {
+    expect(() => evaluateKraepelinResults([], 3, -10)).toThrow('columnDurationSeconds must be > 0');
+  });
 });
