@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import type { ReasoningQuestion } from '@/lib/types';
 import questionsData from '@/data/sample_psikotes.json';
@@ -20,26 +20,11 @@ export default function PenalaranPage() {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [secondsLeft, setSecondsLeft] = useState(TOTAL_TIME);
   const [submitted, setSubmitted] = useState(false);
+  const submittedRef = useRef(false);
 
-  // Countdown
-  useEffect(() => {
-    if (submitted) return;
-    const iv = setInterval(() => {
-      setSecondsLeft((s) => {
-        if (s <= 1) {
-          clearInterval(iv);
-          handleSubmit();
-          return 0;
-        }
-        return s - 1;
-      });
-    }, 1000);
-    return () => clearInterval(iv);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [submitted]);
-
-  function handleSubmit() {
-    if (submitted) return;
+  const handleSubmit = useCallback(() => {
+    if (submittedRef.current) return;
+    submittedRef.current = true;
     setSubmitted(true);
     const correct = questions.filter((q) => {
       const chosen = answers[q.id];
@@ -49,7 +34,25 @@ export default function PenalaranPage() {
     const payload = { score, correct, wrong: questions.length - correct, total: questions.length };
     localStorage.setItem('psikotes_penalaran_result', JSON.stringify(payload));
     router.push('/psikotes/hasil?type=penalaran');
-  }
+  }, [answers, router]);
+
+  // Countdown
+  useEffect(() => {
+    if (submitted) return;
+    const iv = setInterval(() => {
+      setSecondsLeft((s) => {
+        if (s <= 1) {
+          clearInterval(iv);
+          if (!submittedRef.current) {
+            handleSubmit();
+          }
+          return 0;
+        }
+        return s - 1;
+      });
+    }, 1000);
+    return () => clearInterval(iv);
+  }, [submitted, handleSubmit]);
 
   const q = questions[current];
   const minutes = Math.floor(secondsLeft / 60);

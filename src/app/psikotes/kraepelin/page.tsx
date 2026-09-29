@@ -26,6 +26,7 @@ export default function KraepelinRunnerPage() {
   const [secondsLeft, setSecondsLeft] = useState(COLUMN_DURATION);
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
   const pairStartRef = useRef(Date.now());
+  const advancingRef = useRef(false);
 
   // Generate columns once
   useEffect(() => {
@@ -72,6 +73,8 @@ export default function KraepelinRunnerPage() {
   }, [secondsLeft, phase]);
 
   const advanceColumn = useCallback(() => {
+    if (advancingRef.current) return;
+    advancingRef.current = true;
     if (currentCol + 1 >= TOTAL_COLUMNS) {
       setPhase('done');
     } else {
@@ -79,6 +82,7 @@ export default function KraepelinRunnerPage() {
       setCurrentPair(0);
       pairStartRef.current = Date.now();
     }
+    setTimeout(() => { advancingRef.current = false; }, 100);
   }, [currentCol]);
 
   // Finish → evaluate, save, redirect
