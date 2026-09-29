@@ -12,6 +12,7 @@ export async function POST(req: Request) {
     }
     const user = await findUserByPhone(validation.phone);
     if (!user) {
+      // ponytail: distinct 404/401 is intentional for consumer UX; upgrade to unified 401 if phone enumeration becomes a threat
       return NextResponse.json({ error: 'Nomor HP belum terdaftar. Silakan daftar terlebih dahulu.' }, { status: 404 });
     }
     const valid = await verifyPin(pin, user.pin_hash);
