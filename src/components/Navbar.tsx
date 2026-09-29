@@ -1,33 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { SignOut, User } from '@phosphor-icons/react';
-
-interface MePayload {
-  phone?: string;
-  name?: string;
-}
+import { useUser } from '@/lib/useUser';
 
 export default function Navbar() {
-  const [user, setUser] = useState<MePayload | null>(null);
-  const [checked, setChecked] = useState(false);
+  const { user, loading, logout } = useUser();
 
-  useEffect(() => {
-    fetch('/api/auth/me')
-      .then((r) => (r.ok ? r.json() : null))
-      .catch(() => null)
-      .then((d) => {
-        if (d?.user) setUser(d.user);
-      })
-      .finally(() => setChecked(true));
-  }, []);
-
-  async function logout() {
-    await fetch('/api/auth/logout', { method: 'POST' });
-    setUser(null);
-    window.location.href = '/';
-  }
+  const initials = user?.name
+    ? user.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase()
+    : null;
 
   return (
     <div className="px-4">
@@ -51,12 +33,14 @@ export default function Navbar() {
         </div>
 
         {/* Auth area */}
-        {checked && (
+        {!loading && (
           <div className="flex items-center gap-2">
             {user ? (
               <>
-                <span className="hidden sm:flex items-center gap-1 text-sm text-slate-600 px-3 py-1.5 clay-card-flat rounded-xl">
-                  <User size={14} weight="fill" className="text-purple-500" />
+                <span className="hidden sm:flex items-center gap-2 text-sm text-slate-600 px-3 py-1.5 clay-card-flat rounded-xl">
+                  <span className="w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold flex items-center justify-center">
+                    {initials || <User size={12} weight="fill" />}
+                  </span>
                   {user.name ?? user.phone ?? 'Pengguna'}
                 </span>
                 <button

@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Phone, Lock, ArrowRight, ShieldCheck, Eye, EyeSlash } from '@phosphor-icons/react';
+import { Phone, Lock, ArrowRight, ShieldCheck, Eye, EyeSlash, ChartLineUp, Trophy, Brain, SpinnerGap } from '@phosphor-icons/react';
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get('redirect') || '/simulasi/tryout-1';
   const [isRegister, setIsRegister] = useState(false);
   const [phone, setPhone] = useState('');
   const [pin, setPin] = useState('');
@@ -34,7 +36,7 @@ export default function LoginPage() {
         throw new Error(data.error || 'Terjadi kesalahan. Silakan coba lagi.');
       }
 
-      router.push('/simulasi/tryout-1');
+      router.push(redirect);
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'Terjadi kesalahan.';
       setError(message);
@@ -42,6 +44,12 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
+
+  const benefits = [
+    { icon: ChartLineUp, text: 'Simpan otomatis riwayat tryout & grafik progres' },
+    { icon: Trophy, text: 'Bandingkan ranking dengan peserta nasional' },
+    { icon: Brain, text: 'Akses penuh seluruh modul psikotes' },
+  ];
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
@@ -56,7 +64,7 @@ export default function LoginPage() {
         </Link>
 
         <div className="clay-card p-8">
-          <div className="text-center mb-8">
+          <div className="text-center mb-6">
             <div className="inline-flex p-3 rounded-2xl bg-purple-100 text-purple-500 mb-3">
               <ShieldCheck size={32} weight="duotone" />
             </div>
@@ -66,6 +74,16 @@ export default function LoginPage() {
             <p className="text-sm text-slate-400 mt-1">
               Nomor HP &amp; PIN 6-digit — tanpa verifikasi SMS berbayar
             </p>
+          </div>
+
+          {/* Benefits showcase */}
+          <div className="mb-6 space-y-2.5">
+            {benefits.map(({ icon: Icon, text }) => (
+              <div key={text} className="flex items-center gap-3 text-sm text-slate-600 clay-card-flat rounded-xl px-4 py-2.5">
+                <Icon size={20} weight="duotone" className="text-purple-500 shrink-0" />
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
 
           {error && (
@@ -145,8 +163,17 @@ export default function LoginPage() {
               disabled={loading}
               className="w-full py-3 px-4 rounded-2xl bg-purple-500 hover:bg-purple-400 disabled:opacity-50 text-white font-semibold text-sm flex items-center justify-center gap-2 transition mt-2 clay-button"
             >
-              <span>{loading ? 'Memproses...' : isRegister ? 'Daftar Sekarang' : 'Masuk Akun'}</span>
-              {!loading && <ArrowRight size={16} weight="bold" />}
+              {loading ? (
+                <>
+                  <SpinnerGap size={16} weight="bold" className="animate-spin" />
+                  <span>Memproses...</span>
+                </>
+              ) : (
+                <>
+                  <span>{isRegister ? 'Daftar Sekarang' : 'Masuk Akun'}</span>
+                  <ArrowRight size={16} weight="bold" />
+                </>
+              )}
             </button>
           </form>
 

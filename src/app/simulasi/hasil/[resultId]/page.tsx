@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ExamResult } from '@/lib/types';
-import { CheckCircle, XCircle, Trophy, ArrowCounterClockwise } from '@phosphor-icons/react';
+import { CheckCircle, XCircle, Trophy, ArrowCounterClockwise, UserPlus, ShieldCheck } from '@phosphor-icons/react';
+import { useUser } from '@/lib/useUser';
 
 export default function HasilPage({ params }: { params: { resultId: string } }) {
+  const { user, loading: userLoading } = useUser();
   const [result, setResult] = useState<ExamResult | null>(null);
   const [notFound, setNotFound] = useState(false);
 
@@ -77,6 +79,30 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   return (
     <div className="min-h-screen flex items-start justify-center p-4 py-10">
       <div className="max-w-2xl w-full space-y-6">
+        {/* Auth save banner */}
+        {!userLoading && (
+          user ? (
+            <div className="clay-card-flat px-4 py-3 flex items-center gap-2 text-sm text-emerald-600 rounded-xl">
+              <ShieldCheck size={18} weight="duotone" />
+              <span className="font-medium">Tersimpan di Akun Anda</span>
+            </div>
+          ) : (
+            <Link
+              href="/login"
+              className="clay-card flex items-center gap-3 px-5 py-4 bg-purple-50/60 hover:bg-purple-50 transition group rounded-2xl"
+            >
+              <UserPlus size={24} weight="duotone" className="text-purple-500 shrink-0" />
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-slate-800">Ingin simpan hasil ujian ini secara permanen?</p>
+                <p className="text-xs text-slate-400 mt-0.5">Daftar gratis untuk menyimpan riwayat & grafik progres</p>
+              </div>
+              <span className="text-purple-500 text-sm font-semibold shrink-0 group-hover:underline">
+                Daftar Akun Gratis →
+              </span>
+            </Link>
+          )
+        )}
+
         {/* Passing banner */}
         <div
           className={`clay-card p-6 text-center ${
