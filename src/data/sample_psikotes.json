@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "type": "deret_angka",
+    "questionText": "3, 6, 12, 24, 48, ...",
+    "options": [
+      { "id": "A", "text": "72", "score": 0 },
+      { "id": "B", "text": "96", "score": 1 },
+      { "id": "C", "text": "84", "score": 0 },
+      { "id": "D", "text": "108", "score": 0 },
+      { "id": "E", "text": "120", "score": 0 }
+    ],
+    "explanation": "Pola deret adalah perkalian 2 secara berurutan: 3 x 2 = 6, 6 x 2 = 12, 12 x 2 = 24, 24 x 2 = 48, 48 x 2 = 96."
+  },
+  {
+    "id": 2,
+    "type": "deret_angka",
+    "questionText": "2, 5, 10, 17, 26, ...",
+    "options": [
+      { "id": "A", "text": "35", "score": 0 },
+      { "id": "B", "text": "37", "score": 1 },
+      { "id": "C", "text": "39", "score": 0 },
+      { "id": "D", "text": "40", "score": 0 },
+      { "id": "E", "text": "42", "score": 0 }
+    ],
+    "explanation": "Pola penambahan bilangan ganjil: +3, +5, +7, +9, +11. Maka 26 + 11 = 37."
+  },
+  {
+    "id": 3,
+    "type": "deret_angka",
+    "questionText": "100, 95, 85, 70, 50, ...",
+    "options": [
+      { "id": "A", "text": "25", "score": 1 },
+      { "id": "B", "text": "30", "score": 0 },
+      { "id": "C", "text": "20", "score": 0 },
+      { "id": "D", "text": "35", "score": 0 },
+      { "id": "E", "text": "15", "score": 0 }
+    ],
+    "explanation": "Pola pengurangan bertingkat: -5, -10, -15, -20, -25. Maka 50 - 25 = 25."
+  },
+  {
+    "id": 4,
+    "type": "deret_angka",
+    "questionText": "1, 1, 2, 3, 5, 8, 13, ...",
+    "options": [
+      { "id": "A", "text": "19", "score": 0 },
+      { "id": "B", "text": "20", "score": 0 },
+      { "id": "C", "text": "21", "score": 1 },
+      { "id": "D", "text": "22", "score": 0 },
+      { "id": "E", "text": "24", "score": 0 }
+    ],
+    "explanation": "Deret Fibonacci: setiap angka hasil penjumlahan 2 angka sebelumnya (8 + 13 = 21)."
+  },
+  {
+    "id": 5,
+    "type": "deret_angka",
+    "questionText": "4, 7, 12, 19, 28, ...",
+    "options": [
+      { "id": "A", "text": "37", "score": 0 },
+      { "id": "B", "text": "39", "score": 1 },
+      { "id": "C", "text": "40", "score": 0 },
+      { "id": "D", "text": "41", "score": 0 },
+      { "id": "E", "text": "43", "score": 0 }
+    ],
+    "explanation": "Pola bertambah bilangan ganjil berurutan: +3, +5, +7, +9, +11. 28 + 11 = 39."
+  },
+  {
+    "id": 6,
+    "type": "logika_spasial",
+    "questionText": "Jika sebuah kubus transparan diputar 90 derajat searah jarum jam pada sumbu vertikal, sisi depan berpindah ke:",
+    "options": [
+      { "id": "A", "text": "Sisi belakang", "score": 0 },
+      { "id": "B", "text": "Sisi kiri", "score": 1 },
+      { "id": "C", "text": "Sisi kanan", "score": 0 },
+      { "id": "D", "text": "Sisi atas", "score": 0 },
+      { "id": "E", "text": "Sisi bawah", "score": 0 }
+    ],
+    "explanation": "Rotasi 90 derajat searah jarum jam (dilihat dari atas) menggerakkan sisi depan ke arah barat/kiri dari pengamat depan."
+  },
+  {
+    "id": 7,
+    "type": "logika_spasial",
+    "questionText": "Sebuah jaring-jaring kubus terdiri dari 6 bujur sangkar berpola salib. Kotak pusat diapit atas, bawah, kiri, dan kanan. Jika dilipat menjadi kubus tertutup, sisi yang berhadapan langsung dengan sisi atas adalah:",
+    "options": [
+      { "id": "A", "text": "Sisi bawah", "score": 1 },
+      { "id": "B", "text": "Sisi kiri", "score": 0 },
+      { "id": "C", "text": "Sisi kanan", "score": 0 },
+      { "id": "D", "text": "Sisi depan", "score": 0 },
+      { "id": "E", "text": "Kotak pusat", "score": 0 }
+    ],
+    "explanation": "Pada pola salib kubus, lipatan sisi atas dan sisi bawah berdiri tegak lurus terhadap alas lalu berhadapan satu sama lain."
+  },
+  {
+    "id": 8,
+    "type": "logika_spasial",
+    "questionText": "Bayangan cermin vertikal (cermin di sebelah kanan) dari bentuk panah yang mengarah ke Timur Laut (kanan atas) adalah:",
+    "options": [
+      { "id": "A", "text": "Barat Laut (kiri atas)", "score": 1 },
+      { "id": "B", "text": "Tenggara (kanan bawah)", "score": 0 },
+      { "id": "C", "text": "Barat Daya (kiri bawah)", "score": 0 },
+      { "id": "D", "text": "Timur (kanan)", "score": 0 },
+      { "id": "E", "text": "Selatan (bawah)", "score": 0 }
+    ],
+    "explanation": "Refleksi terhadap cermin vertikal membalik sumbu horizontal (kanan menjadi kiri) sedangkan posisi vertikal tetap atas."
+  },
+  {
+    "id": 9,
+    "type": "logika_spasial",
+    "questionText": "Jika piramida terpancung segitiga dipotong horizontal sejajar alas, bentuk penampang irisannya adalah:",
+    "options": [
+      { "id": "A", "text": "Segi empat", "score": 0 },
+      { "id": "B", "text": "Segitiga sebangun", "score": 1 },
+      { "id": "C", "text": "Lingkaran", "score": 0 },
+      { "id": "D", "text": "Trapesium", "score": 0 },
+      { "id": "E", "text": "Persegi panjang", "score": 0 }
+    ],
+    "explanation": "Irisan datar yang sejajar dengan alas limas/piramida selalu menghasilkan poligon yang sebangun dengan bentuk alasnya (segitiga)."
+  },
+  {
+    "id": 10,
+    "type": "logika_spasial",
+    "questionText": "Sebuah segitiga sama sisi diputar berturut-turut: 120 derajat searah jarum jam, lalu 240 derajat berlawanan jarum jam. Posisi akhir segitiga tersebut relatif terhadap posisi awal adalah:",
+    "options": [
+      { "id": "A", "text": "Rotasi netral (kembali ke orientasi semula)", "score": 0 },
+      { "id": "B", "text": "Rotasi 120 derajat berlawanan jarum jam", "score": 1 },
+      { "id": "C", "text": "Rotasi 60 derajat searah jarum jam", "score": 0 },
+      { "id": "D", "text": "Terbalik vertikal", "score": 0 },
+      { "id": "E", "text": "Rotasi 180 derajat", "score": 0 }
+    ],
+    "explanation": "+120 deg (CW) - 240 deg (CCW) = -120 deg (120 derajat berlawanan arah jarum jam)."
+  },
+  {
+    "id": 11,
+    "type": "analogi_gambar",
+    "questionText": "Lingkaran luar berisi segitiga hitam di dalamnya BERANALOGI DENGAN Persegi luar berisi lingkaran hitam di dalamnya SEPERTI Segi enam luar berisi:",
+    "options": [
+      { "id": "A", "text": "Bintang hitam di dalamnya", "score": 0 },
+      { "id": "B", "text": "Segi lima hitam di dalamnya", "score": 1 },
+      { "id": "C", "text": "Lingkaran putih di luarnya", "score": 0 },
+      { "id": "D", "text": "Segi enam kecil berwarna putih", "score": 0 },
+      { "id": "E", "text": "Garis silang hitam", "score": 0 }
+    ],
+    "explanation": "Pola analogi: figur geometris luar berbingkai transparan dengan bangun bersisi (n-1) berwarna solid hitam di dalamnya."
+  },
+  {
+    "id": 12,
+    "type": "analogi_gambar",
+    "questionText": "Kotak putih dengan 1 titik hitam di pojok kanan atas BERUBAH MENJADI Kotak putih dengan 2 titik hitam diagonal SEPERTI Segitiga putih dengan 1 tanda silang di puncak BERUBAH MENJADI:",
+    "options": [
+      { "id": "A", "text": "Segitiga putih dengan 2 tanda silang di kedua sudut dasar", "score": 1 },
+      { "id": "B", "text": "Segitiga hitam polos", "score": 0 },
+      { "id": "C", "text": "Kotak dengan 3 tanda silang", "score": 0 },
+      { "id": "D", "text": "Segitiga bergaris arsir", "score": 0 },
+      { "id": "E", "text": "Segitiga terbalik tanpa tanda", "score": 0 }
+    ],
+    "explanation": "Elemen ornamen di sudut bertambah satu dan menempati sudut simetris berikutnya."
+  },
+  {
+    "id": 13,
+    "type": "analogi_gambar",
+    "questionText": "Bujur sangkar besar dibelah garis diagonal tunggal BERHUBUNGAN DENGAN 2 segitiga siku-siku terpisah SEPERTI Lingkaran dibelah garis diameter tunggal BERHUBUNGAN DENGAN:",
+    "options": [
+      { "id": "A", "text": "2 juring 90 derajat", "score": 0 },
+      { "id": "B", "text": "2 setengah lingkaran terpisah", "score": 1 },
+      { "id": "C", "text": "1 oval pipih", "score": 0 },
+      { "id": "D", "text": "4 busur lingkaran", "score": 0 },
+      { "id": "E", "text": "2 lingkaran konsentris", "score": 0 }
+    ],
+    "explanation": "Bangun datar dipotong tepat melintang simetris dan dipisahkan menjadi dua bagian komponen penyusunnya."
+  },
+  {
+    "id": 14,
+    "type": "analogi_gambar",
+    "questionText": "Bintang bersudut 5 dengan bayangan gelap di sisi kanan BERANALOGI DENGAN Bintang bersudut 5 berotasi 180 derajat dengan bayangan di sisi kiri SEPERTI Tanda plus berarsir atas BERANALOGI DENGAN:",
+    "options": [
+      { "id": "A", "text": "Tanda plus berarsir bawah", "score": 1 },
+      { "id": "B", "text": "Tanda plus berarsir kanan", "score": 0 },
+      { "id": "C", "text": "Tanda minus berarsir penuh", "score": 0 },
+      { "id": "D", "text": "Tanda silang (X) berarsir", "score": 0 },
+      { "id": "E", "text": "Tanda panah ke atas", "score": 0 }
+    ],
+    "explanation": "Transformasi berupa rotasi 180 derajat (atau inversi vertikal), memindahkan arsir dari atas ke bawah."
+  },
+  {
+    "id": 15,
+    "type": "analogi_gambar",
+    "questionText": "Tiga garis lurus sejajar horizontal MENJADI Tiga garis lurus tegak vertikal SEPERTI Dua anak panah sejajar menunjuk ke atas MENJADI:",
+    "options": [
+      { "id": "A", "text": "Dua anak panah sejajar menunjuk ke kanan", "score": 1 },
+      { "id": "B", "text": "Dua anak panah saling berhadapan", "score": 0 },
+      { "id": "C", "text": "Satu anak panah menunjuk ke bawah", "score": 0 },
+      { "id": "D", "text": "Tiga garis lengkung tertutup", "score": 0 },
+      { "id": "E", "text": "Dua tanda silang", "score": 0 }
+    ],
+    "explanation": "Rotasi 90 derajat searah jarum jam mengubah arah orientasi dari tegak (ke atas) menjadi mendatar (ke kanan)."
+  }
+]
