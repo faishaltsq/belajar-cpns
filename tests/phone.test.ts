@@ -8,8 +8,17 @@ describe('Phone & PIN Validation', () => {
     expect(normalizeIndonesianPhone('6281234567890')).toBe('6281234567890');
   });
 
+  it('normalizes bare 8xx (no leading 0 or 62) to 628xx', () => {
+    expect(normalizeIndonesianPhone('81234567890')).toBe('6281234567890');
+  });
+
+  it('rejects empty string and whitespace-only input', () => {
+    expect(() => normalizeIndonesianPhone('')).toThrow('Nomor HP tidak boleh kosong');
+    expect(() => normalizeIndonesianPhone('   ')).toThrow('Nomor HP tidak boleh kosong');
+  });
+
   it('rejects invalid phone numbers', () => {
-    expect(() => normalizeIndonesianPhone('12345')).toThrow('Nomor HP tidak valid');
+    expect(() => normalizeIndonesianPhone('08123')).toThrow('Nomor HP tidak valid');
     expect(() => normalizeIndonesianPhone('0215555555')).toThrow('Harus nomor seluler Indonesia');
   });
 
