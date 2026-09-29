@@ -51,8 +51,9 @@ export function KraepelinChart({ columnResults }: KraepelinChartProps) {
         viewBox={`0 0 ${totalW} ${totalH}`}
         className="w-full min-w-[300px]"
         role="img"
-        aria-label="Kraepelin result chart"
+        aria-labelledby="kraep-chart-title"
       >
+        <title id="kraep-chart-title">Grafik ritme kerja Tes Koran Kraepelin</title>
         <defs>
           <linearGradient id="kraep-fill" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.35" />

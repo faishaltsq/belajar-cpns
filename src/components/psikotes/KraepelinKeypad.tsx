@@ -18,6 +18,7 @@ export function KraepelinKeypad({ onInput, disabled = false }: KraepelinKeypadPr
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.repeat) return;
       if (disabledRef.current) return;
       if (/^[0-9]$/.test(e.key)) {
         e.preventDefault();
