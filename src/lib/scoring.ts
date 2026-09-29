@@ -17,7 +17,7 @@ export function calculateExamScore(questions: Question[], answers: ExamAnswer[],
   questions.forEach((q) => {
     scores[q.category].totalCount += 1;
     const selectedOptionId = answerMap.get(q.id);
-    if (selectedOptionId) {
+    if (selectedOptionId != null && selectedOptionId !== '') {
       scores[q.category].answeredCount += 1;
       const matchedOption = q.options.find((opt) => opt.id === selectedOptionId);
       if (matchedOption) scores[q.category].score += matchedOption.score;

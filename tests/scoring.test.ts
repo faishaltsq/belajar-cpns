@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { calculateExamScore, PASSING_GRADES } from '../src/lib/scoring';
+import { calculateExamScore, PASSING_GRADES, MAX_SCORES, QUESTION_LIMITS } from '../src/lib/scoring';
 import { Question, ExamAnswer } from '../src/lib/types';
 
 describe('CAT Scoring Engine (Kepmen PANRB 321/2024)', () => {
@@ -26,6 +26,10 @@ describe('CAT Scoring Engine (Kepmen PANRB 321/2024)', () => {
     expect(result.tiu.score).toBe(5);
     expect(result.tkp.score).toBe(5);
     expect(result.totalScore).toBe(15);
+    expect(result.twk.answeredCount).toBe(1);
+    expect(result.tiu.answeredCount).toBe(1);
+    expect(result.tkp.answeredCount).toBe(1);
+    expect(result.isPassedAll).toBe(false); // scores below passing grades
   });
 
   it('calculates zero/wrong scores correctly for TWK and TIU', () => {
@@ -39,11 +43,52 @@ describe('CAT Scoring Engine (Kepmen PANRB 321/2024)', () => {
     expect(result.tiu.score).toBe(0);
     expect(result.tkp.score).toBe(1);
     expect(result.totalScore).toBe(1);
+    expect(result.twk.answeredCount).toBe(1);
+    expect(result.tiu.answeredCount).toBe(0);
+    expect(result.tkp.answeredCount).toBe(1);
+    expect(result.isPassedAll).toBe(false);
   });
 
-  it('evaluates passing grade accurately', () => {
+  it('evaluates passing grade and constants accurately', () => {
     expect(PASSING_GRADES.TWK).toBe(65);
     expect(PASSING_GRADES.TIU).toBe(80);
     expect(PASSING_GRADES.TKP).toBe(166);
+    expect(MAX_SCORES.TWK).toBe(150);
+    expect(MAX_SCORES.TIU).toBe(175);
+    expect(MAX_SCORES.TKP).toBe(225);
+    expect(MAX_SCORES.TOTAL).toBe(550);
+    expect(QUESTION_LIMITS.TWK).toBe(30);
+    expect(QUESTION_LIMITS.TIU).toBe(35);
+    expect(QUESTION_LIMITS.TKP).toBe(45);
+    expect(QUESTION_LIMITS.TOTAL).toBe(110);
+  });
+
+  it('handles empty answers array', () => {
+    const result = calculateExamScore(dummyQuestions, [], 0);
+    expect(result.twk.score).toBe(0);
+    expect(result.tiu.score).toBe(0);
+    expect(result.tkp.score).toBe(0);
+    expect(result.totalScore).toBe(0);
+    expect(result.twk.answeredCount).toBe(0);
+    expect(result.tiu.answeredCount).toBe(0);
+    expect(result.tkp.answeredCount).toBe(0);
+    expect(result.isPassedAll).toBe(false);
+  });
+
+  it('handles all answers null', () => {
+    const answers: ExamAnswer[] = [
+      { questionId: 1, selectedOptionId: null },
+      { questionId: 2, selectedOptionId: null },
+      { questionId: 3, selectedOptionId: null },
+    ];
+    const result = calculateExamScore(dummyQuestions, answers, 0);
+    expect(result.twk.score).toBe(0);
+    expect(result.tiu.score).toBe(0);
+    expect(result.tkp.score).toBe(0);
+    expect(result.totalScore).toBe(0);
+    expect(result.twk.answeredCount).toBe(0);
+    expect(result.tiu.answeredCount).toBe(0);
+    expect(result.tkp.answeredCount).toBe(0);
+    expect(result.isPassedAll).toBe(false);
   });
 });
