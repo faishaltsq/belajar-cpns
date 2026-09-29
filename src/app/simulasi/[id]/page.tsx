@@ -1,0 +1,221 @@
+'use client';
+
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useRouter } from 'next/navigation';
+import { Timer } from '@/components/Timer';
+import { QuestionCard } from '@/components/QuestionCard';
+import { QuestionNavigationGrid } from '@/components/QuestionNavigationGrid';
+import { FinishExamModal } from '@/components/FinishExamModal';
+import { calculateExamScore } from '@/lib/scoring';
+import { ExamAnswer, Question } from '@/lib/types';
+import allQuestions from '@/data/sample_questions.json';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const EXAM_DURATION = 6000; // 100 minutes
+const QUESTIONS: Question[] = allQuestions as Question[];
+
+export default function SimulasiPage({ params }: { params: { id: string } }) {
+  const router = useRouter();
+  const storageKey = `exam_answers_${params.id}`;
+  const startKey = `exam_start_${params.id}`;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [answers, setAnswers] = useState<Map<number, ExamAnswer>>(() => new Map());
+  const [showModal, setShowModal] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
+
+  // Restore from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        const arr: ExamAnswer[] = JSON.parse(saved);
+        setAnswers(new Map(arr.map((a) => [a.questionId, a])));
+      }
+    } catch {}
+    setHydrated(true);
+  }, [storageKey]);
+
+  // Track elapsed seconds using a start timestamp for crash recovery
+  const elapsedRef = useRef(0);
+  useEffect(() => {
+    const stored = localStorage.getItem(startKey);
+    if (!stored) {
+      localStorage.setItem(startKey, String(Date.now()));
+    } else {
+      const elapsed = Math.floor((Date.now() - Number(stored)) / 1000);
+      elapsedRef.current = Math.min(elapsed, EXAM_DURATION);
+    }
+  }, [startKey]);
+
+  const saveAnswers = useCallback(
+    (map: Map<number, ExamAnswer>) => {
+      localStorage.setItem(storageKey, JSON.stringify(Array.from(map.values())));
+    },
+    [storageKey]
+  );
+
+  const handleSelectOption = (optionId: string) => {
+    setAnswers((prev) => {
+      const q = QUESTIONS[currentIndex];
+      const next = new Map(prev);
+      const existing = next.get(q.id);
+      next.set(q.id, {
+        questionId: q.id,
+        selectedOptionId: optionId,
+        isFlagged: existing?.isFlagged ?? false,
+      });
+      saveAnswers(next);
+      return next;
+    });
+  };
+
+  const handleToggleFlag = () => {
+    setAnswers((prev) => {
+      const q = QUESTIONS[currentIndex];
+      const next = new Map(prev);
+      const existing = next.get(q.id);
+      next.set(q.id, {
+        questionId: q.id,
+        selectedOptionId: existing?.selectedOptionId ?? null,
+        isFlagged: !existing?.isFlagged,
+      });
+      saveAnswers(next);
+      return next;
+    });
+  };
+
+  const submitExam = useCallback(
+    (answersMap: Map<number, ExamAnswer>) => {
+      const startTime = Number(localStorage.getItem(startKey) ?? Date.now());
+      const durationSeconds = Math.min(
+        Math.floor((Date.now() - startTime) / 1000),
+        EXAM_DURATION
+      );
+      const answerArr = Array.from(answersMap.values());
+      const result = calculateExamScore(QUESTIONS, answerArr, durationSeconds);
+      const resultId = `${params.id}-${Date.now()}`;
+      localStorage.setItem(`exam_result_${resultId}`, JSON.stringify(result));
+      localStorage.removeItem(storageKey);
+      localStorage.removeItem(startKey);
+      router.push(`/simulasi/hasil/${resultId}`);
+    },
+    [params.id, storageKey, startKey, router]
+  );
+
+  // Stable ref so Timer's onTimeUp closure doesn't go stale
+  const answersRef = useRef(answers);
+  useEffect(() => {
+    answersRef.current = answers;
+  }, [answers]);
+
+  const handleTimeUp = useCallback(() => {
+    submitExam(answersRef.current);
+  }, [submitExam]);
+
+  const handleConfirmSubmit = () => {
+    setShowModal(false);
+    submitExam(answers);
+  };
+
+  const currentQ = QUESTIONS[currentIndex];
+  const currentAns = answers.get(currentQ.id);
+
+  let answered = 0;
+  let flagged = 0;
+  answers.forEach((a) => {
+    if (a.selectedOptionId != null && a.selectedOptionId !== '') answered++;
+    if (a.isFlagged) flagged++;
+  });
+
+  const initialSeconds = hydrated
+    ? Math.max(0, EXAM_DURATION - elapsedRef.current)
+    : EXAM_DURATION;
+
+  if (!hydrated) {
+    return (
+      <div className="min-h-screen bg-zinc-950 flex items-center justify-center text-zinc-400">
+        Memuat sesi ujian...
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col">
+      {/* Header */}
+      <header className="sticky top-0 z-40 bg-zinc-900/95 backdrop-blur border-b border-zinc-800">
+        <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3 min-w-0">
+            <span className="font-bold text-sm sm:text-base truncate">Simulasi CAT CPNS</span>
+            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 font-medium whitespace-nowrap">
+              Tryout 1
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Timer key={initialSeconds} initialSeconds={initialSeconds} onTimeUp={handleTimeUp} />
+            <button
+              onClick={() => setShowModal(true)}
+              className="py-2 px-3 sm:px-4 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-semibold rounded-lg transition whitespace-nowrap"
+            >
+              Selesai Ujian
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Body */}
+      <div className="flex-1 max-w-screen-xl mx-auto w-full px-4 py-6 flex gap-6">
+        {/* Main */}
+        <div className="flex-1 flex flex-col gap-4 min-w-0">
+          <QuestionCard
+            question={currentQ}
+            questionNumber={currentIndex + 1}
+            selectedOptionId={currentAns?.selectedOptionId ?? null}
+            isFlagged={currentAns?.isFlagged ?? false}
+            onSelectOption={handleSelectOption}
+            onToggleFlag={handleToggleFlag}
+          />
+
+          {/* Navigation buttons */}
+          <div className="flex justify-between gap-3">
+            <button
+              onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
+              disabled={currentIndex === 0}
+              className="flex items-center gap-1.5 py-2.5 px-5 rounded-xl border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              Sebelumnya
+            </button>
+            <button
+              onClick={() => setCurrentIndex((i) => Math.min(QUESTIONS.length - 1, i + 1))}
+              disabled={currentIndex === QUESTIONS.length - 1}
+              className="flex items-center gap-1.5 py-2.5 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              Selanjutnya
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block w-64 shrink-0">
+          <QuestionNavigationGrid
+            questions={QUESTIONS}
+            answers={answers}
+            currentIndex={currentIndex}
+            onSelectIndex={setCurrentIndex}
+          />
+        </aside>
+      </div>
+
+      <FinishExamModal
+        isOpen={showModal}
+        totalQuestions={QUESTIONS.length}
+        answeredCount={answered}
+        flaggedCount={flagged}
+        onCancel={() => setShowModal(false)}
+        onConfirm={handleConfirmSubmit}
+      />
+    </div>
+  );
+}
