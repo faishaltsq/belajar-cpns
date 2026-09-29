@@ -1,27 +1,28 @@
 import Link from 'next/link';
-import { ArrowRight, Clock, Award, Shield, BookOpen, ChevronRight } from 'lucide-react';
+import { ArrowRight, Timer, Trophy, ShieldCheck, BookOpen, CaretRight } from '@phosphor-icons/react/dist/ssr';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen selection:bg-purple-300 selection:text-purple-900">
       {/* Top Navbar */}
-      <nav className="border-b border-zinc-800/80 px-6 py-4 flex items-center justify-between max-w-7xl mx-auto">
+      <nav className="border-b border-white/40 px-6 py-4 flex items-center justify-between max-w-7xl mx-auto bg-white/30 backdrop-blur-sm">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-sm">
+          <div className="w-8 h-8 rounded-xl bg-purple-500 flex items-center justify-center font-bold text-white text-sm"
+            style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.12), -2px -2px 6px rgba(255,255,255,0.9)' }}>
             C
           </div>
-          <span className="font-bold text-lg">CPNSMaster</span>
+          <span className="font-bold text-lg text-slate-800">CPNSMaster</span>
         </div>
         <div className="flex items-center gap-3">
           <Link
             href="/login"
-            className="px-4 py-2 rounded-lg text-sm text-zinc-300 hover:text-white transition"
+            className="px-4 py-2 rounded-xl text-sm text-slate-600 hover:text-slate-800 transition"
           >
             Masuk
           </Link>
           <Link
             href="/simulasi/tryout-1"
-            className="px-4 py-2 rounded-lg text-sm bg-blue-600 hover:bg-blue-500 text-white font-medium transition"
+            className="px-4 py-2 rounded-xl text-sm bg-purple-500 hover:bg-purple-400 text-white font-medium transition clay-button"
           >
             Mulai Tryout Gratis
           </Link>
@@ -30,19 +31,19 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <main className="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-700 text-xs font-medium mb-6">
           <span>⚡ Standar Resmi CAT BKN — Kepmen PANRB 321/2024</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+        <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight text-slate-800">
           Lolos SKD CPNS 2026 dengan{' '}
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
             Simulasi CAT Terlengkap
           </span>
         </h1>
 
-        <p className="mt-6 text-lg text-zinc-400 max-w-2xl mx-auto">
+        <p className="mt-6 text-lg text-slate-500 max-w-2xl mx-auto">
           Latihan 110 soal resmi (TWK, TIU, TKP) dengan sistem skoring dan batas waktu presisi
           100 menit persis seperti ujian CAT sesungguhnya.
         </p>
@@ -50,90 +51,90 @@ export default function LandingPage() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/simulasi/tryout-1"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 transition"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white font-semibold text-base flex items-center justify-center gap-2 transition clay-button"
           >
             <span>Mulai Simulasi 100 Menit</span>
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5" weight="bold" />
           </Link>
           <Link
             href="/login"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 font-semibold text-base transition"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-2xl clay-card-flat text-slate-600 font-semibold text-base transition"
           >
             Masuk / Buat Akun
           </Link>
         </div>
 
         {/* Stats */}
-        <div className="mt-12 flex items-center justify-center gap-8 text-sm text-zinc-500">
-          <span><strong className="text-zinc-200">110</strong> Soal Resmi</span>
-          <span className="w-px h-4 bg-zinc-800" />
-          <span><strong className="text-zinc-200">100</strong> Menit</span>
-          <span className="w-px h-4 bg-zinc-800" />
-          <span><strong className="text-zinc-200">TWK · TIU · TKP</strong></span>
+        <div className="mt-12 flex items-center justify-center gap-8 text-sm text-slate-400">
+          <span><strong className="text-slate-700">110</strong> Soal Resmi</span>
+          <span className="w-px h-4 bg-slate-300" />
+          <span><strong className="text-slate-700">100</strong> Menit</span>
+          <span className="w-px h-4 bg-slate-300" />
+          <span><strong className="text-slate-700">TWK · TIU · TKP</strong></span>
         </div>
 
         {/* Feature Highlights */}
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
-          <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/80">
-            <Clock className="w-8 h-8 text-blue-400 mb-4" />
-            <h3 className="font-bold text-lg mb-2">Timer Presisi 100 Menit</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">
+          <div className="clay-card p-6">
+            <Timer className="w-8 h-8 text-blue-500 mb-4" weight="duotone" />
+            <h3 className="font-bold text-lg mb-2 text-slate-800">Timer Presisi 100 Menit</h3>
+            <p className="text-sm text-slate-500 leading-relaxed">
               Countdown tahan reload halaman. Peringatan merah saat waktu tersisa kurang dari 5 menit.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/80">
-            <Award className="w-8 h-8 text-emerald-400 mb-4" />
-            <h3 className="font-bold text-lg mb-2">Penilaian CAT BKN Otomatis</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">
+          <div className="clay-card p-6">
+            <Trophy className="w-8 h-8 text-emerald-500 mb-4" weight="duotone" />
+            <h3 className="font-bold text-lg mb-2 text-slate-800">Penilaian CAT BKN Otomatis</h3>
+            <p className="text-sm text-slate-500 leading-relaxed">
               Skor TWK (PG 65), TIU (PG 80), TKP skala 1–5 (PG 166) — sesuai ambang batas nasional.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/80">
-            <Shield className="w-8 h-8 text-purple-400 mb-4" />
-            <h3 className="font-bold text-lg mb-2">Login HP Tanpa Biaya SMS</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">
+          <div className="clay-card p-6">
+            <ShieldCheck className="w-8 h-8 text-purple-500 mb-4" weight="duotone" />
+            <h3 className="font-bold text-lg mb-2 text-slate-800">Login HP Tanpa Biaya SMS</h3>
+            <p className="text-sm text-slate-500 leading-relaxed">
               Daftar cukup dengan nomor HP dan PIN 6 digit. Tidak ada biaya OTP SMS.
             </p>
           </div>
         </div>
 
         {/* Passing Grades Table */}
-        <div className="mt-16 bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-6 text-left">
-          <h2 className="font-bold text-base mb-4 flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-zinc-400" />
+        <div className="mt-16 clay-card p-6 text-left">
+          <h2 className="font-bold text-base mb-4 flex items-center gap-2 text-slate-800">
+            <BookOpen className="w-5 h-5 text-slate-500" weight="duotone" />
             <span>Nilai Ambang Batas SKD CPNS (Kepmen PANRB 321/2024)</span>
           </h2>
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-zinc-800 text-zinc-400">
+              <tr className="border-b border-slate-200 text-slate-400">
                 <th className="text-left py-2 font-medium">Kategori</th>
                 <th className="text-center py-2 font-medium">Jumlah Soal</th>
                 <th className="text-center py-2 font-medium">Nilai Maks</th>
                 <th className="text-center py-2 font-medium">Ambang Batas</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-800">
-              <tr className="text-zinc-200">
+            <tbody className="divide-y divide-slate-100">
+              <tr className="text-slate-700">
                 <td className="py-3">TWK</td>
                 <td className="text-center py-3">30</td>
                 <td className="text-center py-3">150</td>
-                <td className="text-center py-3 font-semibold text-blue-400">65</td>
+                <td className="text-center py-3 font-semibold text-blue-500">65</td>
               </tr>
-              <tr className="text-zinc-200">
+              <tr className="text-slate-700">
                 <td className="py-3">TIU</td>
                 <td className="text-center py-3">35</td>
                 <td className="text-center py-3">175</td>
-                <td className="text-center py-3 font-semibold text-purple-400">80</td>
+                <td className="text-center py-3 font-semibold text-purple-500">80</td>
               </tr>
-              <tr className="text-zinc-200">
+              <tr className="text-slate-700">
                 <td className="py-3">TKP</td>
                 <td className="text-center py-3">45</td>
                 <td className="text-center py-3">225</td>
-                <td className="text-center py-3 font-semibold text-emerald-400">166</td>
+                <td className="text-center py-3 font-semibold text-emerald-500">166</td>
               </tr>
-              <tr className="text-zinc-300 font-semibold border-t border-zinc-700">
+              <tr className="text-slate-600 font-semibold border-t border-slate-200">
                 <td className="py-3">Total</td>
                 <td className="text-center py-3">110</td>
                 <td className="text-center py-3">550</td>
@@ -147,15 +148,15 @@ export default function LandingPage() {
         <div className="mt-16 text-center">
           <Link
             href="/simulasi/tryout-1"
-            className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium text-sm transition"
+            className="inline-flex items-center gap-2 text-purple-500 hover:text-purple-400 font-medium text-sm transition"
           >
             <span>Mulai latihan sekarang, gratis</span>
-            <ChevronRight className="w-4 h-4" />
+            <CaretRight className="w-4 h-4" weight="bold" />
           </Link>
         </div>
       </main>
 
-      <footer className="border-t border-zinc-800 px-6 py-8 text-center text-xs text-zinc-500">
+      <footer className="border-t border-white/40 px-6 py-8 text-center text-xs text-slate-400">
         <p>CPNSMaster &copy; 2026 &mdash; Platform persiapan SKD CPNS standar BKN. Bukan afiliasi pemerintah.</p>
       </footer>
     </div>

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ExamResult } from '@/lib/types';
-import { CheckCircle2, XCircle, Trophy, RotateCcw } from 'lucide-react';
+import { CheckCircle, XCircle, Trophy, ArrowCounterClockwise } from '@phosphor-icons/react';
 
 export default function HasilPage({ params }: { params: { resultId: string } }) {
   const [result, setResult] = useState<ExamResult | null>(null);
@@ -28,12 +28,12 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
 
   if (notFound) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center text-zinc-400">
+      <div className="min-h-screen flex items-center justify-center text-slate-400">
         <div className="text-center">
           <p className="text-lg mb-4">Hasil ujian tidak ditemukan.</p>
           <Link
             href={retryPath}
-            className="text-blue-400 hover:underline"
+            className="text-purple-500 hover:underline"
           >
             Kembali ke simulasi
           </Link>
@@ -44,7 +44,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
 
   if (!result) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center text-zinc-400">
+      <div className="min-h-screen flex items-center justify-center text-slate-400">
         Memuat hasil...
       </div>
     );
@@ -58,15 +58,15 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
 
   const colorMap = {
     blue: {
-      badge: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+      badge: 'bg-blue-100 text-blue-600 border-blue-200',
       bar: 'bg-blue-500',
     },
     purple: {
-      badge: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+      badge: 'bg-purple-100 text-purple-600 border-purple-200',
       bar: 'bg-purple-500',
     },
     emerald: {
-      badge: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+      badge: 'bg-emerald-100 text-emerald-600 border-emerald-200',
       bar: 'bg-emerald-500',
     },
   };
@@ -75,40 +75,40 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   const seconds = result.durationSeconds % 60;
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex items-start justify-center p-4 py-10">
+    <div className="min-h-screen flex items-start justify-center p-4 py-10">
       <div className="max-w-2xl w-full space-y-6">
         {/* Passing banner */}
         <div
-          className={`rounded-2xl p-6 text-center border ${
+          className={`clay-card p-6 text-center ${
             result.isPassedAll
-              ? 'bg-emerald-500/10 border-emerald-500/40'
-              : 'bg-red-500/10 border-red-500/40'
+              ? 'bg-emerald-50/80 border-emerald-200'
+              : 'bg-red-50/80 border-red-200'
           }`}
         >
           <div className="flex justify-center mb-3">
             {result.isPassedAll ? (
-              <Trophy className="w-12 h-12 text-emerald-400" />
+              <Trophy className="w-12 h-12 text-emerald-500" weight="duotone" />
             ) : (
-              <XCircle className="w-12 h-12 text-red-400" />
+              <XCircle className="w-12 h-12 text-red-400" weight="duotone" />
             )}
           </div>
-          <h1 className="text-2xl font-bold mb-1">
+          <h1 className="text-2xl font-bold mb-1 text-slate-800">
             {result.isPassedAll ? '🎉 SELAMAT! ANDA LULUS PASSING GRADE' : 'BELUM MEMENUHI PASSING GRADE'}
           </h1>
-          <p className="text-zinc-400 text-sm mt-1">
+          <p className="text-slate-400 text-sm mt-1">
             Diselesaikan dalam {minutes}m {seconds}s
           </p>
         </div>
 
         {/* Total Score */}
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
-          <p className="text-zinc-400 text-sm mb-1">Total Skor</p>
-          <div className="text-5xl font-bold">{result.totalScore}</div>
-          <p className="text-zinc-500 text-sm mt-1">dari 550</p>
+        <div className="clay-card p-6 text-center">
+          <p className="text-slate-400 text-sm mb-1">Total Skor</p>
+          <div className="text-5xl font-bold text-slate-800">{result.totalScore}</div>
+          <p className="text-slate-400 text-sm mt-1">dari 550</p>
           {/* progress bar */}
-          <div className="mt-4 bg-zinc-800 rounded-full h-2.5">
+          <div className="mt-4 bg-slate-200 rounded-full h-2.5">
             <div
-              className="bg-blue-500 h-2.5 rounded-full transition-all"
+              className="bg-purple-500 h-2.5 rounded-full transition-all"
               style={{ width: `${(result.totalScore / 550) * 100}%` }}
             />
           </div>
@@ -122,29 +122,29 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
             return (
               <div
                 key={label}
-                className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 flex flex-col gap-3"
+                className="clay-card p-5 flex flex-col gap-3"
               >
                 <div className="flex items-center justify-between">
                   <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${colors.badge}`}>
                     {label}
                   </span>
                   {data.isPassed ? (
-                    <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                    <CheckCircle className="w-5 h-5 text-emerald-500" weight="duotone" />
                   ) : (
-                    <XCircle className="w-5 h-5 text-red-400" />
+                    <XCircle className="w-5 h-5 text-red-400" weight="duotone" />
                   )}
                 </div>
                 <div>
-                  <span className="text-3xl font-bold">{data.score}</span>
-                  <span className="text-zinc-500 text-sm"> / {data.maxScore}</span>
+                  <span className="text-3xl font-bold text-slate-800">{data.score}</span>
+                  <span className="text-slate-400 text-sm"> / {data.maxScore}</span>
                 </div>
-                <div className="bg-zinc-800 rounded-full h-1.5">
+                <div className="bg-slate-200 rounded-full h-1.5">
                   <div className={`${colors.bar} h-1.5 rounded-full`} style={{ width: `${pct}%` }} />
                 </div>
-                <div className="flex items-center justify-between text-xs text-zinc-500">
+                <div className="flex items-center justify-between text-xs text-slate-400">
                   <span>PG {data.passingGrade}</span>
                   <span
-                    className={`font-semibold ${data.isPassed ? 'text-emerald-400' : 'text-red-400'}`}
+                    className={`font-semibold ${data.isPassed ? 'text-emerald-500' : 'text-red-400'}`}
                   >
                     {data.isPassed ? 'Lulus' : 'Tidak Lulus'}
                   </span>
@@ -157,9 +157,9 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
         {/* CTA */}
         <Link
           href={retryPath}
-          className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition"
+          className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-purple-500 hover:bg-purple-400 text-white font-semibold rounded-2xl transition clay-button"
         >
-          <RotateCcw className="w-4 h-4" />
+          <ArrowCounterClockwise className="w-4 h-4" weight="bold" />
           Coba Simulasi Lagi
         </Link>
       </div>

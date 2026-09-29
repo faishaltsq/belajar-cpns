@@ -17,22 +17,22 @@ export function QuestionNavigationGrid({
   onSelectIndex,
 }: GridProps) {
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 flex flex-col h-full">
-      <h3 className="font-semibold text-zinc-100 mb-3 text-sm flex items-center justify-between">
+    <div className="clay-card p-4 flex flex-col h-full">
+      <h3 className="font-semibold text-slate-800 mb-3 text-sm flex items-center justify-between">
         <span>Nomor Soal (1 - {questions.length})</span>
       </h3>
 
-      <div className="flex items-center gap-3 text-xs mb-4 text-zinc-400">
+      <div className="flex items-center gap-3 text-xs mb-4 text-slate-400">
         <div className="flex items-center gap-1.5">
-          <span className="w-3.5 h-3.5 rounded bg-emerald-600 inline-block" />
+          <span className="w-3.5 h-3.5 rounded bg-emerald-500 inline-block" />
           <span>Sudah</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-3.5 h-3.5 rounded bg-amber-500 inline-block" />
+          <span className="w-3.5 h-3.5 rounded bg-amber-400 inline-block" />
           <span>Ragu</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-3.5 h-3.5 rounded bg-zinc-800 border border-zinc-700 inline-block" />
+          <span className="w-3.5 h-3.5 rounded bg-white/60 border border-slate-200 inline-block" />
           <span>Belum</span>
         </div>
       </div>
@@ -44,20 +44,21 @@ export function QuestionNavigationGrid({
           const isFlagged = Boolean(ans && ans.isFlagged);
           const isCurrent = idx === currentIndex;
 
-          let btnColor = 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700 border-zinc-700';
+          let btnColor = 'bg-white/60 text-slate-500 hover:bg-white/80 border-white/70';
           if (isFlagged) {
-            btnColor = 'bg-amber-500 text-black font-semibold border-amber-400';
+            btnColor = 'bg-amber-400 text-white font-semibold border-amber-300';
           } else if (isAnswered) {
-            btnColor = 'bg-emerald-600 text-white font-semibold border-emerald-500';
+            btnColor = 'bg-emerald-500 text-white font-semibold border-emerald-400';
           }
 
           return (
             <button
               key={q.id}
               onClick={() => onSelectIndex(idx)}
-              className={`h-9 w-full rounded-lg text-xs flex items-center justify-center border transition-all ${btnColor} ${
-                isCurrent ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-zinc-900 scale-105' : ''
+              className={`h-9 w-full rounded-xl text-xs flex items-center justify-center border transition-all ${btnColor} ${
+                isCurrent ? 'ring-2 ring-purple-400 ring-offset-2 ring-offset-[#f0ecf4] scale-105' : ''
               }`}
+              style={{ boxShadow: '2px 2px 5px rgba(0,0,0,0.05), -2px -2px 4px rgba(255,255,255,0.9)' }}
             >
               {idx + 1}
             </button>

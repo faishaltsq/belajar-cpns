@@ -9,7 +9,7 @@ import { FinishExamModal } from '@/components/FinishExamModal';
 import { calculateExamScore } from '@/lib/scoring';
 import { ExamAnswer, Question } from '@/lib/types';
 import allQuestions from '@/data/sample_questions.json';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 
 const EXAM_DURATION = 6000; // 100 minutes
 const QUESTIONS: Question[] = allQuestions as Question[];
@@ -135,20 +135,21 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
   if (!hydrated) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center text-zinc-400">
+      <div className="min-h-screen flex items-center justify-center text-slate-400">
         Memuat sesi ujian...
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col">
+    <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-zinc-900/95 backdrop-blur border-b border-zinc-800">
+      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-white/50"
+        style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
         <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <span className="font-bold text-sm sm:text-base truncate">Simulasi CAT CPNS</span>
-            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 font-medium whitespace-nowrap">
+            <span className="font-bold text-sm sm:text-base truncate text-slate-800">Simulasi CAT CPNS</span>
+            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-600 border border-purple-200 font-medium whitespace-nowrap">
               Tryout 1
             </span>
           </div>
@@ -156,7 +157,8 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
             <Timer key={initialSeconds} initialSeconds={initialSeconds} onTimeUp={handleTimeUp} />
             <button
               onClick={() => setShowModal(true)}
-              className="py-2 px-3 sm:px-4 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-semibold rounded-lg transition whitespace-nowrap"
+              className="py-2 px-3 sm:px-4 bg-emerald-500 hover:bg-emerald-400 text-white text-xs sm:text-sm font-semibold rounded-xl transition whitespace-nowrap"
+              style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.1), -2px -2px 6px rgba(255,255,255,0.8)' }}
             >
               Selesai Ujian
             </button>
@@ -182,18 +184,19 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
             <button
               onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
               disabled={currentIndex === 0}
-              className="flex items-center gap-1.5 py-2.5 px-5 rounded-xl border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed"
+              className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl clay-card-flat text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed text-slate-700"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <CaretLeft className="w-4 h-4" weight="bold" />
               Sebelumnya
             </button>
             <button
               onClick={() => setCurrentIndex((i) => Math.min(QUESTIONS.length - 1, i + 1))}
               disabled={currentIndex === QUESTIONS.length - 1}
-              className="flex items-center gap-1.5 py-2.5 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed"
+              className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed"
+              style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.1), -2px -2px 6px rgba(255,255,255,0.8)' }}
             >
               Selanjutnya
-              <ChevronRight className="w-4 h-4" />
+              <CaretRight className="w-4 h-4" weight="bold" />
             </button>
           </div>
         </div>

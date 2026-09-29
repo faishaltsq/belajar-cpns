@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Smartphone, Lock, ArrowRight, ShieldCheck, Eye, EyeOff } from 'lucide-react';
+import { Phone, Lock, ArrowRight, ShieldCheck, Eye, EyeSlash } from '@phosphor-icons/react';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -44,31 +44,32 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <Link href="/" className="flex items-center justify-center gap-2 mb-8 group">
-          <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-white text-sm group-hover:bg-blue-500 transition">
+          <div className="w-9 h-9 rounded-xl bg-purple-500 flex items-center justify-center font-bold text-white text-sm group-hover:bg-purple-400 transition"
+            style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.12), -2px -2px 6px rgba(255,255,255,0.9)' }}>
             C
           </div>
-          <span className="font-bold text-lg text-zinc-100">CPNSMaster</span>
+          <span className="font-bold text-lg text-slate-800">CPNSMaster</span>
         </Link>
 
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-xl">
+        <div className="clay-card p-8">
           <div className="text-center mb-8">
-            <div className="inline-flex p-3 rounded-2xl bg-blue-600/10 text-blue-500 mb-3">
-              <ShieldCheck className="w-8 h-8" />
+            <div className="inline-flex p-3 rounded-2xl bg-purple-100 text-purple-500 mb-3">
+              <ShieldCheck className="w-8 h-8" weight="duotone" />
             </div>
-            <h1 className="text-2xl font-bold tracking-tight">
+            <h1 className="text-2xl font-bold tracking-tight text-slate-800">
               {isRegister ? 'Daftar Akun Baru' : 'Masuk ke CPNSMaster'}
             </h1>
-            <p className="text-sm text-zinc-400 mt-1">
+            <p className="text-sm text-slate-400 mt-1">
               Nomor HP &amp; PIN 6-digit — tanpa verifikasi SMS berbayar
             </p>
           </div>
 
           {error && (
-            <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+            <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-500 text-sm">
               {error}
             </div>
           )}
@@ -76,7 +77,7 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             {isRegister && (
               <div>
-                <label htmlFor="name" className="block text-xs font-medium text-zinc-300 mb-1.5">
+                <label htmlFor="name" className="block text-xs font-medium text-slate-600 mb-1.5">
                   Nama Lengkap
                 </label>
                 <input
@@ -85,17 +86,17 @@ export default function LoginPage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Contoh: Budi Santoso"
-                  className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-blue-500 transition"
+                  className="clay-input w-full text-sm focus:outline-none focus:ring-2 focus:ring-purple-300"
                 />
               </div>
             )}
 
             <div>
-              <label htmlFor="phone" className="block text-xs font-medium text-zinc-300 mb-1.5">
+              <label htmlFor="phone" className="block text-xs font-medium text-slate-600 mb-1.5">
                 Nomor Handphone
               </label>
               <div className="relative">
-                <Smartphone className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
                 <input
                   id="phone"
                   type="tel"
@@ -104,17 +105,17 @@ export default function LoginPage() {
                   placeholder="081234567890"
                   required
                   autoComplete="tel"
-                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-blue-500 transition font-mono"
+                  className="clay-input w-full pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 font-mono"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="pin" className="block text-xs font-medium text-zinc-300 mb-1.5">
+              <label htmlFor="pin" className="block text-xs font-medium text-slate-600 mb-1.5">
                 PIN Keamanan (6 Digit)
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
                 <input
                   id="pin"
                   type={showPin ? 'text' : 'password'}
@@ -126,15 +127,15 @@ export default function LoginPage() {
                   autoComplete={isRegister ? 'new-password' : 'current-password'}
                   inputMode="numeric"
                   pattern="[0-9]{6}"
-                  className="w-full pl-10 pr-11 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-blue-500 transition font-mono tracking-widest"
+                  className="clay-input w-full pl-10 pr-11 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 font-mono tracking-widest"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPin(!showPin)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300 transition"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition"
                   aria-label={showPin ? 'Sembunyikan PIN' : 'Tampilkan PIN'}
                 >
-                  {showPin ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  {showPin ? <EyeSlash className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
             </div>
@@ -142,26 +143,26 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white font-medium text-sm flex items-center justify-center gap-2 transition mt-2"
+              className="w-full py-3 px-4 rounded-2xl bg-purple-500 hover:bg-purple-400 disabled:opacity-50 text-white font-semibold text-sm flex items-center justify-center gap-2 transition mt-2 clay-button"
             >
               <span>{loading ? 'Memproses...' : isRegister ? 'Daftar Sekarang' : 'Masuk Akun'}</span>
-              {!loading && <ArrowRight className="w-4 h-4" />}
+              {!loading && <ArrowRight className="w-4 h-4" weight="bold" />}
             </button>
           </form>
 
-          <div className="mt-6 text-center text-xs text-zinc-400">
+          <div className="mt-6 text-center text-xs text-slate-400">
             {isRegister ? 'Sudah punya akun?' : 'Belum punya akun?'}{' '}
             <button
               type="button"
               onClick={() => { setIsRegister(!isRegister); setError(''); setPin(''); }}
-              className="text-blue-400 hover:underline font-medium"
+              className="text-purple-500 hover:underline font-medium"
             >
               {isRegister ? 'Masuk di sini' : 'Daftar gratis'}
             </button>
           </div>
         </div>
 
-        <p className="text-center text-xs text-zinc-600 mt-6">
+        <p className="text-center text-xs text-slate-400 mt-6">
           Dengan masuk, Anda menyetujui penggunaan data sesuai kebijakan privasi platform ini.
         </p>
       </div>

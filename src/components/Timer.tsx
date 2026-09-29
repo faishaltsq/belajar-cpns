@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-import { Clock } from 'lucide-react';
+import { Timer as TimerIcon } from '@phosphor-icons/react';
 
 interface TimerProps {
   initialSeconds: number;
@@ -36,13 +36,16 @@ export function Timer({ initialSeconds, onTimeUp }: TimerProps) {
 
   return (
     <div
-      className={`flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-mono font-bold text-sm sm:text-base border ${
+      className={`flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl font-mono font-bold text-sm sm:text-base border ${
         isCritical
-          ? 'bg-red-500/10 text-red-500 border-red-500 animate-pulse'
-          : 'bg-zinc-900 text-zinc-100 border-zinc-800'
+          ? 'bg-red-100 text-red-600 border-red-300 animate-pulse'
+          : 'bg-white/70 text-slate-700 border-white/60'
       }`}
+      style={isCritical ? {} : {
+        boxShadow: '2px 2px 6px rgba(0,0,0,0.06), -2px -2px 5px rgba(255,255,255,0.9)'
+      }}
     >
-      <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
+      <TimerIcon className="w-4 h-4 sm:w-5 sm:h-5" weight="duotone" />
       <span>
         {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:
         {String(seconds).padStart(2, '0')}
