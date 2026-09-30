@@ -16,6 +16,7 @@ import {
   Lock,
   SignOut,
   FolderOpen,
+  Database,
 } from '@phosphor-icons/react';
 import { Question } from '@/lib/types';
 
@@ -46,6 +47,7 @@ export default function AdminPage() {
   const [filterCat, setFilterCat] = useState<string>('ALL');
   const [loading, setLoading] = useState(false);
   const [saveStatus, setSaveStatus] = useState<string>('');
+  const [dbStatus, setDbStatus] = useState<{ connected: boolean; hasEnv: boolean; message: string } | null>(null);
 
   // Custom Test Builder state
   const [customTitle, setCustomTitle] = useState('Tryout Mini Uji Coba');
@@ -120,6 +122,8 @@ export default function AdminPage() {
   useEffect(() => {
     if (authed) {
       loadPackageQuestions(selectedPkgId);
+      // Cek DB connection
+      fetch('/api/admin/db-status').then(r => r.json()).then(setDbStatus).catch(() => null);
     }
   }, [authed, selectedPkgId]);
 
@@ -250,6 +254,18 @@ export default function AdminPage() {
           <div className="flex items-center gap-2">
             <span className="badge-pill badge-neutral text-[10px]">ADMIN CONSOLE</span>
             <span className="text-xs text-[var(--muted-foreground)]">&bull; CPNSMaster</span>
+            {dbStatus && (
+              <span
+                className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-medium"
+                style={{
+                  backgroundColor: dbStatus.connected ? '#dcfce7' : '#fef3c7',
+                  color: dbStatus.connected ? '#166534' : '#92400e',
+                }}
+              >
+                <Database size={10} weight="fill" />
+                {dbStatus.connected ? 'DB Connected' : 'DB Offline'}
+              </span>
+            )}
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-[var(--foreground)] mt-1">
             Manajemen Soal &amp; Custom Test Maker
