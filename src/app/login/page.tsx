@@ -60,7 +60,9 @@ function LoginFormContent() {
           <div className="w-9 h-9 rounded-xl bg-[var(--primary)] flex items-center justify-center font-bold text-[var(--primary-foreground)] text-sm transition">
             C
           </div>
-          <span className="font-bold text-lg text-[var(--foreground)]">CPNSMaster</span>
+          <span className="font-bold text-lg text-[var(--foreground)]">
+            Lolos<span style={{ color: 'var(--primary)' }}>.in</span>
+          </span>
         </Link>
 
         <div className="card-modern p-8">
@@ -69,7 +71,7 @@ function LoginFormContent() {
               <ShieldCheck size={28} weight="duotone" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
-              {isRegister ? 'Daftar Akun Baru' : 'Masuk ke CPNSMaster'}
+              {isRegister ? 'Daftar Akun Baru' : 'Masuk ke Lolos.in'}
             </h1>
             <p className="text-xs text-[var(--muted-foreground)] mt-1">
               Nomor HP &amp; PIN 6-digit — tanpa verifikasi SMS berbayar

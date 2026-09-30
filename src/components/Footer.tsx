@@ -19,10 +19,10 @@ export default function Footer() {
                 className="w-6 h-6 rounded-md flex items-center justify-center font-bold text-white text-xs"
                 style={{ background: 'var(--primary)' }}
               >
-                C
+                L
               </div>
-              <span className="font-semibold text-sm tracking-tight" style={{ color: 'var(--foreground)' }}>
-                CPNSMaster
+              <span className="font-bold text-sm tracking-tight" style={{ color: 'var(--foreground)' }}>
+                Lolos<span style={{ color: 'var(--primary)' }}>.in</span>
               </span>
             </div>
             <p className="text-xs leading-relaxed">
@@ -62,7 +62,7 @@ export default function Footer() {
               Disclaimer
             </h4>
             <p className="text-xs leading-relaxed">
-              CPNSMaster bukan portal resmi BKN atau lembaga pemerintah RI. Seluruh konten dibuat untuk simulasi dan sarana belajar mandiri.
+              Lolos.in bukan portal resmi BKN atau lembaga pemerintah RI. Seluruh konten dibuat untuk simulasi dan sarana belajar mandiri.
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function Footer() {
           className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs"
           style={{ borderTop: '1px solid var(--border)' }}
         >
-          <p>&copy; 2026 CPNSMaster. Hak cipta dilindungi.</p>
+          <p>&copy; 2026 Lolos.in. Hak cipta dilindungi.</p>
           <p>Dibuat untuk pejuang NIP Indonesia.</p>
         </div>
       </div>

@@ -329,7 +329,7 @@ export default function AdminPage() {
             <Lock size={24} weight="duotone" className="text-[var(--foreground)]" />
           </div>
           <h1 className="text-xl font-bold tracking-tight text-[var(--foreground)] mb-1">
-            Admin CPNSMaster
+            Admin Lolos.in
           </h1>
           <p className="text-xs text-[var(--muted-foreground)] mb-6">
             Masukkan PIN Admin untuk mengelola seluruh paket soal dan generator.
@@ -377,7 +377,7 @@ export default function AdminPage() {
         <div>
           <div className="flex items-center gap-2">
             <span className="badge-pill badge-neutral text-[10px]">ADMIN CONSOLE</span>
-            <span className="text-xs text-[var(--muted-foreground)]">&bull; CPNSMaster</span>
+            <span className="text-xs text-[var(--muted-foreground)]">&bull; Lolos.in</span>
             {dbStatus && (
               <span
                 className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-medium"

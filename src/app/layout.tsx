@@ -11,8 +11,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'CPNSMaster - Simulasi CAT SKD CPNS 2026',
-  description: 'Platform belajar dan simulasi ujian CAT SKD CPNS 2026 standar BKN dengan penilaian otomatis TWK, TIU, dan TKP.',
+  title: 'Lolos.in — Simulasi CAT SKD CPNS 2026 Gratis',
+  description: 'Lolos.in: platform simulasi ujian CAT SKD CPNS 2026 standar BKN dengan penilaian otomatis TWK, TIU, dan TKP. Gratis, tanpa login.',
 };
 
 export default function RootLayout({

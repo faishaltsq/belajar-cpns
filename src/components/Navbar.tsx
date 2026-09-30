@@ -39,10 +39,10 @@ export default function Navbar() {
             className="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-white text-sm"
             style={{ background: 'var(--primary)', boxShadow: '0 1px 3px rgba(0,0,0,0.15)' }}
           >
-            C
+            L
           </div>
-          <span className="font-semibold text-[15px] tracking-tight" style={{ color: 'var(--foreground)' }}>
-            CPNSMaster
+          <span className="font-bold text-[16px] tracking-tight" style={{ color: 'var(--foreground)' }}>
+            Lolos<span style={{ color: 'var(--primary)' }}>.in</span>
           </span>
         </Link>
 
