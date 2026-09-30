@@ -3,6 +3,7 @@ import { getDb } from '@/lib/db';
 import { TRYOUT_LIST } from '@/lib/loadPackage';
 
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function GET() {
   const sql = getDb();
@@ -15,17 +16,30 @@ export async function GET() {
         ORDER BY created_at ASC
       `;
       if (rows && rows.length > 0) {
-        return NextResponse.json({
-          packages: rows.map(r => ({
-            id: r.id,
-            label: r.label,
-            desc: r.desc || `${r.question_count} soal (${Math.round((r.duration_sec || 6000) / 60)} menit)`,
-            badge: r.id === 'tryout-mini' ? 'Coba Gratis' : r.id === 'tryout-1' ? 'Populer' : null,
-          })),
-        });
+        const pkgs = rows.map((r) => ({
+          id: r.id,
+          label: r.label,
+          desc: r.desc || `${r.question_count} soal (${Math.round((r.duration_sec || 6000) / 60)} menit)`,
+          badge:
+            r.id === 'tryout-mini'
+              ? 'Coba Gratis'
+              : r.id === 'tryout-1'
+              ? 'Populer'
+              : r.id.startsWith('tryout-gratis') || r.id.includes('coba')
+              ? 'Custom'
+              : null,
+        }));
+        return NextResponse.json(
+          { packages: pkgs },
+          {
+            headers: {
+              'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+            },
+          }
+        );
       }
     } catch {
-      // fallback to static
+      // fallback
     }
   }
 
