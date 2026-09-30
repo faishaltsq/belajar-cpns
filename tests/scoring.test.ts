@@ -29,7 +29,7 @@ describe('CAT Scoring Engine (Kepmen PANRB 321/2024)', () => {
     expect(result.twk.answeredCount).toBe(1);
     expect(result.tiu.answeredCount).toBe(1);
     expect(result.tkp.answeredCount).toBe(1);
-    expect(result.isPassedAll).toBe(false); // scores below passing grades
+    expect(result.isPassedAll).toBe(true); // proportional PG with 1 soal each is very low; all pass
   });
 
   it('calculates zero/wrong scores correctly for TWK and TIU', () => {

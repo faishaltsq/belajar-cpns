@@ -4,6 +4,7 @@ export interface Option {
   id: string;
   text: string;
   score: number;
+  image?: string;
 }
 
 export interface Question {
@@ -13,6 +14,7 @@ export interface Question {
   text: string;
   options: Option[];
   explanation: string;
+  image?: string;
 }
 
 export interface ExamAnswer {
