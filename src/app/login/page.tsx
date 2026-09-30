@@ -3,7 +3,7 @@
 import React, { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Phone, Lock, ArrowRight, ShieldCheck, Eye, EyeSlash, ChartLineUp, Trophy, Brain, SpinnerGap } from '@phosphor-icons/react';
+import { Envelope, Lock, ArrowRight, ShieldCheck, Eye, EyeSlash, ChartLineUp, Trophy, Brain, SpinnerGap, User } from '@phosphor-icons/react';
 
 function LoginFormContent() {
   const router = useRouter();
@@ -11,10 +11,10 @@ function LoginFormContent() {
   const raw = searchParams.get('redirect') || '/simulasi/tryout-1';
   const redirect = raw.startsWith('/') && !raw.startsWith('//') ? raw : '/simulasi/tryout-1';
   const [isRegister, setIsRegister] = useState(false);
-  const [phone, setPhone] = useState('');
-  const [pin, setPin] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [showPin, setShowPin] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -28,7 +28,7 @@ function LoginFormContent() {
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phone, pin, name: name || undefined }),
+        body: JSON.stringify({ email, password, name: name || undefined }),
       });
 
       const data: { error?: string } = await res.json();
@@ -55,7 +55,6 @@ function LoginFormContent() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        {/* Logo */}
         <Link href="/" className="inline-flex items-center gap-2 mb-8 group">
           <span className="font-bold text-xl text-[var(--foreground)]">
             Lolos<span style={{ color: 'var(--primary)' }}>.in</span>
@@ -71,11 +70,10 @@ function LoginFormContent() {
               {isRegister ? 'Daftar Akun Baru' : 'Masuk ke Lolos.in'}
             </h1>
             <p className="text-xs text-[var(--muted-foreground)] mt-1">
-              Nomor HP &amp; PIN 6-digit — tanpa verifikasi SMS berbayar
+              Gunakan email &amp; password untuk menyimpan progres belajar
             </p>
           </div>
 
-          {/* Benefits showcase */}
           <div className="mb-6 space-y-2">
             {benefits.map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-3 text-xs text-[var(--muted-foreground)] card-subtle rounded-xl px-3.5 py-2.5">
@@ -97,62 +95,63 @@ function LoginFormContent() {
                 <label htmlFor="name" className="block text-xs font-medium text-[var(--foreground)] mb-1.5">
                   Nama Lengkap
                 </label>
-                <input
-                  id="name"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Contoh: Budi Santoso"
-                  className="input-modern w-full text-sm"
-                />
+                <div className="relative">
+                  <User size={16} className="text-[var(--muted-foreground)] absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
+                  <input
+                    id="name"
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Contoh: Budi Santoso"
+                    className="input-modern w-full pl-10 text-sm"
+                  />
+                </div>
               </div>
             )}
 
             <div>
-              <label htmlFor="phone" className="block text-xs font-medium text-[var(--foreground)] mb-1.5">
-                Nomor Handphone
+              <label htmlFor="email" className="block text-xs font-medium text-[var(--foreground)] mb-1.5">
+                Alamat Email
               </label>
               <div className="relative">
-                <Phone size={16} className="text-[var(--muted-foreground)] absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
+                <Envelope size={16} className="text-[var(--muted-foreground)] absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
                 <input
-                  id="phone"
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="081234567890"
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="nama@email.com"
                   required
-                  autoComplete="tel"
-                  className="input-modern w-full pl-10 text-sm font-mono"
+                  autoComplete="email"
+                  className="input-modern w-full pl-10 text-sm"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="pin" className="block text-xs font-medium text-[var(--foreground)] mb-1.5">
-                PIN Keamanan (6 Digit)
+              <label htmlFor="password" className="block text-xs font-medium text-[var(--foreground)] mb-1.5">
+                Password{isRegister && <span className="text-[var(--muted-foreground)] font-normal"> (Min. 6 karakter)</span>}
               </label>
               <div className="relative">
                 <Lock size={16} className="text-[var(--muted-foreground)] absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
                 <input
-                  id="pin"
-                  type={showPin ? 'text' : 'password'}
-                  maxLength={6}
-                  value={pin}
-                  onChange={(e) => setPin(e.target.value)}
-                  placeholder="••••••"
+                  id="password"
+                  type={showPassword ? 'text' : 'password'}
+                  minLength={6}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••"
                   required
                   autoComplete={isRegister ? 'new-password' : 'current-password'}
-                  inputMode="numeric"
-                  pattern="[0-9]{6}"
-                  className="input-modern w-full pl-10 pr-11 text-sm font-mono tracking-widest"
+                  className="input-modern w-full pl-10 pr-11 text-sm"
                 />
                 <button
                   type="button"
-                  onClick={() => setShowPin(!showPin)}
+                  onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition"
-                  aria-label={showPin ? 'Sembunyikan PIN' : 'Tampilkan PIN'}
+                  aria-label={showPassword ? 'Sembunyikan password' : 'Tampilkan password'}
                 >
-                  {showPin ? <EyeSlash size={16} weight="duotone" /> : <Eye size={16} weight="duotone" />}
+                  {showPassword ? <EyeSlash size={16} weight="duotone" /> : <Eye size={16} weight="duotone" />}
                 </button>
               </div>
             </div>
@@ -180,7 +179,7 @@ function LoginFormContent() {
             {isRegister ? 'Sudah punya akun?' : 'Belum punya akun?'}{' '}
             <button
               type="button"
-              onClick={() => { setIsRegister(!isRegister); setError(''); setPin(''); }}
+              onClick={() => { setIsRegister(!isRegister); setError(''); setPassword(''); }}
               className="text-[var(--foreground)] underline font-medium hover:opacity-80"
             >
               {isRegister ? 'Masuk di sini' : 'Daftar gratis'}

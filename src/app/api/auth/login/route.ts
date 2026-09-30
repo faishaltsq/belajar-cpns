@@ -1,27 +1,38 @@
 import { NextResponse } from 'next/server';
-import { validatePhoneAndPin } from '@/lib/phone';
-import { verifyPin, createToken } from '@/lib/auth';
-import { findUserByPhone } from '@/lib/db';
+import { verifyPassword, createToken } from '@/lib/auth';
+import { findUserByEmail } from '@/lib/db';
 
 export async function POST(req: Request) {
   try {
-    const { phone, pin } = await req.json();
-    const validation = validatePhoneAndPin(phone, pin);
-    if (!validation.isValid || !validation.phone) {
-      return NextResponse.json({ error: validation.error }, { status: 400 });
+    const { email, password } = await req.json();
+
+    if (!email || !password) {
+      return NextResponse.json({ error: 'Email dan password wajib diisi.' }, { status: 400 });
     }
-    const user = await findUserByPhone(validation.phone);
+
+    const user = await findUserByEmail(email);
     if (!user) {
-      // ponytail: distinct 404/401 is intentional for consumer UX; upgrade to unified 401 if phone enumeration becomes a threat
-      return NextResponse.json({ error: 'Nomor HP belum terdaftar. Silakan daftar terlebih dahulu.' }, { status: 404 });
+      return NextResponse.json({ error: 'Email belum terdaftar. Silakan daftar terlebih dahulu.' }, { status: 404 });
     }
-    const valid = await verifyPin(pin, user.pin_hash);
+
+    const valid = await verifyPassword(password, user.password_hash);
     if (!valid) {
-      return NextResponse.json({ error: 'PIN salah. Periksa kembali PIN Anda.' }, { status: 401 });
+      return NextResponse.json({ error: 'Password salah. Periksa kembali.' }, { status: 401 });
     }
-    const token = await createToken({ phone: user.phone, userId: user.id });
-    const response = NextResponse.json({ success: true, user: { id: user.id, phone: user.phone, name: user.name } });
-    response.cookies.set('cpns_token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', path: '/', maxAge: 7 * 24 * 60 * 60 });
+
+    const token = await createToken({ email: user.email, userId: user.id });
+
+    const response = NextResponse.json({
+      success: true,
+      user: { id: user.id, email: user.email, name: user.name },
+    });
+    response.cookies.set('cpns_token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 7 * 24 * 60 * 60,
+    });
     return response;
   } catch (error: unknown) {
     if (error instanceof Error) console.error('[auth/login]', error.message);

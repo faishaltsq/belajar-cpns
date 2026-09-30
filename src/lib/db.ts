@@ -67,24 +67,25 @@ export async function getUserResults(userId: string, limit = 10) {
 
 export type DbUser = {
   id: string;
-  phone: string;
-  pin_hash: string;
+  email: string;
+  phone: string | null;
+  password_hash: string;
   name: string;
   created_at: string;
 };
 
-export async function findUserByPhone(phone: string): Promise<DbUser | null> {
+export async function findUserByEmail(email: string): Promise<DbUser | null> {
   const sql = getDb();
   if (!sql) return null;
-  const rows = await sql`SELECT * FROM users WHERE phone = ${phone} LIMIT 1`;
+  const rows = await sql`SELECT * FROM users WHERE email = ${email.toLowerCase()} LIMIT 1`;
   return (rows[0] as DbUser) ?? null;
 }
 
-export async function createUser(phone: string, pinHash: string, name: string): Promise<DbUser> {
+export async function createUser(email: string, passwordHash: string, name: string): Promise<DbUser> {
   const sql = getDb();
   if (!sql) throw new Error('Database not configured');
   const rows = await sql`
-    INSERT INTO users (phone, pin_hash, name) VALUES (${phone}, ${pinHash}, ${name})
+    INSERT INTO users (email, password_hash, name) VALUES (${email.toLowerCase()}, ${passwordHash}, ${name})
     RETURNING *
   `;
   return rows[0] as DbUser;
