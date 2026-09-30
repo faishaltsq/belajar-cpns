@@ -63,6 +63,33 @@ export async function getUserResults(userId: string, limit = 10) {
   `;
 }
 
+// ── Auth helpers (Neon) ──
+
+export type DbUser = {
+  id: string;
+  phone: string;
+  pin_hash: string;
+  name: string;
+  created_at: string;
+};
+
+export async function findUserByPhone(phone: string): Promise<DbUser | null> {
+  const sql = getDb();
+  if (!sql) return null;
+  const rows = await sql`SELECT * FROM users WHERE phone = ${phone} LIMIT 1`;
+  return (rows[0] as DbUser) ?? null;
+}
+
+export async function createUser(phone: string, pinHash: string, name: string): Promise<DbUser> {
+  const sql = getDb();
+  if (!sql) throw new Error('Database not configured');
+  const rows = await sql`
+    INSERT INTO users (phone, pin_hash, name) VALUES (${phone}, ${pinHash}, ${name})
+    RETURNING *
+  `;
+  return rows[0] as DbUser;
+}
+
 /** Leaderboard: BKN tie-breaker (total → TKP → TIU → TWK → duration) */
 export async function getPackageLeaderboard(packageId: string, limit = 50) {
   const sql = getDb();

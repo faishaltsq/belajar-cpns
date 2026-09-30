@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { validatePhoneAndPin } from '@/lib/phone';
 import { verifyPin, createToken } from '@/lib/auth';
-import { findUserByPhone } from '@/lib/supabase';
+import { findUserByPhone } from '@/lib/db';
 
 export async function POST(req: Request) {
   try {
