@@ -52,7 +52,7 @@ export default function LandingPage() {
           {/* CTA Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/simulasi/tryout-1"
+              href="/simulasi"
               className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white font-bold text-base flex items-center justify-center gap-2 clay-button"
             >
               <span>Mulai Tryout SKD (100 Menit)</span>
@@ -405,7 +405,7 @@ export default function LandingPage() {
             </p>
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/simulasi/tryout-1"
+                href="/simulasi"
                 className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white font-bold text-sm flex items-center justify-center gap-2 clay-button"
               >
                 <span>Mulai Tryout Gratis Sekarang</span>

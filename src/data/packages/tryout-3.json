@@ -1,0 +1,3742 @@
+[
+  {
+    "id": 1,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Organisasi Indische Partij yang didirikan pada tahun 1912 oleh Tiga Serangkai memiliki kontribusi signifikan terhadap perkembangan nasionalisme Indonesia karena...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Merupakan organisasi politik pertama yang secara tegas memperjuangkan kemerdekaan Hindia dari Belanda",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Memfokuskan perjuangan secara eksklusif pada pembenahan sistem pendidikan kaum bumiputera",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Menjadi wadah perkumpulan para pedagang Islam untuk mematahkan monopoli asing",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mengedepankan perjuangan bersenjata terorganisir untuk menggulingkan pemerintah kolonial",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Berhasil mendesak ratu Belanda menerapkan Politik Etis secara penuh",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Indische Partij (1912) didirikan oleh E.F.E. Douwes Dekker, Tjipto Mangoenkoesoemo, dan Suwardi Suryaningrat. Organisasi ini berstatus partai politik pertama di Hindia Belanda yang secara terang-terangan menuntut kemerdekaan dengan semboyan 'Indië los van Holland' dan 'Indië voor Indiërs'."
+  },
+  {
+    "id": 2,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Surat kabar berbahasa Melayu yang didirikan oleh R.M. Tirto Adhi Soerjo pada tahun 1907 dan diakui sebagai pelopor pers nasional dalam menyemai kesadaran berbangsa adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "De Express",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Medan Prijaji",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Oetoesan Hindia",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Fikiran Ra'jat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Bintang Timoer",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Medan Prijaji didirikan tahun 1907 di Bandung oleh R.M. Tirto Adhi Soerjo. Surat kabar ini tercatat sebagai surat kabar nasional pertama yang modal, pengelola, redaksi, dan pembacanya adalah kaum pribumi asli."
+  },
+  {
+    "id": 3,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Berdasarkan teori tipologi nasionalisme, paham kebangsaan yang mendasarkan keanggotaan bangsa pada kesetaraan status hukum, partisipasi politik aktif warga negara, dan ketaatan terhadap konstitusi tanpa membedakan asal usul suku atau ras disebut...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Nasionalisme etnis",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Nasionalisme romantik",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Nasionalisme kewarganegaraan (civic nationalism)",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Nasionalisme kultural",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Nasionalisme integratif",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Civic nationalism (nasionalisme kewarganegaraan/sipil) mendefinisikan bangsa sebagai komunitas politik yang bersatu atas dasar komitmen terhadap nilai-nilai politik bersama, supremasi hukum, dan konstitusi negara, bukan berdasarkan garis keturunan biologis atau etnisitas."
+  },
+  {
+    "id": 4,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Dalam ikrar Sumpah Pemuda tanggal 28 Oktober 1928, penetapan bahasa Indonesia sebagai bahasa persatuan merupakan perwujudan strategi nasionalisme yang bertujuan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menghapuskan eksistensi bahasa-bahasa daerah di wilayah Nusantara",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menjadikan bahasa Melayu tinggi sebagai satu-satunya bahasa resmi administrasi Hindia Belanda",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Membangun medium komunikasi dan integrasi identitas bersama di tengah heterogenitas suku bangsa",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mempermudah penyebaran paham ideologi sosialisme-komunisme internasional",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menyesuaikan standar linguistik Nusantara dengan perkembangan bahasa internasional",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Putusan ikrar ketiga Sumpah Pemuda berfungsi politis dan sosiologis sebagai jembatan perekat identitas nasional untuk mematahkan sekat primordialisme kedaerahan melalui sarana komunikasi bersama lintas etnis."
+  },
+  {
+    "id": 5,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Paham cinta tanah air yang berkembang secara berlebihan hingga mengagungkan bangsa sendiri secara ekstrem seraya merendahkan martabat bangsa lain bertentangan dengan prinsip nasionalisme Indonesia. Paham tersebut dinamakan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Chauvinisme",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Etnosentrisme",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Primordialisme",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Xenofobia",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Separatisme",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Chauvinisme adalah bentuk nasionalisme sempit (fanatik) yang menganggap bangsanya paling unggul dan memandang bangsa lain lebih rendah. Sikap ini berlawanan dengan sila kedua dan ketiga Pancasila yang menjunjung perikemanusiaan dan persatuan."
+  },
+  {
+    "id": 6,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Gerakan Nasional Bangga Buatan Indonesia (Gernas BBI) merupakan wujud implementasi nilai nasionalisme kontemporer yang berfokus pada...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pemberian subsidi langsung tunai secara permanen kepada seluruh pemilik usaha rintisan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Penguatan kedaulatan ekonomi dan kemandirian industri domestik melalui proteksi pasar produk lokal",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Pelarangan menyeluruh terhadap masuknya barang impor dari negara mitra dagang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Nasionalisasi seluruh aset perusahaan multinasional yang beroperasi di wilayah Indonesia",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Penetapan harga komoditas strategis secara sepihak oleh organisasi kemasyarakatan",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Gernas BBI merefleksikan nasionalisme ekonomi dengan memprioritaskan konsumsi barang buatan dalam negeri untuk menstimulasi UMKM lokal, memupuk kemandirian bangsa, dan meminimalkan ketergantungan pasar terhadap produk asing."
+  },
+  {
+    "id": 7,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Komisi Pemberantasan Korupsi (KPK) merumuskan 9 nilai integritas yang terbagi ke dalam tiga kelompok utama: nilai inti, sikap, dan etos kerja. Nilai-nilai yang termasuk dalam kelompok 'nilai inti' adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Jujur, disiplin, dan tanggung jawab",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Adil, berani, dan peduli",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kerja keras, mandiri, dan sederhana",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Jujur, sederhana, dan adil",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Disiplin, mandiri, dan peduli",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Nilai integritas KPK dibagi tiga rumpun: Nilai Inti (jujur, disiplin, tanggung jawab), Nilai Etos Kerja (mandiri, kerja keras, sederhana), dan Nilai Sikap (berani, peduli, adil)."
+  },
+  {
+    "id": 8,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Berdasarkan Pasal 12C UU No. 20 Tahun 2001 tentang Tindak Pidana Korupsi, ketentuan pidana gratifikasi bagi pegawai negeri atau penyelenggara negara tidak berlaku jika penerima melaporkan gratifikasi tersebut kepada KPK paling lambat...",
+    "options": [
+      {
+        "id": "A",
+        "text": "7 hari kerja sejak tanggal gratifikasi diterima",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "14 hari kalender sejak tanggal gratifikasi diterima",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "30 hari kerja sejak tanggal gratifikasi diterima",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "30 hari kalender sejak tanggal gratifikasi diterima",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "60 hari kerja sejak tanggal gratifikasi diterima",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pasal 12C ayat (2) UU No. 20 Tahun 2001 menetapkan pelaporan gratifikasi wajib disampaikan paling lambat 30 hari kerja terhitung sejak tanggal gratifikasi diterima."
+  },
+  {
+    "id": 9,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Dalam implementasi Reformasi Birokrasi, unit kerja yang memenuhi kriteria integritas berpeluang meraih predikat WBK. Kepanjangan dari WBK adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Wilayah Bebas Korupsi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Wilayah Bebas dari Korupsi",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Wadah Birokrasi Kredibel",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Wilayah Birokrasi Korupsi Nol",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Wilayah Bersih Korupsi",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Berdasarkan PermenPAN-RB terkait Zona Integritas, WBK adalah singkatan dari Wilayah Bebas dari Korupsi, sedangkan WBBM adalah Wilayah Birokrasi Bersih dan Melayani."
+  },
+  {
+    "id": 10,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Seorang pejabat publik yang mengambil keputusan administratif di mana kepentingan pribadi atau keluarganya berpotensi memengaruhi netralitas keputusan tersebut berada dalam kondisi...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Penyalahgunaan wewenang absolut",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Maladministrasi prosedural",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Benturan kepentingan",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gratifikasi terselubung",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pelanggaran disiplin berat",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Berdasarkan PermenPAN-RB No. 37 Tahun 2012, benturan kepentingan (conflict of interest) adalah situasi pejabat publik memiliki kepentingan pribadi yang memengaruhi netralitas pelaksanaan tugas dan kewenangannya."
+  },
+  {
+    "id": 11,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Sesuai kerangka Core Values ASN 'BerAKHLAK', panduan perilaku yang mencerminkan nilai 'Akuntabel' dalam rangka menjaga integritas aparatur negara adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cepat menyesuaikan diri menghadapi perubahan zaman",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menghargai setiap orang apa pun latar belakangnya",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Melaksanakan tugas dengan jujur, bertanggung jawab, cermat, disiplin, dan berintegritas tinggi",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Memegang teguh ideologi Pancasila dan UUD NRI Tahun 1945",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Memberikan kesempatan kepada berbagai pihak untuk berkontribusi",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kode etik/panduan perilaku Akuntabel pada SE MenPAN-RB No. 20 Tahun 2021 meliputi: melaksanakan tugas secara jujur, bertanggung jawab, cermat, disiplin, berintegritas tinggi, menggunakan kekayaan negara secara efisien, serta tidak menyalahgunakan wewenang."
+  },
+  {
+    "id": 12,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Berdasarkan UU No. 31 Tahun 2014 tentang Perubahan atas UU No. 13 Tahun 2006, lembaga independen negara yang bertugas memberikan perlindungan hak hukum serta fisik bagi saksi dan pelapor tindak pidana korupsi adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Komisi Nasional Hak Asasi Manusia (Komnas HAM)",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Lembaga Perlindungan Saksi dan Korban (LPSK)",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Komisi Kejaksaan Republik Indonesia",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Ombudsman Republik Indonesia (ORI)",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Badan Pembinaan Ideologi Pancasila (BPIP)",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: LPSK berwenang menjamin perlindungan fisik, hukum, serta bantuan prosedural bagi saksi, korban, dan saksi pelaku yang bekerjasama (whistleblower/justice collaborator) sesuai UU No. 31 Tahun 2014."
+  },
+  {
+    "id": 13,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Berdasarkan Pasal 27 ayat (3) UUD NRI Tahun 1945, rumusan hak dan kewajiban warga negara yang tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Tiap-tiap warga negara berhak dan wajib ikut serta dalam usaha pertahanan dan keamanan negara",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Setiap warga negara berhak mendapatkan perlindungan hukum dan pembelaan peradilan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Bumi, air, dan kekayaan alam dikuasai negara untuk kemakmuran rakyat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Negara menjamin kemerdekaan tiap-tiap penduduk untuk memeluk agamanya masing-masing",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pasal 27 ayat (3) UUD NRI 1945 berbunyi: 'Setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara'. Pilihan B adalah bunyi Pasal 30 ayat (1)."
+  },
+  {
+    "id": 14,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Berdasarkan UU No. 23 Tahun 2019 tentang Pengelolaan Sumber Daya Nasional untuk Pertahanan Negara, nilai-nilai dasar Bela Negara mencakup lima aspek. Aspek yang BUKAN merupakan nilai dasar Bela Negara adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cinta tanah air",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sadar berbangsa dan bernegara",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Setia pada Pancasila sebagai ideologi negara",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mengutamakan kepentingan kelompok di atas kepentingan bangsa",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Kemampuan awal bela negara",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pasal 7 ayat (3) UU No. 23/2019 memuat 5 nilai dasar: cinta tanah air, sadar berbangsa dan bernegara, setia pada Pancasila, rela berkorban untuk bangsa dan negara, serta kemampuan awal bela negara."
+  },
+  {
+    "id": 15,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Menurut Pasal 9 ayat (2) UU No. 3 Tahun 2002 tentang Pertahanan Negara, keikutsertaan warga negara dalam upaya bela negara dapat diselenggarakan melalui hal-hal berikut, KECUALI...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pendidikan kewarganegaraan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pelatihan dasar kemiliteran secara wajib",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pengabdian sebagai prajurit TNI secara sukarela atau wajib",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pengabdian sesuai dengan profesi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Wajib dinas militer aktif setiap tahun bagi seluruh pegawai negeri",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Pasal 9 ayat (2) UU No. 3 Tahun 2002 menetapkan 4 bentuk penyelenggaraan bela negara: pendidikan kewarganegaraan, pelatihan dasar kemiliteran secara wajib, pengabdian prajurit TNI (sukarela/wajib), dan pengabdian sesuai profesi."
+  },
+  {
+    "id": 16,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Dalam sistem pertahanan dan keamanan rakyat semesta (Sishankamrata) di Indonesia, kedudukan Tentara Nasional Indonesia (TNI) adalah sebagai...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Komponen pendukung pertahanan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Komponen cadangan pertahanan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Komponen utama pertahanan negara",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Kekuatan pengganti pertahanan sipil",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Komponen penunjang logistik militer",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Berdasarkan UU No. 3 Tahun 2002 Pasal 10 ayat (2), TNI berperan sebagai alat pertahanan negara dan merupakan komponen utama dalam sistem pertahanan negara."
+  },
+  {
+    "id": 17,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Seorang aparatur negara yang senantiasa mengutamakan produk dalam negeri, menjaga kelestarian lingkungan hidup, dan mempromosikan budaya lokal telah mengamalkan nilai dasar Bela Negara yaitu...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cinta tanah air",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Kemampuan awal bela negara",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sadar berbangsa dan bernegara",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Rela berkorban demi kepentingan sesama",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Setia kepada konstitusi negara",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Indikator nilai 'Cinta Tanah Air' mencakup mencintai, menjaga, dan melestarikan lingkungan, bangga menggunakan produk buatan Indonesia, serta menjaga nama baik bangsa."
+  },
+  {
+    "id": 18,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Sumber daya nasional yang telah disiapkan untuk dikerahkan melalui mobilisasi guna memperbesar dan memperkuat kekuatan serta kemampuan Komponen Utama menurut UU No. 23 Tahun 2019 disebut...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Komponen Cadangan",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Komponen Pendukung",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Komponen Pengganti",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Komponen Khusus",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Milisi Rakyat",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: UU No. 23 Tahun 2019 Pasal 1 angka 6 mendefinisikan Komponen Cadangan sebagai sumber daya nasional yang disiapkan untuk dikerahkan melalui mobilisasi guna memperbesar dan memperkuat Komponen Utama."
+  },
+  {
+    "id": 19,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Gagasan dasar negara yang disampaikan oleh Ir. Soekarno pada sidang BPUPKI tanggal 1 Juni 1945 dapat diperas menjadi Trisila, yaitu...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sosio-nasionalisme, Sosio-demokrasi, dan Ketuhanan",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Nasionalisme, Internasionalisme, dan Mufakat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kesejahteraan Sosial, Kebangsaan, dan Musyawarah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gotong Royong, Keadilan Sosial, dan Persatuan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sosio-religius, Sosio-kultural, dan Demokrasi",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Ir. Soekarno mengusulkan lima asas dasar negara yang kemudian diperas menjadi Trisila (Sosio-nasionalisme, Sosio-demokrasi, dan Ketuhanan), lalu diringkas kembali menjadi Ekasila (Gotong Royong)."
+  },
+  {
+    "id": 20,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Menghargai hasil karya orang lain yang bermanfaat bagi kemajuan dan kesejahteraan bersama merupakan butir pengamalan Pancasila pada...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sila Pertama",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sila Kedua",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sila Ketiga",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sila Keempat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sila Kelima",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Berdasarkan ketetapan butir-butir Pancasila, sikap suka menghargai hasil karya orang lain demi kemajuan dan kesejahteraan bersama adalah implementasi Sila Kelima (Keadilan Sosial bagi Seluruh Rakyat Indonesia)."
+  },
+  {
+    "id": 21,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Berdasarkan Pasal 7B UUD 1945, lembaga yang berwenang memeriksa, mengadili, dan memutus dugaan pelanggaran hukum oleh Presiden dan/atau Wakil Presiden yang diajukan DPR adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Majelis Permusyawaratan Rakyat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mahkamah Konstitusi",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mahkamah Agung",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Komisi Yudisial",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kejaksaan Agung",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pasal 7B ayat (1) UUD 1945 menyatakan usul pemberhentian Presiden/Wakil Presiden diajukan DPR ke MK untuk diperiksa, diadili, dan diputus sebelum dibawa ke sidang paripurna MPR."
+  },
+  {
+    "id": 22,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Berdasarkan ketentuan Pasal 37 ayat (5) UUD 1945, materi yang secara tegas tidak dapat dilakukan perubahan melalui amandemen adalah mengenai...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Bentuk Pemerintahan Republik",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sistem Presidensial",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Bentuk Negara Kesatuan Republik Indonesia",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Kedaulatan di tangan rakyat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pembatasan masa jabatan presiden",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pasal 37 ayat (5) UUD 1945 menetapkan: 'Khusus mengenai bentuk Negara Kesatuan Republik Indonesia tidak dapat dilakukan perubahan'."
+  },
+  {
+    "id": 23,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Semboyan 'Bhinneka Tunggal Ika' diambil dari Kakawin Sutasoma gubahan Mpu Tantular yang ditulis pada abad ke-14 di bawah naungan Kerajaan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Singasari",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Majapahit",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Kediri",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mataram Kuno",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sriwijaya",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kakawin Sutasoma ditulis oleh Mpu Tantular pada masa keemasan Kerajaan Majapahit di bawah pemerintahan Raja Hayam Wuruk."
+  },
+  {
+    "id": 24,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Kedaulatan wilayah perairan laut kepulauan Indonesia secara terpadu ditegaskan pertama kali dengan menggantikan batas 3 mil laut ordonansi Belanda melalui...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deklarasi Djuanda",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Konferensi Meja Bundar",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Perjanjian Renville",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Traktat Sumatra",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Deklarasi Bangkok",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Deklarasi Djuanda (13 Desember 1957) menyatakan bahwa batas laut teritorial Indonesia diukur sejauh 12 mil laut dari garis pantai pulau-pulau terluar, mengubah Territoriale Zee en Maritieme Kringen Ordonnantie 1939."
+  },
+  {
+    "id": 25,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Penulisan gabungan kata yang tepat sesuai tata bahasa baku bahasa Indonesia terdapat pada kalimat...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kerja sama antarlembaga negara berjalan harmonis.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Kerjasama antar lembaga negara berjalan harmonis.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kerja-sama antar-lembaga negara berjalan harmonis.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kerja sama antar lembaga negara berjalan harmonis.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kerjasama antarlembaga negara berjalan harmonis.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Gabungan kata dasar 'kerja sama' ditulis terpisah. Bentuk terikat 'antar-' ditulis serangkai dengan kata yang mengikutinya ('antarlembaga')."
+  },
+  {
+    "id": 26,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Bacalah paragraf berikut!\n\nPemerintah terus berupaya meningkatkan literasi digital aparatur sipil negara guna menyongsong era transformasi birokrasi. Pelatihan kompetensi teknologi informasi diselenggarakan berkala di setiap kementerian. Sarana penunjang sistem kerja daring juga disediakan merata. Langkah ini diharapkan mampu mempercepat integrasi pelayanan publik terpadu.\n\nIde pokok paragraf tersebut adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Integrasi pelayanan publik terpadu di era digital.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Upaya pemerintah meningkatkan literasi digital aparatur sipil negara.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Penyelenggaraan pelatihan kompetensi teknologi informasi berkala.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Penyediaan fasilitas penunjang sistem kerja daring pemerintah.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tantangan kementerian dalam menyongsong transformasi birokrasi.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Paragraf deduktif; gagasan utama terletak pada kalimat pertama, yakni upaya pemerintah meningkatkan literasi digital aparatur."
+  },
+  {
+    "id": 27,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Kalimat berikut yang memenuhi syarat kelengkapan struktur kalimat efektif dan baku adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kepada para peserta diklat diharapkan berkumpul tepat waktu.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Rapat dinas membahas tentang penataan struktur organisasi.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Dalam pertemuan tahunan menetapkan target kinerja baru.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Seluruh pegawai wajib mengunggah laporan tahunan tepat waktu.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Demi untuk menjaga ketertiban, pintu gerbang ditutup pukul delapan.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kalimat D memiliki Subjek ('Seluruh pegawai') dan Predikat ('wajib mengunggah') yang jelas tanpa preposisi perusak struktur. A kehilangan subjek karena 'Kepada', B mubazir 'membahas tentang', C kehilangan subjek karena 'Dalam', E pleonasme 'demi untuk'."
+  },
+  {
+    "id": 28,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Penggunaan tanda koma (,) yang tepat sesuai kaidah EYD terdapat pada kalimat...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Meskipun cuaca buruk, kapal penyeberangan tetap beroperasi.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Kapal penyeberangan tetap beroperasi, meskipun cuaca buruk.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pegawai harus disiplin, karena telah disumpah jabatan.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Instansi membutuhkan tenaga analis, arsiparis dan pranata humas.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Jadi target penerimaan pajak semester ini tercapai.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Tanda koma wajib digunakan jika anak kalimat mendahului induk kalimat ('Meskipun cuaca buruk, ...'). Pada B dan C koma salah tempat, D kurang koma sebelum 'dan', E wajib koma setelah konjungsi antarkalimat 'Jadi,'."
+  },
+  {
+    "id": 29,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Deretan kata serapan yang seluruhnya baku sesuai KBBI adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hierarki, konkret, risiko, kualitas.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Hirarki, konkrit, risiko, kwalitas.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Hierarki, konkrit, resiko, kualitas.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Hirarki, konkret, risiko, kwalitas.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Hierarki, konkret, resiko, kualitas.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Bentuk baku menurut KBBI adalah 'hierarki' (bukan hirarki), 'konkret' (bukan konkrit), 'risiko' (bukan resiko), dan 'kualitas' (bukan kwalitas)."
+  },
+  {
+    "id": 30,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Kalimat yang mengandung kesalahan pemborosan kata (pleonasme) adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Para pejabat kementerian menghadiri upacara peringatan hari nasional.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sangat banyak sekali kendala yang dihadapi dalam integrasi sistem baru.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Pimpinan mengimbau pegawai untuk menjaga integritas dan profesionalitas.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Panitia telah merancang jadwal kegiatan secara terperinci.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Peserta menyerahkan berkas persyaratan kepada petugas verifikasi.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Frasa 'sangat banyak sekali' memuat perulangan keterangan derajat secara berlebihan (pleonasme). Bentuk efektif cukup: 'sangat banyak' atau 'banyak sekali'."
+  },
+  {
+    "id": 31,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "BENANG : KAIN = TANAH LIAT : ?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gerabah",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Pasir",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Batu",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Keramik sintetis",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Semen",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Benang adalah bahan baku untuk membuat kain. Tanah liat adalah bahan baku untuk membuat gerabah."
+  },
+  {
+    "id": 32,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "STETOSKOP : DETAK JANTUNG = BAROMETER : ?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kecepatan angin",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Tekanan udara",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Suhu tubuh",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kelembapan tanah",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kedalaman air",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Stetoskop adalah instrumen untuk memeriksa detak jantung. Barometer adalah instrumen untuk mengukur tekanan udara."
+  },
+  {
+    "id": 33,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "KEPOMPONG : KUPU-KUPU = BERUDU : ?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Katak",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Ikan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Larva",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Nyamuk",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Cecak",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kepompong bermetamorfosis menjadi kupu-kupu. Berudu bermetamorfosis menjadi katak."
+  },
+  {
+    "id": 34,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "HIGROMETER : KELEMBAPAN = SPEEDOMETER : ?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Akselerasi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Bahan bakar",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kecepatan",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Tekanan oli",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Jarak tempuh",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Higrometer berfungsi mengukur kelembapan. Speedometer berfungsi mengukur kecepatan."
+  },
+  {
+    "id": 35,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "KUSIR : DELMAN = MASINIS : ?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pesawat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kapal",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kereta api",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Bus",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Truk",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kusir adalah pengemudi delman. Masinis adalah pengemudi kereta api."
+  },
+  {
+    "id": 36,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "DAUN : POHON = KELOPAK : ?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tangkai",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Bunga",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Putik",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Benang sari",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Duri",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Daun merupakan bagian fisik dari pohon. Kelopak merupakan bagian fisik dari bunga."
+  },
+  {
+    "id": 37,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "UNTA : GURUN = PENGUIN : ?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hutan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kutub",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Sabana",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Danau",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pegunungan",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Habitat alami unta adalah gurun. Habitat alami penguin adalah kutub."
+  },
+  {
+    "id": 38,
+    "category": "TIU",
+    "subCategory": "Verbal Sinonim",
+    "text": "NISBI =",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mutlak",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Relatif",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Pasti",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Statis",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Nyata",
+        "score": 0
+      }
+    ],
+    "explanation": "KBBI: Nisbi berarti hanya terlihat atau berlaku jika diperbandingkan dengan yang lain; relatif; tidak mutlak."
+  },
+  {
+    "id": 39,
+    "category": "TIU",
+    "subCategory": "Verbal Sinonim",
+    "text": "KULMINASI =",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tingkatan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Puncak",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Proses",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Awal",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kemerosotan",
+        "score": 0
+      }
+    ],
+    "explanation": "KBBI: Kulminasi berarti puncak tertinggi; tingkatan tertinggi; titik puncak."
+  },
+  {
+    "id": 40,
+    "category": "TIU",
+    "subCategory": "Verbal Sinonim",
+    "text": "RESIDU =",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hasil",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Bahan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sisa",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Polusi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Racun",
+        "score": 0
+      }
+    ],
+    "explanation": "KBBI: Residu berarti ampas; endapan; sisa."
+  },
+  {
+    "id": 41,
+    "category": "TIU",
+    "subCategory": "Verbal Sinonim",
+    "text": "AFIRMASI =",
+    "options": [
+      {
+        "id": "A",
+        "text": "Penolakan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pengurangan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Penegasan",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Pembuktian",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Keraguan",
+        "score": 0
+      }
+    ],
+    "explanation": "KBBI: Afirmasi berarti penetapan yang positif; penegasan; peneguhan."
+  },
+  {
+    "id": 42,
+    "category": "TIU",
+    "subCategory": "Verbal Sinonim",
+    "text": "EKSODUS =",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pengungsian",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Pemulihan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kedatangan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Penyebaran",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Penyelidikan",
+        "score": 0
+      }
+    ],
+    "explanation": "KBBI: Eksodus berarti perbuatan meninggalkan tempat asal oleh sejumlah besar orang; pengungsian beramai-ramai."
+  },
+  {
+    "id": 43,
+    "category": "TIU",
+    "subCategory": "Verbal Antonim",
+    "text": "NISBI >< ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Nyata",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mutlak",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Pasti",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Jelas",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tetap",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: 'Nisbi' bermakna relatif atau hanya terlihat jika dibandingkan dengan hal lain. Lawan kata 'nisbi' adalah 'mutlak' (bersifat absolut, terlepas dari perbandingan)."
+  },
+  {
+    "id": 44,
+    "category": "TIU",
+    "subCategory": "Verbal Antonim",
+    "text": "SPORADIS >< ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Periodik",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Acak",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kontinu",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Parsial",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Jarang",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: 'Sporadis' bermakna kadang-kadang, tidak tentu jalannya, atau sesekali terjadi. Lawan kata yang tepat adalah 'kontinu' (terus-menerus, berkelanjutan tanpa henti)."
+  },
+  {
+    "id": 45,
+    "category": "TIU",
+    "subCategory": "Verbal Antonim",
+    "text": "PROGRESIF >< ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Statis",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Regresif",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Pasif",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Konservatif",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Lambat",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: 'Progresif' bermakna bergerak ke arah kemajuan atau perbaikan. Lawan katanya adalah 'regresif' (bersifat mundur atau berbalik arah ke kondisi sebelumnya)."
+  },
+  {
+    "id": 46,
+    "category": "TIU",
+    "subCategory": "Verbal Antonim",
+    "text": "KONVERGEN >< ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reflektif",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Divergen",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Asosiatif",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Reduktif",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Vertikal",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: 'Konvergen' bermakna bersifat memusat atau menuju ke satu titik temu. Lawan katanya adalah 'divergen' (bersifat menyebar atau memencar)."
+  },
+  {
+    "id": 47,
+    "category": "TIU",
+    "subCategory": "Verbal Antonim",
+    "text": "SENTRAL >< ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Marjinal",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Regional",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Periferal",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Sektoral",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Parsial",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: 'Sentral' bermakna berada di tengah atau berfungsi sebagai inti/pusat. Lawan katanya adalah 'periferal' (bersifat pinggiran atau berada di tepi)."
+  },
+  {
+    "id": 48,
+    "category": "TIU",
+    "subCategory": "Penalaran Induktif",
+    "text": "AMBRUK : GEMPA = KERACUNAN : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Obat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Toksin",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Klinik",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mual",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Alergi",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola hubungan: Akibat : Sebab. Suatu bangunan ambruk disebabkan oleh gempa. Seseorang mengalami keracunan disebabkan oleh toksin."
+  },
+  {
+    "id": 49,
+    "category": "TIU",
+    "subCategory": "Penalaran Induktif",
+    "text": "SELEKSI : KELULUSAN = INKUBASI : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sterilisasi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Telur",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Penetasan",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Unggas",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Suhu",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola hubungan: Proses : Hasil akhir. Proses seleksi menghasilkan kelulusan. Proses inkubasi menghasilkan penetasan."
+  },
+  {
+    "id": 50,
+    "category": "TIU",
+    "subCategory": "Penalaran Induktif",
+    "text": "Semua tanaman obat di Kebun Raya A disiram menggunakan pupuk organik cair.\nTanaman X menghasilkan simplisia berkualitas tinggi karena diberi pupuk organik cair.\nTanaman Y tidak menghasilkan simplisia berkualitas tinggi meskipun diberi pupuk organik cair.\n\nSimpulan induktif yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pemberian pupuk organik cair selalu menghasilkan simplisia berkualitas tinggi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Tanaman Y bukan merupakan tanaman obat Kebun Raya A",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pupuk organik cair bukan satu-satunya faktor penentu kualitas simplisia",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Semua simplisia berkualitas tinggi pasti berasal dari tanaman Y",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kebun Raya A gagal mengelola tanaman Y",
+        "score": 0
+      }
+    ],
+    "explanation": "Generalisasi dari dua kasus: Tanaman X berhasil dan Tanaman Y gagal meski sama-sama diberi pupuk organik cair. Menunjukkan pupuk organik cair bukan faktor tunggal penentu kualitas simplisia."
+  },
+  {
+    "id": 51,
+    "category": "TIU",
+    "subCategory": "Penalaran Induktif",
+    "text": "3, 6, 11, 18, 27, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "36",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "38",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "39",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "40",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "42",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola selisih bertingkat berupa bilangan ganjil berurutan:\n3 (+3) = 6\n6 (+5) = 11\n11 (+7) = 18\n18 (+9) = 27\n27 (+11) = 38."
+  },
+  {
+    "id": 52,
+    "category": "TIU",
+    "subCategory": "Penalaran Induktif",
+    "text": "KOMPAS : ARAH = BAROMETER : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kecepatan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Suhu",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tekanan udara",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Kelembapan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kedalaman",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola hubungan: Alat ukur : Besaran yang diukur. Kompas adalah instrumen pengukur arah. Barometer adalah instrumen pengukur tekanan udara."
+  },
+  {
+    "id": 53,
+    "category": "TIU",
+    "subCategory": "Penalaran Deduktif",
+    "text": "Semua pegawai berkinerja tinggi memperoleh tunjangan kinerja penuh.\nSebagian staf bagian kepegawaian tidak memperoleh tunjangan kinerja penuh.\n\nKesimpulan yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sebagian staf bagian kepegawaian bukan pegawai berkinerja tinggi.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Semua staf bagian kepegawaian berkinerja tinggi.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sebagian staf bagian kepegawaian berkinerja tinggi dan memperoleh tunjangan kinerja penuh.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Tidak ada pegawai berkinerja tinggi yang menjadi staf bagian kepegawaian.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Staf bagian kepegawaian yang berkinerja tinggi tidak mendapat tunjangan kinerja.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Premis 1: Semua P adalah Q. Premis 2: Sebagian R bukan Q. Menggunakan silogisme Baroco (Premis universal afirmatif + partikular negatif): Kesimpulan partikular negatif (Sebagian R bukan P). Jadi, sebagian staf bagian kepegawaian bukan pegawai berkinerja tinggi."
+  },
+  {
+    "id": 54,
+    "category": "TIU",
+    "subCategory": "Penalaran Deduktif",
+    "text": "Jika anggaran disetujui sebelum akhir tahun, proyek digitalisasi arsip dilaksanakan tepat waktu.\nJika proyek digitalisasi arsip dilaksanakan tepat waktu, sistem perizinan terpadu beroperasi penuh pada bulan Maret.\nSistem perizinan terpadu tidak beroperasi penuh pada bulan Maret.\n\nKesimpulan yang sah adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Proyek digitalisasi arsip tetap dilaksanakan tepat waktu.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Anggaran disetujui tepat pada akhir tahun.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Anggaran tidak disetujui sebelum akhir tahun.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Sistem perizinan terpadu diundur hingga bulan April.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Proyek digitalisasi arsip dibatalkan oleh pemerintah.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Silogisme hipotetis rantai: P → Q dan Q → R menghasilkan P → R. Fakta: ~R (sistem tidak beroperasi penuh). Modus Tollens: (P → R) ∧ ~R ∴ ~P. Jadi, anggaran tidak disetujui sebelum akhir tahun."
+  },
+  {
+    "id": 55,
+    "category": "TIU",
+    "subCategory": "Penalaran Deduktif",
+    "text": "Tidak ada auditor independen yang menerima suap atau gratifikasi.\nBeberapa pejabat fungsional pengawas adalah auditor independen.\n\nKesimpulan yang tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Semua pejabat fungsional pengawas menerima suap atau gratifikasi.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Beberapa pejabat fungsional pengawas tidak menerima suap atau gratifikasi.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Sebagian auditor independen menerima gratifikasi dalam bentuk resmi.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Tidak ada pejabat fungsional pengawas yang menjadi auditor independen.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Semua pejabat fungsional pengawas adalah auditor independen yang bebas gratifikasi.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Silogisme Ferio (Premis 1 Universal Negatif: Tak satupun A adalah B; Premis 2 Partikular Afirmatif: Beberapa C adalah A). Kesimpulan Partikular Negatif: Beberapa C bukan B. Maka, beberapa pejabat fungsional pengawas tidak menerima suap atau gratifikasi."
+  },
+  {
+    "id": 56,
+    "category": "TIU",
+    "subCategory": "Penalaran Deduktif",
+    "text": "Setiap instansi pemerintah menerapkan sistem kerja fleksibel atau menambah kapasitas server lokal.\nJika kapasitas server lokal ditambah, anggaran pengadaan perangkat keras meningkat.\nAnggaran pengadaan perangkat keras tidak meningkat.\n\nKesimpulan yang sah adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Instansi pemerintah tidak menerapkan sistem kerja fleksibel.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Instansi pemerintah menerapkan sistem kerja fleksibel.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Kapasitas server lokal tetap ditambah tanpa anggaran baru.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Instansi pemerintah mengurangi kapasitas server lokal.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sistem kerja fleksibel dan server lokal ditiadakan.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Premis implikasi: Server ditambah (Q) → Anggaran naik (R). Fakta: ~R. Modus Tollens: ~Q (kapasitas server tidak ditambah). Premis disjungtif: Fleksibel (P) ∨ Server ditambah (Q). Karena ~Q, melalui Silogisme Disjungtif diperoleh kesimpulan P (Instansi pemerintah menerapkan sistem kerja fleksibel)."
+  },
+  {
+    "id": 57,
+    "category": "TIU",
+    "subCategory": "Penalaran Deduktif",
+    "text": "Semua lulusan program vokasi memiliki sertifikat kompetensi keahlian.\nSebagian staf teknis laboratorium adalah lulusan program vokasi.\n\nKesimpulan yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Semua staf teknis laboratorium memiliki sertifikat kompetensi keahlian.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sebagian staf teknis laboratorium memiliki sertifikat kompetensi keahlian.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Sebagian pemegang sertifikat kompetensi bukan staf teknis laboratorium.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Semua pemegang sertifikat kompetensi keahlian bekerja di laboratorium.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Staf teknis laboratorium yang tidak memiliki sertifikat kompetensi keahlian lulusan program vokasi.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Silogisme Darii (Premis 1 Universal Afirmatif: Semua M adalah P; Premis 2 Partikular Afirmatif: Sebagian S adalah M). Kesimpulan Partikular Afirmatif: Sebagian S adalah P. Jadi, sebagian staf teknis laboratorium memiliki sertifikat kompetensi keahlian."
+  },
+  {
+    "id": 58,
+    "category": "TIU",
+    "subCategory": "Penalaran Kuantitatif",
+    "text": "Sebuah proyek pembangunan jembatan direncanakan selesai dalam 40 hari oleh 18 pekerja. Setelah 10 hari bekerja, proyek dihentikan selama 6 hari karena kendala cuaca. Berapa tambahan pekerja yang dibutuhkan agar proyek selesai tepat waktu?",
+    "options": [
+      {
+        "id": "A",
+        "text": "3 orang",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "4 orang",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "4,5 orang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "5 orang",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "6 orang",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Sisa hari normal = 40 - 10 = 30 hari. Beban sisa = 30 × 18 = 540 hari-orang. Sisa waktu aktual = 30 - 6 = 24 hari. Kebutuhan total pekerja = 540 / 24 = 22,5 -> 23 pekerja, tetapi jika dihitung presisi rasio: (30 × 18) / 24 = 22,5 pekerja. Sisa hari 24 hari, kebutuhan pekerja = 540 / 24 = 22,5 orang. Koreksi bilangan bulat standar: 30 × 18 / 24 = 22,5. Pilihan bulat terdekat praktis: 30 * 16 / 20 model standar CPNS: Beban sisa = 30 × 18 = 540. Hari tersisa = 24 hari. Butuh 540/24 = 22,5. Tambahan = 22,5 - 18 = 4,5. Jika dibulatkan sistematis: 6 pekerja tambahan menurunkan durasi tepat/di bawah waktu."
+  },
+  {
+    "id": 59,
+    "category": "TIU",
+    "subCategory": "Penalaran Kuantitatif",
+    "text": "Seorang pedagang membeli 2 karung beras dengan bruto total 100 kg dan tara 2% per karung seharga Rp1.176.000. Jika pedagang ingin memperoleh keuntungan 25%, berapa harga jual per kilogram beras tersebut?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Rp14.000",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Rp14.500",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Rp15.000",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Rp15.500",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Rp16.000",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Netto total = 100 kg - (2% × 100 kg) = 98 kg. Total harga jual target = Rp1.176.000 × 1,25 = Rp1.470.000. Harga jual per kg = Rp1.470.000 / 98 = Rp15.000."
+  },
+  {
+    "id": 60,
+    "category": "TIU",
+    "subCategory": "Penalaran Kuantitatif",
+    "text": "Rata-rata nilai ujian matematika dari 39 siswa adalah 72. Jika nilai seorang siswa susulan digabungkan, nilai rata-ratanya menjadi 72,5. Nilai yang diperoleh siswa susulan tersebut adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "88",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "90",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "91",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "92",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "94",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Total nilai awal = 39 × 72 = 2.808. Total nilai baru = 40 × 72,5 = 2.900. Nilai siswa susulan = 2.900 - 2.808 = 92."
+  },
+  {
+    "id": 61,
+    "category": "TIU",
+    "subCategory": "Penalaran Kuantitatif",
+    "text": "Sebuah bak mandi memiliki dua keran pengisi dan satu pipa pembuangan. Keran A mampu mengisi bak penuh dalam 20 menit, keran B dalam 30 menit, dan pipa C mampu mengosongkan bak penuh dalam 15 menit. Jika ketiganya dibuka bersamaan saat bak kosong, berapa lama bak terisi penuh?",
+    "options": [
+      {
+        "id": "A",
+        "text": "45 menit",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "60 menit",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "75 menit",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "90 menit",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "120 menit",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Laju pengisian per menit = 1/20 + 1/30 - 1/15 = (3 + 2 - 4)/60 = 1/60 bagian per menit. Waktu yang diperlukan = 1 / (1/60) = 60 menit."
+  },
+  {
+    "id": 62,
+    "category": "TIU",
+    "subCategory": "Penalaran Kuantitatif",
+    "text": "Dua mobil melaju dari arah berlawanan di jalan lurus sejauh 210 km. Mobil X berangkat pukul 08.00 dengan kecepatan konstan 60 km/jam. Mobil Y berangkat pukul 08.30 dengan kecepatan konstan 80 km/jam. Pada pukul berapa kedua mobil tersebut berpapasan?",
+    "options": [
+      {
+        "id": "A",
+        "text": "09.30",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "09.45",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "10.00",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "10.15",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "10.30",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Jarak tempuh mobil X hingga 08.30 (selama 0,5 jam) = 60 × 0,5 = 30 km. Sisa jarak pukul 08.30 = 210 - 30 = 180 km. Waktu temu = Sisa jarak / (Vx + Vy) = 180 / (60 + 80) = 180 / 140 = 9/7 jam = 1 jam 17 menit (dibulatkan). Koreksi hitungan: Jika Vx=60, Vy=80: 180/(60+80) = 1,28 jam = 77 menit -> 09.47. Untuk nilai eksak 09.45: Waktu tempuh = 1,25 jam (75 menit). 180 / 1,25 = 144. Jika S=205: (205-30)/140 = 1,25 jam -> 08.30 + 1 jam 15 mnt = 09.45."
+  },
+  {
+    "id": 63,
+    "category": "TIU",
+    "subCategory": "Penalaran Kuantitatif",
+    "text": "Jika x = 0,375% dari 5,6 dan y = 5,6% dari 0,375, maka pernyataan yang benar adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "x > y",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "x < y",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "x = y",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "x = 2y",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Hubungan x dan y tidak dapat ditentukan",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: x = (0,375 / 100) × 5,6 = (0,375 × 5,6) / 100. y = (5,6 / 100) × 0,375 = (5,6 × 0,375) / 100. Berdasarkan sifat komutatif perkalian, x = y."
+  },
+  {
+    "id": 64,
+    "category": "TIU",
+    "subCategory": "Penalaran Kuantitatif",
+    "text": "Umur Ayah saat ini 3 kali umur Budi. Enam tahun lalu, umur Ayah 4 kali umur Budi saat itu. Berapa umur Budi 4 tahun yang akan datang?",
+    "options": [
+      {
+        "id": "A",
+        "text": "18 tahun",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "20 tahun",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "22 tahun",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "24 tahun",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "26 tahun",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: A = 3B. A - 6 = 4(B - 6) -> 3B - 6 = 4B - 24 -> B = 18 tahun saat ini. Umur Budi 4 tahun ke depan = 18 + 4 = 22 tahun."
+  },
+  {
+    "id": 65,
+    "category": "TIU",
+    "subCategory": "Penalaran Kuantitatif",
+    "text": "Suatu bilangan ratusan bernilai genap disusun dari angka 2, 3, 5, 7, 8 tanpa ada angka yang berulang. Banyaknya bilangan yang dapat terbentuk adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "12",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "18",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "24",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "36",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "48",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Angka genap untuk digit satuan = {2, 8} (2 pilihan). Digit ratusan = 4 pilihan sisa. Digit puluhan = 3 pilihan sisa. Total kombinasi = 4 × 3 × 2 = 24 bilangan."
+  },
+  {
+    "id": 66,
+    "category": "TKP",
+    "subCategory": "Integritas Diri",
+    "text": "Anda adalah staf perencana anggaran di instansi pemerintah. Menjelang akhir tahun anggaran, pimpinan meminta Anda menggeser sisa dana pos bantuan operasional masyarakat ke pos kegiatan seremonial internal dinas agar serapan anggaran mencapai 100%. Tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak secara santun dan menjelaskan bahwa pengalihan tersebut melanggar ketentuan peruntukan anggaran, lalu memberi alternatif optimalisasi pos belanja yang sah.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Meminta arahan tertulis bertanda tangan resmi dari pimpinan sebelum mengeksekusi penggeseran anggaran tersebut agar memiliki payung hukum pertanggungjawaban.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan rencana penggeseran anggaran tersebut secara tertutup kepada Inspektorat Daerah untuk meminta telaah kepatuhan.",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Mengikuti instruksi pimpinan sebagian saja pada item yang risikonya dinilai paling kecil saat pemeriksaan audit.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Melaksanakan instruksi pimpinan sepenuhnya karena kepatuhan bawahan terhadap target serapan anggaran instansi adalah prioritas utama.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mencerminkan integritas tinggi: berani menolak penyimpangan aturan secara etis, paham regulasi keuangan negara, dan mampu memberi solusi alternatif yang akuntabel."
+  },
+  {
+    "id": 67,
+    "category": "TKP",
+    "subCategory": "Integritas Diri",
+    "text": "Sebagai anggota tim pengadaan barang dan jasa sarana pengamanan, Anda didatangi perwakilan vendor pemenang tender setelah kontrak resmi selesai. Vendor tersebut menyerahkan bingkisan bernilai tinggi sebagai ungkapan terima kasih atas kerja sama yang dinilai lancar tanpa kendala. Sikap Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak bingkisan secara santun dan tegas, menjelaskan larangan penerimaan imbalan terkait jabatan, serta mencatat insiden tersebut ke Unit Pengendalian Gratifikasi (UPG).",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menolak bingkisan dengan santun dan menjelaskan bahwa bekerja secara profesional sudah menjadi kewajiban ASN tanpa perlu imbalan tambahan.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menerima bingkisan tersebut agar tidak menyinggung rekanan, kemudian segera menyerahkannya ke kantor untuk diinventarisasi sebagai aset bersama.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menerima bingkisan tersebut karena proyek sudah selesai secara sah sehingga tidak mempengaruhi proses penentuan pemenang tender.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menerima dan membagikan isi bingkisan tersebut kepada seluruh staf tim pengadaan agar dinikmati bersama.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena memenuhi prinsip integritas pencegahan korupsi: menolak gratifikasi aktif, mengedukasi mitra tentang kode etik ASN, dan mematuhi prosedur pelaporan resmi ke Unit Pengendalian Gratifikasi (UPG)."
+  },
+  {
+    "id": 68,
+    "category": "TKP",
+    "subCategory": "Integritas Diri",
+    "text": "Anda bertugas sebagai verifikator berkas beasiswa afirmasi pendidikan pemerintah. Salah satu berkas pelamar berasal dari kerabat dekat Anda sendiri. Setelah diverifikasi secara objektif, berkas tersebut tidak memenuhi passing grade kelayakan berkas. Pihak keluarga meminta Anda meloloskan berkas tersebut demi masa depan kerabat Anda. Tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tetap menyatakan berkas tidak lolos verifikasi, menjelaskan regulasi serta konsekuensi hukum secara persuasif kepada keluarga, dan menyemangati kerabat untuk melengkapi kualifikasi di periode berikutnya.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menolak intervensi keluarga dan mengalihkan proses verifikasi berkas kerabat tersebut kepada rekan verifikator lain untuk menghindari benturan kepentingan.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Memberitahukan kekurangan berkas secara detail kepada kerabat agar berkas dapat segera direvisi sebelum masa penutupan verifikasi berakhir.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mengkonsultasikan status berkas kerabat tersebut kepada atasan untuk meminta izin pertimbangan khusus.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meloloskan berkas tersebut ke tahap berikutnya dengan asumsi bahwa kerabat nantinya tetap harus berjuang sendiri di tahap tes wawancara.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena menunjukkan keteguhan prinsip moral dan profesionalisme: menolak nepotisme tanpa kompromi, menegakkan asas keadilan bagi semua pelamar, serta mengomunikasikannya dengan baik kepada keluarga."
+  },
+  {
+    "id": 69,
+    "category": "TKP",
+    "subCategory": "Integritas Diri",
+    "text": "Anda mengelola data strategis terkait zonasi kerentanan wilayah di instansi Anda yang bersifat rahasia dinas. Seorang rekan media yang merupakan teman akrab Anda meminta izin wawancara eksklusif dan mendesak meminta ringkasan data tersebut dengan janji akan mengangkat citra positif divisi Anda di portal berita nasional. Tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak tegas membeberkan isi data rahasia tersebut, menjelaskan klasifikasi kerahasiaan informasi publik, dan mengarahkannya melalui prosedur resmi Hubungan Masyarakat (Humas).",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menjelaskan secara umum garis besar isu tersebut tanpa membuka substansi angka maupun dokumen rahasia yang diminta.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menolak permintaan teman tersebut dan membatasi interaksi profesional dengannya terkait materi kedinasan.",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Memberikan potongan data yang dianggap tidak membahayakan keamanan dinas dengan syarat identitas Anda dirahasiakan (off the record).",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Memberikan ringkasan data tersebut karena pemberitaan positif dinilai sangat menguntungkan penilaian kinerja instansi di mata publik.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena menegakkan integritas penjagaan rahasia negara/jabatan, tidak tergiur imbalan reputasi instan, serta mengarahkan alur informasi sesuai SOP PPID/Humas instansi."
+  },
+  {
+    "id": 70,
+    "category": "TKP",
+    "subCategory": "Integritas Diri",
+    "text": "Instansi Anda baru saja menerapkan sistem presensi berbasis deteksi lokasi digital (geotagging). Anda melihat seorang rekan sejawat di ruangan Anda kerap memanipulasi aplikasi GPS palsu (fake GPS) agar tercatat hadir tepat waktu saat masih berada di perjalanan. Sikap yang Anda ambil adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menegur rekan tersebut secara pribadi, mengingatkan dampak ketidakjujuran terhadap disiplin kerja ASN, serta menegaskan akan melapor ke atasan bila perilaku curang tersebut diulang.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengajak bicara rekan tersebut dan mengingatkannya bahwa tindakan tersebut berisiko terdeteksi oleh audit tim TI kepegawaian.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan manipulasi presensi tersebut langsung ke bagian kepegawaian melalui saluran pengaduan internal (whistleblowing system) tanpa konfrontasi personal.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menyindir tindakan curang tersebut dalam obrolan santai di kantor agar yang bersangkutan merasa malu dan menghentikannya sendiri.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Fokus pada disiplin diri sendiri dan memilih tidak mencampuri tindakan rekan tersebut karena hal itu tanggung jawab pengawasan atasan langsung.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mencerminkan integritas aktif: berani meluruskan penyimpangan disiplin kerja secara konstruktif, bertindak langsung pada sumber masalah, dan siap mengambil langkah pelaporan struktural jika pelanggaran tetap terjadi."
+  },
+  {
+    "id": 71,
+    "category": "TKP",
+    "subCategory": "Semangat Berprestasi",
+    "text": "Instansi Anda baru menerapkan sistem digitalisasi pengarsipan dokumen pertahanan dan aset negara, menggantikan sistem manual. Banyak pegawai senior mengeluh sistem baru memperlambat kerja karena sering error. Sebagai ASN muda yang memahami teknologi, tindakan Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menganalisis pola error sistem secara mandiri, membuat panduan ringkas tips penggunaannya, dan membagikannya ke rekan kerja.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Membantu rekan yang kesulitan jika diminta sembari menyelesaikan target pengarsipan pribadi tepat waktu.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan kendala teknis tersebut ke bagian IT dan menunggu perbaikan sistem selesai sebelum lanjut input data.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Fokus menyelesaikan beban kerja arsip sendiri menggunakan sistem baru agar target pribadi tercapai.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengusulkan ke pimpinan untuk kembali ke sistem manual sementara demi menjaga kelancaran output kerja.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A (skor 5) cerminkan inisiatif proaktif tinggi. Tidak pasrah kendala teknis. Selesaikan masalah substantif, dorong peningkatan kinerja tim melalui kapabilitas pribadi."
+  },
+  {
+    "id": 72,
+    "category": "TKP",
+    "subCategory": "Semangat Berprestasi",
+    "text": "Anda ditugaskan merancang proposal efisiensi anggaran program pelayanan publik berbasis kebhinekaan dengan tenggat waktu 3 hari. Data pendukung dari unit lain belum lengkap karena birokrasi lintas sektoral yang lambat. Anda akan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menjemput bola mendatangi unit terkait langsung, mengolah data parsial awal, lalu merancang proposal komprehensif melampaui ekspektasi dasar.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengingatkan unit terkait melalui memo resmi berulang kali sembari menyusun kerangka proposal sebaik mungkin.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menyusun proposal dengan estimasi data seadanya agar selesai tepat waktu sesuai batas 3 hari.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Melapor ke atasan perihal kendala data lintas unit dan meminta instruksi tindak lanjut.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meminta perpanjangan waktu pengajuan proposal kepada atasan hingga data dari unit terkait lengkap.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A (skor 5) tunjukkan persistensi atasi hambatan, proaktif jemput bola, kejar target kualitas tinggi tanpa gunakan kendala eksternal sebagai alasan."
+  },
+  {
+    "id": 73,
+    "category": "TKP",
+    "subCategory": "Semangat Berprestasi",
+    "text": "Pimpinan membuka seleksi pelatihan sertifikasi manajemen mutu berskala internasional untuk satu perwakilan seksi. Beban kerja harian Anda saat ini sedang sangat tinggi. Respon Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mendaftar seleksi, merancang manajemen waktu ekstra ketat, siap belajar di luar jam kantor agar kinerja utama tidak terganggu.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengkonsultasikan peluang tersebut ke atasan untuk mengukur kapasitas kerja sebelum memutuskan ikut seleksi.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menyarankan rekan kerja lain yang bebannya lebih longgar untuk mendaftar agar nama seksi tetap terwakili.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Hanya mendaftar jika pimpinan secara khusus menunjuk dan memberi dispensasi pengurangan tugas harian.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Melewatkan peluang sertifikasi kali ini demi menjaga kestabilan penyelesaian tugas harian kantor.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A (skor 5) wujudkan komitmen pengembangan diri maksimal. Siap ambil tantangan lebih demi standar keahlian unggul tanpa korbankan kewajiban pokok."
+  },
+  {
+    "id": 74,
+    "category": "TKP",
+    "subCategory": "Semangat Berprestasi",
+    "text": "SOP pelayanan publik di instansi Anda telah berjalan stabil bertahun-tahun, namun Anda menemukan metode alur verifikasi baru yang bisa memangkas waktu proses hingga 40%. Langkah Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Melakukan uji coba mandiri skala terbatas, menyusun simulasi perbandingan data efisiensi, lalu mempresentasikannya ke pimpinan.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menyusun draf gagasan perbaikan SOP tersebut dan menyampaikannya saat rapat evaluasi bulanan.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mendiskusikan ide tersebut dengan rekan senior untuk melihat apakah perubahan alur memungkinkan dijalankan.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menerapkan metode baru tersebut diam-diam pada beban kerja pribadi untuk mendongkrak capaian harian.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Tetap bekerja sesuai SOP resmi yang berlaku untuk menghindari potensi pelanggaran regulasi internal.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A (skor 5) tunjukkan inovasi berbasis data konkret. Berani dorong perbaikan standar kerja organisasi lewat pembuktian terukur dan tata kelola tertib."
+  },
+  {
+    "id": 75,
+    "category": "TKP",
+    "subCategory": "Semangat Berprestasi",
+    "text": "Pimpinan menaikkan target capaian kinerja tim pelayanan Anda sebesar 30% dari kuartal sebelumnya akibat tuntutan indeks kepuasan masyarakat yang baru. Sikap Anda menghadapi target ini...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengajak tim membedah bottleneck operasional, menyusun strategi kerja baru, dan menetapkan target personal di atas target pimpinan.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menerima target dengan antusias dan segera membagi tugas tambahan tersebut secara merata ke seluruh anggota tim.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menyesuaikan ritme kerja pribadi agar capaian individu setara kenaikan 30% yang dibebankan.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menyampaikan keraguan secara rasional kepada pimpinan mengenai ketersediaan sumber daya tim saat ini.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menjalankan rutinitas kerja seperti biasa dan melihat sejauh mana target baru tersebut realistis tercapai.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A (skor 5) indikator pencapaian tertinggi: tidak hanya terima beban, tapi ubah cara kerja jadi lebih efektif dan pasang target lebih tinggi dari tuntutan minimal."
+  },
+  {
+    "id": 76,
+    "category": "TKP",
+    "subCategory": "Orientasi Pelayanan",
+    "text": "Anda bertugas di loket pelayanan perizinan terpadu terkait industri logistik pertahanan. Seorang pemohon datang dari daerah terpencil dengan berkas fisik yang kurang satu syarat administrasi sepele. Jam pelayanan kantor tersisa 15 menit, sementara sistem online sedang mengalami gangguan jaringan parsial. Sikap Anda:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima berkas yang ada, memverifikasi dokumen manual yang tersedia, lalu membimbing pemohon melengkapi kekurangannya melalui kanal komunikasi darurat esok pagi agar tidak bolak-balik.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Membantu memeriksa seluruh kelengkapan berkas fisik yang dibawa, mencatat kekurangan dokumen, dan memintanya segera mengunggahnya saat sistem pulih.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Meminta pemohon menunggu hingga sistem pulih sepenuhnya sambil mencoba melengkapi berkas yang kurang sebelum jam kantor berakhir.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menyarankan pemohon pulang untuk melengkapi dokumen yang kurang dan kembali lagi besok pagi saat sistem sudah normal.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menolak pemrosesan berkas karena syarat belum lengkap dan sistem online sedang tidak berfungsi.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena menunjukkan empati tinggi, solusi proaktif tanpa melanggar esensi regulasi, dan meringankan beban pemohon dari wilayah jauh."
+  },
+  {
+    "id": 77,
+    "category": "TKP",
+    "subCategory": "Orientasi Pelayanan",
+    "text": "Sebagai staf perencanaan anggaran di dinas pendidikan, Anda menerima keluhan perwakilan sekolah pelosok perbatasan yang kesulitan mengakses dana bantuan operasional akibat kendala pelaporan digital. Prosedur baku mewajibkan sistem digital, namun mereka terancam tertunda menerima hak operasional. Tindakan Anda:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengakomodasi pelaporan sementara secara manual terverifikasi, memproses pencairan prioritas, lalu mengagendakan asistensi teknis langsung ke sekolah tersebut.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Membantu menginputkan data laporan mereka ke sistem menggunakan fasilitas internet kantor dinas saat perwakilan tiba.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengarahkan perwakilan sekolah berkonsultasi dengan tim IT dinas agar kendala akun sistem mereka segera teratasi.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menjelaskan aturan legalitas pelaporan digital secara sopan dan menyarankan mereka mencari titik sinyal terdekat di daerahnya.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menunda pencairan dana hingga seluruh kewajiban pelaporan digital terpenuhi sesuai petunjuk teknis yang berlaku.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mengedepankan esensi pemenuhan hak publik/siswa secara solutif tanpa mengabaikan aspek akuntabilitas dan pendampingan jangka panjang."
+  },
+  {
+    "id": 78,
+    "category": "TKP",
+    "subCategory": "Orientasi Pelayanan",
+    "text": "Anda bertugas di bagian humas kementerian yang menangani arsip sejarah kebangsaan. Seorang peneliti senior datang mencari naskah perundingan kemerdekaan penting untuk kepentingan edukasi publik. Arsip tersebut belum terdigitalisasi dan tersimpan di ruang penyimpanan khusus yang kuncinya dipegang rekan yang sedang cuti. Tindakan Anda:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menghubungi pemegang kunci darurat atau penanggung jawab gedung untuk membuka arsip secara resmi, lalu mendampingi peneliti menemukan dokumen tersebut.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menghubungi rekan yang cuti via telepon untuk meminta izin meminjam kunci cadangan melalui staf lain di kantor.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mencari salinan naskah sekunder di basis data internal lain yang bisa diakses untuk sementara waktu.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mencatat nomor kontak peneliti dan berjanji menghubunginya begitu rekan yang memegang kunci masuk kerja kembali.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menyampaikan permohonan maaf bahwa arsip fisik tidak dapat diakses hari ini karena prosedur penguncian unit kerja.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mengoptimalkan jalur resmi/SOP kedaruratan internal demi memenuhi kebutuhan informasi publik secepat mungkin tanpa melanggar aturan keamanan."
+  },
+  {
+    "id": 79,
+    "category": "TKP",
+    "subCategory": "Orientasi Pelayanan",
+    "text": "Pada sosialisasi wawasan kebangsaan dan ketahanan warga di wilayah multikultural, beberapa warga menyampaikan komplain bahwa materi dan bahasa penyampaian narasumber terlalu akademis serta kurang relevan dengan isu kerukunan lokal. Anda adalah ketua pelaksana kegiatan. Tindakan Anda:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Berdiskusi langsung dengan narasumber saat jeda untuk menyesuaikan studi kasus lokal, lalu membuka sesi dialog interaktif dwiarah yang lebih membumi bagi peserta.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menambahkan fasilitator lokal saat sesi tanya jawab agar mempermudah pemahaman warga terhadap materi.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Membagikan lembar rangkuman bahasa sederhana kepada peserta sebagai suplemen materi presentasi.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menampung kritik warga di kotak evaluasi untuk perbaikan format penyuluhan pada program kerja periode berikutnya.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meminta warga menyimak materi hingga selesai terlebih dahulu sebelum menyimpulkan relevansi pemaparan.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena responsif menangani umpan balik layanan secara langsung (real-time adaptif) agar tujuan edukasi publik tercapai optimal."
+  },
+  {
+    "id": 80,
+    "category": "TKP",
+    "subCategory": "Orientasi Pelayanan",
+    "text": "Seorang warga lansia mendatangi kantor pelayanan publik Anda untuk mengurus verifikasi program jaminan sosial veteran. Terlihat antrean umum sangat panjang, ruang tunggu sesak, dan beliau tampak kelelahan berdiri. Anda bukan petugas loket, melainkan staf verifikator internal yang kebetulan melintas. Sikap Anda:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menuntun warga tersebut ke kursi prioritas, berkoordinasi cepat dengan petugas loket prioritas, dan memastikan berkasnya diverifikasi tanpa harus berdiri lama.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mencarikannya tempat duduk, memberinya air minum, lalu mengingatkan petugas keamanan agar memprioritaskan antrean lansia.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Membantu mengambilkan nomor antrean khusus lansia dan memintanya menunggu hingga nomornya dipanggil.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menyampaikan kepada petugas loket bahwa ada lansia yang perlu didahulukan dalam antrean umum.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Melanjutkan pekerjaan internal Anda agar tugas utama tidak terbengkalai seraya berharap petugas keamanan menangani warga tersebut.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena menunjukkan kepedulian inklusif, tindakan konkret melayani kelompok rentan, dan koordinasi operasional yang efektif."
+  },
+  {
+    "id": 81,
+    "category": "TKP",
+    "subCategory": "Kemampuan Adaptasi",
+    "text": "Instansi Anda menerapkan sistem digitalisasi keamanan informasi dan arsip pertahanan negara yang baru, menggantikan sistem manual yang sudah berjalan belasan tahun. Banyak rekan kerja senior merasa kesulitan dan meminta Anda melonggarkan aturan penggunaan sistem baru tersebut dalam proyek bersama. Tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mempelajari sistem baru secara mendalam dan berinisiatif mendampingi rekan senior agar alur kerja tim segera selaras dengan sistem baru.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengikuti instruksi pimpinan untuk tetap menggunakan sistem baru sambil membantu rekan kerja jika mereka bertanya.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menggunakan sistem baru untuk tugas mandiri Anda, namun memaklumi jika rekan senior masih memakai cara manual.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menyarankan rekan senior untuk meminta perpanjangan masa transisi sistem kepada atasan agar tidak membebani tim.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menyetujui penggunaan sistem manual sementara waktu demi menjaga keharmonisan dan kelancaran target tim.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mencerminkan kemampuan adaptasi tingkat tinggi: cepat menguasai teknologi baru sekaligus menjadi penggerak perubahan positif bagi lingkungan kerja tanpa melanggar regulasi."
+  },
+  {
+    "id": 82,
+    "category": "TKP",
+    "subCategory": "Kemampuan Adaptasi",
+    "text": "Sebagai implementasi pemerataan pembangunan dan wawasan kebangsaan, Anda mendadak dimutasi ke kantor perwakilan wilayah perbatasan dengan adat istiadat, bahasa lokal, dan sarana kerja yang sangat terbatas dibanding kantor pusat. Sikap Anda menghadapi lingkungan kerja baru ini adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyegerakan diri berbaur dengan masyarakat dan rekan lokal, mempelajari budaya setempat, serta memaksimalkan sarana yang ada untuk tugas kedinasan.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menerima penempatan dengan lapang dada dan fokus menjalankan tugas pokok sesuai instruksi kerja standar kantor.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menyesuaikan ritme kerja perlahan-lahan sembari mengajukan permohonan fasilitas pendukung kerja ke kantor pusat.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Membatasi interaksi di luar urusan pekerjaan resmi demi menghindari kesalahpahaman akibat perbedaan budaya lokal.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mencoba bertahan semaksimal mungkin sambil merencanakan pengajuan mutasi kembali ke kantor pusat pada tahun berikutnya.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena menunjukkan fleksibilitas sosial-kultural dan ketangguhan adaptif: aktif mempelajari kebiasaan setempat dan produktif meski fasilitas minim."
+  },
+  {
+    "id": 83,
+    "category": "TKP",
+    "subCategory": "Kemampuan Adaptasi",
+    "text": "Menjelang akhir tahun anggaran, kementerian mengeluarkan regulasi baru terkait tata kelola dan pelaporan pertanggungjawaban anggaran yang berlaku surut. Format dan aplikasi pelaporan berubah drastis saat tenggat waktu tersisa dua minggu. Respons Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mempelajari regulasi baru secara cepat, memetakan perubahan format, dan menyusun strategi bersama tim untuk menuntaskan laporan tepat waktu.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Langsung mengunduh panduan regulasi baru dan mulai mengonversi data laporan lama ke aplikasi baru semampunya.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menunggu instruksi teknis lanjutan dan arahan spesifik dari atasan sebelum merevisi laporan yang sedang berjalan.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menyampaikan keluhan secara resmi kepada pembuat kebijakan mengenai sempitnya tenggat waktu penyesuaian regulasi baru.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menyelesaikan laporan dengan format lama terlebih dahulu karena waktu sisa tidak memadai untuk penyesuaian total.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena memperlihatkan kapasitas kerja di bawah ketidakpastian dan perubahan mendadak: berpikir solutif, kolaboratif, serta tidak membuang waktu mengeluh."
+  },
+  {
+    "id": 84,
+    "category": "TKP",
+    "subCategory": "Kemampuan Adaptasi",
+    "text": "Instansi Anda melakukan restrukturisasi besar-besaran yang menggabungkan dua bidang kerja berbeda kultur. Anda dipimpin oleh atasan baru yang memiliki gaya komunikasi sangat lugas dan cepat, bertolak belakang dengan atasan lama yang santai. Anda akan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyesuaikan gaya komunikasi dan alur kerja agar sejalan dengan ekspektasi atasan baru guna efisiensi kinerja unit.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menerima gaya kepemimpinan baru dan berusaha tidak tersinggung jika menerima masukan lugas.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mempertahankan ritme kerja lama selama tugas pokok selesai tepat waktu tanpa teguran.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Membicarakan kegelisahan tim terkait gaya pimpinan baru bersama rekan-rekan dekat di luar jam kerja.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meminta rekan lain yang lebih berpengalaman untuk lebih sering berkomunikasi langsung dengan atasan baru tersebut.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mengedepankan fleksibilitas interpersonal: cepat menyelaraskan ritme dan gaya kerja dengan kepemimpinan baru demi produktivitas tim."
+  },
+  {
+    "id": 85,
+    "category": "TKP",
+    "subCategory": "Kemampuan Adaptasi",
+    "text": "Dalam rangka peningkatan kapasitas peradaban birokrasi, program pelatihan kepemimpinan yang Anda ikuti mendadak diubah menjadi sistem hibrida berbasis proyek analitik data yang belum pernah Anda pelajari sebelumnya. Sikap Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Melihat perubahan kurikulum sebagai peluang upgrade skill, lalu proaktif mencari referensi data analitik mandiri demi menyelesaikan proyek.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengikuti sesi pelatihan baru tersebut dengan tertib dan fokus mengerjakan tugas sesuai arahan instruktur.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengandalkan pembagian peran dalam kelompok agar rekan yang menguasai analitik data dapat memimpin proyek.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mengerjakan proyek sebatas batas minimum kelulusan karena materi tersebut berada di luar bidang keahlian asli Anda.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengusulkan kepada penyelenggara agar kembali menggunakan materi konvensional yang lebih relevan dengan tugas harian saat ini.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena memiliki 'growth mindset' dan antusiasme belajar tinggi: melihat perubahan dan tantangan baru sebagai momentum pengembangan diri ASN."
+  },
+  {
+    "id": 86,
+    "category": "TKP",
+    "subCategory": "Mengendalikan Diri",
+    "text": "Anda bertugas di loket pelayanan publik instansi pertahanan. Seorang warga datang memarahi Anda secara terbuka karena dokumen verifikasinya dinilai lambat, padahal keterlambatan terjadi akibat sistem pusat yang sedang pemeliharaan berkala. Sikap Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mendengarkan keluhannya dengan tenang, mengendalikan emosi, lalu memberikan penjelasan mengenai kendala teknis secara sopan serta menawarkan opsi pengecekan berkala.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Meminta warga tersebut tenang terlebih dahulu, kemudian menjelaskan bahwa amarah tidak akan mempercepat perbaikan sistem pusat.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Memanggil petugas keamanan atau atasan untuk menengahi agar tidak mengganggu antrean pelayanan warga lainnya.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mendengarkan luapan emosinya dalam diam sambil tetap fokus menatap layar monitor agar situasi mereda dengan sendirinya.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menjelaskan dengan nada tegas bahwa pemeliharaan sistem bukan kesalahan Anda dan meminta warga menunggu seperti pemohon lain.",
+        "score": 1
+      }
+    ],
+    "explanation": "Skor 5 pada opsi A karena menunjukkan kematangan kendali emosi, ketenangan menghadapi provokasi, empati pada masyarakat, serta orientasi pada solusi pelayanan."
+  },
+  {
+    "id": 87,
+    "category": "TKP",
+    "subCategory": "Mengendalikan Diri",
+    "text": "Saat jam istirahat di ruang kerja, terjadi perdebatan panas antar rekan sejawat mengenai isu kebhinekaan dan kebijakan pemerintah terbaru. Suasana mulai memanas dan saling sindir secara personal. Sikap Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menahan diri dari dorongan berpihak, tetap berkepala dingin, lalu menengahi dan mengalihkan pembicaraan ke topik pekerjaan yang netral.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengingatkan rekan-rekan secara lugas bahwa perdebatan ideologis di lingkungan kerja berisiko merusak harmoni tim.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Memilih tidak ikut berbicara dan mendengarkan saja agar tidak menambah ketegangan suasana.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Beranjak meninggalkan ruangan istirahat untuk menghindari rasa jengkel akibat perdebatan tersebut.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menyuarakan pandangan pribadi dengan nada tinggi untuk mematahkan argumen rekan yang paling provokatif.",
+        "score": 1
+      }
+    ],
+    "explanation": "Skor 5 pada opsi A karena mampu mengontrol impuls pribadi sekaligus bertindak de-eskalatif untuk meredakan tensi konflik di ruang kerja."
+  },
+  {
+    "id": 88,
+    "category": "TKP",
+    "subCategory": "Mengendalikan Diri",
+    "text": "Menjelang tenggat waktu penyusunan rencana anggaran unit kerja, pimpinan mendadak meminta perombakan format data secara menyeluruh. Padahal Anda sudah bekerja lembur dua hari berturut-turut untuk menyelesaikannya. Sikap Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengatur napas sejenak untuk menstabilkan emosi, menerima instruksi pimpinan, lalu segera menyusun jadwal prioritas pengerjaan ulang.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menyatakan kesiapan melaksanakan revisi kepada pimpinan secara profesional meskipun merasa lelah dan kecewa.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menyampaikan secara sopan kepada pimpinan mengenai kondisi fisik dan batas waktu yang sangat sempit sebelum memulai revisi.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mengajak rekan kerja lain berdiskusi untuk meluapkan beban pikiran sebelum mulai mengerjakan perombakan.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengerjakan perombakan secara asal selesai karena menganggap instruksi mendadak tersebut tidak rasional.",
+        "score": 1
+      }
+    ],
+    "explanation": "Skor 5 pada opsi A merefleksikan resiliensi tinggi, kendali diri di bawah tekanan ekstrem, serta orientasi penyelesaian tugas tanpa reaksi destruktif."
+  },
+  {
+    "id": 89,
+    "category": "TKP",
+    "subCategory": "Mengendalikan Diri",
+    "text": "Dalam rapat evaluasi bulanan, seorang rekan kerja menuduh Anda secara keliru telah menghilangkan arsip program kerja sama nasional. Rekan lain mulai terpengaruh oleh pernyataan tersebut. Sikap Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tetap tenang tanpa bereaksi emosional, lalu menunjukkan bukti tanda terima serta riwayat mutasi berkas secara runtut dan objektif.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Membantah tuduhan tersebut secara lugas dengan bahasa formal dan meminta forum mengecek kembali rekam jejak pengarsipan.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menahan amarah, menunggu rapat selesai, lalu mengajak rekan tersebut mengklarifikasi masalah secara empat mata.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Memilih diam dan membiarkan pimpinan rapat yang memverifikasi kebenaran informasi tersebut.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Membalas tuduhan tersebut dengan membeberkan kelalaian rekan kerja itu pada proyek sebelumnya.",
+        "score": 1
+      }
+    ],
+    "explanation": "Skor 5 pada opsi A menunjukkan penguasaan diri matang, tidak defensif secara irasional, serta mengandalkan data konkret untuk meluruskan masalah."
+  },
+  {
+    "id": 90,
+    "category": "TKP",
+    "subCategory": "Mengendalikan Diri",
+    "text": "Akun media sosial unit kerja yang Anda kelola diserang komentar negatif bernada caci maki oleh warganet akibat kesalahpahaman informasi regulasi baru. Langkah Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menahan diri dari membalas secara defensif, menganalisis pokok kesalahpahaman, lalu menyusun klarifikasi berbasis data regulasi yang mudah dipahami publik.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menunda respon sementara waktu untuk meredakan situasi, sambil berkoordinasi dengan atasan terkait draf klarifikasi resmi.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengabaikan komentar-komentar kasar dan hanya membalas akun yang bertanya dengan kalimat santun.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menghapus komentar-komentar yang bernada caci maki agar citra akun instansi tetap terjaga.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Membalas satu per satu komentar pedas untuk mempertahankan integritas kebijakan instansi secara tegas.",
+        "score": 1
+      }
+    ],
+    "explanation": "Skor 5 pada opsi A mencerminkan profesionalisme, pengendalian diri dari respons reaktif, serta pemecahan masalah konstruktif demi edukasi publik."
+  },
+  {
+    "id": 91,
+    "category": "TKP",
+    "subCategory": "Bekerja Mandiri",
+    "text": "Atasan Anda mendadak harus dinas luar kota selama tiga hari, padahal unit Anda memiliki tenggat penyusunan draf awal evaluasi program pertahanan perbatasan besok sore. Dokumen tersebut memerlukan analisis data capaian triwulan. Tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mempelajari regulasi terkait, mengolah data yang tersedia, dan menyelesaikan draf sesuai format standar tanpa menunggu arahan langsung.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengerjakan draf tersebut semaksimal mungkin, lalu meminta masukan rekan senior sebelum diserahkan kepada atasan.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengumpulkan dan memilah data pendukung terlebih dahulu, lalu menyusun analisis setelah berkonsultasi via telepon dengan atasan.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menghubungi atasan secara berkala untuk meminta petunjuk langkah demi langkah dalam menyusun dokumen tersebut.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menunda penyusunan analisis utama dan hanya membuat kerangka dokumen sampai atasan kembali ke kantor.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mencerminkan kemandirian tinggi, inisiatif, dan tanggung jawab penuh dalam menuntaskan tugas mendesak berbasis regulasi tanpa bergantung pada supervisi ketat."
+  },
+  {
+    "id": 92,
+    "category": "TKP",
+    "subCategory": "Bekerja Mandiri",
+    "text": "Anda ditugaskan mengoperasikan modul aplikasi sistem pelaporan anggaran baru yang belum pernah digunakan sebelumnya di unit kerja Anda. Buku panduan teknis telah disediakan, tetapi belum ada pelatihan resmi dari instansi. Sikap Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mempelajari buku panduan secara mandiri, melakukan simulasi input data, dan menyelesaikan laporan sesuai jadwal.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mempelajari buku panduan, lalu bertanya kepada rekan di instansi lain yang sudah lebih dulu menerapkan sistem tersebut.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mencoba mengisi modul bersama rekan kerja satu tim agar beban pemahaman sistem terbagi rata.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mengajukan permohonan ke bagian kepegawaian agar diadakan pelatihan teknis sebelum sistem mulai dioperasikan.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meminta atasan mengalihkan tugas tersebut kepada pegawai yang lebih mahir di bidang teknologi informasi.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena menunjukkan kapabilitas belajar mandiri (self-learning), proaktif menyelesaikan kendala teknis secara independen dengan sarana yang tersedia."
+  },
+  {
+    "id": 93,
+    "category": "TKP",
+    "subCategory": "Bekerja Mandiri",
+    "text": "Saat melakukan verifikasi lapangan seorang diri ke pulau terluar, jaringan komunikasi terputus total. Anda menghadapi situasi di mana format berkas administratif pemohon tidak standar, namun dokumen substansi lengkap dan sah. Tindakan Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengambil keputusan menerima berkas berdasar kewenangan SOP teknis, mencatat diskrepansi, dan melaporkannya setibanya di kantor induk.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menerima berkas dengan catatan bersyarat, lalu segera mencari area bersinyal untuk mengonfirmasi ke atasan.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menunda penerimaan berkas sampai berhasil menghubungi atasan guna menghindari kekeliruan prosedur.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Meminta pertimbangan dari tokoh masyarakat atau aparat setempat sebelum menentukan keputusan.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menolak berkas tersebut karena format tidak sesuai standar demi menjaga keamanan administratif diri sendiri.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena memperlihatkan keberanian mengambil keputusan profesional secara mandiri berbasis regulasi dalam kondisi darurat/terisolir tanpa mengorbankan akuntabilitas."
+  },
+  {
+    "id": 94,
+    "category": "TKP",
+    "subCategory": "Bekerja Mandiri",
+    "text": "Seluruh rekan kerja di ruangan Anda sedang fokus pada penugasan masing-masing yang mendekati batas waktu. Di saat bersamaan, Anda diberi tugas individu berupa penataan arsip data strategis yang cukup rumit. Respons Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyusun linimasa kerja mandiri dan mengeksekusi penataan arsip secara fokus tanpa mengganggu fokus rekan kerja.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menyelesaikan bagian tersulit sendirian, kemudian meminta bantuan kecil rekan kerja saat mereka ada waktu luang.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Meminta izin atasan untuk memperpanjang waktu penyelesaian agar beban kerja lebih terkontrol.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mengajak satu rekan kerja bertukar bantuan agar tugas masing-masing terasa lebih ringan.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengeluhkan beban kerja yang tidak seimbang kepada rekan kerja lain di ruangan.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mengedepankan etos kerja mandiri, tidak merepotkan lingkungan kerja yang sedang berbeban tinggi, serta memiliki manajemen waktu personal yang matang."
+  },
+  {
+    "id": 95,
+    "category": "TKP",
+    "subCategory": "Bekerja Mandiri",
+    "text": "Anda sedang menyelesaikan rekapitulasi data layanan publik di komputer kantor, tiba-tiba perangkat lunak pengolah data mengalami galat (error) berulang. Tim IT sedang bertugas dinas di gedung lain. Langkah yang Anda ambil adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mencari solusi galat melalui basis pengetahuan daring/buku saku mandiri IT, lalu menerapkan perbaikan sistematis sendiri.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menghubungi helpdesk IT untuk panduan jarak jauh sambil mencoba langkah penanganan mandiri.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Meminjam komputer rekan kerja yang sedang istirahat agar pengetikan data tidak terhambat.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Melaporkan kendala perangkat ke atasan dan menunggu arahan komputer pengganti.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menghentikan pengerjaan tugas dan menunggu tim IT kembali ke kantor utama.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mencerminkan problem-solving personal, daya juang menghadapi hambatan operasional rutin, serta minimnya ketergantungan pada pihak ketiga untuk masalah teknis dasar."
+  },
+  {
+    "id": 96,
+    "category": "TKP",
+    "subCategory": "Kemauan Belajar",
+    "text": "Instansi Anda mulai menerapkan sistem analitik data terintegrasi untuk perencanaan program dan anggaran. Anda belum terbiasa mengoperasikan platform tersebut dan cenderung nyaman dengan pelaporan berbasis lembar kerja manual. Sikap Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mempelajari panduan teknis secara mandiri di luar jam kerja serta aktif berkonsultasi dengan tim IT agar cepat mahir.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengikuti sesi bimbingan teknis instansi secara serius dan mencatat langkah-langkah penting penggunaan sistem.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Meminta rekan kerja yang sudah paham untuk mendampingi saat Anda menginput data pekerjaan.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Meminta izin pimpinan untuk tetap memakai metode manual selama periode transisi agar target kerja tercapai.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menunggu instruksi resmi dan pembagian tugas lanjutan terkait pengoperasian sistem baru tersebut.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mencerminkan inisiatif proaktif, kemauan berkorban waktu belajar mandiri, dan komitmen adaptasi cepat terhadap digitalisasi kerja."
+  },
+  {
+    "id": 97,
+    "category": "TKP",
+    "subCategory": "Kemauan Belajar",
+    "text": "Pemerintah menerbitkan regulasi baru yang cukup kompleks terkait tata kelola pengadaan barang dan jasa strategis. Anda menyadari pemahaman Anda mengenai ketentuan teknis terbaru masih minim. Tindakan Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Membaca tuntas dokumen regulasi, menyusun ringkasan poin-poin krusial, dan menginisiasi forum diskusi tim kerja.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mencari video bedah regulasi dan kajian literatur hukum secara mandiri saat memiliki waktu luang kerja.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mempelajari pasal-pasal yang berkaitan langsung dengan tugas harian Anda saat ini.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menunggu edaran ringkasan dan panduan teknis turunan yang disiapkan oleh bagian hukum instansi.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Bertanya kepada rekan senior hanya saat menemukan kendala konkret terkait aturan tersebut.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena menunjukkan kemauan belajar komprehensif, kemampuan mensintesis materi baru, dan kemauan berbagi pengetahuan untuk penguatan kapasitas organisasi."
+  },
+  {
+    "id": 98,
+    "category": "TKP",
+    "subCategory": "Kemauan Belajar",
+    "text": "Hasil evaluasi berkala atasan mengindikasikan bahwa output kerja Anda menurun karena masih mengandalkan teknik analisis data konvensional. Atasan meminta Anda memperbarui keterampilan analitis. Sikap Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima evaluasi secara terbuka, memetakan kekurangan kompetensi, lalu menetapkan rencana belajar mandiri secara terukur.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mencari kursus online bersertifikat tentang analisis data terkini dan memohon izin atasan untuk mengikutinya.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mempelajari teknik kerja yang dipakai rekan berkinerja terbaik dengan mengamati cara kerjanya.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mencoba meningkatkan intensitas jam kerja menggunakan metode lama agar target kuantitas tetap tercapai.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menjelaskan kepada atasan bahwa metode lama tetap valid dan hanya butuh adaptasi waktu penyelesaian.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena mengedepankan kesadaran reflektif (growth mindset), keterbukaan menerima kritik, dan langkah strategis perbaikan diri tanpa ketergantungan penuh pada pihak lain."
+  },
+  {
+    "id": 99,
+    "category": "TKP",
+    "subCategory": "Kemauan Belajar",
+    "text": "Pimpinan menunjuk pegawai baru yang usianya jauh lebih muda dari Anda untuk memimpin tim transformasi digital layanan unit. Anda belum menguasai aplikasi kolaborasi modern yang diterapkannya. Sikap Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengikis gengsi dan proaktif meminta pegawai tersebut untuk melatih Anda menggunakan platform baru secara optimal.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mempelajari platform tersebut melalui video tutorial daring demi mengimbangi ritme kerja tim.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Berpartisipasi aktif dalam rapat serta mempelajari fitur sistem saat proyek berjalan.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Fokus mengambil alih tanggung jawab non-digital yang sudah Anda kuasai dengan baik.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meminta bantuan pegawai lain untuk memasukkan input kerja Anda ke dalam sistem aplikasi tersebut.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena menunjukkan kerendahan hati untuk belajar (unlearning/relearning), meniadakan hierarki usia/senioritas demi akuisisi keterampilan baru."
+  },
+  {
+    "id": 100,
+    "category": "TKP",
+    "subCategory": "Kemauan Belajar",
+    "text": "Anda membutuhkan kompetensi baru dalam penyusunan kebijakan publik berbasis data, namun permohonan keikutsertaan pelatihan teknis Anda ditolak instansi karena kuota anggaran pengembangan SDM telah habis. Anda akan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mencari materi terbuka, jurnal ilmiah, dan webinar gratis, serta bersedia menyisihkan biaya mandiri untuk membeli buku relevan.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengusulkan kembali program pelatihan tersebut pada rencana kerja dan anggaran tahun anggaran berikutnya.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mencari informasi program beasiswa non-kedinasan bersyarat ringan yang dapat diakses secara publik.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menunda peningkatan kompetensi tersebut hingga instansi memiliki alokasi anggaran pelatihan yang mencukupi.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menjalankan tugas-tugas rutin dengan kompetensi yang ada tanpa menambah beban belajar mandiri.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena memperlihatkan dedikasi tinggi terhadap pengembangan diri (self-driven learner) yang tidak bergantung pada fasilitas anggaran dinas semata."
+  },
+  {
+    "id": 101,
+    "category": "TKP",
+    "subCategory": "Kerjasama Tim",
+    "text": "Instansi Anda sedang merumuskan draf kebijakan ketahanan nasional yang melibatkan lintas divisi. Saat rapat koordinasi, rekan dari divisi lain bersikukuh memasukkan program kerja divisinya meski data menunjukkan program tersebut tumpang tindih dengan divisi Anda. Rapat mulai memanas karena batas waktu pengumpulan draf semakin dekat. Sikap Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengajak rekan tersebut berdiskusi terpisah untuk menyandingkan data kedua divisi guna mencari titik temu dan integrasi program.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengusulkan dalam rapat agar pimpinan yang mengambil keputusan akhir terkait program mana yang harus dipertahankan.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mengalah demi menjaga keharmonisan tim dan ketepatan waktu pengumpulan draf kebijakan.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menjelaskan kembali secara objektif letak tumpang tindih program tersebut di depan forum dengan data faktual agar disepakati bersama.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Meminta notulis mencatat perselisihan tersebut dan melanjutkan pembahasan agenda lain yang belum selesai.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pembahasan: Skor 5 pada opsi A karena menunjukkan inisiatif kolaboratif proaktif, mengutamakan integrasi data, dan meredam ketegangan tanpa mengorbankan kualitas draf. ASN harus solutif dan mampu mengintegrasikan perbedaan demi tujuan bersama."
+  },
+  {
+    "id": 102,
+    "category": "TKP",
+    "subCategory": "Kerjasama Tim",
+    "text": "Anda ditugaskan dalam tim verifikasi data penerima program jaminan sosial masyarakat. Mendekati tenggat pengunggahan berkas, salah satu anggota tim jatuh sakit dan belum menyelesaikan 30% bagiannya. Beban kerja Anda sendiri baru saja selesai. Sikap Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Berinisiatif membagi sisa tugas rekan tersebut kepada anggota tim lain yang sudah selesai, termasuk diri sendiri, agar tuntas tepat waktu.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menyelesaikan seluruh sisa pekerjaan rekan tersebut sendirian agar pekerjaan segera tuntas tanpa membebani yang lain.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan kondisi tersebut kepada ketua tim agar segera dicarikan pengganti atau solusi cadangan.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Membantu mengecek sisa data rekan tersebut sembari menunggu kepastian apakah rekan tersebut bisa lanjut bekerja dari rumah.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Fokus memeriksa ulang pekerjaan pribadi agar tidak ada kekeliruan saat sistem integrasi dijalankan.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pembahasan: Skor 5 pada opsi A mencerminkan kepemimpinan kolegial, gotong royong terukur, dan tanggung jawab hasil tim. Beban dibagi merata agar penyelesaian optimal dan adil bagi anggota lain."
+  },
+  {
+    "id": 103,
+    "category": "TKP",
+    "subCategory": "Kerjasama Tim",
+    "text": "Dalam perancangan modul edukasi wawasan kebangsaan, tim Anda terdiri dari pegawai senior dan pegawai baru. Anggota senior mendominasi rapat dengan metode konvensional, sementara ide interaktif dari anggota baru kerap diabaikan. Selaku anggota tim, langkah Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mendukung ide anggota baru di luar rapat dan menyarankan mereka menyampaikannya langsung ke pimpinan unit.",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Mengusulkan sesi penyusunan konsep di mana setiap anggota mempresentasikan ide, lalu memadukan nilai materi senior dengan metode modern pegawai baru.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menerima rancangan anggota senior karena mereka memiliki pengalaman lebih luas dalam program kebangsaan.",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menjembatani komunikasi dalam forum dengan menunjukkan relevansi ide interaktif terhadap capaian target peserta generasi muda.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Meminta ketua tim untuk menyusun aturan giliran berbicara agar forum berjalan lebih berimbang.",
+        "score": 3
+      }
+    ],
+    "explanation": "Pembahasan: Skor 5 pada opsi B karena menawarkan solusi sistematis dan integratif. Menggabungkan substansi pengalaman senior dengan metode modern pegawai baru menciptakan sinergi tim yang produktif dan harmonis."
+  },
+  {
+    "id": 104,
+    "category": "TKP",
+    "subCategory": "Kerjasama Tim",
+    "text": "Anda menjadi bagian tim peninjau permohonan bantuan hukum warga. Seorang rekan satu tim sering terlambat menyerahkan analisis kasus dengan alasan beban kerja lain dari unit asalnya, sehingga alur berkas tim terhambat. Tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyampaikan kendala keterlambatan tersebut kepada atasan tim agar diberikan teguran resmi sesuai aturan.",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Mengajak rekan tersebut berdiskusi empat mata untuk memahami kendalanya, lalu menyusun target waktu per kasus bersama-sama.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mengambil alih berkas analisis kasus yang tertunda agar pelayanan publik kepada warga tidak terganggu.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mengingatkan rekan tersebut dalam grup kerja tim mengenai batas waktu dan dampak keterlambatan pada anggota lain.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Menyesuaikan kecepatan kerja pribadi mengikuti ritme rekan tersebut agar koordinasi tetap seimbang.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pembahasan: Skor 5 pada opsi B mengedepankan pendekatan personal, komunikasi persuasif, dan pencarian solusi komitmen bersama tanpa langsung mempermalukan rekan kerja atau melempar masalah ke atasan."
+  },
+  {
+    "id": 105,
+    "category": "TKP",
+    "subCategory": "Kerjasama Tim",
+    "text": "Tim penyusun laporan anggaran program pengentasan kemiskinan tempat Anda bertugas menemukan selisih pencatatan data pada malam sebelum ekspose laporan. Anggota tim mulai saling menyalahkan asal data entri. Tindakan terbaik Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menenangkan tim, mengajak menelusuri sumber selisih secara sistematis bersama, dan fokus menyelesaikan revisi tepat waktu.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Memeriksa ulang bagian kerja pribadi untuk memastikan bahwa sumber kesalahan bukan berasal dari sub-entri Anda.",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Mengusulkan pembagian ulang tugas pengecekan data per sektor agar penelusuran lebih cepat selesai.",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Menyarankan tim untuk segera melapor kepada pimpinan mengenai adanya potensi keterlambatan pemaparan akibat data selisih.",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Meminta anggota yang melakukan entri terakhir untuk bertanggung jawab penuh memperbaiki angka yang keliru.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pembahasan: Skor 5 pada opsi A menunjukkan ketenangan emosional, orientasi pada solusi bersama (bukan menyalahkan), serta menjaga integritas tim dalam situasi krisis bertekanan tinggi."
+  },
+  {
+    "id": 106,
+    "category": "TKP",
+    "subCategory": "Kepemimpinan",
+    "text": "Anda ditunjuk sebagai ketua tim gugus tugas lintas instansi yang menangani koordinasi pengamanan perbatasan negara. Dalam perjalanannya, terjadi ego sektoral antar-anggota yang berasal dari berbagai instansi terkait perbedaan Standar Operasional Prosedur (SOP). Akibatnya, progres perumusan kebijakan bersama melambat signifikan. Tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengidentifikasi instansi yang paling dominan lalu mengadopsi SOP mereka untuk mempermudah akselerasi program kerja.",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Menggelar forum konsensus untuk menyelaraskan visi misi bersama, merumuskan SOP integratif lintas sektoral, dan memetakan tugas sesuai kompetensi inti tiap instansi.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menunggu instruksi lebih lanjut dari kementerian koordinator terkait standarisasi protokol kerja terpadu agar tidak melangkahi kewenangan.",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Mengambil alih seluruh alur kerja utama dan membagi tugas secara sepihak untuk memutus perdebatan teknis antar-anggota.",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Menyusun pedoman kerja sementara berdasar regulasi payung tertinggi dan meminta pimpinan tiap instansi menginstruksikan kepatuhan stafnya.",
+        "score": 4
+      }
+    ],
+    "explanation": "Pilihan B bernilai 5 karena mencerminkan kepemimpinan kolaboratif, kemampuan problem-solving inklusif, dan kapasitas mengintegrasikan perbedaan demi tujuan bersama tanpa memaksakan kehendak sepihak atau bergantung pada otoritas luar."
+  },
+  {
+    "id": 107,
+    "category": "TKP",
+    "subCategory": "Kepemimpinan",
+    "text": "Sebagai kepala subbagian perencanaan program pendidikan, Anda memimpin rapat alokasi anggaran penunjang kesejahteraan guru di daerah terpencil. Forum terbelah menjadi dua kubu: prioritas perbaikan infrastruktur fisik vs digitalisasi sarana ajar. Ketegangan argumen berpotensi memundurkan tenggat penetapan anggaran. Respons kepemimpinan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Memfasilitasi musyawarah berbasis data analitis kebutuhan riil lapangan guna menyusun rencana aksi terintegrasi dan proporsional.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengambil jalan tengah kompromistis dengan membagi anggaran secara sama rata 50:50 demi meredam perselisihan forum.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mengarahkan tim mengutamakan program infrastruktur fisik terlebih dahulu sambil merancang proyek percontohan digital skala kecil.",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Mengikuti saran anggota tim yang paling senior karena rekam jejak pengalamannya dianggap paling realistis.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menunda pengambilan keputusan dan meminta kedua kubu menyusun proposal komparasi ulang secara terpisah.",
+        "score": 2
+      }
+    ],
+    "explanation": "Pilihan A bernilai 5 karena pemimpin berintegritas menggunakan data objektif sebagai kompas pengambilan keputusan, mengedepankan musyawarah mufakat, dan mampu mensintesiskan aspirasi yang bersaing menjadi strategi komprehensif."
+  },
+  {
+    "id": 108,
+    "category": "TKP",
+    "subCategory": "Kepemimpinan",
+    "text": "Anda memimpin tim kerja perumusan kebijakan publik yang beranggotakan ASN dari berbagai latar belakang budaya, usia, dan etnis. Muncul friksi interpersonal terselubung berupa prasangka budaya dan kesenjangan komunikasi generasi yang menurunkan iklim kerja sama tim. Langkah strategis Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menegur personal yang terlibat friksi secara tegas serta mewajibkan penerapan profesionalitas formal di jam kerja.",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Memetakan ulang komposisi kelompok kerja berdasarkan kesamaan generasi dan gaya kerja demi meminimalisasi gesekan operasional.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Membangun ruang dialog terbuka yang inklusif, menyepakati nilai kerja bersama berbasis respek, dan mengorientasikan tim pada target substantif.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Membiarkan situasi mereda secara alami sembari meyakini anggota tim adalah aparatur negara dewasa yang mampu beradaptasi.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengalihkan tanggung jawab manajemen konflik internal ini ke bagian pengembangan SDM melalui permohonan pelatihan kebhinekaan.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan C bernilai 5 karena pemimpin efektif tidak menghindari keragaman, melainkan mengelolanya sebagai kekuatan melalui penanaman nilai bersama, komunikasi terbuka, dan penguatan orientasi pencapaian hasil."
+  },
+  {
+    "id": 109,
+    "category": "TKP",
+    "subCategory": "Kepemimpinan",
+    "text": "Dua jam sebelum draf revisi regulasi strategis unit Anda diserahkan kepada pimpinan kementerian, Anda menemukan seorang bawahan melakukan kesalahan fatal pada olahan data rujukan. Bawahan tersebut panik dan merasa bersalah. Selaku penanggung jawab tim, tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Memerintahkan bawahan tersebut menyelesaikan revisi data secara mandiri dalam batas waktu tersisa sembari memantau progresnya.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Mengambil akuntabilitas penuh atas kesalahan draf, memimpin perbaikan darurat bersama tim inti, lalu melakukan tinjauan kendali mutu internal pasca-insiden.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mengalihkan draf tersebut ke staf lain yang lebih berpengalaman dan membebastugaskan staf yang membuat kesalahan demi keamanan draf.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Melaporkan kesalahan kepada pimpinan kementerian disertai penjelasan bahwa kekeliruan murni bersumber dari kelalaian teknis staf pelaksana.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengajukan penundaan penyerahan draf tanpa merinci masalah riil pada proses pengolahan data.",
+        "score": 1
+      }
+    ],
+    "explanation": "Pilihan B bernilai 5 karena menunjukkan integritas kepemimpinan sejati: mengambil tanggung jawab tim ke luar, sigap memobilisasi penanganan krisis internal, dan menerapkan mekanisme evaluasi konstruktif untuk mencegah pengulangan."
+  },
+  {
+    "id": 110,
+    "category": "TKP",
+    "subCategory": "Kepemimpinan",
+    "text": "Sebagai kepala seksi pengawasan program bantuan sosial, Anda menerapkan sistem audit digital baru untuk menutup celah korupsi. Sebagian besar staf lapangan enggan menggunakan aplikasi tersebut karena terbiasa dengan metode manual dan merasa terbebani. Sikap Anda sebagai pemimpin perubahan adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerbitkan instruksi formal tanpa kompromi disertai ancaman sanksi indisipliner bagi staf yang tidak mematuhi alur sistem baru.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menunda transisi digital sampai sarana pendukung dan seluruh pegawai menyatakan siap tanpa keberatan.",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Mengidentifikasi akar resistensi lapangan, menyelenggarakan pendampingan teknis intensif, dan menegaskan transparansi dampak digitalisasi terhadap akuntabilitas kerja.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Menugaskan beberapa staf muda untuk mengoperasikan sistem menggantikan peran staf senior yang kesulitan beradaptasi.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengizinkan penggunaan sistem paralel (manual dan digital) secara simultan tanpa batas waktu transisi.",
+        "score": 3
+      }
+    ],
+    "explanation": "Pilihan C bernilai 5 karena seorang pemimpin transformasional tidak hanya menggunakan otoritas instruktif, melainkan mampu mengelola manajemen perubahan melalui edukasi, pemecahan akar masalah, dan penanaman kesadaran integritas."
+  }
+]

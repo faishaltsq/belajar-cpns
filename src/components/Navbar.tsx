@@ -57,7 +57,7 @@ export default function Navbar() {
                   Masuk
                 </Link>
                 <Link
-                  href="/simulasi/tryout-1"
+                  href="/simulasi"
                   className="clay-button text-sm bg-purple-500 hover:bg-purple-400 text-white px-4 py-1.5"
                 >
                   Mulai Gratis

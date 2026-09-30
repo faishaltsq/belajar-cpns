@@ -8,22 +8,31 @@ import { QuestionNavigationGrid } from '@/components/QuestionNavigationGrid';
 import { FinishExamModal } from '@/components/FinishExamModal';
 import { calculateExamScore } from '@/lib/scoring';
 import { ExamAnswer, Question } from '@/lib/types';
-import allQuestions from '@/data/sample_questions.json';
+import { loadPackage } from '@/lib/loadPackage';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 
 const EXAM_DURATION = 6000; // 100 minutes
-const QUESTIONS: Question[] = allQuestions as Question[];
 
 export default function SimulasiPage({ params }: { params: { id: string } }) {
   const router = useRouter();
   const storageKey = `exam_answers_${params.id}`;
   const startKey = `exam_start_${params.id}`;
 
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [loadingQuestions, setLoadingQuestions] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Map<number, ExamAnswer>>(() => new Map());
   const [showModal, setShowModal] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const submittingRef = useRef(false);
+
+  // Load package questions asynchronously
+  useEffect(() => {
+    loadPackage(params.id).then((qs) => {
+      setQuestions(qs);
+      setLoadingQuestions(false);
+    });
+  }, [params.id]);
 
   // Restore from localStorage on mount
   useEffect(() => {
@@ -58,7 +67,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
   const handleSelectOption = (optionId: string) => {
     setAnswers((prev) => {
-      const q = QUESTIONS[currentIndex];
+      const q = questions[currentIndex];
       const next = new Map(prev);
       const existing = next.get(q.id);
       next.set(q.id, {
@@ -72,7 +81,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
   const handleToggleFlag = () => {
     setAnswers((prev) => {
-      const q = QUESTIONS[currentIndex];
+      const q = questions[currentIndex];
       const next = new Map(prev);
       const existing = next.get(q.id);
       next.set(q.id, {
@@ -94,14 +103,14 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         EXAM_DURATION
       );
       const answerArr = Array.from(answersMap.values());
-      const result = calculateExamScore(QUESTIONS, answerArr, durationSeconds);
+      const result = calculateExamScore(questions, answerArr, durationSeconds);
       const resultId = `${params.id}-${Date.now()}`;
       localStorage.setItem(`exam_result_${resultId}`, JSON.stringify(result));
       localStorage.removeItem(storageKey);
       localStorage.removeItem(startKey);
       router.push(`/simulasi/hasil/${resultId}`);
     },
-    [params.id, storageKey, startKey, router]
+    [params.id, storageKey, startKey, router, questions]
   );
 
   // Stable ref so Timer's onTimeUp closure doesn't go stale
@@ -119,8 +128,8 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     submitExam(answers);
   };
 
-  const currentQ = QUESTIONS[currentIndex];
-  const currentAns = answers.get(currentQ.id);
+  const currentQ = questions[currentIndex];
+  const currentAns = currentQ ? answers.get(currentQ.id) : undefined;
 
   let answered = 0;
   let flagged = 0;
@@ -133,10 +142,24 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     ? Math.max(0, EXAM_DURATION - elapsedRef.current)
     : EXAM_DURATION;
 
-  if (!hydrated) {
+  if (!hydrated || loadingQuestions) {
     return (
       <div className="min-h-screen flex items-center justify-center text-slate-400">
         Memuat sesi ujian...
+      </div>
+    );
+  }
+
+  if (questions.length === 0) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 text-center p-4">
+        <p className="text-slate-600 font-semibold">Paket soal belum tersedia.</p>
+        <button
+          onClick={() => router.push('/simulasi')}
+          className="py-2.5 px-6 bg-purple-500 text-white rounded-2xl text-sm clay-button font-medium"
+        >
+          Kembali ke Daftar Paket
+        </button>
       </div>
     );
   }
@@ -150,7 +173,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
           <div className="flex items-center gap-3 min-w-0">
             <span className="font-bold text-sm sm:text-base truncate text-slate-800">Simulasi CAT CPNS</span>
             <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-600 border border-purple-200 font-medium whitespace-nowrap">
-              Tryout 1
+              {params.id.replace('tryout-', 'Tryout ')}
             </span>
           </div>
           <div className="flex items-center gap-3">
@@ -190,8 +213,8 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
               Sebelumnya
             </button>
             <button
-              onClick={() => setCurrentIndex((i) => Math.min(QUESTIONS.length - 1, i + 1))}
-              disabled={currentIndex === QUESTIONS.length - 1}
+              onClick={() => setCurrentIndex((i) => Math.min(questions.length - 1, i + 1))}
+              disabled={currentIndex === questions.length - 1}
               className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed clay-button"
             >
               Selanjutnya
@@ -203,7 +226,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         {/* Sidebar */}
         <aside className="hidden lg:block w-64 shrink-0">
           <QuestionNavigationGrid
-            questions={QUESTIONS}
+            questions={questions}
             answers={answers}
             currentIndex={currentIndex}
             onSelectIndex={setCurrentIndex}
@@ -213,7 +236,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
       <FinishExamModal
         isOpen={showModal}
-        totalQuestions={QUESTIONS.length}
+        totalQuestions={questions.length}
         answeredCount={answered}
         flaggedCount={flagged}
         onCancel={() => setShowModal(false)}
