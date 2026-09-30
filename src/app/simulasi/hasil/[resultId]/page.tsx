@@ -6,6 +6,7 @@ import { ExamResult, Question, ExamAnswer } from '@/lib/types';
 import { calculateSubcategoryDiagnostic } from '@/lib/diagnostic';
 import { ExamQuestionReview } from '@/components/ExamQuestionReview';
 import { DiagnosticReportCard } from '@/components/DiagnosticReportCard';
+import { LeaderboardCard } from '@/components/LeaderboardCard';
 import {
   CheckCircle,
   XCircle,
@@ -15,6 +16,7 @@ import {
   ShieldCheck,
   ChartBar,
   ListDashes,
+  Ranking,
 } from '@phosphor-icons/react';
 import { useUser } from '@/lib/useUser';
 
@@ -24,7 +26,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [userAnswers, setUserAnswers] = useState<ExamAnswer[]>([]);
   const [notFound, setNotFound] = useState(false);
-  const [activeTab, setActiveTab] = useState<'summary' | 'review'>('summary');
+  const [activeTab, setActiveTab] = useState<'summary' | 'review' | 'leaderboard'>('summary');
 
   const tryoutId = params.resultId.split('-').slice(0, -1).join('-');
   const retryPath = tryoutId ? `/simulasi/${tryoutId}` : '/simulasi/tryout-1';
@@ -218,6 +220,17 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
             <ListDashes size={14} weight="duotone" />
             Bedah Soal &amp; Pembahasan
           </button>
+          <button
+            onClick={() => setActiveTab('leaderboard')}
+            className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold rounded-t-lg transition border-b-2 -mb-px ${
+              activeTab === 'leaderboard'
+                ? 'border-[var(--primary)] text-[var(--primary)]'
+                : 'border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)]'
+            }`}
+          >
+            <Ranking size={14} weight="duotone" />
+            Peringkat Nasional
+          </button>
         </div>
 
         {/* Tab Content */}
@@ -233,6 +246,9 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
           )}
           {activeTab === 'review' && (
             <ExamQuestionReview questions={questions} userAnswers={userAnswers} />
+          )}
+          {activeTab === 'leaderboard' && (
+            <LeaderboardCard packageId={tryoutId || 'tryout-1'} currentScore={result.totalScore} />
           )}
         </div>
 

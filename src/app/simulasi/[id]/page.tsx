@@ -115,6 +115,21 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
       localStorage.setItem(`exam_result_${resultId}`, JSON.stringify(result));
       localStorage.setItem(`exam_questions_${resultId}`, JSON.stringify(questions));
       localStorage.setItem(`exam_user_answers_${resultId}`, JSON.stringify(answerArr));
+      // Fire-and-forget: save to DB for leaderboard
+      fetch('/api/results', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          packageId: params.id,
+          answers: Object.fromEntries(answerArr.map(a => [a.questionId, a.selectedOptionId])),
+          scoreTwk: result.twk.score,
+          scoreTiu: result.tiu.score,
+          scoreTkp: result.tkp.score,
+          totalScore: result.totalScore,
+          isPassed: result.isPassedAll,
+          durationUsed: durationSeconds,
+        }),
+      }).catch(() => {}); // don't block UX
       localStorage.removeItem(storageKey);
       localStorage.removeItem(startKey);
       router.push(`/simulasi/hasil/${resultId}`);

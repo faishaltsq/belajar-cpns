@@ -62,3 +62,29 @@ export async function getUserResults(userId: string, limit = 10) {
     LIMIT ${limit}
   `;
 }
+
+/** Leaderboard: BKN tie-breaker (total → TKP → TIU → TWK → duration) */
+export async function getPackageLeaderboard(packageId: string, limit = 50) {
+  const sql = getDb();
+  if (!sql) return [];
+  return sql`
+    SELECT
+      id,
+      total_score,
+      score_tkp,
+      score_tiu,
+      score_twk,
+      duration_used,
+      is_passed,
+      finished_at
+    FROM exam_results
+    WHERE package_id = ${packageId}
+    ORDER BY
+      total_score DESC,
+      score_tkp DESC,
+      score_tiu DESC,
+      score_twk DESC,
+      duration_used ASC
+    LIMIT ${limit}
+  `;
+}
