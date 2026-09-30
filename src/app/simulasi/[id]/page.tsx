@@ -8,7 +8,6 @@ import { QuestionNavigationGrid } from '@/components/QuestionNavigationGrid';
 import { FinishExamModal } from '@/components/FinishExamModal';
 import { calculateExamScore } from '@/lib/scoring';
 import { ExamAnswer, Question } from '@/lib/types';
-import { loadPackage } from '@/lib/loadPackage';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 
 const EXAM_DURATION = 6000; // 100 minutes
@@ -26,12 +25,15 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
   const [hydrated, setHydrated] = useState(false);
   const submittingRef = useRef(false);
 
-  // Load package questions asynchronously
+  // Load package questions from server API (supports DB-stored custom packages)
   useEffect(() => {
-    loadPackage(params.id).then((qs) => {
-      setQuestions(qs);
-      setLoadingQuestions(false);
-    });
+    fetch(`/api/questions/${params.id}`)
+      .then((r) => (r.ok ? r.json() : { questions: [] }))
+      .then((d) => {
+        setQuestions(d.questions || []);
+        setLoadingQuestions(false);
+      })
+      .catch(() => setLoadingQuestions(false));
   }, [params.id]);
 
   // Restore from localStorage on mount
