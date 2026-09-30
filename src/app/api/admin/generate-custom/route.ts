@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import { loadPackage, TRYOUT_LIST } from '@/lib/loadPackage';
+import { getDb } from '@/lib/db';
 import { Question } from '@/lib/types';
 
 const ADMIN_PIN = process.env.ADMIN_PIN || '123456';
@@ -21,7 +20,6 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 // POST /api/admin/generate-custom
-// Body: { packageId, title, twkCount, tiuCount, tkpCount, includeImages, durationMinutes? }
 export async function POST(req: NextRequest) {
   if (!isAuthorized(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -30,8 +28,8 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const {
-      packageId = 'tryout-mini',
-      title = 'Tryout Mini',
+      packageId = 'tryout-custom',
+      title = 'Tryout Custom',
       twkCount = 10,
       tiuCount = 10,
       tkpCount = 10,
@@ -39,7 +37,7 @@ export async function POST(req: NextRequest) {
       durationMinutes = 30,
     } = body;
 
-    // Gather all questions from all existing packages
+    // Gather all questions from static packages
     const allQuestions: Question[] = [];
     for (const pkg of TRYOUT_LIST) {
       const qs = await loadPackage(pkg.id);
@@ -56,18 +54,15 @@ export async function POST(req: NextRequest) {
     selected.push(...twkPool.slice(0, Math.min(twkCount, twkPool.length)));
 
     // Sample TIU — optionally include figural (with images)
-    let tiuSelected: Question[] = [];
+    const tiuSelected: Question[] = [];
     if (includeImages) {
-      // Load figural bank
-      const figuralPath = path.join(process.cwd(), 'src/data/figural_bank.json');
-      let figuralBank: Question[] = [];
-      if (fs.existsSync(figuralPath)) {
-        figuralBank = JSON.parse(fs.readFileSync(figuralPath, 'utf-8'));
-      }
-      const figuralCount = Math.min(Math.floor(tiuCount * 0.3), figuralBank.length); // 30% figural
-      tiuSelected.push(...shuffle(figuralBank).slice(0, figuralCount));
+      // Figural = TIU questions with images
+      const figuralPool = shuffle(tiuPool.filter(q => q.image));
+      const plainTiu = shuffle(tiuPool.filter(q => !q.image));
+      const figuralCount = Math.min(Math.floor(tiuCount * 0.3), figuralPool.length);
+      tiuSelected.push(...figuralPool.slice(0, figuralCount));
       const remaining = tiuCount - tiuSelected.length;
-      tiuSelected.push(...tiuPool.slice(0, Math.min(remaining, tiuPool.length)));
+      tiuSelected.push(...plainTiu.slice(0, Math.min(remaining, plainTiu.length)));
     } else {
       tiuSelected.push(...tiuPool.slice(0, Math.min(tiuCount, tiuPool.length)));
     }
@@ -79,10 +74,41 @@ export async function POST(req: NextRequest) {
     // Re-number IDs sequentially
     const numbered = selected.map((q, i) => ({ ...q, id: i + 1 }));
 
-    // Write to file
-    const outputPath = path.join(process.cwd(), `src/data/packages/${packageId}.json`);
-    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-    fs.writeFileSync(outputPath, JSON.stringify(numbered, null, 2), 'utf-8');
+    // Save to Neon DB
+    const sql = getDb();
+    if (!sql) {
+      return NextResponse.json({ error: 'Database not connected — set DATABASE_URL' }, { status: 500 });
+    }
+
+    const durationSec = durationMinutes * 60;
+
+    // Upsert package
+    await sql`
+      INSERT INTO packages (id, title, question_count, duration_sec, is_active)
+      VALUES (${packageId}, ${title}, ${numbered.length}, ${durationSec}, true)
+      ON CONFLICT (id) DO UPDATE SET
+        title = EXCLUDED.title,
+        question_count = EXCLUDED.question_count,
+        duration_sec = EXCLUDED.duration_sec,
+        updated_at = now()
+    `;
+
+    // Delete old questions for this package, then insert fresh
+    await sql`DELETE FROM questions WHERE package_id = ${packageId}`;
+
+    for (const q of numbered) {
+      await sql`
+        INSERT INTO questions (package_id, number, category, text, image, options, correct_answer, tkp_scores, explanation, difficulty)
+        VALUES (
+          ${packageId}, ${q.id}, ${q.category}, ${q.text}, ${q.image || null},
+          ${JSON.stringify(q.options)}::jsonb,
+          ${(q as any).correctAnswer || null},
+          ${(q as any).tkpScores ? JSON.stringify((q as any).tkpScores) : null}::jsonb,
+          ${(q as any).explanation || null},
+          ${(q as any).difficulty || 'medium'}
+        )
+      `;
+    }
 
     return NextResponse.json({
       success: true,
@@ -94,8 +120,10 @@ export async function POST(req: NextRequest) {
       tkp: numbered.filter((q) => q.category === 'TKP').length,
       withImages: numbered.filter((q) => Boolean(q.image)).length,
       durationMinutes,
+      savedTo: 'database',
     });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

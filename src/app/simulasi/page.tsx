@@ -1,10 +1,22 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { BookOpen, Timer, Target, ArrowRight, Star } from '@phosphor-icons/react';
 import { TRYOUT_LIST } from '@/lib/loadPackage';
 
+type PkgItem = { id: string; label: string; desc: string; badge: string | null };
+
 export default function SimulasiPage() {
+  const [packages, setPackages] = useState<PkgItem[]>(TRYOUT_LIST);
+
+  useEffect(() => {
+    fetch('/api/packages')
+      .then(r => r.json())
+      .then(d => { if (d.packages?.length) setPackages(d.packages); })
+      .catch(() => null);
+  }, []);
+
   return (
     <div className="min-h-screen px-4 sm:px-6 py-8">
       <div className="max-w-4xl mx-auto">
@@ -55,7 +67,7 @@ export default function SimulasiPage() {
         {/* Paket Tryout List */}
         <h2 className="text-lg font-bold text-[var(--foreground)] mb-4 tracking-tight">Pilih Paket Tryout</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {TRYOUT_LIST.map((pkg) => (
+          {packages.map((pkg) => (
             <Link
               key={pkg.id}
               href={`/simulasi/${pkg.id}`}
