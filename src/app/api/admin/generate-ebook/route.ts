@@ -126,6 +126,24 @@ RESPOND dalam format JSON ARRAY, tanpa markdown code block:
       return NextResponse.json({ error: 'LLM tidak menghasilkan soal' }, { status: 422 });
     }
 
+    // Shuffle opsi agar jawaban benar tidak selalu di posisi A
+    function shuffleOptions(opts: { id: string; text: string; score: number }[]) {
+      const ids = ['a', 'b', 'c', 'd', 'e'];
+      const shuffled = [...opts];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled.map((o, idx) => ({ ...o, id: ids[idx] }));
+    }
+
+    // Shuffle semua opsi soal
+    for (const q of questions) {
+      if (Array.isArray(q.options)) {
+        q.options = shuffleOptions(q.options);
+      }
+    }
+
     // Jika packageId disertakan, langsung simpan ke DB
     if (packageId) {
       // Ambil order_index terakhir
