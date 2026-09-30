@@ -38,7 +38,7 @@ export default function AdminPage() {
   const [authError, setAuthError] = useState('');
 
   // Dashboard state
-  const [tab, setTab] = useState<'packages' | 'custom' | 'media'>('packages');
+  const [tab, setTab] = useState<'packages' | 'custom' | 'ebook' | 'media'>('packages');
   const [packages, setPackages] = useState<PackageMeta[]>([]);
   const [selectedPkgId, setSelectedPkgId] = useState<string>('tryout-1');
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -70,6 +70,14 @@ export default function AdminPage() {
   // Package settings state
   const [pkgSettings, setPkgSettings] = useState({ durationMinutes: 100, randomizeQuestions: false, randomizeOptions: false });
   const [savingSettings, setSavingSettings] = useState(false);
+
+  // Ebook Generator state
+  const [ebookStats, setEbookStats] = useState<{ total: number; categories: { category: string; count: number; sub_categories: number }[] } | null>(null);
+  const [ebookCategory, setEbookCategory] = useState<'TWK' | 'TIU' | 'TKP'>('TWK');
+  const [ebookCount, setEbookCount] = useState(5);
+  const [ebookTargetPkg, setEbookTargetPkg] = useState<string>('');
+  const [ebookGenerating, setEbookGenerating] = useState(false);
+  const [ebookResult, setEbookResult] = useState<{ success?: boolean; count?: number; error?: string } | null>(null);
 
   // Custom Test Builder state
   const [customTitle, setCustomTitle] = useState('Tryout Mini Uji Coba');
@@ -275,6 +283,48 @@ export default function AdminPage() {
     }
   }
 
+  // Ebook Stats & Generate
+  async function loadEbookStats() {
+    try {
+      const res = await fetch('/api/admin/generate-ebook');
+      const data = await res.json();
+      if (res.ok) setEbookStats(data);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async function handleEbookGenerate(e: React.FormEvent) {
+    e.preventDefault();
+    setEbookGenerating(true);
+    setEbookResult(null);
+    try {
+      const res = await fetch('/api/admin/generate-ebook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          category: ebookCategory,
+          count: ebookCount,
+          packageId: ebookTargetPkg || undefined,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setEbookResult({ error: data.error || 'Gagal generate soal' });
+      } else {
+        setEbookResult({ success: true, count: data.count });
+        if (ebookTargetPkg) {
+          await loadPackageQuestions(ebookTargetPkg);
+        }
+      }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Koneksi gagal';
+      setEbookResult({ error: message });
+    } finally {
+      setEbookGenerating(false);
+    }
+  }
+
   // Generate Custom Test
   async function handleGenerateCustom(e: React.FormEvent) {
     e.preventDefault();
@@ -428,6 +478,20 @@ export default function AdminPage() {
         >
           <PlusCircle size={14} className="inline mr-1.5 -mt-0.5" />
           Buat Contoh Uji Coba (Custom Test)
+        </button>
+        <button
+          onClick={() => {
+            setTab('ebook');
+            loadEbookStats();
+          }}
+          className={`px-4 py-2 rounded-lg text-xs font-semibold transition ${
+            tab === 'ebook'
+              ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
+              : 'text-[var(--muted-foreground)] hover:bg-[var(--muted)]'
+          }`}
+        >
+          <Database size={14} className="inline mr-1.5 -mt-0.5" />
+          Referensi Ebook AI
         </button>
         <button
           onClick={() => setTab('media')}
@@ -1041,6 +1105,142 @@ export default function AdminPage() {
               </Link>
             </div>
           )}
+        </div>
+      )}
+
+      {/* TAB EBOOK: AI GENERATOR DARI EBOOK */}
+      {tab === 'ebook' && (
+        <div className="space-y-6">
+          <div className="card-modern p-6">
+            <h2 className="text-base font-bold text-[var(--foreground)] mb-1">
+              Generator Soal dari Referensi Ebook CPNS
+            </h2>
+            <p className="text-xs text-[var(--muted-foreground)] mb-4">
+              AI akan membaca potongan materi &amp; pola soal dari ratusan ebook CPNS yang telah diekstrak,
+              lalu membuat soal BARU dengan redaksi berbeda (bukan copy-paste).
+            </p>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+              <div className="p-3 rounded-lg border text-center" style={{ borderColor: 'var(--border)' }}>
+                <div className="text-xl font-bold text-[var(--primary)]">
+                  {ebookStats ? ebookStats.total : '...'}
+                </div>
+                <div className="text-[10px] text-[var(--muted-foreground)]">Total Referensi di DB</div>
+              </div>
+              {ebookStats?.categories?.map((c) => (
+                <div key={c.category} className="p-3 rounded-lg border text-center" style={{ borderColor: 'var(--border)' }}>
+                  <div className="text-xl font-bold text-[var(--foreground)]">{c.count}</div>
+                  <div className="text-[10px] text-[var(--muted-foreground)]">
+                    Konteks {c.category}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Generator Form */}
+            <form onSubmit={handleEbookGenerate} className="space-y-4 max-w-xl">
+              <div>
+                <label className="block text-xs font-semibold text-[var(--foreground)] mb-1">
+                  Kategori Soal
+                </label>
+                <div className="flex gap-2">
+                  {(['TWK', 'TIU', 'TKP'] as const).map((cat) => (
+                    <button
+                      key={cat}
+                      type="button"
+                      onClick={() => setEbookCategory(cat)}
+                      className={`px-4 py-2 rounded-lg text-xs font-semibold border transition ${
+                        ebookCategory === cat
+                          ? 'bg-[var(--primary)] text-white border-transparent'
+                          : 'border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]'
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-[var(--foreground)] mb-1">
+                  Jumlah Soal per Generate
+                </label>
+                <div className="flex items-center gap-2">
+                  {[3, 5, 10, 15].map((cnt) => (
+                    <button
+                      key={cnt}
+                      type="button"
+                      onClick={() => setEbookCount(cnt)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition ${
+                        ebookCount === cnt
+                          ? 'bg-[var(--foreground)] text-[var(--background)] border-transparent'
+                          : 'border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]'
+                      }`}
+                    >
+                      {cnt} Soal
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-[var(--foreground)] mb-1">
+                  Target Paket (Opsional)
+                </label>
+                <select
+                  value={ebookTargetPkg}
+                  onChange={(e) => setEbookTargetPkg(e.target.value)}
+                  className="w-full px-3 py-2 rounded-lg text-xs border bg-transparent"
+                  style={{ borderColor: 'var(--border)' }}
+                >
+                  <option value="">Hanya preview (tidak langsung disimpan ke paket)</option>
+                  {packages.map((pkg) => (
+                    <option key={pkg.id} value={pkg.id}>
+                      {pkg.label} ({pkg.totalQuestions} soal)
+                    </option>
+                  ))}
+                </select>
+                <p className="text-[10px] text-[var(--muted-foreground)] mt-1">
+                  Pilih paket tujuan jika ingin soal langsung ditambahkan ke paket tersebut.
+                </p>
+              </div>
+
+              {ebookResult && (
+                <div
+                  className={`p-3 rounded-lg text-xs ${
+                    ebookResult.error
+                      ? 'bg-red-500/10 text-red-600 border border-red-500/20'
+                      : 'bg-green-500/10 text-green-600 border border-green-500/20'
+                  }`}
+                >
+                  {ebookResult.error
+                    ? `Gagal: ${ebookResult.error}`
+                    : `Berhasil membuat ${ebookResult.count} soal baru dari referensi ebook!${
+                        ebookTargetPkg ? ' Sudah ditambahkan ke paket.' : ''
+                      }`}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={ebookGenerating}
+                className="btn-primary text-xs px-5 py-2.5 flex items-center gap-2"
+              >
+                {ebookGenerating ? (
+                  <>
+                    <ArrowsClockwise size={14} className="animate-spin" />
+                    Sedang Membaca Ebook &amp; Generate Soal...
+                  </>
+                ) : (
+                  <>
+                    <Database size={14} />
+                    Generate {ebookCount} Soal {ebookCategory} dari Ebook
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
         </div>
       )}
 
