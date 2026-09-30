@@ -51,6 +51,26 @@ export default function AdminPage() {
   const [uploadError, setUploadError] = useState('');
   const [dbStatus, setDbStatus] = useState<{ connected: boolean; hasEnv: boolean; message: string } | null>(null);
 
+  // New question form state
+  const [newQMode, setNewQMode] = useState(false);
+  const [newQ, setNewQ] = useState<Partial<Question>>({
+    category: 'TWK',
+    subCategory: '',
+    text: '',
+    explanation: '',
+    options: [
+      { id: 'A', text: '', score: 0 },
+      { id: 'B', text: '', score: 0 },
+      { id: 'C', text: '', score: 0 },
+      { id: 'D', text: '', score: 0 },
+      { id: 'E', text: '', score: 0 },
+    ],
+  });
+
+  // Package settings state
+  const [pkgSettings, setPkgSettings] = useState({ durationMinutes: 100, randomizeQuestions: false, randomizeOptions: false });
+  const [savingSettings, setSavingSettings] = useState(false);
+
   // Custom Test Builder state
   const [customTitle, setCustomTitle] = useState('Tryout Mini Uji Coba');
   const [customPkgId, setCustomPkgId] = useState('tryout-mini');
@@ -108,6 +128,7 @@ export default function AdminPage() {
     setLoading(true);
     setSelectedPkgId(pkgId);
     setEditingQ(null);
+    setNewQMode(false);
     try {
       const res = await fetch(`/api/admin/packages?id=${pkgId}`, {
         headers: { 'x-admin-pin': pin },
@@ -115,9 +136,110 @@ export default function AdminPage() {
       if (res.ok) {
         const data = await res.json();
         setQuestions(data.questions || []);
+        if (data.settings) {
+          setPkgSettings({
+            durationMinutes: Math.round((data.settings.duration_sec || 6000) / 60),
+            randomizeQuestions: Boolean(data.settings.randomize_questions),
+            randomizeOptions: Boolean(data.settings.randomize_options),
+          });
+        }
       }
     } finally {
       setLoading(false);
+    }
+  }
+
+  // Add new question
+  async function handleCreateQuestion() {
+    if (!newQ.text || !newQ.subCategory) {
+      alert('Teks pertanyaan dan subkategori wajib diisi');
+      return;
+    }
+    setSaveStatus('Menambahkan...');
+    try {
+      const res = await fetch('/api/admin/packages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-admin-pin': pin },
+        body: JSON.stringify({ packageId: selectedPkgId, question: newQ }),
+      });
+      const data = await res.json();
+      if (res.ok && data.question) {
+        setQuestions((prev) => [...prev, data.question]);
+        setNewQMode(false);
+        setEditingQ(data.question);
+        setSaveStatus('Soal baru berhasil ditambahkan!');
+        setTimeout(() => setSaveStatus(''), 2000);
+      } else {
+        alert(data.error || 'Gagal menambah soal');
+      }
+    } catch {
+      alert('Koneksi bermasalah');
+    }
+  }
+
+  // Delete question
+  async function handleDeleteQuestion(qId: number) {
+    if (!confirm(`Yakin ingin menghapus Soal #${qId}? Tindakan ini tidak dapat dibatalkan.`)) return;
+    try {
+      const res = await fetch(`/api/admin/packages?id=${selectedPkgId}&qId=${qId}`, {
+        method: 'DELETE',
+        headers: { 'x-admin-pin': pin },
+      });
+      if (res.ok) {
+        setQuestions((prev) => prev.filter((q) => q.id !== qId));
+        if (editingQ?.id === qId) setEditingQ(null);
+      } else {
+        alert('Gagal menghapus soal');
+      }
+    } catch {
+      alert('Koneksi bermasalah');
+    }
+  }
+
+  // Delete entire package
+  async function handleDeletePackage(pkgId: string) {
+    if (!confirm(`⚠️ PERINGATAN: Yakin ingin menghapus seluruh paket "${pkgId}" beserta semua butir soalnya?`)) return;
+    try {
+      const res = await fetch(`/api/admin/packages?id=${pkgId}&deletePackage=true`, {
+        method: 'DELETE',
+        headers: { 'x-admin-pin': pin },
+      });
+      if (res.ok) {
+        setPackages((prev) => prev.filter((p) => p.id !== pkgId));
+        setSelectedPkgId('tryout-1');
+        loadPackageQuestions('tryout-1');
+        alert('Paket berhasil dihapus');
+      } else {
+        alert('Gagal menghapus paket');
+      }
+    } catch {
+      alert('Koneksi bermasalah');
+    }
+  }
+
+  // Save package settings (duration, randomize)
+  async function handleSaveSettings() {
+    setSavingSettings(true);
+    try {
+      const res = await fetch('/api/admin/packages', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', 'x-admin-pin': pin },
+        body: JSON.stringify({
+          packageId: selectedPkgId,
+          durationMinutes: Number(pkgSettings.durationMinutes),
+          randomizeQuestions: pkgSettings.randomizeQuestions,
+          randomizeOptions: pkgSettings.randomizeOptions,
+        }),
+      });
+      if (res.ok) {
+        alert('Pengaturan paket (durasi & randomize) berhasil disimpan!');
+      } else {
+        alert('Gagal menyimpan pengaturan');
+      }
+    } catch {
+      alert('Koneksi bermasalah');
+    } finally {
+      setSavingSettings(false);
     }
   }
 
@@ -345,6 +467,58 @@ export default function AdminPage() {
             ))}
           </div>
 
+          {/* Package Settings Panel */}
+          <div className="card-modern p-4 flex flex-wrap items-center gap-4 text-xs">
+            <div className="flex items-center gap-1.5">
+              <Gear size={14} className="text-[var(--muted-foreground)]" />
+              <span className="font-bold text-[var(--foreground)]">Settings:</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-[var(--muted-foreground)]">Durasi</span>
+              <input
+                type="number"
+                min={1}
+                max={300}
+                value={pkgSettings.durationMinutes}
+                onChange={(e) => setPkgSettings({ ...pkgSettings, durationMinutes: Number(e.target.value) })}
+                className="input-modern w-16 text-xs py-1 text-center font-bold"
+              />
+              <span className="text-[var(--muted-foreground)]">menit</span>
+            </div>
+            <label className="flex items-center gap-1.5 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={pkgSettings.randomizeQuestions}
+                onChange={(e) => setPkgSettings({ ...pkgSettings, randomizeQuestions: e.target.checked })}
+                className="w-3.5 h-3.5 accent-[var(--primary)]"
+              />
+              <span>Acak Urutan Soal</span>
+            </label>
+            <label className="flex items-center gap-1.5 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={pkgSettings.randomizeOptions}
+                onChange={(e) => setPkgSettings({ ...pkgSettings, randomizeOptions: e.target.checked })}
+                className="w-3.5 h-3.5 accent-[var(--primary)]"
+              />
+              <span>Acak Urutan Jawaban</span>
+            </label>
+            <button
+              onClick={handleSaveSettings}
+              disabled={savingSettings}
+              className="btn-primary text-[10px] py-1 px-3"
+            >
+              {savingSettings ? 'Menyimpan...' : 'Simpan Settings'}
+            </button>
+            <button
+              onClick={() => handleDeletePackage(selectedPkgId)}
+              className="btn-secondary text-[10px] py-1 px-3 text-red-600 border-red-200 hover:bg-red-50 ml-auto"
+            >
+              <Trash size={12} className="inline mr-1" />
+              Hapus Paket
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             {/* Left: Questions List (5 cols) */}
             <div className="lg:col-span-5 space-y-3">
@@ -353,16 +527,25 @@ export default function AdminPage() {
                   <h3 className="font-semibold text-xs text-[var(--foreground)]">
                     Daftar Soal ({filteredQs.length})
                   </h3>
-                  <select
-                    value={filterCat}
-                    onChange={(e) => setFilterCat(e.target.value)}
-                    className="text-xs bg-[var(--muted)] border border-[var(--border)] rounded px-2 py-1"
-                  >
-                    <option value="ALL">Semua Kategori</option>
-                    <option value="TWK">TWK</option>
-                    <option value="TIU">TIU</option>
-                    <option value="TKP">TKP</option>
-                  </select>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => { setNewQMode(true); setEditingQ(null); }}
+                      className="btn-primary text-[10px] py-1 px-2.5 flex items-center gap-1"
+                    >
+                      <PlusCircle size={12} weight="bold" />
+                      Tambah Soal
+                    </button>
+                    <select
+                      value={filterCat}
+                      onChange={(e) => setFilterCat(e.target.value)}
+                      className="text-xs bg-[var(--muted)] border border-[var(--border)] rounded px-2 py-1"
+                    >
+                      <option value="ALL">Semua Kategori</option>
+                      <option value="TWK">TWK</option>
+                      <option value="TIU">TIU</option>
+                      <option value="TKP">TKP</option>
+                    </select>
+                  </div>
                 </div>
 
                 <input
@@ -379,7 +562,7 @@ export default function AdminPage() {
                     return (
                       <div
                         key={q.id}
-                        onClick={() => setEditingQ({ ...q })}
+                        onClick={() => { setEditingQ({ ...q }); setNewQMode(false); }}
                         className={`p-2.5 rounded-lg border text-xs cursor-pointer transition ${
                           isSelected
                             ? 'border-[var(--foreground)] bg-[var(--muted)]'
@@ -388,9 +571,18 @@ export default function AdminPage() {
                       >
                         <div className="flex items-center justify-between mb-1">
                           <span className="font-semibold">Soal #{q.id}</span>
-                          <span className="badge-pill badge-neutral text-[10px]">
-                            {q.category} &bull; {q.subCategory}
-                          </span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="badge-pill badge-neutral text-[10px]">
+                              {q.category} &bull; {q.subCategory}
+                            </span>
+                            <button
+                              onClick={(e) => { e.stopPropagation(); handleDeleteQuestion(q.id); }}
+                              title="Hapus soal ini"
+                              className="text-red-400 hover:text-red-600 transition"
+                            >
+                              <Trash size={13} weight="bold" />
+                            </button>
+                          </div>
                         </div>
                         <p className="line-clamp-2 text-[var(--muted-foreground)] text-[11px]">
                           {q.text}
@@ -409,7 +601,128 @@ export default function AdminPage() {
 
             {/* Right: Question Detail & Inline Editor (7 cols) */}
             <div className="lg:col-span-7">
-              {editingQ ? (
+              {newQMode ? (
+                <div className="card-modern p-6 space-y-4 border-2 border-[var(--primary)]">
+                  <div className="flex items-center justify-between pb-3 border-b" style={{ borderColor: 'var(--border)' }}>
+                    <div>
+                      <span className="badge-pill badge-neutral text-[10px] mr-2">BARU</span>
+                      <span className="font-semibold text-sm">Tambah Butir Soal Baru</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => setNewQMode(false)}
+                        className="btn-secondary text-xs py-1.5 px-3"
+                      >
+                        Batal
+                      </button>
+                      <button
+                        onClick={handleCreateQuestion}
+                        className="btn-primary text-xs py-1.5 px-4"
+                      >
+                        Simpan Soal Baru
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Category & SubCategory */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-medium text-[var(--muted-foreground)] mb-1">
+                        Kategori
+                      </label>
+                      <select
+                        value={newQ.category}
+                        onChange={(e) => setNewQ({ ...newQ, category: e.target.value as any })}
+                        className="input-modern w-full text-xs"
+                      >
+                        <option value="TWK">TWK</option>
+                        <option value="TIU">TIU</option>
+                        <option value="TKP">TKP</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium text-[var(--muted-foreground)] mb-1">
+                        Subkategori / Topik
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Contoh: Bela Negara, Silogisme, dll"
+                        value={newQ.subCategory}
+                        onChange={(e) => setNewQ({ ...newQ, subCategory: e.target.value })}
+                        className="input-modern w-full text-xs"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Question Text */}
+                  <div>
+                    <label className="block text-xs font-medium text-[var(--muted-foreground)] mb-1">
+                      Teks Pertanyaan
+                    </label>
+                    <textarea
+                      rows={4}
+                      placeholder="Tuliskan butir soal di sini..."
+                      value={newQ.text}
+                      onChange={(e) => setNewQ({ ...newQ, text: e.target.value })}
+                      className="input-modern w-full text-xs font-sans leading-relaxed"
+                    />
+                  </div>
+
+                  {/* Options Editor */}
+                  <div>
+                    <label className="block text-xs font-medium text-[var(--muted-foreground)] mb-2">
+                      Pilihan Jawaban &amp; Bobot Skor (TWK/TIU: benar 5 salah 0; TKP: skala 1-5)
+                    </label>
+                    <div className="space-y-2">
+                      {newQ.options?.map((opt, i) => (
+                        <div key={opt.id} className="flex items-center gap-2 card-subtle p-2 rounded-lg text-xs">
+                          <span className="w-5 font-bold text-center">{opt.id}</span>
+                          <input
+                            type="text"
+                            placeholder={`Teks pilihan ${opt.id}...`}
+                            value={opt.text}
+                            onChange={(e) => {
+                              const newOpts = [...(newQ.options || [])];
+                              newOpts[i] = { ...opt, text: e.target.value };
+                              setNewQ({ ...newQ, options: newOpts });
+                            }}
+                            className="input-modern flex-1 text-xs py-1"
+                          />
+                          <div className="flex items-center gap-1">
+                            <span className="text-[10px] text-[var(--muted-foreground)]">Skor:</span>
+                            <input
+                              type="number"
+                              min={0}
+                              max={5}
+                              value={opt.score}
+                              onChange={(e) => {
+                                const newOpts = [...(newQ.options || [])];
+                                newOpts[i] = { ...opt, score: Number(e.target.value) };
+                                setNewQ({ ...newQ, options: newOpts });
+                              }}
+                              className="input-modern w-14 text-xs py-1 text-center font-bold"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Explanation */}
+                  <div>
+                    <label className="block text-xs font-medium text-[var(--muted-foreground)] mb-1">
+                      Pembahasan Soal
+                    </label>
+                    <textarea
+                      rows={3}
+                      placeholder="Tuliskan kunci/trik pembahasan..."
+                      value={newQ.explanation}
+                      onChange={(e) => setNewQ({ ...newQ, explanation: e.target.value })}
+                      className="input-modern w-full text-xs font-sans leading-relaxed"
+                    />
+                  </div>
+                </div>
+              ) : editingQ ? (
                 <div className="card-modern p-6 space-y-4">
                   <div className="flex items-center justify-between pb-3 border-b" style={{ borderColor: 'var(--border)' }}>
                     <div>

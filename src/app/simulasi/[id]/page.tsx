@@ -20,6 +20,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loadingQuestions, setLoadingQuestions] = useState(true);
+  const [examDurationSec, setExamDurationSec] = useState(6000);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Map<number, ExamAnswer>>(() => new Map());
   const [showModal, setShowModal] = useState(false);
@@ -35,7 +36,28 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     fetch(`/api/questions/${params.id}`)
       .then((r) => (r.ok ? r.json() : { questions: [] }))
       .then((d) => {
-        setQuestions(d.questions || []);
+        let loaded: Question[] = d.questions || [];
+        const meta = d.meta;
+
+        // Apply duration from package settings
+        if (meta?.duration_sec) {
+          setExamDurationSec(meta.duration_sec);
+        } else if (loaded.length > 0 && loaded.length < 50) {
+          setExamDurationSec(Math.max(600, loaded.length * 60));
+        }
+
+        // Apply randomize if enabled in package settings
+        if (meta?.randomize_questions) {
+          loaded = [...loaded].sort(() => 0.5 - Math.random());
+        }
+        if (meta?.randomize_options) {
+          loaded = loaded.map((q) => ({
+            ...q,
+            options: [...q.options].sort(() => 0.5 - Math.random()),
+          }));
+        }
+
+        setQuestions(loaded);
         setLoadingQuestions(false);
       })
       .catch(() => setLoadingQuestions(false));
@@ -53,10 +75,8 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     setHydrated(true);
   }, [storageKey]);
 
-  // Dynamic exam duration: 60s per question for custom/mini (<50 Qs), or standard 6000s
-  const examDuration = questions.length > 0 && questions.length < 50
-    ? Math.max(600, questions.length * 60)
-    : 6000;
+  // Duration is set via package meta; examDurationSec state
+  const examDuration = examDurationSec;
 
   // Track elapsed seconds using a start timestamp for crash recovery
   const elapsedRef = useRef(0);

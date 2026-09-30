@@ -9,8 +9,9 @@ import { useState } from 'react';
 const NAV_LINKS = [
   { href: '/', label: 'Beranda' },
   { href: '/simulasi', label: 'Simulasi CAT' },
-  { href: '/psikotes', label: 'Tes Psikotes' },
   { href: '/drill', label: '⚡ Latihan Kilat' },
+  { href: '/psikotes', label: 'Tes Psikotes' },
+  { href: '/riwayat', label: 'Riwayat' },
 ];
 
 export default function Navbar() {
