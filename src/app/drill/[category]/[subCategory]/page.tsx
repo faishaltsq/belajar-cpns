@@ -1,0 +1,279 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { Question } from '@/lib/types';
+import {
+  Lightning,
+  CaretRight,
+  ArrowCounterClockwise,
+  CheckCircle,
+  XCircle,
+  Lightbulb,
+} from '@phosphor-icons/react';
+
+export default function DrillSessionPage({
+  params,
+}: {
+  params: { category: string; subCategory: string };
+}) {
+  const router = useRouter();
+  const subCategoryDecoded = decodeURIComponent(params.subCategory);
+
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [hasRevealed, setHasRevealed] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
+
+  // Load questions matching category & subcategory from sample package or DB
+  useEffect(() => {
+    fetch('/api/questions/tryout-1')
+      .then((r) => (r.ok ? r.json() : { questions: [] }))
+      .then((d) => {
+        const all: Question[] = d.questions || [];
+        // Filter by category + subcategory, fallback to just category if not enough
+        let matched = all.filter(
+          (q) =>
+            q.category.toUpperCase() === params.category.toUpperCase() &&
+            q.subCategory?.toLowerCase() === subCategoryDecoded.toLowerCase()
+        );
+        if (matched.length < 5) {
+          // fallback to same category
+          matched = all.filter(
+            (q) => q.category.toUpperCase() === params.category.toUpperCase()
+          );
+        }
+        // Shuffle & take 10
+        const shuffled = [...matched].sort(() => 0.5 - Math.random()).slice(0, 10);
+        setQuestions(shuffled);
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, [params.category, subCategoryDecoded]);
+
+  const currentQ = questions[currentIndex];
+
+  const handleSelect = (optId: string) => {
+    if (hasRevealed) return;
+    setSelectedOption(optId);
+    setHasRevealed(true);
+
+    const opt = currentQ.options.find((o) => o.id === optId);
+    const maxScore = Math.max(...currentQ.options.map((o) => o.score));
+    const isCorrect = opt ? opt.score === maxScore : false;
+
+    if (isCorrect) setCorrectCount((c) => c + 1);
+  };
+
+  const handleNext = () => {
+    if (currentIndex + 1 < questions.length) {
+      setCurrentIndex((i) => i + 1);
+      setSelectedOption(null);
+      setHasRevealed(false);
+    } else {
+      setIsFinished(true);
+    }
+  };
+
+  const handleRestart = () => {
+    setCurrentIndex(0);
+    setSelectedOption(null);
+    setHasRevealed(false);
+    setCorrectCount(0);
+    setIsFinished(false);
+    // reshuffle
+    setQuestions((q) => [...q].sort(() => 0.5 - Math.random()));
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-xs text-[var(--muted-foreground)]">
+        Memuat 10 soal latihan...
+      </div>
+    );
+  }
+
+  if (questions.length === 0) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center p-4 text-center">
+        <p className="text-sm font-semibold mb-3">Topik ini belum memiliki bank soal cukup.</p>
+        <Link href="/drill" className="btn-primary text-xs py-2 px-4">
+          Pilih Topik Lain
+        </Link>
+      </div>
+    );
+  }
+
+  // Summary finish screen
+  if (isFinished) {
+    const accuracy = Math.round((correctCount / questions.length) * 100);
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="card-modern max-w-md w-full p-6 text-center space-y-4">
+          <div className="w-12 h-12 rounded-full mx-auto flex items-center justify-center bg-[var(--primary)] text-[var(--primary-foreground)] text-2xl font-bold">
+            ⚡
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-[var(--foreground)]">Latihan Selesai!</h2>
+            <p className="text-xs text-[var(--muted-foreground)] mt-1">
+              Topik: {subCategoryDecoded} ({params.category})
+            </p>
+          </div>
+
+          <div className="p-4 rounded-xl" style={{ background: 'var(--muted)' }}>
+            <p className="text-xs text-[var(--muted-foreground)]">Skor Anda</p>
+            <p className="text-4xl font-bold text-[var(--foreground)] my-1">
+              {correctCount} / {questions.length}
+            </p>
+            <p className="text-xs font-semibold text-[var(--primary)]">Akurasi {accuracy}%</p>
+          </div>
+
+          <div className="flex gap-2">
+            <button
+              onClick={handleRestart}
+              className="btn-secondary flex-1 py-2.5 text-xs flex items-center justify-center gap-1.5"
+            >
+              <ArrowCounterClockwise size={14} weight="bold" />
+              Latihan Lagi
+            </button>
+            <Link
+              href="/drill"
+              className="btn-primary flex-1 py-2.5 text-xs flex items-center justify-center gap-1.5"
+            >
+              Ganti Topik
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const optionLabels = ['A', 'B', 'C', 'D', 'E'];
+
+  return (
+    <div className="min-h-screen flex items-start justify-center p-4 py-8">
+      <div className="max-w-2xl w-full space-y-4">
+        {/* Header */}
+        <div className="flex items-center justify-between border-b pb-3" style={{ borderColor: 'var(--border)' }}>
+          <div className="flex items-center gap-2">
+            <span className="badge-pill badge-neutral text-[10px] font-bold">{params.category}</span>
+            <span className="text-xs font-bold text-[var(--foreground)]">{subCategoryDecoded}</span>
+          </div>
+          <span className="text-xs font-mono font-bold text-[var(--muted-foreground)]">
+            Soal {currentIndex + 1} / {questions.length}
+          </span>
+        </div>
+
+        {/* Progress bar */}
+        <div className="h-1 rounded-full w-full" style={{ background: 'var(--muted)' }}>
+          <div
+            className="h-1 rounded-full transition-all duration-300"
+            style={{
+              width: `${((currentIndex + 1) / questions.length) * 100}%`,
+              background: 'var(--primary)',
+            }}
+          />
+        </div>
+
+        {/* Question Card */}
+        <div className="card-modern p-5 space-y-4">
+          {currentQ.image && (
+            <img
+              src={currentQ.image}
+              alt="Gambar Soal"
+              className="max-h-56 mx-auto rounded border object-contain"
+              style={{ borderColor: 'var(--border)' }}
+            />
+          )}
+          <p className="text-sm text-[var(--foreground)] leading-relaxed font-medium">
+            {currentQ.text}
+          </p>
+
+          {/* Options */}
+          <div className="space-y-2">
+            {currentQ.options.map((opt, oi) => {
+              const isSelected = selectedOption === opt.id;
+              const maxScoreVal = Math.max(...currentQ.options.map((o) => o.score));
+              const isCorrect = opt.score === maxScoreVal;
+
+              let styleClass = 'border-[var(--border)] hover:bg-[var(--muted)] text-[var(--foreground)]';
+              if (hasRevealed) {
+                if (isCorrect) {
+                  styleClass = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-semibold';
+                } else if (isSelected && !isCorrect) {
+                  styleClass = 'border-red-400 bg-red-50 text-red-900 line-through';
+                } else {
+                  styleClass = 'border-[var(--border)] opacity-60 text-[var(--muted-foreground)]';
+                }
+              } else if (isSelected) {
+                styleClass = 'border-[var(--primary)] bg-[var(--secondary)] font-semibold';
+              }
+
+              return (
+                <button
+                  key={opt.id}
+                  onClick={() => handleSelect(opt.id)}
+                  disabled={hasRevealed}
+                  className={`w-full text-left p-3 rounded-xl border text-xs flex items-start gap-2.5 transition ${styleClass}`}
+                >
+                  <span
+                    className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${
+                      hasRevealed && isCorrect
+                        ? 'bg-emerald-600 text-white'
+                        : hasRevealed && isSelected && !isCorrect
+                        ? 'bg-red-500 text-white'
+                        : 'bg-[var(--muted)] text-[var(--foreground)]'
+                    }`}
+                  >
+                    {optionLabels[oi] ?? opt.id}
+                  </span>
+                  <span className="flex-1 leading-relaxed">{opt.text}</span>
+                  {hasRevealed && isCorrect && (
+                    <CheckCircle size={16} className="text-emerald-600 shrink-0" weight="fill" />
+                  )}
+                  {hasRevealed && isSelected && !isCorrect && (
+                    <XCircle size={16} className="text-red-500 shrink-0" weight="fill" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Explanation Box (Revealed) */}
+          {hasRevealed && (
+            <div
+              className="p-4 rounded-xl border text-xs space-y-1.5 animate-fadeIn"
+              style={{
+                backgroundColor: 'rgba(201, 100, 66, 0.04)',
+                borderColor: 'rgba(201, 100, 66, 0.25)',
+              }}
+            >
+              <div className="flex items-center gap-1.5 text-[var(--primary)] font-bold">
+                <Lightbulb size={14} weight="fill" />
+                <span>Pembahasan Singkat:</span>
+              </div>
+              <p className="text-[var(--foreground)] leading-relaxed">
+                {currentQ.explanation || 'Pembahasan belum tersedia untuk butir ini.'}
+              </p>
+            </div>
+          )}
+
+          {/* Next Button */}
+          {hasRevealed && (
+            <button
+              onClick={handleNext}
+              className="btn-primary w-full py-2.5 text-xs flex items-center justify-center gap-1.5 mt-2"
+            >
+              <span>{currentIndex + 1 === questions.length ? 'Lihat Hasil Akhir' : 'Lanjut Soal Berikutnya'}</span>
+              <CaretRight size={14} weight="bold" />
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}

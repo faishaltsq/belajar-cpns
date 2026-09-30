@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: '/', label: 'Beranda' },
   { href: '/simulasi', label: 'Simulasi CAT' },
   { href: '/psikotes', label: 'Tes Psikotes' },
+  { href: '/drill', label: '⚡ Latihan Kilat' },
 ];
 
 export default function Navbar() {
