@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { DM_Sans } from 'next/font/google';
+import { Outfit } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const dmSans = DM_Sans({
+const outfit = Outfit({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-dm-sans',
+  variable: '--font-outfit',
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className={dmSans.className}>
+      <body className={outfit.className}>
         <Navbar />
         {children}
         <Footer />

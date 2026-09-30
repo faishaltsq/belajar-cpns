@@ -37,7 +37,7 @@ function HasilContent() {
     type === 'kraepelin' ? '/psikotes/kraepelin' : '/psikotes/penalaran';
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center px-4 py-8">
+    <div className="min-h-screen flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-xl flex flex-col gap-6">
         {/* Back */}
         <Link
@@ -166,7 +166,7 @@ export default function PsikotesHasilPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center">
           <p className="text-slate-500">Memuat hasil…</p>
         </div>
       }

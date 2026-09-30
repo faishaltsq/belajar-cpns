@@ -60,7 +60,7 @@ export default function PenalaranPage() {
   const timerWarning = secondsLeft < 60;
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center px-4 py-8">
+    <div className="min-h-screen flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-xl flex flex-col gap-4">
         {/* Header */}
         <div className="flex items-center justify-between">

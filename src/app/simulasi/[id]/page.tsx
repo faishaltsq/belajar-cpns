@@ -172,7 +172,14 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-[var(--background)]/80 backdrop-blur-lg" style={{ borderBottom: '1px solid var(--border)' }}>
+      <header
+        className="sticky top-0 z-40 backdrop-blur-md"
+        style={{
+          backgroundColor: 'rgba(250, 249, 245, 0.9)',
+          borderBottom: '1px solid var(--border)',
+          boxShadow: '0 1px 3px rgba(61, 57, 41, 0.04)',
+        }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
             <span className="font-semibold text-sm truncate text-[var(--foreground)]">Simulasi CAT CPNS</span>

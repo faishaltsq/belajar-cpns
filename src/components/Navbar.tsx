@@ -24,8 +24,12 @@ export default function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm"
-      style={{ boxShadow: '0 0 0 1px oklch(0.92 0 0), 0 1px 3px rgba(0,0,0,0.04)' }}
+      className="sticky top-0 z-50 w-full backdrop-blur-sm"
+      style={{
+        backgroundColor: 'rgba(250, 249, 245, 0.92)',
+        borderBottom: '1px solid var(--border)',
+        boxShadow: '0 1px 3px rgba(61, 57, 41, 0.04)',
+      }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
         {/* Logo */}

@@ -38,11 +38,13 @@ export function Timer({ initialSeconds, onTimeUp }: TimerProps) {
     <div
       className={`flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl font-mono font-bold text-sm sm:text-base border ${
         isCritical
-          ? 'bg-red-100 text-red-600 border-red-300 animate-pulse'
-          : 'bg-white/70 text-slate-700 border-white/60'
+          ? 'bg-red-50 text-red-600 border-red-300 animate-pulse'
+          : ''
       }`}
       style={isCritical ? {} : {
-        boxShadow: '2px 2px 6px rgba(0,0,0,0.06), -2px -2px 5px rgba(255,255,255,0.9)'
+        backgroundColor: 'var(--secondary)',
+        color: 'var(--foreground)',
+        borderColor: 'var(--border)',
       }}
     >
       <TimerIcon size={18} weight="duotone" />

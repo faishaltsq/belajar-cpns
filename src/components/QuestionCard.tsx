@@ -93,7 +93,7 @@ export function QuestionCard({
                     className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-xs font-semibold border ${
                       isSelected
                         ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent'
-                        : 'bg-white border-[var(--border)] text-[var(--muted-foreground)]'
+                        : 'bg-[var(--secondary)] border-[var(--border)] text-[var(--muted-foreground)]'
                     }`}
                   >
                     {opt.id}

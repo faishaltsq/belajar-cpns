@@ -13,12 +13,12 @@ import MiniTryout from '@/components/MiniTryout';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white text-[var(--foreground)]">
-      {/* Background subtle radial gradient */}
+    <div className="min-h-screen text-[var(--foreground)]" style={{ backgroundColor: 'var(--background)' }}>
+      {/* Background warm radial gradient */}
       <div
-        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[420px] opacity-40 blur-3xl"
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[420px] opacity-30 blur-3xl"
         style={{
-          background: 'radial-gradient(ellipse at top, oklch(0.92 0.05 255) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at top, rgba(201, 100, 66, 0.2) 0%, transparent 70%)',
         }}
       />
 
@@ -95,8 +95,8 @@ export default function LandingPage() {
             <div className="card-modern p-6 flex flex-col justify-between">
               <div>
                 <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center text-[var(--foreground)] mb-4"
-                  style={{ background: 'var(--muted)', boxShadow: '0 0 0 1px var(--border)' }}
+                  className="w-10 h-10 rounded-lg flex items-center justify-center text-[var(--primary)] mb-4"
+                  style={{ background: 'var(--secondary)', border: '1px solid var(--border)' }}
                 >
                   <Timer size={20} weight="duotone" />
                 </div>
@@ -122,8 +122,8 @@ export default function LandingPage() {
             <div className="card-modern p-6 flex flex-col justify-between">
               <div>
                 <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center text-[var(--foreground)] mb-4"
-                  style={{ background: 'var(--muted)', boxShadow: '0 0 0 1px var(--border)' }}
+                  className="w-10 h-10 rounded-lg flex items-center justify-center text-[var(--primary)] mb-4"
+                  style={{ background: 'var(--secondary)', border: '1px solid var(--border)' }}
                 >
                   <GridFour size={20} weight="duotone" />
                 </div>
@@ -149,8 +149,8 @@ export default function LandingPage() {
             <div className="card-modern p-6 flex flex-col justify-between">
               <div>
                 <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center text-[var(--foreground)] mb-4"
-                  style={{ background: 'var(--muted)', boxShadow: '0 0 0 1px var(--border)' }}
+                  className="w-10 h-10 rounded-lg flex items-center justify-center text-[var(--primary)] mb-4"
+                  style={{ background: 'var(--secondary)', border: '1px solid var(--border)' }}
                 >
                   <Brain size={20} weight="duotone" />
                 </div>
@@ -310,10 +310,10 @@ export default function LandingPage() {
           <div
             className="card-modern p-8 sm:p-12 max-w-2xl mx-auto"
             style={{
-              background: 'radial-gradient(circle at top, oklch(0.98 0 0) 0%, var(--card) 100%)',
+              background: 'radial-gradient(circle at top, #faf9f5 0%, var(--card) 100%)',
             }}
           >
-            <Trophy size={36} weight="duotone" className="mx-auto mb-3 text-[var(--foreground)]" />
+            <Trophy size={36} weight="duotone" className="mx-auto mb-3 text-[var(--primary)]" />
             <h2 className="text-2xl font-bold tracking-tight">
               Siap Memulai Latihan Hari Ini?
             </h2>

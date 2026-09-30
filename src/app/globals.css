@@ -3,38 +3,50 @@
 @tailwind utilities;
 
 :root {
-  --card: oklch(0.995 0 0);
-  --ring: oklch(0.708 0 0);
-  --input: oklch(0.97 0 0);
-  --muted: oklch(0.95 0 0);
-  --accent: oklch(0.95 0 0);
-  --border: oklch(0.92 0 0);
-  --radius: 1rem;
-  --chart-1: oklch(0.81 0.10 252);
-  --chart-2: oklch(0.62 0.19 260);
-  --chart-3: oklch(0.55 0.22 263);
-  --chart-4: oklch(0.49 0.22 264);
-  --chart-5: oklch(0.42 0.18 266);
-  --popover: oklch(1 0 0);
-  --primary: oklch(0.205 0 0);
-  --sidebar: oklch(0.985 0 0);
-  --spacing: 0.25rem;
+  --background: #faf9f5;
+  --foreground: #3d3929;
+  --card: #f5f4ef;
+  --card-foreground: #141413;
+  --popover: #ffffff;
+  --popover-foreground: #28261b;
+  --primary: #c96442;
+  --primary-foreground: #ffffff;
+  --secondary: #e9e6dc;
+  --secondary-foreground: #535146;
+  --muted: #ede9de;
+  --muted-foreground: #6e6d68;
+  --accent: #e9e6dc;
+  --accent-foreground: #28261b;
+  --destructive: #141413;
+  --destructive-foreground: #ffffff;
+  --border: #dad9d4;
+  --input: #b4b2a7;
+  --ring: #c96442;
+  --chart-1: #b05730;
+  --chart-2: #9c87f5;
+  --chart-3: #ded8c4;
+  --chart-4: #dbd3f0;
+  --chart-5: #b4552d;
+  --sidebar: #f5f4ee;
+  --sidebar-foreground: #3d3d3a;
+  --sidebar-primary: #c96442;
+  --sidebar-primary-foreground: #fbfbfb;
+  --sidebar-accent: #e9e6dc;
+  --sidebar-accent-foreground: #343434;
+  --sidebar-border: #ebebeb;
+  --sidebar-ring: #b5b5b5;
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: Geist Mono, ui-monospace, monospace;
-  --font-sans: 'DM Sans', ui-sans-serif, sans-serif, system-ui;
-  --secondary: oklch(0.87 0 0);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --shadow-blur: 3px;
-  --shadow-color: oklch(0 0 0);
-  --shadow-spread: 0px;
+  --radius: 1rem;
+  --shadow-color: rgba(61, 57, 41, 0.08);
   --shadow-opacity: 0.08;
-  --card-foreground: oklch(0.145 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary-foreground: oklch(0.145 0 0);
-  --destructive-foreground: oklch(1 0 0);
+  --shadow-blur: 4px;
+  --shadow-spread: 0px;
+  --shadow-offset-x: 0;
+  --shadow-offset-y: 1px;
+  --letter-spacing: 0em;
+  --spacing: 0.25rem;
 }
 
 body {
@@ -46,51 +58,49 @@ body {
   min-height: 100vh;
 }
 
-/* Modern Minimalist Component System (replaces claymorphism) */
+/* Claude Style Minimalist Components */
 
-/* Modern Card with shadow-as-border + subtle elevation */
+/* Warm Card with subtle border and elevation */
 .card-modern {
   background-color: var(--card);
   color: var(--card-foreground);
   border-radius: var(--radius);
-  box-shadow:
-    0 0 0 1px var(--border),
-    0 1px 3px rgba(0, 0, 0, 0.04),
-    0 4px 12px rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(61, 57, 41, 0.05);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-modern:hover {
-  box-shadow:
-    0 0 0 1px oklch(0.85 0 0),
-    0 4px 16px rgba(0, 0, 0, 0.06);
+  border-color: #c4c2ba;
+  box-shadow: 0 4px 12px rgba(61, 57, 41, 0.08);
 }
 
 /* Subtle flat card for inside sections */
 .card-subtle {
   background-color: var(--muted);
   border-radius: calc(var(--radius) - 0.25rem);
-  box-shadow: 0 0 0 1px var(--border);
+  border: 1px solid var(--border);
 }
 
-/* Primary Button (Black / Dark solid) */
+/* Primary Button (Claude Amber Warm Terracotta #c96442) */
 .btn-primary {
   background-color: var(--primary);
   color: var(--primary-foreground);
   border-radius: calc(var(--radius) - 0.25rem);
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.625rem 1.25rem;
   transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(201, 100, 66, 0.25);
 }
 
 .btn-primary:hover {
-  background-color: oklch(0.1 0 0);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: #b05730;
+  box-shadow: 0 3px 8px rgba(201, 100, 66, 0.35);
   transform: translateY(-0.5px);
 }
 
@@ -98,14 +108,15 @@ body {
   transform: translateY(0);
 }
 
-/* Secondary Button (Bordered White) */
+/* Secondary Button (Bordered Warm Cream) */
 .btn-secondary {
   background-color: var(--card);
   color: var(--foreground);
   border-radius: calc(var(--radius) - 0.25rem);
   font-weight: 500;
   padding: 0.625rem 1.25rem;
-  box-shadow: 0 0 0 1px var(--border);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(61, 57, 41, 0.04);
   transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
@@ -115,42 +126,23 @@ body {
 
 .btn-secondary:hover {
   background-color: var(--muted);
-  box-shadow: 0 0 0 1px oklch(0.85 0 0);
-}
-
-/* Accent Button (Chart blue) */
-.btn-accent {
-  background-color: var(--chart-3);
-  color: #ffffff;
-  border-radius: calc(var(--radius) - 0.25rem);
-  font-weight: 500;
-  padding: 0.625rem 1.25rem;
-  transition: all 0.15s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.2);
-}
-
-.btn-accent:hover {
-  background-color: var(--chart-4);
-  transform: translateY(-0.5px);
+  border-color: #b4b2a7;
 }
 
 /* Input Fields */
 .input-modern {
-  background-color: var(--card);
+  background-color: #ffffff;
   color: var(--foreground);
   border-radius: calc(var(--radius) - 0.25rem);
   padding: 0.625rem 1rem;
-  box-shadow: 0 0 0 1px var(--border);
+  border: 1px solid var(--border);
   transition: all 0.15s ease;
   outline: none;
 }
 
 .input-modern:focus {
-  box-shadow: 0 0 0 2px var(--chart-3);
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px rgba(201, 100, 66, 0.15);
 }
 
 /* Pill Badge */
@@ -165,19 +157,19 @@ body {
   letter-spacing: -0.01em;
 }
 
-.badge-blue {
-  background-color: oklch(0.95 0.04 252);
-  color: oklch(0.45 0.18 260);
-  border: 1px solid oklch(0.90 0.06 252);
-}
-
 .badge-neutral {
-  background-color: var(--muted);
-  color: var(--muted-foreground);
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
   border: 1px solid var(--border);
 }
 
-/* Backward compatibility aliases while refactoring */
+.badge-amber {
+  background-color: rgba(201, 100, 66, 0.12);
+  color: #b05730;
+  border: 1px solid rgba(201, 100, 66, 0.25);
+}
+
+/* Backward compatibility aliases */
 .clay-card {
   @apply card-modern;
 }
