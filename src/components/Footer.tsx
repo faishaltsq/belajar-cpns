@@ -15,12 +15,6 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-3 md:col-span-1">
             <div className="flex items-center gap-2">
-              <div
-                className="w-6 h-6 rounded-md flex items-center justify-center font-bold text-white text-xs"
-                style={{ background: 'var(--primary)' }}
-              >
-                L
-              </div>
               <span className="font-bold text-sm tracking-tight" style={{ color: 'var(--foreground)' }}>
                 Lolos<span style={{ color: 'var(--primary)' }}>.in</span>
               </span>

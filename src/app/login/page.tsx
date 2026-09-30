@@ -56,11 +56,8 @@ function LoginFormContent() {
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <Link href="/" className="flex items-center justify-center gap-2 mb-8 group">
-          <div className="w-9 h-9 rounded-xl bg-[var(--primary)] flex items-center justify-center font-bold text-[var(--primary-foreground)] text-sm transition">
-            C
-          </div>
-          <span className="font-bold text-lg text-[var(--foreground)]">
+        <Link href="/" className="inline-flex items-center gap-2 mb-8 group">
+          <span className="font-bold text-xl text-[var(--foreground)]">
             Lolos<span style={{ color: 'var(--primary)' }}>.in</span>
           </span>
         </Link>
