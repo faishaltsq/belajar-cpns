@@ -103,7 +103,7 @@ function LoginFormContent() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Contoh: Budi Santoso"
-                    className="input-modern w-full pl-10 text-sm"
+                    className="input-modern w-full !pl-10 text-sm"
                   />
                 </div>
               </div>
@@ -123,7 +123,7 @@ function LoginFormContent() {
                   placeholder="nama@email.com"
                   required
                   autoComplete="email"
-                  className="input-modern w-full pl-10 text-sm"
+                  className="input-modern w-full !pl-10 text-sm"
                 />
               </div>
             </div>
@@ -143,7 +143,7 @@ function LoginFormContent() {
                   placeholder="••••••••"
                   required
                   autoComplete={isRegister ? 'new-password' : 'current-password'}
-                  className="input-modern w-full pl-10 pr-11 text-sm"
+                  className="input-modern w-full !pl-10 !pr-11 text-sm"
                 />
                 <button
                   type="button"
