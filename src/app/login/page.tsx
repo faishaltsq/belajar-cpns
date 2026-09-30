@@ -1,15 +1,21 @@
 'use client';
 
-import React, { useState, Suspense } from 'react';
+import React, { useState, Suspense, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Envelope, Lock, ArrowRight, ShieldCheck, Eye, EyeSlash, ChartLineUp, Trophy, Brain, SpinnerGap, User } from '@phosphor-icons/react';
+import {
+  Envelope, Lock, ArrowRight, ShieldCheck, Eye, EyeSlash,
+  ChartLineUp, Trophy, Brain, SpinnerGap, User, CheckCircle
+} from '@phosphor-icons/react';
 
 function LoginFormContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const raw = searchParams.get('redirect') || '/simulasi/tryout-1';
   const redirect = raw.startsWith('/') && !raw.startsWith('//') ? raw : '/simulasi/tryout-1';
+
+  // step: 'form' | 'otp'
+  const [step, setStep] = useState<'form' | 'otp'>('form');
   const [isRegister, setIsRegister] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,29 +24,85 @@ function LoginFormContent() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  // OTP
+  const [otpDigits, setOtpDigits] = useState(['', '', '', '', '', '']);
+  const otpRefs = [
+    useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null),
+  ];
+
+  const handleOtpChange = (idx: number, val: string) => {
+    const digit = val.replace(/\D/g, '').slice(-1);
+    const next = [...otpDigits];
+    next[idx] = digit;
+    setOtpDigits(next);
+    if (digit && idx < 5) otpRefs[idx + 1].current?.focus();
+  };
+
+  const handleOtpKeyDown = (idx: number, e: React.KeyboardEvent) => {
+    if (e.key === 'Backspace' && !otpDigits[idx] && idx > 0) {
+      otpRefs[idx - 1].current?.focus();
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
     try {
-      const endpoint = isRegister ? '/api/auth/register' : '/api/auth/login';
-      const res = await fetch(endpoint, {
+      if (isRegister) {
+        // DAFTAR → kirim OTP ke email
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password, name: name || undefined }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Gagal mendaftar.');
+
+        // Dev mode: jika ada devOtp di response
+        if (data.devOtp) {
+          const digits = data.devOtp.split('');
+          setOtpDigits(digits);
+        }
+        setStep('otp');
+      } else {
+        // LOGIN → langsung set cookie
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Gagal masuk.');
+        router.push(redirect);
+      }
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Terjadi kesalahan.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleVerifyOtp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const otp = otpDigits.join('');
+    if (otp.length < 6) return setError('Masukkan 6 digit kode OTP.');
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch('/api/auth/verify-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, name: name || undefined }),
+        body: JSON.stringify({ email, otp }),
       });
-
-      const data: { error?: string } = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || 'Terjadi kesalahan. Silakan coba lagi.');
-      }
-
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Kode OTP tidak valid.');
       router.push(redirect);
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'Terjadi kesalahan.';
-      setError(message);
+      setError(err instanceof Error ? err.message : 'Terjadi kesalahan.');
     } finally {
       setLoading(false);
     }
@@ -52,6 +114,91 @@ function LoginFormContent() {
     { icon: Brain, text: 'Akses penuh seluruh modul psikotes' },
   ];
 
+  // ── STEP OTP ──────────────────────────────────────────────
+  if (step === 'otp') {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="w-full max-w-md">
+          <Link href="/" className="inline-flex items-center gap-2 mb-8">
+            <span className="font-bold text-xl text-[var(--foreground)]">
+              Lolos<span style={{ color: 'var(--primary)' }}>.in</span>
+            </span>
+          </Link>
+
+          <div className="card-modern p-8">
+            <div className="text-center mb-6">
+              <div className="inline-flex p-3 rounded-2xl bg-[var(--muted)] mb-3">
+                <CheckCircle size={28} weight="duotone" style={{ color: 'var(--primary)' }} />
+              </div>
+              <h1 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
+                Verifikasi Email
+              </h1>
+              <p className="text-xs text-[var(--muted-foreground)] mt-1">
+                Kode 6-digit dikirim ke <strong>{email}</strong>
+              </p>
+              <p className="text-xs text-[var(--muted-foreground)]">
+                Berlaku 10 menit. Cek folder Spam jika tidak masuk.
+              </p>
+            </div>
+
+            {error && (
+              <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs">
+                {error}
+              </div>
+            )}
+
+            <form onSubmit={handleVerifyOtp} className="space-y-6">
+              {/* OTP Input boxes */}
+              <div className="flex justify-center gap-2">
+                {otpDigits.map((digit, idx) => (
+                  <input
+                    key={idx}
+                    ref={otpRefs[idx]}
+                    type="text"
+                    inputMode="numeric"
+                    maxLength={1}
+                    value={digit}
+                    onChange={(e) => handleOtpChange(idx, e.target.value)}
+                    onKeyDown={(e) => handleOtpKeyDown(idx, e)}
+                    className="w-11 h-14 text-center text-xl font-bold rounded-xl border-2 bg-white outline-none transition"
+                    style={{
+                      borderColor: digit ? 'var(--primary)' : 'var(--border)',
+                      color: 'var(--foreground)',
+                    }}
+                  />
+                ))}
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading || otpDigits.join('').length < 6}
+                className="btn-primary w-full py-2.5 text-sm"
+              >
+                {loading ? (
+                  <><SpinnerGap size={16} weight="bold" className="animate-spin" /><span>Memverifikasi...</span></>
+                ) : (
+                  <><span>Verifikasi &amp; Masuk</span><ArrowRight size={16} weight="bold" /></>
+                )}
+              </button>
+            </form>
+
+            <div className="mt-4 text-center text-xs text-[var(--muted-foreground)]">
+              Email tidak masuk?{' '}
+              <button
+                type="button"
+                onClick={() => { setStep('form'); setOtpDigits(['', '', '', '', '', '']); setError(''); }}
+                className="text-[var(--foreground)] underline font-medium hover:opacity-80"
+              >
+                Kembali &amp; coba lagi
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ── STEP FORM ─────────────────────────────────────────────
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
@@ -162,15 +309,9 @@ function LoginFormContent() {
               className="btn-primary w-full py-2.5 text-sm mt-2"
             >
               {loading ? (
-                <>
-                  <SpinnerGap size={16} weight="bold" className="animate-spin" />
-                  <span>Memproses...</span>
-                </>
+                <><SpinnerGap size={16} weight="bold" className="animate-spin" /><span>Memproses...</span></>
               ) : (
-                <>
-                  <span>{isRegister ? 'Daftar Sekarang' : 'Masuk Akun'}</span>
-                  <ArrowRight size={16} weight="bold" />
-                </>
+                <><span>{isRegister ? 'Daftar & Kirim OTP' : 'Masuk Akun'}</span><ArrowRight size={16} weight="bold" /></>
               )}
             </button>
           </form>
