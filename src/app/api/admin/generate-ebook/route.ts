@@ -127,7 +127,7 @@ RESPOND dalam format JSON ARRAY, tanpa markdown code block:
     }
 
     // Shuffle opsi agar jawaban benar tidak selalu di posisi A
-    function shuffleOptions(opts: { id: string; text: string; score: number }[]) {
+    const shuffleOptions = (opts: { id: string; text: string; score: number }[]) => {
       const ids = ['a', 'b', 'c', 'd', 'e'];
       const shuffled = [...opts];
       for (let i = shuffled.length - 1; i > 0; i--) {
@@ -135,7 +135,7 @@ RESPOND dalam format JSON ARRAY, tanpa markdown code block:
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
       }
       return shuffled.map((o, idx) => ({ ...o, id: ids[idx] }));
-    }
+    };
 
     // Shuffle semua opsi soal
     for (const q of questions) {
