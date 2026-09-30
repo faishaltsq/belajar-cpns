@@ -35,7 +35,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
           <p className="text-lg mb-4">Hasil ujian tidak ditemukan.</p>
           <Link
             href={retryPath}
-            className="text-purple-500 hover:underline"
+            className="text-cyan-500 hover:underline"
           >
             Kembali ke simulasi
           </Link>
@@ -54,7 +54,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
 
   const categories = [
     { key: 'twk', label: 'TWK', data: result.twk, color: 'blue' },
-    { key: 'tiu', label: 'TIU', data: result.tiu, color: 'purple' },
+    { key: 'tiu', label: 'TIU', data: result.tiu, color: 'cyan' },
     { key: 'tkp', label: 'TKP', data: result.tkp, color: 'emerald' },
   ] as const;
 
@@ -63,9 +63,9 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
       badge: 'bg-blue-100 text-blue-600 border-blue-200',
       bar: 'bg-blue-500',
     },
-    purple: {
-      badge: 'bg-purple-100 text-purple-600 border-purple-200',
-      bar: 'bg-purple-500',
+    cyan: {
+      badge: 'bg-cyan-100 text-cyan-600 border-cyan-200',
+      bar: 'bg-cyan-500',
     },
     emerald: {
       badge: 'bg-emerald-100 text-emerald-600 border-emerald-200',
@@ -89,14 +89,14 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
           ) : (
             <Link
               href="/login"
-              className="clay-card flex items-center gap-3 px-5 py-4 bg-purple-50/60 hover:bg-purple-50 transition group rounded-2xl"
+              className="clay-card flex items-center gap-3 px-5 py-4 bg-cyan-50/60 hover:bg-cyan-50 transition group rounded-2xl"
             >
-              <UserPlus size={24} weight="duotone" className="text-purple-500 shrink-0" />
+              <UserPlus size={24} weight="duotone" className="text-cyan-500 shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-semibold text-slate-800">Ingin simpan hasil ujian ini secara permanen?</p>
                 <p className="text-xs text-slate-400 mt-0.5">Daftar gratis untuk menyimpan riwayat & grafik progres</p>
               </div>
-              <span className="text-purple-500 text-sm font-semibold shrink-0 group-hover:underline">
+              <span className="text-cyan-500 text-sm font-semibold shrink-0 group-hover:underline">
                 Daftar Akun Gratis →
               </span>
             </Link>
@@ -134,7 +134,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
           {/* progress bar */}
           <div className="mt-4 bg-slate-200 rounded-full h-2.5">
             <div
-              className="bg-purple-500 h-2.5 rounded-full transition-all"
+              className="bg-cyan-500 h-2.5 rounded-full transition-all"
               style={{ width: `${(result.totalScore / 550) * 100}%` }}
             />
           </div>
@@ -183,7 +183,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
         {/* CTA */}
         <Link
           href={retryPath}
-          className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-purple-500 hover:bg-purple-400 text-white font-semibold rounded-2xl transition clay-button"
+          className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-2xl transition clay-button"
         >
           <ArrowCounterClockwise size={16} weight="bold" />
           Coba Simulasi Lagi

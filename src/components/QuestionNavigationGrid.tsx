@@ -56,7 +56,7 @@ export function QuestionNavigationGrid({
               key={q.id}
               onClick={() => onSelectIndex(idx)}
               className={`h-9 w-full rounded-xl text-xs flex items-center justify-center border transition-all ${btnColor} ${
-                isCurrent ? 'ring-2 ring-purple-400 ring-offset-2 ring-offset-[#f0ecf4] scale-105' : ''
+                isCurrent ? 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-[#f0ecf4] scale-105' : ''
               }`}
               style={{ boxShadow: '2px 2px 5px rgba(0,0,0,0.05), -2px -2px 4px rgba(255,255,255,0.9)' }}
             >

@@ -156,7 +156,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         <p className="text-slate-600 font-semibold">Paket soal belum tersedia.</p>
         <button
           onClick={() => router.push('/simulasi')}
-          className="py-2.5 px-6 bg-purple-500 text-white rounded-2xl text-sm clay-button font-medium"
+          className="py-2.5 px-6 bg-cyan-500 text-white rounded-2xl text-sm clay-button font-medium"
         >
           Kembali ke Daftar Paket
         </button>
@@ -172,7 +172,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
             <span className="font-bold text-sm sm:text-base truncate text-slate-800">Simulasi CAT CPNS</span>
-            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-600 border border-purple-200 font-medium whitespace-nowrap">
+            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-600 border border-cyan-200 font-medium whitespace-nowrap">
               {params.id.replace('tryout-', 'Tryout ')}
             </span>
           </div>
@@ -215,7 +215,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
             <button
               onClick={() => setCurrentIndex((i) => Math.min(questions.length - 1, i + 1))}
               disabled={currentIndex === questions.length - 1}
-              className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed clay-button"
+              className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed clay-button"
             >
               Selanjutnya
               <CaretRight size={16} weight="bold" />

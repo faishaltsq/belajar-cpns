@@ -40,7 +40,7 @@ export default function SimulasiPage() {
                 <span className="text-slate-600">65 / 150</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-purple-500">TIU (35 soal)</span>
+                <span className="text-cyan-500">TIU (35 soal)</span>
                 <span className="text-slate-600">80 / 175</span>
               </div>
               <div className="flex justify-between">
@@ -61,7 +61,7 @@ export default function SimulasiPage() {
               className="clay-card p-5 hover:translate-y-[-2px] transition-all duration-200 group block"
             >
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-bold text-slate-800 group-hover:text-purple-600 transition-colors">
+                <h3 className="font-bold text-slate-800 group-hover:text-cyan-600 transition-colors">
                   {pkg.label}
                 </h3>
                 {pkg.badge && (
@@ -76,7 +76,7 @@ export default function SimulasiPage() {
                 )}
               </div>
               <p className="text-sm text-slate-500 mb-3">{pkg.desc}</p>
-              <div className="flex items-center text-xs text-purple-500 font-medium group-hover:gap-2 transition-all">
+              <div className="flex items-center text-xs text-cyan-500 font-medium group-hover:gap-2 transition-all">
                 Mulai Tryout
                 <ArrowRight size={14} weight="bold" className="ml-1" />
               </div>

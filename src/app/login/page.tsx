@@ -57,7 +57,7 @@ function LoginFormContent() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <Link href="/" className="flex items-center justify-center gap-2 mb-8 group">
-          <div className="w-9 h-9 rounded-xl bg-purple-500 flex items-center justify-center font-bold text-white text-sm group-hover:bg-purple-400 transition"
+          <div className="w-9 h-9 rounded-xl bg-cyan-500 flex items-center justify-center font-bold text-white text-sm group-hover:bg-cyan-400 transition"
             style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.12), -2px -2px 6px rgba(255,255,255,0.9)' }}>
             C
           </div>
@@ -66,7 +66,7 @@ function LoginFormContent() {
 
         <div className="clay-card p-8">
           <div className="text-center mb-6">
-            <div className="inline-flex p-3 rounded-2xl bg-purple-100 text-purple-500 mb-3">
+            <div className="inline-flex p-3 rounded-2xl bg-cyan-100 text-cyan-500 mb-3">
               <ShieldCheck size={32} weight="duotone" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-800">
@@ -81,7 +81,7 @@ function LoginFormContent() {
           <div className="mb-6 space-y-2.5">
             {benefits.map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-3 text-sm text-slate-600 clay-card-flat rounded-xl px-4 py-2.5">
-                <Icon size={20} weight="duotone" className="text-purple-500 shrink-0" />
+                <Icon size={20} weight="duotone" className="text-cyan-500 shrink-0" />
                 <span>{text}</span>
               </div>
             ))}
@@ -105,7 +105,7 @@ function LoginFormContent() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Contoh: Budi Santoso"
-                  className="clay-input w-full text-sm focus:outline-none focus:ring-2 focus:ring-purple-300"
+                  className="clay-input w-full text-sm focus:outline-none focus:ring-2 focus:ring-cyan-300"
                 />
               </div>
             )}
@@ -124,7 +124,7 @@ function LoginFormContent() {
                   placeholder="081234567890"
                   required
                   autoComplete="tel"
-                  className="clay-input w-full pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 font-mono"
+                  className="clay-input w-full pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-300 font-mono"
                 />
               </div>
             </div>
@@ -146,7 +146,7 @@ function LoginFormContent() {
                   autoComplete={isRegister ? 'new-password' : 'current-password'}
                   inputMode="numeric"
                   pattern="[0-9]{6}"
-                  className="clay-input w-full pl-10 pr-11 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 font-mono tracking-widest"
+                  className="clay-input w-full pl-10 pr-11 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-300 font-mono tracking-widest"
                 />
                 <button
                   type="button"
@@ -162,7 +162,7 @@ function LoginFormContent() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-4 rounded-2xl bg-purple-500 hover:bg-purple-400 disabled:opacity-50 text-white font-semibold text-sm flex items-center justify-center gap-2 transition mt-2 clay-button"
+              className="w-full py-3 px-4 rounded-2xl bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 text-white font-semibold text-sm flex items-center justify-center gap-2 transition mt-2 clay-button"
             >
               {loading ? (
                 <>
@@ -183,7 +183,7 @@ function LoginFormContent() {
             <button
               type="button"
               onClick={() => { setIsRegister(!isRegister); setError(''); setPin(''); }}
-              className="text-purple-500 hover:underline font-medium"
+              className="text-cyan-500 hover:underline font-medium"
             >
               {isRegister ? 'Masuk di sini' : 'Daftar gratis'}
             </button>

@@ -61,7 +61,7 @@ function HasilContent() {
                 <span className="text-xs text-slate-400 font-medium block mb-1">
                   Ketelitian
                 </span>
-                <span className="text-3xl font-extrabold text-purple-600">
+                <span className="text-3xl font-extrabold text-cyan-600">
                   {kraepelinResult.overallAccuracy}%
                 </span>
               </div>
@@ -70,7 +70,7 @@ function HasilContent() {
                 <span className="text-xs text-slate-400 font-medium block mb-1">
                   Kecepatan Rata-rata
                 </span>
-                <span className="text-3xl font-extrabold text-purple-600">
+                <span className="text-3xl font-extrabold text-cyan-600">
                   {kraepelinResult.averageSpeedPerColumn}
                 </span>
                 <span className="text-xs text-slate-400 block mt-0.5">soal/menit</span>
@@ -80,7 +80,7 @@ function HasilContent() {
                 <span className="text-xs text-slate-400 font-medium block mb-1">
                   Stabilitas
                 </span>
-                <span className="text-3xl font-extrabold text-purple-600">
+                <span className="text-3xl font-extrabold text-cyan-600">
                   {kraepelinResult.stabilityScore}
                 </span>
                 <span className="text-xs text-slate-400 block mt-0.5">
@@ -115,7 +115,7 @@ function HasilContent() {
               <span className="text-xs text-slate-400 font-medium block mb-1">
                 Skor Akhir
               </span>
-              <span className="text-6xl font-black text-purple-600">
+              <span className="text-6xl font-black text-cyan-600">
                 {penalaranResult.score}
               </span>
               <span className="text-slate-400 text-sm block mt-1">/ 100</span>

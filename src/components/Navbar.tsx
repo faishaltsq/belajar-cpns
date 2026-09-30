@@ -17,7 +17,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div
-            className="w-8 h-8 rounded-2xl bg-purple-500 flex items-center justify-center font-bold text-white text-sm"
+            className="w-8 h-8 rounded-2xl bg-cyan-500 flex items-center justify-center font-bold text-white text-sm"
             style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.12), -2px -2px 6px rgba(255,255,255,0.9)' }}
           >
             C
@@ -27,9 +27,9 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <div className="hidden sm:flex items-center gap-6 text-sm text-slate-600 font-medium">
-          <Link href="/" className="hover:text-purple-600 transition">Beranda</Link>
-          <Link href="/simulasi" className="hover:text-purple-600 transition">Simulasi CAT</Link>
-          <Link href="/psikotes" className="hover:text-purple-600 transition">Tes Psikotes</Link>
+          <Link href="/" className="hover:text-cyan-600 transition">Beranda</Link>
+          <Link href="/simulasi" className="hover:text-cyan-600 transition">Simulasi CAT</Link>
+          <Link href="/psikotes" className="hover:text-cyan-600 transition">Tes Psikotes</Link>
         </div>
 
         {/* Auth area */}
@@ -38,7 +38,7 @@ export default function Navbar() {
             {user ? (
               <>
                 <span className="hidden sm:flex items-center gap-2 text-sm text-slate-600 px-3 py-1.5 clay-card-flat rounded-xl">
-                  <span className="w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold flex items-center justify-center">
+                  <span className="w-6 h-6 rounded-full bg-cyan-500 text-white text-xs font-bold flex items-center justify-center">
                     {initials || <User size={12} weight="fill" />}
                   </span>
                   {user.name ?? user.phone ?? 'Pengguna'}
@@ -58,7 +58,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/simulasi"
-                  className="clay-button text-sm bg-purple-500 hover:bg-purple-400 text-white px-4 py-1.5"
+                  className="clay-button text-sm bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-1.5"
                 >
                   Mulai Gratis
                 </Link>

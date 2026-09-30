@@ -22,7 +22,7 @@ export function QuestionCard({
 }: QuestionCardProps) {
   const categoryBadgeColors: Record<'TWK' | 'TIU' | 'TKP', string> = {
     TWK: 'bg-blue-100 text-blue-700 border-blue-200',
-    TIU: 'bg-purple-100 text-purple-700 border-purple-200',
+    TIU: 'bg-cyan-100 text-cyan-700 border-cyan-200',
     TKP: 'bg-emerald-100 text-emerald-700 border-emerald-200',
   };
 
@@ -66,7 +66,7 @@ export function QuestionCard({
                 className={`w-full text-left p-4 rounded-2xl border flex items-start gap-4 transition-all ${
                   isSelected
                     ? 'bg-blue-100/80 border-blue-400 text-slate-800'
-                    : 'bg-white/50 border-white/70 text-slate-600 hover:border-purple-300 hover:bg-white/70'
+                    : 'bg-white/50 border-white/70 text-slate-600 hover:border-cyan-300 hover:bg-white/70'
                 }`}
                 style={isSelected ? {
                   boxShadow: 'inset 2px 2px 5px rgba(59,130,246,0.1), inset -2px -2px 5px rgba(255,255,255,0.8)'

@@ -14,7 +14,7 @@ import MiniTryout from '@/components/MiniTryout';
 
 export default function LandingPage() {
   return (
-    <div className="relative overflow-hidden selection:bg-purple-300 selection:text-purple-900 pb-16">
+    <div className="relative overflow-hidden selection:bg-cyan-300 selection:text-cyan-900 pb-16">
       {/* Aurora Glow Backdrop */}
       <div
         className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-60 blur-3xl"
@@ -27,14 +27,14 @@ export default function LandingPage() {
       <div className="relative max-w-6xl mx-auto px-4">
         {/* HERO SECTION */}
         <section className="pt-12 sm:pt-20 pb-12 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full clay-card-flat text-xs font-semibold text-purple-700 mb-6 border border-purple-200">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full clay-card-flat text-xs font-semibold text-cyan-700 mb-6 border border-cyan-200">
             <Fire size={14} weight="fill" className="text-amber-500" />
             <span>Update Soal SKD &amp; Psikotes BKN 2026</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight text-slate-800 max-w-4xl mx-auto">
             Lolos SKD &amp; Psikotes CPNS 2026 dengan{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-500">
+            <span className="text-cyan-300">
               Simulasi CAT Terlengkap
             </span>
           </h1>
@@ -53,7 +53,7 @@ export default function LandingPage() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/simulasi"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white font-bold text-base flex items-center justify-center gap-2 clay-button"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-base flex items-center justify-center gap-2 clay-button"
             >
               <span>Mulai Tryout SKD (100 Menit)</span>
               <ArrowRight size={18} weight="bold" />
@@ -128,12 +128,12 @@ export default function LandingPage() {
             </div>
 
             {/* Card 2: Tes Koran Kraepelin / Pauli */}
-            <div className="clay-card p-6 flex flex-col justify-between border-t-4 border-t-purple-400">
+            <div className="clay-card p-6 flex flex-col justify-between border-t-4 border-t-cyan-400">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 mb-4">
+                <div className="w-12 h-12 rounded-2xl bg-cyan-100 flex items-center justify-center text-cyan-600 mb-4">
                   <GridFour size={26} weight="duotone" />
                 </div>
-                <div className="inline-block px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-xs font-bold mb-2">
+                <div className="inline-block px-2.5 py-0.5 rounded-full bg-cyan-50 text-cyan-700 text-xs font-bold mb-2">
                   Psikotes Kecepatan
                 </div>
                 <h3 className="font-bold text-lg text-slate-800 mb-2">
@@ -145,7 +145,7 @@ export default function LandingPage() {
               </div>
               <Link
                 href="/psikotes/kraepelin"
-                className="clay-button bg-purple-500 hover:bg-purple-400 text-white text-xs py-2.5 px-4 text-center block mt-2"
+                className="clay-button bg-cyan-500 hover:bg-cyan-400 text-white text-xs py-2.5 px-4 text-center block mt-2"
               >
                 Mulai Kraepelin &rarr;
               </Link>
@@ -180,7 +180,7 @@ export default function LandingPage() {
         {/* INTERACTIVE MINI TRYOUT WIDGET */}
         <section className="py-12">
           <div className="text-center mb-8">
-            <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">
+            <span className="text-xs font-bold text-cyan-600 uppercase tracking-wider">
               Coba Sekarang
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 mt-1">
@@ -208,7 +208,7 @@ export default function LandingPage() {
                   Sesuai Keputusan Menteri PANRB No. 321 Tahun 2024 untuk Formasi Umum
                 </p>
               </div>
-              <span className="self-start sm:self-auto px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold">
+              <span className="self-start sm:self-auto px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-semibold">
                 Kepmen PANRB 321/2024
               </span>
             </div>
@@ -239,7 +239,7 @@ export default function LandingPage() {
                   </tr>
                   <tr>
                     <td className="py-3.5 font-medium">
-                      <span className="inline-block px-2.5 py-0.5 rounded-lg bg-purple-100 text-purple-700 font-bold mr-2 text-xs">
+                      <span className="inline-block px-2.5 py-0.5 rounded-lg bg-cyan-100 text-cyan-700 font-bold mr-2 text-xs">
                         TIU
                       </span>
                       Tes Inteligensia Umum
@@ -247,7 +247,7 @@ export default function LandingPage() {
                     <td className="text-center py-3.5">35 butir</td>
                     <td className="text-center py-3.5">5 (Salah 0)</td>
                     <td className="text-center py-3.5">175</td>
-                    <td className="text-center py-3.5 font-bold text-purple-600">80</td>
+                    <td className="text-center py-3.5 font-bold text-cyan-600">80</td>
                   </tr>
                   <tr>
                     <td className="py-3.5 font-medium">
@@ -266,7 +266,7 @@ export default function LandingPage() {
                     <td className="text-center py-3.5">110 butir</td>
                     <td className="text-center py-3.5">-</td>
                     <td className="text-center py-3.5">550</td>
-                    <td className="text-center py-3.5 text-purple-700">311</td>
+                    <td className="text-center py-3.5 text-cyan-700">311</td>
                   </tr>
                 </tbody>
               </table>
@@ -311,7 +311,7 @@ export default function LandingPage() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-slate-800 text-sm truncate">Dinda S.</span>
-                  <span className="font-extrabold text-purple-600 text-sm">471</span>
+                  <span className="font-extrabold text-cyan-600 text-sm">471</span>
                 </div>
                 <p className="text-xs text-slate-500 mt-0.5">Tujuan: Kemenkeu RI</p>
                 <div className="mt-1 flex items-center gap-2 text-[10px] text-slate-400">
@@ -353,7 +353,7 @@ export default function LandingPage() {
           <div className="max-w-3xl mx-auto space-y-4">
             <div className="clay-card p-5">
               <h4 className="font-bold text-sm text-slate-800 mb-2 flex items-center gap-2">
-                <Question size={18} weight="fill" className="text-purple-500" />
+                <Question size={18} weight="fill" className="text-cyan-500" />
                 Berapa passing grade resmi SKD CPNS 2026?
               </h4>
               <p className="text-xs text-slate-500 leading-relaxed">
@@ -363,7 +363,7 @@ export default function LandingPage() {
 
             <div className="clay-card p-5">
               <h4 className="font-bold text-sm text-slate-800 mb-2 flex items-center gap-2">
-                <Question size={18} weight="fill" className="text-purple-500" />
+                <Question size={18} weight="fill" className="text-cyan-500" />
                 Berapa lama durasi ujian SKD sesungguhnya?
               </h4>
               <p className="text-xs text-slate-500 leading-relaxed">
@@ -373,7 +373,7 @@ export default function LandingPage() {
 
             <div className="clay-card p-5">
               <h4 className="font-bold text-sm text-slate-800 mb-2 flex items-center gap-2">
-                <Question size={18} weight="fill" className="text-purple-500" />
+                <Question size={18} weight="fill" className="text-cyan-500" />
                 Apakah ada sistem nilai minus jika jawaban salah?
               </h4>
               <p className="text-xs text-slate-500 leading-relaxed">
@@ -383,7 +383,7 @@ export default function LandingPage() {
 
             <div className="clay-card p-5">
               <h4 className="font-bold text-sm text-slate-800 mb-2 flex items-center gap-2">
-                <Question size={18} weight="fill" className="text-purple-500" />
+                <Question size={18} weight="fill" className="text-cyan-500" />
                 Apa manfaat latihan Tes Kraepelin dan Penalaran?
               </h4>
               <p className="text-xs text-slate-500 leading-relaxed">
@@ -395,8 +395,8 @@ export default function LandingPage() {
 
         {/* BOTTOM FINAL CTA */}
         <section className="py-12 text-center">
-          <div className="clay-card p-8 sm:p-12 max-w-3xl mx-auto bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10">
-            <Trophy size={48} weight="duotone" className="text-purple-500 mx-auto mb-4" />
+          <div className="clay-card p-8 sm:p-12 max-w-3xl mx-auto bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/10">
+            <Trophy size={48} weight="duotone" className="text-cyan-500 mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-800">
               Siap Raih NIP Impian di Seleksi CPNS 2026?
             </h2>
@@ -406,14 +406,14 @@ export default function LandingPage() {
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/simulasi"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white font-bold text-sm flex items-center justify-center gap-2 clay-button"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-sm flex items-center justify-center gap-2 clay-button"
               >
                 <span>Mulai Tryout Gratis Sekarang</span>
                 <ArrowRight size={16} weight="bold" />
               </Link>
               <Link
                 href="/psikotes"
-                className="w-full sm:w-auto px-6 py-3.5 rounded-2xl clay-card-flat text-slate-700 font-semibold text-sm hover:text-purple-600 transition"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-2xl clay-card-flat text-slate-700 font-semibold text-sm hover:text-cyan-600 transition"
               >
                 Jelajahi Tes Psikotes
               </Link>

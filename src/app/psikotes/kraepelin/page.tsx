@@ -136,7 +136,7 @@ export default function KraepelinRunnerPage() {
       <div className="min-h-screen bg-[#e8e4f0] flex items-center justify-center">
         <div className="clay-card rounded-3xl p-12 text-center">
           <p className="text-slate-500 text-sm mb-2">Tes dimulai dalam</p>
-          <span className="text-7xl font-black text-purple-500">{countdown}</span>
+          <span className="text-7xl font-black text-cyan-500">{countdown}</span>
         </div>
       </div>
     );

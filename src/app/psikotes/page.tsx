@@ -10,7 +10,7 @@ export default function PsikotesHubPage() {
       title: 'Tes Koran Kraepelin',
       description:
         'Uji kecepatan dan ketelitian berhitung dengan menjumlahkan pasangan angka secara berurutan.',
-      icon: <Brain size={40} weight="duotone" className="text-purple-500" />,
+      icon: <Brain size={40} weight="duotone" className="text-cyan-500" />,
       badge: 'Kecepatan & Ketelitian',
       time: '~5 menit',
       count: '10 kolom × 25 angka',
@@ -50,7 +50,7 @@ export default function PsikotesHubPage() {
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
                     <h2 className="text-xl font-bold text-slate-800">{mod.title}</h2>
-                    <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-semibold">
+                    <span className="text-xs bg-cyan-100 text-cyan-700 px-2 py-0.5 rounded-full font-semibold">
                       {mod.badge}
                     </span>
                   </div>

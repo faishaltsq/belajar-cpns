@@ -71,7 +71,7 @@ export default function PenalaranPage() {
             className={`text-sm font-bold px-3 py-1 rounded-full ${
               timerWarning
                 ? 'bg-red-100 text-red-600'
-                : 'bg-purple-100 text-purple-700'
+                : 'bg-cyan-100 text-cyan-700'
             }`}
           >
             ⏱ {pad(minutes)}:{pad(secs)}
@@ -81,7 +81,7 @@ export default function PenalaranPage() {
         {/* Progress bar */}
         <div className="w-full h-1.5 rounded-full bg-[#e0dcea] overflow-hidden">
           <div
-            className="h-full rounded-full bg-purple-400 transition-all duration-300"
+            className="h-full rounded-full bg-cyan-400 transition-all duration-300"
             style={{ width: `${((current + 1) / questions.length) * 100}%` }}
           />
         </div>
@@ -101,11 +101,11 @@ export default function PenalaranPage() {
                   className={[
                     'clay-card-flat rounded-2xl px-4 py-3 text-left text-sm font-medium transition-all border-2',
                     selected
-                      ? 'border-purple-400 bg-purple-50 text-slate-800'
-                      : 'border-transparent text-slate-600 hover:border-purple-200',
+                      ? 'border-cyan-400 bg-cyan-50 text-slate-800'
+                      : 'border-transparent text-slate-600 hover:border-cyan-200',
                   ].join(' ')}
                 >
-                  <span className="font-bold text-purple-500 mr-2">{opt.id}.</span>
+                  <span className="font-bold text-cyan-500 mr-2">{opt.id}.</span>
                   {opt.text}
                 </button>
               );
@@ -135,7 +135,7 @@ export default function PenalaranPage() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="clay-button bg-purple-500 text-white"
+                className="clay-button bg-cyan-500 text-white"
               >
                 Submit →
               </button>

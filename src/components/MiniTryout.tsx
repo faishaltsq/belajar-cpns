@@ -27,7 +27,7 @@ export default function MiniTryout() {
           let cls =
             'clay-card-flat px-4 py-3 rounded-2xl text-sm cursor-pointer border-2 transition-all select-none ';
           if (selected === null) {
-            cls += 'border-white/60 hover:border-purple-300 hover:bg-purple-50/60 text-slate-700';
+            cls += 'border-white/60 hover:border-cyan-300 hover:bg-cyan-50/60 text-slate-700';
           } else if (i === SAMPLE_QUESTION.correct) {
             cls += 'border-emerald-400 bg-emerald-50 text-emerald-800 font-semibold';
           } else if (i === selected) {
@@ -76,7 +76,7 @@ export default function MiniTryout() {
 
       <Link
         href="/simulasi/tryout-1"
-        className="inline-flex items-center gap-1.5 text-purple-600 font-semibold text-sm hover:text-purple-500 transition"
+        className="inline-flex items-center gap-1.5 text-cyan-600 font-semibold text-sm hover:text-cyan-500 transition"
       >
         Ada 109 soal lainnya di simulasi lengkap
         <ArrowRight size={14} weight="bold" />

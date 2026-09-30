@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
               <div
-                className="w-8 h-8 rounded-2xl bg-purple-500 flex items-center justify-center font-bold text-white text-sm"
+                className="w-8 h-8 rounded-2xl bg-cyan-500 flex items-center justify-center font-bold text-white text-sm"
                 style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.12), -2px -2px 6px rgba(255,255,255,0.9)' }}
               >
                 C
@@ -26,22 +26,22 @@ export default function Footer() {
             <h4 className="font-bold text-slate-800 text-sm mb-3">Modul Latihan</h4>
             <ul className="space-y-2 text-xs text-slate-500">
               <li>
-                <Link href="/simulasi" className="hover:text-purple-600 transition">
+                <Link href="/simulasi" className="hover:text-cyan-600 transition">
                   Simulasi CAT SKD
                 </Link>
               </li>
               <li>
-                <Link href="/psikotes/kraepelin" className="hover:text-purple-600 transition">
+                <Link href="/psikotes/kraepelin" className="hover:text-cyan-600 transition">
                   Tes Koran Kraepelin
                 </Link>
               </li>
               <li>
-                <Link href="/psikotes/penalaran" className="hover:text-purple-600 transition">
+                <Link href="/psikotes/penalaran" className="hover:text-cyan-600 transition">
                   Tes Penalaran &amp; Spasial
                 </Link>
               </li>
               <li>
-                <Link href="/psikotes" className="hover:text-purple-600 transition">
+                <Link href="/psikotes" className="hover:text-cyan-600 transition">
                   Semua Tes Psikotes
                 </Link>
               </li>
