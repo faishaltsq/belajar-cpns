@@ -113,6 +113,8 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
       const result = calculateExamScore(questions, answerArr, durationSeconds);
       const resultId = `${params.id}-${Date.now()}`;
       localStorage.setItem(`exam_result_${resultId}`, JSON.stringify(result));
+      localStorage.setItem(`exam_questions_${resultId}`, JSON.stringify(questions));
+      localStorage.setItem(`exam_user_answers_${resultId}`, JSON.stringify(answerArr));
       localStorage.removeItem(storageKey);
       localStorage.removeItem(startKey);
       router.push(`/simulasi/hasil/${resultId}`);

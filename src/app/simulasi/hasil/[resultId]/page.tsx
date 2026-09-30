@@ -1,17 +1,31 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import Link from 'next/link';
-import { ExamResult } from '@/lib/types';
-import { CheckCircle, XCircle, Trophy, ArrowCounterClockwise, UserPlus, ShieldCheck } from '@phosphor-icons/react';
+import { ExamResult, Question, ExamAnswer } from '@/lib/types';
+import { calculateSubcategoryDiagnostic } from '@/lib/diagnostic';
+import { ExamQuestionReview } from '@/components/ExamQuestionReview';
+import { DiagnosticReportCard } from '@/components/DiagnosticReportCard';
+import {
+  CheckCircle,
+  XCircle,
+  Trophy,
+  ArrowCounterClockwise,
+  UserPlus,
+  ShieldCheck,
+  ChartBar,
+  ListDashes,
+} from '@phosphor-icons/react';
 import { useUser } from '@/lib/useUser';
 
 export default function HasilPage({ params }: { params: { resultId: string } }) {
   const { user, loading: userLoading } = useUser();
   const [result, setResult] = useState<ExamResult | null>(null);
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [userAnswers, setUserAnswers] = useState<ExamAnswer[]>([]);
   const [notFound, setNotFound] = useState(false);
+  const [activeTab, setActiveTab] = useState<'summary' | 'review'>('summary');
 
-  // Extract tryout ID from resultId (format: tryoutId + '-' + timestamp)
   const tryoutId = params.resultId.split('-').slice(0, -1).join('-');
   const retryPath = tryoutId ? `/simulasi/${tryoutId}` : '/simulasi/tryout-1';
 
@@ -23,20 +37,26 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
       } else {
         setNotFound(true);
       }
+      const rawQ = localStorage.getItem(`exam_questions_${params.resultId}`);
+      const rawA = localStorage.getItem(`exam_user_answers_${params.resultId}`);
+      if (rawQ) setQuestions(JSON.parse(rawQ));
+      if (rawA) setUserAnswers(JSON.parse(rawA));
     } catch {
       setNotFound(true);
     }
   }, [params.resultId]);
 
+  const diagnostic = useMemo(() => {
+    if (!questions.length) return null;
+    return calculateSubcategoryDiagnostic(questions, userAnswers);
+  }, [questions, userAnswers]);
+
   if (notFound) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-slate-400">
+      <div className="min-h-screen flex items-center justify-center text-[var(--muted-foreground)]">
         <div className="text-center">
           <p className="text-lg mb-4">Hasil ujian tidak ditemukan.</p>
-          <Link
-            href={retryPath}
-            className="text-purple-500 hover:underline"
-          >
+          <Link href={retryPath} className="text-[var(--primary)] hover:underline">
             Kembali ke simulasi
           </Link>
         </div>
@@ -46,45 +66,33 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
 
   if (!result) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-slate-400">
+      <div className="min-h-screen flex items-center justify-center text-[var(--muted-foreground)]">
         Memuat hasil...
       </div>
     );
   }
 
   const categories = [
-    { key: 'twk', label: 'TWK', data: result.twk, color: 'blue' },
-    { key: 'tiu', label: 'TIU', data: result.tiu, color: 'purple' },
-    { key: 'tkp', label: 'TKP', data: result.tkp, color: 'emerald' },
+    { label: 'TWK', data: result.twk },
+    { label: 'TIU', data: result.tiu },
+    { label: 'TKP', data: result.tkp },
   ] as const;
-
-  const colorMap = {
-    blue: {
-      badge: 'bg-blue-100 text-blue-600 border-blue-200',
-      bar: 'bg-blue-500',
-    },
-    purple: {
-      badge: 'bg-purple-100 text-purple-600 border-purple-200',
-      bar: 'bg-purple-500',
-    },
-    emerald: {
-      badge: 'bg-emerald-100 text-emerald-600 border-emerald-200',
-      bar: 'bg-emerald-500',
-    },
-  };
 
   const minutes = Math.floor(result.durationSeconds / 60);
   const seconds = result.durationSeconds % 60;
 
   return (
-    <div className="min-h-screen flex items-start justify-center p-4 py-10">
-      <div className="max-w-2xl w-full space-y-6">
-        {/* Auth save banner */}
+    <div className="min-h-screen flex items-start justify-center p-4 py-8">
+      <div className="max-w-3xl w-full space-y-5">
+        {/* Auth banner */}
         {!userLoading && (
           user ? (
-            <div className="clay-card-flat px-4 py-3 flex items-center gap-2 text-sm text-emerald-600 rounded-xl">
+            <div
+              className="px-4 py-3 flex items-center gap-2 text-sm text-emerald-700 rounded-xl border"
+              style={{ background: '#f0fdf4', borderColor: '#86efac' }}
+            >
               <ShieldCheck size={18} weight="duotone" />
-              <span className="font-medium">Tersimpan di Akun Anda</span>
+              <span className="font-medium">Hasil tersimpan di Akun Anda</span>
             </div>
           ) : (
             <Link
@@ -93,8 +101,12 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
             >
               <UserPlus size={24} weight="duotone" className="text-[var(--foreground)] shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-[var(--foreground)]">Ingin simpan hasil ujian ini secara permanen?</p>
-                <p className="text-xs text-[var(--muted-foreground)] mt-0.5">Daftar gratis untuk menyimpan riwayat &amp; grafik progres</p>
+                <p className="text-sm font-semibold text-[var(--foreground)]">
+                  Ingin simpan hasil ujian ini secara permanen?
+                </p>
+                <p className="text-xs text-[var(--muted-foreground)] mt-0.5">
+                  Daftar gratis untuk menyimpan riwayat &amp; grafik progres
+                </p>
               </div>
               <span className="text-[var(--foreground)] text-sm font-semibold shrink-0 group-hover:underline">
                 Daftar Akun Gratis →
@@ -103,13 +115,13 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
           )
         )}
 
-        {/* Passing banner */}
+        {/* Passing Banner */}
         <div
-          className={`clay-card p-6 text-center ${
-            result.isPassedAll
-              ? 'bg-emerald-50/80 border-emerald-200'
-              : 'bg-red-50/80 border-red-200'
-          }`}
+          className="p-6 text-center rounded-2xl border"
+          style={{
+            background: result.isPassedAll ? '#f0fdf4' : '#fff5f5',
+            borderColor: result.isPassedAll ? '#86efac' : '#fca5a5',
+          }}
         >
           <div className="flex justify-center mb-3">
             {result.isPassedAll ? (
@@ -127,31 +139,29 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
         </div>
 
         {/* Total Score */}
-        <div className="clay-card p-6 text-center">
+        <div className="card-modern p-6 text-center">
           <p className="text-[var(--muted-foreground)] text-sm mb-1">Total Skor</p>
           <div className="text-5xl font-bold text-[var(--foreground)]">{result.totalScore}</div>
           <p className="text-[var(--muted-foreground)] text-sm mt-1">dari 550</p>
-          {/* progress bar */}
           <div className="mt-4 rounded-full h-2.5" style={{ background: 'var(--muted)' }}>
             <div
-              className="bg-[var(--primary)] h-2.5 rounded-full transition-all"
-              style={{ width: `${(result.totalScore / 550) * 100}%` }}
+              className="h-2.5 rounded-full transition-all"
+              style={{ width: `${(result.totalScore / 550) * 100}%`, backgroundColor: 'var(--primary)' }}
             />
           </div>
         </div>
 
-        {/* Category cards */}
+        {/* Category Score Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {categories.map(({ label, data, color }) => {
-            const colors = colorMap[color];
+          {categories.map(({ label, data }) => {
             const pct = Math.min((data.score / data.maxScore) * 100, 100);
             return (
-              <div
-                key={label}
-                className="clay-card p-5 flex flex-col gap-3"
-              >
+              <div key={label} className="card-modern p-5 flex flex-col gap-3">
                 <div className="flex items-center justify-between">
-                  <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${colors.badge}`}>
+                  <span
+                    className="text-xs px-2.5 py-1 rounded-full border font-bold text-[var(--foreground)]"
+                    style={{ borderColor: 'var(--border)', background: 'var(--secondary)' }}
+                  >
                     {label}
                   </span>
                   {data.isPassed ? (
@@ -162,16 +172,20 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
                 </div>
                 <div>
                   <span className="text-3xl font-bold text-[var(--foreground)]">{data.score}</span>
-                    <span className="text-[var(--muted-foreground)] text-sm"> / {data.maxScore}</span>
+                  <span className="text-[var(--muted-foreground)] text-sm"> / {data.maxScore}</span>
                 </div>
                 <div className="rounded-full h-1.5" style={{ background: 'var(--muted)' }}>
-                  <div className={`${colors.bar} h-1.5 rounded-full`} style={{ width: `${pct}%` }} />
+                  <div
+                    className="h-1.5 rounded-full"
+                    style={{
+                      width: `${pct}%`,
+                      backgroundColor: data.isPassed ? '#10b981' : '#ef4444',
+                    }}
+                  />
                 </div>
                 <div className="flex items-center justify-between text-xs text-[var(--muted-foreground)]">
                   <span>PG {data.passingGrade}</span>
-                  <span
-                    className={`font-semibold ${data.isPassed ? 'text-emerald-500' : 'text-red-400'}`}
-                  >
+                  <span className={`font-semibold ${data.isPassed ? 'text-emerald-500' : 'text-red-400'}`}>
                     {data.isPassed ? 'Lulus' : 'Tidak Lulus'}
                   </span>
                 </div>
@@ -180,10 +194,52 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
           })}
         </div>
 
+        {/* Tab Switcher */}
+        <div className="flex gap-1.5 border-b" style={{ borderColor: 'var(--border)' }}>
+          <button
+            onClick={() => setActiveTab('summary')}
+            className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold rounded-t-lg transition border-b-2 -mb-px ${
+              activeTab === 'summary'
+                ? 'border-[var(--primary)] text-[var(--primary)]'
+                : 'border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)]'
+            }`}
+          >
+            <ChartBar size={14} weight="duotone" />
+            Analisis Kelemahan
+          </button>
+          <button
+            onClick={() => setActiveTab('review')}
+            className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold rounded-t-lg transition border-b-2 -mb-px ${
+              activeTab === 'review'
+                ? 'border-[var(--primary)] text-[var(--primary)]'
+                : 'border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)]'
+            }`}
+          >
+            <ListDashes size={14} weight="duotone" />
+            Bedah Soal &amp; Pembahasan
+          </button>
+        </div>
+
+        {/* Tab Content */}
+        <div className="pt-2">
+          {activeTab === 'summary' && (
+            diagnostic ? (
+              <DiagnosticReportCard report={diagnostic} />
+            ) : (
+              <div className="card-modern p-8 text-center text-xs text-[var(--muted-foreground)]">
+                Data analisis tidak tersedia untuk sesi ujian lama ini. Coba lagi setelah mengerjakan tryout baru.
+              </div>
+            )
+          )}
+          {activeTab === 'review' && (
+            <ExamQuestionReview questions={questions} userAnswers={userAnswers} />
+          )}
+        </div>
+
         {/* CTA */}
         <Link
           href={retryPath}
-          className="btn-primary flex items-center justify-center gap-2 w-full py-3 px-6 text-sm"
+          className="btn-primary flex items-center justify-center gap-2 w-full py-3 px-6 text-sm mt-4"
         >
           <ArrowCounterClockwise size={16} weight="bold" />
           Coba Simulasi Lagi
