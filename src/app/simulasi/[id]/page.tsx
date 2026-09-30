@@ -8,7 +8,8 @@ import { QuestionNavigationGrid } from '@/components/QuestionNavigationGrid';
 import { FinishExamModal } from '@/components/FinishExamModal';
 import { calculateExamScore } from '@/lib/scoring';
 import { ExamAnswer, Question } from '@/lib/types';
-import { CaretLeft, CaretRight } from '@phosphor-icons/react';
+import { CaretLeft, CaretRight, Desktop, Sparkle } from '@phosphor-icons/react';
+import { BKNThemeLayout } from '@/components/BKNThemeLayout';
 
 const EXAM_DURATION = 6000; // 100 minutes
 
@@ -24,6 +25,10 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
   const [showModal, setShowModal] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const submittingRef = useRef(false);
+  const [viewMode, setViewMode] = useState<'modern' | 'bkn'>(() => {
+    if (typeof window !== 'undefined') return (localStorage.getItem('cat_view_mode') as 'modern' | 'bkn') || 'modern';
+    return 'modern';
+  });
 
   // Load package questions from server API (supports DB-stored custom packages)
   useEffect(() => {
@@ -188,6 +193,56 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     );
   }
 
+  const isBknMode = viewMode === 'bkn';
+
+  if (isBknMode) {
+    return (
+      <>
+        {/* Toggle switch fixed top right */}
+        <div style={{ position: 'fixed', bottom: 16, right: 16, zIndex: 999 }}>
+          <button
+            onClick={() => {
+              setViewMode('modern');
+              localStorage.setItem('cat_view_mode', 'modern');
+            }}
+            style={{
+              background: '#c96442',
+              color: '#fff',
+              border: 'none',
+              padding: '8px 14px',
+              borderRadius: 20,
+              fontSize: 12,
+              fontWeight: 700,
+              cursor: 'pointer',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            }}
+          >
+            ✨ Kembali ke Mode Modern
+          </button>
+        </div>
+        <BKNThemeLayout
+          questions={questions}
+          currentIndex={currentIndex}
+          answers={answers}
+          timerElement={<Timer key={initialSeconds} initialSeconds={initialSeconds} onTimeUp={handleTimeUp} />}
+          onSelectIndex={setCurrentIndex}
+          onSelectOption={handleSelectOption}
+          onToggleFlag={handleToggleFlag}
+          onOpenModal={() => setShowModal(true)}
+          packageId={params.id}
+        />
+        <FinishExamModal
+          isOpen={showModal}
+          totalQuestions={questions.length}
+          answeredCount={answered}
+          flaggedCount={flagged}
+          onCancel={() => setShowModal(false)}
+          onConfirm={handleConfirmSubmit}
+        />
+      </>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -207,7 +262,25 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            <Timer key={initialSeconds} initialSeconds={initialSeconds} onTimeUp={handleTimeUp} />
+              {/* Mode toggle */}
+              <button
+                onClick={() => {
+                  const next = viewMode === 'modern' ? 'bkn' : 'modern';
+                  setViewMode(next);
+                  localStorage.setItem('cat_view_mode', next);
+                }}
+                title="Beralih ke tampilan BKN asli"
+                className="hidden sm:flex items-center gap-1.5 text-[10px] font-bold px-3 py-1.5 rounded-lg border transition"
+                style={{
+                  borderColor: 'var(--border)',
+                  background: 'var(--secondary)',
+                  color: 'var(--foreground)',
+                }}
+              >
+                <Desktop size={13} />
+                Mode BKN
+              </button>
+              <Timer key={initialSeconds} initialSeconds={initialSeconds} onTimeUp={handleTimeUp} />
             <button
               onClick={() => setShowModal(true)}
               className="btn-primary text-xs py-2 px-4 whitespace-nowrap"
