@@ -88,11 +88,36 @@ export default function RiwayatPage() {
 
         {/* Info banner */}
         <div
-          className="px-4 py-3 rounded-xl border text-xs text-[var(--muted-foreground)] flex items-center gap-2"
+          className="px-4 py-3 rounded-xl border text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-2"
           style={{ background: 'var(--muted)', borderColor: 'var(--border)' }}
         >
-          <BookOpen size={14} className="shrink-0" />
-          Riwayat disimpan di perangkat ini (localStorage). Daftar akun untuk sinkronisasi lintas perangkat.
+          <div className="flex items-center gap-2">
+            <BookOpen size={14} className="shrink-0" />
+            Riwayat disimpan di perangkat ini. Daftar akun untuk sinkronisasi lintas perangkat.
+          </div>
+          {history.length > 0 && (
+            <button
+              onClick={() => {
+                if (!confirm('Hapus semua riwayat ujian di perangkat ini?')) return;
+                for (let i = localStorage.length - 1; i >= 0; i--) {
+                  const key = localStorage.key(i);
+                  if (key && (
+                    key.startsWith('exam_result_') ||
+                    key.startsWith('exam_questions_') ||
+                    key.startsWith('exam_user_answers_') ||
+                    key.startsWith('exam_answers_') ||
+                    key.startsWith('exam_start_')
+                  )) {
+                    localStorage.removeItem(key);
+                  }
+                }
+                setHistory([]);
+              }}
+              className="text-red-500 hover:text-red-700 text-[10px] font-semibold whitespace-nowrap shrink-0 underline"
+            >
+              Hapus Semua Riwayat
+            </button>
+          )}
         </div>
 
         {history.length === 0 ? (
