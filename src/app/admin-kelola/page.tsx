@@ -47,6 +47,8 @@ export default function AdminPage() {
   const [filterCat, setFilterCat] = useState<string>('ALL');
   const [loading, setLoading] = useState(false);
   const [saveStatus, setSaveStatus] = useState<string>('');
+  const [uploadingImg, setUploadingImg] = useState(false);
+  const [uploadError, setUploadError] = useState('');
   const [dbStatus, setDbStatus] = useState<{ connected: boolean; hasEnv: boolean; message: string } | null>(null);
 
   // Custom Test Builder state
@@ -452,30 +454,80 @@ export default function AdminPage() {
                     />
                   </div>
 
-                  {/* Image Path / URL */}
+                  {/* Image Upload */}
                   <div>
                     <label className="block text-xs font-medium text-[var(--muted-foreground)] mb-1">
-                      Path Gambar / URL Gambar (Opsional)
+                      Gambar Soal (Opsional)
                     </label>
-                    <input
-                      type="text"
-                      placeholder="Contoh: /images/questions/fig_page_0175.jpg atau https://..."
-                      value={editingQ.image || ''}
-                      onChange={(e) => setEditingQ({ ...editingQ, image: e.target.value || undefined })}
-                      className="input-modern w-full text-xs font-mono"
-                    />
-                    {editingQ.image && (
-                      <div className="mt-2 p-2 rounded-lg border max-w-sm" style={{ borderColor: 'var(--border)' }}>
-                        <p className="text-[10px] text-[var(--muted-foreground)] mb-1">Preview Gambar:</p>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={editingQ.image}
-                          alt="Preview"
-                          className="max-h-40 rounded object-contain"
-                          onError={(e) => { (e.target as HTMLImageElement).alt = 'Gambar tidak ditemukan'; }}
+                    <div className="space-y-2">
+                      {/* Upload button */}
+                      <label
+                        className="flex items-center gap-2 cursor-pointer btn-secondary text-xs py-2 px-3 w-fit"
+                        style={{ opacity: uploadingImg ? 0.6 : 1, pointerEvents: uploadingImg ? 'none' : 'auto' }}
+                      >
+                        <ImageIcon size={14} />
+                        {uploadingImg ? 'Mengupload...' : 'Upload Gambar'}
+                        <input
+                          type="file"
+                          accept="image/jpeg,image/png,image/webp"
+                          className="hidden"
+                          onChange={async (e) => {
+                            const file = e.target.files?.[0];
+                            if (!file) return;
+                            setUploadingImg(true);
+                            setUploadError('');
+                            try {
+                              const fd = new FormData();
+                              fd.append('file', file);
+                              const res = await fetch('/api/admin/upload', {
+                                method: 'POST',
+                                headers: { 'x-admin-pin': pin },
+                                body: fd,
+                              });
+                              const data = await res.json();
+                              if (data.url) {
+                                setEditingQ({ ...editingQ, image: data.url });
+                              } else {
+                                setUploadError(data.error || 'Upload gagal');
+                              }
+                            } catch {
+                              setUploadError('Upload gagal — cek koneksi');
+                            } finally {
+                              setUploadingImg(false);
+                              e.target.value = '';
+                            }
+                          }}
                         />
-                      </div>
-                    )}
+                      </label>
+                      {uploadError && (
+                        <p className="text-xs text-red-500">{uploadError}</p>
+                      )}
+                      {/* Preview + hapus */}
+                      {editingQ.image ? (
+                        <div className="flex items-start gap-3 p-3 rounded-xl border" style={{ borderColor: 'var(--border)', background: 'var(--muted)' }}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={editingQ.image}
+                            alt="Preview"
+                            className="max-h-36 rounded-lg object-contain border"
+                            style={{ borderColor: 'var(--border)' }}
+                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                          />
+                          <div className="flex flex-col gap-1.5">
+                            <p className="text-[10px] font-mono text-[var(--muted-foreground)] break-all">{editingQ.image}</p>
+                            <button
+                              type="button"
+                              onClick={() => setEditingQ({ ...editingQ, image: undefined })}
+                              className="text-[10px] text-red-500 hover:underline w-fit"
+                            >
+                              Hapus gambar
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <p className="text-[10px] text-[var(--muted-foreground)]">Belum ada gambar. Maks 2MB, format JPEG/PNG/WebP.</p>
+                      )}
+                    </div>
                   </div>
 
                   {/* Options Editor */}
