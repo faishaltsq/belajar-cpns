@@ -46,6 +46,11 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     setHydrated(true);
   }, [storageKey]);
 
+  // Dynamic exam duration: 60s per question for custom/mini (<50 Qs), or standard 6000s
+  const examDuration = questions.length > 0 && questions.length < 50
+    ? Math.max(600, questions.length * 60)
+    : 6000;
+
   // Track elapsed seconds using a start timestamp for crash recovery
   const elapsedRef = useRef(0);
   useEffect(() => {
@@ -54,9 +59,9 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
       localStorage.setItem(startKey, String(Date.now()));
     } else {
       const elapsed = Math.floor((Date.now() - Number(stored)) / 1000);
-      elapsedRef.current = Math.min(elapsed, EXAM_DURATION);
+      elapsedRef.current = Math.min(elapsed, examDuration);
     }
-  }, [startKey]);
+  }, [startKey, examDuration]);
 
   // Autosave answers to localStorage whenever they change (after hydration)
   useEffect(() => {
@@ -139,8 +144,8 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
   });
 
   const initialSeconds = hydrated
-    ? Math.max(0, EXAM_DURATION - elapsedRef.current)
-    : EXAM_DURATION;
+    ? Math.max(0, examDuration - elapsedRef.current)
+    : examDuration;
 
   if (!hydrated || loadingQuestions) {
     return (
@@ -156,7 +161,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         <p className="text-slate-600 font-semibold">Paket soal belum tersedia.</p>
         <button
           onClick={() => router.push('/simulasi')}
-          className="py-2.5 px-6 bg-purple-500 text-white rounded-2xl text-sm clay-button font-medium"
+          className="btn-primary text-sm py-2.5 px-6"
         >
           Kembali ke Daftar Paket
         </button>

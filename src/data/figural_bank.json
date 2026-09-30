@@ -1,0 +1,1192 @@
+[
+  {
+    "id": 1,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Pilihlah gambar yang merupakan kelanjutan dari pola berikut.",
+    "image": "/images/questions/fig_page_0175.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Perhatikan pola rotasi, pencerminan, atau penambahan elemen pada setiap gambar."
+  },
+  {
+    "id": 2,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan gambar yang tepat untuk melengkapi analogi berikut.",
+    "image": "/images/questions/fig_page_0176.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Hubungan antara gambar pertama dan kedua diterapkan pada pasangan berikutnya."
+  },
+  {
+    "id": 3,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Perhatikan pola rotasi. Tentukan gambar selanjutnya.",
+    "image": "/images/questions/fig_page_0177.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Objek berputar 90° searah jarum jam di setiap langkah."
+  },
+  {
+    "id": 4,
+    "category": "TIU",
+    "subCategory": "Pola Spasial",
+    "text": "Tentukan bentuk yang sesuai dengan pola spasial berikut.",
+    "image": "/images/questions/fig_page_0178.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Elemen ditambahkan/dikurangi secara sistematis di setiap iterasi."
+  },
+  {
+    "id": 5,
+    "category": "TIU",
+    "subCategory": "Penalaran Figural",
+    "text": "Analisis pola dan pilih jawaban yang paling tepat.",
+    "image": "/images/questions/fig_page_0179.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola terbentuk dari kombinasi transformasi geometris."
+  },
+  {
+    "id": 6,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Pilihlah gambar yang merupakan kelanjutan dari pola berikut.",
+    "image": "/images/questions/fig_page_0180.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Perhatikan pola rotasi, pencerminan, atau penambahan elemen pada setiap gambar."
+  },
+  {
+    "id": 7,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan gambar yang tepat untuk melengkapi analogi berikut.",
+    "image": "/images/questions/fig_page_0181.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Hubungan antara gambar pertama dan kedua diterapkan pada pasangan berikutnya."
+  },
+  {
+    "id": 8,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Perhatikan pola rotasi. Tentukan gambar selanjutnya.",
+    "image": "/images/questions/fig_page_0182.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Objek berputar 90° searah jarum jam di setiap langkah."
+  },
+  {
+    "id": 9,
+    "category": "TIU",
+    "subCategory": "Pola Spasial",
+    "text": "Tentukan bentuk yang sesuai dengan pola spasial berikut.",
+    "image": "/images/questions/fig_page_0183.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Elemen ditambahkan/dikurangi secara sistematis di setiap iterasi."
+  },
+  {
+    "id": 10,
+    "category": "TIU",
+    "subCategory": "Penalaran Figural",
+    "text": "Analisis pola dan pilih jawaban yang paling tepat.",
+    "image": "/images/questions/fig_page_0184.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola terbentuk dari kombinasi transformasi geometris."
+  },
+  {
+    "id": 11,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Pilihlah gambar yang merupakan kelanjutan dari pola berikut.",
+    "image": "/images/questions/fig_page_0185.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Perhatikan pola rotasi, pencerminan, atau penambahan elemen pada setiap gambar."
+  },
+  {
+    "id": 12,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan gambar yang tepat untuk melengkapi analogi berikut.",
+    "image": "/images/questions/fig_page_0186.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Hubungan antara gambar pertama dan kedua diterapkan pada pasangan berikutnya."
+  },
+  {
+    "id": 13,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Perhatikan pola rotasi. Tentukan gambar selanjutnya.",
+    "image": "/images/questions/fig_page_0187.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Objek berputar 90° searah jarum jam di setiap langkah."
+  },
+  {
+    "id": 14,
+    "category": "TIU",
+    "subCategory": "Pola Spasial",
+    "text": "Tentukan bentuk yang sesuai dengan pola spasial berikut.",
+    "image": "/images/questions/fig_page_0188.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Elemen ditambahkan/dikurangi secara sistematis di setiap iterasi."
+  },
+  {
+    "id": 15,
+    "category": "TIU",
+    "subCategory": "Penalaran Figural",
+    "text": "Analisis pola dan pilih jawaban yang paling tepat.",
+    "image": "/images/questions/fig_page_0189.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola terbentuk dari kombinasi transformasi geometris."
+  },
+  {
+    "id": 16,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Pilihlah gambar yang merupakan kelanjutan dari pola berikut.",
+    "image": "/images/questions/fig_page_0190.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Perhatikan pola rotasi, pencerminan, atau penambahan elemen pada setiap gambar."
+  },
+  {
+    "id": 17,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan gambar yang tepat untuk melengkapi analogi berikut.",
+    "image": "/images/questions/fig_page_0191.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Hubungan antara gambar pertama dan kedua diterapkan pada pasangan berikutnya."
+  },
+  {
+    "id": 18,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Perhatikan pola rotasi. Tentukan gambar selanjutnya.",
+    "image": "/images/questions/fig_page_0192.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Objek berputar 90° searah jarum jam di setiap langkah."
+  },
+  {
+    "id": 19,
+    "category": "TIU",
+    "subCategory": "Pola Spasial",
+    "text": "Tentukan bentuk yang sesuai dengan pola spasial berikut.",
+    "image": "/images/questions/fig_page_0193.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Elemen ditambahkan/dikurangi secara sistematis di setiap iterasi."
+  },
+  {
+    "id": 20,
+    "category": "TIU",
+    "subCategory": "Penalaran Figural",
+    "text": "Analisis pola dan pilih jawaban yang paling tepat.",
+    "image": "/images/questions/fig_page_0194.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola terbentuk dari kombinasi transformasi geometris."
+  },
+  {
+    "id": 21,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Pilihlah gambar yang merupakan kelanjutan dari pola berikut.",
+    "image": "/images/questions/fig_page_0195.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Perhatikan pola rotasi, pencerminan, atau penambahan elemen pada setiap gambar."
+  },
+  {
+    "id": 22,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan gambar yang tepat untuk melengkapi analogi berikut.",
+    "image": "/images/questions/fig_page_0196.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Hubungan antara gambar pertama dan kedua diterapkan pada pasangan berikutnya."
+  },
+  {
+    "id": 23,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Perhatikan pola rotasi. Tentukan gambar selanjutnya.",
+    "image": "/images/questions/fig_page_0197.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Objek berputar 90° searah jarum jam di setiap langkah."
+  },
+  {
+    "id": 24,
+    "category": "TIU",
+    "subCategory": "Pola Spasial",
+    "text": "Tentukan bentuk yang sesuai dengan pola spasial berikut.",
+    "image": "/images/questions/fig_page_0198.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Elemen ditambahkan/dikurangi secara sistematis di setiap iterasi."
+  },
+  {
+    "id": 25,
+    "category": "TIU",
+    "subCategory": "Penalaran Figural",
+    "text": "Analisis pola dan pilih jawaban yang paling tepat.",
+    "image": "/images/questions/fig_page_0199.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola terbentuk dari kombinasi transformasi geometris."
+  },
+  {
+    "id": 26,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Pilihlah gambar yang merupakan kelanjutan dari pola berikut.",
+    "image": "/images/questions/fig_page_0200.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Perhatikan pola rotasi, pencerminan, atau penambahan elemen pada setiap gambar."
+  },
+  {
+    "id": 27,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan gambar yang tepat untuk melengkapi analogi berikut.",
+    "image": "/images/questions/fig_page_0201.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Hubungan antara gambar pertama dan kedua diterapkan pada pasangan berikutnya."
+  },
+  {
+    "id": 28,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Perhatikan pola rotasi. Tentukan gambar selanjutnya.",
+    "image": "/images/questions/fig_page_0202.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Objek berputar 90° searah jarum jam di setiap langkah."
+  },
+  {
+    "id": 29,
+    "category": "TIU",
+    "subCategory": "Pola Spasial",
+    "text": "Tentukan bentuk yang sesuai dengan pola spasial berikut.",
+    "image": "/images/questions/fig_page_0203.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Elemen ditambahkan/dikurangi secara sistematis di setiap iterasi."
+  },
+  {
+    "id": 30,
+    "category": "TIU",
+    "subCategory": "Penalaran Figural",
+    "text": "Analisis pola dan pilih jawaban yang paling tepat.",
+    "image": "/images/questions/fig_page_0204.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola terbentuk dari kombinasi transformasi geometris."
+  },
+  {
+    "id": 31,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Pilihlah gambar yang merupakan kelanjutan dari pola berikut.",
+    "image": "/images/questions/fig_page_0205.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Perhatikan pola rotasi, pencerminan, atau penambahan elemen pada setiap gambar."
+  },
+  {
+    "id": 32,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan gambar yang tepat untuk melengkapi analogi berikut.",
+    "image": "/images/questions/fig_page_0206.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Hubungan antara gambar pertama dan kedua diterapkan pada pasangan berikutnya."
+  },
+  {
+    "id": 33,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Perhatikan pola rotasi. Tentukan gambar selanjutnya.",
+    "image": "/images/questions/fig_page_0207.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Objek berputar 90° searah jarum jam di setiap langkah."
+  },
+  {
+    "id": 34,
+    "category": "TIU",
+    "subCategory": "Pola Spasial",
+    "text": "Tentukan bentuk yang sesuai dengan pola spasial berikut.",
+    "image": "/images/questions/fig_page_0208.jpg",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Elemen ditambahkan/dikurangi secara sistematis di setiap iterasi."
+  }
+]
