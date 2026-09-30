@@ -43,6 +43,25 @@ export interface ExamResult {
   durationSeconds: number;
 }
 
+// --- Diagnostik Sub-Kategori ---
+export interface SubcategoryStat {
+  name: string;
+  category: QuestionCategory;
+  total: number;
+  correct: number;
+  earnedScore: number;
+  maxScore: number;
+  accuracyPercent: number;
+  status: 'KUAT' | 'SEDANG' | 'LEMAH'; // >=80% KUAT, 60-79% SEDANG, <60% LEMAH
+}
+
+export interface SubcategoryDiagnosticReport {
+  weakestSubcategories: SubcategoryStat[];
+  strongestSubcategories: SubcategoryStat[];
+  allSubcategories: SubcategoryStat[];
+  recommendationNote: string;
+}
+
 export interface KraepelinColumn {
   columnIndex: number;
   numbers: number[]; // 20-30 numbers per column (each 0-9)
