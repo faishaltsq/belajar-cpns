@@ -1,64 +1,103 @@
 'use client';
 
 import Link from 'next/link';
-import { SignOut, User } from '@phosphor-icons/react';
+import { usePathname } from 'next/navigation';
+import { SignOut, User, List, X } from '@phosphor-icons/react';
 import { useUser } from '@/lib/useUser';
+import { useState } from 'react';
+
+const NAV_LINKS = [
+  { href: '/', label: 'Beranda' },
+  { href: '/simulasi', label: 'Simulasi CAT' },
+  { href: '/psikotes', label: 'Tes Psikotes' },
+];
 
 export default function Navbar() {
   const { user, loading, logout } = useUser();
+  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const initials = user?.name
     ? user.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase()
     : null;
 
   return (
-    <div className="px-4">
-      <nav className="clay-card-flat mx-auto max-w-6xl my-4 px-6 py-3 flex items-center justify-between">
+    <header
+      className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm"
+      style={{ boxShadow: '0 0 0 1px oklch(0.92 0 0), 0 1px 3px rgba(0,0,0,0.04)' }}
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <div
-            className="w-8 h-8 rounded-2xl bg-purple-500 flex items-center justify-center font-bold text-white text-sm"
-            style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.12), -2px -2px 6px rgba(255,255,255,0.9)' }}
+            className="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-white text-sm"
+            style={{ background: 'var(--primary)', boxShadow: '0 1px 3px rgba(0,0,0,0.15)' }}
           >
             C
           </div>
-          <span className="font-bold text-lg text-slate-800">CPNSMaster</span>
+          <span className="font-semibold text-[15px] tracking-tight" style={{ color: 'var(--foreground)' }}>
+            CPNSMaster
+          </span>
         </Link>
 
-        {/* Nav Links */}
-        <div className="hidden sm:flex items-center gap-6 text-sm text-slate-600 font-medium">
-          <Link href="/" className="hover:text-purple-600 transition">Beranda</Link>
-          <Link href="/simulasi" className="hover:text-purple-600 transition">Simulasi CAT</Link>
-          <Link href="/psikotes" className="hover:text-purple-600 transition">Tes Psikotes</Link>
-        </div>
+        {/* Desktop Nav Links */}
+        <nav className="hidden sm:flex items-center gap-1">
+          {NAV_LINKS.map(({ href, label }) => {
+            const active = pathname === href || (href !== '/' && pathname.startsWith(href));
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                  active
+                    ? 'bg-[var(--muted)] text-[var(--foreground)]'
+                    : 'text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)]'
+                }`}
+              >
+                {label}
+              </Link>
+            );
+          })}
+        </nav>
 
-        {/* Auth area */}
+        {/* Desktop Auth */}
         {!loading && (
-          <div className="flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-2">
             {user ? (
               <>
-                <span className="hidden sm:flex items-center gap-2 text-sm text-slate-600 px-3 py-1.5 clay-card-flat rounded-xl">
-                  <span className="w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold flex items-center justify-center">
-                    {initials || <User size={12} weight="fill" />}
-                  </span>
-                  {user.name ?? user.phone ?? 'Pengguna'}
-                </span>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm" style={{ color: 'var(--muted-foreground)', background: 'var(--muted)' }}>
+                  <div
+                    className="w-5 h-5 rounded-full text-white text-[10px] font-bold flex items-center justify-center"
+                    style={{ background: 'var(--primary)' }}
+                  >
+                    {initials || <User size={10} weight="fill" />}
+                  </div>
+                  <span className="max-w-[120px] truncate">{user.name ?? user.phone ?? 'Pengguna'}</span>
+                </div>
                 <button
                   onClick={logout}
-                  className="clay-button text-sm bg-white/60 text-slate-600 hover:text-red-500 px-3 py-1.5 flex items-center gap-1"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors"
+                  style={{
+                    color: 'var(--muted-foreground)',
+                    boxShadow: '0 0 0 1px var(--border)'
+                  }}
                 >
-                  <SignOut size={14} weight="bold" />
-                  <span className="hidden sm:inline">Keluar</span>
+                  <SignOut size={14} />
+                  <span>Keluar</span>
                 </button>
               </>
             ) : (
               <>
-                <Link href="/login" className="text-sm text-slate-600 hover:text-slate-800 px-3 py-1.5 transition">
+                <Link
+                  href="/login"
+                  className="px-3 py-1.5 text-sm font-medium rounded-lg transition-colors"
+                  style={{ color: 'var(--muted-foreground)' }}
+                >
                   Masuk
                 </Link>
                 <Link
                   href="/simulasi"
-                  className="clay-button text-sm bg-purple-500 hover:bg-purple-400 text-white px-4 py-1.5"
+                  className="btn-primary text-sm px-4 py-1.5"
                 >
                   Mulai Gratis
                 </Link>
@@ -66,7 +105,55 @@ export default function Navbar() {
             )}
           </div>
         )}
-      </nav>
-    </div>
+
+        {/* Mobile menu toggle */}
+        <button
+          className="sm:hidden p-2 rounded-lg"
+          style={{ color: 'var(--muted-foreground)' }}
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={20} /> : <List size={20} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div
+          className="sm:hidden px-4 pb-4 pt-2 flex flex-col gap-1"
+          style={{ borderTop: '1px solid var(--border)' }}
+        >
+          {NAV_LINKS.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setMobileOpen(false)}
+              className="px-3 py-2.5 rounded-lg text-sm font-medium"
+              style={{ color: 'var(--foreground)' }}
+            >
+              {label}
+            </Link>
+          ))}
+          <div className="h-px my-1" style={{ background: 'var(--border)' }} />
+          {user ? (
+            <button
+              onClick={() => { setMobileOpen(false); logout(); }}
+              className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-left"
+              style={{ color: 'var(--muted-foreground)' }}
+            >
+              <SignOut size={14} /> Keluar
+            </button>
+          ) : (
+            <Link
+              href="/simulasi"
+              onClick={() => setMobileOpen(false)}
+              className="btn-primary text-sm text-center"
+            >
+              Mulai Gratis
+            </Link>
+          )}
+        </div>
+      )}
+    </header>
   );
 }

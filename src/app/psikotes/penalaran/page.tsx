@@ -60,18 +60,18 @@ export default function PenalaranPage() {
   const timerWarning = secondsLeft < 60;
 
   return (
-    <div className="min-h-screen bg-[#e8e4f0] flex flex-col items-center px-4 py-8">
+    <div className="min-h-screen bg-white flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-xl flex flex-col gap-4">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <span className="text-slate-500 text-sm font-medium">
+          <span className="text-[var(--muted-foreground)] text-sm font-medium">
             Soal {current + 1} / {questions.length}
           </span>
           <span
             className={`text-sm font-bold px-3 py-1 rounded-full ${
               timerWarning
                 ? 'bg-red-100 text-red-600'
-                : 'bg-purple-100 text-purple-700'
+                : 'bg-[var(--muted)] text-[var(--foreground)]'
             }`}
           >
             ⏱ {pad(minutes)}:{pad(secs)}
@@ -81,14 +81,14 @@ export default function PenalaranPage() {
         {/* Progress bar */}
         <div className="w-full h-1.5 rounded-full bg-[#e0dcea] overflow-hidden">
           <div
-            className="h-full rounded-full bg-purple-400 transition-all duration-300"
+            className="h-full rounded-full bg-[var(--primary)] transition-all duration-300"
             style={{ width: `${((current + 1) / questions.length) * 100}%` }}
           />
         </div>
 
         {/* Question card */}
         <div className="clay-card rounded-3xl p-6 flex flex-col gap-5">
-          <p className="text-slate-800 font-semibold text-lg leading-snug">{q.questionText}</p>
+          <p className="text-[var(--foreground)] font-semibold text-lg leading-snug">{q.questionText}</p>
 
           <div className="flex flex-col gap-3">
             {q.options.map((opt) => {
@@ -101,11 +101,11 @@ export default function PenalaranPage() {
                   className={[
                     'clay-card-flat rounded-2xl px-4 py-3 text-left text-sm font-medium transition-all border-2',
                     selected
-                      ? 'border-purple-400 bg-purple-50 text-slate-800'
-                      : 'border-transparent text-slate-600 hover:border-purple-200',
+                      ? 'border-[var(--border)] bg-purple-50 text-[var(--foreground)]'
+                      : 'border-transparent text-[var(--foreground)] hover:border-[var(--border)]',
                   ].join(' ')}
                 >
-                  <span className="font-bold text-purple-500 mr-2">{opt.id}.</span>
+                  <span className="font-bold text-[var(--foreground)] mr-2">{opt.id}.</span>
                   {opt.text}
                 </button>
               );
@@ -118,7 +118,7 @@ export default function PenalaranPage() {
               type="button"
               disabled={current === 0}
               onClick={() => setCurrent((c) => c - 1)}
-              className="clay-button flex items-center gap-1 disabled:opacity-40"
+              className="btn-primary flex items-center gap-1 disabled:opacity-40"
             >
               <ArrowLeft size={16} weight="fill" /> Prev
             </button>
@@ -127,7 +127,7 @@ export default function PenalaranPage() {
               <button
                 type="button"
                 onClick={() => setCurrent((c) => c + 1)}
-                className="clay-button flex items-center gap-1"
+                className="btn-primary flex items-center gap-1"
               >
                 Next <ArrowRight size={16} weight="fill" />
               </button>
@@ -135,7 +135,7 @@ export default function PenalaranPage() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="clay-button bg-purple-500 text-white"
+                className="btn-primary bg-[var(--primary)] text-white"
               >
                 Submit →
               </button>

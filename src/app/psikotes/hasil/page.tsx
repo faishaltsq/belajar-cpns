@@ -37,12 +37,12 @@ function HasilContent() {
     type === 'kraepelin' ? '/psikotes/kraepelin' : '/psikotes/penalaran';
 
   return (
-    <div className="min-h-screen bg-[#e8e4f0] flex flex-col items-center px-4 py-8">
+    <div className="min-h-screen bg-white flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-xl flex flex-col gap-6">
         {/* Back */}
         <Link
           href="/psikotes"
-          className="inline-flex items-center gap-2 text-slate-500 hover:text-slate-700 text-sm"
+          className="inline-flex items-center gap-2 text-slate-500 hover:text-[var(--foreground)] text-sm"
         >
           <ArrowLeft size={16} weight="fill" /> Kembali ke Menu Psikotes
         </Link>
@@ -58,38 +58,38 @@ function HasilContent() {
 
             <div className="grid grid-cols-2 gap-4">
               <div className="clay-card rounded-2xl p-4 text-center">
-                <span className="text-xs text-slate-400 font-medium block mb-1">
+                <span className="text-xs text-[var(--muted-foreground)] font-medium block mb-1">
                   Ketelitian
                 </span>
-                <span className="text-3xl font-extrabold text-purple-600">
+                <span className="text-3xl font-extrabold text-[var(--foreground)]">
                   {kraepelinResult.overallAccuracy}%
                 </span>
               </div>
 
               <div className="clay-card rounded-2xl p-4 text-center">
-                <span className="text-xs text-slate-400 font-medium block mb-1">
+                <span className="text-xs text-[var(--muted-foreground)] font-medium block mb-1">
                   Kecepatan Rata-rata
                 </span>
-                <span className="text-3xl font-extrabold text-purple-600">
+                <span className="text-3xl font-extrabold text-[var(--foreground)]">
                   {kraepelinResult.averageSpeedPerColumn}
                 </span>
-                <span className="text-xs text-slate-400 block mt-0.5">soal/menit</span>
+                <span className="text-xs text-[var(--muted-foreground)] block mt-0.5">soal/menit</span>
               </div>
 
               <div className="clay-card rounded-2xl p-4 text-center">
-                <span className="text-xs text-slate-400 font-medium block mb-1">
+                <span className="text-xs text-[var(--muted-foreground)] font-medium block mb-1">
                   Stabilitas
                 </span>
-                <span className="text-3xl font-extrabold text-purple-600">
+                <span className="text-3xl font-extrabold text-[var(--foreground)]">
                   {kraepelinResult.stabilityScore}
                 </span>
-                <span className="text-xs text-slate-400 block mt-0.5">
+                <span className="text-xs text-[var(--muted-foreground)] block mt-0.5">
                   (makin kecil makin stabil)
                 </span>
               </div>
 
               <div className="clay-card rounded-2xl p-4 text-center">
-                <span className="text-xs text-slate-400 font-medium block mb-1">
+                <span className="text-xs text-[var(--muted-foreground)] font-medium block mb-1">
                   Tren Kerja
                 </span>
                 <span
@@ -112,24 +112,24 @@ function HasilContent() {
         {type === 'penalaran' && penalaranResult && (
           <div className="clay-card rounded-3xl p-6 flex flex-col items-center gap-6 text-center">
             <div>
-              <span className="text-xs text-slate-400 font-medium block mb-1">
+              <span className="text-xs text-[var(--muted-foreground)] font-medium block mb-1">
                 Skor Akhir
               </span>
-              <span className="text-6xl font-black text-purple-600">
+              <span className="text-6xl font-black text-[var(--foreground)]">
                 {penalaranResult.score}
               </span>
-              <span className="text-slate-400 text-sm block mt-1">/ 100</span>
+              <span className="text-[var(--muted-foreground)] text-sm block mt-1">/ 100</span>
             </div>
 
             <div className="grid grid-cols-2 gap-4 w-full">
               <div className="clay-card-flat rounded-2xl p-4">
-                <span className="text-xs text-slate-400 block mb-1">Benar</span>
+                <span className="text-xs text-[var(--muted-foreground)] block mb-1">Benar</span>
                 <span className="text-2xl font-bold text-green-600">
                   {penalaranResult.correct}
                 </span>
               </div>
               <div className="clay-card-flat rounded-2xl p-4">
-                <span className="text-xs text-slate-400 block mb-1">Salah</span>
+                <span className="text-xs text-[var(--muted-foreground)] block mb-1">Salah</span>
                 <span className="text-2xl font-bold text-red-500">
                   {penalaranResult.wrong}
                 </span>
@@ -149,11 +149,11 @@ function HasilContent() {
         <div className="flex gap-4 justify-center">
           <Link
             href={repeatHref}
-            className="clay-button inline-flex items-center gap-2"
+            className="btn-primary inline-flex items-center gap-2"
           >
             <ArrowClockwise size={16} weight="fill" /> Ulangi Tes
           </Link>
-          <Link href="/psikotes" className="clay-button">
+          <Link href="/psikotes" className="btn-primary">
             Kembali ke Menu
           </Link>
         </div>
@@ -166,7 +166,7 @@ export default function PsikotesHasilPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-[#e8e4f0] flex items-center justify-center">
+        <div className="min-h-screen bg-white flex items-center justify-center">
           <p className="text-slate-500">Memuat hasil…</p>
         </div>
       }

@@ -167,12 +167,11 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-white/50"
-        style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+      <header className="sticky top-0 z-40 bg-[var(--background)]/80 backdrop-blur-lg" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <span className="font-bold text-sm sm:text-base truncate text-slate-800">Simulasi CAT CPNS</span>
-            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-600 border border-purple-200 font-medium whitespace-nowrap">
+            <span className="font-semibold text-sm truncate text-[var(--foreground)]">Simulasi CAT CPNS</span>
+            <span className="badge-pill badge-neutral text-[11px] hidden sm:inline-flex whitespace-nowrap">
               {params.id.replace('tryout-', 'Tryout ')}
             </span>
           </div>
@@ -180,8 +179,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
             <Timer key={initialSeconds} initialSeconds={initialSeconds} onTimeUp={handleTimeUp} />
             <button
               onClick={() => setShowModal(true)}
-              className="py-2 px-3 sm:px-4 bg-emerald-500 hover:bg-emerald-400 text-white text-xs sm:text-sm font-semibold rounded-xl transition whitespace-nowrap"
-              style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.1), -2px -2px 6px rgba(255,255,255,0.8)' }}
+              className="btn-primary text-xs py-2 px-4 whitespace-nowrap"
             >
               Selesai Ujian
             </button>
@@ -207,7 +205,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
             <button
               onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
               disabled={currentIndex === 0}
-              className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl clay-card-flat text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed text-slate-700"
+              className="btn-secondary text-xs py-2.5 px-4 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               <CaretLeft size={16} weight="bold" />
               Sebelumnya
@@ -215,7 +213,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
             <button
               onClick={() => setCurrentIndex((i) => Math.min(questions.length - 1, i + 1))}
               disabled={currentIndex === questions.length - 1}
-              className="flex items-center gap-1.5 py-2.5 px-5 rounded-2xl bg-purple-500 hover:bg-purple-400 text-white text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed clay-button"
+              className="btn-primary text-xs py-2.5 px-4 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               Selanjutnya
               <CaretRight size={16} weight="bold" />

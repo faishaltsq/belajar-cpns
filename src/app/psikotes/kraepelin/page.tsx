@@ -133,10 +133,10 @@ export default function KraepelinRunnerPage() {
   // Countdown screen
   if (phase === 'countdown') {
     return (
-      <div className="min-h-screen bg-[#e8e4f0] flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="clay-card rounded-3xl p-12 text-center">
-          <p className="text-slate-500 text-sm mb-2">Tes dimulai dalam</p>
-          <span className="text-7xl font-black text-purple-500">{countdown}</span>
+          <p className="text-[var(--muted-foreground)] text-sm mb-2">Tes dimulai dalam</p>
+          <span className="text-7xl font-black text-[var(--foreground)]">{countdown}</span>
         </div>
       </div>
     );
@@ -146,7 +146,7 @@ export default function KraepelinRunnerPage() {
   if (phase === 'active' && columns.length > 0) {
     const col = columns[currentCol];
     return (
-      <div className="min-h-screen bg-[#e8e4f0] flex flex-col items-center px-4 py-6 gap-4">
+      <div className="min-h-screen bg-white flex flex-col items-center px-4 py-6 gap-4">
         <KraepelinBoard
           numbers={col.numbers}
           currentPairIndex={currentPair}
@@ -163,8 +163,8 @@ export default function KraepelinRunnerPage() {
 
   // Done / loading
   return (
-    <div className="min-h-screen bg-[#e8e4f0] flex items-center justify-center">
-      <p className="text-slate-500">Menghitung hasil…</p>
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <p className="text-[var(--muted-foreground)]">Menghitung hasil…</p>
     </div>
   );
 }

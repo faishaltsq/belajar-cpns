@@ -89,14 +89,14 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
           ) : (
             <Link
               href="/login"
-              className="clay-card flex items-center gap-3 px-5 py-4 bg-purple-50/60 hover:bg-purple-50 transition group rounded-2xl"
+              className="card-modern flex items-center gap-3 px-5 py-4 hover:bg-[var(--muted)] transition group"
             >
-              <UserPlus size={24} weight="duotone" className="text-purple-500 shrink-0" />
+              <UserPlus size={24} weight="duotone" className="text-[var(--foreground)] shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-slate-800">Ingin simpan hasil ujian ini secara permanen?</p>
-                <p className="text-xs text-slate-400 mt-0.5">Daftar gratis untuk menyimpan riwayat & grafik progres</p>
+                <p className="text-sm font-semibold text-[var(--foreground)]">Ingin simpan hasil ujian ini secara permanen?</p>
+                <p className="text-xs text-[var(--muted-foreground)] mt-0.5">Daftar gratis untuk menyimpan riwayat &amp; grafik progres</p>
               </div>
-              <span className="text-purple-500 text-sm font-semibold shrink-0 group-hover:underline">
+              <span className="text-[var(--foreground)] text-sm font-semibold shrink-0 group-hover:underline">
                 Daftar Akun Gratis →
               </span>
             </Link>
@@ -118,23 +118,23 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
               <XCircle size={48} className="text-red-400" weight="duotone" />
             )}
           </div>
-          <h1 className="text-2xl font-bold mb-1 text-slate-800">
+          <h1 className="text-2xl font-bold mb-1 text-[var(--foreground)]">
             {result.isPassedAll ? '🎉 SELAMAT! ANDA LULUS PASSING GRADE' : 'BELUM MEMENUHI PASSING GRADE'}
           </h1>
-          <p className="text-slate-400 text-sm mt-1">
+          <p className="text-[var(--muted-foreground)] text-sm mt-1">
             Diselesaikan dalam {minutes}m {seconds}s
           </p>
         </div>
 
         {/* Total Score */}
         <div className="clay-card p-6 text-center">
-          <p className="text-slate-400 text-sm mb-1">Total Skor</p>
-          <div className="text-5xl font-bold text-slate-800">{result.totalScore}</div>
-          <p className="text-slate-400 text-sm mt-1">dari 550</p>
+          <p className="text-[var(--muted-foreground)] text-sm mb-1">Total Skor</p>
+          <div className="text-5xl font-bold text-[var(--foreground)]">{result.totalScore}</div>
+          <p className="text-[var(--muted-foreground)] text-sm mt-1">dari 550</p>
           {/* progress bar */}
-          <div className="mt-4 bg-slate-200 rounded-full h-2.5">
+          <div className="mt-4 rounded-full h-2.5" style={{ background: 'var(--muted)' }}>
             <div
-              className="bg-purple-500 h-2.5 rounded-full transition-all"
+              className="bg-[var(--primary)] h-2.5 rounded-full transition-all"
               style={{ width: `${(result.totalScore / 550) * 100}%` }}
             />
           </div>
@@ -161,13 +161,13 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
                   )}
                 </div>
                 <div>
-                  <span className="text-3xl font-bold text-slate-800">{data.score}</span>
-                  <span className="text-slate-400 text-sm"> / {data.maxScore}</span>
+                  <span className="text-3xl font-bold text-[var(--foreground)]">{data.score}</span>
+                    <span className="text-[var(--muted-foreground)] text-sm"> / {data.maxScore}</span>
                 </div>
-                <div className="bg-slate-200 rounded-full h-1.5">
+                <div className="rounded-full h-1.5" style={{ background: 'var(--muted)' }}>
                   <div className={`${colors.bar} h-1.5 rounded-full`} style={{ width: `${pct}%` }} />
                 </div>
-                <div className="flex items-center justify-between text-xs text-slate-400">
+                <div className="flex items-center justify-between text-xs text-[var(--muted-foreground)]">
                   <span>PG {data.passingGrade}</span>
                   <span
                     className={`font-semibold ${data.isPassed ? 'text-emerald-500' : 'text-red-400'}`}
@@ -183,7 +183,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
         {/* CTA */}
         <Link
           href={retryPath}
-          className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-purple-500 hover:bg-purple-400 text-white font-semibold rounded-2xl transition clay-button"
+          className="btn-primary flex items-center justify-center gap-2 w-full py-3 px-6 text-sm"
         >
           <ArrowCounterClockwise size={16} weight="bold" />
           Coba Simulasi Lagi

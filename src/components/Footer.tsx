@@ -2,56 +2,53 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t border-white/60 bg-white/30 backdrop-blur-sm">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer
+      className="mt-24 w-full"
+      style={{
+        borderTop: '1px solid var(--border)',
+        backgroundColor: 'var(--card)',
+        color: 'var(--muted-foreground)'
+      }}
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-3">
+          <div className="space-y-3 md:col-span-1">
+            <div className="flex items-center gap-2">
               <div
-                className="w-8 h-8 rounded-2xl bg-purple-500 flex items-center justify-center font-bold text-white text-sm"
-                style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.12), -2px -2px 6px rgba(255,255,255,0.9)' }}
+                className="w-6 h-6 rounded-md flex items-center justify-center font-bold text-white text-xs"
+                style={{ background: 'var(--primary)' }}
               >
                 C
               </div>
-              <span className="font-bold text-lg text-slate-800">CPNSMaster</span>
+              <span className="font-semibold text-sm tracking-tight" style={{ color: 'var(--foreground)' }}>
+                CPNSMaster
+              </span>
             </div>
-            <p className="text-xs text-slate-500 leading-relaxed">
-              Platform latihan mandiri SKD &amp; Psikotes CPNS 2026 dengan sistem skoring dan timer standar CAT BKN resmi.
+            <p className="text-xs leading-relaxed">
+              Platform simulasi CAT SKD dan latihan psikotes berbasis standar BKN untuk pejuang NIP 2026.
             </p>
           </div>
 
-          {/* Nav Links */}
-          <div>
-            <h4 className="font-bold text-slate-800 text-sm mb-3">Modul Latihan</h4>
-            <ul className="space-y-2 text-xs text-slate-500">
-              <li>
-                <Link href="/simulasi" className="hover:text-purple-600 transition">
-                  Simulasi CAT SKD
-                </Link>
-              </li>
-              <li>
-                <Link href="/psikotes/kraepelin" className="hover:text-purple-600 transition">
-                  Tes Koran Kraepelin
-                </Link>
-              </li>
-              <li>
-                <Link href="/psikotes/penalaran" className="hover:text-purple-600 transition">
-                  Tes Penalaran &amp; Spasial
-                </Link>
-              </li>
-              <li>
-                <Link href="/psikotes" className="hover:text-purple-600 transition">
-                  Semua Tes Psikotes
-                </Link>
-              </li>
+          {/* Modul Latihan */}
+          <div className="space-y-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--foreground)' }}>
+              Modul Latihan
+            </h4>
+            <ul className="space-y-1.5 text-xs">
+              <li><Link href="/simulasi" className="hover:text-[var(--foreground)] transition-colors">Simulasi CAT SKD</Link></li>
+              <li><Link href="/psikotes/kraepelin" className="hover:text-[var(--foreground)] transition-colors">Tes Koran Kraepelin</Link></li>
+              <li><Link href="/psikotes/penalaran" className="hover:text-[var(--foreground)] transition-colors">Tes Penalaran &amp; Spasial</Link></li>
+              <li><Link href="/psikotes" className="hover:text-[var(--foreground)] transition-colors">Semua Tes Psikotes</Link></li>
             </ul>
           </div>
 
-          {/* Quick Info */}
-          <div>
-            <h4 className="font-bold text-slate-800 text-sm mb-3">Info Seleksi 2026</h4>
-            <ul className="space-y-2 text-xs text-slate-500">
+          {/* Info Seleksi */}
+          <div className="space-y-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--foreground)' }}>
+              Info Seleksi 2026
+            </h4>
+            <ul className="space-y-1.5 text-xs">
               <li>Kepmen PANRB 321/2024</li>
               <li>Passing Grade: TWK 65, TIU 80, TKP 166</li>
               <li>Total Soal: 110 Butir / 100 Menit</li>
@@ -60,16 +57,21 @@ export default function Footer() {
           </div>
 
           {/* Disclaimer */}
-          <div>
-            <h4 className="font-bold text-slate-800 text-sm mb-3">Disclaimer</h4>
-            <p className="text-xs text-slate-500 leading-relaxed">
-              CPNSMaster bukan portal resmi BKN atau lembaga pemerintah RI. Seluruh konten dan materi dibuat untuk simulasi dan sarana belajar mandiri.
+          <div className="space-y-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--foreground)' }}>
+              Disclaimer
+            </h4>
+            <p className="text-xs leading-relaxed">
+              CPNSMaster bukan portal resmi BKN atau lembaga pemerintah RI. Seluruh konten dibuat untuk simulasi dan sarana belajar mandiri.
             </p>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-white/50 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
-          <p>&copy; 2026 CPNSMaster. Hak Cipta Dilindungi.</p>
+        <div
+          className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs"
+          style={{ borderTop: '1px solid var(--border)' }}
+        >
+          <p>&copy; 2026 CPNSMaster. Hak cipta dilindungi.</p>
           <p>Dibuat untuk pejuang NIP Indonesia.</p>
         </div>
       </div>

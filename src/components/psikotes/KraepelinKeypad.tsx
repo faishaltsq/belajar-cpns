@@ -40,7 +40,7 @@ export function KraepelinKeypad({ onInput, disabled = false }: KraepelinKeypadPr
           type="button"
           disabled={disabled}
           onClick={() => onInput(digit)}
-          className="clay-button bg-[#f0ecf4] text-slate-800 text-xl font-bold w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="btn-primary bg-[var(--muted)] text-slate-800 text-xl font-bold w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {digit}
         </button>
@@ -49,7 +49,7 @@ export function KraepelinKeypad({ onInput, disabled = false }: KraepelinKeypadPr
         type="button"
         disabled={disabled}
         onClick={() => onInput(0)}
-        className="col-start-2 clay-button bg-[#f0ecf4] text-slate-800 text-xl font-bold w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="col-start-2 btn-primary bg-[var(--muted)] text-slate-800 text-xl font-bold w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         0
       </button>

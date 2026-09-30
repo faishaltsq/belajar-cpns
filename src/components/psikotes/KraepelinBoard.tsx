@@ -75,7 +75,7 @@ export function KraepelinBoard({
                     ? `bg-[#ddd5f5] text-slate-800 shadow-[0_0_0_3px_#c4b5fd] ${feedbackRing}`
                     : 'text-slate-500',
                   isTop ? 'rounded-b-none' : '',
-                  isBottom ? 'rounded-t-none -mt-1 border-t border-purple-200' : '',
+                  isBottom ? 'rounded-t-none -mt-1 border-t border-[var(--border)]' : '',
                 ].join(' ')}
               >
                 {num}

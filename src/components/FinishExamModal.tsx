@@ -30,45 +30,44 @@ export function FinishExamModal({
       onClick={onCancel}
     >
       <div
-        className="clay-card max-w-md w-full p-6 shadow-2xl"
+        className="card-modern max-w-md w-full p-6"
+        style={{ boxShadow: '0 24px 48px -12px rgba(0,0,0,0.2)' }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-3 text-amber-500 mb-4">
-          <Warning size={24} weight="duotone" />
-          <h3 className="font-bold text-lg text-slate-800">Konfirmasi Selesai Ujian</h3>
+        <div className="flex items-center gap-2.5 text-amber-500 mb-4">
+          <Warning size={22} weight="duotone" />
+          <h3 className="font-bold text-base text-[var(--foreground)]">Konfirmasi Selesai Ujian</h3>
         </div>
 
-        <p className="text-sm text-slate-600 mb-6">
-          Apakah Anda yakin ingin mengakhiri sesi ujian ini? Pastikan seluruh soal telah Anda jawab dengan baik.
+        <p className="text-sm text-[var(--muted-foreground)] mb-5">
+          Apakah Anda yakin ingin mengakhiri sesi ujian ini? Pastikan seluruh soal telah dijawab.
         </p>
 
-        <div className="grid grid-cols-3 gap-3 mb-6 clay-card-flat p-4 text-center">
+        <div className="grid grid-cols-3 gap-3 mb-6 card-subtle p-4 text-center">
           <div>
-            <div className="text-xl font-bold text-emerald-600">{answeredCount}</div>
-            <div className="text-xs text-slate-400 mt-0.5">Sudah Dijawab</div>
+            <div className="text-xl font-bold text-[var(--foreground)]">{answeredCount}</div>
+            <div className="text-[11px] text-[var(--muted-foreground)] mt-0.5">Dijawab</div>
           </div>
           <div>
             <div className="text-xl font-bold text-amber-500">{flaggedCount}</div>
-            <div className="text-xs text-slate-400 mt-0.5">Ragu-ragu</div>
+            <div className="text-[11px] text-[var(--muted-foreground)] mt-0.5">Ragu-ragu</div>
           </div>
           <div>
             <div className="text-xl font-bold text-red-500">{unansweredCount}</div>
-            <div className="text-xs text-slate-400 mt-0.5">Belum Dijawab</div>
+            <div className="text-[11px] text-[var(--muted-foreground)] mt-0.5">Belum</div>
           </div>
         </div>
 
         <div className="flex gap-3">
           <button
             onClick={onCancel}
-            className="flex-1 py-2.5 px-4 rounded-2xl border border-slate-200 bg-white/60 hover:bg-white/80 text-slate-700 text-sm font-medium transition"
-            style={{ boxShadow: '2px 2px 6px rgba(0,0,0,0.05), -2px -2px 6px rgba(255,255,255,0.9)' }}
+            className="btn-secondary flex-1 py-2.5 text-sm"
           >
-            Lanjutkan Mengerjakan
+            Lanjut Mengerjakan
           </button>
           <button
             onClick={onConfirm}
-            className="flex-1 py-2.5 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-medium flex items-center justify-center gap-1.5 transition"
-            style={{ boxShadow: '3px 3px 8px rgba(0,0,0,0.1), -2px -2px 6px rgba(255,255,255,0.8)' }}
+            className="btn-primary flex-1 py-2.5 text-sm"
           >
             <CheckCircle size={16} weight="duotone" />
             <span>Kumpulkan</span>
