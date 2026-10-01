@@ -25,17 +25,28 @@ export async function loadPackage(id: string): Promise<Question[]> {
         ORDER BY number ASC
       `;
       if (rows && rows.length > 0) {
-        // Normalize options: DB may store string[] instead of Option[]
+        // Normalize options: DB may store string[] or Option[] with no scores
         const normalized = (rows as Record<string, unknown>[]).map((row) => {
           const opts = row.options;
-          if (Array.isArray(opts) && opts.length > 0 && typeof opts[0] === 'string') {
-            const LETTERS = ['A', 'B', 'C', 'D', 'E'];
-            const correctIdx = typeof row.correctAnswer === 'number' ? row.correctAnswer : -1;
-            row.options = (opts as string[]).map((text: string, i: number) => ({
-              id: LETTERS[i] || String(i + 1),
-              text: text || `Pilihan ${LETTERS[i] || i + 1}`,
-              score: i === correctIdx ? 5 : 0,
-            }));
+          const correctIdx = parseInt(String(row.correctAnswer ?? '-1'), 10);
+          const LETTERS = ['A', 'B', 'C', 'D', 'E'];
+          const hasCorrectIdx = !isNaN(correctIdx) && correctIdx >= 0;
+          if (Array.isArray(opts) && opts.length > 0) {
+            if (typeof opts[0] === 'string') {
+              // string[] → Option[]
+              row.options = (opts as string[]).map((text: string, i: number) => ({
+                id: LETTERS[i] || String(i + 1),
+                text: text || `Pilihan ${LETTERS[i] || i + 1}`,
+                score: hasCorrectIdx ? (i === correctIdx ? 5 : 0) : 0,
+              }));
+            } else if (hasCorrectIdx) {
+              // Option[] with correctAnswer — set score from index
+              row.options = (opts as { id: string; text: string; score: number }[]).map((opt, i) => ({
+                ...opt,
+                score: i === correctIdx ? 5 : 0,
+              }));
+            }
+            // else: Option[] without correctAnswer → preserve as-is
           }
           return row;
         });
