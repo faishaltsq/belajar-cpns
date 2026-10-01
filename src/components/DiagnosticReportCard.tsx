@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { SubcategoryDiagnosticReport, SubcategoryStat } from '@/lib/types';
-import { Lightbulb, ArrowUp, ArrowDown, Minus } from '@phosphor-icons/react';
+import { Lightbulb, ArrowUp, ArrowDown, Minus, Lightning } from '@phosphor-icons/react';
 
 interface DiagnosticReportCardProps {
   report: SubcategoryDiagnosticReport;
@@ -97,6 +98,16 @@ export function DiagnosticReportCard({ report }: DiagnosticReportCardProps) {
                         />
                       </div>
                     </div>
+                    {stat.status === 'LEMAH' && (
+                      <Link
+                        href={`/drill/${cat}/${encodeURIComponent(stat.name)}`}
+                        className="shrink-0 px-2 py-1 rounded-md text-[10px] font-bold text-white bg-[var(--primary)] hover:opacity-90 transition flex items-center gap-1"
+                        title={`Latihan 10 soal kilat topik ${stat.name}`}
+                      >
+                        <Lightning size={11} weight="fill" />
+                        <span>Latih</span>
+                      </Link>
+                    )}
                   </div>
                 ))}
             </div>

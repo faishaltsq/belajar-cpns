@@ -27,6 +27,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   const [userAnswers, setUserAnswers] = useState<ExamAnswer[]>([]);
   const [notFound, setNotFound] = useState(false);
   const [activeTab, setActiveTab] = useState<'summary' | 'review' | 'leaderboard'>('summary');
+  const [timeSpent, setTimeSpent] = useState<Record<number, number>>({});
 
   const tryoutId = params.resultId.split('-').slice(0, -1).join('-');
   const retryPath = tryoutId ? `/simulasi/${tryoutId}` : '/simulasi/tryout-1';
@@ -43,6 +44,8 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
       const rawA = localStorage.getItem(`exam_user_answers_${params.resultId}`);
       if (rawQ) setQuestions(JSON.parse(rawQ));
       if (rawA) setUserAnswers(JSON.parse(rawA));
+      const rawTime = localStorage.getItem(`exam_time_per_q_${params.resultId}`);
+      if (rawTime) setTimeSpent(JSON.parse(rawTime));
     } catch {
       setNotFound(true);
     }
@@ -245,7 +248,11 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
             )
           )}
           {activeTab === 'review' && (
-            <ExamQuestionReview questions={questions} userAnswers={userAnswers} />
+            <ExamQuestionReview
+              questions={questions}
+              userAnswers={userAnswers}
+              timeSpentPerQuestion={timeSpent}
+            />
           )}
           {activeTab === 'leaderboard' && (
             <LeaderboardCard packageId={tryoutId || 'tryout-1'} currentScore={result.totalScore} />

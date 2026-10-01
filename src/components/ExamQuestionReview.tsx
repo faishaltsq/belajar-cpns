@@ -11,16 +11,25 @@ import {
   Check,
   X,
   MagnifyingGlass,
+  ClockCountdown,
+  Rocket,
 } from '@phosphor-icons/react';
+import { classifyTime, TIME_LABELS } from '@/lib/timeTracker';
+import { parseExplanation } from '@/lib/explanationParser';
 
 interface ExamQuestionReviewProps {
   questions: Question[];
   userAnswers: ExamAnswer[];
+  timeSpentPerQuestion?: Record<number, number>; // questionId -> seconds
 }
 
 type FilterType = 'all' | 'wrong' | 'flagged' | 'empty';
 
-export function ExamQuestionReview({ questions, userAnswers }: ExamQuestionReviewProps) {
+export function ExamQuestionReview({
+  questions,
+  userAnswers,
+  timeSpentPerQuestion = {},
+}: ExamQuestionReviewProps) {
   const [filter, setFilter] = useState<FilterType>('all');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [zoomImage, setZoomImage] = useState<string | null>(null);
@@ -229,7 +238,19 @@ export function ExamQuestionReview({ questions, userAnswers }: ExamQuestionRevie
                       {currentItem.question.category} &bull; {currentItem.question.subCategory}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs">
+                  <div className="flex items-center gap-2 text-xs flex-wrap">
+                    {/* Time Spent Badge */}
+                    {timeSpentPerQuestion[currentItem.question.id] !== undefined && (() => {
+                      const secs = timeSpentPerQuestion[currentItem.question.id];
+                      const cat = classifyTime(secs);
+                      const info = TIME_LABELS[cat];
+                      return (
+                        <span className={`inline-flex items-center gap-1 font-mono font-bold ${info.color}`}>
+                          <ClockCountdown size={13} weight="bold" />
+                          {secs}s — {info.label}
+                        </span>
+                      );
+                    })()}
                     {currentItem.isEmpty ? (
                       <span className="inline-flex items-center gap-1 text-zinc-500 font-medium">
                         <HourglassMedium size={14} /> Tidak Dijawab (0 Poin)
@@ -334,24 +355,42 @@ export function ExamQuestionReview({ questions, userAnswers }: ExamQuestionRevie
                   })}
                 </div>
 
-                {/* Explanation Box */}
-                {currentItem.question.explanation && (
-                  <div
-                    className="p-4 rounded-xl border space-y-2 mt-4"
-                    style={{
-                      backgroundColor: 'rgba(201, 100, 66, 0.04)',
-                      borderColor: 'rgba(201, 100, 66, 0.25)',
-                    }}
-                  >
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-[var(--primary)]">
-                      <Lightbulb size={16} weight="fill" />
-                      Pembahasan &amp; Trik Cepat:
+                {/* Structured Explanation Box */}
+                {currentItem.question.explanation && (() => {
+                  const parsed = parseExplanation(currentItem.question.explanation);
+                  return (
+                    <div className="space-y-2 mt-4">
+                      {/* Core explanation */}
+                      <div
+                        className="p-4 rounded-xl border space-y-2"
+                        style={{
+                          backgroundColor: 'rgba(201, 100, 66, 0.04)',
+                          borderColor: 'rgba(201, 100, 66, 0.25)',
+                        }}
+                      >
+                        <div className="flex items-center gap-1.5 text-xs font-bold text-[var(--primary)]">
+                          <Lightbulb size={16} weight="fill" />
+                          Pembahasan:
+                        </div>
+                        <p className="text-xs text-[var(--foreground)] leading-relaxed whitespace-pre-line font-sans">
+                          {parsed.core || currentItem.question.explanation}
+                        </p>
+                      </div>
+                      {/* Trik Cepat box */}
+                      {parsed.trickTip && (
+                        <div className="p-3 rounded-xl border border-amber-200 bg-amber-50 space-y-1">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-amber-700">
+                            <Rocket size={14} weight="fill" />
+                            Trik Cepat / Kata Kunci:
+                          </div>
+                          <p className="text-xs text-amber-900 leading-relaxed whitespace-pre-line">
+                            {parsed.trickTip}
+                          </p>
+                        </div>
+                      )}
                     </div>
-                    <p className="text-xs text-[var(--foreground)] leading-relaxed whitespace-pre-line font-sans">
-                      {currentItem.question.explanation}
-                    </p>
-                  </div>
-                )}
+                  );
+                })()}
 
                 {/* Bottom Nav: Prev / Next */}
                 <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: 'var(--border)' }}>

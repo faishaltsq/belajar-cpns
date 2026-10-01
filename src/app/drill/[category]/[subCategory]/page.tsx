@@ -11,6 +11,10 @@ import {
   CheckCircle,
   XCircle,
   Lightbulb,
+  Pause,
+  Play,
+  X,
+  SignOut,
 } from '@phosphor-icons/react';
 
 export default function DrillSessionPage({
@@ -28,6 +32,8 @@ export default function DrillSessionPage({
   const [hasRevealed, setHasRevealed] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
 
   // Load questions matching category & subcategory from sample package or DB
   useEffect(() => {
@@ -35,19 +41,16 @@ export default function DrillSessionPage({
       .then((r) => (r.ok ? r.json() : { questions: [] }))
       .then((d) => {
         const all: Question[] = d.questions || [];
-        // Filter by category + subcategory, fallback to just category if not enough
         let matched = all.filter(
           (q) =>
             q.category.toUpperCase() === params.category.toUpperCase() &&
             q.subCategory?.toLowerCase() === subCategoryDecoded.toLowerCase()
         );
         if (matched.length < 5) {
-          // fallback to same category
           matched = all.filter(
             (q) => q.category.toUpperCase() === params.category.toUpperCase()
           );
         }
-        // Shuffle & take 10
         const shuffled = [...matched].sort(() => 0.5 - Math.random()).slice(0, 10);
         setQuestions(shuffled);
       })
@@ -58,7 +61,7 @@ export default function DrillSessionPage({
   const currentQ = questions[currentIndex];
 
   const handleSelect = (optId: string) => {
-    if (hasRevealed) return;
+    if (hasRevealed || isPaused) return;
     setSelectedOption(optId);
     setHasRevealed(true);
 
@@ -85,7 +88,8 @@ export default function DrillSessionPage({
     setHasRevealed(false);
     setCorrectCount(0);
     setIsFinished(false);
-    // reshuffle
+    setIsPaused(false);
+    setShowExitConfirm(false);
     setQuestions((q) => [...q].sort(() => 0.5 - Math.random()));
   };
 
@@ -155,23 +159,45 @@ export default function DrillSessionPage({
   const optionLabels = ['A', 'B', 'C', 'D', 'E'];
 
   return (
-    <div className="min-h-screen flex items-start justify-center p-4 py-8">
+    <div className="min-h-screen flex items-start justify-center p-4 py-6 relative">
       <div className="max-w-2xl w-full space-y-4">
-        {/* Header */}
+        {/* Navigation Bar: Exit & Pause Controls */}
         <div className="flex items-center justify-between border-b pb-3" style={{ borderColor: 'var(--border)' }}>
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowExitConfirm(true)}
+              className="px-2.5 py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-red-600 hover:border-red-300 transition"
+              style={{ borderColor: 'var(--border)' }}
+              title="Keluar dari sesi latihan"
+            >
+              <SignOut size={14} weight="bold" />
+              <span className="hidden sm:inline">Keluar</span>
+            </button>
             <span className="badge-pill badge-neutral text-[10px] font-bold">{params.category}</span>
-            <span className="text-xs font-bold text-[var(--foreground)]">{subCategoryDecoded}</span>
+            <span className="text-xs font-bold text-[var(--foreground)] truncate max-w-[150px] sm:max-w-xs">
+              {subCategoryDecoded}
+            </span>
           </div>
-          <span className="text-xs font-mono font-bold text-[var(--muted-foreground)]">
-            Soal {currentIndex + 1} / {questions.length}
-          </span>
+
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setIsPaused((p) => !p)}
+              className="px-2.5 py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1 text-[var(--foreground)] hover:bg-[var(--muted)] transition"
+              style={{ borderColor: 'var(--border)' }}
+            >
+              {isPaused ? <Play size={14} weight="fill" className="text-emerald-600" /> : <Pause size={14} weight="bold" />}
+              <span>{isPaused ? 'Lanjut' : 'Jeda'}</span>
+            </button>
+            <span className="text-xs font-mono font-bold text-[var(--muted-foreground)] bg-[var(--muted)] px-2 py-1 rounded-md">
+              {currentIndex + 1} / {questions.length}
+            </span>
+          </div>
         </div>
 
         {/* Progress bar */}
-        <div className="h-1 rounded-full w-full" style={{ background: 'var(--muted)' }}>
+        <div className="h-1.5 rounded-full w-full overflow-hidden" style={{ background: 'var(--muted)' }}>
           <div
-            className="h-1 rounded-full transition-all duration-300"
+            className="h-full transition-all duration-300 rounded-full"
             style={{
               width: `${((currentIndex + 1) / questions.length) * 100}%`,
               background: 'var(--primary)',
@@ -179,101 +205,153 @@ export default function DrillSessionPage({
           />
         </div>
 
-        {/* Question Card */}
-        <div className="card-modern p-5 space-y-4">
-          {currentQ.image && (
-            <img
-              src={currentQ.image}
-              alt="Gambar Soal"
-              className="max-h-56 mx-auto rounded border object-contain"
-              style={{ borderColor: 'var(--border)' }}
-            />
-          )}
-          <p className="text-sm text-[var(--foreground)] leading-relaxed font-medium">
-            {currentQ.text}
-          </p>
-
-          {/* Options */}
-          <div className="space-y-2">
-            {currentQ.options.map((opt, oi) => {
-              const isSelected = selectedOption === opt.id;
-              const maxScoreVal = Math.max(...currentQ.options.map((o) => o.score));
-              const isCorrect = opt.score === maxScoreVal;
-
-              let styleClass = 'border-[var(--border)] hover:bg-[var(--muted)] text-[var(--foreground)]';
-              if (hasRevealed) {
-                if (isCorrect) {
-                  styleClass = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-semibold';
-                } else if (isSelected && !isCorrect) {
-                  styleClass = 'border-red-400 bg-red-50 text-red-900 line-through';
-                } else {
-                  styleClass = 'border-[var(--border)] opacity-60 text-[var(--muted-foreground)]';
-                }
-              } else if (isSelected) {
-                styleClass = 'border-[var(--primary)] bg-[var(--secondary)] font-semibold';
-              }
-
-              return (
-                <button
-                  key={opt.id}
-                  onClick={() => handleSelect(opt.id)}
-                  disabled={hasRevealed}
-                  className={`w-full text-left p-3 rounded-xl border text-xs flex items-start gap-2.5 transition ${styleClass}`}
-                >
-                  <span
-                    className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                      hasRevealed && isCorrect
-                        ? 'bg-emerald-600 text-white'
-                        : hasRevealed && isSelected && !isCorrect
-                        ? 'bg-red-500 text-white'
-                        : 'bg-[var(--muted)] text-[var(--foreground)]'
-                    }`}
-                  >
-                    {optionLabels[oi] ?? opt.id}
-                  </span>
-                  <span className="flex-1 leading-relaxed">{opt.text}</span>
-                  {hasRevealed && isCorrect && (
-                    <CheckCircle size={16} className="text-emerald-600 shrink-0" weight="fill" />
-                  )}
-                  {hasRevealed && isSelected && !isCorrect && (
-                    <XCircle size={16} className="text-red-500 shrink-0" weight="fill" />
-                  )}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Explanation Box (Revealed) */}
-          {hasRevealed && (
-            <div
-              className="p-4 rounded-xl border text-xs space-y-1.5 animate-fadeIn"
-              style={{
-                backgroundColor: 'rgba(201, 100, 66, 0.04)',
-                borderColor: 'rgba(201, 100, 66, 0.25)',
-              }}
-            >
-              <div className="flex items-center gap-1.5 text-[var(--primary)] font-bold">
-                <Lightbulb size={14} weight="fill" />
-                <span>Pembahasan Singkat:</span>
-              </div>
-              <p className="text-[var(--foreground)] leading-relaxed">
-                {currentQ.explanation || 'Pembahasan belum tersedia untuk butir ini.'}
+        {/* Question Card or Paused State */}
+        {isPaused ? (
+          <div className="card-modern p-10 text-center space-y-4 my-8">
+            <div className="w-12 h-12 rounded-full mx-auto flex items-center justify-center bg-[var(--secondary)] text-[var(--primary)]">
+              <Pause size={24} weight="bold" />
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-[var(--foreground)]">Latihan Dijeda</h3>
+              <p className="text-xs text-[var(--muted-foreground)] mt-1">
+                Tarik nafas sejenak. Kamu sedang di soal {currentIndex + 1} dari {questions.length}.
               </p>
             </div>
-          )}
-
-          {/* Next Button */}
-          {hasRevealed && (
             <button
-              onClick={handleNext}
-              className="btn-primary w-full py-2.5 text-xs flex items-center justify-center gap-1.5 mt-2"
+              onClick={() => setIsPaused(false)}
+              className="btn-primary py-2 px-6 text-xs inline-flex items-center gap-1.5 mx-auto"
             >
-              <span>{currentIndex + 1 === questions.length ? 'Lihat Hasil Akhir' : 'Lanjut Soal Berikutnya'}</span>
-              <CaretRight size={14} weight="bold" />
+              <Play size={14} weight="fill" />
+              Lanjutkan Latihan
             </button>
-          )}
-        </div>
+          </div>
+        ) : (
+          <div className="card-modern p-5 space-y-4">
+            {currentQ.image && (
+              <img
+                src={currentQ.image}
+                alt="Gambar Soal"
+                className="max-h-56 mx-auto rounded border object-contain"
+                style={{ borderColor: 'var(--border)' }}
+              />
+            )}
+            <p className="text-sm text-[var(--foreground)] leading-relaxed font-medium">
+              {currentQ.text}
+            </p>
+
+            {/* Options */}
+            <div className="space-y-2">
+              {currentQ.options.map((opt, oi) => {
+                const isSelected = selectedOption === opt.id;
+                const maxScoreVal = Math.max(...currentQ.options.map((o) => o.score));
+                const isCorrect = opt.score === maxScoreVal;
+
+                let styleClass = 'border-[var(--border)] hover:bg-[var(--muted)] text-[var(--foreground)]';
+                if (hasRevealed) {
+                  if (isCorrect) {
+                    styleClass = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-semibold';
+                  } else if (isSelected && !isCorrect) {
+                    styleClass = 'border-red-400 bg-red-50 text-red-900 line-through';
+                  } else {
+                    styleClass = 'border-[var(--border)] opacity-60 text-[var(--muted-foreground)]';
+                  }
+                } else if (isSelected) {
+                  styleClass = 'border-[var(--primary)] bg-[var(--secondary)] font-semibold';
+                }
+
+                return (
+                  <button
+                    key={opt.id}
+                    onClick={() => handleSelect(opt.id)}
+                    disabled={hasRevealed}
+                    className={`w-full text-left p-3 rounded-xl border text-xs flex items-start gap-2.5 transition ${styleClass}`}
+                  >
+                    <span
+                      className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${
+                        hasRevealed && isCorrect
+                          ? 'bg-emerald-600 text-white'
+                          : hasRevealed && isSelected && !isCorrect
+                          ? 'bg-red-500 text-white'
+                          : 'bg-[var(--muted)] text-[var(--foreground)]'
+                      }`}
+                    >
+                      {optionLabels[oi] ?? opt.id}
+                    </span>
+                    <span className="flex-1 leading-relaxed">{opt.text}</span>
+                    {hasRevealed && isCorrect && (
+                      <CheckCircle size={16} className="text-emerald-600 shrink-0" weight="fill" />
+                    )}
+                    {hasRevealed && isSelected && !isCorrect && (
+                      <XCircle size={16} className="text-red-500 shrink-0" weight="fill" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Explanation Box (Revealed) */}
+            {hasRevealed && (
+              <div
+                className="p-4 rounded-xl border text-xs space-y-1.5 animate-fadeIn"
+                style={{
+                  backgroundColor: 'rgba(201, 100, 66, 0.04)',
+                  borderColor: 'rgba(201, 100, 66, 0.25)',
+                }}
+              >
+                <div className="flex items-center gap-1.5 text-[var(--primary)] font-bold">
+                  <Lightbulb size={14} weight="fill" />
+                  <span>Pembahasan Singkat:</span>
+                </div>
+                <p className="text-[var(--foreground)] leading-relaxed">
+                  {currentQ.explanation || 'Pembahasan belum tersedia untuk butir ini.'}
+                </p>
+              </div>
+            )}
+
+            {/* Next Button */}
+            {hasRevealed && (
+              <button
+                onClick={handleNext}
+                className="btn-primary w-full py-2.5 text-xs flex items-center justify-center gap-1.5 mt-2"
+              >
+                <span>{currentIndex + 1 === questions.length ? 'Lihat Hasil Akhir' : 'Lanjut Soal Berikutnya'}</span>
+                <CaretRight size={14} weight="bold" />
+              </button>
+            )}
+          </div>
+        )}
       </div>
+
+      {/* Exit Confirmation Modal */}
+      {showExitConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">
+          <div className="card-modern max-w-sm w-full p-6 text-center space-y-4 bg-[var(--card)]">
+            <div className="w-10 h-10 rounded-full mx-auto flex items-center justify-center bg-red-100 text-red-600">
+              <SignOut size={20} weight="bold" />
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-[var(--foreground)]">Keluar dari Latihan?</h3>
+              <p className="text-xs text-[var(--muted-foreground)] mt-1">
+                Progres sesi {currentIndex + 1}/{questions.length} soal tidak akan tersimpan jika kamu keluar sekarang.
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setShowExitConfirm(false)}
+                className="btn-secondary flex-1 py-2 text-xs"
+              >
+                Batal
+              </button>
+              <button
+                onClick={() => router.push('/drill')}
+                className="flex-1 py-2 text-xs font-semibold rounded-xl bg-red-600 hover:bg-red-700 text-white transition"
+              >
+                Ya, Keluar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
