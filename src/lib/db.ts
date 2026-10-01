@@ -104,22 +104,24 @@ export async function getPackageLeaderboard(packageId: string, limit = 50) {
   if (!sql) return [];
   return sql`
     SELECT
-      id,
-      total_score,
-      score_tkp,
-      score_tiu,
-      score_twk,
-      duration_used,
-      is_passed,
-      finished_at
-    FROM exam_results
-    WHERE package_id = ${packageId}
+      er.id,
+      er.total_score,
+      er.score_tkp,
+      er.score_tiu,
+      er.score_twk,
+      er.duration_used,
+      er.is_passed,
+      er.finished_at,
+      u.name AS user_name
+    FROM exam_results er
+    LEFT JOIN users u ON er.user_id = u.id
+    WHERE er.package_id = ${packageId}
     ORDER BY
-      total_score DESC,
-      score_tkp DESC,
-      score_tiu DESC,
-      score_twk DESC,
-      duration_used ASC
+      er.total_score DESC,
+      er.score_tkp DESC,
+      er.score_tiu DESC,
+      er.score_twk DESC,
+      er.duration_used ASC
     LIMIT ${limit}
   `;
 }

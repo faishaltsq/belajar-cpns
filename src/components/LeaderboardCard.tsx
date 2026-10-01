@@ -5,6 +5,7 @@ import { Trophy, Medal, Clock, Users } from '@phosphor-icons/react';
 
 interface LeaderboardEntry {
   id: string;
+  user_name?: string | null;
   total_score: number;
   score_tkp: number;
   score_tiu: number;
@@ -112,6 +113,7 @@ export function LeaderboardCard({ packageId, currentScore }: LeaderboardCardProp
               style={{ borderColor: 'var(--border)', background: 'var(--muted)' }}
             >
               <th className="px-4 py-2.5 text-left font-semibold text-[var(--muted-foreground)] w-10">#</th>
+              <th className="px-4 py-2.5 text-left font-semibold text-[var(--muted-foreground)]">Peserta</th>
               <th className="px-4 py-2.5 text-right font-semibold text-[var(--muted-foreground)]">Total</th>
               <th className="px-4 py-2.5 text-right font-semibold text-[var(--muted-foreground)] hidden sm:table-cell">TWK</th>
               <th className="px-4 py-2.5 text-right font-semibold text-[var(--muted-foreground)] hidden sm:table-cell">TIU</th>
@@ -131,6 +133,11 @@ export function LeaderboardCard({ packageId, currentScore }: LeaderboardCardProp
               >
                 <td className="px-4 py-3 font-bold text-[var(--foreground)]">
                   {i < 3 ? MEDAL[i] : `${i + 1}`}
+                </td>
+                <td className="px-4 py-3 text-[var(--foreground)] max-w-[120px]">
+                  <span className="truncate block text-xs font-medium">
+                    {entry.user_name || 'Peserta Anonim'}
+                  </span>
                 </td>
                 <td className="px-4 py-3 text-right font-bold text-[var(--foreground)]">
                   {entry.total_score}
