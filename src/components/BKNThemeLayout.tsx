@@ -127,7 +127,7 @@ export function BKNThemeLayout({
               <img
                 src={q.image}
                 alt="Soal"
-                style={{ maxWidth: '100%', maxHeight: 220, objectFit: 'contain', marginBottom: 16 }}
+                style={{ maxWidth: '100%', maxHeight: 380, objectFit: 'contain', marginBottom: 16, display: 'block', margin: '0 auto 16px' }}
               />
             )}
             <p style={{ margin: 0, fontSize: 14, color: '#111' }}>{q.text}</p>

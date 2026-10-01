@@ -582,7 +582,7 @@
     "category": "TIU",
     "subCategory": "Pola Spasial",
     "text": "Tentukan bentuk yang sesuai dengan pola spasial berikut.",
-    "image": "/images/questions/fig_page_0203.jpg",
+    "image": "/images/questions/fig_serial_03.png",
     "options": [
       {
         "id": "A",
@@ -617,7 +617,7 @@
     "category": "TIU",
     "subCategory": "Figural Serial",
     "text": "Pilihlah gambar yang merupakan kelanjutan dari pola berikut.",
-    "image": "/images/questions/fig_page_0205.jpg",
+    "image": "/images/questions/fig_serial_05.png",
     "options": [
       {
         "id": "A",
@@ -652,7 +652,7 @@
     "category": "TIU",
     "subCategory": "Figural Analogi",
     "text": "Tentukan gambar yang tepat untuk melengkapi analogi berikut.",
-    "image": "/images/questions/fig_page_0176.jpg",
+    "image": "/images/questions/fig_analogi_01.png",
     "options": [
       {
         "id": "A",
