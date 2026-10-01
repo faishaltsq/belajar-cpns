@@ -74,7 +74,8 @@ function LoginFormContent() {
         });
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Gagal masuk.');
-        router.push(redirect);
+        window.dispatchEvent(new Event('auth-change'));
+        window.location.href = redirect;
       }
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Terjadi kesalahan.');
@@ -97,7 +98,8 @@ function LoginFormContent() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Kode OTP tidak valid.');
-      router.push(redirect);
+      window.dispatchEvent(new Event('auth-change'));
+      window.location.href = redirect;
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Terjadi kesalahan.');
     } finally {

@@ -81,6 +81,13 @@ export async function findUserByEmail(email: string): Promise<DbUser | null> {
   return (rows[0] as DbUser) ?? null;
 }
 
+export async function findUserById(id: string): Promise<DbUser | null> {
+  const sql = getDb();
+  if (!sql) return null;
+  const rows = await sql`SELECT id, email, phone, name, created_at FROM users WHERE id = ${id} LIMIT 1`;
+  return (rows[0] as DbUser) ?? null;
+}
+
 export async function createUser(email: string, passwordHash: string, name: string): Promise<DbUser> {
   const sql = getDb();
   if (!sql) throw new Error('Database not configured');

@@ -6,8 +6,9 @@ import { usePathname } from 'next/navigation';
 export default function Footer() {
   const pathname = usePathname();
 
-  // Sembunyikan footer di halaman simulasi aktif
-  if (pathname?.match(/^\/simulasi\/.+/)) return null;
+  // Sembunyikan footer HANYA saat pengerjaan ujian aktif, bukan di halaman hasil
+  const isActiveExam = Boolean(pathname?.startsWith('/simulasi/') && !pathname?.startsWith('/simulasi/hasil'));
+  if (isActiveExam) return null;
 
   return (
     <footer

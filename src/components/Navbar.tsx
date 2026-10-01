@@ -19,8 +19,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Sembunyikan Navbar di halaman simulasi aktif (punya header sendiri)
-  if (pathname?.match(/^\/simulasi\/.+/)) return null;
+  // Sembunyikan Navbar HANYA saat pengerjaan ujian aktif, bukan di halaman hasil
+  const isActiveExam = Boolean(pathname?.startsWith('/simulasi/') && !pathname?.startsWith('/simulasi/hasil'));
+  if (isActiveExam) return null;
 
   const initials = user?.name
     ? user.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase()

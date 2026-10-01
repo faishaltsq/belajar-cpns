@@ -17,6 +17,8 @@ import {
   ChartBar,
   ListDashes,
   Ranking,
+  House,
+  CaretLeft,
 } from '@phosphor-icons/react';
 import { useUser } from '@/lib/useUser';
 
@@ -89,6 +91,26 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   return (
     <div className="min-h-screen flex items-start justify-center p-4 py-8">
       <div className="max-w-3xl w-full space-y-5">
+        {/* Top Breadcrumb / Back Navigation */}
+        <div className="flex items-center justify-between">
+          <Link
+            href="/simulasi"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg border hover:bg-[var(--muted)] transition"
+            style={{ borderColor: 'var(--border)', color: 'var(--foreground)' }}
+          >
+            <CaretLeft size={14} weight="bold" />
+            <span>Kembali ke Menu Utama</span>
+          </Link>
+
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition"
+          >
+            <House size={14} />
+            <span>Beranda</span>
+          </Link>
+        </div>
+
         {/* Auth banner */}
         {!userLoading && (
           user ? (
@@ -260,13 +282,22 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
         </div>
 
         {/* CTA */}
-        <Link
-          href={retryPath}
-          className="btn-primary flex items-center justify-center gap-2 w-full py-3 px-6 text-sm mt-4"
-        >
-          <ArrowCounterClockwise size={16} weight="bold" />
-          Coba Simulasi Lagi
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-3 pt-3">
+          <Link
+            href="/simulasi"
+            className="btn-secondary flex-1 flex items-center justify-center gap-2 py-3 px-6 text-sm"
+          >
+            <House size={16} weight="bold" />
+            Kembali ke Menu Utama
+          </Link>
+          <Link
+            href={retryPath}
+            className="btn-primary flex-1 flex items-center justify-center gap-2 py-3 px-6 text-sm"
+          >
+            <ArrowCounterClockwise size={16} weight="bold" />
+            Coba Simulasi Lagi
+          </Link>
+        </div>
       </div>
     </div>
   );

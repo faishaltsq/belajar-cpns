@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { saveExamResult } from '@/lib/db';
+import { cookies } from 'next/headers';
+import { verifyToken } from '@/lib/auth';
 
 export async function POST(req: NextRequest) {
   try {
@@ -8,8 +10,20 @@ export async function POST(req: NextRequest) {
     if (!packageId || totalScore === undefined) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
+
+    // Ambil userId dari body atau otomatis dari cookie cpns_token
+    let finalUserId = userId;
+    if (!finalUserId) {
+      const cookieStore = cookies();
+      const token = cookieStore.get('cpns_token')?.value;
+      if (token) {
+        const payload = await verifyToken(token);
+        if (payload?.userId) finalUserId = payload.userId;
+      }
+    }
+
     const id = await saveExamResult({
-      userId: userId || undefined,
+      userId: finalUserId || undefined,
       packageId,
       answers: answers ?? {},
       scoreTwk: scoreTwk ?? 0,
