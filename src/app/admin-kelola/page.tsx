@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import FiguralCropEditor from '@/components/admin/FiguralCropEditor';
 import {
   Gear,
   PencilSimple,
@@ -511,7 +512,7 @@ export default function AdminPage() {
           }`}
         >
           <ImageIcon size={14} className="inline mr-1.5 -mt-0.5" />
-          Koleksi Gambar Figural
+          Crop Gambar Figural
         </button>
         <button
           onClick={() => {
@@ -1256,47 +1257,7 @@ export default function AdminPage() {
 
       {/* TAB 3: MEDIA & FIGURAL IMAGE GALLERY */}
       {tab === 'media' && (
-        <div className="space-y-6">
-          <div className="card-modern p-6">
-            <h2 className="text-lg font-bold text-[var(--foreground)] mb-1">
-              Koleksi Gambar Figural dari E-Book CPNS
-            </h2>
-            <p className="text-xs text-[var(--muted-foreground)]">
-              Gambar ini diekstrak otomatis dari modul TIU SKD CPNS 2024 dan disimpan di <code className="font-mono">public/images/questions/</code>. Anda dapat menyalin path gambar untuk ditempel pada butir soal manapun.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
-            {Array.from({ length: 34 }, (_, i) => {
-              const pageNum = 175 + i;
-              const imgPath = `/images/questions/fig_page_${pageNum.toString().padStart(4, '0')}.jpg`;
-              return (
-                <div key={pageNum} className="card-modern p-3 flex flex-col justify-between group">
-                  <div className="rounded-lg overflow-hidden border mb-2" style={{ borderColor: 'var(--border)' }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={imgPath}
-                      alt={`Halaman ${pageNum}`}
-                      className="w-full h-36 object-contain bg-slate-50 group-hover:scale-105 transition"
-                    />
-                  </div>
-                  <div className="text-[10px] text-center">
-                    <span className="font-semibold block text-[var(--foreground)]">Hal. {pageNum}</span>
-                    <button
-                      onClick={() => {
-                        navigator.clipboard.writeText(imgPath);
-                        alert(`Path disalin: ${imgPath}`);
-                      }}
-                      className="text-[var(--muted-foreground)] hover:text-[var(--foreground)] underline mt-1"
-                    >
-                      Salin Path
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <FiguralCropEditor adminPin={pin} />
       )}
 
       {/* TAB: BANK SOAL */}
