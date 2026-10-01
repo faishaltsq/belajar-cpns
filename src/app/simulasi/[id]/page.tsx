@@ -380,7 +380,8 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         </div>
       )}
 
-      {/* Header Utama Simulasi */}
+      {/* Header Utama Simulasi — hidden saat mode BKN (BKN punya header sendiri) */}
+      {!isBknMode && (
       <header
         className="sticky top-0 z-40 backdrop-blur-md"
         style={{
@@ -456,27 +457,51 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
           </div>
         </div>
       </header>
+      )}
 
       {/* Konten Simulasi (BKN vs Modern) */}
       {isBknMode ? (
-        <BKNThemeLayout
-          questions={questions}
-          currentIndex={currentIndex}
-          answers={answers}
-          timerElement={
-            <Timer
-              key={initialSeconds}
-              initialSeconds={initialSeconds}
-              isPaused={showPauseModal}
-              onTimeUp={handleTimeUp}
-            />
-          }
-          onSelectIndex={handleNavigateIndex}
-          onSelectOption={handleSelectOption}
-          onToggleFlag={handleToggleFlag}
-          onOpenModal={() => setShowFinishModal(true)}
-          packageId={params.id}
-        />
+        <>
+          <div style={{ position: 'fixed', bottom: 16, right: 16, zIndex: 999 }}>
+            <button
+              onClick={() => {
+                setViewMode('modern');
+                localStorage.setItem('cat_view_mode', 'modern');
+              }}
+              style={{
+                background: '#c96442',
+                color: '#fff',
+                border: 'none',
+                padding: '8px 14px',
+                borderRadius: 20,
+                fontSize: 12,
+                fontWeight: 700,
+                cursor: 'pointer',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+              }}
+            >
+              ✨ Kembali ke Mode Modern
+            </button>
+          </div>
+          <BKNThemeLayout
+            questions={questions}
+            currentIndex={currentIndex}
+            answers={answers}
+            timerElement={
+              <Timer
+                key={initialSeconds}
+                initialSeconds={initialSeconds}
+                isPaused={showPauseModal}
+                onTimeUp={handleTimeUp}
+              />
+            }
+            onSelectIndex={handleNavigateIndex}
+            onSelectOption={handleSelectOption}
+            onToggleFlag={handleToggleFlag}
+            onOpenModal={() => setShowFinishModal(true)}
+            packageId={params.id}
+          />
+        </>
       ) : (
         <div className={`flex-1 max-w-screen-xl mx-auto w-full px-4 py-6 flex gap-6 ${showPauseModal ? 'filter blur-md select-none pointer-events-none' : ''}`}>
           {/* Main Question Panel */}
