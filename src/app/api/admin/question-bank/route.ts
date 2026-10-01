@@ -79,17 +79,17 @@ export async function POST(req: Request) {
 
     // Ambil soal random dari bank per kategori
     const twkQ = await sql`
-      SELECT id, text, options, correct_answer, category, sub_category, explanation, difficulty
+      SELECT id, text, options, correct_answer, category, sub_category, explanation, difficulty, image
       FROM question_bank WHERE category = 'TWK'
       ORDER BY random() LIMIT ${twk}
     `;
     const tiuQ = await sql`
-      SELECT id, text, options, correct_answer, category, sub_category, explanation, difficulty
+      SELECT id, text, options, correct_answer, category, sub_category, explanation, difficulty, image
       FROM question_bank WHERE category = 'TIU'
       ORDER BY random() LIMIT ${tiu}
     `;
     const tkpQ = await sql`
-      SELECT id, text, options, correct_answer, category, sub_category, explanation, difficulty
+      SELECT id, text, options, correct_answer, category, sub_category, explanation, difficulty, image
       FROM question_bank WHERE category = 'TKP'
       ORDER BY random() LIMIT ${tkp}
     `;
@@ -108,7 +108,7 @@ export async function POST(req: Request) {
     const insertedIds: string[] = [];
     for (const q of allQ) {
       await sql`
-        INSERT INTO questions (package_id, text, options, correct_answer, category, explanation, difficulty, order_index)
+        INSERT INTO questions (package_id, text, options, correct_answer, category, explanation, difficulty, order_index, image)
         VALUES (
           ${packageId},
           ${q.text},
@@ -117,7 +117,8 @@ export async function POST(req: Request) {
           ${q.category},
           ${q.explanation || ''},
           ${q.difficulty || 'medium'},
-          ${orderIdx}
+          ${orderIdx},
+          ${q.image || null}
         )
       `;
       insertedIds.push(q.id);

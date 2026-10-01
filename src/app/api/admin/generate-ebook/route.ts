@@ -66,6 +66,7 @@ ATURAN PENTING:
 5. Sub-kategori harus salah satu dari: ${subCategories[category].join(', ')}
 6. Sertakan penjelasan singkat untuk jawaban.
 7. Tingkat kesulitan acak: easy, medium, hard.
+8. PENTING: JANGAN buat soal yang membutuhkan gambar, figur, diagram visual, atau pola gambar (contoh: "perhatikan gambar berikut", "figural serial", "rotasi gambar"). Semua soal harus bisa dibaca dan dijawab 100% berbasis teks/angka saja.
 
 MATERI REFERENSI:
 ${contextText}
