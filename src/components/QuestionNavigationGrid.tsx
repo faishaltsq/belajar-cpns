@@ -16,48 +16,91 @@ export function QuestionNavigationGrid({
   currentIndex,
   onSelectIndex,
 }: GridProps) {
-  return (
-    <div className="card-modern p-4 flex flex-col h-full">
-      <h3 className="font-semibold text-[var(--foreground)] mb-3 text-xs flex items-center justify-between">
-        <span>Nomor Soal (1 - {questions.length})</span>
-      </h3>
+  let answered = 0;
+  let flagged = 0;
+  answers.forEach((a) => {
+    if (a.selectedOptionId != null && a.selectedOptionId !== '') answered++;
+    if (a.isFlagged) flagged++;
+  });
+  const total = questions.length;
+  const pct = total > 0 ? Math.round((answered / total) * 100) : 0;
 
-      <div className="flex items-center gap-3 text-[11px] mb-4 text-[var(--muted-foreground)]">
-        <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-[var(--primary)] inline-block" />
+  return (
+    <div className="card-modern p-3 flex flex-col" style={{ maxHeight: 'calc(100vh - 120px)' }}>
+      {/* Header */}
+      <div className="mb-2">
+        <h3 className="font-semibold text-[var(--foreground)] text-xs mb-1">
+          Navigasi Soal
+        </h3>
+
+        {/* Progress bar */}
+        <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ background: 'var(--muted)' }}>
+          <div
+            className="h-full rounded-full transition-all"
+            style={{ width: `${pct}%`, background: 'var(--primary)' }}
+          />
+        </div>
+        <div className="flex justify-between text-[10px] text-[var(--muted-foreground)] mt-1">
+          <span>{answered}/{total} dijawab</span>
+          <span>{pct}%</span>
+        </div>
+      </div>
+
+      {/* Legenda */}
+      <div className="flex items-center gap-2.5 text-[10px] mb-2.5 text-[var(--muted-foreground)]">
+        <div className="flex items-center gap-1">
+          <span className="w-2.5 h-2.5 rounded-sm bg-[var(--primary)] inline-block" />
           <span>Sudah</span>
         </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-amber-400 inline-block" />
+        <div className="flex items-center gap-1">
+          <span className="w-2.5 h-2.5 rounded-sm bg-amber-400 inline-block" />
           <span>Ragu</span>
         </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded border inline-block" style={{ borderColor: 'var(--border)' }} />
+        <div className="flex items-center gap-1">
+          <span
+            className="w-2.5 h-2.5 rounded-sm border inline-block"
+            style={{ borderColor: 'var(--border)' }}
+          />
           <span>Belum</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-5 gap-1.5 overflow-y-auto max-h-[460px] pr-1">
+      {/* Grid nomor — 6 kolom, scroll jika perlu */}
+      <div className="grid grid-cols-6 gap-1 overflow-y-auto pr-0.5 flex-1 min-h-0">
         {questions.map((q, idx) => {
           const ans = answers.get(q.id);
-          const isAnswered = ans && ans.selectedOptionId !== null && ans.selectedOptionId !== undefined;
-          const isFlagged = Boolean(ans && ans.isFlagged);
+          const isAnswered = ans?.selectedOptionId != null && ans.selectedOptionId !== '';
+          const isFlagged = Boolean(ans?.isFlagged);
           const isCurrent = idx === currentIndex;
 
-          let btnCls = 'border-[var(--border)] text-[var(--muted-foreground)] hover:bg-[var(--muted)]';
+          let bg = 'transparent';
+          let textColor = 'var(--muted-foreground)';
+          let borderColor = 'var(--border)';
+
           if (isFlagged) {
-            btnCls = 'bg-amber-400 text-white font-semibold border-amber-300';
+            bg = '#fbbf24'; // amber-400
+            textColor = '#fff';
+            borderColor = 'transparent';
           } else if (isAnswered) {
-            btnCls = 'bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold border-transparent';
+            bg = 'var(--primary)';
+            textColor = 'var(--primary-foreground)';
+            borderColor = 'transparent';
           }
 
           return (
             <button
               key={q.id}
               onClick={() => onSelectIndex(idx)}
-              className={`h-8 w-full rounded-lg text-[11px] flex items-center justify-center border transition-all ${btnCls} ${
-                isCurrent ? 'ring-2 ring-[var(--ring)] ring-offset-1 scale-105' : ''
-              }`}
+              title={`Soal ${idx + 1}`}
+              className="h-7 w-full rounded-md text-[10px] font-medium flex items-center justify-center border transition-all"
+              style={{
+                background: bg,
+                color: textColor,
+                borderColor,
+                outline: isCurrent ? '2px solid var(--ring)' : undefined,
+                outlineOffset: isCurrent ? '1px' : undefined,
+                fontWeight: isCurrent ? 700 : undefined,
+              }}
             >
               {idx + 1}
             </button>

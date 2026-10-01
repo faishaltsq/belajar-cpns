@@ -96,16 +96,16 @@ export function QuestionCard({
           {question.image && (
             <div className="mb-5 relative">
               <div
-                className="relative rounded-xl overflow-hidden cursor-zoom-in border"
-                style={{ borderColor: 'var(--border)', maxWidth: 520 }}
+                className="relative rounded-xl overflow-hidden cursor-zoom-in border bg-white"
+                style={{ borderColor: 'var(--border)' }}
                 onClick={() => setImgZoom(true)}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={question.image}
                   alt={`Ilustrasi soal ${questionNumber}`}
-                  className="w-full h-auto object-contain"
-                  style={{ maxHeight: 320 }}
+                  className="w-full h-auto object-contain block mx-auto"
+                  style={{ maxHeight: 420 }}
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                 />
                 <div
