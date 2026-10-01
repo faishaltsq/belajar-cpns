@@ -1,362 +1,370 @@
 [
   {
-    "number": 1,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 1,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_01.png",
     "correct_answer": "c",
-    "source_page": 176
+    "explanation": "Refleksi horizontal."
   },
   {
-    "number": 2,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 2,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_02.png",
     "correct_answer": "c",
-    "source_page": 176
+    "explanation": "Sisi bertambah 1, bintang berkurang 1."
   },
   {
-    "number": 3,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 3,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_03.png",
     "correct_answer": "e",
-    "source_page": 177
+    "explanation": "Gambar 1 turun, sisi bertambah 2."
   },
   {
-    "number": 4,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 4,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_04.png",
     "correct_answer": "b",
-    "source_page": 178
+    "explanation": "Gambar menjadi tinggi kurus."
   },
   {
-    "number": 5,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 5,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_05.png",
     "correct_answer": "e",
-    "source_page": 178
+    "explanation": "Pencerminan horizontal."
   },
   {
-    "number": 6,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 6,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_06.png",
     "correct_answer": "a",
-    "source_page": 179
+    "explanation": "Sisi jadi 6, lingkaran pindah horizontal."
   },
   {
-    "number": 7,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 7,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_07.png",
     "correct_answer": "b",
-    "source_page": 179
+    "explanation": "Segitiga→segienam, sisi +3."
   },
   {
-    "number": 8,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 8,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_08.png",
     "correct_answer": "a",
-    "source_page": 180
+    "explanation": "Segiempat hitam di tengah."
   },
   {
-    "number": 9,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 9,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_09.png",
     "correct_answer": "c",
-    "source_page": 180
+    "explanation": "Gambar 1+3 digabung, irisan dihilangkan."
   },
   {
-    "number": 10,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 10,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_10.png",
     "correct_answer": "c",
-    "source_page": 181
+    "explanation": "Kecil→besar, besar→kecil."
   },
   {
-    "number": 11,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 11,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_11.png",
     "correct_answer": "c",
-    "source_page": 182
+    "explanation": "Pola refleksi dan rotasi."
   },
   {
-    "number": 12,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 12,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_12.png",
     "correct_answer": "c",
-    "source_page": 182
+    "explanation": "Pola refleksi dan rotasi."
   },
   {
-    "number": 13,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 13,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_13.png",
     "correct_answer": "e",
-    "source_page": 183
+    "explanation": "Pola refleksi dan rotasi."
   },
   {
-    "number": 14,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 14,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_14.png",
     "correct_answer": "b",
-    "source_page": 184
+    "explanation": "Pola refleksi dan rotasi."
   },
   {
-    "number": 15,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 15,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_15.png",
     "correct_answer": "a",
-    "source_page": 185
+    "explanation": "Refleksi horizontal."
   },
   {
-    "number": 16,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 16,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_16.png",
     "correct_answer": "a",
-    "source_page": 186
+    "explanation": "Putar 90° searah jarum jam."
   },
   {
-    "number": 17,
     "section": "Analogi",
-    "type": "Figural Analogi",
+    "number": 17,
+    "soal_text": "Carilah pasangan gambar yang memiliki hubungan sama dengan pasangan gambar sebelumnya.",
     "image": "/images/questions/fig_analogi_17.png",
     "correct_answer": "d",
-    "source_page": 186
+    "explanation": "Warna hitam, buang seperempat kiri bawah."
   },
   {
-    "number": 1,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 1,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_01.png",
     "correct_answer": "a",
-    "source_page": 191
+    "explanation": "Dua gambar kembar berhimpitan, kecuali A."
   },
   {
-    "number": 2,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 2,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_02.png",
     "correct_answer": "d",
-    "source_page": 191
+    "explanation": "D berisi 2 bangun ruang."
   },
   {
-    "number": 3,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 3,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_03.png",
     "correct_answer": "e",
-    "source_page": 191
+    "explanation": "Bulatan hitam jumlah genap, kecuali E."
   },
   {
-    "number": 4,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 4,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_04.png",
     "correct_answer": "c",
-    "source_page": 192
+    "explanation": "Rotasi ke kanan."
   },
   {
-    "number": 5,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 5,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_05.png",
     "correct_answer": "c",
-    "source_page": 192
+    "explanation": "Ketiga gambar bersatu."
   },
   {
-    "number": 6,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 6,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_06.png",
     "correct_answer": "d",
-    "source_page": 192
+    "explanation": "Jumlah titik ganjil."
   },
   {
-    "number": 7,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 7,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_07.png",
     "correct_answer": "a",
-    "source_page": 193
+    "explanation": "Dirotasi."
   },
   {
-    "number": 8,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 8,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_08.png",
     "correct_answer": "d",
-    "source_page": 193
+    "explanation": "Rotasi."
   },
   {
-    "number": 9,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 9,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_09.png",
     "correct_answer": "e",
-    "source_page": 193
+    "explanation": "Rotasi."
   },
   {
-    "number": 10,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 10,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_10.png",
     "correct_answer": "e",
-    "source_page": 194
+    "explanation": "Hitung jumlah garisnya."
   },
   {
-    "number": 11,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 11,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_11.png",
     "correct_answer": "d",
-    "source_page": 194
+    "explanation": "Rotasi."
   },
   {
-    "number": 12,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 12,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_12.png",
     "correct_answer": "c",
-    "source_page": 195
+    "explanation": "Gambarnya berpotongan."
   },
   {
-    "number": 13,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 13,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_13.png",
     "correct_answer": "b",
-    "source_page": 195
+    "explanation": "Rotasi."
   },
   {
-    "number": 14,
     "section": "Ketidaksamaan",
-    "type": "Figural Ketidaksamaan",
+    "number": 14,
+    "soal_text": "Tentukanlah satu gambar yang BERBEDA dengan yang lainnya.",
     "image": "/images/questions/fig_ketidaksamaan_14.png",
     "correct_answer": "c",
-    "source_page": 195
+    "explanation": "Rotasi."
   },
   {
-    "number": 1,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 1,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_01.png",
     "correct_answer": "e",
-    "source_page": 198
+    "explanation": "Objek terkecil jadi pembungkus."
   },
   {
-    "number": 3,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 2,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
+    "image": "/images/questions/fig_serial_02.png",
+    "correct_answer": "e",
+    "explanation": "Garis siku-siku berputar 90°."
+  },
+  {
+    "section": "Serial",
+    "number": 3,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_03.png",
     "correct_answer": "a",
-    "source_page": 199
+    "explanation": "Pola pertambahan elemen."
   },
   {
-    "number": 4,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 4,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_04.png",
     "correct_answer": "d",
-    "source_page": 200
+    "explanation": "Pola pertambahan elemen."
   },
   {
-    "number": 5,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 5,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_05.png",
     "correct_answer": "b",
-    "source_page": 200
+    "explanation": "Arah panah berpindah."
   },
   {
-    "number": 6,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 6,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_06.png",
     "correct_answer": "c",
-    "source_page": 201
+    "explanation": "Pola pertambahan elemen."
   },
   {
-    "number": 7,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 7,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_07.png",
     "correct_answer": "a",
-    "source_page": 201
+    "explanation": "Pola pertambahan elemen."
   },
   {
-    "number": 8,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 8,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_08.png",
     "correct_answer": "b",
-    "source_page": 201
+    "explanation": "Pola pertambahan elemen."
   },
   {
-    "number": 9,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 9,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_09.png",
     "correct_answer": "c",
-    "source_page": 202
+    "explanation": "Segitiga+6=9, Segi4+4=8, Segi5+2=7."
   },
   {
-    "number": 10,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 10,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_10.png",
     "correct_answer": "d",
-    "source_page": 202
+    "explanation": "Pola pertambahan elemen."
   },
   {
-    "number": 11,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 11,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_11.png",
     "correct_answer": "c",
-    "source_page": 203
+    "explanation": "Pola pertambahan elemen."
   },
   {
-    "number": 12,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 12,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_12.png",
     "correct_answer": "c",
-    "source_page": 203
+    "explanation": "Pola pertambahan elemen."
   },
   {
-    "number": 13,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 13,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_13.png",
     "correct_answer": "b",
-    "source_page": 204
+    "explanation": "Pola pertambahan elemen."
   },
   {
-    "number": 14,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 14,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_14.png",
     "correct_answer": "c",
-    "source_page": 204
+    "explanation": "Objek hitam→besar."
   },
   {
-    "number": 15,
     "section": "Serial",
-    "type": "Figural Serial",
+    "number": 15,
+    "soal_text": "Lengkapilah pola gambar berikut ini.",
     "image": "/images/questions/fig_serial_15.png",
     "correct_answer": "d",
-    "source_page": 205
+    "explanation": "Pola pertambahan elemen."
   }
 ]
