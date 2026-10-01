@@ -1,6 +1,14 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Sembunyikan footer di halaman simulasi aktif
+  if (pathname?.match(/^\/simulasi\/.+/)) return null;
+
   return (
     <footer
       className="mt-24 w-full"

@@ -134,6 +134,30 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     localStorage.setItem(storageKey, JSON.stringify(obj));
   }, [answers, storageKey, hydrated]);
 
+  // Konfirmasi sebelum meninggalkan halaman (tutup tab / refresh / navigasi luar)
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = '';
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, []);
+
+  // Konfirmasi saat back/forward browser (Next.js router)
+  useEffect(() => {
+    const handlePopState = () => {
+      // Tampilkan ExitExamModal alih-alih langsung navigasi
+      setShowExitModal(true);
+      // Push state lagi agar URL tidak berubah dulu
+      history.pushState(null, '', window.location.href);
+    };
+    // Tambahkan dummy history entry agar popstate ter-trigger saat back
+    history.pushState(null, '', window.location.href);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   // Tab switch listener (Official Mode)
   useEffect(() => {
     if (examType !== 'official') return;
