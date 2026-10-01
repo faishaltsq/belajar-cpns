@@ -1,25 +1,7 @@
 import { describe, it, expect } from 'vitest';
+import { sortLeaderboard, RankEntry } from '@/lib/leaderboard';
 
-interface RankEntry {
-  userId: string;
-  totalScore: number;
-  scoreTkp: number;
-  scoreTiu: number;
-  scoreTwk: number;
-  durationUsed: number;
-}
-
-function sortLeaderboard(entries: RankEntry[]): RankEntry[] {
-  return [...entries].sort((a, b) => {
-    if (b.totalScore !== a.totalScore) return b.totalScore - a.totalScore;
-    if (b.scoreTkp !== a.scoreTkp) return b.scoreTkp - a.scoreTkp;
-    if (b.scoreTiu !== a.scoreTiu) return b.scoreTiu - a.scoreTiu;
-    if (b.scoreTwk !== a.scoreTwk) return b.scoreTwk - a.scoreTwk;
-    return a.durationUsed - b.durationUsed;
-  });
-}
-
-describe('BKN Tie-breaker rule', () => {
+describe('BKN Tie-breaker rule (Kepmen PANRB 321/2024)', () => {
   it('mengurutkan berdasarkan TKP jika total skor sama', () => {
     const list: RankEntry[] = [
       { userId: 'A', totalScore: 400, scoreTkp: 170, scoreTiu: 130, scoreTwk: 100, durationUsed: 5000 },
@@ -36,6 +18,15 @@ describe('BKN Tie-breaker rule', () => {
     ];
     const sorted = sortLeaderboard(list);
     expect(sorted[0].userId).toBe('Y'); // Y menang karena TIU 110 > 95
+  });
+
+  it('mengurutkan berdasarkan TWK jika total, TKP, dan TIU sama', () => {
+    const list: RankEntry[] = [
+      { userId: 'M', totalScore: 360, scoreTkp: 166, scoreTiu: 100, scoreTwk: 95, durationUsed: 5000 },
+      { userId: 'N', totalScore: 360, scoreTkp: 166, scoreTiu: 100, scoreTwk: 90, durationUsed: 4800 },
+    ];
+    const sorted = sortLeaderboard(list);
+    expect(sorted[0].userId).toBe('M'); // M menang karena TWK 95 > 90
   });
 
   it('mengurutkan berdasarkan durasi tercepat jika semua skor sama', () => {

@@ -18,7 +18,7 @@ describe('SKD Question Bank', () => {
 
   it('every question has 5 options A-E', () => {
     for (const q of questions) {
-      expect(q.options).toHaveLength(5)
+      expect(q.options, `Soal ID ${q.id} (${q.category}) harus punya 5 opsi`).toHaveLength(5)
       expect(q.options.map((o) => o.id)).toEqual(['A', 'B', 'C', 'D', 'E'])
     }
   })
@@ -26,22 +26,22 @@ describe('SKD Question Bank', () => {
   it('TWK & TIU options have exactly one score 5 and four score 0', () => {
     for (const q of [...twk, ...tiu]) {
       const scores = q.options.map((o) => o.score).sort((a, b) => a - b)
-      expect(scores).toEqual([0, 0, 0, 0, 5])
+      expect(scores, `Soal ID ${q.id} (${q.category}/${q.subCategory}) skor opsi tidak valid`).toEqual([0, 0, 0, 0, 5])
     }
   })
 
   it('TKP options have scores 1..5', () => {
     for (const q of tkp) {
       const scores = q.options.map((o) => o.score).sort((a, b) => a - b)
-      expect(scores).toEqual([1, 2, 3, 4, 5])
+      expect(scores, `Soal TKP ID ${q.id} (${q.subCategory}) skor opsi harus 1-5`).toEqual([1, 2, 3, 4, 5])
     }
   })
 
   it('all questions have non-empty text, subCategory, and explanation', () => {
     for (const q of questions) {
-      expect(q.text.length).toBeGreaterThan(0)
-      expect(q.subCategory.length).toBeGreaterThan(0)
-      expect(q.explanation.length).toBeGreaterThan(0)
+      expect(q.text.length, `Soal ID ${q.id} text kosong`).toBeGreaterThan(0)
+      expect(q.subCategory.length, `Soal ID ${q.id} subCategory kosong`).toBeGreaterThan(0)
+      expect(q.explanation.length, `Soal ID ${q.id} explanation kosong`).toBeGreaterThan(0)
     }
   })
 

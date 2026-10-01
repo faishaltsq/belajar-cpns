@@ -91,4 +91,84 @@ describe('CAT Scoring Engine (Kepmen PANRB 321/2024)', () => {
     expect(result.tkp.answeredCount).toBe(0);
     expect(result.isPassedAll).toBe(false);
   });
+
+  describe('Official 110-Question Passing Grade Boundary (Kepmen PANRB 321/2024)', () => {
+    // Generate standard 110 questions
+    const standardQuestions: Question[] = [
+      ...Array.from({ length: 30 }, (_, i) => ({
+        id: i + 1,
+        category: 'TWK' as const,
+        subCategory: 'TWK',
+        text: `TWK ${i + 1}`,
+        options: [{ id: 'A', text: 'Benar', score: 5 }, { id: 'B', text: 'Salah', score: 0 }],
+        explanation: 'Exp',
+      })),
+      ...Array.from({ length: 35 }, (_, i) => ({
+        id: i + 31,
+        category: 'TIU' as const,
+        subCategory: 'TIU',
+        text: `TIU ${i + 1}`,
+        options: [{ id: 'A', text: 'Benar', score: 5 }, { id: 'B', text: 'Salah', score: 0 }],
+        explanation: 'Exp',
+      })),
+      ...Array.from({ length: 45 }, (_, i) => ({
+        id: i + 66,
+        category: 'TKP' as const,
+        subCategory: 'TKP',
+        text: `TKP ${i + 1}`,
+        options: [
+          { id: 'A', text: 'Opt 5', score: 5 },
+          { id: 'B', text: 'Opt 4', score: 4 },
+          { id: 'C', text: 'Opt 3', score: 3 },
+          { id: 'D', text: 'Opt 2', score: 2 },
+          { id: 'E', text: 'Opt 1', score: 1 },
+        ],
+        explanation: 'Exp',
+      })),
+    ];
+
+    it('passes when exact passing grade reached (TWK:65, TIU:80, TKP:166)', () => {
+      // TWK: 13 benar * 5 = 65
+      // TIU: 16 benar * 5 = 80
+      // TKP: 31 * 5 + 2 * 4 + 1 * 3 = 155 + 8 + 3 = 166 (sisa 11 soal skor 0/tidak jawab)
+      const answers: ExamAnswer[] = [
+        ...Array.from({ length: 13 }, (_, i) => ({ questionId: i + 1, selectedOptionId: 'A' })),
+        ...Array.from({ length: 16 }, (_, i) => ({ questionId: i + 31, selectedOptionId: 'A' })),
+        ...Array.from({ length: 31 }, (_, i) => ({ questionId: i + 66, selectedOptionId: 'A' })), // 31 * 5 = 155
+        { questionId: 66 + 31, selectedOptionId: 'B' }, // 4 -> 159
+        { questionId: 66 + 32, selectedOptionId: 'B' }, // 4 -> 163
+        { questionId: 66 + 33, selectedOptionId: 'C' }, // 3 -> 166
+      ];
+
+      const result = calculateExamScore(standardQuestions, answers, 6000);
+      expect(result.twk.score).toBe(65);
+      expect(result.tiu.score).toBe(80);
+      expect(result.tkp.score).toBe(166);
+      expect(result.twk.isPassed).toBe(true);
+      expect(result.tiu.isPassed).toBe(true);
+      expect(result.tkp.isPassed).toBe(true);
+      expect(result.isPassedAll).toBe(true);
+    });
+
+    it('fails when TWK is 1 point below passing grade (60 vs 65)', () => {
+      // TWK: 12 benar * 5 = 60 (< 65)
+      // TIU: 16 benar * 5 = 80
+      // TKP: 166
+      const answers: ExamAnswer[] = [
+        ...Array.from({ length: 12 }, (_, i) => ({ questionId: i + 1, selectedOptionId: 'A' })),
+        ...Array.from({ length: 16 }, (_, i) => ({ questionId: i + 31, selectedOptionId: 'A' })),
+        ...Array.from({ length: 31 }, (_, i) => ({ questionId: i + 66, selectedOptionId: 'A' })),
+        { questionId: 66 + 31, selectedOptionId: 'B' },
+        { questionId: 66 + 32, selectedOptionId: 'B' },
+        { questionId: 66 + 33, selectedOptionId: 'C' },
+      ];
+
+      const result = calculateExamScore(standardQuestions, answers, 6000);
+      expect(result.twk.score).toBe(60);
+      expect(result.twk.isPassed).toBe(false);
+      expect(result.tiu.isPassed).toBe(true);
+      expect(result.tkp.isPassed).toBe(true);
+      expect(result.isPassedAll).toBe(false);
+    });
+  });
 });
