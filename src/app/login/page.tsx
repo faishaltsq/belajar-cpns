@@ -23,6 +23,8 @@ function LoginFormContent() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [resending, setResending] = useState(false);
+  const [resendSuccess, setResendSuccess] = useState(false);
 
   // OTP
   const [otpDigits, setOtpDigits] = useState(['', '', '', '', '', '']);
@@ -103,6 +105,33 @@ function LoginFormContent() {
     }
   };
 
+  const handleResendOtp = async () => {
+    setResending(true);
+    setResendSuccess(false);
+    setError('');
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, name: name || undefined }),
+      });
+      const data = await res.json();
+      if (res.status === 409) {
+        // Email sudah verified — arahkan ke login
+        setError('Email sudah terdaftar. Silakan login.');
+        setStep('form');
+        setIsRegister(false);
+        return;
+      }
+      if (!res.ok) throw new Error(data.error || 'Gagal mengirim ulang.');
+      setResendSuccess(true);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Gagal mengirim ulang.');
+    } finally {
+      setResending(false);
+    }
+  };
+
   const benefits = [
     { icon: ChartLineUp, text: 'Simpan otomatis riwayat tryout & grafik progres' },
     { icon: Trophy, text: 'Bandingkan ranking dengan peserta nasional' },
@@ -131,14 +160,20 @@ function LoginFormContent() {
               <p className="text-xs text-[var(--muted-foreground)] mt-1">
                 Kode 6-digit dikirim ke <strong>{email}</strong>
               </p>
-              <p className="text-xs text-[var(--muted-foreground)]">
-                Berlaku 10 menit. Cek folder Spam jika tidak masuk.
+              <p className="text-xs text-amber-600 mt-1 font-medium">
+                ⚠️ Cek folder <strong>Spam / Promosi</strong> jika tidak masuk ke Kotak Masuk.
               </p>
             </div>
 
             {error && (
               <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs">
                 {error}
+              </div>
+            )}
+
+            {resendSuccess && (
+              <div className="mb-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs text-center font-medium">
+                ✅ Kode OTP baru berhasil dikirim ulang! Cek email &amp; folder spam.
               </div>
             )}
 
@@ -177,14 +212,21 @@ function LoginFormContent() {
               </button>
             </form>
 
-            <div className="mt-4 text-center text-xs text-[var(--muted-foreground)]">
-              Email tidak masuk?{' '}
+            <div className="mt-4 flex flex-col items-center gap-2 text-xs text-[var(--muted-foreground)]">
               <button
                 type="button"
-                onClick={() => { setStep('form'); setOtpDigits(['', '', '', '', '', '']); setError(''); }}
-                className="text-[var(--foreground)] underline font-medium hover:opacity-80"
+                onClick={handleResendOtp}
+                disabled={resending}
+                className="text-[var(--primary)] underline font-semibold hover:opacity-80 disabled:opacity-50"
               >
-                Kembali &amp; coba lagi
+                {resending ? 'Mengirim ulang...' : '📩 Kirim Ulang Kode OTP'}
+              </button>
+              <button
+                type="button"
+                onClick={() => { setStep('form'); setOtpDigits(['', '', '', '', '', '']); setError(''); setResendSuccess(false); }}
+                className="text-[var(--muted-foreground)] underline hover:opacity-80"
+              >
+                Kembali ke form
               </button>
             </div>
           </div>
