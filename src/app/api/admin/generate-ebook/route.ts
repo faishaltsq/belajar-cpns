@@ -95,10 +95,10 @@ RESPOND dalam format JSON ARRAY, tanpa markdown code block:
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'gemini-2.5-flash',
+        model: 'ag/gemini-3.8-flash',
         messages: [{ role: 'user', content: prompt }],
-        temperature: 0.8,
-        max_tokens: 8000,
+        temperature: 0.7,
+        max_tokens: 4000,
       }),
     });
 
