@@ -44,12 +44,16 @@ def trim_h(img: Image.Image, pad: int = 8) -> Image.Image:
     c1 = min(img.width, cols[-1] + pad + 1)
     return img.crop((c0, 0, c1, img.height))
 
+LOOSE_PAD = 40   # extra PDF-unit padding top/bottom per segment (user can crop later)
+X_PAD_L   = 20   # extra PDF-unit padding left
+X_PAD_R   = 20   # extra PDF-unit padding right
+
 def crop_segment(pg_idx: int, y0_pdf: float, y1_pdf: float) -> Image.Image:
     img = get_page_img(pg_idx)
-    x0 = int(30 * SCALE)
-    x1 = img.width - int(10 * SCALE)
-    y0 = max(0, int(y0_pdf * SCALE))
-    y1 = min(img.height, int(y1_pdf * SCALE))
+    x0 = max(0, int((30 - X_PAD_L) * SCALE))
+    x1 = min(img.width, img.width - int((10 - X_PAD_R) * SCALE))
+    y0 = max(0, int((y0_pdf - LOOSE_PAD) * SCALE))
+    y1 = min(img.height, int((y1_pdf + LOOSE_PAD) * SCALE))
     return img.crop((x0, y0, x1, y1))
 
 def stack(*imgs: Image.Image) -> Image.Image:
