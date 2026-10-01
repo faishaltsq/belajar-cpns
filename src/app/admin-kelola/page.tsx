@@ -38,7 +38,16 @@ export default function AdminPage() {
   const [authError, setAuthError] = useState('');
 
   // Dashboard state
-  const [tab, setTab] = useState<'packages' | 'custom' | 'ebook' | 'media'>('packages');
+  const [tab, setTab] = useState<'packages' | 'custom' | 'ebook' | 'bank' | 'media'>('packages');
+
+  // Bank soal state
+  const [bankStats, setBankStats] = useState<{ total: number; categories: { category: string; count: number; sub_count: number }[] }>({ total: 0, categories: [] });
+  const [bankBuilding, setBankBuilding] = useState(false);
+  const [bankTarget, setBankTarget] = useState('');
+  const [bankTwk, setBankTwk] = useState(30);
+  const [bankTiu, setBankTiu] = useState(35);
+  const [bankTkp, setBankTkp] = useState(45);
+  const [bankMessage, setBankMessage] = useState('');
   const [packages, setPackages] = useState<PackageMeta[]>([]);
   const [selectedPkgId, setSelectedPkgId] = useState<string>('tryout-1');
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -503,6 +512,22 @@ export default function AdminPage() {
         >
           <ImageIcon size={14} className="inline mr-1.5 -mt-0.5" />
           Koleksi Gambar Figural
+        </button>
+        <button
+          onClick={() => {
+            setTab('bank');
+            fetch('/api/admin/question-bank')
+              .then(r => r.json())
+              .then(d => setBankStats({ total: Number(d.total), categories: d.stats || [] }))
+              .catch(() => {});
+          }}
+          className={`px-4 py-2 rounded-lg text-xs font-semibold transition ${
+            tab === 'bank'
+              ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
+              : 'text-[var(--muted-foreground)] hover:bg-[var(--muted)]'
+          }`}
+        >
+          🗄️ Bank Soal
         </button>
       </div>
 
@@ -1185,24 +1210,11 @@ export default function AdminPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[var(--foreground)] mb-1">
-                  Target Paket (Opsional)
-                </label>
-                <select
-                  value={ebookTargetPkg}
-                  onChange={(e) => setEbookTargetPkg(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg text-xs border bg-transparent"
-                  style={{ borderColor: 'var(--border)' }}
-                >
-                  <option value="">Hanya preview (tidak langsung disimpan ke paket)</option>
-                  {packages.map((pkg) => (
-                    <option key={pkg.id} value={pkg.id}>
-                      {pkg.label} ({pkg.totalQuestions} soal)
-                    </option>
-                  ))}
-                </select>
-                <p className="text-[10px] text-[var(--muted-foreground)] mt-1">
-                  Pilih paket tujuan jika ingin soal langsung ditambahkan ke paket tersebut.
+                <p className="text-xs font-semibold text-[var(--foreground)] mb-1">
+                  Target: Bank Soal
+                </p>
+                <p className="text-[10px] text-[var(--muted-foreground)]">
+                  Hasil generate otomatis tersimpan ke Bank Soal. Untuk merakit paket tryout dari stok bank, gunakan tab 🗄️ Bank Soal.
                 </p>
               </div>
 
@@ -1216,9 +1228,7 @@ export default function AdminPage() {
                 >
                   {ebookResult.error
                     ? `Gagal: ${ebookResult.error}`
-                    : `Berhasil membuat ${ebookResult.count} soal baru dari referensi ebook!${
-                        ebookTargetPkg ? ' Sudah ditambahkan ke paket.' : ''
-                      }`}
+                    : `Berhasil membuat ${ebookResult.count} soal baru! Tersimpan di Bank Soal.`}
                 </div>
               )}
 
@@ -1285,6 +1295,131 @@ export default function AdminPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      )}
+
+      {/* TAB: BANK SOAL */}
+      {tab === 'bank' && (
+        <div className="space-y-6">
+          {/* Header */}
+          <div className="card-modern p-6">
+            <h2 className="text-lg font-bold text-[var(--foreground)] mb-1">🗄️ Bank Soal</h2>
+            <p className="text-xs text-[var(--muted-foreground)]">
+              Stok soal yang sudah di-generate dari ebook AI. Generate sekali, gunakan berkali-kali ke paket tryout mana pun tanpa panggil LLM lagi.
+            </p>
+          </div>
+
+          {/* Stats Bank */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { label: 'Total Soal di Bank', value: bankStats.total, color: 'text-[var(--primary)]' },
+              { label: 'TWK', value: bankStats.categories.find(c => c.category === 'TWK')?.count ?? 0, color: 'text-blue-600' },
+              { label: 'TIU', value: bankStats.categories.find(c => c.category === 'TIU')?.count ?? 0, color: 'text-violet-600' },
+              { label: 'TKP', value: bankStats.categories.find(c => c.category === 'TKP')?.count ?? 0, color: 'text-emerald-600' },
+            ].map(s => (
+              <div key={s.label} className="card-modern p-4 text-center">
+                <p className={`text-3xl font-bold ${s.color}`}>{s.value}</p>
+                <p className="text-[11px] text-[var(--muted-foreground)] mt-1">{s.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Rakit Paket */}
+          <div className="card-modern p-6 space-y-4">
+            <div>
+              <h3 className="text-sm font-bold text-[var(--foreground)]">⚡ Rakit Paket Tryout dari Bank Soal</h3>
+              <p className="text-xs text-[var(--muted-foreground)] mt-0.5">
+                Ambil soal acak dari bank sesuai komposisi → langsung isi paket tryout pilihan. Soal lama di paket akan diganti.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-semibold mb-1">Target Paket Tryout</label>
+                <select
+                  value={bankTarget}
+                  onChange={e => setBankTarget(e.target.value)}
+                  className="input-modern w-full text-xs"
+                >
+                  <option value="">-- Pilih Paket --</option>
+                  {packages.map(p => (
+                    <option key={p.id} value={p.id}>{p.label} ({p.totalQuestions} soal sekarang)</option>
+                  ))}
+                </select>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { label: 'TWK', val: bankTwk, set: setBankTwk },
+                  { label: 'TIU', val: bankTiu, set: setBankTiu },
+                  { label: 'TKP', val: bankTkp, set: setBankTkp },
+                ].map(f => (
+                  <div key={f.label}>
+                    <label className="block text-xs font-semibold mb-1">{f.label}</label>
+                    <input
+                      type="number"
+                      min={1}
+                      max={60}
+                      value={f.val}
+                      onChange={e => f.set(parseInt(e.target.value) || 0)}
+                      className="input-modern w-full text-xs"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <button
+                disabled={bankBuilding || !bankTarget}
+                onClick={async () => {
+                  if (!bankTarget) return;
+                  setBankBuilding(true);
+                  setBankMessage('');
+                  try {
+                    const res = await fetch('/api/admin/question-bank', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ action: 'build_package', packageId: bankTarget, twk: bankTwk, tiu: bankTiu, tkp: bankTkp }),
+                    });
+                    const data = await res.json();
+                    if (data.success) {
+                      setBankMessage(`✅ Berhasil! Paket diisi ${data.inserted} soal (TWK: ${data.breakdown.twk}, TIU: ${data.breakdown.tiu}, TKP: ${data.breakdown.tkp})`);
+                      // Refresh packages list
+                      fetch('/api/admin/packages', { headers: { 'x-admin-pin': pin } })
+                        .then(r => r.json())
+                        .then(d => setPackages(d.packages || []))
+                        .catch(() => {});
+                    } else {
+                      setBankMessage(`❌ Gagal: ${data.error}`);
+                    }
+                  } catch {
+                    setBankMessage('❌ Network error');
+                  }
+                  setBankBuilding(false);
+                }}
+                className="btn-primary text-xs px-5 py-2.5 flex items-center gap-2 disabled:opacity-50"
+              >
+                {bankBuilding ? '⏳ Merakit...' : `⚡ Rakit ${bankTwk + bankTiu + bankTkp} Soal ke Paket`}
+              </button>
+              <span className="text-xs text-[var(--muted-foreground)]">
+                Total: {bankTwk + bankTiu + bankTkp} soal
+              </span>
+            </div>
+
+            {bankMessage && (
+              <div className={`text-xs p-3 rounded-xl ${bankMessage.startsWith('✅') ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+                {bankMessage}
+              </div>
+            )}
+          </div>
+
+          {/* Info Generate */}
+          <div className="card-modern p-5 border-dashed" style={{ borderColor: 'var(--border)' }}>
+            <p className="text-xs text-[var(--muted-foreground)]">
+              💡 Untuk menambah stok bank soal, pergi ke tab <strong>Referensi Ebook AI</strong> dan generate soal — semua hasil generate otomatis masuk ke bank ini.
+              Semakin banyak stok di bank, semakin variatif paket tryout yang bisa dibuat!
+            </p>
           </div>
         </div>
       )}

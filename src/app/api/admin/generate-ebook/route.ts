@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'LLM API key not configured' }, { status: 500 });
     }
 
-    const { category, count = 5, packageId } = await req.json();
+    const { category, count = 5 } = await req.json();
     if (!['TWK', 'TIU', 'TKP'].includes(category)) {
       return NextResponse.json({ error: 'category harus TWK, TIU, atau TKP' }, { status: 400 });
     }
@@ -144,49 +144,34 @@ RESPOND dalam format JSON ARRAY, tanpa markdown code block:
       }
     }
 
-    // Jika packageId disertakan, langsung simpan ke DB
-    if (packageId) {
-      // Ambil order_index terakhir
-      const lastOrder = await sql`
-        SELECT COALESCE(MAX(order_index), -1) + 1 as next_order 
-        FROM questions WHERE package_id = ${packageId}
-      `;
-      let orderIdx = lastOrder[0]?.next_order ?? 0;
+    // Simpan SEMUA soal ke question_bank (tidak langsung ke paket)
+    let savedCount = 0;
+    for (const q of questions) {
+      const correctAnswer = isTKP
+        ? q.options.reduce((best: { score: number; id: string }, o: { score: number; id: string }) => o.score > best.score ? o : best, q.options[0]).id
+        : q.options.find((o: { score: number }) => o.score === 5)?.id || 'a';
 
-      for (const q of questions) {
-        const correctAnswer = isTKP
-          ? q.options.reduce((best: { score: number; id: string }, o: { score: number; id: string }) => o.score > best.score ? o : best, q.options[0]).id
-          : q.options.find((o: { score: number }) => o.score === 5)?.id || 'a';
-
-        await sql`
-          INSERT INTO questions (package_id, text, options, correct_answer, category, explanation, difficulty, order_index)
-          VALUES (
-            ${packageId},
-            ${q.text},
-            ${JSON.stringify(q.options)}::jsonb,
-            ${correctAnswer},
-            ${q.category},
-            ${q.explanation || ''},
-            ${q.difficulty || 'medium'},
-            ${orderIdx}
-          )
-        `;
-        orderIdx++;
-      }
-
-      // Update question_count
       await sql`
-        UPDATE packages SET question_count = (
-          SELECT COUNT(*) FROM questions WHERE package_id = ${packageId}
-        ) WHERE id = ${packageId}
+        INSERT INTO question_bank (category, sub_category, text, options, correct_answer, explanation, difficulty, source)
+        VALUES (
+          ${q.category || category},
+          ${q.sub_category || ''},
+          ${q.text},
+          ${JSON.stringify(q.options)}::jsonb,
+          ${correctAnswer},
+          ${q.explanation || ''},
+          ${q.difficulty || 'medium'},
+          'ai_ebook'
+        )
       `;
+      savedCount++;
     }
 
     return NextResponse.json({
       success: true,
-      count: questions.length,
+      count: savedCount,
       questions,
-      savedToPackage: packageId || null,
+      savedTo: 'question_bank',
     });
   } catch (error) {
     console.error('[generate-ebook] error:', error);
@@ -199,7 +184,7 @@ export async function GET() {
   const sql = getDb();
   if (!sql) return NextResponse.json({ error: 'DB not configured' }, { status: 500 });
 
-  const stats = await sql`
+  const ebookStats = await sql`
     SELECT category, COUNT(*) as count,
       COUNT(DISTINCT sub_category) as sub_categories,
       COUNT(DISTINCT source_file) as source_files
@@ -208,11 +193,25 @@ export async function GET() {
     ORDER BY category
   `;
 
-  const total = await sql`SELECT COUNT(*) as total FROM ebook_contexts`;
+  const ebookTotal = await sql`SELECT COUNT(*) as total FROM ebook_contexts`;
+
+  const bankStats = await sql`
+    SELECT category, COUNT(*) as count,
+      COUNT(DISTINCT sub_category) as sub_categories
+    FROM question_bank
+    GROUP BY category
+    ORDER BY category
+  `;
+
+  const bankTotal = await sql`SELECT COUNT(*) as total FROM question_bank`;
 
   return NextResponse.json({
-    total: total[0]?.total ?? 0,
-    categories: stats,
+    total: ebookTotal[0]?.total ?? 0,
+    categories: ebookStats,
+    bank: {
+      total: bankTotal[0]?.total ?? 0,
+      categories: bankStats,
+    },
   }, {
     headers: { 'Cache-Control': 'no-store' },
   });
