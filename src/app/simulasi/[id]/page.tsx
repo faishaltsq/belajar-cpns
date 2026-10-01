@@ -541,7 +541,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
           </div>
 
           {/* Sidebar Navigation Grid */}
-          <aside className="hidden lg:block w-52 shrink-0 sticky top-20 self-start">
+          <aside className="hidden lg:block w-64 shrink-0">
             <QuestionNavigationGrid
               questions={questions}
               answers={answers}
