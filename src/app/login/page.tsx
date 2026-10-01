@@ -62,11 +62,6 @@ function LoginFormContent() {
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Gagal mendaftar.');
 
-        // Dev mode: jika ada devOtp di response
-        if (data.devOtp) {
-          const digits = data.devOtp.split('');
-          setOtpDigits(digits);
-        }
         setStep('otp');
       } else {
         // LOGIN → langsung set cookie

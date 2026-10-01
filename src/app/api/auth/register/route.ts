@@ -44,33 +44,37 @@ export async function POST(req: Request) {
     // Kirim email OTP via Resend
     const resendKey = process.env.RESEND_API_KEY;
     if (resendKey) {
-      const resend = new Resend(resendKey);
-      await resend.emails.send({
-        from: 'Lolos.in <noreply@lolos.in>',
-        to: email,
-        subject: `Kode Verifikasi Lolos.in: ${otp}`,
-        html: `
-          <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
-            <h2 style="color:#c96442;margin-bottom:8px">Lolos.in</h2>
-            <p style="color:#333;margin-bottom:16px">Halo <strong>${name || 'Peserta'}</strong>,</p>
-            <p style="color:#555;margin-bottom:16px">Gunakan kode berikut untuk menyelesaikan pendaftaran akun Lolos.in:</p>
-            <div style="background:#faf9f5;border:2px solid #c96442;border-radius:12px;padding:24px;text-align:center;margin-bottom:16px">
-              <span style="font-size:36px;font-weight:bold;letter-spacing:8px;color:#c96442">${otp}</span>
+      try {
+        const resend = new Resend(resendKey);
+        await resend.emails.send({
+          from: 'Lolos.in <onboarding@resend.dev>',
+          to: email,
+          subject: `Kode Verifikasi Lolos.in: ${otp}`,
+          html: `
+            <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
+              <h2 style="color:#c96442;margin-bottom:8px">Lolos.in</h2>
+              <p style="color:#333;margin-bottom:16px">Halo <strong>${name || 'Peserta'}</strong>,</p>
+              <p style="color:#555;margin-bottom:16px">Gunakan kode berikut untuk menyelesaikan pendaftaran akun Lolos.in:</p>
+              <div style="background:#faf9f5;border:2px solid #c96442;border-radius:12px;padding:24px;text-align:center;margin-bottom:16px">
+                <span style="font-size:36px;font-weight:bold;letter-spacing:8px;color:#c96442">${otp}</span>
+              </div>
+              <p style="color:#888;font-size:12px">Kode berlaku selama <strong>10 menit</strong>. Jangan bagikan ke siapapun.</p>
+              <hr style="border:none;border-top:1px solid #eee;margin:16px 0">
+              <p style="color:#aaa;font-size:11px">Jika kamu tidak merasa mendaftar, abaikan email ini.</p>
             </div>
-            <p style="color:#888;font-size:12px">Kode berlaku selama <strong>10 menit</strong>. Jangan bagikan ke siapapun.</p>
-            <hr style="border:none;border-top:1px solid #eee;margin:16px 0">
-            <p style="color:#aaa;font-size:11px">Jika kamu tidak merasa mendaftar, abaikan email ini.</p>
-          </div>
-        `,
-      });
+          `,
+        });
+      } catch (err: unknown) {
+        if (err instanceof Error) console.error('[auth/register] Gagal kirim email:', err.message);
+      }
+    } else {
+      console.warn('[auth/register] RESEND_API_KEY belum di-set, email tidak terkirim.');
     }
 
     return NextResponse.json({
       success: true,
       requireOtp: true,
       email: email.toLowerCase(),
-      // Fallback dev: kirim OTP di response jika tidak ada Resend key
-      ...(resendKey ? {} : { devOtp: otp }),
     });
   } catch (error: unknown) {
     if (error instanceof Error) console.error('[auth/register]', error.message);
