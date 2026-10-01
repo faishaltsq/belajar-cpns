@@ -25,7 +25,21 @@ export async function loadPackage(id: string): Promise<Question[]> {
         ORDER BY number ASC
       `;
       if (rows && rows.length > 0) {
-        return rows as unknown as Question[];
+        // Normalize options: DB may store string[] instead of Option[]
+        const normalized = (rows as Record<string, unknown>[]).map((row) => {
+          const opts = row.options;
+          if (Array.isArray(opts) && opts.length > 0 && typeof opts[0] === 'string') {
+            const LETTERS = ['A', 'B', 'C', 'D', 'E'];
+            const correctIdx = typeof row.correctAnswer === 'number' ? row.correctAnswer : -1;
+            row.options = (opts as string[]).map((text: string, i: number) => ({
+              id: LETTERS[i] || String(i + 1),
+              text: text || `Pilihan ${LETTERS[i] || i + 1}`,
+              score: i === correctIdx ? 5 : 0,
+            }));
+          }
+          return row;
+        });
+        return normalized as unknown as Question[];
       }
     } catch {
       // Fallback ke file lokal jika query gagal
