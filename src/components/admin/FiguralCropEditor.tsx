@@ -150,12 +150,13 @@ export default function FiguralCropEditor({ adminPin }: { adminPin: string }) {
 
       const data = await res.json();
       if (res.ok && data.success) {
-        setStatusMsg({ text: `Berhasil meng-crop ${selectedImg.filename}!`, type: 'success' });
-        // Update local images list with cache buster
+        setStatusMsg({ text: data.message || `Berhasil meng-crop ${selectedImg.filename}!`, type: 'success' });
+        // Update local images list with the returned URL (data URL from DB or cache-busted path)
+        const newUrl = `/api/admin/figural-img?filename=${selectedImg.filename}&pin=${adminPin}&t=${Date.now()}`;
         setImages((prev) =>
           prev.map((item) =>
             item.filename === selectedImg.filename
-              ? { ...item, url: `${item.url.split('?')[0]}?t=${Date.now()}` }
+              ? { ...item, url: newUrl, overridden: true }
               : item
           )
         );
