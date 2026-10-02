@@ -49,16 +49,18 @@ export async function POST(req: NextRequest) {
             SET image = ${dataUrl}
             WHERE package_id = 'tryout-figural'
               AND number = ${numStart}
+            RETURNING number
           `;
-          dbUpdated = (res as unknown as { rowCount: number }).rowCount || 0;
+          dbUpdated = Array.isArray(res) ? res.length : ((res as unknown as { rowCount: number }).rowCount || 0);
         } else {
           const matchPattern = `%${safeName}%`;
           const res = await sql`
             UPDATE questions
             SET image = ${dataUrl}
             WHERE image LIKE ${matchPattern}
+            RETURNING number
           `;
-          dbUpdated = (res as unknown as { rowCount: number }).rowCount || 0;
+          dbUpdated = Array.isArray(res) ? res.length : ((res as unknown as { rowCount: number }).rowCount || 0);
         }
       }
     } catch (dbErr) {
