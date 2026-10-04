@@ -115,8 +115,8 @@ export function ReportIssueModal({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="card-modern max-w-lg w-full p-6 space-y-5 bg-[var(--card)] max-h-[92vh] overflow-y-auto relative">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+      <div className="card-modern max-w-lg w-full p-4 sm:p-6 space-y-4 bg-[var(--card)] max-h-[100dvh] sm:max-h-[90vh] overflow-y-auto relative rounded-t-2xl sm:rounded-2xl">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] transition"
@@ -237,7 +237,7 @@ export function ReportIssueModal({
                   Jelaskan Masalah / Bug yang Terjadi: *
                 </label>
                 <textarea
-                  rows={3}
+                  rows={2}
                   required
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
