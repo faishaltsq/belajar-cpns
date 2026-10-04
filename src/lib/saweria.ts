@@ -41,30 +41,28 @@ export async function getSaweriaUserId(targetUsername?: string): Promise<{ userI
     return { userId: userIdCache.get(username)!, username };
   }
 
-  // 3. Fetch profil saweria untuk ekstrak user ID
+  // 3. Panggil API resmi backend Saweria untuk ekstrak user ID
   try {
-    const res = await fetch(`${SAWERIA_FRONTEND}/${username}`, {
+    const res = await fetch(`${SAWERIA_BACKEND}/users/${encodeURIComponent(username)}`, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
       },
       next: { revalidate: 3600 },
     });
 
+    if (res.status === 404) {
+      throw new Error(`Username Saweria "${username}" tidak ditemukan di saweria.co. Silakan periksa kembali username akun Saweria kamu.`);
+    }
+
     if (!res.ok) {
-      throw new Error(`Saweria user "${username}" not found (${res.status})`);
+      throw new Error(`Saweria backend error (${res.status})`);
     }
 
-    const html = await res.text();
-    const match = html.match(/<script id="__NEXT_DATA__"[^>]*>(.*?)<\/script>/);
-    if (!match) {
-      throw new Error('Saweria page format unexpected');
-    }
-
-    const data = JSON.parse(match[1]);
-    const userId = data?.props?.pageProps?.data?.id;
+    const json = await res.json();
+    const userId = json?.data?.id;
 
     if (!userId) {
-      throw new Error(`Saweria user ID not found for "${username}"`);
+      throw new Error(`Saweria user ID tidak ditemukan untuk "${username}"`);
     }
 
     userIdCache.set(username, userId);
