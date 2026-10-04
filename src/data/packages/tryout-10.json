@@ -1,0 +1,3864 @@
+[
+  {
+    "id": 1,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Apa yang diatur dalam UU No. 32 Tahun 2004 tentang Pemerintahan Daerah?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pembentukan dewan perwakilan daerah",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pembagian urusan pemerintahan antara pusat dan daerah",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Penyelenggaraan pemilu kepala daerah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pembentukan dewan perwakilan rakyat daerah",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Penyusunan APBD daerah",
+        "score": 0
+      }
+    ],
+    "explanation": "UU No. 32 Tahun 2004 mengatur tentang pembagian urusan pemerintahan antara pemerintah pusat dan daerah.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Burung : Terbang = Ikan : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Air",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Berenang",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menyelam",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Hiu",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Paus",
+        "score": 0
+      }
+    ],
+    "explanation": "Burung terbang, ikan berenang.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Program apa yang diinisiasi untuk meningkatkan kemandirian industri pertahanan di Indonesia?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Program UU Ketenagakerjaan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Program UU Otonomi Daerah",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Program Pengembangan SDM",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Program Revolusi Mental",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Program Revolusi Industri",
+        "score": 5
+      }
+    ],
+    "explanation": "Habibie menginisiasi Program Revolusi Industri untuk meningkatkan kemandirian industri pertahanan di Indonesia.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Siapakah perdana menteri Indonesia pada saat terbentuknya Kabinet Pembangunan II?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Burhanuddin Harahap",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Ali Sastroamidjojo",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Djuanda Kartawidjaja",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Wilopo",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Natsir",
+        "score": 5
+      }
+    ],
+    "explanation": "Natsir adalah perdana menteri Indonesia pada saat terbentuknya Kabinet Pembangunan II pada tahun 1950.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Seorang individu tidak boleh disiksa atau diperlakukan dengan cara yang kejam, tidak manusiawi, atau merendahkan martabat manusiPrinsip HAM ini mencakup...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kebebasan beragama",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kebebasan berekspresi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kebebasan dari penyiksaan",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Hak atas pendidikan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Hak untuk hidup",
+        "score": 0
+      }
+    ],
+    "explanation": "Kebebasan dari penyiksaan adalah prinsip HAM yang melarang penyiksaan atau perlakuan yang kejam terhadap individu.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Krona : Swedia = Lira : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Turki",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mesir",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Yunani",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Austria",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Norwegia",
+        "score": 0
+      }
+    ],
+    "explanation": "Krona adalah mata uang Swedia, Lira adalah mata uang Turki.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Salah satu peristiwa penting yang terjadi pada tahun 1999 di Indonesia adalah…",
+    "options": [
+      {
+        "id": "A",
+        "text": "Lepasnya Timor Timur dari Indonesia menjadi negara Merdeka",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Indonesia kembali menjadi anggota PBB",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tewasnya mahasiswa Trisakti pada kerusuhan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kembalinya Irian Barat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Mulainya era Orde Baru",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 8,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Seorang siswa membeli 2 buah pensil dan 3 buah pulpen seharga total Rp 12.500. Jika harga 1 buah pensil adalah Rp 2.000 lebih mahal dari harga 1 buah pulpen, berapa harga 1 buah pulpen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "1.5",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "2",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "2.5",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "3",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "3.5",
+        "score": 0
+      }
+    ],
+    "explanation": "Misalkan harga 1 buah pulpen adalah x rupiah. Maka harga 1 buah pensil adalah x+2.000x + 2.000x+2.000 rupiah. Persamaan dari total harga adalah 2×(x+2.000)+3×x=12.5002 \\times (x + 2.000) + 3 \\times x = 12.5002×(x+2.000)+3×x=12.500. Dari sini, x = 1.500. Jadi, harga 1 buah pulpen adalah Rp 1.500.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Bagaimana implementasi Pancasila dalam kebijakan pemerintah dapat mengarah pada pembangunan nasional yang berkelanjutan?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dengan mengabaikan keberagaman budaya",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Dengan memperkuat dominasi satu kelompok etnis",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Dengan mempromosikan sistem pemerintahan otoriter",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Dengan mengintegrasikan nilai-nilai Pancasila dalam setiap kebijakan",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Semua benar",
+        "score": 0
+      }
+    ],
+    "explanation": "Implementasi Pancasila dalam kebijakan pemerintah dapat mengarah pada pembangunan nasional yang berkelanjutan dengan mengintegrasikan nilai-nilai Pancasila seperti gotong royong, keadilan sosial, dan persatuan Indonesia.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Mengapa pentingnya pelestarian asas daerah di Indonesia sesuai dengan semangat Bhinneka Tunggal Ika?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Agar mengesampingkan nilai-nilai lokal",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Agar menekankan dominasi asas daerah nasional",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Agar membatasi perkembangan asas daerah daerah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Agar memahami dan menghargai keberagaman asas daerah",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Agar menolak pluralisme asas daerah",
+        "score": 0
+      }
+    ],
+    "explanation": "Pentingnya pelestarian asas daerah di Indonesia sesuai dengan semangat Bhinneka Tunggal Ika untuk memahami dan menghargai keberagaman asas daerah, sehingga jawaban yang tepat adalah pilihan D.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 11,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Organisasi internasional yang memiliki mandat untuk memantau dan melaporkan pelanggaran HAM di seluruh dunia adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "ASEAN",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "ICC",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "WTO",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "PBB",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "OPEC",
+        "score": 0
+      }
+    ],
+    "explanation": "PBB memiliki mandat untuk memantau dan melaporkan pelanggaran HAM di seluruh dunia.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 12,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Siapakah yang memimpin Gerakan 30 September (G30S) di Jakarta?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Letnan Kolonel Untung",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mayor General Soeharto",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Mayor Jenderal Suharto",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mayor Sabaruddin",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Mayor General Suprapto",
+        "score": 0
+      }
+    ],
+    "explanation": "Letnan Kolonel Untung memimpin Gerakan 30 September di Jakarta.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 13,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Berdasarkan Piagam Jakarta, kapan Indonesia merdeka?",
+    "options": [
+      {
+        "id": "A",
+        "text": "17 Agustus 1945",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "27 Desember 1949",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "5 Juli 1950",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "17 Desember 1949",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "18009",
+        "score": 0
+      }
+    ],
+    "explanation": "Piagam Jakarta menetapkan bahwa Indonesia merdeka pada tanggal 27 Desember 1949.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 14,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Sila keempat Pancasila mengandung prinsip...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Persatuan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pemerintahan yang baik",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Keadilan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kebersamaan",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Demokrasi",
+        "score": 0
+      }
+    ],
+    "explanation": "Sila keempat Pancasila mengandung prinsip kebersamaan yang melahirkan gotong royong.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 15,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Mengapa penting untuk menerapkan sila kelima dalam kebijakan publik?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Untuk mengurangi kesenjangan sosial",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Untuk meningkatkan kesejahteraan masyarakat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Untuk mewujudkan keadilan sosial",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Untuk menghindari konflik sosial",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Semua benar",
+        "score": 5
+      }
+    ],
+    "explanation": "Kebijakan publik yang adil dan merata mendukung keadilan sosial.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 16,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Apa yang menjadi penyebab utama pembubaran Republik Indonesia Serikat?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Desentralisasi pemerintahan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Konflik antar negara bagian",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Kudeta militer",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Desakan dari PBB",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Keinginan untuk menyatukan kembali",
+        "score": 0
+      }
+    ],
+    "explanation": "Konflik antar negara bagian menjadi penyebab utama pembubaran Republik Indonesia Serikat.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 17,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Tentukan hasil dari 4 * 16 * 64 * 256 * 1024",
+    "options": [
+      {
+        "id": "A",
+        "text": "16384",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "32768",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "65536",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "131072",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "262144",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret ini merupakan deret perkalian empat berturut-turut.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 18,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "DEPARTEMEN",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kementerian",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Lembaga",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Instansi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Badan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Organisasi",
+        "score": 0
+      }
+    ],
+    "explanation": "Departemen dalam konteks pemerintahan sinonim dengan Kementerian.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 19,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Apa nama kerajaan Jepang yang mengadakan ekspedisi ke Jawa pada abad ke- 16?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kerajaan Yamato",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kerajaan Tokugawa",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Kerajaan Muromachi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kerajaan Ashikaga",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kerajaan Nara",
+        "score": 0
+      }
+    ],
+    "explanation": "Kerajaan Tokugawa melakukan ekspedisi ke Jawa pada tahun 1586 dalam upaya mengamankan pengaruh...",
+    "difficulty": "medium"
+  },
+  {
+    "id": 20,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Mengapa inklusi sosial penting dalam budaya organisasi?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Meningkatkan diskriminasi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Membatasi kebebasan berpendapat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Memperkuat dominasi elit politik",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Meningkatkan keragaman dan integrasi",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Meningkatkan birokrasi organisasi",
+        "score": 0
+      }
+    ],
+    "explanation": "Inklusi sosial dalam budaya organisasi penting untuk meningkatkan keragaman, integrasi, dan kesejahteraan di tempat kerja, serta meminimalkan diskriminasi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 21,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Bagaimana pengaturan tentang pengelolaan danau dan waduk dalam Peraturan Pemerintah No. 10 Tahun 2014?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pembatasan penggunaan lahan di sekitar danau",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Penyediaan program rehabilitasi ekosistem danau",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pembentukan badan pengelola danau",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Penetapan tarif air tanah di sekitar danau",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pemberian insentif pajak bagi pemilik tanah di sekitar danau",
+        "score": 0
+      }
+    ],
+    "explanation": "Peraturan Pemerintah sering mengatur tentang pengelolaan sumber daya alam danau dan waduk di Indonesia.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 22,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Dekrit presiden dikeluarkan pada tanggal...",
+    "options": [
+      {
+        "id": "A",
+        "text": "30 Mei 1949",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "1 Juni 1949",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "5 Juli 1949",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "5 Juni 1959",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "5 Juli 1959",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah E.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 23,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Organisasi internasional yang berfokus pada perlindungan HAM di seluruh dunia adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "WTO",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "IMF",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "UNICEF",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "PBB",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "ASEAN",
+        "score": 0
+      }
+    ],
+    "explanation": "PBB (Perserikatan Bangsa- Bangsa) memiliki mandat untuk melindungi dan mempromosikan HAM di seluruh dunia.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 24,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Berdasarkan Peraturan Presiden No. 20 Tahun 2023, apa yang diatur tentang peningkatan kualitas pendidikan di Indonesia?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pengadaan buku teks sekolah",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Program beasiswa untuk mahasiswa",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pendidikan karakter di sekolah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Peningkatan kualitas guru",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Standar nasional pendidikan",
+        "score": 5
+      }
+    ],
+    "explanation": "Peraturan Presiden seringkali mengatur kebijakan nasional termasuk standar nasional pendidikan.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 25,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Mengapa Pancasila dijadikan sebagai dasar negara Indonesia?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Karena Pancasila hanya berlaku untuk satu golongan agama",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Karena Pancasila hanya mengakui satu jenis suku bangsa",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Karena Pancasila mencerminkan nilai- nilai kebudayaan Indonesia",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Karena Pancasila tidak menghargai perbedaan budaya",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Semua benar",
+        "score": 0
+      }
+    ],
+    "explanation": "Pancasila dijadikan sebagai dasar negara karena mencerminkan nilai-nilai kebudayaan Indonesia dan dapat mengakomodasi perbedaan budaya.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 26,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Apa yang dimaksud dengan Bhinneka Tunggal Ika dalam konteks keberagaman budaya di Indonesia?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kekuatan dalam persatuan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kesetaraan dalam keberagaman",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kesatuan dalam perbedaan",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Keharmonisan dalam keragaman",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kebinekaan tanpa persatuan",
+        "score": 0
+      }
+    ],
+    "explanation": "Bhinneka Tunggal Ika menggambarkan kesatuan dalam perbedaan atau keberagaman budaya, sehingga jawaban yang tepat adalah pilihan C.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 27,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Tahun ini diperingati sebagai Hari Pahlawan Nasional?",
+    "options": [
+      {
+        "id": "A",
+        "text": "45606",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "17 Agustus",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "5 Juli",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "45401",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "1 Juni",
+        "score": 0
+      }
+    ],
+    "explanation": "Hari Pahlawan Nasional diperingati setiap tanggal 10 November untuk menghormati jasa para pahl...",
+    "difficulty": "medium"
+  },
+  {
+    "id": 28,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Siapakah yang menjabat sebagai Gubernur Jenderal Indonesia yang terakhir di bawah pendudukan Jepang?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mohammad Hatta",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Soekarno",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Terauchi Hisaichi",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Tadashi Maeda",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sultan Hamid II",
+        "score": 0
+      }
+    ],
+    "explanation": "Jenderal Terauchi Hisaichi adalah Gubernur Jenderal Indonesia terakhir di bawah pendudukan Jepang.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 29,
+    "category": "TWK",
+    "subCategory": "Pilar Negara",
+    "text": "Kelelawar : Malam = Ayam : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Siang",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Petang",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Fajar",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pagi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sore",
+        "score": 0
+      }
+    ],
+    "explanation": "Kelelawar aktif di malam hari, ayam aktif di siang hari.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 30,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Kapal Selam : Bawah Laut = Balon Udara : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Langit",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Darat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Antariksa",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Permukaan Air",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Udara",
+        "score": 5
+      }
+    ],
+    "explanation": "Kapal selam beroperasi di bawah laut, balon udara beroperasi di udara.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 31,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "Tentukan jumlah total angka di deret 2, 4, 6, 8, ... sampai 20 angka.",
+    "options": [
+      {
+        "id": "A",
+        "text": "200",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "220",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "180",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "240",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "160",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret ini merupakan deret aritmatika dengan selisih 2. Jumlah deret = n/2 * (a + l), dengan n = 20, a = 2, l = 40. Jadi, 20/2 * (2 + 40) = 180.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 32,
+    "category": "TIU",
+    "subCategory": "Verbal Silogisme",
+    "text": "Deret huruf yang benar dari: C, G, L, R, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "U",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "S",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "T",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "V",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "W",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah R + 5 = W.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 33,
+    "category": "TIU",
+    "subCategory": "Verbal Analitis",
+    "text": "TOKYO : JEPANG =",
+    "options": [
+      {
+        "id": "A",
+        "text": "Maroko : Dubai",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Serang : Jawa Barat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "New York : USA",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pathaya : Thailand",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "London : Inggris",
+        "score": 5
+      }
+    ],
+    "explanation": "Ibu kota. London : Inggris",
+    "difficulty": "medium"
+  },
+  {
+    "id": 34,
+    "category": "TIU",
+    "subCategory": "Numerik Berhitung",
+    "text": "Sebuah tangga panjang 6,5 meter disandarkan pada sebuah dinding tembok. Bagian paling bawah tangga berjarak 2,5 meter dari dinding. Jika bagian paling atas tangga digeser ke bawah sepanjang 0,8 meter, berapa meter bagian paling bawah tangga tersebut akan digeser dari posisi semula?",
+    "options": [
+      {
+        "id": "A",
+        "text": "6",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "5,2",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "1,4",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "1 Soal no. 66 berdasarkan grafik berikut. 10 0 94 92 93 95 96 97 98 99 20 30 40 50 60 70 80 Tahun Pengunjung Museum Jumlah (Ribuan)",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pilihan E",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 35,
+    "category": "TIU",
+    "subCategory": "Numerik Deret Angka",
+    "text": "Jika deret 4^1, 4^2, 4^3, 4^4 melanjutkan polanya, berikutnya adalah:",
+    "options": [
+      {
+        "id": "A",
+        "text": "4^5",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "4^6",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "4^7",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "4^8",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "4^9",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret ini merupakan deret pangkat empat.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 36,
+    "category": "TIU",
+    "subCategory": "Numerik Perbandingan Kuantitatif",
+    "text": "Deret angka 4, 12, 36, 108, ... merupakan deret:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kuadrat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Fibonacci",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Geometri",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Bilangan ganjil",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Prima",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret ini merupakan deret dengan pola perkalian tiga.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 37,
+    "category": "TIU",
+    "subCategory": "Numerik Soal Cerita",
+    "text": "SAYUR : MAYUR =",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hiruk : Pikuk",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Sorak : Sorak",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Naik : Turun",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Hijau : Ranum",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gelap : Gurita",
+        "score": 0
+      }
+    ],
+    "explanation": "Sangat jelas. Hiruk : Pikuk",
+    "difficulty": "medium"
+  },
+  {
+    "id": 38,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "X dan Y adalah bilangan bulat positif. Jika X dibagi 5 maka sisanya adalah 2, sedangkan bila Y dibagi 5 sisanya adalah 3. Berapakah sisanya apabila XY dibagi 8?",
+    "options": [
+      {
+        "id": "A",
+        "text": "4",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "3",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "2",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "1",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "0",
+        "score": 5
+      }
+    ],
+    "explanation": "Misal X = 7 dan Y = 8 Maka XY = 56 DIBAGI 8 sisanya adalah 0",
+    "difficulty": "medium"
+  },
+  {
+    "id": 39,
+    "category": "TIU",
+    "subCategory": "Verbal Silogisme",
+    "text": "3, 8, 5, 10, 7, 12, ...., ....",
+    "options": [
+      {
+        "id": "A",
+        "text": "9 dan 14",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "10 dan 15",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "11 dan 16",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "12 dan 17",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "13 dan 18",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 40,
+    "category": "TIU",
+    "subCategory": "Verbal Analitis",
+    "text": "Jika deret 4D, 12L, 36T, 108Z, ... melanjutkan polanya, berikutnya adalah:",
+    "options": [
+      {
+        "id": "A",
+        "text": "324A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "324B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "324C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "324D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "324E",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret ini memiliki pola perkalian tiga pada angka dan urutan alfabet pada huruf.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 41,
+    "category": "TIU",
+    "subCategory": "Numerik Berhitung",
+    "text": "Seseorang mengendarai motor dari titik x ke titik y. berangkat dari titik x menuju ke timur sepanjang 20 km, lalu belok ke utara 20 km, lalu belok ke timur 10 km, lalu belok ke utara 10 km, dan terakhir belok ke timur 10 km sampai titik y. berapa km jauh dari titik x ke titik y?",
+    "options": [
+      {
+        "id": "A",
+        "text": "90",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "80",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "70",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "60",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "50",
+        "score": 5
+      }
+    ],
+    "explanation": "Timur = 20 + 10 + 10 = 40 Utara = 20 + 10 = 30 Ingat Phytagoras = 50 km",
+    "difficulty": "medium"
+  },
+  {
+    "id": 42,
+    "category": "TIU",
+    "subCategory": "Numerik Deret Angka",
+    "text": "Politik luar negeri Indonesia bersifat bebas aktif, artinya...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tegas menentukan sikap dalam pergaulan internasional dan global",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Ikut menciptakan perdamaian dunia dalam pergaulan internasional",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Ikut serta menciptakan perdamian dunia dan tidak memihak",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Bebas dalam mengikuti pergaulan internasional dan ikut mewujudkan perdamaian dunia",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Bersikap aktif reaktif dalam pergaulan internasional dan tidak memihak",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah D.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 43,
+    "category": "TIU",
+    "subCategory": "Numerik Perbandingan Kuantitatif",
+    "text": "Deret 1, 1, 2, 3, 5, 8, ... merupakan deret:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Prima",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Fibonacci",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Kuadrat",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Bilangan ganjil",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Genap",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret ini merupakan deret Fibonacci, di mana setiap angka adalah penjumlahan dari dua angka sebelumnya.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 44,
+    "category": "TIU",
+    "subCategory": "Numerik Soal Cerita",
+    "text": "Hitunglah luas pada gambar di bawah ini!",
+    "options": [
+      {
+        "id": "A",
+        "text": "1.200 mm2",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "1.240 mm2",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "1.360 mm2",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "1.400 mm2",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "1.580 mm2",
+        "score": 0
+      }
+    ],
+    "explanation": "1.400 mm2 Luas Belah Ketupat = 1/2 x d1 x d2 = 1/2 x 40 mm x 40 mm = 800 mm2 Luas Trapesium siku-siku = 1/2 x (jumlah sisi sejajar) x tinggi = 1/2 x (20 + 40) x 20 = 600 mm2 Luas Total = 800 mm2 + 600 mm2 = 1.400 mm2 NO A B C D E 72 5 3 2 1 4 73 1 2 3 4 5 74 4 3 2 1 5 75 3 4 5 2 1 76 1 3 4 5 2 77 1 2 4 3 5 78 5 1 3 4 2 79 4 3 2 5 1` 80 4 2 3 1 5 81 2 5 4 1 3 82 1 2 3 4 5 83 1 2 5 4 3 84 3 4 5 1 2 85 2 3 5 4 1 86 2 5 4 3 1 87 5 4 3 2 1 88 5 3 2 1 4 89 1 2 3 5 4 90 4 3 2 5 1 91 5 4 2 1 3 92 4 1 2 5 3 93 2 3 1 5 4 94 2 1 5 4 3 95 1 3 5 2 4 96 1 4 5 3 2 97 2 4 5 3 1 98 4 3 2 1 5 99 1 5 4 3 2 100 4 1 5 3 2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 45,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "Pernyataan “ Jika plastik adalah nonlogam, maka plastik adalah isolator. “,jika kita konversikan dalam bentuk-bentuk logika matematika, di antaranya . . .",
+    "options": [
+      {
+        "id": "A",
+        "text": "Jika plastik bukan isolator, maka plastik logam",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Jika plastik adalah isolator, maka plastik adalah nonlogam",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Jika plastic logam, maka plastik adalah bukan isolator",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Jika plastik adalah nonlogam, maka plastik bukan isolator",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Jika plastik logam, maka plastik adalah isolator",
+        "score": 0
+      }
+    ],
+    "explanation": "Penyelesaian: Pernyataan : Jika p maka q Konvers : Jika q maka q Jadi konvers : “Jika plastik adalah isolator, maka plastik adalah nonlogam “",
+    "difficulty": "medium"
+  },
+  {
+    "id": 46,
+    "category": "TIU",
+    "subCategory": "Verbal Silogisme",
+    "text": "Jika deret 2, 4, 6, 8, ... melanjutkan polanya, angka ke-20 adalah:",
+    "options": [
+      {
+        "id": "A",
+        "text": "36",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "38",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "40",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "42",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "44",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret ini merupakan deret aritmatika dengan selisih 2. Angka ke-20 adalah 2 + (20-1)*2 = 40.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 47,
+    "category": "TIU",
+    "subCategory": "Verbal Analitis",
+    "text": "Semua kertas HVS sangat berguna. Sebagian kertas yang sangat berguna harganya murah",
+    "options": [
+      {
+        "id": "A",
+        "text": "Semua kertas HVS harganya murah",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Semua kertas yang harganya murah adalah kertas HVS",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sebagian kertas harganya murah-murah",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Kertas yang murah sangat berguna",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Semua kertas yang sangat berharga adalah kertas HVS",
+        "score": 0
+      }
+    ],
+    "explanation": "Penyelesaian Langsung bisa ditarik kesimpulan sebagian kertas harganya murah.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 48,
+    "category": "TIU",
+    "subCategory": "Numerik Berhitung",
+    "text": "Urutan manakah yang sesuai dengan kondisi jadwal konsultasi di atas dari urutan 1 sampai 7?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Q, S, R, P, W, U, T",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Q, U, W, R, S, T, P",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "S, Q, R, T, W, U, P",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "T, U, R, S, W, P, Q",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "U, Q, T, P, R, S, W",
+        "score": 5
+      }
+    ],
+    "explanation": "Pernyataan A, B, C, D tidak sesuai dengan ketentuan.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 49,
+    "category": "TIU",
+    "subCategory": "Numerik Deret Angka",
+    "text": "Jika yang pertama kali dikerjakan adalah L, maka yang mungkin dikerjakan pada urutan kedua adalah ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "M",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "N",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "O",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "P",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "N atau K",
+        "score": 0
+      }
+    ],
+    "explanation": "M, O, P tidak mungkin ada di urutan kedua, karena tidak sesuai dengan pernyataan yang ada.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 50,
+    "category": "TIU",
+    "subCategory": "Numerik Perbandingan Kuantitatif",
+    "text": "INDIVIDUAL",
+    "options": [
+      {
+        "id": "A",
+        "text": "Rakyat umum",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kolektif",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Plural",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gotong Royong",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Masyarakat",
+        "score": 0
+      }
+    ],
+    "explanation": "Individual adalah mengenai atau berhubungan dengan manusia secara pribadi; bersifat perseorangan, perebutan kejuaraan, bukan beregu. kolektif/koléktif adalah secara bersama, terkumpul atau sebagai kelompok plurala memiliki banyak jenis, heterogen gotong-royong; bekerja bersama-sama (tolong-menolong, bantu-membantu): masyarakat berhasil membangun sebuah masjid yang megah secara menghidupkan dan mengembangkan dasar di desa-desa; bila dilihat dari arti kata individual adalah sebuah sikap manusia yang hidup sendiri, maka lawan kata yang paling tepat adalah kolektif.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 51,
+    "category": "TIU",
+    "subCategory": "Numerik Soal Cerita",
+    "text": "Jika diketahui 55% mahasiswa yang telah lulus pernah mengikuti ujian CPNS kementerian dan lembaga, 60% pernah mengikuti ujian CPNS Pemda, dan setiap mahasiswa yang telah lulus minimal pernah mengikuti salah satunya. Berapa persentase mahasiswa yang pernah mengikuti kedua tes tersebut?",
+    "options": [
+      {
+        "id": "A",
+        "text": "5",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "10",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "15",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "20",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "25",
+        "score": 0
+      }
+    ],
+    "explanation": "15% (55-X)+(60-X)+X=100 115-X=100 X= 15%",
+    "difficulty": "medium"
+  },
+  {
+    "id": 52,
+    "category": "TIU",
+    "subCategory": "Verbal Analogi",
+    "text": "Budi berjalan ke taman dengan kecepatan 4 km/jam. Temannya mengejar dengan sepeda 15 menit kemudian dengan kecepatan 16 km/jam. Berapa kilometer temannya menyusul Budi?",
+    "options": [
+      {
+        "id": "A",
+        "text": "1 km",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "2 km",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "3 km",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "4 km",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "5 km",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 53,
+    "category": "TIU",
+    "subCategory": "Verbal Silogisme",
+    "text": "Kecelakaan lalu lintas : Kecepatan = Pemanasan global : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Emisi gas buang",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Perubahan iklim",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Penyusutan lapisan ozon",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Konservasi energi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pemanfaatan energi terbarukan",
+        "score": 0
+      }
+    ],
+    "explanation": "Kecelakaan lalu lintas disebabkan oleh kecepatan kendaraan, pemanasan global disebabkan oleh emisi gas buang.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 54,
+    "category": "TIU",
+    "subCategory": "Serial Gambar",
+    "text": "Soal Serial Gambar No.122: Perhatikan pola barisan bangun datar berikut. Tentukan bangun datar ke-5 yang melengkapi pola.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAF8CAIAAAC4wUiaAAAaYklEQVR42u3deZzWVb0H8DPwDC5krnkzZZGUJBe0SI0EFVy4WOICg6CCgHivS+U1CpcANQLBUAwXCpXcFXC5eS03tlA0YhtNUkwK0FJApdtlKYi5f8zrNfICBGbmmed5zvm93y9evTDTZs73d875/L7nzENZVVVVAAAgfxoZAgAAAQsAQMACABCwAAAQsAAABCwAAAELAICdkfu0v1FZWWl0AAC2r23btkEHCwAgFKuDtZ1QBgDAdo77dLAAAIJL7gAAAhYAgIAFAICABQAgYAEACFgAAAhYAAACFgBASP2T3LevXbt2RhAASNXcuXODDhYAQIi9g1Vt9iuvGkcAICXtv358cAcLACC45A4AIGABACBgAQAIWAAAAhYAAAIWAICABQAgYAEACFgAAAhYAAACFgCAgAUAgIAFACBgAQAIWAAACFgAAAIWAICABQCAgAUAIGABAAhYAAACFgAAAhYAgIAFACBgAQAgYAEACFgAAAIWAAACFgCAgAUAIGABAFAtZwi2Y/9mbVcsrzQOAJSOCY9NNQibG9izc9DBiitd1fwnALVaPCHoYLH9BUIfS88SqM+rqWkVMtO2CZp5AtbOpKvXK2cf2ba9fVeeBurTu5K3CDpYbJ6uZCwHGUAdZlP1+lmtegmVtxCwrBFbrg4yVtZylUJDnefU5ovnNv+b7ectUw8BKyvpSsZKPldt81VboRPuF6psIdPV9mfc1nlLcwsBK0PpSsZKclPfZqFrqqzQCZ/GqmwR05W8hYAlXclYiTerdlhloG6XrurD5S0ErMylKxkr7Vyl1VHKTY580Z6Mq6a1urwlbyFgRZyuZKyM5CoHhYXZL4vyBWhPxpuYd5i3IPgk93jT1Rb/ez/nX9zyVf/aujrVv/K1lKtykp+Foayx9yO3nulqioAVd7qSsRLOVSXVbgnaVw38ZZi8dZh6JThBTFWCI8Jk0pWzwgTOAV3GymyXyEFh1I0rU5Wgg5V2utLHSqxfpduRzS1ZWdMopSYWAlZS6UrGauhQVaxcJWMlv/nZj9PrXZmnBEeEKaUrZ4XJHAI6UcrsJmfaFviTrsxTBCzpSsbKdK6yGafdK7IfJ9a4Mk8JjgjTS1fOCqO7XOWgUPsqOFRKLl05+UXASjBdyVh5/0ibUl671TeNDU9N0+tdKSgCVoLpSsaqT7QSF7Sv1NQnXSkoApZ0JWPZihQ3ta0u4zXdIlolkFRMUgSspNKVjJWd0KC4aWxpeh7JHAsqKAJWJibb5hnLTixj2aQFRIVTUAQs8yr/t4vMc6nd+AjNLl15AhGwHA46LsQrcobGIYNbcnqXrsxQBKwMpSsZKzgo1L6yJSuZbwoBS7qSsZCxsplIbMmAgBVZupKxvPobEJERSy4ClnRlwmNLzuI3risJm/vH/Pkf9O71QUWPdTNnGo2MBqwo0pWM5aDQT/hrwuE1ICKrR47Yd8TI/e64c/XoUUYjiwEronQlY8lYDgftyngsY/GZ8y/ItWzZaK+9qtasMRqZC1jRpSsZyzouf6gmHtcoND3rrBDChsWLmxxxhNHIVsCKNF3JWNZxiUQ18XDGYt20aZ/peZ5xyFDAijpdyVgOCiUP1cRDG4WNS5fuesIJxiErASuBdCVj2ZV1CHxfKGXp2+vqq0NZmXHIRMBKJl3JWJZynQDfL0pZ4j665hqDkImAlVi6krEs5QKl7w6lLGWfmzDBIKQfsJJMVzKWg0LB0XeNUiJgZShdzZr1SrtjT5KxIvXKK3O6dO3eb8Dl/QZcPu72n8tYkX6y6KZNm0bedOv5Fw7s2+/Sd9/9i85HpL7/g6HVk/GCPpd0OPHfNbFIXk66+jRr1qz92YSJuVyuwEvAkW3bV3+/K5ZXekDrY9WHH/Xvd35Fj7NDkfpY1aUMzlzqZ9Lkp5o23f2hByZMnTbzJ2PGjb11ZBFXIbOyzm4efWP1bx5/4pd//esHRd9QlJKgg1Wsk8Gxt9154QU9y8oaOSuM1MqVqz63336OJGL/Rp751XNndTsjhNCxQ/ujjjrcmW/UqqqqHn308d69uruJhYCV0XQ1f0HlipWrTj+ts/tY8Vq16sPfzHq5T9///PZ3frB8+Xs25kg3qqV/Xj5j5qx+Ay4f9IMhXU7vbGOO2oyZLx1xRJt99tnbaw8CVhbT1T//uWHMmNuvu3aQO+9RKysra9360PvvG9+tW9frbxjpwnukG9KGDRsOOOCAiffc8c0zugwdNsLGHLX77n+kb5/efpwQASujPzP44ovT16xZO/jqYf0GXL527dprr7tRxorR+b179Kw4O4TQ6eSOb7+9xIIe6Xe07777dO7UMYTQuVPHxYvfUcd4vfb6G5/dY4+WLZv7cUIErIx+IkPXrqc99eRDE++5Y+I9d+y+++4jfjxUHytGt469a+bMl0MIr732xqGHtrKgR/qVH3vsV+fOWxhCmDtvYesvHaKO8Zo48aG+fXr5TCyCnyIsrhXLK6tXsSPbts/sfKj5MTQ/8FIHV1wxcMiQH9//4KO7NGly/bBril7EqOtYMx+LUMfLBw4dNmL8+Hsb5xoPGzK4REbD/KqtZcveXbFy5Ve/enTprKuQ3Y9pKIWM9crLz0tXkWrRvNn9940vqec5mdxfyPm4zz573z7uZrty7Jo3P+ihByaU2hajLoTMXnKvmQBZW92kq8TqmACPonEwJSGpj2nIYMaSrtJbyhMrZWZfeBCUIakPGs1UxpKupCt7klIiKCNgyVjSFVkMJRncq8xKpYQ0/7Dn5DOWdCV8xLUzZaqjjFJCsgEr7YwlXTlR8vbvu0YpEbBkLOkK93WycmSPUkL6ASu9jCVdeUv23cnKeHQRsGQs6QpvyRn6rs1NjyhkKGClkbGkKw0Pt91tycjKCFgylnSFdBUymyORlSErASvejCVd2Y9tY74XzE0ELBlLusJ+nIlNy912cxMErCgzlnRlP7aZyY6oJgKWjCVdIV1lZevS8JD4QcCKL2NJV0KGLU1BUU0ELBlLusL7cYY+siGzkzTJJ9n0RMDKRMaSroLDQU0C+3Fpx+JUR8D0RMBKNmNJV9KV3p79uGS/2SQ/MFb7CgEr/YwlXUlXQRPLfuyE1zOJgCVjSVdYuzMVWSTmxDKW9hUCVuIZS7qSG4ROX7wrWQqKgCVjSVdFiyzRfQS/yiYTRiXmxK5kKSgCVsoZS7qqc8yK4kNiVTbJwyY1Tey4UEERsFLLWNJVrd6Vtx6l0k9aKpvMEOl2JJaxFBQBK9mMJV2lmrQs3OkNnZZkwleyFBQBK6mMJV01dNIq+k+DKm6SO5yapnEly1sQAlaaGUu6aoikVQptLekqyZ3PZpzwcaF5ioCVTsaSrrJwgKi4SW7MyppGKSVmBKwEM5Z0lXDSsmonGV+UNeErWdZhBKxEMpZ0lXDScjiYZKxR1vSuZEnMCFipZSzpKuGkZRtOvqOgrLEfF24909WUkpKzWOzfrG31XH29crZ0FfWKX13KrWtUq8rahht0R6xPLbQ6Sm3ZLHBNlQ8BK/2MJV2lnbSs4w26H2tfJVnThohZO3xa1BEBK6mMJV0lkLS2sx84cYCdn2V5b2VtP1SZkghYyWYs6Sre+yI709aSrgrQ8NC+clwoUSFgyVjSVUYPEJVYrKGBMpZEhYAlY82WrjJ7gAjk60qWq1QIWHxqxpKuMpW0VBnqfyVLokLAYgcZS7rKVNJSZcj7ZTvTCgGLbWQsC4R7QkCtFk9TCQSsnXoVs1gAeFEpKRMem2oQgj8qJ+plwmIBAAQdLK9iAKRqYM/OBiHoYAEACFgAAAhYAAACFgCAgAUAgIAFACBgAQAIWAAACFgAAAIWAICABQAgYAEAIGABAAhYAAACFgAAAhYAgIAFACBgAQAgYAEACFgAAAIWAAACFgCAgAUAIGABAAhYAAAIWAAAAhYAgIAFAICABQAgYAEACFgAAAhYAAAFlav/v6L91483jgAAQQcLACCUYAdr7ty5RhAAIOhgAQAIWAAAAhYAgIAFAICABQAgYAEACFgAAAhYAAACFgCAgAUAgIAFACBgAQAIWAAA1MjV5x+uqKgwgqVv0qRJCqqgKCgKSoMWNOhgAQCEku1g1TPc0dDq9nqkoAqKgqKg1LPFqIMFABBccgcAELAAAII7WHXV4ssnNMRXuXTRS0pVFAqqoAqqoCgoQQcLAEDAAgAQsAAACAW8g7Ud53X/1vAhVx3f6dxVH35k3GP31vypC1//Q1lZ2OMzTceMu/vF6S8bk6j16nHmheed9X9r1q5du+7a62/+y/srjEkCMzRUVZWX5x6Z8vTkJ39lTFIoaAghhBenvzThF48aEwHrE6ec/I2JD07p1PHrk558xrjHbsOGDT37XhFCaPOlQ+69c5SAFbUO7b/Wresp55x/6fr1/zipw/FjRl7Xq993DUsaM3T33Xa9585Ra9eue+a56YYlgYISHBFuYbddd919t90emfJ055PaG/SUvLn4nY0b/2UconZJv16jxv5s/fp/hBBmzHp16bL3crmcYUnD2nXrR/zkzv4X+jPvINGA1fGEY2fMenXJn5YddOAB5eXlxj0Z7Y/7yg033WYcotb6kIPf+MPimr+8etjojRs3GpZk/OGtd1q2ONA4QEjyiPC0Th0Ob3No19NP/rf99zv+a0fPmv07Qx+18vLyx+67fZcm5Ucd0Wb2b+c5Ioxa48aNDULKq3yu8QaJOYklt/r3o24dP3/h742JgFW9fDdq1bJZl7MvCiGceMJxnU9qL2CFVC4EHNb6i1MeuMOARG3Jn5cdftihC15bFEIoKysbM+K6q64ZbliScfSRbd5avMQ4uINFSO+IsN0xRy1664/Vv58zt7Jj+2ONezI+Xv23pcv/Yhyi9sAjTw767iVNmpSHEM7s2rn6N6Rhz8/ucfX3LrvrnocMBYT0Olindjph9qvzqn+/bv36VR99fEirln9c8mejHyLvV1dt2hRCuOb60QYkak//emrLFgc9M+Xejz5aveqjj4f8aIwxSeREqaoql8vddfeDr85ZYEySOSKcv/D3o24db0wErBBCGD769s3/sqKPPmf0vvSVzgYhJePG3zdu/H3GwQxFQQk+yR0AQMACABCwAAAQsAAABCwAAAELAAABCwBAwAIAELAAABCwAAAELAAAAQsAQMACAEDAAgAoObn8/uuWLnrJmKZEQRUUBUVBCTpYAAACFgCAgAUAgIAFACBgAQAIWAAACFgAAAIWAICABQAgYAEAIGABAAhYAAACFgAAAhYAgIAFACBgAQAgYAEACFgAAAIWAOy8vT5/uEFQ4lTllL+2z8rq998wDgB52Xerf2NdTThRZbbEAlatnxgZCyC//Yya/97qmmqPKoMxS8DS2wQoznK6bMmC5q2O0e1IbGdctmTB5n+5eYkz1aEQsOry9GhiAdQnV239+y22YTEr3kS1zb9bU9/sFFfA2vEztPmjs/kjYvK790ZEvWFPUalFq+1vw84N401Un/aPZC1DC1g7lau2+YjY+AtcI6MtXUnq6eWqHcYsK0BcFaxVcdOubM4zVNvHaOtLA4hZQB435u2cG1oEClbEvISqnYxZSdY0Zwmoz5PknVgfglJbvrem6xxpw0NDK+HpmYWLWTm5qm5PhiVbK4v6L68F+//SdY4uWu1kQ8s6EPX0TPtiVk6uqv9jIWOZisTyuSdma0S5ykX4LEzPhC9m5eQqr8XRvVeJWd6PzdasRSvnhumd3Sd/MSsnV3ktTiNmGX/vx2Zr2il5Z84NiTFdpXoxq1EaD0f1r61LVf2rMEuMj30v/FTcYvyVwAputmZhG1bZtMu6xZcR79reSK6K/TVOzEpjKmp7mK2KqLLS1Tbfn4MOVqZylT+7sJSnopjlcNBszexwqWwyCTX23mSjNDbX0nktNrdLKmYZFou4VkdGBlBl65xES3nooi5ro5Q2VBkLF7O0E4JWh6dOZQ2RgOXFDhezTBBT1Wassq5epRcKBSzPgYtZZHcieCRSTTAqm0y6ijc3C1gOCl3MInPruKmaalLRxEqydxXp0yhgWbhdzCLrP6CEEZOuPHsClkcBF7O8aAbHSSirTUrAMsNxMctS7muzgimrUmbrGxGwHBSKWWpkKfcMpJlalDWNq1eRftkClowlZmllZXcpN0+TTCeaWImlq+CIEJPcxSyie/7N07SHyIxO71GPpaYClgfCouNilufcPE1tKORmAVHAclCIi1mWQl+twREWCY4IsXa7mEWy25iKW3sxTwUszwQuZtnYbMZWKqwtApZnwsrlYpYt2fdiP1NTgiPCDJj10qvfOPGbFb0uruh18c1j7pCxYrdu3frLvj24otfFXc/sPW36LBezYv858E2bNg27YdRZ5/bp3nPAsmXvehGKPYu8PHvO2d379uw98NyK/vPmvyYgxm758vcu6HtZRa+LLxrwnVWrPhSaa+Q8HCtXfnjpJRddcH73ArwLNm91jAFvaL+4/9G2Rx3+HwP7rFixqtu5fV6Z1SEva3RN7apn9er33zDUhdnPHnx4StOmTZ96/P5nn5s2fOStP79rjEkadftq0ODrJz08oVmzA5cue7ffxd+Z9vwTBduPTduGMPjaH11+af9vtD/25dlzbrlt/IgfXWcnDTpY1T5YsXL//ffTr05G7/PO6X9RrxDC4rffKc/lXMyK/WF+8qlfVfToFkLo3KnDMUcfaZLGbu+99/p49d9CCB9/vHrd2nVOOWO3aNFbxx/XLoRw/HHtZs/+nZ1UwPrEipWrpk2fdU6Pfv0HXrm0IQ8gnEEUxp57fra8vPzKq3444JIrR/74hy5mhcgbHn/609IXXpxR0eviy749+FtnnGY/jn3HGjn8unN69Du1S4/uPQcMv/Ea+3HsDjus9QsvzgghPPf8tJUFOSKMZZIKWKEslLVp0/qJyRN7dP/W4GtudOE9DWNvGT5u7MjJj//SJ2bFvmP9c8OGAw/8wqRH7j77rDMGDb7Bfhz79fbhI2756dgRLzw7+bZbhv/62Wn249jdfNPQx5/8n569B7773l+blJcbEAHrE/0v6nVB7x4hhNNOOfnNN98222M39PpRG//1rxBC504dp01/ySdmxb4ff26/fU8/9eQQwumnnvzmm4vN0NgD5Ztv/bHLaSeHELqc3vmFqTNcz4jdfz/97J3jRj328IRTTznx4INbKKiA9YmRo386ddpvQggLK18/7LBDPRylpuZe6k5ebPzfv//9+eenhxDmzV/4xVYtfGJW7E9v+/bH/nbOvBDCb+fMa9OmtRkae8T8YqsWc+ctDCHMX1B50IFf8HkTsXvt9UXVr7KTp/yy25ldFDT4KcIag6667HvfH3b3vQ/usssuo0YOLVZ6IF++/70rrho0ZOJ9j5SXl/9kVMOeKG2R+bJWzdXvv1GA/DHovy4dNPiG28b9vHHjxjeNGGKGFkDzVsc03AY2YvgPh90wKoRQVlY2+qZhBfuOrI0N5Nqrr7xq0NC7fjbxqCMPH3TVZQoqYH3i4JbNn5g8scCLl3TVcA78wucfe3hCgae3UjbclrzvvvtMvPu2oszQkL1ucQES85fbtJ786D1F74iTLy1bNCvwHhpLQR0RFmEfMgixV1C6ysj3nuXKprRSWXURsLK1ZnmRSiNaqWNi21jGN2OJmYgmaYkXVMAyz6njmaAibv0wx55OvAJJzBDcwRK6KVa0MiZFubvjFUg11ZSIErMOlmcC16086iappxGJWcBy7oDrVhY734uAoqYIWJjkopVd2ddspVJTMlVTAcvVK9xkz/ptdz3mtGOKmnoHCC65W5twk939aKu2Ulp7CY4I8VrsJjtR73B2Yq0OU9JxkIBlhuO6lafdV16if846zu4RsGRtXLfyxmy/8eDJWGoqYHkUaLDGlWilFeRFKNU1TVnTG4qIvhEBy9Ur0YqMni5pMye5K3u/NUQClrUJN9mt5r4qdbQCOyhMc7YKWN6J3WQn09ubhyGl8ZGb076MFdfTKGCZ226yk7mpYarKhUbGRBCwXL3CdSubnG1YMJWbM5qx4j0XapTS0Y8lG9etbH62YWuaKW+IBKy87aZFXzFdvXLdiijelXWaU42ncnPaP+obo1y8z8QWf05WTRmWLVngCbDo2zv9qXbe4LP5RxOqbN2W0MJvncm/DjWKesJvsz9R4J6WF2I32YnlbcS7UKrDqLKJXcYq2StAmbvkXiJJy6buJjuxzA7PSWKbscqmVNZk3plzST4oBTs9dPXKmSCxHEZocjTEeBb3XElN837+W9yzwsR+PimXdiRv0KRlbotWxLKIa3LkcWndfF0t1uVX60BiGSvJguYy0vzMe9KyXnu/IcaL0p6ZBlpXC9PQ2uZrrZpGPT0Tzsq5LK8IeUla5rZtkhI/KNRsLnBDqyEqq2WV5PRM+505592rDknL1SvpirycRHhyxCzRKpsHhVk4jsjZpGubtLwNi1ZAAa5niVal8wqUx7CVnbLmPE+1SlquXolWRHrVwyMU0fUs0arUZugWFalb3spaWQWsOiYts93WiIKS93ND0aoEZ2he8lYGf0RJwKpL0jLhAfIYs/x4YMJ5K7M//S1g1SVpAZCX61laVsnnrcwWV8CqddIy+QHyeD1LtEo7b2W2uAKWuyMAxWxoWVrTzluZLa6ABUDRYpZopSuRqkbKD4DdFwQsAAABCwBAwAIAQMACABCwAAAELAAABCwAAAELAEDAAgBAwAIAELAAAAQsAAABCwAAAQsAQMACABCwAAAQsAAABCwAAAELAAABCwBAwAIAELAAABCwAAAELAAAAQsAQMACAEDAAgAQsAAABCwAAGopV/9/RUVFhXFMiYIqKAqKghJ0sAAASkpZVVXVNv9GZWVlCKFt27bGCACgVmFJBwsAIDgiBAAQsAAABCwAAAQsAAABCwBAwAIAQMACABCwAAAELAAABCwAAAELAEDAAgAQsAAAyJvc9v92ZWWlMQIACDpYAABFVFZVVWUUAACCDhYAgIAFACBgAQAgYAEACFgAAAIWAAA78v9v0gjfob+k6AAAAABJRU5ErkJggg==",
+    "explanation": "Pola jumlah sisi bangun bertambah 1 setiap langkah: 4 -> 5 -> 6 -> 7 -> 8 sisi. Jawaban yang tepat adalah Gambar D (bangun bersisi 8).",
+    "difficulty": "medium"
+  },
+  {
+    "id": 55,
+    "category": "TIU",
+    "subCategory": "Ketidaksamaan Gambar",
+    "text": "Soal Ketidaksamaan Gambar No.203: Tentukan satu gambar yang berbeda polanya dari gambar-gambar lainnya.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Empat pilihan lain memiliki karakteristik yang sama berdasarkan jumlah sisi ganjil. Gambar A adalah anomali yang berbeda.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 56,
+    "category": "TIU",
+    "subCategory": "Penalaran Spasial / Jaring Kubus",
+    "text": "Soal Penalaran Spasial No.227: Tentukan tampilan kubus yang sesuai dengan jaring/sisi pola utama saat diputar.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Berdasarkan rotasi 3D dan orientasi pola, sisi yang tepat sesuai jaring awal adalah Gambar B.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 57,
+    "category": "TIU",
+    "subCategory": "Analogi Gambar",
+    "text": "Soal Analogi Gambar No.173: Tentukan gambar D yang memiliki hubungan yang sama dengan gambar C sebagaimana hubungan gambar B terhadap gambar A.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Pola transformasi dari A ke B adalah tambah titik. Menerapkan aturan yang sama pada C menghasilkan Gambar D.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 58,
+    "category": "TIU",
+    "subCategory": "Serial Gambar",
+    "text": "Soal Serial Gambar No.119: Perhatikan pola barisan bangun datar berikut. Tentukan bangun datar ke-5 yang melengkapi pola.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Pola jumlah sisi bangun bertambah 1 setiap langkah: 4 -> 5 -> 6 -> 7 -> 8 sisi. Jawaban yang tepat adalah Gambar D (bangun bersisi 8).",
+    "difficulty": "medium"
+  },
+  {
+    "id": 59,
+    "category": "TIU",
+    "subCategory": "Ketidaksamaan Gambar",
+    "text": "Soal Ketidaksamaan Gambar No.215: Tentukan satu gambar yang berbeda polanya dari gambar-gambar lainnya.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "image": "data:image/png;base64,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AICABQAgYAEAIGABAAhYAAACFgCAgAUAgIAFACBgAQAIWAAACFgAAAIWAICABQCAgAUAIGABAAhYAAACFgAAAhYAgIAFACBgAQAgYAEACFgAAAIWAAACFgCAgAUAIGABACBgAQAIWAAAAla1tud+zRVBQ9EFzA00NIV0zd7q+fHN+reVQkPxbosrFA0N7mD5wYCGqjlmCxoa3MESw9FQ763gCtVQAcsUQUMRrXCFsks31CNCPzbQUFXFXEJDgztYYjga6t0TXKEaKmCZImioaAWuUHalhnpE6IcKGqpumGloaHAHSwxHQ70/gitUQwUsU8Q1r6ES1U4SyHTWFYqG7nIBa6f+hbjk4F32GgquUFeohlb7hvoMFgCAgAUAEDwiBHYBpW/db8XDCI9yAAFrl/7waVV/cvixoaG7ZnP9FaEr1BWqobtyQ93B8udIaOg2LJeYhSuUXbOhApZpgYaKWbhC0VABy7RAQ8UscIVqqIBlWqChiFm4QtmlGipgmRZoqJiFKxQNDf4dLDMDDVVnzBw0NLiDZVqgobiVhSuUXaihApZpgYaKWbhC0dDgEaGZgYbqAuYGGipgAQAE/7NnAAAELAAAAQsAQMACAEDAAgAQsAAABCwAAAQsAAABCwBAwAIAELAAABCwAAAELAAAAQsAAAELAEDAAgAQsAAAELAAAAQsAAABCwAAAQsAQMACABCwAAAELAAABCwAAAELAEDAAgBAwAIAELAAAAQsAAAELAAAAQsAQMACAEDAAgAQsAAABCwAAAELAAABCwBAwAIAELAAABCwAAAELAAAAQsAAAELAEDAAgAQsAAABCwlAAAQsAAABCwAAAELAAABCwBAwAIAELAAABCwAAAELACAnV/6j99Fr1691LE60VANRUPRUII7WAAAO5RIcXFxud/Izs4OIbRs2VKNAACqFJbcwQIACB4RAgAIWAAAAhYAAAIWAICABQAgYAEAIGABAAhYAAACFgAAAhYAgIAFACBgAQAIWAAA/GTSU387OztbjQAAgjtYAADbUaS4uFgVAACCO1gAAAIWAICABQCAgAUAIGABAAhYAABU5P8BxvcPgOlcmgUAAAAASUVORK5CYII=",
+    "explanation": "Empat pilihan lain memiliki karakteristik yang sama berdasarkan arah panah berbeda. Gambar C adalah anomali yang berbeda.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 60,
+    "category": "TIU",
+    "subCategory": "Analogi Gambar",
+    "text": "Soal Analogi Gambar No.170: Tentukan gambar D yang memiliki hubungan yang sama dengan gambar C sebagaimana hubungan gambar B terhadap gambar A.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Pola transformasi dari A ke B adalah inversi warna. Menerapkan aturan yang sama pada C menghasilkan Gambar E.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 61,
+    "category": "TIU",
+    "subCategory": "Analogi Gambar",
+    "text": "Soal Analogi Gambar No.183: Tentukan gambar D yang memiliki hubungan yang sama dengan gambar C sebagaimana hubungan gambar B terhadap gambar A.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Pola transformasi dari A ke B adalah persegi ke lingkaran. Menerapkan aturan yang sama pada C menghasilkan Gambar C.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 62,
+    "category": "TIU",
+    "subCategory": "Serial Gambar",
+    "text": "Soal Serial Gambar No.140: Perhatikan perputaran arah panah berikut. Tentukan gambar ke-5 yang melanjutkan urutan pola.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Arah panah berputar sebesar 45° berlawanan arah jarum jam pada setiap langkah. Langkah ke-5 menghasilkan sudut 270°, yang terdapat pada Gambar E.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 63,
+    "category": "TIU",
+    "subCategory": "Serial Gambar",
+    "text": "Soal Serial Gambar No.130: Perhatikan perputaran arah panah berikut. Tentukan gambar ke-5 yang melanjutkan urutan pola.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Arah panah berputar sebesar 90° berlawanan arah jarum jam pada setiap langkah. Langkah ke-5 menghasilkan sudut 0°, yang terdapat pada Gambar A.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 64,
+    "category": "TIU",
+    "subCategory": "Serial Gambar",
+    "text": "Soal Serial Gambar No.145: Perhatikan perputaran arah panah berikut. Tentukan gambar ke-5 yang melanjutkan urutan pola.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Arah panah berputar sebesar 45° searah jarum jam pada setiap langkah. Langkah ke-5 menghasilkan sudut 180°, yang terdapat pada Gambar B.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 65,
+    "category": "TIU",
+    "subCategory": "Ketidaksamaan Gambar",
+    "text": "Soal Ketidaksamaan Gambar No.194: Tentukan satu gambar yang berbeda polanya dari gambar-gambar lainnya.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "image": "data:image/png;base64,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",
+    "explanation": "Empat pilihan lain memiliki karakteristik yang sama berdasarkan jumlah sisi ganjil. Gambar E adalah anomali yang berbeda.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 66,
+    "category": "TKP",
+    "subCategory": "Pelayanan Publik",
+    "text": "Jika anak buah anda bersikap kurang sopan terhadap tamu, yang akan anda lakukan adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menghampiri dan melayani tamu dengan ramah, setelah itu menegur anak buah yang kurang sopan",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menegurnya di hadapan tamu tersebut",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Menghampiri anak buah tersebut dan meminta anak buah tersebut meminta maaf pada tamu",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Menyuruh staff lain untuk melayani tamu tersebut",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Memberi hadiah kepada tamu sebagai bentuk permintaan maaf",
+        "score": 3
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 67,
+    "category": "TKP",
+    "subCategory": "Jejaring Kerja",
+    "text": "Sebagai seorang pegawai negeri, Anda bertanggung jawab untuk membuat laporan bulanan tentang kinerja unit kerja AndLangkah pertama yang harus Anda ambil adalah:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengandalkan data tahun lalu untuk membuat laporan.",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Mengumpulkan data aktual dan relevan untuk periode yang bersangkutan.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Meminta bantuan rekan kerja untuk menyusun laporan.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menyusun laporan tanpa mempertimbangkan feedback dari atasan.",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Mengabaikan pentingnya data dalam penyusunan laporan.",
+        "score": 4
+      }
+    ],
+    "explanation": "Mengumpulkan data aktual dan relevan untuk periode yang bersangkutan adalah langkah pertama yang tepat dalam proses pelaporan yang akurat dan informatif.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 68,
+    "category": "TKP",
+    "subCategory": "Sosial Budaya",
+    "text": "Saya dipercayakan mengelola kegiatan yang belum dipublikasikan dan masih harus dijaga kerahasiaannya. Ketika saya berada di antara teman-teman dekat di kantor, saya..",
+    "options": [
+      {
+        "id": "A",
+        "text": "Membicarakan hal-hal lain yang tidak ada kaitannya dengan tugas baru saya",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Membatasi pembicaraan agar tidak menyangkut ke hal-hal tugas baru saya",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Suka menerima masukan demi masukan dalam rangka pengembangan tugas baru saya",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Akan merasa gelisah dan kurang senang bila mereka mulai membicarakan tugas baru saya",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Akan mengalihkan ke pembicaraan lain bila mereka sudah mulai menyinggung tugas baru saya",
+        "score": 1
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 69,
+    "category": "TKP",
+    "subCategory": "Teknologi Informasi dan Komunikasi",
+    "text": "Anda sudah terbiasa bekerja di belakang meja. Pada suatu hari, Anda mendapat tawaran untuk melakukan tugas lapangan. Bagaimana Anda menyikapi hal tersebut?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengabaikan peluang yang ditawarkan",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Mempelajari untung rugi dari peluang tersebut",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Mempelajari dahulu tawaran tersebut sebelum menerimanya",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Segera mengambil peluang tersebut",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Memilih keadaan saat ini, karena Anda meyakini setiap pekerjaan memiliki spesialisasi",
+        "score": 3
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah D.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 70,
+    "category": "TKP",
+    "subCategory": "Profesionalisme",
+    "text": "Kamera : Foto = Proyektor : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Film",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Gambar",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Proyeksi",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Layar",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Cahaya",
+        "score": 4
+      }
+    ],
+    "explanation": "Kamera digunakan untuk mengambil foto, sedangkan proyektor digunakan untuk menampilkan proyeksi.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 71,
+    "category": "TKP",
+    "subCategory": "Anti Radikalisme",
+    "text": "instansi anda terpilih menjadi tuan rumah penyelenggaraan pekan olahraga. Untuk mensukseskan acara tersebut yang akan anda lakukan adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Membuat acara semeriah mungkin sehingga meninggalkan kesan",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Mencari pelatih yang terbaik untuk mendapatkan juara umum",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Menyiapkan fasilitas memadai",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Mengkoordinir rekan kerja untuk menghubungi vendor yang berpengalamandan sponsor yang dapat menunjang suksesnya acara tersebut",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Mempersiapkan atlet-atlet yang akan bertanding",
+        "score": 4
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 72,
+    "category": "TKP",
+    "subCategory": "Pelayanan Publik",
+    "text": "Saat ditugaskan untuk menilai kinerja seorang kolega, Anda menemukan bahwa beberapa data yang diberikan tidak akurat. Sikap yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Memberikan penilaian yang lebih tinggi untuk menghindari konflik dengan kolega tersebut",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Mengabaikan ketidakakuratan data karena hal itu tidak signifikan dalam penilaian",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menyampaikan ketidakakuratan data kepada kolega tersebut secara langsung",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Melaporkan ketidakakuratan data kepada atasan atau pihak yang berwenang",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Mengubah data tersebut sedemikian rupa agar cocok dengan penilaian Anda",
+        "score": 2
+      }
+    ],
+    "explanation": "Melaporkan ketidakakuratan data kepada pihak yang berwenang adalah tindakan yang mencerminkan integritas diri.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 73,
+    "category": "TKP",
+    "subCategory": "Jejaring Kerja",
+    "text": "Bagaimana sikap Anda ketika menghadapi tugas yang sulit di tempat kerja?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengeluh dan menyalahkan orang lain atas masalah tersebut",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Mencari solusi bersama dengan tim kerja untuk menemukan solusi terbaik",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mencari solusi sendiri tanpa meminta bantuan dari rekan kerja",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menghindari tanggung jawab dan menunda-nunda penyelesaian masalah",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Menunggu instruksi dari atasan sebelum bertindak",
+        "score": 2
+      }
+    ],
+    "explanation": "Mencari solusi bersama dengan tim kerja untuk menemukan solusi terbaik menunjukkan sikap kolaboratif dan tanggung jawab dalam menghadapi tantangan di tempat kerja.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 74,
+    "category": "TKP",
+    "subCategory": "Sosial Budaya",
+    "text": "Anda ditugaskan untuk mengelola anggaran proyek yang besar. Setelah selesai, Anda menemukan adanya dugaan penyimpangan anggaran yang tidak disengajSikap yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyembunyikan informasi tersebut agar tidak mempengaruhi penilaian Anda",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Mengumpulkan bukti-bukti untuk mendukung dugaan tersebut dan menyampaikannya kepada atasan",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menunggu untuk melihat apakah atasan menanyakan tentang hal itu",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Meminta maaf dan mencoba untuk mengganti kekurangan tersebut dari sumber lain",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengabaikan masalah tersebut karena proyek telah selesai",
+        "score": 4
+      }
+    ],
+    "explanation": "Mengumpulkan bukti-bukti untuk mendukung dugaan penyimpangan anggaran dan menyampaikannya kepada atasan adalah tindakan yang mencerminkan tanggung jawab dan kejujuran sebagai pegawai.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 75,
+    "category": "TKP",
+    "subCategory": "Teknologi Informasi dan Komunikasi",
+    "text": "Siapa yang bertanggung jawab untuk menyusun dan melaksanakan kebijakan ekonomi untuk meningkatkan kesejahteraan masyarakat miskin menurut UUD 1945?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Presiden",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "DPR",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "MPR",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "DPD",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "BPK",
+        "score": 4
+      }
+    ],
+    "explanation": "Menurut UUD 1945, presiden bertanggung jawab untuk menyusun dan melaksanakan kebijakan ekonomi untuk meningkatkan kesejahteraan masyarakat miskin.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 76,
+    "category": "TKP",
+    "subCategory": "Profesionalisme",
+    "text": "Anda memiliki keinginan agar setiap anggota keluarga Anda menjad orang yang...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sukses",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Sabar",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Cerdas",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Mapan",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Bersyukur",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah C.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 77,
+    "category": "TKP",
+    "subCategory": "Anti Radikalisme",
+    "text": "Menurut Anda, PNS yang baik itu adalah PNS yang...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Bekerja untuk memenuhi kebutuhan keluarganya",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Bekerja jika ada bayarannya saja",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Profesional dan jujur dalam bekerja",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Melayani masyarakat dengan sepenuh hati",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Senang membantu mereka yang sedang kesusahan",
+        "score": 4
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 78,
+    "category": "TKP",
+    "subCategory": "Pelayanan Publik",
+    "text": "Peran media massa dalam masyarakat yang berkaitan dengan perlindungan HAM adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyebarkan informasi palsu tentang HAM",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Menyensor laporan HAM dari LSM",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mendorong diskriminasi berdasarkan agama",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Membantu menyuarakan kasus pelanggaran HAM",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Mengendalikan opini publik dengan propaganda",
+        "score": 2
+      }
+    ],
+    "explanation": "Media massa dapat membantu menyuarakan kasus pelanggaran HAM untuk meningkatkan perlindungan HAM di masyarakat.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 79,
+    "category": "TKP",
+    "subCategory": "Jejaring Kerja",
+    "text": "Seorang pekerja sering mendapat perlakuan tidak adil dan diskriminatif dari atasan atau rekan kerjanya di tempat kerjTindakan ini mengancam hak pekerja untuk...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kebebasan dari diskriminasi",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Kebebasan berekspresi",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Kebebasan beragama",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Kebebasan dari penyiksaan",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Kebebasan berorganisasi",
+        "score": 4
+      }
+    ],
+    "explanation": "Perlakuan tidak adil dan diskriminatif di tempat kerja mengancam hak pekerja untuk tidak didiskriminasi.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 80,
+    "category": "TKP",
+    "subCategory": "Sosial Budaya",
+    "text": "Pada saat harus memecahkan suatu persoalan, maka pikiran saya..",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tetap terpusat pada persoalan jika gangguan relatif kecil saja",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Mudah beralih kepada hal lain karena gangguan sedikit saja",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mudah beralih tanpa sebab",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Mudah beralih ke hal lain oleh sebab yang sangat mengganggu",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Terpusat pada hal yang harus dipecahkan apapun gangguannya",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah C.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 81,
+    "category": "TKP",
+    "subCategory": "Teknologi Informasi dan Komunikasi",
+    "text": "Anda diberi kesempatan untuk menyeleksi kandidat untuk sebuah posisi, dan seorang teman dekat Anda melamar. Sikap yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Memberikan perlakuan istimewa kepada teman dekat Anda tanpa mempertimbangkan kualifikasi",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Menolak melibatkan diri dalam proses seleksi untuk menghindari konflik",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Menyampaikan laporan yang obyektif berdasarkan kualifikasi kandidat",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mempengaruhi proses seleksi agar teman dekat Anda dipilih",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Memberitahukan kepada teman dekat Anda tentang hasil seleksi sebelum diumumkan",
+        "score": 4
+      }
+    ],
+    "explanation": "Menyampaikan laporan yang obyektif berdasarkan kualifikasi kandidat adalah tindakan yang mencerminkan kejujuran dalam menjalankan tugas.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 82,
+    "category": "TKP",
+    "subCategory": "Profesionalisme",
+    "text": "Saat diminta pendapat, bagaimana Anda menyatakannya?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dengan detail dan terstruktur",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Secara langsung dan detail",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Dengan lugas dan nyata",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Secara umum dan tegas",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Nyata, detail, dan lugas",
+        "score": 3
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah D.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 83,
+    "category": "TKP",
+    "subCategory": "Anti Radikalisme",
+    "text": "Saat menerima umpan balik negatif dari atasan, sikap Anda biasanya akan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Membela diri dan menyalahkan kondisi atau orang lain atas kesalahan yang dilakukan",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Mengabaikan umpan balik tersebut karena tidak sependapat dengan atasan",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Menarik diri dan mencari alasan untuk menghindari situasi yang menimbulkan kritik",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mengambil cuti mendadak untuk menghindari tekanan dari umpan balik negatif",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menerima umpan balik tersebut dengan terbuka dan berusaha untuk memperbaiki kinerja",
+        "score": 5
+      }
+    ],
+    "explanation": "Menerima umpan balik tersebut dengan terbuka dan berusaha untuk memperbaiki kinerja menunjukkan sikap kemandirian dan tanggung jawab dalam mengelola kritik konstruktif dari atasan.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 84,
+    "category": "TKP",
+    "subCategory": "Pelayanan Publik",
+    "text": "Anda sedang sangat butuh istirahat namun pada hari itu banyak sekali klien yang datang ke kantor untuk menemui Anda, maka Anda akan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Meninggalkan klien-klien itu dan istirahat di ruang kerja Anda",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Menitipkan pesan kepada rekan kerja Anda agar ia saja yang menemui mereka",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Beristirahat dulu sebelum menemui mereka",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Menitipkan pesan kepada rekan kerja Anda agar memberitahu bahwa Anda sedang tidak enak badan",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menemui mereka walau Anda tampak sangat lelah",
+        "score": 4
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah E.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 85,
+    "category": "TKP",
+    "subCategory": "Jejaring Kerja",
+    "text": "Saat bekerja dengan klien dari latar belakang budaya yang berbeda, Anda menyadari bahwa norma komunikasi mereka sangat berbeda dengan budaya AndBagaimana Anda menyesuaikan pendekatan komunikasi?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengabaikan perbedaan budaya dan menerapkan gaya komunikasi Anda",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Mengkritik norma komunikasi mereka secara terbuka",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Menuntut klien untuk mengikuti norma komunikasi Anda",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Mencoba memahami norma komunikasi mereka dan menyesuaikan pendekatan komunikasi Anda",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Membuat lelucon tentang perbedaan komunikasi budaya",
+        "score": 4
+      }
+    ],
+    "explanation": "Mencoba memahami norma komunikasi mereka dan menyesuaikan pendekatan komunikasi Anda menunjukkan adaptabilitas dan penghargaan terhadap perbedaan budaya dalam situasi profesional.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 86,
+    "category": "TKP",
+    "subCategory": "Sosial Budaya",
+    "text": "Orang yang berpendidikan tinggi menurut Anda harusnya dapat menjadi...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pahlawan",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Pelopor",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Pegawai",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "PNS",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Panutan",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 87,
+    "category": "TKP",
+    "subCategory": "Teknologi Informasi dan Komunikasi",
+    "text": "Anda adalah pemimpin tim proyek dan proyek tersebut mengalami penundaan besar yang membutuhkan pekerjaan tambahan. Sikap yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyerahkan tanggung jawab tambahan kepada anggota tim yang kurang sibuk",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Mengerahkan tim untuk bekerja lembur tanpa memberi mereka kompensasi tambahan",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengorbankan waktu dan upaya pribadi untuk memastikan proyek selesai tepat waktu",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Meminta bantuan dari tim proyek lain untuk menyelesaikan pekerjaan tambahan",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meminta klien untuk menunda tenggat waktu proyek untuk mengurangi tekanan",
+        "score": 3
+      }
+    ],
+    "explanation": "Mengorbankan waktu dan upaya pribadi untuk memastikan proyek selesai tepat waktu adalah tindakan yang mencerminkan rela berkorban demi keberhasilan proyek dan tanggung jawab sebagai pemimpin tim.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 88,
+    "category": "TKP",
+    "subCategory": "Profesionalisme",
+    "text": "Sebagai ketua dalam pentas seni anda mendapat laporan bahwa bintang tamu acara tersebut mengundurkan diri 1 hari sebelum hari H, anda bingung karena tiket terjual habis. Agar acara tersebut terselenggara dengan baik, yang akan anda lakukan adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Memberikan bayaran lebih kepada artis tersebut",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Mengganti bintang tamu dengan artis lain yang memiliki kepopuleran yang lebih",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Memundurkan jadwal pentas seni hingga bintang tamu tersebut mau tampil",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Mengembalikan ganti rugi tiket pada para calon penonton",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Mendatangi bintang tamu tersebut dan memintanya untuk bersikap professional",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah D.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 89,
+    "category": "TKP",
+    "subCategory": "Anti Radikalisme",
+    "text": "Dalam pertandingan antar kantor, tim tempat kerja saya tampak lemah dan diperkirakan akan kalah. Dalam situasi tersebut saya..",
+    "options": [
+      {
+        "id": "A",
+        "text": "Meninggalkan pertandingan meskipun belum selesai",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Cenderung diam sambil mengamati penonton",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Memberi dukungan seperti teman-teman lain",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Tetap bersemangat memberi dukungan tanpa diminta",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Berusaha untuk tidak diketahui bahwa saya adalah anggota tim tersebut",
+        "score": 4
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 90,
+    "category": "TKP",
+    "subCategory": "Pelayanan Publik",
+    "text": "Bagaimana pengaturan tentang kewajiban daerah untuk menyelenggarakan pemerintahan yang bersih menurut UU No. 25 Tahun 2009 tentang Pelayanan Publik?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Penyusunan standar layanan publik",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Pembentukan ombudsman daerah",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Pemberian insentif bagi pegawai pemerintah",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Pelaksanaan sanksi bagi pelanggar layanan publik",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Penyelenggaraan layanan publik yang transparan",
+        "score": 5
+      }
+    ],
+    "explanation": "UU No. 25 Tahun 2009 mengatur bahwa daerah memiliki kewajiban untuk menyelenggarakan pemerintahan yang bersih dan transparan dalam penyelenggaraan layanan publik.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 91,
+    "category": "TKP",
+    "subCategory": "Jejaring Kerja",
+    "text": "Jika Anda berkeinginan untuk menjadi orang yang besar, maka Anda harus…",
+    "options": [
+      {
+        "id": "A",
+        "text": "Berjiwa besar",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Pemaaf",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Kreatif",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Senang belajar",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Berani",
+        "score": 3
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah C.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 92,
+    "category": "TKP",
+    "subCategory": "Sosial Budaya",
+    "text": "Kreatif bukan berarti, kecuali...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tidak pernah salah",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Anti gagal",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Gagal",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Selalu sukses",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Selalu gagal",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 93,
+    "category": "TKP",
+    "subCategory": "Teknologi Informasi dan Komunikasi",
+    "text": "Dalam proses penyelesaian laporan penilaian, ada hal yang membuat tim Anda berselisih pendapat. Sikap Anda...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tidak ikut campur karena takut membuat tambah runyam",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Meminta anggota yang berselisih paham tersebut untuk menahan amarahnya dulu karena kita harus menyelesaikan laporan tersebut",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan kepada atasan",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menyetujui pendapat yang menurut saya itu benar",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Mendengarkan pendapat masing-masing lalu membantu mengambil solusi",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah E.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 94,
+    "category": "TKP",
+    "subCategory": "Profesionalisme",
+    "text": "Saat menghadapi kesulitan besar dalam proyek, Anda cenderung untuk:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menutup diri dan mencoba menyelesaikan masalah sendiri tanpa bantuan dari siapapun",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Menyalahkan keadaan atau orang lain atas kesulitan yang dihadapi",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengabaikan masalah tersebut dan fokus pada bagian proyek yang lebih mudah",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menjaga komunikasi terbuka dengan tim dan meminta bantuan jika diperlukan",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menunda penyelesaian masalah hingga mendekati batas waktu",
+        "score": 3
+      }
+    ],
+    "explanation": "Menjaga komunikasi terbuka dengan tim dan meminta bantuan jika diperlukan menunjukkan sikap kolaboratif dan tanggung jawab dalam menghadapi kesulitan dalam proyek.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 95,
+    "category": "TKP",
+    "subCategory": "Anti Radikalisme",
+    "text": "Anda mendapat tugas bekerja dalam tim yang memiliki budaya kerja yang berbeda dengan budaya kerja Anda sendiri. Sikap yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak untuk berinteraksi dengan anggota tim lainnya karena perbedaan budaya",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Mengkritik budaya kerja tim tersebut secara terbuka di depan anggota tim lainnya",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Berusaha untuk memahami dan menghormati budaya kerja tim tersebut",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Meminta untuk pindah ke tim lain yang memiliki budaya kerja yang lebih mirip dengan Anda",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Mengabaikan budaya kerja tim tersebut dan melakukan pekerjaan sendiri",
+        "score": 3
+      }
+    ],
+    "explanation": "Berusaha untuk memahami dan menghormati budaya kerja tim adalah tindakan yang mencerminkan adaptasi dalam lingkungan kerja yang memiliki keberagaman budaya.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 96,
+    "category": "TKP",
+    "subCategory": "Pelayanan Publik",
+    "text": "Anda mengetahui bahwa seorang bawahan Anda telah menggunakan waktu kerja untuk kegiatan pribadi yang tidak terkait dengan tugasnySikap yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Melaporkan pelanggaran tersebut kepada atasan atau pihak yang berwenang",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengabaikan perbuatan tersebut karena itu bukan urusan Anda",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Memberikan peringatan lisan kepada bawahan tersebut untuk tidak mengulangi perbuatan tersebut",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menjauhi bawahan tersebut untuk menghindari konflik",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Membicarakan masalah ini dengan rekan kerja lain untuk meminta saran",
+        "score": 2
+      }
+    ],
+    "explanation": "Melaporkan pelanggaran tersebut kepada atasan atau pihak yang berwenang adalah tindakan yang mencerminkan etika yang baik dalam menjaga disiplin dan kepatuhan terhadap waktu kerja di lingkungan kerja.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 97,
+    "category": "TKP",
+    "subCategory": "Jejaring Kerja",
+    "text": "Tahun ini tim anda terpilih menjadi tim terbaik, sebagai wujud syukur yang akan anda lakukan adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Saling memberikan ucapan selamat sebagai wujud penghargaan",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Membagi hadiah sama rata",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Membuat acara syukuran",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Memberikan penghargaan bagi para anggota sesuai kontribusinya",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "mengadakan liburan bersama",
+        "score": 3
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah D.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 98,
+    "category": "TKP",
+    "subCategory": "Sosial Budaya",
+    "text": "Seorang pelanggan mengeluh tentang layanan yang diterimanya saat ini dibandingkan dengan layanan sebelumnya yang lebih baik. Bagaimana Anda merespon?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengabaikan keluhan pelanggan",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Mendengarkan keluhan pelanggan, meminta maaf, dan berusaha mengembalikan kualitas layanan seperti sebelumnya",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menyalahkan kondisi saat ini atas penurunan kualitas layanan",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menyuruh pelanggan untuk menerima keadaan",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Mengeluh tentang keluhan pelanggan kepada rekan kerja Anda",
+        "score": 4
+      }
+    ],
+    "explanation": "Mendengarkan keluhan pelanggan, meminta maaf, dan berusaha mengembalikan kualitas layanan seperti sebelumnya menunjukkan komitmen untuk mempertahankan standar layanan yang tinggi dan kepuasan pelanggan.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 99,
+    "category": "TKP",
+    "subCategory": "Teknologi Informasi dan Komunikasi",
+    "text": "Anda mengetahui bahwa ada perilaku tidak etis yang dilakukan oleh atasan langsung AndBagaimana Anda menangani situasi ini?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengabaikan perilaku tidak etis tersebut",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Mencoba menghindari atasan Anda untuk sementara waktu",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan langsung ke atasan atasan Anda",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Memilih untuk mengundurkan diri dari pekerjaan",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Membicarakan secara langsung dengan atasan Anda untuk memperbaiki perilaku tersebut",
+        "score": 5
+      }
+    ],
+    "explanation": "Membicarakan secara langsung dengan atasan Anda untuk memperbaiki perilaku tersebut menunjukkan sikap ketegasan dalam menghadapi masalah etika di lingkungan kerja.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 100,
+    "category": "TKP",
+    "subCategory": "Profesionalisme",
+    "text": "C, D, D ,E, E, F, . . . .",
+    "options": [
+      {
+        "id": "A",
+        "text": "F, G",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "E, F",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "F, F",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "G, G",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Pilihan E",
+        "score": 2
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah C.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 101,
+    "category": "TKP",
+    "subCategory": "Anti Radikalisme",
+    "text": "Ketika tim Anda mengalami kegagalan, apa yang Anda lakukan sebagai pemimpin?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyalahkan diri sendiri",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Menghindari tanggung jawab",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Melakukan introspeksi tim",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mengganti anggota tim yang gagal",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Mengajukan pengunduran diri",
+        "score": 1
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 102,
+    "category": "TKP",
+    "subCategory": "Pelayanan Publik",
+    "text": "Bagaimana Anda merespon jika rekan kerja Anda mendapatkan beban kerja yang tidak seimbang?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Jelas, karena keadilan adalah utama dan mutlak",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Melihat kondisi, jika kedua pihak puas walaupun bukan pada posisi yang adil, maka tidak masalah",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Walaupun tidak adil, jika dalam proporsinya cukup dan dapat berjalan baik tidak masalah",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Saya tidak pernah memaksa harus dibagi secara adil",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Tergantung apakah hal tersebut dapat ditoleransi atau tidak",
+        "score": 1
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah D.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 103,
+    "category": "TKP",
+    "subCategory": "Jejaring Kerja",
+    "text": "Perlindungan HAM dalam konteks masyarakat meliputi...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Perlindungan terhadap hak asasi manusia minoritas",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Hak individu dari ancaman eksternal",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Kebebasan berekspresi di media sosial",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Pelaksanaan kebijakan ekonomi yang adil",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Pembangunan infrastruktur publik",
+        "score": 2
+      }
+    ],
+    "explanation": "Perlindungan HAM dalam masyarakat mencakup perlindungan terhadap hak asasi manusia minoritas agar tidak diskriminatif.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 104,
+    "category": "TKP",
+    "subCategory": "Sosial Budaya",
+    "text": "Anda berada dalam tim proyek yang tengah mengalami kendala besar. Sikap yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menunggu instruksi dari manajer proyek untuk menyelesaikan kendala",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Mencari solusi baru dan mengusulkan alternatif kepada tim",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menghindari kontribusi dalam menyelesaikan kendala tersebut",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menyalahkan anggota tim lain atas kendala yang terjadi",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Mencari alasan untuk keluar dari tim proyek tersebut",
+        "score": 1
+      }
+    ],
+    "explanation": "Mencari solusi baru dan mengusulkan alternatif kepada tim adalah tindakan yang mencerminkan inisiatif untuk mengatasi kendala proyek dan membantu mencapai tujuan tim secara efektif.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 105,
+    "category": "TKP",
+    "subCategory": "Teknologi Informasi dan Komunikasi",
+    "text": "Apakah Anda menginformasikan tentang perubahan strategi kepada tim Anda?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hanya menginformasikan secara umum dan tersirat",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Selalu, karena transparansi itu penting dalam tim",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Saya tidak pernah menginformasikan karena itu adalah kewajiban saya sebagai pemimpin",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Tidak semua informasi, hanya hal yang bersifat umum dan yang lain berhak untuk mengetahui",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Hanya memberitahukan jika ditanya",
+        "score": 3
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah C.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 106,
+    "category": "TKP",
+    "subCategory": "Profesionalisme",
+    "text": "Saat bekerja di bawah tekanan yang tinggi, sikap Anda cenderung untuk:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menjadi mudah marah dan sulit bekerja sama dengan orang lain",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Tetap tenang dan fokus dalam menyelesaikan tugas yang diberikan",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menyimpan frustrasi Anda dan menyelesaikan tugas tanpa mengomplain",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menghindari situasi yang menimbulkan tekanan dan menunda pekerjaan",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Mengambil cuti mendadak untuk menghindari stres yang berlebihan",
+        "score": 4
+      }
+    ],
+    "explanation": "Tetap tenang dan fokus dalam menyelesaikan tugas yang diberikan menunjukkan sikap profesionalisme dan kemampuan untuk mengelola stres di lingkungan kerja.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 107,
+    "category": "TKP",
+    "subCategory": "Anti Radikalisme",
+    "text": "Anda bekerja di sebuah proyek besar dan mendapatkan informasi bahwa salah satu vendor menawarkan komisi kepada Anda untuk memilih produk merekSikap yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima tawaran komisi karena itu merupakan tambahan penghasilan yang sah",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Mengabaikan tawaran tersebut karena tidak tertarik dengan komisi",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan tawaran tersebut kepada atasan atau pihak yang berwenang",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mencoba untuk mempengaruhi vendor lain agar menawarkan komisi yang lebih besar",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menyimpan informasi tersebut untuk digunakan di masa depan",
+        "score": 4
+      }
+    ],
+    "explanation": "Melaporkan tawaran komisi kepada atasan atau pihak yang berwenang adalah tindakan yang mencerminkan kejujuran dan menjaga integritas pegawai.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 108,
+    "category": "TKP",
+    "subCategory": "Pelayanan Publik",
+    "text": "Anda adalah seorang anggota unit biasa. Saat ini unit anda dihadapkan pada situasi rumit yang membutuhkan pengambilan keputusan saat ini juga dari pimpinan unit, padahal pimpinan unit baru tiba di kantor 4 jam lagi. Sikap anda adalah....",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tetap menunggu pimpinan unit untuk dating",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Meminta rekan lain saja yang mengambil keputusan",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Bagaimanapun juga, saya tidak bersedia mengambil keputusan karena hal ituberisiko tinggi bagi karier saya",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Saya akan mengambil keputusan untuk menyelamatkan kondisi rumit tersebut",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Saya menelpon dulu pimpinan lalu mengambil keputusan sesuai arahan pimpinan dan berdasarkan kondisi saat",
+        "score": 3
+      }
+    ],
+    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah D.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 109,
+    "category": "TKP",
+    "subCategory": "Jejaring Kerja",
+    "text": "Saat bekerja dalam tim internasional, terjadi ketegangan karena perbedaan nilai budaya yang mendasar. Bagaimana Anda mengelola ketegangan ini?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menghindari anggota tim yang memunculkan ketegangan",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Mencoba memahami perspektif budaya masing-masing anggota tim dan mencari solusi yang menghormati semua nilai budaya",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mengkritik nilai budaya anggota tim yang berbeda",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menuntut semua anggota tim untuk mengikuti nilai budaya Anda",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Menciptakan isolasi terhadap anggota tim yang berbeda budaya",
+        "score": 1
+      }
+    ],
+    "explanation": "Mencoba memahami perspektif budaya masing-masing anggota tim dan mencari solusi yang menghormati semua nilai budaya adalah kunci untuk mengelola ketegangan dalam tim internasional.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 110,
+    "category": "TKP",
+    "subCategory": "Sosial Budaya",
+    "text": "Anda menghadapi kritik keras atas pekerjaan Anda dari atasan. Bagaimana Anda meresponnya?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak kritik tersebut dan mempertahankan pekerjaan Anda",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menerima kritik dengan terbuka dan bekerja lebih keras untuk memperbaiki hasil",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mengabaikan kritik dan tetap bekerja seperti biasa",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Meminta atasan untuk tidak mengkritik pekerjaan Anda",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menyalahkan rekan kerja atas kritik tersebut",
+        "score": 2
+      }
+    ],
+    "explanation": "Menerima kritik dengan terbuka dan bekerja lebih keras untuk memperbaiki hasil menunjukkan ketekunan dan sikap positif terhadap feedback.",
+    "difficulty": "easy"
+  }
+]

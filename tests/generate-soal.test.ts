@@ -112,6 +112,16 @@ describe('Static package question integrity', () => {
     { file: 'tryout-5.json', dir: '@/data/packages', name: 'Tryout 5' },
     { file: 'tryout-6.json', dir: '@/data/packages', name: 'Tryout 6' },
     { file: 'tryout-7.json', dir: '@/data/packages', name: 'Tryout 7' },
+    { file: 'tryout-8.json', dir: '@/data/packages', name: 'Tryout 8' },
+    { file: 'tryout-9.json', dir: '@/data/packages', name: 'Tryout 9' },
+    { file: 'tryout-10.json', dir: '@/data/packages', name: 'Tryout 10' },
+    { file: 'tryout-11.json', dir: '@/data/packages', name: 'Tryout 11' },
+    { file: 'tryout-12.json', dir: '@/data/packages', name: 'Tryout 12' },
+    { file: 'tryout-13.json', dir: '@/data/packages', name: 'Tryout 13' },
+    { file: 'tryout-14.json', dir: '@/data/packages', name: 'Tryout 14' },
+    { file: 'tryout-15.json', dir: '@/data/packages', name: 'Tryout 15' },
+    { file: 'tryout-16.json', dir: '@/data/packages', name: 'Tryout 16' },
+    { file: 'tryout-17.json', dir: '@/data/packages', name: 'Tryout 17' },
     { file: 'tryout-mini.json', dir: '@/data/packages', name: 'Tryout Mini' },
   ];
 
