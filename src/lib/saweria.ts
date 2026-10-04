@@ -19,6 +19,7 @@ export interface QrisResult {
   qrString: string;
   qrDataUrl: string;
   username: string;
+  debugError?: string;
 }
 
 // Base QRIS Saweria resmi untuk faishaltsq (dapat dioverride via env QRIS_BASE_STRING)
@@ -168,6 +169,8 @@ export async function createSaweriaQris(params: CreateQrisParams): Promise<QrisR
   let txId = `saweria-qris-${Date.now()}-${Math.random().toString(36).substring(2, 8)}`;
   let amountRaw = amount;
 
+  let debugError: string | undefined;
+
   try {
     const res = await fetch(`${SAWERIA_BACKEND}/donations/${userId}`, {
       method: 'POST',
@@ -190,13 +193,13 @@ export async function createSaweriaQris(params: CreateQrisParams): Promise<QrisR
       }
     } else {
       const errText = await res.text();
+      debugError = `Saweria API HTTP ${res.status}: ${errText}`;
       console.error(`[Saweria API Error] status=${res.status}:`, errText);
-      throw new Error(`Saweria API returned HTTP ${res.status}: ${errText}`);
     }
   } catch (apiErr: unknown) {
     const msg = apiErr instanceof Error ? apiErr.message : String(apiErr);
+    debugError = `Saweria Fetch Catch: ${msg}`;
     console.error('[Saweria API Fetch Catch]:', msg);
-    // If backend network call fails, proceed to dynamic QRIS synthesis below
   }
 
   // Jika backend Saweria dibatasi Cloudflare atau tidak mengembalikan qr_string,
@@ -223,6 +226,7 @@ export async function createSaweriaQris(params: CreateQrisParams): Promise<QrisR
     qrString,
     qrDataUrl,
     username,
+    debugError,
   };
 }
 
