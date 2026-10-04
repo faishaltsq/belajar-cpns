@@ -1,0 +1,1192 @@
+[
+  {
+    "id": 31,
+    "category": "TIU",
+    "subCategory": "Verbal - Analogi",
+    "text": "Soal nomor 31 (Verbal - Analogi): BUKU : PERPUSTAKAAN = LUKISAN : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Galeri",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Toko",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gudang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Studio",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kanvas",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Buku dipamerkan/disimpan di perpustakaan, sebagaimana lukisan dipamerkan di galeri."
+  },
+  {
+    "id": 32,
+    "category": "TIU",
+    "subCategory": "Verbal - Silogisme",
+    "text": "Soal nomor 32 (Verbal - Silogisme): Semua ASN wajib jujur. Budi adalah ASN. Maka...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Budi wajib jujur",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Budi belum tentu jujur",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Orang jujur adalah Budi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Hanya Budi yang wajib jujur",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Budi tidak perlu jujur",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Menggunakan modus ponens: Semua A adalah B. C adalah A. Kesimpulan: C adalah B."
+  },
+  {
+    "id": 33,
+    "category": "TIU",
+    "subCategory": "Verbal - Analitis",
+    "text": "Soal nomor 33 (Verbal - Analitis): A duduk di sebelah kiri B. C duduk di sebelah kanan A tetapi di sebelah kiri B. Urutan duduk dari kiri ke kanan adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "A - C - B",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "C - A - B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "B - C - A",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "A - B - C",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "B - A - C",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: C berada di antara A dan B, sehingga urutannya adalah A - C - B."
+  },
+  {
+    "id": 34,
+    "category": "TIU",
+    "subCategory": "Numerik - Berhitung",
+    "text": "Soal nomor 34 (Numerik - Berhitung): Jika 3x + 5 = 20, maka nilai x adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "5",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "3",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "4",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "6",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "7",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: 3x = 20 - 5 = 15 -> x = 5."
+  },
+  {
+    "id": 35,
+    "category": "TIU",
+    "subCategory": "Numerik - Deret Angka",
+    "text": "Soal nomor 35 (Numerik - Deret Angka): 2, 5, 10, 17, 26, ... Nilai suku berikutnya adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "37",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "33",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "35",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "39",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "41",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pola selisih bertingkat: +3, +5, +7, +9, +11. 26 + 11 = 37."
+  },
+  {
+    "id": 36,
+    "category": "TIU",
+    "subCategory": "Numerik - Soal Cerita",
+    "text": "Soal nomor 36 (Numerik - Soal Cerita): Mobil A berkecepatan 60 km/jam, mobil B 80 km/jam. Jika jarak kota 240 km, selisih waktu tempuh kedua mobil adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "1 jam",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "30 menit",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "45 menit",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "1,5 jam",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "2 jam",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Waktu A = 240/60 = 4 jam. Waktu B = 240/80 = 3 jam. Selisih = 4 - 3 = 1 jam."
+  },
+  {
+    "id": 37,
+    "category": "TIU",
+    "subCategory": "Figural - Ketidaksamaan",
+    "text": "Soal nomor 37 (Figural - Ketidaksamaan): Dari gambar pola berikut, gambar yang BERBEDA adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A (memiliki sudut tumpul tunggal, sementara yang lain lancip)",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Objek A memiliki karakteristik sudut yang tidak konsisten dengan pola keempat figur lainnya."
+  },
+  {
+    "id": 38,
+    "category": "TIU",
+    "subCategory": "Verbal - Analogi",
+    "text": "Soal nomor 38 (Verbal - Analogi): DOKTER : RUMAH SAKIT = GURU : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sekolah",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Pustaka",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Laboratorium",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kantor",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kantin",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Dokter bekerja di rumah sakit, sebagaimana guru bekerja di sekolah."
+  },
+  {
+    "id": 39,
+    "category": "TIU",
+    "subCategory": "Verbal - Silogisme",
+    "text": "Soal nomor 39 (Verbal - Silogisme): Semua mamalia bernapas dengan paru-paru. Ikan paus adalah mamalia. Maka...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ikan paus bernapas dengan paru-paru",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Semua yang bernapas dengan paru-paru adalah ikan paus",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Ikan paus bernapas dengan insang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sebagian mamalia bukan ikan paus",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tidak ada kesimpulan yang sah",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Ikan paus termasuk kategori mamalia, sehingga bernapas dengan paru-paru."
+  },
+  {
+    "id": 40,
+    "category": "TIU",
+    "subCategory": "Verbal - Analitis",
+    "text": "Soal nomor 40 (Verbal - Analitis): Doni lebih tinggi dari Eko. Eko lebih tinggi dari Fani. Siapakah yang paling tinggi di antara ketiganya?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Doni",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Eko",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Fani",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Doni dan Fani sama tinggi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tidak dapat ditentukan",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Doni > Eko > Fani, sehingga Doni adalah yang tertinggi."
+  },
+  {
+    "id": 41,
+    "category": "TIU",
+    "subCategory": "Numerik - Berhitung",
+    "text": "Soal nomor 41 (Numerik - Berhitung): Hasil dari 25% dari 400 ditambah 15 adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "115",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "100",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "110",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "125",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "135",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: 25% x 400 = 100. 100 + 15 = 115."
+  },
+  {
+    "id": 42,
+    "category": "TIU",
+    "subCategory": "Numerik - Deret Angka",
+    "text": "Soal nomor 42 (Numerik - Deret Angka): 3, 6, 12, 24, 48, ... Nilai suku berikutnya adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "96",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "72",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "84",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "108",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "120",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pola perkalian 2: 48 x 2 = 96."
+  },
+  {
+    "id": 43,
+    "category": "TIU",
+    "subCategory": "Numerik - Soal Cerita",
+    "text": "Soal nomor 43 (Numerik - Soal Cerita): Sebuah toko memberi diskon 20% untuk kemeja seharga Rp150.000. Berapa harga yang harus dibayar pembeli?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Rp120.000",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Rp125.000",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Rp130.000",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Rp135.000",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Rp110.000",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Diskon = 20% x 150.000 = 30.000. Harga bayar = 150.000 - 30.000 = Rp120.000."
+  },
+  {
+    "id": 44,
+    "category": "TIU",
+    "subCategory": "Figural - Ketidaksamaan",
+    "text": "Soal nomor 44 (Figural - Ketidaksamaan): Manakah bentuk yang tidak memiliki simetri lipat di antara pilihan figur berikut?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Trapesium sembarang",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Persegi panjang",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Segitiga sama kaki",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Lingkaran",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Belah ketupat",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Trapesium sembarang tidak memiliki sumbu simetri lipat sama sekali."
+  },
+  {
+    "id": 45,
+    "category": "TIU",
+    "subCategory": "Verbal - Analogi",
+    "text": "Soal nomor 45 (Verbal - Analogi): KENDARAAN : BENSIN = MANUSIA : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Makanan",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Oksigen",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pakaian",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Tenaga",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Rumah",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kendaraan membutuhkan bensin sebagai sumber energi, manusia membutuhkan makanan."
+  },
+  {
+    "id": 46,
+    "category": "TIU",
+    "subCategory": "Verbal - Silogisme",
+    "text": "Soal nomor 46 (Verbal - Silogisme): Semua siswa kelas XII lulus ujian. Sebagian siswa kelas XII melanjutkan ke perguruan tinggi. Maka...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sebagian siswa yang lulus ujian melanjutkan ke perguruan tinggi",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Semua siswa yang lulus melanjutkan ke perguruan tinggi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tidak ada siswa yang lulus yang kuliah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Siswa yang tidak lulus ujian melanjutkan ke perguruan tinggi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Perguruan tinggi hanya menerima kelas XII",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kesimpulan partikular: Sebagian siswa yang lulus ujian melanjutkan studi ke perguruan tinggi."
+  },
+  {
+    "id": 47,
+    "category": "TIU",
+    "subCategory": "Verbal - Analitis",
+    "text": "Soal nomor 47 (Verbal - Analitis): Buku merah lebih tebal dari buku biru. Buku kuning lebih tipis dari buku biru. Urutan buku dari yang paling tebal adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Merah, Biru, Kuning",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Kuning, Biru, Merah",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Biru, Merah, Kuning",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Merah, Kuning, Biru",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Biru, Kuning, Merah",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Merah > Biru > Kuning."
+  },
+  {
+    "id": 48,
+    "category": "TIU",
+    "subCategory": "Numerik - Berhitung",
+    "text": "Soal nomor 48 (Numerik - Berhitung): Nilai dari (1/2 + 3/4) x 8 adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "10",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "8",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "12",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "6",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "14",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: 1/2 + 3/4 = 5/4. 5/4 x 8 = 10."
+  },
+  {
+    "id": 49,
+    "category": "TIU",
+    "subCategory": "Numerik - Deret Angka",
+    "text": "Soal nomor 49 (Numerik - Deret Angka): 1, 4, 9, 16, 25, ... Nilai suku berikutnya adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "36",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "30",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "32",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "49",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "40",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Barisan kuadrat bilangan asli: 6^2 = 36."
+  },
+  {
+    "id": 50,
+    "category": "TIU",
+    "subCategory": "Numerik - Soal Cerita",
+    "text": "Soal nomor 50 (Numerik - Soal Cerita): Suatu pekerjaan dapat diselesaikan oleh 6 orang dalam 10 hari. Berapa hari pekerjaan selesai jika dikerjakan oleh 12 orang?",
+    "options": [
+      {
+        "id": "A",
+        "text": "5 hari",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "4 hari",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "6 hari",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "8 hari",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "3 hari",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Perbandingan berbalik nilai: 6 x 10 = 12 x H -> H = 60 / 12 = 5 hari."
+  },
+  {
+    "id": 51,
+    "category": "TIU",
+    "subCategory": "Figural - Ketidaksamaan",
+    "text": "Soal nomor 51 (Figural - Ketidaksamaan): Berdasarkan orientasi perputaran jarum jam, manakah objek yang arah perputarannya berlawanan dengan objek lainnya?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Objek 1 (berotasi berlawanan arah jarum jam / counter-clockwise)",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Objek 2",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Objek 3",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Objek 4",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Objek 5",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Objek 1 berputar CCW sedangkan empat figur lainnya berputar searah jarum jam (CW)."
+  },
+  {
+    "id": 52,
+    "category": "TIU",
+    "subCategory": "Verbal - Analogi",
+    "text": "Soal nomor 52 (Verbal - Analogi): API : PANAS = ES : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dingin",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Beku",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Cair",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Salju",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kutub",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Sifat inheren api adalah panas, sedangkan es bersifat dingin."
+  },
+  {
+    "id": 53,
+    "category": "TIU",
+    "subCategory": "Verbal - Silogisme",
+    "text": "Soal nomor 53 (Verbal - Silogisme): Jika hari hujan lebat, maka jalanan protokol tergenang air. Hari ini jalanan protokol tidak tergenang air. Maka...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hari ini tidak hujan lebat",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Hari ini hujan rintik-rintik",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kemarin jalanan tergenang air",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Besok pasti hujan lebat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Saluran air bekerja maksimal",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Modus tollens: P -> Q. ~Q. Kesimpulan: ~P (Hari ini tidak hujan lebat)."
+  },
+  {
+    "id": 54,
+    "category": "TIU",
+    "subCategory": "Verbal - Analitis",
+    "text": "Soal nomor 54 (Verbal - Analitis): Kota P terletak di sebelah barat kota Q. Kota R terletak di sebelah timur kota Q. Kota yang terletak paling barat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kota P",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Kota Q",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kota R",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kota P dan R",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kota Q dan R",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Posisi barat ke timur: P - Q - R. P adalah yang paling barat."
+  },
+  {
+    "id": 55,
+    "category": "TIU",
+    "subCategory": "Numerik - Berhitung",
+    "text": "Soal nomor 55 (Numerik - Berhitung): Jika a = 4 dan b = 3, maka nilai dari a^2 - b^2 adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "7",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "9",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "5",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "12",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "1",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: a^2 - b^2 = 16 - 9 = 7."
+  },
+  {
+    "id": 56,
+    "category": "TIU",
+    "subCategory": "Numerik - Deret Angka",
+    "text": "Soal nomor 56 (Numerik - Deret Angka): 100, 95, 85, 70, 50, ... Nilai suku berikutnya adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "25",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "30",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "20",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "35",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "15",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pengurangan bertingkat: -5, -10, -15, -20, -25. 50 - 25 = 25."
+  },
+  {
+    "id": 57,
+    "category": "TIU",
+    "subCategory": "Numerik - Soal Cerita",
+    "text": "Soal nomor 57 (Numerik - Soal Cerita): Sebuah tangki air berkapasitas 500 liter diisi dengan debit kran 25 liter/menit. Waktu yang diperlukan hingga penuh adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "20 menit",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "15 menit",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "25 menit",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "30 menit",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "10 menit",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Waktu = Volume / Debit = 500 / 25 = 20 menit."
+  },
+  {
+    "id": 58,
+    "category": "TIU",
+    "subCategory": "Figural - Ketidaksamaan",
+    "text": "Soal nomor 58 (Figural - Ketidaksamaan): Di antara kelompok bangun datar berikut, manakah bangun yang jumlah sisinya tidak genap?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pentagon (Segi lima beraturan)",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Heksagon (Segi enam)",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Oktagon (Segi delapan)",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Bujur sangkar (Segi empat)",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Dekagon (Segi sepuluh)",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pentagon memiliki 5 sisi (ganjil), sementara figur lainnya memiliki jumlah sisi genap."
+  },
+  {
+    "id": 59,
+    "category": "TIU",
+    "subCategory": "Verbal - Analogi",
+    "text": "Soal nomor 59 (Verbal - Analogi): PADI : PETANI = PUISI : ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Penyair",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Novel",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Percetakan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kritikus",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pustakawan",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Padi dihasilkan oleh petani, sebagaimana puisi dihasilkan oleh penyair."
+  },
+  {
+    "id": 60,
+    "category": "TIU",
+    "subCategory": "Verbal - Silogisme",
+    "text": "Soal nomor 60 (Verbal - Silogisme): Semua dokter spesialis memiliki STR aktif. Tidak ada dokter magang yang memiliki STR aktif. Maka...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tidak ada dokter magang yang merupakan dokter spesialis",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Semua dokter spesialis adalah dokter magang",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sebagian dokter magang memiliki STR aktif",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Dokter spesialis tidak perlu STR aktif",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Semua dokter adalah dokter magang",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Dua himpunan terpisah: tidak ada dokter magang yang merupakan dokter spesialis."
+  },
+  {
+    "id": 61,
+    "category": "TIU",
+    "subCategory": "Verbal - Analitis",
+    "text": "Soal nomor 61 (Verbal - Analitis): Dalam lomba lari, Andi finis sebelum Budi. Cici finis setelah Budi namun sebelum Dedi. Urutan finis pertama hingga keempat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Andi, Budi, Cici, Dedi",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Budi, Andi, Cici, Dedi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Andi, Cici, Budi, Dedi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Dedi, Cici, Budi, Andi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Cici, Andi, Budi, Dedi",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Urutan finis: Andi -> Budi -> Cici -> Dedi."
+  },
+  {
+    "id": 62,
+    "category": "TIU",
+    "subCategory": "Numerik - Berhitung",
+    "text": "Soal nomor 62 (Numerik - Berhitung): Hasil dari akar kuadrat 144 ditambah 15 x 2 adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "42",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "36",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "44",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "54",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "27",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: √144 = 12. 15 x 2 = 30. 12 + 30 = 42."
+  },
+  {
+    "id": 63,
+    "category": "TIU",
+    "subCategory": "Numerik - Deret Angka",
+    "text": "Soal nomor 63 (Numerik - Deret Angka): 5, 8, 14, 23, 35, ... Nilai suku berikutnya adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "50",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "48",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "45",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "52",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "55",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pola selisih: +3, +6, +9, +12, +15. 35 + 15 = 50."
+  },
+  {
+    "id": 64,
+    "category": "TIU",
+    "subCategory": "Numerik - Soal Cerita",
+    "text": "Soal nomor 64 (Numerik - Soal Cerita): Perbandingan uang Rina dan Rini adalah 3 : 5. Jika jumlah uang mereka Rp80.000, selisih uang mereka adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Rp20.000",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Rp15.000",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Rp25.000",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Rp30.000",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Rp10.000",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Selisih = (5 - 3)/(5 + 3) x 80.000 = 2/8 x 80.000 = Rp20.000."
+  },
+  {
+    "id": 65,
+    "category": "TIU",
+    "subCategory": "Figural - Ketidaksamaan",
+    "text": "Soal nomor 65 (Figural - Ketidaksamaan): Berdasarkan pola susunan elemen titik dan garis, figur manakah yang menyimpang dari aturan pola matriks?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Figur E (jumlah titik dalam lingkaran tidak sebanding dengan jumlah garis tepi)",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Figur A",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Figur B",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Figur C",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Figur D",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Figur E menyimpang dari aturan relasi jumlah titik = jumlah sisi garis tepi."
+  }
+]

@@ -1,0 +1,1022 @@
+[
+  {
+    "id": 1,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Soal nomor 1 (Nasionalisme): Seorang PNS menemukan rekan kerjanya menyebarkan konten yang merendahkan suku tertentu di media sosial kantor. Tindakan yang paling tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Membiarkan karena hal tersebut merupakan hak berpendapat di media sosial pribadi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Ikut menyebarkan konten tersebut sebagai bahan diskusi di grup kantor",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Memblokir akun rekan tersebut tanpa melakukan langkah pembinaan apapun",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Menegur secara langsung dengan sopan dan melaporkan ke atasan atau bagian kepatuhan",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Mengunggah konten balasan yang menyerang suku rekan kerja tersebut",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Nasionalisme menuntut penghormatan terhadap keberagaman dan penegakan etika berbangsa di lingkungan kerja ASN."
+  },
+  {
+    "id": 2,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Soal nomor 2 (Nasionalisme): Dalam rangka memperkuat rasa cinta tanah air di kalangan generasi muda, kebijakan institusi pemerintah yang paling relevan adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mewajibkan hafalan seluruh pasal undang-undang bagi seluruh siswa sekolah",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Membatasi akses informasi dari media massa luar negeri secara total",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Mengembangkan program magang kebangsaan dan apresiasi karya inovasi anak bangsa",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mengharuskan pemakaian pakaian adat setiap hari kerja tanpa pengecualian",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Memberikan bantuan tunai langsung tanpa pendampingan wawasan kebangsaan",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kebijakan substantif yang menumbuhkan karya nyata memperkokoh rasa cinta tanah air secara berkelanjutan."
+  },
+  {
+    "id": 3,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Soal nomor 3 (Nasionalisme): Sikap yang mencerminkan paham kebangsaan terbuka dalam era globalisasi adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak seluruh bentuk kerjasama ekonomi dengan negara-negara berkembang",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menyaring pengaruh budaya asing dengan berlandaskan nilai-nilai luhur Pancasila",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mengadopsi seluruh gaya hidup modern barat demi percepatan pembangunan bangsa",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Menutup perbatasan wilayah bagi semua tenaga kerja ahli dari mancanegara",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menghapus kurikulum bahasa daerah agar fokus pada penguasaan bahasa internasional",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Nasionalisme Indonesia bersifat terbuka dan adaptif tanpa meninggalkan kepribadian bangsa."
+  },
+  {
+    "id": 4,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Soal nomor 4 (Nasionalisme): Sebagai aparatur sipil negara di daerah perbatasan, tindakan konkret menjaga kedaulatan bangsa adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyerahkan pengawasan wilayah perbatasan sepenuhnya kepada pemerintah pusat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menolak alokasi dana pembangunan infrastruktur desa demi penghematan anggaran",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Membatasi interaksi perdagangan warga lokal dengan warga negara tetangga secara sepihak",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Membiarkan pos lintas batas dikelola oleh kelompok swasta tanpa pengawasan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Memberikan pelayanan publik prima dan meningkatkan kesejahteraan warga perbatasan",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Pelayanan prima di beranda terdepan memperkuat ikatan kebangsaan dan kedaulatan NKRI."
+  },
+  {
+    "id": 5,
+    "category": "TWK",
+    "subCategory": "Nasionalisme",
+    "text": "Soal nomor 5 (Nasionalisme): Upaya pelestarian warisan budaya nusantara di era digital yang paling efektif oleh ASN adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Melarang pertunjukan seni modern di fasilitas milik instansi pemerintah",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menyimpan seluruh arsip kebudayaan hanya di perpustakaan fisik daerah",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Menuntut hak paten atas setiap ritual adat tanpa melibatkan masyarakat lokal",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mendokumentasikan kearifan lokal dalam platform digital interaktif multi-bahasa",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menyerahkan promosi pariwisata daerah seutuhnya kepada agen perjalanan komersial",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Digitalisasi kearifan lokal memperluas jangkauan dan memperkuat ketahanan budaya bangsa."
+  },
+  {
+    "id": 6,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Soal nomor 6 (Integritas): Anda ditawari sejumlah uang oleh seorang warga agar berkas izin usahanya disetujui lebih cepat dari jadwal resmi. Sikap Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima uang tersebut tetapi tetap memproses izin sesuai antrean normal",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menolak dengan tegas dan menjelaskan alur pelayanan sesuai SOP yang berlaku",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menerima uang dan membagikannya kepada rekan kerja satu divisi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Menunda berkas pemohon tersebut sebagai bentuk sanksi tidak resmi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Meminta pemohon melipatgandakan jumlah uang demi dana sosial kantor",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Integritas mensyaratkan penolakan gratifikasi dan komitmen penuh pada prosedur resmi."
+  },
+  {
+    "id": 7,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Soal nomor 7 (Integritas): Ketika menyusun laporan keuangan kegiatan dinas, atasan meminta Anda memasukkan nota fiktif untuk menutupi defisit pos lain. Sikap Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak perintah tersebut secara santun dan menyampaikan risiko hukum pelaporan palsu",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mengikuti perintah atasan demi menjaga keharmonisan hubungan kerja",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Mengundurkan diri langsung dari instansi tanpa memberikan klarifikasi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Membuat nota fiktif namun mencatatnya di buku catatan pribadi sebagai bukti",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menyebarkan nota tersebut ke media sosial tanpa konfirmasi internal",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: ASN berintegritas wajib menolak manipulasi akuntansi dan berpegang pada transparansi fiskal."
+  },
+  {
+    "id": 8,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Soal nomor 8 (Integritas): Seorang rekan kerja sering menggunakan kendaraan dinas kantor untuk keperluan liburan keluarga setiap akhir pekan. Tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Meminjam kendaraan tersebut juga agar mendapat perlakuan setara",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menyembunyikan kunci kendaraan dinas tanpa berkoordinasi dengan pengelola aset",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Mengingatkan rekan tersebut mengenai aturan penggunaan aset negara dan melapor jika berulang",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mendiamkan hal itu karena bukan tanggung jawab langsung jabatan Anda",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Memfoto secara diam-diam dan memeras rekan tersebut demi keuntungan pribadi",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pengelolaan fasilitas negara harus akuntabel dan bebas dari penyalahgunaan kepentingan pribadi."
+  },
+  {
+    "id": 9,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Soal nomor 9 (Integritas): Saat pelaksanaan seleksi pengadaan barang dan jasa, kerabat dekat Anda mendaftar sebagai peserta lelang. Tindakan Anda adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Membocorkan spesifikasi teknis penawaran pesaing kepada kerabat Anda",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menyatakan potensi benturan kepentingan dan mengundurkan diri dari tim penilai lelang",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Memberikan nilai tertinggi kepada kerabat demi menjaga nama baik keluarga",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Menggugurkan penawaran kerabat tanpa memeriksa dokumen kelayakannya",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Meminta komisi khusus apabila kerabat Anda memenangkan tender proyek",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Deklarasi benturan kepentingan merupakan kewajiban etis mendasar untuk mencegah korupsi."
+  },
+  {
+    "id": 10,
+    "category": "TWK",
+    "subCategory": "Integritas",
+    "text": "Soal nomor 10 (Integritas): Nilai kejujuran dalam pelayanan publik paling nyata tercermin dalam perilaku...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menjanjikan kemudahan pelayanan hanya kepada warga yang dikenal baik",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menolak melayani warga yang menyampaikan keluhan atas lambatnya birokrasi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Menyampaikan informasi persyaratan perizinan secara transparan tanpa pungutan liar",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mengalihkan tanggung jawab pekerjaan sendiri kepada pegawai honorer",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Mengumumkan nama wajib pajak yang belum membayar di papan pengumuman terbuka",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kejujuran pelayanan diwujudkan lewat kepastian tarif, waktu, dan syarat tanpa pungutan ilegal."
+  },
+  {
+    "id": 11,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Soal nomor 11 (Bela Negara): Bentuk kesadaran bela negara yang paling mendasar bagi seorang tenaga kesehatan di daerah terpencil adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengajukan mutasi tugas ke kota besar sesegera mungkin setelah ditempatkan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menjalankan tugas medis dengan dedikasi tinggi demi keselamatan jiwa masyarakat",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mengharuskan warga membayar biaya pengobatan darurat di muka sebelum tindakan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Menolak merawat pasien yang tidak memiliki dokumen kependudukan lengkap",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menghentikan operasional puskesmas pada hari-hari pasar tradisional",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Bela negara bagi profesi diwujudkan melalui pengabdian tulus sesuai keahlian demi ketahanan nasional."
+  },
+  {
+    "id": 12,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Soal nomor 12 (Bela Negara): Unsur dasar bela negara yang diwujudkan melalui kerelaan berkorban demi bangsa dan negara terlihat pada...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pegawai yang hanya bekerja bila dijanjikan insentif lembur tambahan oleh pimpinan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Warga yang menghindar dari kegiatan kerja bakti lingkungan di permukimannya",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pejabat yang mengutamakan perjalanan dinas luar negeri daripada tugas pelayanan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pengusaha yang menimbun bahan pangan saat terjadi krisis pasokan logistik",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "ASN yang bersedia bertugas lembur tanpa pamrih saat penanganan darurat bencana alam",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Kerelaan berkorban waktu dan tenaga saat krisis kemanusiaan merupakan bukti nyata bela negara."
+  },
+  {
+    "id": 13,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Soal nomor 13 (Bela Negara): Dalam menghadapi ancaman non-militer berupa penyebaran informasi hoaks yang memecah belah persatuan, tindakan bela negara yang tepat adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Langsung meneruskan setiap pesan berantai demi memicu kehati-hatian publik",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menghapus akun media sosial dan menghentikan interaksi dengan masyarakat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Mendukung narasi hoaks selama menguntungkan kelompok organisasi sendiri",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Membayar buzzer untuk membalas provokasi dengan narasi yang lebih emosional",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Melakukan verifikasi fakta sumber informasi sebelum membagikan ke ruang publik",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Literasi digital dan verifikasi kebenaran informasi menjaga ketahanan ideologi dan kohesi sosial."
+  },
+  {
+    "id": 14,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Soal nomor 14 (Bela Negara): Landasan hukum kewajiban setiap warga negara ikut serta dalam upaya pembelaan negara diatur dalam UUD 1945 pasal...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasal 29 ayat (2)",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pasal 31 ayat (1)",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pasal 33 ayat (2)",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pasal 27 ayat (3)",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Pasal 34 ayat (1)",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pasal 27 ayat (3) UUD 1945 menyatakan setiap warga negara berhak dan wajib ikut serta dalam pembelaan negara."
+  },
+  {
+    "id": 15,
+    "category": "TWK",
+    "subCategory": "Bela Negara",
+    "text": "Soal nomor 15 (Bela Negara): Sikap menjaga kedaulatan ekonomi nasional sebagai wujud cinta produk dalam negeri diwujudkan dengan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengimpor seluruh perabot kantor dari merek ternama luar negeri demi prestise",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Memaksa pelaku UMKM menjual produknya di bawah harga pokok produksi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Memprioritaskan pengadaan barang instansi dari produsen UMKM lokal bersertifikasi",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Menolak sertifikasi mutu internasional bagi produk kerajinan nusantara",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menetapkan pajak ganda khusus bagi pedagang pasar tradisional daerah",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pengutamaan produk domestik menguatkan fondasi kemandirian ekonomi bangsa."
+  },
+  {
+    "id": 16,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (Pancasila)",
+    "text": "Soal nomor 16 (Pilar Negara (Pancasila)): Sila pertama Pancasila, 'Ketuhanan Yang Maha Esa', memberikan jaminan konstitusional bahwa negara...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menetapkan satu agama resmi tunggal yang wajib dipatuhi seluruh warga negara",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menyerahkan urusan toleransi beragama sepenuhnya pada hukum adat setempat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Melarang perayaan hari besar keagamaan di ruang publik demi netralitas aparatur",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mengharuskan pendirian rumah ibadah mendapat persetujuan seratus persen warga desa",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menjamin kemerdekaan tiap-tiap penduduk memeluk agama dan beribadat menurut agamanya",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Sila pertama menegaskan kebebasan beragama dan toleransi antarumat beragama tanpa diskriminasi."
+  },
+  {
+    "id": 17,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (Pancasila)",
+    "text": "Soal nomor 17 (Pilar Negara (Pancasila)): Pengamalan sila kedua Pancasila dalam pergaulan lingkungan kerja birokrasi dicontohkan dengan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Memperlakukan semua rekan kerja secara adil dan bermartabat tanpa diskriminasi gender",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Memberikan hak istimewa cuti kerja hanya kepada staf dengan hubungan kekerabatan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Menolak berkomunikasi dengan staf bawahan di luar jam kerja kedinasan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mengabaikan hak jaminan kesehatan bagi pekerja kontrak di kantor pemerintah",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Mengutamakan promosi jabatan berdasarkan kesamaan suku asal daerah pimpinan",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Kemanusiaan yang adil dan beradab mewajibkan penghormatan martabat sesama manusia."
+  },
+  {
+    "id": 18,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (Pancasila)",
+    "text": "Soal nomor 18 (Pilar Negara (Pancasila)): Sikap musyawarah untuk mencapai mufakat dalam pengambilan keputusan bersama merupakan implementasi dari sila...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pertama Pancasila",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kedua Pancasila",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Keempat Pancasila",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Ketiga Pancasila",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kelima Pancasila",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Sila keempat menekankan kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan."
+  },
+  {
+    "id": 19,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (Pancasila)",
+    "text": "Soal nomor 19 (Pilar Negara (Pancasila)): Keadilan sosial bagi seluruh rakyat Indonesia (sila kelima) dalam alokasi anggaran daerah diwujudkan melalui...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pemusatan pembangunan fasilitas mewah hanya di kawasan perumahan elit ibu kota",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pemberian subsidi listrik hanya kepada industri skala multinasional besar",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Penghentian bantuan operasional sekolah bagi daerah tertinggal dan terpencil",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pemerataan pembangunan sarana pendidikan dan kesehatan hingga ke pelosok desa",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Penetapan tarif retribusi kesehatan yang sama tanpa memandang tingkat ekonomi warga",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Keadilan sosial menuntut alokasi sumber daya yang merata guna mengentaskan ketimpangan."
+  },
+  {
+    "id": 20,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (Pancasila)",
+    "text": "Soal nomor 20 (Pilar Negara (Pancasila)): Pancasila sebagai ideologi terbuka memiliki arti bahwa nilai-nilai dasarnya bersifat tetap, namun...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Penerapannya dapat berkembang dan disesuaikan dengan dinamika perkembangan zaman",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Isi sila-silanya dapat diubah setiap pergantian kepemimpinan nasional",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Dapat digantikan dengan ideologi lain apabila disetujui referendum rakyat",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Hanya berlaku efektif ketika negara berada dalam kondisi darurat militer",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menyesuaikan sepenuhnya dengan tuntutan liberalisme pasar modal bebas",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Ideologi terbuka fleksibel dalam aktualisasi dan operasionalisasi tanpa mengubah nilai intinya."
+  },
+  {
+    "id": 21,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (UUD 1945)",
+    "text": "Soal nomor 21 (Pilar Negara (UUD 1945)): Berdasarkan Pasal 1 ayat (2) UUD 1945 setelah amandemen, kedaulatan berada di tangan rakyat dan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dilakukan sepenuhnya oleh Majelis Permusyawaratan Rakyat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Diserahkan mandatnya kepada Presiden sebagai kepala negara",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Dilaksanakan menurut Undang-Undang Dasar",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Dijalankan oleh Dewan Perwakilan Rakyat bersama Mahkamah Agung",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Dikoordinasikan oleh menteri koordinator bidang politik dan hukum",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pasal 1 ayat (2) hasil amandemen menegaskan kedaulatan rakyat dilaksanakan menurut UUD."
+  },
+  {
+    "id": 22,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (UUD 1945)",
+    "text": "Soal nomor 22 (Pilar Negara (UUD 1945)): Lembaga negara yang berwenang menguji undang-undang terhadap UUD 1945 adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mahkamah Agung",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Komisi Yudisial",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Dewan Perwakilan Daerah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Badan Pemeriksa Keuangan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Mahkamah Konstitusi",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Berdasarkan Pasal 24C UUD 1945, Mahkamah Konstitusi berwenang menguji UU terhadap UUD."
+  },
+  {
+    "id": 23,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (UUD 1945)",
+    "text": "Soal nomor 23 (Pilar Negara (UUD 1945)): Hak DPR untuk meminta keterangan kepada pemerintah mengenai kebijakan pemerintah yang penting dan strategis disebut hak...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Interpelasi",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Angket",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Menyatakan Pendapat",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Imunitas",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Petisi",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Hak interpelasi adalah hak DPR meminta keterangan kepada pemerintah mengenai kebijakan berdampak luas."
+  },
+  {
+    "id": 24,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (UUD 1945)",
+    "text": "Soal nomor 24 (Pilar Negara (UUD 1945)): Sesuai Pasal 33 ayat (3) UUD 1945, bumi dan air dan kekayaan alam yang terkandung di dalamnya dikuasai oleh negara dan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dikelola oleh perusahaan konglomerasi swasta pemegang konsesi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Diekspor langsung demi mendongkrak devisa valuta asing negara",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Diserahkan penguasaannya kepada investor asing berkapitalisasi kuat",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Disimpan sebagai cadangan aset tanpa dimanfaatkan untuk publik",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Dipergunakan untuk sebesar-besar kemakmuran rakyat",
+        "score": 5
+      }
+    ],
+    "explanation": "Pembahasan: Amanat Pasal 33 ayat (3) UUD 1945 adalah sebesar-besar kemakmuran rakyat Indonesia."
+  },
+  {
+    "id": 25,
+    "category": "TWK",
+    "subCategory": "Pilar Negara (UUD 1945)",
+    "text": "Soal nomor 25 (Pilar Negara (UUD 1945)): Syarat perubahan pasal-pasal dalam UUD 1945 sesuai Pasal 37 mensyaratkan sidang MPR dihadiri oleh sekurang-kurangnya...",
+    "options": [
+      {
+        "id": "A",
+        "text": "1/2 dari jumlah anggota MPR ditambah satu",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "2/3 dari jumlah anggota MPR",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "3/4 dari jumlah anggota MPR",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Seluruh anggota DPR tanpa melibatkan DPD",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Suara bulat 100% dari seluruh anggota MPR",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Pasal 37 ayat (3) UUD 1945 mensyaratkan sidang perubahan pasal dihadiri sekurang-kurangnya 2/3 anggota MPR."
+  },
+  {
+    "id": 26,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Soal nomor 26 (Bahasa Indonesia): Penulisan kata serapan yang sesuai dengan pedoman baku bahasa Indonesia adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Standarisasi dan efektifitas",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Standardisasi dan efektivitas",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Standardisasie dan efektiviti",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Standardize dan effectivity",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Setandarisasi dan epektipitas",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Bentuk baku menurut KBBI dan EYD adalah standardisasi dan efektivitas."
+  },
+  {
+    "id": 27,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Soal nomor 27 (Bahasa Indonesia): Kalimat berikut yang memenuhi syarat sebagai kalimat efektif adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Bagi seluruh para peserta daripada lokakarya diharap segera masuk ruangan.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Soal perizinan itu belum kami selesaikan karena disebabkan kekurangan data.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Buku tersebut saya telah membacanya sampai selesai di perpustakaan kota.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pemerintah mencanangkan program percepatan penurunan angka stunting di pedesaan.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Kepada pimpinan rapat waktu dan tempat kami persilakan dengan hormat.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Opsi A hemat kata, lugas, tidak rancu, dan memiliki struktur subjek-predikat yang gramatikal."
+  },
+  {
+    "id": 28,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Soal nomor 28 (Bahasa Indonesia): Makna ungkapan 'rendah hati' dalam kalimat 'Meskipun menjabat sebagai direktur, beliau tetap rendah hati' adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tidak sombong dan menghargai orang lain",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Merasa tidak mampu memimpin organisasi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sering merasa rendah diri di depan bawahan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Menyerahkan wewenang kepada staf lain",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tidak berani mengambil risiko pekerjaan",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Ungkapan 'rendah hati' bermakna tidak congkak atau tidak sombong."
+  },
+  {
+    "id": 29,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Soal nomor 29 (Bahasa Indonesia): Penggunaan tanda baca titik dua (:) yang tepat terdapat pada kalimat...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ibu membeli perabot dapur: wajan, panci, dan spatula.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Ibu membeli: wajan, panci, dan spatula.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Perabot dapur yang dibeli: adalah wajan, panci, dan spatula.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Wajan, panci, dan spatula: dibeli oleh Ibu.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Ibu: membeli wajan, panci, dan spatula.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Tanda titik dua digunakan pada akhir pernyataan lengkap yang diikuti rincian."
+  },
+  {
+    "id": 30,
+    "category": "TWK",
+    "subCategory": "Bahasa Indonesia",
+    "text": "Soal nomor 30 (Bahasa Indonesia): Ide pokok paragraf umumnya dapat ditemukan pada kalimat...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Penjelas yang memuat angka dan persentase statistik",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Semua kalimat tanpa membedakan peran fungsinya",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tanya retoris yang ditempatkan di tengah wacana",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Utama yang terletak di awal atau akhir paragraf",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Kutipan langsung narasumber ahli di bagian lampiran",
+        "score": 0
+      }
+    ],
+    "explanation": "Pembahasan: Ide pokok terkandung dalam kalimat utama (deduktif di awal, induktif di akhir, atau campuran)."
+  }
+]
