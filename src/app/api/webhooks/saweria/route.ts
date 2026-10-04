@@ -56,6 +56,32 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'DATABASE_URL not set' }, { status: 500 });
     }
 
+    let matchedUserId: string | null = null;
+    let matchedOrderId: number | null = null;
+    let orderTypeFromOrder: string | null = null;
+
+    // 3.5. VALIDASI LEWAT KODE UNIK NOMINAL (Layer 1 Utama)
+    // Cek apakah amount persis sama dengan order pending di payment_orders
+    try {
+      const matchedOrders = await sql`
+        SELECT id, user_id, user_email, package_id, order_type
+        FROM payment_orders
+        WHERE exact_amount = ${amount} AND status = 'pending'
+        ORDER BY created_at DESC
+        LIMIT 1
+      `;
+      if (matchedOrders.length > 0) {
+        const ord = matchedOrders[0];
+        matchedOrderId = ord.id;
+        orderTypeFromOrder = ord.order_type;
+        if (ord.user_id) matchedUserId = ord.user_id;
+        if (ord.user_email && !targetEmail) targetEmail = ord.user_email;
+        if (ord.package_id && !targetPackageId) targetPackageId = ord.package_id;
+      }
+    } catch {
+      // ignore if table doesn't exist yet
+    }
+
     // 4. Cek apakah ada transaksi pending sebelumnya di database
     const existingTx = await sql`
       SELECT id, status, package_id, matched_user_id, matched_user_email
@@ -68,7 +94,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: 'Already processed', donationId }, { status: 200 });
     }
 
-    let matchedUserId: string | null = existingTx.length > 0 ? existingTx[0].matched_user_id : null;
+    if (!matchedUserId && existingTx.length > 0) {
+      matchedUserId = existingTx[0].matched_user_id;
+    }
     if (existingTx.length > 0 && existingTx[0].package_id) {
       targetPackageId = existingTx[0].package_id;
     }
@@ -117,7 +145,18 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 6. Simpan atau perbarui log transaksi
+    // 6. Tandai order di payment_orders sebagai paid
+    if (matchedOrderId) {
+      await sql`
+        UPDATE payment_orders
+        SET status = 'paid',
+            paid_at = NOW(),
+            saweria_donation_id = ${donationId}
+        WHERE id = ${matchedOrderId}
+      `;
+    }
+
+    // 7. Simpan atau perbarui log transaksi
     if (existingTx.length > 0) {
       await sql`
         UPDATE saweria_transactions

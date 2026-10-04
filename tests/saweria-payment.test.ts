@@ -14,8 +14,57 @@ describe('Saweria Dynamic Price Webhook', () => {
     vi.clearAllMocks();
   });
 
+  it('matches order via exact nominal unique code (Layer 1 Matching)', async () => {
+    mockSql
+      // 1. payment_orders check
+      .mockResolvedValueOnce([
+        {
+          id: 42,
+          user_id: 'user-uuid-unique',
+          user_email: 'unique@example.com',
+          package_id: 'tryout-8',
+          order_type: 'single',
+        },
+      ])
+      // 2. existingTx check
+      .mockResolvedValueOnce([])
+      // 3. user check
+      .mockResolvedValueOnce([
+        { id: 'user-uuid-unique', email: 'unique@example.com', is_pro: false, unlocked_packages: [] },
+      ])
+      // 4. update user unlocked_packages
+      .mockResolvedValueOnce([])
+      // 5. update payment_orders to paid
+      .mockResolvedValueOnce([])
+      // 6. insert saweria_transactions
+      .mockResolvedValueOnce([]);
+
+    const payload = {
+      id: `test-tx-unique-${Date.now()}`,
+      amount_raw: 1007, // Rp 1.007 matching order #42
+      donator_name: 'Donatur Tanpa Email',
+      donator_email: '',
+      message: 'Semangat kak', // Tidak ada info paket/email di pesan
+    };
+
+    const req = new NextRequest('http://localhost:3000/api/webhooks/saweria', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+
+    const res = await saweriaWebhook(req);
+    expect(res.status).toBe(200);
+
+    const json = await res.json();
+    expect(json.success).toBe(true);
+    expect(json.amount).toBe(1007);
+    expect(json.targetEmail).toBe('unique@example.com');
+    expect(json.unlockedPackage).toBe(true);
+  });
+
   it('handles Pro upgrade when amount meets PRO threshold', async () => {
     mockSql
+      .mockResolvedValueOnce([]) // payment_orders
       .mockResolvedValueOnce([]) // existingTx
       .mockResolvedValueOnce([{ id: 'user-uuid-1', email: 'budi.test@example.com', is_pro: false, unlocked_packages: [] }]) // user
       .mockResolvedValueOnce([]) // update users
@@ -46,6 +95,7 @@ describe('Saweria Dynamic Price Webhook', () => {
 
   it('handles single tryout unlock when amount is for single package', async () => {
     mockSql
+      .mockResolvedValueOnce([]) // payment_orders
       .mockResolvedValueOnce([]) // existingTx
       .mockResolvedValueOnce([{ id: 'user-uuid-2', email: 'ani.test@example.com', is_pro: false, unlocked_packages: [] }]) // user
       .mockResolvedValueOnce([]) // update users
@@ -76,6 +126,7 @@ describe('Saweria Dynamic Price Webhook', () => {
 
   it('handles testing nominal Rp 1000 correctly', async () => {
     mockSql
+      .mockResolvedValueOnce([]) // payment_orders
       .mockResolvedValueOnce([]) // existingTx
       .mockResolvedValueOnce([{ id: 'user-uuid-3', email: 'test1000@example.com', is_pro: false, unlocked_packages: [] }])
       .mockResolvedValueOnce([])

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import {
   Crown,
   QrCode,
@@ -10,6 +10,7 @@ import {
   Spinner,
   Check,
   Package,
+  Copy,
 } from '@phosphor-icons/react';
 
 interface UpgradeProModalProps {
@@ -21,15 +22,12 @@ interface UpgradeProModalProps {
   packageId?: string;
 }
 
-interface QrisResponse {
-  donationId: string;
-  amount: number;
-  amountRaw: number;
-  qrString: string;
-  qrDataUrl: string;
+interface OrderInfo {
+  orderId: number;
+  baseAmount: number;
+  uniqueCode: number;
+  exactAmount: number;
   saweriaUsername: string;
-  packageId?: string;
-  userEmail?: string;
 }
 
 export function UpgradeProModal({
@@ -39,28 +37,56 @@ export function UpgradeProModal({
   packageId,
 }: UpgradeProModalProps) {
   const [selectedPlan, setSelectedPlan] = useState<'single' | 'pro'>('pro');
-  const [step, setStep] = useState<'info' | 'qris' | 'check' | 'success'>('info');
-  const [loadingQris, setLoadingQris] = useState(false);
-  const [qrisData, setQrisData] = useState<QrisResponse | null>(null);
+  const [step, setStep] = useState<'info' | 'pay' | 'success'>('info');
+  const [loading, setLoading] = useState(false);
+  const [orderInfo, setOrderInfo] = useState<OrderInfo | null>(null);
   const [userEmail, setUserEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [copied, setCopied] = useState(false);
 
   const pollTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const targetPackageId = selectedPlan === 'single' ? packageId : undefined;
+
+  // Function to create or fetch pending order with unique code
+  const fetchOrder = useCallback(async (plan: 'single' | 'pro') => {
+    setLoading(true);
+    setErrorMessage('');
+    try {
+      const res = await fetch('/api/payment/create-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          orderType: plan,
+          packageId: plan === 'single' ? packageId : null,
+          baseAmount: 1000, // Testing nominal Rp 1.000
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setOrderInfo(data);
+      } else {
+        setErrorMessage(data.error || 'Gagal menyiapkan pesanan pembayaran.');
+      }
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Koneksi bermasalah.';
+      setErrorMessage(msg);
+    } finally {
+      setLoading(false);
+    }
+  }, [packageId]);
 
   useEffect(() => {
     if (!isOpen) {
       setStep('info');
-      setQrisData(null);
+      setOrderInfo(null);
       setErrorMessage('');
       if (pollTimerRef.current) clearInterval(pollTimerRef.current);
       return;
     }
 
-    if (packageId && triggerPackage) {
-      setSelectedPlan('single');
-    } else {
-      setSelectedPlan('pro');
-    }
+    const initialPlan = packageId && triggerPackage ? 'single' : 'pro';
+    setSelectedPlan(initialPlan);
 
     fetch('/api/user/status')
       .then((r) => r.json())
@@ -69,49 +95,35 @@ export function UpgradeProModal({
       })
       .catch(() => null);
 
+    fetchOrder(initialPlan);
+
     return () => {
       if (pollTimerRef.current) clearInterval(pollTimerRef.current);
     };
-  }, [isOpen, packageId, triggerPackage]);
+  }, [isOpen, packageId, triggerPackage, fetchOrder]);
 
+  // Polling status saat user berada di step 'pay'
   useEffect(() => {
-    if (step === 'qris' && qrisData?.donationId) {
+    if (step === 'pay' && orderInfo?.orderId) {
       if (pollTimerRef.current) clearInterval(pollTimerRef.current);
 
       pollTimerRef.current = setInterval(async () => {
         try {
-          const res = await fetch(`/api/saweria/check?donationId=${qrisData.donationId}`);
+          // 1. Cek via order-status
+          const res = await fetch(`/api/payment/order-status?orderId=${orderInfo.orderId}`);
           const data = await res.json();
           if (data.paid) {
             if (pollTimerRef.current) clearInterval(pollTimerRef.current);
             setStep('success');
+            return;
           }
-        } catch {
-          // ignore error during poll
-        }
-      }, 3500);
 
-      return () => {
-        if (pollTimerRef.current) clearInterval(pollTimerRef.current);
-      };
-    }
-  }, [step, qrisData?.donationId]);
-
-  const targetAmount = 1000; // Testing nominal Rp 1.000 (batas minimum QRIS nasional)
-  const targetPackageId = selectedPlan === 'single' ? packageId : undefined;
-
-  // Polling status saat user berada di step 'check' (menunggu webhook Saweria)
-  useEffect(() => {
-    if (step === 'check') {
-      if (pollTimerRef.current) clearInterval(pollTimerRef.current);
-
-      pollTimerRef.current = setInterval(async () => {
-        try {
-          const res = await fetch('/api/user/status');
-          const data = await res.json();
+          // 2. Fallback cek via user status
+          const ures = await fetch('/api/user/status');
+          const udata = await ures.json();
           if (
-            data.is_pro ||
-            (targetPackageId && data.unlocked_packages?.includes(targetPackageId))
+            udata.is_pro ||
+            (targetPackageId && udata.unlocked_packages?.includes(targetPackageId))
           ) {
             if (pollTimerRef.current) clearInterval(pollTimerRef.current);
             setStep('success');
@@ -125,23 +137,32 @@ export function UpgradeProModal({
         if (pollTimerRef.current) clearInterval(pollTimerRef.current);
       };
     }
-  }, [step, targetPackageId]);
+  }, [step, orderInfo?.orderId, targetPackageId]);
 
-  async function handleGenerateQris() {
-    setLoadingQris(true);
-    setErrorMessage('');
-    try {
-      const msg = targetPackageId
-        ? `Akses ${targetPackageId} [${userEmail || 'user'}]`
-        : `Upgrade PRO [${userEmail || 'user'}]`;
-      const saweriaUrl = `https://saweria.co/faishaltsq?amount=${targetAmount}&message=${encodeURIComponent(msg)}`;
-      window.open(saweriaUrl, '_blank');
-      setStep('check');
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Terjadi kesalahan.';
-      setErrorMessage(msg);
-    } finally {
-      setLoadingQris(false);
+  function handleSelectPlan(plan: 'single' | 'pro') {
+    setSelectedPlan(plan);
+    fetchOrder(plan);
+  }
+
+  function openSaweriaPayment() {
+    if (!orderInfo) return;
+    const msg = selectedPlan === 'single'
+      ? `Akses ${packageId} [ID #${orderInfo.orderId}]`
+      : `Upgrade PRO [ID #${orderInfo.orderId}]`;
+    const url = `https://saweria.co/${orderInfo.saweriaUsername || 'faishaltsq'}?amount=${orderInfo.exactAmount}&message=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  }
+
+  function handleProceedToPay() {
+    openSaweriaPayment();
+    setStep('pay');
+  }
+
+  function copyAmount() {
+    if (orderInfo?.exactAmount) {
+      navigator.clipboard.writeText(String(orderInfo.exactAmount));
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
   }
 
@@ -158,20 +179,20 @@ export function UpgradeProModal({
           <h3 className="text-lg font-bold text-[var(--foreground)]">
             {step === 'success'
               ? 'Pembayaran Berhasil! 🎉'
-              : step === 'qris'
-              ? 'Scan QRIS untuk Membayar'
+              : step === 'pay'
+              ? 'Selesaikan Pembayaran QRIS'
               : triggerPackage
               ? `Buka Akses ${triggerPackage}`
               : 'Upgrade ke Lolos.in PRO'}
           </h3>
           <p className="text-xs text-[var(--muted-foreground)]">
-            {step === 'qris'
-              ? 'Scan menggunakan aplikasi m-Banking atau E-Wallet apa saja'
+            {step === 'pay'
+              ? 'Bayar sesuai nominal unik agar sistem memverifikasi otomatis'
               : 'Pilih paket yang sesuai dengan kebutuhan belajarmu'}
           </p>
         </div>
 
-        {/* STEP 1: Pilih Paket & Info Harga Dinamis */}
+        {/* STEP 1: Pilih Paket & Info */}
         {step === 'info' && (
           <div className="space-y-4">
             {packageId && (
@@ -182,7 +203,7 @@ export function UpgradeProModal({
                 <div className="grid grid-cols-2 gap-2.5">
                   <button
                     type="button"
-                    onClick={() => setSelectedPlan('single')}
+                    onClick={() => handleSelectPlan('single')}
                     className={`p-3 rounded-xl border text-left transition ${
                       selectedPlan === 'single'
                         ? 'border-amber-500 bg-amber-50/60 ring-2 ring-amber-400/30'
@@ -194,7 +215,7 @@ export function UpgradeProModal({
                       Paket Ini Saja
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp 1.000 <span className="text-[10px] font-normal text-amber-600">(Test)</span>
+                      Rp {orderInfo?.exactAmount && selectedPlan === 'single' ? orderInfo.exactAmount.toLocaleString('id-ID') : '1.000'}
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       Buka {triggerPackage || '1 paket'}
@@ -203,7 +224,7 @@ export function UpgradeProModal({
 
                   <button
                     type="button"
-                    onClick={() => setSelectedPlan('pro')}
+                    onClick={() => handleSelectPlan('pro')}
                     className={`p-3 rounded-xl border text-left transition relative overflow-hidden ${
                       selectedPlan === 'pro'
                         ? 'border-amber-500 bg-amber-50/60 ring-2 ring-amber-400/30'
@@ -211,14 +232,14 @@ export function UpgradeProModal({
                     }`}
                   >
                     <span className="absolute top-0 right-0 bg-amber-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-bl">
-                      TEST
+                      AKSES PENUH
                     </span>
                     <div className="flex items-center gap-1.5 font-bold text-xs text-amber-800">
                       <Crown size={14} weight="fill" className="text-amber-500" />
                       PRO All-Access
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp 1.000 <span className="text-[10px] font-normal text-amber-600">(Test)</span>
+                      Rp {orderInfo?.exactAmount && selectedPlan === 'pro' ? orderInfo.exactAmount.toLocaleString('id-ID') : '1.000'}
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       Semua Tryout 1–17
@@ -293,19 +314,18 @@ export function UpgradeProModal({
             <div className="space-y-2 pt-1">
               <button
                 type="button"
-                onClick={handleGenerateQris}
-                disabled={loadingQris}
-                className="btn-primary w-full py-3 flex items-center justify-center gap-2 text-sm font-bold shadow-sm"
+                onClick={handleProceedToPay}
+                disabled={loading || !orderInfo}
+                className="btn-primary w-full py-3 flex items-center justify-center gap-2 text-sm font-bold shadow-sm disabled:opacity-60"
               >
-                {loadingQris ? (
+                {loading ? (
                   <>
-                    <Spinner size={18} className="animate-spin" />
-                    Membuat Kode QRIS...
+                    <Spinner size={18} className="animate-spin" /> Menyiapkan Pesanan...
                   </>
                 ) : (
                   <>
                     <QrCode size={18} weight="bold" />
-                    Bayar Rp {targetAmount.toLocaleString('id-ID')} via QRIS
+                    Bayar Rp {orderInfo?.exactAmount?.toLocaleString('id-ID') || '1.000'} via QRIS
                     <ArrowRight size={14} weight="bold" />
                   </>
                 )}
@@ -314,178 +334,84 @@ export function UpgradeProModal({
           </div>
         )}
 
-        {/* STEP 2: Tampilan QRIS Dinamis */}
-        {step === 'qris' && qrisData && (
+        {/* STEP 2: Instruksi Pembayaran dengan Nominal Unik */}
+        {step === 'pay' && orderInfo && (
           <div className="space-y-4 text-center">
-            {/* Kartu QRIS */}
-            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm inline-block mx-auto">
-              {qrisData.qrDataUrl ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={qrisData.qrDataUrl}
-                  alt="QRIS Saweria Lolos.in"
-                  className="w-56 h-56 mx-auto rounded-lg"
-                />
-              ) : (
-                <div className="w-56 h-56 flex items-center justify-center bg-slate-100 text-slate-400">
-                  <Spinner size={32} className="animate-spin" />
-                </div>
-              )}
-              <div className="mt-2 text-[11px] font-semibold text-slate-700 tracking-wider">
-                NMID: QRIS STANDAR NASIONAL
-              </div>
-            </div>
-
-            {/* Tombol Simpan QRIS Image */}
-            <div>
-              <a
-                href={qrisData.qrDataUrl}
-                download={`QRIS-LolosIn-${qrisData.amountRaw}.png`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold text-[var(--foreground)] hover:bg-[var(--muted)] transition"
-              >
-                Unduh Gambar QRIS
-              </a>
-            </div>
-
-            {/* Detail Nominal */}
+            {/* Box Nominal Unik */}
             <div
-              className="p-3 rounded-xl border text-center space-y-0.5"
+              className="p-4 rounded-2xl border text-center space-y-2"
               style={{ background: 'var(--muted)', borderColor: 'var(--border)' }}
             >
-              <div className="text-[11px] text-[var(--muted-foreground)]">Total yang harus dibayar:</div>
-              <div className="text-2xl font-black text-[var(--foreground)]">
-                Rp {qrisData.amountRaw.toLocaleString('id-ID')}
+              <div className="text-xs text-[var(--muted-foreground)]">Nominal Pembayaran (Tepat):</div>
+              <div className="flex items-center justify-center gap-2">
+                <div className="text-3xl font-black text-[var(--foreground)] tracking-tight">
+                  Rp {orderInfo.exactAmount.toLocaleString('id-ID')}
+                </div>
+                <button
+                  type="button"
+                  onClick={copyAmount}
+                  className="p-1.5 rounded-lg border hover:bg-[var(--card)] text-[var(--primary)] transition"
+                  title="Salin nominal"
+                >
+                  <Copy size={16} />
+                </button>
               </div>
-              <div className="text-[10px] text-amber-700 font-medium">
-                *Termasuk kode unik verifikasi otomatis dari Saweria
+              {copied && <div className="text-emerald-600 text-xs font-semibold">Nominal disalin!</div>}
+
+              {/* Badge Kode Unik */}
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-semibold">
+                <span>Kode Identifikasi ID: <b>+{orderInfo.uniqueCode}</b></span>
               </div>
             </div>
 
-            {/* Panduan Pembayaran */}
-            <div className="text-left text-xs text-[var(--muted-foreground)] space-y-1.5 p-3 rounded-xl border border-dashed">
-              <div className="font-semibold text-[var(--foreground)]">Cara Bayar:</div>
-              <ol className="list-decimal list-inside space-y-0.5 leading-relaxed text-[11px]">
-                <li>Buka aplikasi m-Banking (BCA, Mandiri, BRI, BNI) atau E-Wallet (GoPay, DANA, OVO, ShopeePay).</li>
-                <li>Pilih menu <b>Scan / Bayar QRIS</b>.</li>
-                <li>Arahkan kamera ke kode QR di atas dan selesaikan pembayaran.</li>
-                <li>Halaman ini akan <b>otomatis terbuka</b> setelah pembayaran diterima.</li>
-              </ol>
+            {/* Warning Box */}
+            <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200 text-left text-xs text-amber-900 space-y-1">
+              <div className="font-bold flex items-center gap-1.5">
+                ⚠️ PENTING:
+              </div>
+              <p className="leading-relaxed text-[11px]">
+                Pastikan nominal transfer di Saweria <b>persis Rp {orderInfo.exactAmount.toLocaleString('id-ID')}</b>. Angka <b>+{orderInfo.uniqueCode}</b> di belakang adalah identifikasi unik pesanan Anda agar sistem langsung membuka akses secara otomatis tanpa perlu konfirmasi manual.
+              </p>
             </div>
 
             {/* Waiting Indicator */}
             <div className="flex items-center justify-center gap-2 text-xs text-amber-700 font-medium py-1">
-              <Spinner size={15} className="animate-spin" />
-              Menunggu pembayaran terdeteksi otomatis...
+              <Spinner size={16} className="animate-spin" />
+              Menunggu pembayaran terkonfirmasi otomatis...
             </div>
 
-            {/* Manual Check / Back */}
-            <div className="space-y-2">
+            {/* Actions */}
+            <div className="space-y-2 pt-1">
               <button
                 type="button"
-                onClick={async () => {
-                  setLoadingQris(true);
-                  try {
-                    const res = await fetch(`/api/saweria/check?donationId=${qrisData.donationId}`);
-                    const data = await res.json();
-                    if (data.paid) setStep('success');
-                    else alert('Pembayaran belum terdeteksi. Silakan tunggu beberapa detik lagi.');
-                  } finally {
-                    setLoadingQris(false);
-                  }
-                }}
-                disabled={loadingQris}
-                className="btn-secondary w-full py-2.5 text-xs font-semibold"
-              >
-                {loadingQris ? 'Mengecek...' : 'Sudah Bayar? Cek Status Manual'}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setStep('info')}
-                className="text-xs text-[var(--muted-foreground)] hover:underline block mx-auto"
-              >
-                ← Ganti Nominal / Kembali
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* STEP 2.5: Menunggu Verifikasi Pembayaran Halaman Saweria */}
-        {step === 'check' && (
-          <div className="space-y-4 text-center">
-            <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto">
-              <QrCode size={28} weight="duotone" />
-            </div>
-
-            <div className="space-y-1">
-              <h4 className="text-base font-bold text-[var(--foreground)]">
-                Selesaikan di Halaman Saweria
-              </h4>
-              <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">
-                Halaman pembayaran Saweria telah dibuka di tab baru. Pilih metode pembayaran QRIS/GoPay/OVO dan pastikan kolom pesan berisi email kamu.
-              </p>
-            </div>
-
-            <div
-              className="p-3 rounded-xl border text-xs flex items-center justify-between text-left"
-              style={{ background: 'var(--muted)', borderColor: 'var(--border)' }}
-            >
-              <div>
-                <div className="text-[10px] text-[var(--muted-foreground)]">Email akun:</div>
-                <div className="font-mono font-bold text-[var(--foreground)]">{userEmail || 'Email kamu'}</div>
-              </div>
-              <div className="text-right">
-                <div className="text-[10px] text-[var(--muted-foreground)]">Nominal:</div>
-                <div className="font-extrabold text-[var(--foreground)]">
-                  Rp {targetAmount.toLocaleString('id-ID')}
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-2 pt-2">
-              <button
-                type="button"
-                onClick={async () => {
-                  setLoadingQris(true);
-                  try {
-                    const res = await fetch('/api/user/status');
-                    const data = await res.json();
-                    if (data.is_pro || (targetPackageId && data.unlocked_packages?.includes(targetPackageId))) {
-                      setStep('success');
-                    } else {
-                      alert('Pembayaran belum terverifikasi oleh sistem. Jika baru saja scan, tunggu 1-2 menit agar webhook Saweria memprosesnya.');
-                    }
-                  } finally {
-                    setLoadingQris(false);
-                  }
-                }}
-                disabled={loadingQris}
+                onClick={openSaweriaPayment}
                 className="btn-primary w-full py-3 flex items-center justify-center gap-2 text-sm font-bold"
               >
-                {loadingQris ? (
-                  <>
-                    <Spinner size={16} className="animate-spin" /> Mengecek Status...
-                  </>
-                ) : (
-                  <>
-                    <CheckCircle size={16} weight="bold" />
-                    Saya Sudah Selesai Bayar
-                  </>
-                )}
+                <QrCode size={18} weight="bold" />
+                Buka Halaman Saweria (Scan QRIS)
+                <ArrowRight size={14} weight="bold" />
               </button>
 
               <button
                 type="button"
-                onClick={() => {
-                  const msg = targetPackageId
-                    ? `Akses ${targetPackageId} [${userEmail || 'user'}]`
-                    : `Upgrade PRO [${userEmail || 'user'}]`;
-                  const saweriaUrl = `https://saweria.co/faishaltsq?amount=${targetAmount}&message=${encodeURIComponent(msg)}`;
-                  window.open(saweriaUrl, '_blank');
+                onClick={async () => {
+                  setLoading(true);
+                  try {
+                    const res = await fetch(`/api/payment/order-status?orderId=${orderInfo.orderId}`);
+                    const data = await res.json();
+                    if (data.paid) {
+                      setStep('success');
+                    } else {
+                      alert('Pembayaran belum masuk. Jika baru saja scan, tunggu beberapa detik agar Saweria mengirimkan notifikasi.');
+                    }
+                  } finally {
+                    setLoading(false);
+                  }
                 }}
+                disabled={loading}
                 className="btn-secondary w-full py-2.5 text-xs font-semibold"
               >
-                Buka Ulang Halaman Saweria
+                {loading ? 'Mengecek...' : 'Cek Status Sekarang'}
               </button>
 
               <button
