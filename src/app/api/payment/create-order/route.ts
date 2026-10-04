@@ -44,29 +44,54 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 1. Cek apakah user sudah punya order pending yang aktif untuk tipe paket ini dalam 1 jam terakhir
+    // 1. Cek apakah user sudah punya order pending yang aktif untuk tipe paket ini dalam masa berlaku
     if (userId || userEmail) {
-      const existing = userId
-        ? await sql`
-            SELECT id, exact_amount, unique_code, base_amount, status, expires_at
-            FROM payment_orders
-            WHERE user_id = ${userId} 
-              AND order_type = ${orderType} 
-              AND (package_id = ${packageId} OR (package_id IS NULL AND ${packageId} IS NULL))
-              AND status = 'pending'
-              AND expires_at > NOW()
-            ORDER BY created_at DESC LIMIT 1
-          `
-        : await sql`
-            SELECT id, exact_amount, unique_code, base_amount, status, expires_at
-            FROM payment_orders
-            WHERE LOWER(user_email) = ${userEmail} 
-              AND order_type = ${orderType} 
-              AND (package_id = ${packageId} OR (package_id IS NULL AND ${packageId} IS NULL))
-              AND status = 'pending'
-              AND expires_at > NOW()
-            ORDER BY created_at DESC LIMIT 1
-          `;
+      let existing: Record<string, any>[] = [];
+      if (userId) {
+        existing = packageId
+          ? await sql`
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at
+              FROM payment_orders
+              WHERE user_id = ${userId} 
+                AND order_type = ${orderType} 
+                AND package_id = ${packageId}
+                AND status = 'pending'
+                AND expires_at > NOW()
+              ORDER BY created_at DESC LIMIT 1
+            `
+          : await sql`
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at
+              FROM payment_orders
+              WHERE user_id = ${userId} 
+                AND order_type = ${orderType} 
+                AND package_id IS NULL
+                AND status = 'pending'
+                AND expires_at > NOW()
+              ORDER BY created_at DESC LIMIT 1
+            `;
+      } else if (userEmail) {
+        existing = packageId
+          ? await sql`
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at
+              FROM payment_orders
+              WHERE LOWER(user_email) = ${userEmail} 
+                AND order_type = ${orderType} 
+                AND package_id = ${packageId}
+                AND status = 'pending'
+                AND expires_at > NOW()
+              ORDER BY created_at DESC LIMIT 1
+            `
+          : await sql`
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at
+              FROM payment_orders
+              WHERE LOWER(user_email) = ${userEmail} 
+                AND order_type = ${orderType} 
+                AND package_id IS NULL
+                AND status = 'pending'
+                AND expires_at > NOW()
+              ORDER BY created_at DESC LIMIT 1
+            `;
+      }
 
       if (existing.length > 0) {
         const order = existing[0];
