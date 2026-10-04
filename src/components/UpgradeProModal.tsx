@@ -148,17 +148,8 @@ export function UpgradeProModal({
     fetchOrder(plan);
   }
 
-  function openOfficialQris() {
-    if (!orderInfo) return;
-    const msg = selectedPlan === 'single'
-      ? `Akses ${packageId} [ID #${orderInfo.orderId}]`
-      : `Upgrade PRO [ID #${orderInfo.orderId}]`;
-    const url = `https://saweria.co/${orderInfo.saweriaUsername || 'faishaltsq'}?amount=${orderInfo.exactAmount}&message=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
-  }
 
   function handleProceedToPay() {
-    openOfficialQris();
     setStep('pay');
   }
 
@@ -412,54 +403,39 @@ export function UpgradeProModal({
 
             {/* Actions */}
             <div className="space-y-2">
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  onClick={async () => {
-                    setLoading(true);
-                    try {
-                      const res = await fetch('/api/payment/refresh-qris', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ orderId: orderInfo.orderId }),
-                      });
-                      const data = await res.json();
-                      if (data.qrDataUrl) {
-                        setOrderInfo((prev) => prev ? {
-                          ...prev,
-                          qrDataUrl: data.qrDataUrl,
-                          paymentUrl: data.paymentUrl || prev.paymentUrl,
-                          qrisMode: Boolean(data.qrisMode),
-                        } : null);
-                        alert('QR Code baru berhasil dibuat! Silakan scan ulang.');
-                      } else {
-                        alert('Gagal memperbarui QR: ' + (data.error || 'Coba lagi'));
-                      }
-                    } catch {
-                      alert('Gagal refresh QR. Coba lagi.');
-                    } finally {
-                      setLoading(false);
+              <button
+                type="button"
+                onClick={async () => {
+                  setLoading(true);
+                  try {
+                    const res = await fetch('/api/payment/refresh-qris', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ orderId: orderInfo.orderId }),
+                    });
+                    const data = await res.json();
+                    if (data.qrDataUrl) {
+                      setOrderInfo((prev) => prev ? {
+                        ...prev,
+                        qrDataUrl: data.qrDataUrl,
+                        paymentUrl: data.paymentUrl || prev.paymentUrl,
+                        qrisMode: Boolean(data.qrisMode),
+                      } : null);
+                    } else {
+                      alert('Gagal memperbarui QR: ' + (data.error || 'Coba lagi'));
                     }
-                  }}
-                  disabled={loading}
-                  className="btn-secondary flex-1 py-2 text-xs font-semibold flex items-center justify-center gap-1.5"
-                  title="Jika QR ditolak bank atau sudah kadaluarsa, klik ini untuk buat QR baru"
-                >
-                  <ArrowClockwise size={14} className={loading ? 'animate-spin' : ''} />
-                  QR Kadaluarsa? Refresh
-                </button>
-
-                <a
-                  href={orderInfo.paymentUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary flex-1 py-2 text-xs font-semibold flex items-center justify-center gap-1.5 text-center"
-                  title="Alternatif bayar langsung via web Saweria"
-                >
-                  <QrCode size={14} />
-                  Bayar via Web
-                </a>
-              </div>
+                  } catch {
+                    alert('Gagal refresh QR. Coba lagi.');
+                  } finally {
+                    setLoading(false);
+                  }
+                }}
+                disabled={loading}
+                className="btn-secondary w-full py-2 text-xs font-semibold flex items-center justify-center gap-1.5"
+              >
+                <ArrowClockwise size={14} className={loading ? 'animate-spin' : ''} />
+                {loading ? 'Memperbarui QR...' : 'QR Tidak Terbaca? Refresh'}
+              </button>
 
               <button
                 type="button"
