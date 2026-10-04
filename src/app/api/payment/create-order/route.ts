@@ -156,7 +156,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 2. Cari kode unik nominal yang belum terpakai (sequential increment 1, 2, 3...)
+    // 2. Cari kode unik nominal random (1–999) yang belum terpakai
     const usedCodesRows = await sql`
       SELECT unique_code FROM payment_orders
       WHERE base_amount = ${baseAmount}
@@ -165,10 +165,12 @@ export async function POST(req: NextRequest) {
     `;
     const usedCodes = new Set(usedCodesRows.map((r: Record<string, any>) => Number(r.unique_code)));
 
-    let uniqueCode = 1;
-    while (usedCodes.has(uniqueCode) && uniqueCode < 999) {
-      uniqueCode++;
-    }
+    let uniqueCode: number;
+    let attempts = 0;
+    do {
+      uniqueCode = Math.floor(Math.random() * 999) + 1; // 1–999
+      attempts++;
+    } while (usedCodes.has(uniqueCode) && attempts < 100);
 
     const exactAmount = baseAmount + uniqueCode;
 
