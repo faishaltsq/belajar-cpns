@@ -109,14 +109,6 @@ export default function Navbar() {
                 </Link>
               </>
             )}
-            <button
-              onClick={() => setReportModalOpen(true)}
-              className="p-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors ml-1"
-              title="Laporkan Masalah / Bantuan"
-              aria-label="Laporkan Masalah"
-            >
-              <WarningCircle size={18} weight="duotone" />
-            </button>
           </div>
         )}
 
