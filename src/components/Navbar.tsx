@@ -2,9 +2,10 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { SignOut, User, List, X } from '@phosphor-icons/react';
+import { SignOut, User, List, X, WarningCircle } from '@phosphor-icons/react';
 import { useUser } from '@/lib/useUser';
 import { useState } from 'react';
+import { ReportIssueModal } from './ReportIssueModal';
 
 const NAV_LINKS = [
   { href: '/', label: 'Beranda' },
@@ -18,6 +19,7 @@ export default function Navbar() {
   const { user, loading, logout } = useUser();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [reportModalOpen, setReportModalOpen] = useState(false);
 
   // Sembunyikan Navbar HANYA saat pengerjaan ujian aktif, bukan di halaman hasil
   const isActiveExam = Boolean(pathname?.startsWith('/simulasi/') && !pathname?.startsWith('/simulasi/hasil'));
@@ -107,6 +109,14 @@ export default function Navbar() {
                 </Link>
               </>
             )}
+            <button
+              onClick={() => setReportModalOpen(true)}
+              className="p-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors ml-1"
+              title="Laporkan Masalah / Bantuan"
+              aria-label="Laporkan Masalah"
+            >
+              <WarningCircle size={18} weight="duotone" />
+            </button>
           </div>
         )}
 
@@ -138,6 +148,15 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
+          <button
+            onClick={() => {
+              setMobileOpen(false);
+              setReportModalOpen(true);
+            }}
+            className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-left text-amber-700 hover:bg-[var(--muted)] rounded-lg"
+          >
+            <WarningCircle size={16} weight="bold" /> Laporkan Bug / Bantuan
+          </button>
           <div className="h-px my-1" style={{ background: 'var(--border)' }} />
           {user ? (
             <button
@@ -158,6 +177,8 @@ export default function Navbar() {
           )}
         </div>
       )}
+
+      <ReportIssueModal isOpen={reportModalOpen} onClose={() => setReportModalOpen(false)} />
     </header>
   );
 }

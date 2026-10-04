@@ -3,6 +3,7 @@ import { Outfit } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { SupportFloatingButton } from '@/components/SupportFloatingButton';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={outfit.className}>
         <Navbar />
         {children}
+        <SupportFloatingButton />
         <Footer />
       </body>
     </html>
