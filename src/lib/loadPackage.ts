@@ -86,7 +86,7 @@ export async function loadPackage(id: string): Promise<Question[]> {
           }
           return row;
         });
-        return normalized as unknown as Question[];
+        return await applyFiguralOverrides(normalized as unknown as Question[]);
       }
     } catch {
       // Fallback ke file lokal jika query gagal
