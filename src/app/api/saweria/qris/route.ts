@@ -46,13 +46,31 @@ export async function POST(req: NextRequest) {
       : `Upgrade PRO [${userEmail || 'user'}]`;
 
     // Generate QRIS via Saweria
-    const qris = await createSaweriaQris({
-      saweriaUsername: customUsername,
-      amount,
-      message: msg,
-      donorName,
-      donorEmail: userEmail || 'user@lolos.in',
-    });
+    let qris;
+    try {
+      qris = await createSaweriaQris({
+        saweriaUsername: customUsername,
+        amount,
+        message: msg,
+        donorName,
+        donorEmail: userEmail || 'user@lolos.in',
+      });
+    } catch (qrisErr) {
+      // Graceful fallback ke Saweria Page jika API donation dibatasi oleh Cloudflare
+      const activeUsername = customUsername || process.env.SAWERIA_USERNAME || 'faishaltsq';
+      const saweriaUrl = `https://saweria.co/${activeUsername}?amount=${amount}&message=${encodeURIComponent(msg)}`;
+      return NextResponse.json({
+        success: true,
+        fallback: true,
+        saweriaUrl,
+        saweriaUsername: activeUsername,
+        amount,
+        amountRaw: amount,
+        packageId,
+        userEmail,
+        message: 'Silakan lanjutkan pembayaran melalui halaman Saweria resmi.',
+      });
+    }
 
     // Simpan pending transaksi ke DB
     if (sql) {

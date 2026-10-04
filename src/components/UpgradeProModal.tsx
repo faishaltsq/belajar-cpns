@@ -40,11 +40,11 @@ export function UpgradeProModal({
   packageId,
 }: UpgradeProModalProps) {
   const [selectedPlan, setSelectedPlan] = useState<'single' | 'pro'>('pro');
-  const [step, setStep] = useState<'info' | 'qris' | 'success'>('info');
+  const [step, setStep] = useState<'info' | 'qris' | 'check' | 'success'>('info');
   const [loadingQris, setLoadingQris] = useState(false);
   const [qrisData, setQrisData] = useState<QrisResponse | null>(null);
   const [userEmail, setUserEmail] = useState('');
-  const [saweriaUsername, setSaweriaUsername] = useState('sandhikagalih');
+  const [saweriaUsername, setSaweriaUsername] = useState('faishaltsq');
   const [showConfig, setShowConfig] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -123,8 +123,15 @@ export function UpgradeProModal({
         throw new Error(data.error || 'Gagal membuat QRIS pembayaran.');
       }
 
-      setQrisData(data);
       if (data.saweriaUsername) setSaweriaUsername(data.saweriaUsername);
+
+      if (data.fallback && data.saweriaUrl) {
+        window.open(data.saweriaUrl, '_blank');
+        setStep('check');
+        return;
+      }
+
+      setQrisData(data);
       setStep('qris');
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Terjadi kesalahan.';
@@ -428,6 +435,89 @@ export function UpgradeProModal({
                 className="text-xs text-[var(--muted-foreground)] hover:underline block mx-auto"
               >
                 ← Ganti Nominal / Kembali
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* STEP 2.5: Menunggu Verifikasi Pembayaran Halaman Saweria */}
+        {step === 'check' && (
+          <div className="space-y-4 text-center">
+            <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto">
+              <QrCode size={28} weight="duotone" />
+            </div>
+
+            <div className="space-y-1">
+              <h4 className="text-base font-bold text-[var(--foreground)]">
+                Selesaikan di Halaman Saweria
+              </h4>
+              <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">
+                Halaman pembayaran Saweria telah dibuka di tab baru. Pilih metode pembayaran QRIS/GoPay/OVO dan pastikan kolom pesan berisi email kamu.
+              </p>
+            </div>
+
+            <div
+              className="p-3 rounded-xl border text-xs flex items-center justify-between text-left"
+              style={{ background: 'var(--muted)', borderColor: 'var(--border)' }}
+            >
+              <div>
+                <div className="text-[10px] text-[var(--muted-foreground)]">Email akun:</div>
+                <div className="font-mono font-bold text-[var(--foreground)]">{userEmail || 'Email kamu'}</div>
+              </div>
+              <div className="text-right">
+                <div className="text-[10px] text-[var(--muted-foreground)]">Nominal:</div>
+                <div className="font-extrabold text-[var(--foreground)]">
+                  Rp {targetAmount.toLocaleString('id-ID')}
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2 pt-2">
+              <button
+                type="button"
+                onClick={async () => {
+                  setLoadingQris(true);
+                  try {
+                    const res = await fetch('/api/user/status');
+                    const data = await res.json();
+                    if (data.is_pro || (targetPackageId && data.unlocked_packages?.includes(targetPackageId))) {
+                      setStep('success');
+                    } else {
+                      alert('Pembayaran belum terverifikasi oleh sistem. Jika baru saja scan, tunggu 1-2 menit agar webhook Saweria memprosesnya.');
+                    }
+                  } finally {
+                    setLoadingQris(false);
+                  }
+                }}
+                disabled={loadingQris}
+                className="btn-primary w-full py-3 flex items-center justify-center gap-2 text-sm font-bold"
+              >
+                {loadingQris ? (
+                  <>
+                    <Spinner size={16} className="animate-spin" /> Mengecek Status...
+                  </>
+                ) : (
+                  <>
+                    <CheckCircle size={16} weight="bold" />
+                    Saya Sudah Selesai Bayar
+                  </>
+                )}
+              </button>
+
+              <button
+                type="button"
+                onClick={openDirectSaweria}
+                className="btn-secondary w-full py-2.5 text-xs font-semibold"
+              >
+                Buka Ulang Halaman Saweria
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setStep('info')}
+                className="text-xs text-[var(--muted-foreground)] hover:underline block mx-auto pt-1"
+              >
+                ← Kembali ke Pilihan Paket
               </button>
             </div>
           </div>
