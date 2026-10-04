@@ -7,28 +7,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Merupakan organisasi politik pertama yang secara tegas memperjuangkan kemerdekaan Hindia dari Belanda",
-        "score": 5
-      },
-      {
-        "id": "B",
         "text": "Memfokuskan perjuangan secara eksklusif pada pembenahan sistem pendidikan kaum bumiputera",
         "score": 0
       },
       {
-        "id": "C",
-        "text": "Menjadi wadah perkumpulan para pedagang Islam untuk mematahkan monopoli asing",
+        "id": "B",
+        "text": "Berhasil mendesak ratu Belanda menerapkan Politik Etis secara penuh",
         "score": 0
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Mengedepankan perjuangan bersenjata terorganisir untuk menggulingkan pemerintah kolonial",
         "score": 0
       },
       {
-        "id": "E",
-        "text": "Berhasil mendesak ratu Belanda menerapkan Politik Etis secara penuh",
+        "id": "D",
+        "text": "Menjadi wadah perkumpulan para pedagang Islam untuk mematahkan monopoli asing",
         "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Merupakan organisasi politik pertama yang secara tegas memperjuangkan kemerdekaan Hindia dari Belanda",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Indische Partij (1912) didirikan oleh E.F.E. Douwes Dekker, Tjipto Mangoenkoesoemo, dan Suwardi Suryaningrat. Organisasi ini berstatus partai politik pertama di Hindia Belanda yang secara terang-terangan menuntut kemerdekaan dengan semboyan 'Indië los van Holland' dan 'Indië voor Indiërs'."
@@ -46,22 +46,22 @@
       },
       {
         "id": "B",
-        "text": "Medan Prijaji",
-        "score": 5
-      },
-      {
-        "id": "C",
-        "text": "Oetoesan Hindia",
-        "score": 0
-      },
-      {
-        "id": "D",
         "text": "Fikiran Ra'jat",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "C",
         "text": "Bintang Timoer",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Medan Prijaji",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Oetoesan Hindia",
         "score": 0
       }
     ],
@@ -75,28 +75,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Nasionalisme etnis",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "Nasionalisme romantik",
-        "score": 0
-      },
-      {
-        "id": "C",
-        "text": "Nasionalisme kewarganegaraan (civic nationalism)",
-        "score": 5
-      },
-      {
-        "id": "D",
         "text": "Nasionalisme kultural",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "B",
+        "text": "Nasionalisme etnis",
+        "score": 0
+      },
+      {
+        "id": "C",
         "text": "Nasionalisme integratif",
         "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Nasionalisme romantik",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Nasionalisme kewarganegaraan (civic nationalism)",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Civic nationalism (nasionalisme kewarganegaraan/sipil) mendefinisikan bangsa sebagai komunitas politik yang bersatu atas dasar komitmen terhadap nilai-nilai politik bersama, supremasi hukum, dan konstitusi negara, bukan berdasarkan garis keturunan biologis atau etnisitas."
@@ -109,28 +109,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Menghapuskan eksistensi bahasa-bahasa daerah di wilayah Nusantara",
-        "score": 0
-      },
-      {
-        "id": "B",
         "text": "Menjadikan bahasa Melayu tinggi sebagai satu-satunya bahasa resmi administrasi Hindia Belanda",
         "score": 0
       },
       {
-        "id": "C",
-        "text": "Membangun medium komunikasi dan integrasi identitas bersama di tengah heterogenitas suku bangsa",
-        "score": 5
+        "id": "B",
+        "text": "Menyesuaikan standar linguistik Nusantara dengan perkembangan bahasa internasional",
+        "score": 0
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Mempermudah penyebaran paham ideologi sosialisme-komunisme internasional",
         "score": 0
       },
       {
-        "id": "E",
-        "text": "Menyesuaikan standar linguistik Nusantara dengan perkembangan bahasa internasional",
+        "id": "D",
+        "text": "Menghapuskan eksistensi bahasa-bahasa daerah di wilayah Nusantara",
         "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Membangun medium komunikasi dan integrasi identitas bersama di tengah heterogenitas suku bangsa",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Putusan ikrar ketiga Sumpah Pemuda berfungsi politis dan sosiologis sebagai jembatan perekat identitas nasional untuk mematahkan sekat primordialisme kedaerahan melalui sarana komunikasi bersama lintas etnis."
@@ -143,27 +143,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Chauvinisme",
-        "score": 5
+        "text": "Separatisme",
+        "score": 0
       },
       {
         "id": "B",
-        "text": "Etnosentrisme",
-        "score": 0
-      },
-      {
-        "id": "C",
-        "text": "Primordialisme",
-        "score": 0
-      },
-      {
-        "id": "D",
         "text": "Xenofobia",
         "score": 0
       },
       {
+        "id": "C",
+        "text": "Etnosentrisme",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Chauvinisme",
+        "score": 5
+      },
+      {
         "id": "E",
-        "text": "Separatisme",
+        "text": "Primordialisme",
         "score": 0
       }
     ],
@@ -177,7 +177,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Pemberian subsidi langsung tunai secara permanen kepada seluruh pemilik usaha rintisan",
+        "text": "Penetapan harga komoditas strategis secara sepihak oleh organisasi kemasyarakatan",
         "score": 0
       },
       {
@@ -187,17 +187,17 @@
       },
       {
         "id": "C",
-        "text": "Pelarangan menyeluruh terhadap masuknya barang impor dari negara mitra dagang",
+        "text": "Pemberian subsidi langsung tunai secara permanen kepada seluruh pemilik usaha rintisan",
         "score": 0
       },
       {
         "id": "D",
-        "text": "Nasionalisasi seluruh aset perusahaan multinasional yang beroperasi di wilayah Indonesia",
+        "text": "Pelarangan menyeluruh terhadap masuknya barang impor dari negara mitra dagang",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Penetapan harga komoditas strategis secara sepihak oleh organisasi kemasyarakatan",
+        "text": "Nasionalisasi seluruh aset perusahaan multinasional yang beroperasi di wilayah Indonesia",
         "score": 0
       }
     ],
@@ -211,18 +211,18 @@
     "options": [
       {
         "id": "A",
-        "text": "Jujur, disiplin, dan tanggung jawab",
-        "score": 5
+        "text": "Kerja keras, mandiri, dan sederhana",
+        "score": 0
       },
       {
         "id": "B",
-        "text": "Adil, berani, dan peduli",
+        "text": "Disiplin, mandiri, dan peduli",
         "score": 0
       },
       {
         "id": "C",
-        "text": "Kerja keras, mandiri, dan sederhana",
-        "score": 0
+        "text": "Jujur, disiplin, dan tanggung jawab",
+        "score": 5
       },
       {
         "id": "D",
@@ -231,7 +231,7 @@
       },
       {
         "id": "E",
-        "text": "Disiplin, mandiri, dan peduli",
+        "text": "Adil, berani, dan peduli",
         "score": 0
       }
     ],
@@ -245,7 +245,7 @@
     "options": [
       {
         "id": "A",
-        "text": "7 hari kerja sejak tanggal gratifikasi diterima",
+        "text": "60 hari kerja sejak tanggal gratifikasi diterima",
         "score": 0
       },
       {
@@ -265,7 +265,7 @@
       },
       {
         "id": "E",
-        "text": "60 hari kerja sejak tanggal gratifikasi diterima",
+        "text": "7 hari kerja sejak tanggal gratifikasi diterima",
         "score": 0
       }
     ],
@@ -279,27 +279,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Wilayah Bebas Korupsi",
-        "score": 0
-      },
-      {
-        "id": "B",
         "text": "Wilayah Bebas dari Korupsi",
         "score": 5
       },
       {
+        "id": "B",
+        "text": "Wilayah Bebas Korupsi",
+        "score": 0
+      },
+      {
         "id": "C",
-        "text": "Wadah Birokrasi Kredibel",
+        "text": "Wilayah Bersih Korupsi",
         "score": 0
       },
       {
         "id": "D",
-        "text": "Wilayah Birokrasi Korupsi Nol",
+        "text": "Wadah Birokrasi Kredibel",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Wilayah Bersih Korupsi",
+        "text": "Wilayah Birokrasi Korupsi Nol",
         "score": 0
       }
     ],
@@ -313,27 +313,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Penyalahgunaan wewenang absolut",
+        "text": "Pelanggaran disiplin berat",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Maladministrasi prosedural",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "Benturan kepentingan",
         "score": 5
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Gratifikasi terselubung",
         "score": 0
       },
       {
+        "id": "D",
+        "text": "Penyalahgunaan wewenang absolut",
+        "score": 0
+      },
+      {
         "id": "E",
-        "text": "Pelanggaran disiplin berat",
+        "text": "Maladministrasi prosedural",
         "score": 0
       }
     ],
@@ -347,27 +347,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Cepat menyesuaikan diri menghadapi perubahan zaman",
+        "text": "Memberikan kesempatan kepada berbagai pihak untuk berkontribusi",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Menghargai setiap orang apa pun latar belakangnya",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "Melaksanakan tugas dengan jujur, bertanggung jawab, cermat, disiplin, dan berintegritas tinggi",
         "score": 5
       },
       {
+        "id": "C",
+        "text": "Menghargai setiap orang apa pun latar belakangnya",
+        "score": 0
+      },
+      {
         "id": "D",
-        "text": "Memegang teguh ideologi Pancasila dan UUD NRI Tahun 1945",
+        "text": "Cepat menyesuaikan diri menghadapi perubahan zaman",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Memberikan kesempatan kepada berbagai pihak untuk berkontribusi",
+        "text": "Memegang teguh ideologi Pancasila dan UUD NRI Tahun 1945",
         "score": 0
       }
     ],
@@ -381,7 +381,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Komisi Nasional Hak Asasi Manusia (Komnas HAM)",
+        "text": "Komisi Kejaksaan Republik Indonesia",
         "score": 0
       },
       {
@@ -391,17 +391,17 @@
       },
       {
         "id": "C",
-        "text": "Komisi Kejaksaan Republik Indonesia",
+        "text": "Komisi Nasional Hak Asasi Manusia (Komnas HAM)",
         "score": 0
       },
       {
         "id": "D",
-        "text": "Ombudsman Republik Indonesia (ORI)",
+        "text": "Badan Pembinaan Ideologi Pancasila (BPIP)",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Badan Pembinaan Ideologi Pancasila (BPIP)",
+        "text": "Ombudsman Republik Indonesia (ORI)",
         "score": 0
       }
     ],
@@ -415,27 +415,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Tiap-tiap warga negara berhak dan wajib ikut serta dalam usaha pertahanan dan keamanan negara",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "Setiap warga negara berhak mendapatkan perlindungan hukum dan pembelaan peradilan",
         "score": 0
       },
       {
-        "id": "D",
+        "id": "B",
+        "text": "Negara menjamin kemerdekaan tiap-tiap penduduk untuk memeluk agamanya masing-masing",
+        "score": 0
+      },
+      {
+        "id": "C",
         "text": "Bumi, air, dan kekayaan alam dikuasai negara untuk kemakmuran rakyat",
         "score": 0
       },
       {
+        "id": "D",
+        "text": "Setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara",
+        "score": 5
+      },
+      {
         "id": "E",
-        "text": "Negara menjamin kemerdekaan tiap-tiap penduduk untuk memeluk agamanya masing-masing",
+        "text": "Tiap-tiap warga negara berhak dan wajib ikut serta dalam usaha pertahanan dan keamanan negara",
         "score": 0
       }
     ],
@@ -449,27 +449,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Cinta tanah air",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "Sadar berbangsa dan bernegara",
-        "score": 0
-      },
-      {
-        "id": "C",
-        "text": "Setia pada Pancasila sebagai ideologi negara",
-        "score": 0
-      },
-      {
-        "id": "D",
         "text": "Mengutamakan kepentingan kelompok di atas kepentingan bangsa",
         "score": 5
       },
       {
-        "id": "E",
+        "id": "B",
+        "text": "Cinta tanah air",
+        "score": 0
+      },
+      {
+        "id": "C",
         "text": "Kemampuan awal bela negara",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sadar berbangsa dan bernegara",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Setia pada Pancasila sebagai ideologi negara",
         "score": 0
       }
     ],
@@ -483,7 +483,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Pendidikan kewarganegaraan",
+        "text": "Pengabdian sebagai prajurit TNI secara sukarela atau wajib",
         "score": 0
       },
       {
@@ -493,7 +493,7 @@
       },
       {
         "id": "C",
-        "text": "Pengabdian sebagai prajurit TNI secara sukarela atau wajib",
+        "text": "Pendidikan kewarganegaraan",
         "score": 0
       },
       {
@@ -517,12 +517,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Komponen pendukung pertahanan",
+        "text": "Komponen cadangan pertahanan",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Komponen cadangan pertahanan",
+        "text": "Komponen pendukung pertahanan",
         "score": 0
       },
       {
@@ -551,27 +551,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Cinta tanah air",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Kemampuan awal bela negara",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "Sadar berbangsa dan bernegara",
         "score": 0
       },
       {
+        "id": "B",
+        "text": "Setia kepada konstitusi negara",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Cinta tanah air",
+        "score": 5
+      },
+      {
         "id": "D",
-        "text": "Rela berkorban demi kepentingan sesama",
+        "text": "Kemampuan awal bela negara",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Setia kepada konstitusi negara",
+        "text": "Rela berkorban demi kepentingan sesama",
         "score": 0
       }
     ],
@@ -595,7 +595,7 @@
       },
       {
         "id": "C",
-        "text": "Komponen Pengganti",
+        "text": "Milisi Rakyat",
         "score": 0
       },
       {
@@ -605,7 +605,7 @@
       },
       {
         "id": "E",
-        "text": "Milisi Rakyat",
+        "text": "Komponen Pengganti",
         "score": 0
       }
     ],
@@ -619,18 +619,18 @@
     "options": [
       {
         "id": "A",
-        "text": "Sosio-nasionalisme, Sosio-demokrasi, dan Ketuhanan",
-        "score": 5
+        "text": "Sosio-religius, Sosio-kultural, dan Demokrasi",
+        "score": 0
       },
       {
         "id": "B",
-        "text": "Nasionalisme, Internasionalisme, dan Mufakat",
+        "text": "Kesejahteraan Sosial, Kebangsaan, dan Musyawarah",
         "score": 0
       },
       {
         "id": "C",
-        "text": "Kesejahteraan Sosial, Kebangsaan, dan Musyawarah",
-        "score": 0
+        "text": "Sosio-nasionalisme, Sosio-demokrasi, dan Ketuhanan",
+        "score": 5
       },
       {
         "id": "D",
@@ -639,7 +639,7 @@
       },
       {
         "id": "E",
-        "text": "Sosio-religius, Sosio-kultural, dan Demokrasi",
+        "text": "Nasionalisme, Internasionalisme, dan Mufakat",
         "score": 0
       }
     ],
@@ -653,12 +653,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Sila Pertama",
+        "text": "Sila Kedua",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Sila Kedua",
+        "text": "Sila Pertama",
         "score": 0
       },
       {
@@ -668,13 +668,13 @@
       },
       {
         "id": "D",
-        "text": "Sila Keempat",
-        "score": 0
+        "text": "Sila Kelima",
+        "score": 5
       },
       {
         "id": "E",
-        "text": "Sila Kelima",
-        "score": 5
+        "text": "Sila Keempat",
+        "score": 0
       }
     ],
     "explanation": "Pembahasan: Berdasarkan ketetapan butir-butir Pancasila, sikap suka menghargai hasil karya orang lain demi kemajuan dan kesejahteraan bersama adalah implementasi Sila Kelima (Keadilan Sosial bagi Seluruh Rakyat Indonesia)."
@@ -687,28 +687,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Majelis Permusyawaratan Rakyat",
+        "text": "Kejaksaan Agung",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Mahkamah Konstitusi",
-        "score": 5
-      },
-      {
-        "id": "C",
-        "text": "Mahkamah Agung",
-        "score": 0
-      },
-      {
-        "id": "D",
         "text": "Komisi Yudisial",
         "score": 0
       },
       {
-        "id": "E",
-        "text": "Kejaksaan Agung",
+        "id": "C",
+        "text": "Majelis Permusyawaratan Rakyat",
         "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mahkamah Agung",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Mahkamah Konstitusi",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Pasal 7B ayat (1) UUD 1945 menyatakan usul pemberhentian Presiden/Wakil Presiden diajukan DPR ke MK untuk diperiksa, diadili, dan diputus sebelum dibawa ke sidang paripurna MPR."
@@ -721,8 +721,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Bentuk Pemerintahan Republik",
-        "score": 0
+        "text": "Bentuk Negara Kesatuan Republik Indonesia",
+        "score": 5
       },
       {
         "id": "B",
@@ -731,17 +731,17 @@
       },
       {
         "id": "C",
-        "text": "Bentuk Negara Kesatuan Republik Indonesia",
-        "score": 5
-      },
-      {
-        "id": "D",
         "text": "Kedaulatan di tangan rakyat",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "D",
         "text": "Pembatasan masa jabatan presiden",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Bentuk Pemerintahan Republik",
         "score": 0
       }
     ],
@@ -755,27 +755,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Singasari",
+        "text": "Sriwijaya",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Majapahit",
-        "score": 5
-      },
-      {
-        "id": "C",
         "text": "Kediri",
         "score": 0
       },
       {
-        "id": "D",
-        "text": "Mataram Kuno",
+        "id": "C",
+        "text": "Singasari",
         "score": 0
       },
       {
+        "id": "D",
+        "text": "Majapahit",
+        "score": 5
+      },
+      {
         "id": "E",
-        "text": "Sriwijaya",
+        "text": "Mataram Kuno",
         "score": 0
       }
     ],
@@ -789,13 +789,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Deklarasi Djuanda",
-        "score": 5
+        "text": "Konferensi Meja Bundar",
+        "score": 0
       },
       {
         "id": "B",
-        "text": "Konferensi Meja Bundar",
-        "score": 0
+        "text": "Deklarasi Djuanda",
+        "score": 5
       },
       {
         "id": "C",
@@ -804,12 +804,12 @@
       },
       {
         "id": "D",
-        "text": "Traktat Sumatra",
+        "text": "Deklarasi Bangkok",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Deklarasi Bangkok",
+        "text": "Traktat Sumatra",
         "score": 0
       }
     ],
@@ -823,8 +823,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Kerja sama antarlembaga negara berjalan harmonis.",
-        "score": 5
+        "text": "Kerjasama antarlembaga negara berjalan harmonis.",
+        "score": 0
       },
       {
         "id": "B",
@@ -833,17 +833,17 @@
       },
       {
         "id": "C",
+        "text": "Kerja sama antarlembaga negara berjalan harmonis.",
+        "score": 5
+      },
+      {
+        "id": "D",
         "text": "Kerja-sama antar-lembaga negara berjalan harmonis.",
         "score": 0
       },
       {
-        "id": "D",
-        "text": "Kerja sama antar lembaga negara berjalan harmonis.",
-        "score": 0
-      },
-      {
         "id": "E",
-        "text": "Kerjasama antarlembaga negara berjalan harmonis.",
+        "text": "Kerja sama antar lembaga negara berjalan harmonis.",
         "score": 0
       }
     ],
@@ -857,27 +857,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Integrasi pelayanan publik terpadu di era digital.",
-        "score": 0
-      },
-      {
-        "id": "B",
         "text": "Upaya pemerintah meningkatkan literasi digital aparatur sipil negara.",
         "score": 5
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "Penyelenggaraan pelatihan kompetensi teknologi informasi berkala.",
         "score": 0
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Penyediaan fasilitas penunjang sistem kerja daring pemerintah.",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "D",
         "text": "Tantangan kementerian dalam menyongsong transformasi birokrasi.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Integrasi pelayanan publik terpadu di era digital.",
         "score": 0
       }
     ],
@@ -891,7 +891,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Kepada para peserta diklat diharapkan berkumpul tepat waktu.",
+        "text": "Dalam pertemuan tahunan menetapkan target kinerja baru.",
         "score": 0
       },
       {
@@ -901,18 +901,18 @@
       },
       {
         "id": "C",
-        "text": "Dalam pertemuan tahunan menetapkan target kinerja baru.",
+        "text": "Kepada para peserta diklat diharapkan berkumpul tepat waktu.",
         "score": 0
       },
       {
         "id": "D",
-        "text": "Seluruh pegawai wajib mengunggah laporan tahunan tepat waktu.",
-        "score": 5
+        "text": "Demi untuk menjaga ketertiban, pintu gerbang ditutup pukul delapan.",
+        "score": 0
       },
       {
         "id": "E",
-        "text": "Demi untuk menjaga ketertiban, pintu gerbang ditutup pukul delapan.",
-        "score": 0
+        "text": "Seluruh pegawai wajib mengunggah laporan tahunan tepat waktu.",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Kalimat D memiliki Subjek ('Seluruh pegawai') dan Predikat ('wajib mengunggah') yang jelas tanpa preposisi perusak struktur. A kehilangan subjek karena 'Kepada', B mubazir 'membahas tentang', C kehilangan subjek karena 'Dalam', E pleonasme 'demi untuk'."
@@ -925,27 +925,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Meskipun cuaca buruk, kapal penyeberangan tetap beroperasi.",
-        "score": 5
-      },
-      {
-        "id": "B",
         "text": "Kapal penyeberangan tetap beroperasi, meskipun cuaca buruk.",
         "score": 0
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "Pegawai harus disiplin, karena telah disumpah jabatan.",
         "score": 0
       },
       {
-        "id": "D",
-        "text": "Instansi membutuhkan tenaga analis, arsiparis dan pranata humas.",
+        "id": "C",
+        "text": "Jadi target penerimaan pajak semester ini tercapai.",
         "score": 0
       },
       {
+        "id": "D",
+        "text": "Meskipun cuaca buruk, kapal penyeberangan tetap beroperasi.",
+        "score": 5
+      },
+      {
         "id": "E",
-        "text": "Jadi target penerimaan pajak semester ini tercapai.",
+        "text": "Instansi membutuhkan tenaga analis, arsiparis dan pranata humas.",
         "score": 0
       }
     ],
@@ -959,27 +959,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Hierarki, konkret, risiko, kualitas.",
-        "score": 5
-      },
-      {
-        "id": "B",
         "text": "Hirarki, konkrit, risiko, kwalitas.",
         "score": 0
       },
       {
+        "id": "B",
+        "text": "Hierarki, konkret, risiko, kualitas.",
+        "score": 5
+      },
+      {
         "id": "C",
-        "text": "Hierarki, konkrit, resiko, kualitas.",
+        "text": "Hierarki, konkret, resiko, kualitas.",
         "score": 0
       },
       {
         "id": "D",
-        "text": "Hirarki, konkret, risiko, kwalitas.",
+        "text": "Hierarki, konkrit, resiko, kualitas.",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Hierarki, konkret, resiko, kualitas.",
+        "text": "Hirarki, konkret, risiko, kwalitas.",
         "score": 0
       }
     ],
@@ -993,27 +993,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Para pejabat kementerian menghadiri upacara peringatan hari nasional.",
-        "score": 0
-      },
-      {
-        "id": "B",
         "text": "Sangat banyak sekali kendala yang dihadapi dalam integrasi sistem baru.",
         "score": 5
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "Pimpinan mengimbau pegawai untuk menjaga integritas dan profesionalitas.",
         "score": 0
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Panitia telah merancang jadwal kegiatan secara terperinci.",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "D",
         "text": "Peserta menyerahkan berkas persyaratan kepada petugas verifikasi.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Para pejabat kementerian menghadiri upacara peringatan hari nasional.",
         "score": 0
       }
     ],
@@ -1027,27 +1027,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Gerabah",
-        "score": 5
-      },
-      {
-        "id": "B",
         "text": "Pasir",
         "score": 0
       },
       {
-        "id": "C",
-        "text": "Batu",
-        "score": 0
-      },
-      {
-        "id": "D",
+        "id": "B",
         "text": "Keramik sintetis",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "C",
         "text": "Semen",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gerabah",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Batu",
         "score": 0
       }
     ],
@@ -1061,28 +1061,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Kecepatan angin",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "Tekanan udara",
-        "score": 5
-      },
-      {
-        "id": "C",
         "text": "Suhu tubuh",
         "score": 0
       },
       {
-        "id": "D",
+        "id": "B",
         "text": "Kelembapan tanah",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "C",
         "text": "Kedalaman air",
         "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kecepatan angin",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tekanan udara",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Stetoskop adalah instrumen untuk memeriksa detak jantung. Barometer adalah instrumen untuk mengukur tekanan udara."
@@ -1095,23 +1095,23 @@
     "options": [
       {
         "id": "A",
-        "text": "Katak",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Ikan",
+        "text": "Nyamuk",
         "score": 0
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "Larva",
         "score": 0
       },
       {
-        "id": "D",
-        "text": "Nyamuk",
+        "id": "C",
+        "text": "Ikan",
         "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Katak",
+        "score": 5
       },
       {
         "id": "E",
@@ -1129,27 +1129,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Akselerasi",
+        "text": "Jarak tempuh",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Bahan bakar",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "Kecepatan",
         "score": 5
       },
       {
+        "id": "C",
+        "text": "Akselerasi",
+        "score": 0
+      },
+      {
         "id": "D",
-        "text": "Tekanan oli",
+        "text": "Bahan bakar",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Jarak tempuh",
+        "text": "Tekanan oli",
         "score": 0
       }
     ],
@@ -1163,18 +1163,18 @@
     "options": [
       {
         "id": "A",
-        "text": "Pesawat",
+        "text": "Truk",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Kapal",
-        "score": 0
+        "text": "Kereta api",
+        "score": 5
       },
       {
         "id": "C",
-        "text": "Kereta api",
-        "score": 5
+        "text": "Pesawat",
+        "score": 0
       },
       {
         "id": "D",
@@ -1183,7 +1183,7 @@
       },
       {
         "id": "E",
-        "text": "Truk",
+        "text": "Kapal",
         "score": 0
       }
     ],
@@ -1197,27 +1197,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Tangkai",
+        "text": "Duri",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Bunga",
-        "score": 5
-      },
-      {
-        "id": "C",
-        "text": "Putik",
-        "score": 0
-      },
-      {
-        "id": "D",
         "text": "Benang sari",
         "score": 0
       },
       {
+        "id": "C",
+        "text": "Bunga",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Tangkai",
+        "score": 0
+      },
+      {
         "id": "E",
-        "text": "Duri",
+        "text": "Putik",
         "score": 0
       }
     ],
@@ -1231,13 +1231,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Hutan",
+        "text": "Pegunungan",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Kutub",
-        "score": 5
+        "text": "Danau",
+        "score": 0
       },
       {
         "id": "C",
@@ -1246,13 +1246,13 @@
       },
       {
         "id": "D",
-        "text": "Danau",
+        "text": "Hutan",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Pegunungan",
-        "score": 0
+        "text": "Kutub",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Habitat alami unta adalah gurun. Habitat alami penguin adalah kutub."
@@ -1265,7 +1265,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Mutlak",
+        "text": "Pasti",
         "score": 0
       },
       {
@@ -1275,17 +1275,17 @@
       },
       {
         "id": "C",
-        "text": "Pasti",
+        "text": "Mutlak",
         "score": 0
       },
       {
         "id": "D",
-        "text": "Statis",
+        "text": "Nyata",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Nyata",
+        "text": "Statis",
         "score": 0
       }
     ],
@@ -1304,18 +1304,18 @@
       },
       {
         "id": "B",
-        "text": "Puncak",
-        "score": 5
-      },
-      {
-        "id": "C",
         "text": "Proses",
         "score": 0
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Awal",
         "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Puncak",
+        "score": 5
       },
       {
         "id": "E",
@@ -1333,27 +1333,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Hasil",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "Bahan",
-        "score": 0
-      },
-      {
-        "id": "C",
-        "text": "Sisa",
-        "score": 5
-      },
-      {
-        "id": "D",
         "text": "Polusi",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "B",
+        "text": "Hasil",
+        "score": 0
+      },
+      {
+        "id": "C",
         "text": "Racun",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sisa",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Bahan",
         "score": 0
       }
     ],
@@ -1367,8 +1367,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Penolakan",
-        "score": 0
+        "text": "Penegasan",
+        "score": 5
       },
       {
         "id": "B",
@@ -1377,8 +1377,8 @@
       },
       {
         "id": "C",
-        "text": "Penegasan",
-        "score": 5
+        "text": "Keraguan",
+        "score": 0
       },
       {
         "id": "D",
@@ -1387,7 +1387,7 @@
       },
       {
         "id": "E",
-        "text": "Keraguan",
+        "text": "Penolakan",
         "score": 0
       }
     ],
@@ -1401,8 +1401,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Pengungsian",
-        "score": 5
+        "text": "Kedatangan",
+        "score": 0
       },
       {
         "id": "B",
@@ -1411,8 +1411,8 @@
       },
       {
         "id": "C",
-        "text": "Kedatangan",
-        "score": 0
+        "text": "Pengungsian",
+        "score": 5
       },
       {
         "id": "D",
@@ -1435,13 +1435,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Nyata",
-        "score": 0
+        "text": "Mutlak",
+        "score": 5
       },
       {
         "id": "B",
-        "text": "Mutlak",
-        "score": 5
+        "text": "Nyata",
+        "score": 0
       },
       {
         "id": "C",
@@ -1450,12 +1450,12 @@
       },
       {
         "id": "D",
-        "text": "Jelas",
+        "text": "Tetap",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Tetap",
+        "text": "Jelas",
         "score": 0
       }
     ],
@@ -1469,27 +1469,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Periodik",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "Acak",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "Kontinu",
         "score": 5
       },
       {
+        "id": "B",
+        "text": "Periodik",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Acak",
+        "score": 0
+      },
+      {
         "id": "D",
-        "text": "Parsial",
+        "text": "Jarang",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Jarang",
+        "text": "Parsial",
         "score": 0
       }
     ],
@@ -1513,12 +1513,12 @@
       },
       {
         "id": "C",
-        "text": "Pasif",
+        "text": "Konservatif",
         "score": 0
       },
       {
         "id": "D",
-        "text": "Konservatif",
+        "text": "Pasif",
         "score": 0
       },
       {
@@ -1542,13 +1542,13 @@
       },
       {
         "id": "B",
-        "text": "Divergen",
-        "score": 5
+        "text": "Asosiatif",
+        "score": 0
       },
       {
         "id": "C",
-        "text": "Asosiatif",
-        "score": 0
+        "text": "Divergen",
+        "score": 5
       },
       {
         "id": "D",
@@ -1571,12 +1571,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Marjinal",
+        "text": "Regional",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Regional",
+        "text": "Sektoral",
         "score": 0
       },
       {
@@ -1586,12 +1586,12 @@
       },
       {
         "id": "D",
-        "text": "Sektoral",
+        "text": "Parsial",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Parsial",
+        "text": "Marjinal",
         "score": 0
       }
     ],
@@ -1605,17 +1605,17 @@
     "options": [
       {
         "id": "A",
-        "text": "Obat",
-        "score": 0
-      },
-      {
-        "id": "B",
         "text": "Toksin",
         "score": 5
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "Klinik",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Alergi",
         "score": 0
       },
       {
@@ -1625,7 +1625,7 @@
       },
       {
         "id": "E",
-        "text": "Alergi",
+        "text": "Obat",
         "score": 0
       }
     ],
@@ -1639,28 +1639,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Sterilisasi",
-        "score": 0
-      },
-      {
-        "id": "B",
         "text": "Telur",
         "score": 0
       },
       {
-        "id": "C",
-        "text": "Penetasan",
-        "score": 5
+        "id": "B",
+        "text": "Suhu",
+        "score": 0
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Unggas",
         "score": 0
       },
       {
-        "id": "E",
-        "text": "Suhu",
+        "id": "D",
+        "text": "Sterilisasi",
         "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Penetasan",
+        "score": 5
       }
     ],
     "explanation": "Pola hubungan: Proses : Hasil akhir. Proses seleksi menghasilkan kelulusan. Proses inkubasi menghasilkan penetasan."
@@ -1673,27 +1673,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Pemberian pupuk organik cair selalu menghasilkan simplisia berkualitas tinggi",
+        "text": "Kebun Raya A gagal mengelola tanaman Y",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Tanaman Y bukan merupakan tanaman obat Kebun Raya A",
-        "score": 0
-      },
-      {
-        "id": "C",
-        "text": "Pupuk organik cair bukan satu-satunya faktor penentu kualitas simplisia",
-        "score": 5
-      },
-      {
-        "id": "D",
         "text": "Semua simplisia berkualitas tinggi pasti berasal dari tanaman Y",
         "score": 0
       },
       {
+        "id": "C",
+        "text": "Pemberian pupuk organik cair selalu menghasilkan simplisia berkualitas tinggi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pupuk organik cair bukan satu-satunya faktor penentu kualitas simplisia",
+        "score": 5
+      },
+      {
         "id": "E",
-        "text": "Kebun Raya A gagal mengelola tanaman Y",
+        "text": "Tanaman Y bukan merupakan tanaman obat Kebun Raya A",
         "score": 0
       }
     ],
@@ -1707,27 +1707,27 @@
     "options": [
       {
         "id": "A",
-        "text": "36",
+        "text": "42",
         "score": 0
       },
       {
         "id": "B",
-        "text": "38",
-        "score": 5
-      },
-      {
-        "id": "C",
         "text": "39",
         "score": 0
       },
       {
+        "id": "C",
+        "text": "38",
+        "score": 5
+      },
+      {
         "id": "D",
-        "text": "40",
+        "text": "36",
         "score": 0
       },
       {
         "id": "E",
-        "text": "42",
+        "text": "40",
         "score": 0
       }
     ],
@@ -1746,23 +1746,23 @@
       },
       {
         "id": "B",
-        "text": "Suhu",
-        "score": 0
-      },
-      {
-        "id": "C",
-        "text": "Tekanan udara",
-        "score": 5
-      },
-      {
-        "id": "D",
         "text": "Kelembapan",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "C",
+        "text": "Suhu",
+        "score": 0
+      },
+      {
+        "id": "D",
         "text": "Kedalaman",
         "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tekanan udara",
+        "score": 5
       }
     ],
     "explanation": "Pola hubungan: Alat ukur : Besaran yang diukur. Kompas adalah instrumen pengukur arah. Barometer adalah instrumen pengukur tekanan udara."
@@ -1780,22 +1780,22 @@
       },
       {
         "id": "B",
-        "text": "Semua staf bagian kepegawaian berkinerja tinggi.",
+        "text": "Staf bagian kepegawaian yang berkinerja tinggi tidak mendapat tunjangan kinerja.",
         "score": 0
       },
       {
         "id": "C",
-        "text": "Sebagian staf bagian kepegawaian berkinerja tinggi dan memperoleh tunjangan kinerja penuh.",
-        "score": 0
-      },
-      {
-        "id": "D",
         "text": "Tidak ada pegawai berkinerja tinggi yang menjadi staf bagian kepegawaian.",
         "score": 0
       },
       {
+        "id": "D",
+        "text": "Sebagian staf bagian kepegawaian berkinerja tinggi dan memperoleh tunjangan kinerja penuh.",
+        "score": 0
+      },
+      {
         "id": "E",
-        "text": "Staf bagian kepegawaian yang berkinerja tinggi tidak mendapat tunjangan kinerja.",
+        "text": "Semua staf bagian kepegawaian berkinerja tinggi.",
         "score": 0
       }
     ],
@@ -1819,18 +1819,18 @@
       },
       {
         "id": "C",
-        "text": "Anggaran tidak disetujui sebelum akhir tahun.",
-        "score": 5
-      },
-      {
-        "id": "D",
         "text": "Sistem perizinan terpadu diundur hingga bulan April.",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "D",
         "text": "Proyek digitalisasi arsip dibatalkan oleh pemerintah.",
         "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Anggaran tidak disetujui sebelum akhir tahun.",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Silogisme hipotetis rantai: P → Q dan Q → R menghasilkan P → R. Fakta: ~R (sistem tidak beroperasi penuh). Modus Tollens: (P → R) ∧ ~R ∴ ~P. Jadi, anggaran tidak disetujui sebelum akhir tahun."
@@ -1843,23 +1843,23 @@
     "options": [
       {
         "id": "A",
-        "text": "Semua pejabat fungsional pengawas menerima suap atau gratifikasi.",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "Beberapa pejabat fungsional pengawas tidak menerima suap atau gratifikasi.",
-        "score": 5
-      },
-      {
-        "id": "C",
         "text": "Sebagian auditor independen menerima gratifikasi dalam bentuk resmi.",
         "score": 0
       },
       {
-        "id": "D",
+        "id": "B",
         "text": "Tidak ada pejabat fungsional pengawas yang menjadi auditor independen.",
         "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Semua pejabat fungsional pengawas menerima suap atau gratifikasi.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Beberapa pejabat fungsional pengawas tidak menerima suap atau gratifikasi.",
+        "score": 5
       },
       {
         "id": "E",
@@ -1882,8 +1882,8 @@
       },
       {
         "id": "B",
-        "text": "Instansi pemerintah menerapkan sistem kerja fleksibel.",
-        "score": 5
+        "text": "Sistem kerja fleksibel dan server lokal ditiadakan.",
+        "score": 0
       },
       {
         "id": "C",
@@ -1897,8 +1897,8 @@
       },
       {
         "id": "E",
-        "text": "Sistem kerja fleksibel dan server lokal ditiadakan.",
-        "score": 0
+        "text": "Instansi pemerintah menerapkan sistem kerja fleksibel.",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Premis implikasi: Server ditambah (Q) → Anggaran naik (R). Fakta: ~R. Modus Tollens: ~Q (kapasitas server tidak ditambah). Premis disjungtif: Fleksibel (P) ∨ Server ditambah (Q). Karena ~Q, melalui Silogisme Disjungtif diperoleh kesimpulan P (Instansi pemerintah menerapkan sistem kerja fleksibel)."
@@ -1911,17 +1911,17 @@
     "options": [
       {
         "id": "A",
-        "text": "Semua staf teknis laboratorium memiliki sertifikat kompetensi keahlian.",
+        "text": "Staf teknis laboratorium yang tidak memiliki sertifikat kompetensi keahlian lulusan program vokasi.",
         "score": 0
       },
       {
         "id": "B",
-        "text": "Sebagian staf teknis laboratorium memiliki sertifikat kompetensi keahlian.",
-        "score": 5
+        "text": "Sebagian pemegang sertifikat kompetensi bukan staf teknis laboratorium.",
+        "score": 0
       },
       {
         "id": "C",
-        "text": "Sebagian pemegang sertifikat kompetensi bukan staf teknis laboratorium.",
+        "text": "Semua staf teknis laboratorium memiliki sertifikat kompetensi keahlian.",
         "score": 0
       },
       {
@@ -1931,8 +1931,8 @@
       },
       {
         "id": "E",
-        "text": "Staf teknis laboratorium yang tidak memiliki sertifikat kompetensi keahlian lulusan program vokasi.",
-        "score": 0
+        "text": "Sebagian staf teknis laboratorium memiliki sertifikat kompetensi keahlian.",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Silogisme Darii (Premis 1 Universal Afirmatif: Semua M adalah P; Premis 2 Partikular Afirmatif: Sebagian S adalah M). Kesimpulan Partikular Afirmatif: Sebagian S adalah P. Jadi, sebagian staf teknis laboratorium memiliki sertifikat kompetensi keahlian."
@@ -1950,23 +1950,23 @@
       },
       {
         "id": "B",
-        "text": "4 orang",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "4,5 orang",
         "score": 0
       },
       {
-        "id": "D",
-        "text": "5 orang",
+        "id": "C",
+        "text": "4 orang",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "D",
         "text": "6 orang",
         "score": 5
+      },
+      {
+        "id": "E",
+        "text": "5 orang",
+        "score": 0
       }
     ],
     "explanation": "Pembahasan: Sisa hari normal = 40 - 10 = 30 hari. Beban sisa = 30 × 18 = 540 hari-orang. Sisa waktu aktual = 30 - 6 = 24 hari. Kebutuhan total pekerja = 540 / 24 = 22,5 -> 23 pekerja, tetapi jika dihitung presisi rasio: (30 × 18) / 24 = 22,5 pekerja. Sisa hari 24 hari, kebutuhan pekerja = 540 / 24 = 22,5 orang. Koreksi bilangan bulat standar: 30 × 18 / 24 = 22,5. Pilihan bulat terdekat praktis: 30 * 16 / 20 model standar CPNS: Beban sisa = 30 × 18 = 540. Hari tersisa = 24 hari. Butuh 540/24 = 22,5. Tambahan = 22,5 - 18 = 4,5. Jika dibulatkan sistematis: 6 pekerja tambahan menurunkan durasi tepat/di bawah waktu."
@@ -1979,27 +1979,27 @@
     "options": [
       {
         "id": "A",
-        "text": "Rp14.000",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "Rp14.500",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "Rp15.000",
         "score": 5
       },
       {
-        "id": "D",
+        "id": "B",
         "text": "Rp15.500",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "C",
         "text": "Rp16.000",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Rp14.000",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Rp14.500",
         "score": 0
       }
     ],
@@ -2018,8 +2018,8 @@
       },
       {
         "id": "B",
-        "text": "90",
-        "score": 0
+        "text": "92",
+        "score": 5
       },
       {
         "id": "C",
@@ -2028,12 +2028,12 @@
       },
       {
         "id": "D",
-        "text": "92",
-        "score": 5
+        "text": "94",
+        "score": 0
       },
       {
         "id": "E",
-        "text": "94",
+        "text": "90",
         "score": 0
       }
     ],
@@ -2047,7 +2047,7 @@
     "options": [
       {
         "id": "A",
-        "text": "45 menit",
+        "text": "90 menit",
         "score": 0
       },
       {
@@ -2062,7 +2062,7 @@
       },
       {
         "id": "D",
-        "text": "90 menit",
+        "text": "45 menit",
         "score": 0
       },
       {
@@ -2081,27 +2081,27 @@
     "options": [
       {
         "id": "A",
-        "text": "09.30",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "09.45",
-        "score": 5
-      },
-      {
-        "id": "C",
-        "text": "10.00",
-        "score": 0
-      },
-      {
-        "id": "D",
         "text": "10.15",
         "score": 0
       },
       {
-        "id": "E",
+        "id": "B",
+        "text": "10.00",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "09.45",
+        "score": 5
+      },
+      {
+        "id": "D",
         "text": "10.30",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "09.30",
         "score": 0
       }
     ],
@@ -2115,12 +2115,12 @@
     "options": [
       {
         "id": "A",
-        "text": "x > y",
+        "text": "Hubungan x dan y tidak dapat ditentukan",
         "score": 0
       },
       {
         "id": "B",
-        "text": "x < y",
+        "text": "x = 2y",
         "score": 0
       },
       {
@@ -2130,12 +2130,12 @@
       },
       {
         "id": "D",
-        "text": "x = 2y",
+        "text": "x > y",
         "score": 0
       },
       {
         "id": "E",
-        "text": "Hubungan x dan y tidak dapat ditentukan",
+        "text": "x < y",
         "score": 0
       }
     ],
@@ -2149,27 +2149,27 @@
     "options": [
       {
         "id": "A",
-        "text": "18 tahun",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "20 tahun",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "22 tahun",
         "score": 5
       },
       {
-        "id": "D",
+        "id": "B",
+        "text": "26 tahun",
+        "score": 0
+      },
+      {
+        "id": "C",
         "text": "24 tahun",
         "score": 0
       },
       {
+        "id": "D",
+        "text": "18 tahun",
+        "score": 0
+      },
+      {
         "id": "E",
-        "text": "26 tahun",
+        "text": "20 tahun",
         "score": 0
       }
     ],
@@ -2188,22 +2188,22 @@
       },
       {
         "id": "B",
-        "text": "18",
-        "score": 0
-      },
-      {
-        "id": "C",
         "text": "24",
         "score": 5
       },
       {
+        "id": "C",
+        "text": "48",
+        "score": 0
+      },
+      {
         "id": "D",
-        "text": "36",
+        "text": "18",
         "score": 0
       },
       {
         "id": "E",
-        "text": "48",
+        "text": "36",
         "score": 0
       }
     ],
@@ -2222,8 +2222,8 @@
       },
       {
         "id": "B",
-        "text": "Meminta arahan tertulis bertanda tangan resmi dari pimpinan sebelum mengeksekusi penggeseran anggaran tersebut agar memiliki payung hukum pertanggungjawaban.",
-        "score": 3
+        "text": "Mengikuti instruksi pimpinan sebagian saja pada item yang risikonya dinilai paling kecil saat pemeriksaan audit.",
+        "score": 2
       },
       {
         "id": "C",
@@ -2232,13 +2232,13 @@
       },
       {
         "id": "D",
-        "text": "Mengikuti instruksi pimpinan sebagian saja pada item yang risikonya dinilai paling kecil saat pemeriksaan audit.",
-        "score": 2
+        "text": "Melaksanakan instruksi pimpinan sepenuhnya karena kepatuhan bawahan terhadap target serapan anggaran instansi adalah prioritas utama.",
+        "score": 1
       },
       {
         "id": "E",
-        "text": "Melaksanakan instruksi pimpinan sepenuhnya karena kepatuhan bawahan terhadap target serapan anggaran instansi adalah prioritas utama.",
-        "score": 1
+        "text": "Meminta arahan tertulis bertanda tangan resmi dari pimpinan sebelum mengeksekusi penggeseran anggaran tersebut agar memiliki payung hukum pertanggungjawaban.",
+        "score": 3
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena mencerminkan integritas tinggi: berani menolak penyimpangan aturan secara etis, paham regulasi keuangan negara, dan mampu memberi solusi alternatif yang akuntabel."
@@ -2251,13 +2251,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Menolak bingkisan secara santun dan tegas, menjelaskan larangan penerimaan imbalan terkait jabatan, serta mencatat insiden tersebut ke Unit Pengendalian Gratifikasi (UPG).",
-        "score": 5
+        "text": "Menerima dan membagikan isi bingkisan tersebut kepada seluruh staf tim pengadaan agar dinikmati bersama.",
+        "score": 1
       },
       {
         "id": "B",
-        "text": "Menolak bingkisan dengan santun dan menjelaskan bahwa bekerja secara profesional sudah menjadi kewajiban ASN tanpa perlu imbalan tambahan.",
-        "score": 4
+        "text": "Menerima bingkisan tersebut karena proyek sudah selesai secara sah sehingga tidak mempengaruhi proses penentuan pemenang tender.",
+        "score": 2
       },
       {
         "id": "C",
@@ -2266,13 +2266,13 @@
       },
       {
         "id": "D",
-        "text": "Menerima bingkisan tersebut karena proyek sudah selesai secara sah sehingga tidak mempengaruhi proses penentuan pemenang tender.",
-        "score": 2
+        "text": "Menolak bingkisan secara santun dan tegas, menjelaskan larangan penerimaan imbalan terkait jabatan, serta mencatat insiden tersebut ke Unit Pengendalian Gratifikasi (UPG).",
+        "score": 5
       },
       {
         "id": "E",
-        "text": "Menerima dan membagikan isi bingkisan tersebut kepada seluruh staf tim pengadaan agar dinikmati bersama.",
-        "score": 1
+        "text": "Menolak bingkisan dengan santun dan menjelaskan bahwa bekerja secara profesional sudah menjadi kewajiban ASN tanpa perlu imbalan tambahan.",
+        "score": 4
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena memenuhi prinsip integritas pencegahan korupsi: menolak gratifikasi aktif, mengedukasi mitra tentang kode etik ASN, dan mematuhi prosedur pelaporan resmi ke Unit Pengendalian Gratifikasi (UPG)."
@@ -2285,28 +2285,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Tetap menyatakan berkas tidak lolos verifikasi, menjelaskan regulasi serta konsekuensi hukum secara persuasif kepada keluarga, dan menyemangati kerabat untuk melengkapi kualifikasi di periode berikutnya.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Menolak intervensi keluarga dan mengalihkan proses verifikasi berkas kerabat tersebut kepada rekan verifikator lain untuk menghindari benturan kepentingan.",
-        "score": 4
-      },
-      {
-        "id": "C",
-        "text": "Memberitahukan kekurangan berkas secara detail kepada kerabat agar berkas dapat segera direvisi sebelum masa penutupan verifikasi berakhir.",
-        "score": 3
-      },
-      {
-        "id": "D",
         "text": "Mengkonsultasikan status berkas kerabat tersebut kepada atasan untuk meminta izin pertimbangan khusus.",
         "score": 2
       },
       {
-        "id": "E",
+        "id": "B",
+        "text": "Memberitahukan kekurangan berkas secara detail kepada kerabat agar berkas dapat segera direvisi sebelum masa penutupan verifikasi berakhir.",
+        "score": 3
+      },
+      {
+        "id": "C",
         "text": "Meloloskan berkas tersebut ke tahap berikutnya dengan asumsi bahwa kerabat nantinya tetap harus berjuang sendiri di tahap tes wawancara.",
         "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menolak intervensi keluarga dan mengalihkan proses verifikasi berkas kerabat tersebut kepada rekan verifikator lain untuk menghindari benturan kepentingan.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Tetap menyatakan berkas tidak lolos verifikasi, menjelaskan regulasi serta konsekuensi hukum secara persuasif kepada keluarga, dan menyemangati kerabat untuk melengkapi kualifikasi di periode berikutnya.",
+        "score": 5
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena menunjukkan keteguhan prinsip moral dan profesionalisme: menolak nepotisme tanpa kompromi, menegakkan asas keadilan bagi semua pelamar, serta mengomunikasikannya dengan baik kepada keluarga."
@@ -2319,13 +2319,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Menolak tegas membeberkan isi data rahasia tersebut, menjelaskan klasifikasi kerahasiaan informasi publik, dan mengarahkannya melalui prosedur resmi Hubungan Masyarakat (Humas).",
-        "score": 5
+        "text": "Memberikan potongan data yang dianggap tidak membahayakan keamanan dinas dengan syarat identitas Anda dirahasiakan (off the record).",
+        "score": 2
       },
       {
         "id": "B",
-        "text": "Menjelaskan secara umum garis besar isu tersebut tanpa membuka substansi angka maupun dokumen rahasia yang diminta.",
-        "score": 3
+        "text": "Memberikan ringkasan data tersebut karena pemberitaan positif dinilai sangat menguntungkan penilaian kinerja instansi di mata publik.",
+        "score": 1
       },
       {
         "id": "C",
@@ -2334,13 +2334,13 @@
       },
       {
         "id": "D",
-        "text": "Memberikan potongan data yang dianggap tidak membahayakan keamanan dinas dengan syarat identitas Anda dirahasiakan (off the record).",
-        "score": 2
+        "text": "Menolak tegas membeberkan isi data rahasia tersebut, menjelaskan klasifikasi kerahasiaan informasi publik, dan mengarahkannya melalui prosedur resmi Hubungan Masyarakat (Humas).",
+        "score": 5
       },
       {
         "id": "E",
-        "text": "Memberikan ringkasan data tersebut karena pemberitaan positif dinilai sangat menguntungkan penilaian kinerja instansi di mata publik.",
-        "score": 1
+        "text": "Menjelaskan secara umum garis besar isu tersebut tanpa membuka substansi angka maupun dokumen rahasia yang diminta.",
+        "score": 3
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena menegakkan integritas penjagaan rahasia negara/jabatan, tidak tergiur imbalan reputasi instan, serta mengarahkan alur informasi sesuai SOP PPID/Humas instansi."
@@ -2353,8 +2353,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Menegur rekan tersebut secara pribadi, mengingatkan dampak ketidakjujuran terhadap disiplin kerja ASN, serta menegaskan akan melapor ke atasan bila perilaku curang tersebut diulang.",
-        "score": 5
+        "text": "Menyindir tindakan curang tersebut dalam obrolan santai di kantor agar yang bersangkutan merasa malu dan menghentikannya sendiri.",
+        "score": 2
       },
       {
         "id": "B",
@@ -2363,18 +2363,18 @@
       },
       {
         "id": "C",
+        "text": "Fokus pada disiplin diri sendiri dan memilih tidak mencampuri tindakan rekan tersebut karena hal itu tanggung jawab pengawasan atasan langsung.",
+        "score": 1
+      },
+      {
+        "id": "D",
         "text": "Melaporkan manipulasi presensi tersebut langsung ke bagian kepegawaian melalui saluran pengaduan internal (whistleblowing system) tanpa konfrontasi personal.",
         "score": 3
       },
       {
-        "id": "D",
-        "text": "Menyindir tindakan curang tersebut dalam obrolan santai di kantor agar yang bersangkutan merasa malu dan menghentikannya sendiri.",
-        "score": 2
-      },
-      {
         "id": "E",
-        "text": "Fokus pada disiplin diri sendiri dan memilih tidak mencampuri tindakan rekan tersebut karena hal itu tanggung jawab pengawasan atasan langsung.",
-        "score": 1
+        "text": "Menegur rekan tersebut secara pribadi, mengingatkan dampak ketidakjujuran terhadap disiplin kerja ASN, serta menegaskan akan melapor ke atasan bila perilaku curang tersebut diulang.",
+        "score": 5
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena mencerminkan integritas aktif: berani meluruskan penyimpangan disiplin kerja secara konstruktif, bertindak langsung pada sumber masalah, dan siap mengambil langkah pelaporan struktural jika pelanggaran tetap terjadi."
@@ -2387,8 +2387,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Menganalisis pola error sistem secara mandiri, membuat panduan ringkas tips penggunaannya, dan membagikannya ke rekan kerja.",
-        "score": 5
+        "text": "Fokus menyelesaikan beban kerja arsip sendiri menggunakan sistem baru agar target pribadi tercapai.",
+        "score": 2
       },
       {
         "id": "B",
@@ -2402,8 +2402,8 @@
       },
       {
         "id": "D",
-        "text": "Fokus menyelesaikan beban kerja arsip sendiri menggunakan sistem baru agar target pribadi tercapai.",
-        "score": 2
+        "text": "Menganalisis pola error sistem secara mandiri, membuat panduan ringkas tips penggunaannya, dan membagikannya ke rekan kerja.",
+        "score": 5
       },
       {
         "id": "E",
@@ -2426,13 +2426,13 @@
       },
       {
         "id": "B",
-        "text": "Mengingatkan unit terkait melalui memo resmi berulang kali sembari menyusun kerangka proposal sebaik mungkin.",
-        "score": 4
+        "text": "Menyusun proposal dengan estimasi data seadanya agar selesai tepat waktu sesuai batas 3 hari.",
+        "score": 3
       },
       {
         "id": "C",
-        "text": "Menyusun proposal dengan estimasi data seadanya agar selesai tepat waktu sesuai batas 3 hari.",
-        "score": 3
+        "text": "Meminta perpanjangan waktu pengajuan proposal kepada atasan hingga data dari unit terkait lengkap.",
+        "score": 1
       },
       {
         "id": "D",
@@ -2441,8 +2441,8 @@
       },
       {
         "id": "E",
-        "text": "Meminta perpanjangan waktu pengajuan proposal kepada atasan hingga data dari unit terkait lengkap.",
-        "score": 1
+        "text": "Mengingatkan unit terkait melalui memo resmi berulang kali sembari menyusun kerangka proposal sebaik mungkin.",
+        "score": 4
       }
     ],
     "explanation": "Pilihan A (skor 5) tunjukkan persistensi atasi hambatan, proaktif jemput bola, kejar target kualitas tinggi tanpa gunakan kendala eksternal sebagai alasan."
@@ -2455,28 +2455,28 @@
     "options": [
       {
         "id": "A",
+        "text": "Melewatkan peluang sertifikasi kali ini demi menjaga kestabilan penyelesaian tugas harian kantor.",
+        "score": 1
+      },
+      {
+        "id": "B",
         "text": "Mendaftar seleksi, merancang manajemen waktu ekstra ketat, siap belajar di luar jam kantor agar kinerja utama tidak terganggu.",
         "score": 5
       },
       {
-        "id": "B",
-        "text": "Mengkonsultasikan peluang tersebut ke atasan untuk mengukur kapasitas kerja sebelum memutuskan ikut seleksi.",
-        "score": 4
-      },
-      {
         "id": "C",
-        "text": "Menyarankan rekan kerja lain yang bebannya lebih longgar untuk mendaftar agar nama seksi tetap terwakili.",
-        "score": 3
-      },
-      {
-        "id": "D",
         "text": "Hanya mendaftar jika pimpinan secara khusus menunjuk dan memberi dispensasi pengurangan tugas harian.",
         "score": 2
       },
       {
+        "id": "D",
+        "text": "Mengkonsultasikan peluang tersebut ke atasan untuk mengukur kapasitas kerja sebelum memutuskan ikut seleksi.",
+        "score": 4
+      },
+      {
         "id": "E",
-        "text": "Melewatkan peluang sertifikasi kali ini demi menjaga kestabilan penyelesaian tugas harian kantor.",
-        "score": 1
+        "text": "Menyarankan rekan kerja lain yang bebannya lebih longgar untuk mendaftar agar nama seksi tetap terwakili.",
+        "score": 3
       }
     ],
     "explanation": "Pilihan A (skor 5) wujudkan komitmen pengembangan diri maksimal. Siap ambil tantangan lebih demi standar keahlian unggul tanpa korbankan kewajiban pokok."
@@ -2489,28 +2489,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Melakukan uji coba mandiri skala terbatas, menyusun simulasi perbandingan data efisiensi, lalu mempresentasikannya ke pimpinan.",
-        "score": 5
+        "text": "Tetap bekerja sesuai SOP resmi yang berlaku untuk menghindari potensi pelanggaran regulasi internal.",
+        "score": 1
       },
       {
         "id": "B",
-        "text": "Menyusun draf gagasan perbaikan SOP tersebut dan menyampaikannya saat rapat evaluasi bulanan.",
-        "score": 4
-      },
-      {
-        "id": "C",
-        "text": "Mendiskusikan ide tersebut dengan rekan senior untuk melihat apakah perubahan alur memungkinkan dijalankan.",
-        "score": 3
-      },
-      {
-        "id": "D",
         "text": "Menerapkan metode baru tersebut diam-diam pada beban kerja pribadi untuk mendongkrak capaian harian.",
         "score": 2
       },
       {
+        "id": "C",
+        "text": "Melakukan uji coba mandiri skala terbatas, menyusun simulasi perbandingan data efisiensi, lalu mempresentasikannya ke pimpinan.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Menyusun draf gagasan perbaikan SOP tersebut dan menyampaikannya saat rapat evaluasi bulanan.",
+        "score": 4
+      },
+      {
         "id": "E",
-        "text": "Tetap bekerja sesuai SOP resmi yang berlaku untuk menghindari potensi pelanggaran regulasi internal.",
-        "score": 1
+        "text": "Mendiskusikan ide tersebut dengan rekan senior untuk melihat apakah perubahan alur memungkinkan dijalankan.",
+        "score": 3
       }
     ],
     "explanation": "Pilihan A (skor 5) tunjukkan inovasi berbasis data konkret. Berani dorong perbaikan standar kerja organisasi lewat pembuktian terukur dan tata kelola tertib."
@@ -2523,23 +2523,23 @@
     "options": [
       {
         "id": "A",
-        "text": "Mengajak tim membedah bottleneck operasional, menyusun strategi kerja baru, dan menetapkan target personal di atas target pimpinan.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Menerima target dengan antusias dan segera membagi tugas tambahan tersebut secara merata ke seluruh anggota tim.",
-        "score": 4
-      },
-      {
-        "id": "C",
         "text": "Menyesuaikan ritme kerja pribadi agar capaian individu setara kenaikan 30% yang dibebankan.",
         "score": 3
       },
       {
-        "id": "D",
+        "id": "B",
         "text": "Menyampaikan keraguan secara rasional kepada pimpinan mengenai ketersediaan sumber daya tim saat ini.",
         "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Mengajak tim membedah bottleneck operasional, menyusun strategi kerja baru, dan menetapkan target personal di atas target pimpinan.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Menerima target dengan antusias dan segera membagi tugas tambahan tersebut secara merata ke seluruh anggota tim.",
+        "score": 4
       },
       {
         "id": "E",
@@ -2557,28 +2557,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Menerima berkas yang ada, memverifikasi dokumen manual yang tersedia, lalu membimbing pemohon melengkapi kekurangannya melalui kanal komunikasi darurat esok pagi agar tidak bolak-balik.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Membantu memeriksa seluruh kelengkapan berkas fisik yang dibawa, mencatat kekurangan dokumen, dan memintanya segera mengunggahnya saat sistem pulih.",
-        "score": 4
-      },
-      {
-        "id": "C",
-        "text": "Meminta pemohon menunggu hingga sistem pulih sepenuhnya sambil mencoba melengkapi berkas yang kurang sebelum jam kantor berakhir.",
-        "score": 3
-      },
-      {
-        "id": "D",
         "text": "Menyarankan pemohon pulang untuk melengkapi dokumen yang kurang dan kembali lagi besok pagi saat sistem sudah normal.",
         "score": 2
       },
       {
-        "id": "E",
+        "id": "B",
         "text": "Menolak pemrosesan berkas karena syarat belum lengkap dan sistem online sedang tidak berfungsi.",
         "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Menerima berkas yang ada, memverifikasi dokumen manual yang tersedia, lalu membimbing pemohon melengkapi kekurangannya melalui kanal komunikasi darurat esok pagi agar tidak bolak-balik.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Meminta pemohon menunggu hingga sistem pulih sepenuhnya sambil mencoba melengkapi berkas yang kurang sebelum jam kantor berakhir.",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Membantu memeriksa seluruh kelengkapan berkas fisik yang dibawa, mencatat kekurangan dokumen, dan memintanya segera mengunggahnya saat sistem pulih.",
+        "score": 4
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena menunjukkan empati tinggi, solusi proaktif tanpa melanggar esensi regulasi, dan meringankan beban pemohon dari wilayah jauh."
@@ -2596,13 +2596,13 @@
       },
       {
         "id": "B",
-        "text": "Membantu menginputkan data laporan mereka ke sistem menggunakan fasilitas internet kantor dinas saat perwakilan tiba.",
-        "score": 4
+        "text": "Mengarahkan perwakilan sekolah berkonsultasi dengan tim IT dinas agar kendala akun sistem mereka segera teratasi.",
+        "score": 3
       },
       {
         "id": "C",
-        "text": "Mengarahkan perwakilan sekolah berkonsultasi dengan tim IT dinas agar kendala akun sistem mereka segera teratasi.",
-        "score": 3
+        "text": "Menunda pencairan dana hingga seluruh kewajiban pelaporan digital terpenuhi sesuai petunjuk teknis yang berlaku.",
+        "score": 1
       },
       {
         "id": "D",
@@ -2611,8 +2611,8 @@
       },
       {
         "id": "E",
-        "text": "Menunda pencairan dana hingga seluruh kewajiban pelaporan digital terpenuhi sesuai petunjuk teknis yang berlaku.",
-        "score": 1
+        "text": "Membantu menginputkan data laporan mereka ke sistem menggunakan fasilitas internet kantor dinas saat perwakilan tiba.",
+        "score": 4
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena mengedepankan esensi pemenuhan hak publik/siswa secara solutif tanpa mengabaikan aspek akuntabilitas dan pendampingan jangka panjang."
@@ -2625,28 +2625,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Menghubungi pemegang kunci darurat atau penanggung jawab gedung untuk membuka arsip secara resmi, lalu mendampingi peneliti menemukan dokumen tersebut.",
-        "score": 5
-      },
-      {
-        "id": "B",
         "text": "Menghubungi rekan yang cuti via telepon untuk meminta izin meminjam kunci cadangan melalui staf lain di kantor.",
         "score": 4
       },
       {
+        "id": "B",
+        "text": "Menyampaikan permohonan maaf bahwa arsip fisik tidak dapat diakses hari ini karena prosedur penguncian unit kerja.",
+        "score": 1
+      },
+      {
         "id": "C",
+        "text": "Menghubungi pemegang kunci darurat atau penanggung jawab gedung untuk membuka arsip secara resmi, lalu mendampingi peneliti menemukan dokumen tersebut.",
+        "score": 5
+      },
+      {
+        "id": "D",
         "text": "Mencari salinan naskah sekunder di basis data internal lain yang bisa diakses untuk sementara waktu.",
         "score": 3
       },
       {
-        "id": "D",
+        "id": "E",
         "text": "Mencatat nomor kontak peneliti dan berjanji menghubunginya begitu rekan yang memegang kunci masuk kerja kembali.",
         "score": 2
-      },
-      {
-        "id": "E",
-        "text": "Menyampaikan permohonan maaf bahwa arsip fisik tidak dapat diakses hari ini karena prosedur penguncian unit kerja.",
-        "score": 1
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena mengoptimalkan jalur resmi/SOP kedaruratan internal demi memenuhi kebutuhan informasi publik secepat mungkin tanpa melanggar aturan keamanan."
@@ -2659,28 +2659,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Berdiskusi langsung dengan narasumber saat jeda untuk menyesuaikan studi kasus lokal, lalu membuka sesi dialog interaktif dwiarah yang lebih membumi bagi peserta.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Menambahkan fasilitator lokal saat sesi tanya jawab agar mempermudah pemahaman warga terhadap materi.",
-        "score": 4
-      },
-      {
-        "id": "C",
-        "text": "Membagikan lembar rangkuman bahasa sederhana kepada peserta sebagai suplemen materi presentasi.",
-        "score": 3
-      },
-      {
-        "id": "D",
         "text": "Menampung kritik warga di kotak evaluasi untuk perbaikan format penyuluhan pada program kerja periode berikutnya.",
         "score": 2
       },
       {
-        "id": "E",
+        "id": "B",
+        "text": "Berdiskusi langsung dengan narasumber saat jeda untuk menyesuaikan studi kasus lokal, lalu membuka sesi dialog interaktif dwiarah yang lebih membumi bagi peserta.",
+        "score": 5
+      },
+      {
+        "id": "C",
         "text": "Meminta warga menyimak materi hingga selesai terlebih dahulu sebelum menyimpulkan relevansi pemaparan.",
         "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menambahkan fasilitator lokal saat sesi tanya jawab agar mempermudah pemahaman warga terhadap materi.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Membagikan lembar rangkuman bahasa sederhana kepada peserta sebagai suplemen materi presentasi.",
+        "score": 3
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena responsif menangani umpan balik layanan secara langsung (real-time adaptif) agar tujuan edukasi publik tercapai optimal."
@@ -2727,23 +2727,23 @@
     "options": [
       {
         "id": "A",
-        "text": "Mempelajari sistem baru secara mendalam dan berinisiatif mendampingi rekan senior agar alur kerja tim segera selaras dengan sistem baru.",
-        "score": 5
-      },
-      {
-        "id": "B",
         "text": "Mengikuti instruksi pimpinan untuk tetap menggunakan sistem baru sambil membantu rekan kerja jika mereka bertanya.",
         "score": 4
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "Menggunakan sistem baru untuk tugas mandiri Anda, namun memaklumi jika rekan senior masih memakai cara manual.",
         "score": 3
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Menyarankan rekan senior untuk meminta perpanjangan masa transisi sistem kepada atasan agar tidak membebani tim.",
         "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mempelajari sistem baru secara mendalam dan berinisiatif mendampingi rekan senior agar alur kerja tim segera selaras dengan sistem baru.",
+        "score": 5
       },
       {
         "id": "E",
@@ -2766,18 +2766,18 @@
       },
       {
         "id": "B",
+        "text": "Membatasi interaksi di luar urusan pekerjaan resmi demi menghindari kesalahpahaman akibat perbedaan budaya lokal.",
+        "score": 2
+      },
+      {
+        "id": "C",
         "text": "Menerima penempatan dengan lapang dada dan fokus menjalankan tugas pokok sesuai instruksi kerja standar kantor.",
         "score": 4
       },
       {
-        "id": "C",
+        "id": "D",
         "text": "Menyesuaikan ritme kerja perlahan-lahan sembari mengajukan permohonan fasilitas pendukung kerja ke kantor pusat.",
         "score": 3
-      },
-      {
-        "id": "D",
-        "text": "Membatasi interaksi di luar urusan pekerjaan resmi demi menghindari kesalahpahaman akibat perbedaan budaya lokal.",
-        "score": 2
       },
       {
         "id": "E",
@@ -2805,13 +2805,13 @@
       },
       {
         "id": "C",
-        "text": "Menunggu instruksi teknis lanjutan dan arahan spesifik dari atasan sebelum merevisi laporan yang sedang berjalan.",
-        "score": 3
+        "text": "Menyampaikan keluhan secara resmi kepada pembuat kebijakan mengenai sempitnya tenggat waktu penyesuaian regulasi baru.",
+        "score": 2
       },
       {
         "id": "D",
-        "text": "Menyampaikan keluhan secara resmi kepada pembuat kebijakan mengenai sempitnya tenggat waktu penyesuaian regulasi baru.",
-        "score": 2
+        "text": "Menunggu instruksi teknis lanjutan dan arahan spesifik dari atasan sebelum merevisi laporan yang sedang berjalan.",
+        "score": 3
       },
       {
         "id": "E",
@@ -2829,28 +2829,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Menyesuaikan gaya komunikasi dan alur kerja agar sejalan dengan ekspektasi atasan baru guna efisiensi kinerja unit.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Menerima gaya kepemimpinan baru dan berusaha tidak tersinggung jika menerima masukan lugas.",
-        "score": 4
-      },
-      {
-        "id": "C",
         "text": "Mempertahankan ritme kerja lama selama tugas pokok selesai tepat waktu tanpa teguran.",
         "score": 3
       },
       {
-        "id": "D",
+        "id": "B",
+        "text": "Meminta rekan lain yang lebih berpengalaman untuk lebih sering berkomunikasi langsung dengan atasan baru tersebut.",
+        "score": 1
+      },
+      {
+        "id": "C",
         "text": "Membicarakan kegelisahan tim terkait gaya pimpinan baru bersama rekan-rekan dekat di luar jam kerja.",
         "score": 2
       },
       {
+        "id": "D",
+        "text": "Menyesuaikan gaya komunikasi dan alur kerja agar sejalan dengan ekspektasi atasan baru guna efisiensi kinerja unit.",
+        "score": 5
+      },
+      {
         "id": "E",
-        "text": "Meminta rekan lain yang lebih berpengalaman untuk lebih sering berkomunikasi langsung dengan atasan baru tersebut.",
-        "score": 1
+        "text": "Menerima gaya kepemimpinan baru dan berusaha tidak tersinggung jika menerima masukan lugas.",
+        "score": 4
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena mengedepankan fleksibilitas interpersonal: cepat menyelaraskan ritme dan gaya kerja dengan kepemimpinan baru demi produktivitas tim."
@@ -2863,23 +2863,23 @@
     "options": [
       {
         "id": "A",
-        "text": "Melihat perubahan kurikulum sebagai peluang upgrade skill, lalu proaktif mencari referensi data analitik mandiri demi menyelesaikan proyek.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Mengikuti sesi pelatihan baru tersebut dengan tertib dan fokus mengerjakan tugas sesuai arahan instruktur.",
-        "score": 4
-      },
-      {
-        "id": "C",
         "text": "Mengandalkan pembagian peran dalam kelompok agar rekan yang menguasai analitik data dapat memimpin proyek.",
         "score": 3
       },
       {
-        "id": "D",
+        "id": "B",
+        "text": "Melihat perubahan kurikulum sebagai peluang upgrade skill, lalu proaktif mencari referensi data analitik mandiri demi menyelesaikan proyek.",
+        "score": 5
+      },
+      {
+        "id": "C",
         "text": "Mengerjakan proyek sebatas batas minimum kelulusan karena materi tersebut berada di luar bidang keahlian asli Anda.",
         "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mengikuti sesi pelatihan baru tersebut dengan tertib dan fokus mengerjakan tugas sesuai arahan instruktur.",
+        "score": 4
       },
       {
         "id": "E",
@@ -2897,13 +2897,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Mendengarkan keluhannya dengan tenang, mengendalikan emosi, lalu memberikan penjelasan mengenai kendala teknis secara sopan serta menawarkan opsi pengecekan berkala.",
-        "score": 5
+        "text": "Mendengarkan luapan emosinya dalam diam sambil tetap fokus menatap layar monitor agar situasi mereda dengan sendirinya.",
+        "score": 2
       },
       {
         "id": "B",
-        "text": "Meminta warga tersebut tenang terlebih dahulu, kemudian menjelaskan bahwa amarah tidak akan mempercepat perbaikan sistem pusat.",
-        "score": 4
+        "text": "Mendengarkan keluhannya dengan tenang, mengendalikan emosi, lalu memberikan penjelasan mengenai kendala teknis secara sopan serta menawarkan opsi pengecekan berkala.",
+        "score": 5
       },
       {
         "id": "C",
@@ -2912,13 +2912,13 @@
       },
       {
         "id": "D",
-        "text": "Mendengarkan luapan emosinya dalam diam sambil tetap fokus menatap layar monitor agar situasi mereda dengan sendirinya.",
-        "score": 2
+        "text": "Menjelaskan dengan nada tegas bahwa pemeliharaan sistem bukan kesalahan Anda dan meminta warga menunggu seperti pemohon lain.",
+        "score": 1
       },
       {
         "id": "E",
-        "text": "Menjelaskan dengan nada tegas bahwa pemeliharaan sistem bukan kesalahan Anda dan meminta warga menunggu seperti pemohon lain.",
-        "score": 1
+        "text": "Meminta warga tersebut tenang terlebih dahulu, kemudian menjelaskan bahwa amarah tidak akan mempercepat perbaikan sistem pusat.",
+        "score": 4
       }
     ],
     "explanation": "Skor 5 pada opsi A karena menunjukkan kematangan kendali emosi, ketenangan menghadapi provokasi, empati pada masyarakat, serta orientasi pada solusi pelayanan."
@@ -2931,13 +2931,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Menahan diri dari dorongan berpihak, tetap berkepala dingin, lalu menengahi dan mengalihkan pembicaraan ke topik pekerjaan yang netral.",
-        "score": 5
+        "text": "Beranjak meninggalkan ruangan istirahat untuk menghindari rasa jengkel akibat perdebatan tersebut.",
+        "score": 2
       },
       {
         "id": "B",
-        "text": "Mengingatkan rekan-rekan secara lugas bahwa perdebatan ideologis di lingkungan kerja berisiko merusak harmoni tim.",
-        "score": 4
+        "text": "Menyuarakan pandangan pribadi dengan nada tinggi untuk mematahkan argumen rekan yang paling provokatif.",
+        "score": 1
       },
       {
         "id": "C",
@@ -2946,13 +2946,13 @@
       },
       {
         "id": "D",
-        "text": "Beranjak meninggalkan ruangan istirahat untuk menghindari rasa jengkel akibat perdebatan tersebut.",
-        "score": 2
+        "text": "Mengingatkan rekan-rekan secara lugas bahwa perdebatan ideologis di lingkungan kerja berisiko merusak harmoni tim.",
+        "score": 4
       },
       {
         "id": "E",
-        "text": "Menyuarakan pandangan pribadi dengan nada tinggi untuk mematahkan argumen rekan yang paling provokatif.",
-        "score": 1
+        "text": "Menahan diri dari dorongan berpihak, tetap berkepala dingin, lalu menengahi dan mengalihkan pembicaraan ke topik pekerjaan yang netral.",
+        "score": 5
       }
     ],
     "explanation": "Skor 5 pada opsi A karena mampu mengontrol impuls pribadi sekaligus bertindak de-eskalatif untuk meredakan tensi konflik di ruang kerja."
@@ -2965,28 +2965,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Mengatur napas sejenak untuk menstabilkan emosi, menerima instruksi pimpinan, lalu segera menyusun jadwal prioritas pengerjaan ulang.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Menyatakan kesiapan melaksanakan revisi kepada pimpinan secara profesional meskipun merasa lelah dan kecewa.",
-        "score": 4
-      },
-      {
-        "id": "C",
-        "text": "Menyampaikan secara sopan kepada pimpinan mengenai kondisi fisik dan batas waktu yang sangat sempit sebelum memulai revisi.",
-        "score": 3
-      },
-      {
-        "id": "D",
         "text": "Mengajak rekan kerja lain berdiskusi untuk meluapkan beban pikiran sebelum mulai mengerjakan perombakan.",
         "score": 2
       },
       {
-        "id": "E",
+        "id": "B",
+        "text": "Menyampaikan secara sopan kepada pimpinan mengenai kondisi fisik dan batas waktu yang sangat sempit sebelum memulai revisi.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mengatur napas sejenak untuk menstabilkan emosi, menerima instruksi pimpinan, lalu segera menyusun jadwal prioritas pengerjaan ulang.",
+        "score": 5
+      },
+      {
+        "id": "D",
         "text": "Mengerjakan perombakan secara asal selesai karena menganggap instruksi mendadak tersebut tidak rasional.",
         "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menyatakan kesiapan melaksanakan revisi kepada pimpinan secara profesional meskipun merasa lelah dan kecewa.",
+        "score": 4
       }
     ],
     "explanation": "Skor 5 pada opsi A merefleksikan resiliensi tinggi, kendali diri di bawah tekanan ekstrem, serta orientasi penyelesaian tugas tanpa reaksi destruktif."
@@ -2999,13 +2999,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Tetap tenang tanpa bereaksi emosional, lalu menunjukkan bukti tanda terima serta riwayat mutasi berkas secara runtut dan objektif.",
-        "score": 5
+        "text": "Memilih diam dan membiarkan pimpinan rapat yang memverifikasi kebenaran informasi tersebut.",
+        "score": 2
       },
       {
         "id": "B",
-        "text": "Membantah tuduhan tersebut secara lugas dengan bahasa formal dan meminta forum mengecek kembali rekam jejak pengarsipan.",
-        "score": 4
+        "text": "Tetap tenang tanpa bereaksi emosional, lalu menunjukkan bukti tanda terima serta riwayat mutasi berkas secara runtut dan objektif.",
+        "score": 5
       },
       {
         "id": "C",
@@ -3014,8 +3014,8 @@
       },
       {
         "id": "D",
-        "text": "Memilih diam dan membiarkan pimpinan rapat yang memverifikasi kebenaran informasi tersebut.",
-        "score": 2
+        "text": "Membantah tuduhan tersebut secara lugas dengan bahasa formal dan meminta forum mengecek kembali rekam jejak pengarsipan.",
+        "score": 4
       },
       {
         "id": "E",
@@ -3033,28 +3033,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Menahan diri dari membalas secara defensif, menganalisis pokok kesalahpahaman, lalu menyusun klarifikasi berbasis data regulasi yang mudah dipahami publik.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Menunda respon sementara waktu untuk meredakan situasi, sambil berkoordinasi dengan atasan terkait draf klarifikasi resmi.",
-        "score": 4
-      },
-      {
-        "id": "C",
-        "text": "Mengabaikan komentar-komentar kasar dan hanya membalas akun yang bertanya dengan kalimat santun.",
-        "score": 3
-      },
-      {
-        "id": "D",
         "text": "Menghapus komentar-komentar yang bernada caci maki agar citra akun instansi tetap terjaga.",
         "score": 2
       },
       {
-        "id": "E",
+        "id": "B",
+        "text": "Mengabaikan komentar-komentar kasar dan hanya membalas akun yang bertanya dengan kalimat santun.",
+        "score": 3
+      },
+      {
+        "id": "C",
         "text": "Membalas satu per satu komentar pedas untuk mempertahankan integritas kebijakan instansi secara tegas.",
         "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menahan diri dari membalas secara defensif, menganalisis pokok kesalahpahaman, lalu menyusun klarifikasi berbasis data regulasi yang mudah dipahami publik.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menunda respon sementara waktu untuk meredakan situasi, sambil berkoordinasi dengan atasan terkait draf klarifikasi resmi.",
+        "score": 4
       }
     ],
     "explanation": "Skor 5 pada opsi A mencerminkan profesionalisme, pengendalian diri dari respons reaktif, serta pemecahan masalah konstruktif demi edukasi publik."
@@ -3067,18 +3067,18 @@
     "options": [
       {
         "id": "A",
-        "text": "Mempelajari regulasi terkait, mengolah data yang tersedia, dan menyelesaikan draf sesuai format standar tanpa menunggu arahan langsung.",
-        "score": 5
+        "text": "Menunda penyusunan analisis utama dan hanya membuat kerangka dokumen sampai atasan kembali ke kantor.",
+        "score": 1
       },
       {
         "id": "B",
-        "text": "Mengerjakan draf tersebut semaksimal mungkin, lalu meminta masukan rekan senior sebelum diserahkan kepada atasan.",
-        "score": 4
+        "text": "Mengumpulkan dan memilah data pendukung terlebih dahulu, lalu menyusun analisis setelah berkonsultasi via telepon dengan atasan.",
+        "score": 3
       },
       {
         "id": "C",
-        "text": "Mengumpulkan dan memilah data pendukung terlebih dahulu, lalu menyusun analisis setelah berkonsultasi via telepon dengan atasan.",
-        "score": 3
+        "text": "Mengerjakan draf tersebut semaksimal mungkin, lalu meminta masukan rekan senior sebelum diserahkan kepada atasan.",
+        "score": 4
       },
       {
         "id": "D",
@@ -3087,8 +3087,8 @@
       },
       {
         "id": "E",
-        "text": "Menunda penyusunan analisis utama dan hanya membuat kerangka dokumen sampai atasan kembali ke kantor.",
-        "score": 1
+        "text": "Mempelajari regulasi terkait, mengolah data yang tersedia, dan menyelesaikan draf sesuai format standar tanpa menunggu arahan langsung.",
+        "score": 5
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena mencerminkan kemandirian tinggi, inisiatif, dan tanggung jawab penuh dalam menuntaskan tugas mendesak berbasis regulasi tanpa bergantung pada supervisi ketat."
@@ -3106,23 +3106,23 @@
       },
       {
         "id": "B",
-        "text": "Mempelajari buku panduan, lalu bertanya kepada rekan di instansi lain yang sudah lebih dulu menerapkan sistem tersebut.",
-        "score": 4
-      },
-      {
-        "id": "C",
         "text": "Mencoba mengisi modul bersama rekan kerja satu tim agar beban pemahaman sistem terbagi rata.",
         "score": 3
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Mengajukan permohonan ke bagian kepegawaian agar diadakan pelatihan teknis sebelum sistem mulai dioperasikan.",
         "score": 2
       },
       {
-        "id": "E",
+        "id": "D",
         "text": "Meminta atasan mengalihkan tugas tersebut kepada pegawai yang lebih mahir di bidang teknologi informasi.",
         "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Mempelajari buku panduan, lalu bertanya kepada rekan di instansi lain yang sudah lebih dulu menerapkan sistem tersebut.",
+        "score": 4
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena menunjukkan kapabilitas belajar mandiri (self-learning), proaktif menyelesaikan kendala teknis secara independen dengan sarana yang tersedia."
@@ -3135,18 +3135,18 @@
     "options": [
       {
         "id": "A",
+        "text": "Menunda penerimaan berkas sampai berhasil menghubungi atasan guna menghindari kekeliruan prosedur.",
+        "score": 3
+      },
+      {
+        "id": "B",
         "text": "Mengambil keputusan menerima berkas berdasar kewenangan SOP teknis, mencatat diskrepansi, dan melaporkannya setibanya di kantor induk.",
         "score": 5
       },
       {
-        "id": "B",
-        "text": "Menerima berkas dengan catatan bersyarat, lalu segera mencari area bersinyal untuk mengonfirmasi ke atasan.",
-        "score": 4
-      },
-      {
         "id": "C",
-        "text": "Menunda penerimaan berkas sampai berhasil menghubungi atasan guna menghindari kekeliruan prosedur.",
-        "score": 3
+        "text": "Menolak berkas tersebut karena format tidak sesuai standar demi menjaga keamanan administratif diri sendiri.",
+        "score": 1
       },
       {
         "id": "D",
@@ -3155,8 +3155,8 @@
       },
       {
         "id": "E",
-        "text": "Menolak berkas tersebut karena format tidak sesuai standar demi menjaga keamanan administratif diri sendiri.",
-        "score": 1
+        "text": "Menerima berkas dengan catatan bersyarat, lalu segera mencari area bersinyal untuk mengonfirmasi ke atasan.",
+        "score": 4
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena memperlihatkan keberanian mengambil keputusan profesional secara mandiri berbasis regulasi dalam kondisi darurat/terisolir tanpa mengorbankan akuntabilitas."
@@ -3169,28 +3169,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Menyusun linimasa kerja mandiri dan mengeksekusi penataan arsip secara fokus tanpa mengganggu fokus rekan kerja.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Menyelesaikan bagian tersulit sendirian, kemudian meminta bantuan kecil rekan kerja saat mereka ada waktu luang.",
-        "score": 4
-      },
-      {
-        "id": "C",
         "text": "Meminta izin atasan untuk memperpanjang waktu penyelesaian agar beban kerja lebih terkontrol.",
         "score": 3
       },
       {
-        "id": "D",
+        "id": "B",
         "text": "Mengajak satu rekan kerja bertukar bantuan agar tugas masing-masing terasa lebih ringan.",
         "score": 2
       },
       {
-        "id": "E",
+        "id": "C",
+        "text": "Menyelesaikan bagian tersulit sendirian, kemudian meminta bantuan kecil rekan kerja saat mereka ada waktu luang.",
+        "score": 4
+      },
+      {
+        "id": "D",
         "text": "Mengeluhkan beban kerja yang tidak seimbang kepada rekan kerja lain di ruangan.",
         "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menyusun linimasa kerja mandiri dan mengeksekusi penataan arsip secara fokus tanpa mengganggu fokus rekan kerja.",
+        "score": 5
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena mengedepankan etos kerja mandiri, tidak merepotkan lingkungan kerja yang sedang berbeban tinggi, serta memiliki manajemen waktu personal yang matang."
@@ -3203,8 +3203,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Mencari solusi galat melalui basis pengetahuan daring/buku saku mandiri IT, lalu menerapkan perbaikan sistematis sendiri.",
-        "score": 5
+        "text": "Menghentikan pengerjaan tugas dan menunggu tim IT kembali ke kantor utama.",
+        "score": 1
       },
       {
         "id": "B",
@@ -3213,8 +3213,8 @@
       },
       {
         "id": "C",
-        "text": "Meminjam komputer rekan kerja yang sedang istirahat agar pengetikan data tidak terhambat.",
-        "score": 3
+        "text": "Mencari solusi galat melalui basis pengetahuan daring/buku saku mandiri IT, lalu menerapkan perbaikan sistematis sendiri.",
+        "score": 5
       },
       {
         "id": "D",
@@ -3223,8 +3223,8 @@
       },
       {
         "id": "E",
-        "text": "Menghentikan pengerjaan tugas dan menunggu tim IT kembali ke kantor utama.",
-        "score": 1
+        "text": "Meminjam komputer rekan kerja yang sedang istirahat agar pengetikan data tidak terhambat.",
+        "score": 3
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena mencerminkan problem-solving personal, daya juang menghadapi hambatan operasional rutin, serta minimnya ketergantungan pada pihak ketiga untuk masalah teknis dasar."
@@ -3237,8 +3237,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Mempelajari panduan teknis secara mandiri di luar jam kerja serta aktif berkonsultasi dengan tim IT agar cepat mahir.",
-        "score": 5
+        "text": "Meminta rekan kerja yang sudah paham untuk mendampingi saat Anda menginput data pekerjaan.",
+        "score": 3
       },
       {
         "id": "B",
@@ -3247,8 +3247,8 @@
       },
       {
         "id": "C",
-        "text": "Meminta rekan kerja yang sudah paham untuk mendampingi saat Anda menginput data pekerjaan.",
-        "score": 3
+        "text": "Mempelajari panduan teknis secara mandiri di luar jam kerja serta aktif berkonsultasi dengan tim IT agar cepat mahir.",
+        "score": 5
       },
       {
         "id": "D",
@@ -3271,13 +3271,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Membaca tuntas dokumen regulasi, menyusun ringkasan poin-poin krusial, dan menginisiasi forum diskusi tim kerja.",
-        "score": 5
+        "text": "Mencari video bedah regulasi dan kajian literatur hukum secara mandiri saat memiliki waktu luang kerja.",
+        "score": 4
       },
       {
         "id": "B",
-        "text": "Mencari video bedah regulasi dan kajian literatur hukum secara mandiri saat memiliki waktu luang kerja.",
-        "score": 4
+        "text": "Membaca tuntas dokumen regulasi, menyusun ringkasan poin-poin krusial, dan menginisiasi forum diskusi tim kerja.",
+        "score": 5
       },
       {
         "id": "C",
@@ -3286,13 +3286,13 @@
       },
       {
         "id": "D",
-        "text": "Menunggu edaran ringkasan dan panduan teknis turunan yang disiapkan oleh bagian hukum instansi.",
-        "score": 2
+        "text": "Bertanya kepada rekan senior hanya saat menemukan kendala konkret terkait aturan tersebut.",
+        "score": 1
       },
       {
         "id": "E",
-        "text": "Bertanya kepada rekan senior hanya saat menemukan kendala konkret terkait aturan tersebut.",
-        "score": 1
+        "text": "Menunggu edaran ringkasan dan panduan teknis turunan yang disiapkan oleh bagian hukum instansi.",
+        "score": 2
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena menunjukkan kemauan belajar komprehensif, kemampuan mensintesis materi baru, dan kemauan berbagi pengetahuan untuk penguatan kapasitas organisasi."
@@ -3305,13 +3305,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Menerima evaluasi secara terbuka, memetakan kekurangan kompetensi, lalu menetapkan rencana belajar mandiri secara terukur.",
-        "score": 5
+        "text": "Mencari kursus online bersertifikat tentang analisis data terkini dan memohon izin atasan untuk mengikutinya.",
+        "score": 4
       },
       {
         "id": "B",
-        "text": "Mencari kursus online bersertifikat tentang analisis data terkini dan memohon izin atasan untuk mengikutinya.",
-        "score": 4
+        "text": "Menjelaskan kepada atasan bahwa metode lama tetap valid dan hanya butuh adaptasi waktu penyelesaian.",
+        "score": 1
       },
       {
         "id": "C",
@@ -3325,8 +3325,8 @@
       },
       {
         "id": "E",
-        "text": "Menjelaskan kepada atasan bahwa metode lama tetap valid dan hanya butuh adaptasi waktu penyelesaian.",
-        "score": 1
+        "text": "Menerima evaluasi secara terbuka, memetakan kekurangan kompetensi, lalu menetapkan rencana belajar mandiri secara terukur.",
+        "score": 5
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena mengedepankan kesadaran reflektif (growth mindset), keterbukaan menerima kritik, dan langkah strategis perbaikan diri tanpa ketergantungan penuh pada pihak lain."
@@ -3339,13 +3339,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Mengikis gengsi dan proaktif meminta pegawai tersebut untuk melatih Anda menggunakan platform baru secara optimal.",
-        "score": 5
+        "text": "Fokus mengambil alih tanggung jawab non-digital yang sudah Anda kuasai dengan baik.",
+        "score": 2
       },
       {
         "id": "B",
-        "text": "Mempelajari platform tersebut melalui video tutorial daring demi mengimbangi ritme kerja tim.",
-        "score": 4
+        "text": "Meminta bantuan pegawai lain untuk memasukkan input kerja Anda ke dalam sistem aplikasi tersebut.",
+        "score": 1
       },
       {
         "id": "C",
@@ -3354,13 +3354,13 @@
       },
       {
         "id": "D",
-        "text": "Fokus mengambil alih tanggung jawab non-digital yang sudah Anda kuasai dengan baik.",
-        "score": 2
+        "text": "Mempelajari platform tersebut melalui video tutorial daring demi mengimbangi ritme kerja tim.",
+        "score": 4
       },
       {
         "id": "E",
-        "text": "Meminta bantuan pegawai lain untuk memasukkan input kerja Anda ke dalam sistem aplikasi tersebut.",
-        "score": 1
+        "text": "Mengikis gengsi dan proaktif meminta pegawai tersebut untuk melatih Anda menggunakan platform baru secara optimal.",
+        "score": 5
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena menunjukkan kerendahan hati untuk belajar (unlearning/relearning), meniadakan hierarki usia/senioritas demi akuisisi keterampilan baru."
@@ -3373,28 +3373,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Mencari materi terbuka, jurnal ilmiah, dan webinar gratis, serta bersedia menyisihkan biaya mandiri untuk membeli buku relevan.",
-        "score": 5
-      },
-      {
-        "id": "B",
-        "text": "Mengusulkan kembali program pelatihan tersebut pada rencana kerja dan anggaran tahun anggaran berikutnya.",
-        "score": 4
-      },
-      {
-        "id": "C",
         "text": "Mencari informasi program beasiswa non-kedinasan bersyarat ringan yang dapat diakses secara publik.",
         "score": 3
       },
       {
-        "id": "D",
+        "id": "B",
+        "text": "Menjalankan tugas-tugas rutin dengan kompetensi yang ada tanpa menambah beban belajar mandiri.",
+        "score": 1
+      },
+      {
+        "id": "C",
         "text": "Menunda peningkatan kompetensi tersebut hingga instansi memiliki alokasi anggaran pelatihan yang mencukupi.",
         "score": 2
       },
       {
+        "id": "D",
+        "text": "Mengusulkan kembali program pelatihan tersebut pada rencana kerja dan anggaran tahun anggaran berikutnya.",
+        "score": 4
+      },
+      {
         "id": "E",
-        "text": "Menjalankan tugas-tugas rutin dengan kompetensi yang ada tanpa menambah beban belajar mandiri.",
-        "score": 1
+        "text": "Mencari materi terbuka, jurnal ilmiah, dan webinar gratis, serta bersedia menyisihkan biaya mandiri untuk membeli buku relevan.",
+        "score": 5
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena memperlihatkan dedikasi tinggi terhadap pengembangan diri (self-driven learner) yang tidak bergantung pada fasilitas anggaran dinas semata."
@@ -3407,8 +3407,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Mengajak rekan tersebut berdiskusi terpisah untuk menyandingkan data kedua divisi guna mencari titik temu dan integrasi program.",
-        "score": 5
+        "text": "Mengalah demi menjaga keharmonisan tim dan ketepatan waktu pengumpulan draf kebijakan.",
+        "score": 2
       },
       {
         "id": "B",
@@ -3417,18 +3417,18 @@
       },
       {
         "id": "C",
-        "text": "Mengalah demi menjaga keharmonisan tim dan ketepatan waktu pengumpulan draf kebijakan.",
-        "score": 2
+        "text": "Mengajak rekan tersebut berdiskusi terpisah untuk menyandingkan data kedua divisi guna mencari titik temu dan integrasi program.",
+        "score": 5
       },
       {
         "id": "D",
-        "text": "Menjelaskan kembali secara objektif letak tumpang tindih program tersebut di depan forum dengan data faktual agar disepakati bersama.",
-        "score": 4
+        "text": "Meminta notulis mencatat perselisihan tersebut dan melanjutkan pembahasan agenda lain yang belum selesai.",
+        "score": 1
       },
       {
         "id": "E",
-        "text": "Meminta notulis mencatat perselisihan tersebut dan melanjutkan pembahasan agenda lain yang belum selesai.",
-        "score": 1
+        "text": "Menjelaskan kembali secara objektif letak tumpang tindih program tersebut di depan forum dengan data faktual agar disepakati bersama.",
+        "score": 4
       }
     ],
     "explanation": "Pembahasan: Skor 5 pada opsi A karena menunjukkan inisiatif kolaboratif proaktif, mengutamakan integrasi data, dan meredam ketegangan tanpa mengorbankan kualitas draf. ASN harus solutif dan mampu mengintegrasikan perbedaan demi tujuan bersama."
@@ -3441,13 +3441,13 @@
     "options": [
       {
         "id": "A",
-        "text": "Berinisiatif membagi sisa tugas rekan tersebut kepada anggota tim lain yang sudah selesai, termasuk diri sendiri, agar tuntas tepat waktu.",
-        "score": 5
+        "text": "Menyelesaikan seluruh sisa pekerjaan rekan tersebut sendirian agar pekerjaan segera tuntas tanpa membebani yang lain.",
+        "score": 4
       },
       {
         "id": "B",
-        "text": "Menyelesaikan seluruh sisa pekerjaan rekan tersebut sendirian agar pekerjaan segera tuntas tanpa membebani yang lain.",
-        "score": 4
+        "text": "Fokus memeriksa ulang pekerjaan pribadi agar tidak ada kekeliruan saat sistem integrasi dijalankan.",
+        "score": 1
       },
       {
         "id": "C",
@@ -3456,13 +3456,13 @@
       },
       {
         "id": "D",
-        "text": "Membantu mengecek sisa data rekan tersebut sembari menunggu kepastian apakah rekan tersebut bisa lanjut bekerja dari rumah.",
-        "score": 2
+        "text": "Berinisiatif membagi sisa tugas rekan tersebut kepada anggota tim lain yang sudah selesai, termasuk diri sendiri, agar tuntas tepat waktu.",
+        "score": 5
       },
       {
         "id": "E",
-        "text": "Fokus memeriksa ulang pekerjaan pribadi agar tidak ada kekeliruan saat sistem integrasi dijalankan.",
-        "score": 1
+        "text": "Membantu mengecek sisa data rekan tersebut sembari menunggu kepastian apakah rekan tersebut bisa lanjut bekerja dari rumah.",
+        "score": 2
       }
     ],
     "explanation": "Pembahasan: Skor 5 pada opsi A mencerminkan kepemimpinan kolegial, gotong royong terukur, dan tanggung jawab hasil tim. Beban dibagi merata agar penyelesaian optimal dan adil bagi anggota lain."
@@ -3475,18 +3475,18 @@
     "options": [
       {
         "id": "A",
+        "text": "Menerima rancangan anggota senior karena mereka memiliki pengalaman lebih luas dalam program kebangsaan.",
+        "score": 1
+      },
+      {
+        "id": "B",
         "text": "Mendukung ide anggota baru di luar rapat dan menyarankan mereka menyampaikannya langsung ke pimpinan unit.",
         "score": 2
       },
       {
-        "id": "B",
-        "text": "Mengusulkan sesi penyusunan konsep di mana setiap anggota mempresentasikan ide, lalu memadukan nilai materi senior dengan metode modern pegawai baru.",
-        "score": 5
-      },
-      {
         "id": "C",
-        "text": "Menerima rancangan anggota senior karena mereka memiliki pengalaman lebih luas dalam program kebangsaan.",
-        "score": 1
+        "text": "Meminta ketua tim untuk menyusun aturan giliran berbicara agar forum berjalan lebih berimbang.",
+        "score": 3
       },
       {
         "id": "D",
@@ -3495,8 +3495,8 @@
       },
       {
         "id": "E",
-        "text": "Meminta ketua tim untuk menyusun aturan giliran berbicara agar forum berjalan lebih berimbang.",
-        "score": 3
+        "text": "Mengusulkan sesi penyusunan konsep di mana setiap anggota mempresentasikan ide, lalu memadukan nilai materi senior dengan metode modern pegawai baru.",
+        "score": 5
       }
     ],
     "explanation": "Pembahasan: Skor 5 pada opsi B karena menawarkan solusi sistematis dan integratif. Menggabungkan substansi pengalaman senior dengan metode modern pegawai baru menciptakan sinergi tim yang produktif dan harmonis."
@@ -3509,18 +3509,18 @@
     "options": [
       {
         "id": "A",
-        "text": "Menyampaikan kendala keterlambatan tersebut kepada atasan tim agar diberikan teguran resmi sesuai aturan.",
-        "score": 2
-      },
-      {
-        "id": "B",
         "text": "Mengajak rekan tersebut berdiskusi empat mata untuk memahami kendalanya, lalu menyusun target waktu per kasus bersama-sama.",
         "score": 5
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "Mengambil alih berkas analisis kasus yang tertunda agar pelayanan publik kepada warga tidak terganggu.",
         "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menyesuaikan kecepatan kerja pribadi mengikuti ritme rekan tersebut agar koordinasi tetap seimbang.",
+        "score": 1
       },
       {
         "id": "D",
@@ -3529,8 +3529,8 @@
       },
       {
         "id": "E",
-        "text": "Menyesuaikan kecepatan kerja pribadi mengikuti ritme rekan tersebut agar koordinasi tetap seimbang.",
-        "score": 1
+        "text": "Menyampaikan kendala keterlambatan tersebut kepada atasan tim agar diberikan teguran resmi sesuai aturan.",
+        "score": 2
       }
     ],
     "explanation": "Pembahasan: Skor 5 pada opsi B mengedepankan pendekatan personal, komunikasi persuasif, dan pencarian solusi komitmen bersama tanpa langsung mempermalukan rekan kerja atau melempar masalah ke atasan."
@@ -3543,8 +3543,8 @@
     "options": [
       {
         "id": "A",
-        "text": "Menenangkan tim, mengajak menelusuri sumber selisih secara sistematis bersama, dan fokus menyelesaikan revisi tepat waktu.",
-        "score": 5
+        "text": "Mengusulkan pembagian ulang tugas pengecekan data per sektor agar penelusuran lebih cepat selesai.",
+        "score": 4
       },
       {
         "id": "B",
@@ -3553,8 +3553,8 @@
       },
       {
         "id": "C",
-        "text": "Mengusulkan pembagian ulang tugas pengecekan data per sektor agar penelusuran lebih cepat selesai.",
-        "score": 4
+        "text": "Menenangkan tim, mengajak menelusuri sumber selisih secara sistematis bersama, dan fokus menyelesaikan revisi tepat waktu.",
+        "score": 5
       },
       {
         "id": "D",
@@ -3577,28 +3577,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Mengidentifikasi instansi yang paling dominan lalu mengadopsi SOP mereka untuk mempermudah akselerasi program kerja.",
-        "score": 2
-      },
-      {
-        "id": "B",
-        "text": "Menggelar forum konsensus untuk menyelaraskan visi misi bersama, merumuskan SOP integratif lintas sektoral, dan memetakan tugas sesuai kompetensi inti tiap instansi.",
-        "score": 5
-      },
-      {
-        "id": "C",
         "text": "Menunggu instruksi lebih lanjut dari kementerian koordinator terkait standarisasi protokol kerja terpadu agar tidak melangkahi kewenangan.",
         "score": 1
       },
       {
-        "id": "D",
+        "id": "B",
         "text": "Mengambil alih seluruh alur kerja utama dan membagi tugas secara sepihak untuk memutus perdebatan teknis antar-anggota.",
         "score": 3
       },
       {
-        "id": "E",
+        "id": "C",
         "text": "Menyusun pedoman kerja sementara berdasar regulasi payung tertinggi dan meminta pimpinan tiap instansi menginstruksikan kepatuhan stafnya.",
         "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Menggelar forum konsensus untuk menyelaraskan visi misi bersama, merumuskan SOP integratif lintas sektoral, dan memetakan tugas sesuai kompetensi inti tiap instansi.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Mengidentifikasi instansi yang paling dominan lalu mengadopsi SOP mereka untuk mempermudah akselerasi program kerja.",
+        "score": 2
       }
     ],
     "explanation": "Pilihan B bernilai 5 karena mencerminkan kepemimpinan kolaboratif, kemampuan problem-solving inklusif, dan kapasitas mengintegrasikan perbedaan demi tujuan bersama tanpa memaksakan kehendak sepihak atau bergantung pada otoritas luar."
@@ -3621,18 +3621,18 @@
       },
       {
         "id": "C",
-        "text": "Mengarahkan tim mengutamakan program infrastruktur fisik terlebih dahulu sambil merancang proyek percontohan digital skala kecil.",
-        "score": 4
-      },
-      {
-        "id": "D",
         "text": "Mengikuti saran anggota tim yang paling senior karena rekam jejak pengalamannya dianggap paling realistis.",
         "score": 1
       },
       {
-        "id": "E",
+        "id": "D",
         "text": "Menunda pengambilan keputusan dan meminta kedua kubu menyusun proposal komparasi ulang secara terpisah.",
         "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengarahkan tim mengutamakan program infrastruktur fisik terlebih dahulu sambil merancang proyek percontohan digital skala kecil.",
+        "score": 4
       }
     ],
     "explanation": "Pilihan A bernilai 5 karena pemimpin berintegritas menggunakan data objektif sebagai kompas pengambilan keputusan, mengedepankan musyawarah mufakat, dan mampu mensintesiskan aspirasi yang bersaing menjadi strategi komprehensif."
@@ -3645,28 +3645,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Menegur personal yang terlibat friksi secara tegas serta mewajibkan penerapan profesionalitas formal di jam kerja.",
-        "score": 3
+        "text": "Mengalihkan tanggung jawab manajemen konflik internal ini ke bagian pengembangan SDM melalui permohonan pelatihan kebhinekaan.",
+        "score": 1
       },
       {
         "id": "B",
-        "text": "Memetakan ulang komposisi kelompok kerja berdasarkan kesamaan generasi dan gaya kerja demi meminimalisasi gesekan operasional.",
-        "score": 4
-      },
-      {
-        "id": "C",
         "text": "Membangun ruang dialog terbuka yang inklusif, menyepakati nilai kerja bersama berbasis respek, dan mengorientasikan tim pada target substantif.",
         "score": 5
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "Membiarkan situasi mereda secara alami sembari meyakini anggota tim adalah aparatur negara dewasa yang mampu beradaptasi.",
         "score": 2
       },
       {
+        "id": "D",
+        "text": "Menegur personal yang terlibat friksi secara tegas serta mewajibkan penerapan profesionalitas formal di jam kerja.",
+        "score": 3
+      },
+      {
         "id": "E",
-        "text": "Mengalihkan tanggung jawab manajemen konflik internal ini ke bagian pengembangan SDM melalui permohonan pelatihan kebhinekaan.",
-        "score": 1
+        "text": "Memetakan ulang komposisi kelompok kerja berdasarkan kesamaan generasi dan gaya kerja demi meminimalisasi gesekan operasional.",
+        "score": 4
       }
     ],
     "explanation": "Pilihan C bernilai 5 karena pemimpin efektif tidak menghindari keragaman, melainkan mengelolanya sebagai kekuatan melalui penanaman nilai bersama, komunikasi terbuka, dan penguatan orientasi pencapaian hasil."
@@ -3694,13 +3694,13 @@
       },
       {
         "id": "D",
-        "text": "Melaporkan kesalahan kepada pimpinan kementerian disertai penjelasan bahwa kekeliruan murni bersumber dari kelalaian teknis staf pelaksana.",
-        "score": 2
+        "text": "Mengajukan penundaan penyerahan draf tanpa merinci masalah riil pada proses pengolahan data.",
+        "score": 1
       },
       {
         "id": "E",
-        "text": "Mengajukan penundaan penyerahan draf tanpa merinci masalah riil pada proses pengolahan data.",
-        "score": 1
+        "text": "Melaporkan kesalahan kepada pimpinan kementerian disertai penjelasan bahwa kekeliruan murni bersumber dari kelalaian teknis staf pelaksana.",
+        "score": 2
       }
     ],
     "explanation": "Pilihan B bernilai 5 karena menunjukkan integritas kepemimpinan sejati: mengambil tanggung jawab tim ke luar, sigap memobilisasi penanganan krisis internal, dan menerapkan mekanisme evaluasi konstruktif untuk mencegah pengulangan."
@@ -3713,28 +3713,28 @@
     "options": [
       {
         "id": "A",
-        "text": "Menerbitkan instruksi formal tanpa kompromi disertai ancaman sanksi indisipliner bagi staf yang tidak mematuhi alur sistem baru.",
-        "score": 4
-      },
-      {
-        "id": "B",
         "text": "Menunda transisi digital sampai sarana pendukung dan seluruh pegawai menyatakan siap tanpa keberatan.",
         "score": 1
       },
       {
+        "id": "B",
+        "text": "Mengizinkan penggunaan sistem paralel (manual dan digital) secara simultan tanpa batas waktu transisi.",
+        "score": 3
+      },
+      {
         "id": "C",
+        "text": "Menerbitkan instruksi formal tanpa kompromi disertai ancaman sanksi indisipliner bagi staf yang tidak mematuhi alur sistem baru.",
+        "score": 4
+      },
+      {
+        "id": "D",
         "text": "Mengidentifikasi akar resistensi lapangan, menyelenggarakan pendampingan teknis intensif, dan menegaskan transparansi dampak digitalisasi terhadap akuntabilitas kerja.",
         "score": 5
       },
       {
-        "id": "D",
+        "id": "E",
         "text": "Menugaskan beberapa staf muda untuk mengoperasikan sistem menggantikan peran staf senior yang kesulitan beradaptasi.",
         "score": 2
-      },
-      {
-        "id": "E",
-        "text": "Mengizinkan penggunaan sistem paralel (manual dan digital) secara simultan tanpa batas waktu transisi.",
-        "score": 3
       }
     ],
     "explanation": "Pilihan C bernilai 5 karena seorang pemimpin transformasional tidak hanya menggunakan otoritas instruktif, melainkan mampu mengelola manajemen perubahan melalui edukasi, pemecahan akar masalah, dan penanaman kesadaran integritas."

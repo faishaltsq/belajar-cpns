@@ -44,6 +44,7 @@ const STATIC_PACKAGES: Record<string, () => Promise<Question[]>> = {
   'tryout-4': () => import('@/data/packages/tryout-4.json').then((m) => m.default as unknown as Question[]).catch(() => []),
   'tryout-5': () => import('@/data/packages/tryout-5.json').then((m) => m.default as unknown as Question[]).catch(() => []),
   'tryout-6': () => import('@/data/packages/tryout-6.json').then((m) => m.default as unknown as Question[]).catch(() => []),
+  'tryout-7': () => import('@/data/packages/tryout-7.json').then((m) => m.default as unknown as Question[]).catch(() => []),
   'tryout-mini': () => import('@/data/packages/tryout-mini.json').then((m) => m.default as unknown as Question[]).catch(() => []),
 };
 

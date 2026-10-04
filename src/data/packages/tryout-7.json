@@ -1,0 +1,3852 @@
+[
+  {
+    "id": 1,
+    "category": "TWK",
+    "text": "Menganggap budaya etnis sendiri memiliki derajat kemuliaan absolut dibanding tradisi etnis lain di Indonesia berpotensi memicu disintegrasi. Cara pandang keliru ini disebut...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Kosmopolitanisme",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Xenofobia",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Chauvinisme",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Primordialisme",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Patriotisme",
+        "score": 0
+      }
+    ],
+    "explanation": "Chauvinisme menempatkan kelompok/bangsa sendiri secara superior berlebihan sembari merendahkan golongan lain.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 2,
+    "category": "TWK",
+    "text": "Pemberian pendidikan dan pelatihan yang setara bagi seluruh aparatur tanpa diskriminasi suku, ras, atau gender mencerminkan nilai integritas aparatur yang selaras dengan Pancasila sila ke-...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Satu",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Dua",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Tiga",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Lima",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Empat",
+        "score": 0
+      }
+    ],
+    "explanation": "Perlakuan setara berlandaskan harkat martabat manusia tanpa diskriminasi merupakan esensi Sila Ke-2 (Kemanusiaan yang Adil dan Beradab).",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 3,
+    "category": "TWK",
+    "text": "Tindakan generasi muda memilih membeli produk industri perangkat lunak karya programmer dalam negeri dibanding mengunduh produk bajakan dari luar negeri merupakan wujud nyata bela negara kategori...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Kewajiban militer wajib lapor",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pengorbanan materiil personal",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kesiapan fisik pertahanan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Cinta tanah air dan kemandirian bangsa",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Ketaatan buta hukum nasional",
+        "score": 0
+      }
+    ],
+    "explanation": "Menghargai dan menggunakan karya bangsa merupakan indikator nilai dasar bela negara yaitu cinta tanah air.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 4,
+    "category": "TWK",
+    "text": "Arti bentukan kata 'mengenyampingkan' yang sering keliru digunakan dalam draf peraturan perundang-undangan harus diperbaiki menjadi bentuk baku...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyampingkankan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menyampingkan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Mengesampingi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mengkesampingkan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Mengesampingkan",
+        "score": 5
+      }
+    ],
+    "explanation": "Kata dasar 'ke samping' diberi konfiks me-kan menjadi 'mengesampingkan', bukan 'mengenyampingkan'.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 5,
+    "category": "TWK",
+    "text": "Siapakah pihak yang memiliki kedudukan hukum (legal standing) untuk mengajukan permohonan pembubaran partai politik ke Mahkamah Konstitusi menurut ketentuan perundang-undangan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Komisi Pemilihan Umum",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Masyarakat sipil gabungan LSM",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Badan Pengawas Pemilu",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Dewan Perwakilan Rakyat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pemerintah (Presiden)",
+        "score": 5
+      }
+    ],
+    "explanation": "Pasal 68 UU MK menegaskan pemohon pembubaran partai politik ke Mahkamah Konstitusi adalah Pemerintah.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 6,
+    "category": "TWK",
+    "text": "Badan Diklat Kejaksaan menyelenggarakan fungsi pembinaan integritas dan disiplin pegawai. Indikator utama internalisasi integritas seorang aparatur sipil negara adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Keikutsertaan dalam pelatihan kedinasan demi promosi jabatan kilat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Penyelesaian tugas harian semata berdasarkan pengawasan pimpinan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kepatuhan terhadap atasan tanpa mempertimbangkan regulasi hukum",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Penyerapan seluruh anggaran program kerja tepat waktu",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Penyelarasan antara nilai kejujuran, komitmen, dan perilaku kerja nyata",
+        "score": 5
+      }
+    ],
+    "explanation": "Integritas bermakna konsistensi antara perkataan, keyakinan etis, dan tindakan konkret tanpa deviasi moral.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 7,
+    "category": "TWK",
+    "text": "Seorang konten kreator menyematkan lisensi hak cipta resmi pada karya visual edukatif yang ia buat agar tidak diklaim pihak lain tanpa izin. Sikap masyarakat yang mengunduh dan menyebarluaskan karya tersebut dengan tetap mencantumkan atribusi serta meminta izin tertulis saat komersialisasi mencerminkan pengamalan sila ke-...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pertama",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Ketiga",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kedua",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Keempat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kelima",
+        "score": 5
+      }
+    ],
+    "explanation": "Menghormati hak kekayaan intelektual dan karya orang lain merupakan implementasi butir Pancasila Sila Kelima.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 8,
+    "category": "TWK",
+    "text": "Warga negara mengajukan judicial review ke MK karena hak suaranya dirugikan oleh klausul suatu UU. Tindakan tersebut mencerminkan kesadaran bela negara melalui dimensi...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pengorbanan materiil demi kepatuhan yurisprudensi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Penegakan kedaulatan hukum dan hak konstitusional",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Partisipasi bela negara komponen cadangan militer",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Ketaatan mutlak terhadap segala produk legislasi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kesiapsiagaan fisik menghadapi instabilitas",
+        "score": 0
+      }
+    ],
+    "explanation": "Mengawal konstitusi lewat jalur hukum resmi adalah manifestasi bela negara konstitusional demi tegaknya hukum.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 9,
+    "category": "TWK",
+    "text": "Berdasarkan teori jenjang norma hukum Hans Nawiasky, Pancasila berkedudukan sebagai landasan tertinggi pembentukan konstitusi dan hukum nasional yang disebut sebagai...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Staatsfundamentalnorm",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Verordnung",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Formelle Gesetze",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Staatsgrundgesetz",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Autonome Satzung",
+        "score": 0
+      }
+    ],
+    "explanation": "Pancasila memuat pokok kaidah fundamental negara berstatus staatsfundamentalnorm, norma tertinggi di atas konstitusi dasar.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 10,
+    "category": "TWK",
+    "text": "Serangan siber berskala luas yang melumpuhkan Pusat Data Nasional dan membahayakan kerahasiaan identitas kependudukan merupakan ancaman kedaulatan negara dimensi...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Konvensional-agresif",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Tradisional-militeristik",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Geopolitik wilayah perbatasan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Fisik teritorial",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Nonmiliter berbasis teknologi informasi",
+        "score": 5
+      }
+    ],
+    "explanation": "Kejahatan siber terhadap infrastruktur vital negara digolongkan sebagai ancaman nonmiliter kontemporer.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 11,
+    "category": "TWK",
+    "text": "Cita-cita nasional 'merdeka, bersatu, berdaulat, adil, dan makmur' dalam Pembukaan UUD 1945 menuntut sistem politik berbasis...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Demokrasi liberal tanpa pembatasan regulasi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Oligarki teknokrat berbasis pembagian kekuasaan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sentralisasi kekuasaan eksekutif secara mutlak",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Prinsip musyawarah mufakat demi persatuan",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Federalisme hukum peradilan terpisah antarwilayah",
+        "score": 0
+      }
+    ],
+    "explanation": "Sistem politik Indonesia berakar pada nilai Pancasila yang mengedepankan musyawarah, persatuan, dan keadilan sosial.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 12,
+    "category": "TWK",
+    "text": "Nilai dasar integritas yang dicanangkan KPK terbagi dalam tiga domain: inti, sikap, dan etos kerja. Kumpulan nilai yang seluruhnya termasuk ke dalam domain 'etos kerja' adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Berani, peduli, adil",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mandiri, kerja keras, sederhana",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Jujur, tanggung jawab, disiplin",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Tanggung jawab, mandiri, peduli",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Disiplin, jujur, sederhana",
+        "score": 0
+      }
+    ],
+    "explanation": "Domain etos kerja terdiri atas kerja keras, mandiri, dan sederhana.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 13,
+    "category": "TWK",
+    "text": "Jika suatu norma dalam undang-undang mereduksi kemandirian peradilan dan melemahkan kedaulatan rakyat, pemohon pengujian mendasarkan gugatannya pada UUD 1945 selaku...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Formelle Gesetz",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Diktat Yudisial",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Autonome Satzung",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Staatsgrundgesetz",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Verordnung",
+        "score": 0
+      }
+    ],
+    "explanation": "UUD 1945 berkedudukan sebagai hukum dasar negara tertulis (staatsgrundgesetz) tempat seluruh UU di bawahnya berpijak.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 14,
+    "category": "TWK",
+    "text": "Bacalah paragraf berikut:\n'Multimedia pembelajaran memadukan berbagai unsur informasi visual, audio, serta interaktivitas terprogram. Integrasi medium ini mempermudah transmisi materi rumit menjadi visualisasi yang mudah dipahami peserta ajar. Dampaknya, akselerasi pemahaman substansi pengetahuan terjadi secara efisien tanpa terkendala sekat geografis.'\nGagasan utama paragraf tersebut adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Peran integrasi multimedia dalam menunjang pemahaman belajar",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Keterbatasan letak geografis dalam sistem pendidikan modern",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pentingnya transmisi materi audio dibanding materi cetak",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Perangkat lunak interaktif menggantikan fungsi pengajar seutuhnya",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Standardisasi sarana multimedia pada seluruh sekolah negeri",
+        "score": 0
+      }
+    ],
+    "explanation": "Paragraf fokus membahas bagaimana integrasi multimedia pembelajaran mempercepat efektivitas dan efisiensi pemahaman siswa.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 15,
+    "category": "TWK",
+    "text": "Cermatilah kalimat berikut:\n'Bagi seluruh peserta seleksi daripada aparatur sipil negara yang mana terlambat hadir tidak diperkenankan mengikuti ujian.'\nPerbaikan kalimat agar menjadi kalimat efektif adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Seluruh peserta seleksi daripada aparatur negara jika terlambat tidak diizinkan masuk.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Bagi peserta seleksi aparatur sipil negara yang mana datang terlambat tidak boleh ikut ujian.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Untuk peserta seleksi aparatur sipil negara bila terlambat tidak diperbolehkan ujian.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Peserta seleksi aparatur sipil negara yang terlambat tidak diperkenankan mengikuti ujian.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Peserta seleksi daripada aparatur sipil negara yang terlambat tidak diperkenankan ikut ujian.",
+        "score": 0
+      }
+    ],
+    "explanation": "Menghapus preposisi jamak dan kata penghubung rancu ('bagi', 'seluruh', 'daripada', 'yang mana') menciptakan struktur subjek-predikat baku.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 16,
+    "category": "TWK",
+    "text": "Pasal 33 ayat (4) Undang-Undang Dasar 1945 hasil amendemen mengatur bahwa perekonomian nasional diselenggarakan berdasar atas demokrasi ekonomi dengan prinsip...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Kebersamaan, efisiensi berkeadilan, berkelanjutan, dan kemandirian",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Perdagangan multinasional, desentralisasi fiskal, dan laba bersama",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sentralisasi modal, produktivitas industri, dan kemakmuran elit",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Monopoli perbankan, regulasi proteksionis, dan subsidi mutlak",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Liberalisasi pasar, kompetisi bebas, dan swastanisasi total",
+        "score": 0
+      }
+    ],
+    "explanation": "Pasal 33 ayat (4) menegaskan prinsip kebersamaan, efisiensi berkeadilan, berkelanjutan, berwawasan lingkungan, kemandirian, serta menjaga keseimbangan kemajuan.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 17,
+    "category": "TWK",
+    "text": "Kewenangan Mahkamah Konstitusi yang diatur secara eksplisit dalam Pasal 24C Ayat (1) UUD 1945 selain pengujian undang-undang adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Memutus pembubaran partai politik",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menjatuhkan vonis pidana kasus pengkhianatan presiden",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Memutus sengketa kewenangan lembaga negara mandiri tingkat daerah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mengangkat dan memberhentikan hakim agung",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menguji peraturan pemerintah terhadap undang-undang",
+        "score": 0
+      }
+    ],
+    "explanation": "Pasal 24C ayat (1): MK memutus sengketa lembaga negara yang kewenangannya diberikan UUD, memutus pembubaran parpol, dan memutus perselisihan hasil pemilu.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 18,
+    "category": "TWK",
+    "text": "Penulisan istilah dan ejaan resmi yang tepat sesuai kaidah Pedoman Umum Ejaan Bahasa Indonesia (PUEBI) adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Uji materiel undang undang dilaksanakan oleh Mahkamah Konstitusi.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Uji materil undang-undang dilaksanakan oleh Mahkamah Konstitusi.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Uji materiil Undang-Undang dilaksanakan oleh mahkamah konstitusi.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Uji materiil undang-Undang dilaksanakan oleh Mahkamah konstitusi.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Uji materiil undang-undang dilaksanakan oleh Mahkamah Konstitusi.",
+        "score": 5
+      }
+    ],
+    "explanation": "Kata baku: 'materiil'. Nama lembaga resmi: 'Mahkamah Konstitusi'. Kata 'undang-undang' memakai huruf kecil jika tidak merujuk nomor/tahun tertentu.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 19,
+    "category": "TWK",
+    "text": "Penetapan kebijakan kurikulum diklat yang menanamkan kesadaran cinta tanah air dan anti-korupsi di lingkungan kejaksaan merupakan strategi pertahanan negara nonmiliter menghadapi...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Ancaman ideologis serta degradasi moralitas aparatur",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Agresi batas wilayah terluar",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Spionase militer intelijen asing",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sabotase infrastruktur telekomunikasi strategis",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Blokade ekonomi internasional secara sepihak",
+        "score": 0
+      }
+    ],
+    "explanation": "Diklat ideologi dan anti-korupsi memitigasi ancaman non-militer berupa pembusukan moral birokrasi dan pelemahan sendi negara.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 20,
+    "category": "TWK",
+    "text": "Dalam perumusan UU, aspirasi kelompok marjinal diabaikan demi memuluskan kepentingan korporasi asing. Sikap ini bertentangan dengan prinsip nasionalisme Indonesia karena...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Melanggar prinsip keterbukaan informasi publik lembaga riset",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Membatasi arus investasi modal asing ke pasar domestik",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Menolak kerja sama ekonomi internasional secara bilateral",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Mengkhianati cita-cita kedaulatan rakyat demi kemaslahatan bersama",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menghambat privatisasi aset-aset strategis milik pemerintah pusat",
+        "score": 0
+      }
+    ],
+    "explanation": "Nasionalisme menuntut perlindungan segenap tumpah darah dan kedaulatan bangsa di atas privilese modal asing.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 21,
+    "category": "TWK",
+    "text": "Seorang kepala subbagian kepegawaian menemukan indikasi manipulasi presensi digital oleh stafnya sendiri. Kendati staf tersebut merupakan kerabat kandungnya, ia tetap memproses sanksi disiplin sesuai regulasi. Nilai integritas yang ditunjukkan pejabat tersebut adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Kompromis",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Humanis",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Adil dan berani",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Kolektif",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Adaptif",
+        "score": 0
+      }
+    ],
+    "explanation": "Tidak memberi perlakuan istimewa kepada kerabat membuktikan keberanian mengambil putusan dan menjunjung prinsip adil.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 22,
+    "category": "TWK",
+    "text": "Kalimat berikut yang memenuhi kriteria kalimat efektif adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dalam peraturan ini membahas tentang pembentukan sistem informasi manajemen terpadu.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kerja sama pelatihan diselenggarakan baik di dalam maupun luar negeri.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sekretariat Badan menyelenggarakan fungsi koordinasi administrasi kepegawaian secara akuntabel.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Penyusunan rencana kerja diselenggarakan untuk meningkatkan daripada kompetensi pegawai.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Bagi seluruh pegawai-pegawai yang melanggar disiplin akan dikenakan sanksi.",
+        "score": 0
+      }
+    ],
+    "explanation": "Pilihan b memiliki unsur Subjek-Predikat-Objek-Keterangan lengkap, hemat kata, dan gramatikal tanpa kerancuan preposisi.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 23,
+    "category": "TWK",
+    "text": "Pemerintah menyalurkan bantuan sosial pangan secara merata kepada kelompok marjinal yang terdampak disrupsi ekonomi digital guna mencegah kesenjangan ekstrim. Tindakan tersebut paling mencerminkan implementasi nilai...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Ketuhanan Yang Maha Esa",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Keadilan sosial bagi seluruh rakyat Indonesia",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Kerakyatan yang dipimpin oleh hikmat kebijaksanaan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kemanusiaan yang adil dan beradab",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Persatuan Indonesia",
+        "score": 0
+      }
+    ],
+    "explanation": "Upaya penjaminan kesejahteraan dan pemerataan penopang hidup kelompok rentan mencerminkan nilai Sila Kelima.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 24,
+    "category": "TWK",
+    "text": "Lembaga negara yang memegang kekuasaan kehakiman dan berwenang menguji undang-undang terhadap Undang-Undang Dasar adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Komisi Yudisial",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mahkamah Konstitusi",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Dewan Perwakilan Daerah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Badan Pemeriksa Keuangan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Mahkamah Agung",
+        "score": 0
+      }
+    ],
+    "explanation": "Berdasarkan Pasal 24C ayat (1) UUD 1945, MK berwenang menguji undang-undang terhadap UUD.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 25,
+    "category": "TWK",
+    "text": "Mahkamah Konstitusi berwenang menguji undang-undang terhadap UUD 1945. Pengujian yang menitikberatkan pada tata cara atau mekanisme perumusan suatu regulasi disebut pengujian...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Substantif",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Yudikatif",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Materiil",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Formal",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Eksplisit",
+        "score": 0
+      }
+    ],
+    "explanation": "Uji formal memeriksa kesesuaian prosedur pembentukan perundang-undangan sesuai asas dan ketentuan hukum yang berlaku.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 26,
+    "category": "TWK",
+    "text": "Kewajiban warga negara dalam keikutsertaan upaya pembelaan negara secara eksplisit diatur dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 pasal...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "27 ayat (1)",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "28D ayat (1)",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "27 ayat (3)",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "26 ayat (1)",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "30 ayat (2)",
+        "score": 0
+      }
+    ],
+    "explanation": "Pasal 27 ayat (3) UUD 1945 menetapkan hak dan kewajiban setiap warga negara ikut serta dalam pembelaan negara.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 27,
+    "category": "TWK",
+    "text": "Perkembangan ruang digital memicu maraknya ujaran kebencian berbasis SARA yang didesain untuk memecah belah persatuan. Strategi nasionalisme sipil paling tepat guna membendung infiltrasi polarisasi tersebut adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak pengaruh platform daring berbasis internasional",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pemberlakuan sanksi adat serentak bagi pelanggar ujaran",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Penguatan literasi digital berbasis konsensus kebangsaan dan berpikir kritis",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Pembatasan akses internet nasional secara permanen",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sentralisasi seluruh opini publik melalui lembaga pers negara",
+        "score": 0
+      }
+    ],
+    "explanation": "Pencegahan disintegrasi digital modern efektif dilakukan melalui edukasi kritis serta penanaman konsensus dasar negara.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 28,
+    "category": "TWK",
+    "text": "Seorang aparatur sipil negara di Bagian Kepegawaian menolak menerima parsel mewah dari rekan sejawat yang sedang mengajukan usulan promosi jabatan struktural. Sikap aparatur tersebut berlandaskan pada dimensi integritas, yaitu...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Transparansi informasi publik",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Efisiensi birokrasi kedinasan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Objektivitas dan pencegahan konflik kepentingan",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Solidaritas korps aparatur",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Loyalitas hierarki vertikal",
+        "score": 0
+      }
+    ],
+    "explanation": "Menolak gratifikasi terkait usulan promosi menunjukkan penjagaan objektivitas serta antisipasi benturan kepentingan.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 29,
+    "category": "TWK",
+    "text": "Seorang anggota legislatif menyelipkan pasal titipan demi kepentingan bisnis kelompoknya pada draf RUU. Tindakan ini merupakan pelanggaran integritas berupa...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Penyalahgunaan wewenang akibat konflik kepentingan",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Tindakan indisipliner administratif kedinasan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pelanggaran tertib tata naskah dinas kedewanan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pelanggaran sumpah kepatuhan asas praduga bersalah",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pengabaian pembinaan kompetensi struktural",
+        "score": 0
+      }
+    ],
+    "explanation": "Penyelundupan pasal demi keuntungan pribadi/golongan mencederai integritas jabatan publik melalui konflik kepentingan.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 30,
+    "category": "TWK",
+    "text": "Penulisan kata serapan yang seluruhnya baku sesuai Pedoman Umum Ejaan Bahasa Indonesia (PUEBI) terdapat pada kalimat...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Instansi itu melakukan analisa terhadap resiko keuangan triwulan ini.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Praktik penyusunan jadwal efektif membutuhkan koordinasi antardivisi.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Kuitansi pertanggungjawaban dana diserahkan secara kwartal.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Managemen risiko wajib mengukur standarisasi kinerja operasional.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sekretariat memfasilitasi sistim pelaporan lewat jalur formal.",
+        "score": 0
+      }
+    ],
+    "explanation": "Kata 'praktik', 'efektif', dan 'koordinasi' berstatus baku, sedangkan opsi lain memuat bentuk tidak baku seperti analisa, resiko, sistim, kwartal, dan managemen.",
+    "subCategory": "TWK"
+  },
+  {
+    "id": 31,
+    "category": "TIU",
+    "text": "Sebuah mobil patroli logistik bencana melaju dari kota A ke kota B dengan kecepatan rata-rata 60 km/jam selama 2,5 jam. Saat pulang melalui rute sama, waktu tempuh berkurang 30 menit. Berapakah kecepatan rata-rata saat pulang?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "75 km/jam",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "70 km/jam",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "80 km/jam",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "72 km/jam",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "85 km/jam",
+        "score": 0
+      }
+    ],
+    "explanation": "Jarak = 60 x 2,5 = 150 km. Waktu pulang = 2,5 - 0,5 = 2 jam. Kecepatan = 150 / 2 = 75 km/jam.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 32,
+    "category": "TIU",
+    "text": "DOKTER : STETOSKOP = ASTRONOM : ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Termometer",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mikroskop",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Barometer",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Teleskop",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Kompas",
+        "score": 0
+      }
+    ],
+    "explanation": "Stetoskop alat kerja dokter, teleskop alat kerja astronom.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 33,
+    "category": "TIU",
+    "text": "4, 7, 9, 14, 16, 21, 25, 28, ..., ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "36 dan 35",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "32 dan 36",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "36 dan 37",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "35 dan 36",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "30 dan 35",
+        "score": 0
+      }
+    ],
+    "explanation": "Dua larik berselang-seling: Larik 1 (kuadrat bilangan): 4, 9, 16, 25, 36. Larik 2 (kelipatan 7): 7, 14, 21, 28, 35.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 34,
+    "category": "TIU",
+    "text": "PEMERIKSAAN : PELANGGARAN = PEMADAMAN : ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Air",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Lahan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Petugas",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kebakaran",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Selang",
+        "score": 0
+      }
+    ],
+    "explanation": "Pemeriksaan dilakukan untuk menindak/menangani pelanggaran; pemadaman dilakukan untuk menangani kebakaran.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 35,
+    "category": "TIU",
+    "text": "3, 6, 8, 16, 18, 36, ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "72",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "42",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "54",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "40",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "38",
+        "score": 5
+      }
+    ],
+    "explanation": "Operasi selang-seling: dikali 2, ditambah 2. Pola: x2, +2, x2, +2, x2, +2. 36 + 2 = 38.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 36,
+    "category": "TIU",
+    "text": "Sebuah kemeja berharga Rp150.000,00 didiskon 20%. Berapakah harga kemeja tersebut setelah dipotong diskon?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Rp115.000,00",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Rp125.000,00",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Rp120.000,00",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Rp135.000,00",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Rp130.000,00",
+        "score": 0
+      }
+    ],
+    "explanation": "Diskon = 20% x 150.000 = 30.000. Harga bayar = 150.000 - 30.000 = 120.000.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 37,
+    "category": "TIU",
+    "text": "4, 7, 12, 19, 28, ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "40",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "39",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "38",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "41",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "37",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola selisih bilangan ganjil bertingkat: +3, +5, +7, +9, +11. 28 + 11 = 39.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 38,
+    "category": "TIU",
+    "text": "Semua pengawas internal wajib mematuhi kode etik. Beberapa pegawai kejaksaan bertugas sebagai pengawas internal. Simpulan yang benar adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pegawai kejaksaan tidak terikat kode etik.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sebagian pengawas internal bukan pegawai kejaksaan.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sebagian pegawai kejaksaan wajib mematuhi kode etik.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Semua pegawai kejaksaan wajib mematuhi kode etik.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Semua yang mematuhi kode etik bukan pegawai kejaksaan.",
+        "score": 0
+      }
+    ],
+    "explanation": "Silogisme kategori sebagian A adalah B, dan semua B adalah C; maka sebagian A adalah C.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 39,
+    "category": "TIU",
+    "text": "Jika suatu unit kerja mengalami defisit anggaran, maka kegiatan pemantauan ditunda. Pemantauan tidak ditunda atau koordinasi antarlembaga berjalan lancar. Koordinasi antarlembaga terhambat. Simpulan yang sah adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pemantauan tetap ditunda.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Tidak dapat ditarik simpulan.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Anggaran unit kerja dialihkan ke koordinasi.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Unit kerja mengalami defisit anggaran.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Unit kerja tidak mengalami defisit anggaran.",
+        "score": 5
+      }
+    ],
+    "explanation": "P1: Defisit -> Tunda. P2: ~Tunda v Lancar. P3: ~Lancar. Dari P2 dan P3 diperoleh ~Tunda (silogisme disjungtif). Dari P1 dan ~Tunda diperoleh ~Defisit (modus tollens).",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 40,
+    "category": "TIU",
+    "text": "Semua atlet olimpiade lolos kualifikasi nasional. Sebagian perenang kontingen X tidak lolos kualifikasi nasional. Kesimpulan yang tepat adalah ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Semua perenang kontingen X bertanding di olimpiade",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Tidak ada perenang kontingen X yang lolos kualifikasi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Sebagian perenang kontingen X lolos olimpiade",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sebagian perenang kontingen X bukan atlet olimpiade",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Semua atlet yang lolos kualifikasi adalah perenang kontingen X",
+        "score": 0
+      }
+    ],
+    "explanation": "Perenang yang tidak lolos kualifikasi nasional otomatis tidak bertanding di olimpiade.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 41,
+    "category": "TIU",
+    "text": "2, 3, 6, 15, 42, ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "112",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "121",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "123",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "119",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "105",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola selisih pangkat 3: +1 (3^0), +3 (3^1), +9 (3^2), +27 (3^3), berikutnya +81 (3^4). 42 + 81 = 123.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 42,
+    "category": "TIU",
+    "text": "JAKSA : HUKUM = AGRONOM : ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mesin",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Tanaman",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Cuaca",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pasar",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tanah",
+        "score": 0
+      }
+    ],
+    "explanation": "Jaksa ahli dalam bidang hukum; agronom ahli dalam bidang tanaman/budidaya pertanian.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 43,
+    "category": "TIU",
+    "text": "Sebuah kanal irigasi sepanjang 1.200 meter dikerjakan 15 pekerja dalam 8 hari. Jika pekerjaan ingin diselesaikan dalam 5 hari, berapa pekerja tambahan yang diperlukan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "24 orang",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "7 orang",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "8 orang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "12 orang",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "9 orang",
+        "score": 5
+      }
+    ],
+    "explanation": "Perbandingan berbalik nilai: 15 x 8 = X x 5. X = 120 / 5 = 24 pekerja. Tambahan = 24 - 15 = 9 pekerja.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 44,
+    "category": "TIU",
+    "text": "Tiga bidang (Konstruksi, Pertanahan, Keuangan) merekrut 12 pegawai baru. Kuota Keuangan adalah dua kali kuota Pertanahan. Kuota Konstruksi lebih banyak 2 orang dibanding kuota Pertanahan. Berapa jumlah formasi bidang Pertanahan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "2,5 (Koreksi model: misal total 14 formasi)",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "3",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "2",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "2 orang atau bukan bilangan bulat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "2,5",
+        "score": 0
+      }
+    ],
+    "explanation": "Ubah parameter: Total = 10 -> P + 2P + P+2 = 10 -> 4P=8 -> P=2.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 45,
+    "category": "TIU",
+    "text": "Enam analis (A, B, C, D, E, F) duduk mengelilingi meja bundar. A duduk berhadapan langsung dengan D. B duduk tepat di sebelah kanan A. C duduk berseberangan dengan B. E duduk di antara D dan B. Siapakah yang duduk tepat di sebelah kiri D?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "B",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "C",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "A",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "F",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "E",
+        "score": 0
+      }
+    ],
+    "explanation": "Posisi searah jarum jam: A (pos 1), B (pos 2), E (pos 3), D (pos 4, berhadapan A), C (pos 5, berhadapan B). Sisa posisi 6 ditempati F. Menghadap pusat: sebelah kiri D adalah posisi 6, yaitu F.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 46,
+    "category": "TIU",
+    "text": "Semua mamalia menyusui anaknya. Kucing adalah mamalia. Kesimpulan yang tepat adalah ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Sebagian kucing menyusui anaknya",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kucing tidak menyusui anaknya",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Hewan yang menyusui anaknya pasti kucing",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kucing bukan mamalia sejati",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kucing menyusui anaknya",
+        "score": 5
+      }
+    ],
+    "explanation": "Silogisme kategorik standar: Semua M adalah P; S adalah M; maka S adalah P.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 47,
+    "category": "TIU",
+    "text": "3, 6, 12, 24, 48, ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "92",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "90",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "102",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "96",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "84",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola perkalian 2: 48 x 2 = 96.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 48,
+    "category": "TIU",
+    "text": "Tiga divisi (K, P, W) membagi 10 formasi. Kuota W dua kali lipat kuota P. Kuota K dua orang lebih banyak dari kuota P. Berapakah alokasi formasi untuk divisi W?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "2",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "8",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "6",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "1",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "4",
+        "score": 5
+      }
+    ],
+    "explanation": "Persamaan: K + P + W = 10. Diketahui W = 2P, K = P + 2. Maka (P + 2) + P + 2P = 10 -> 4P + 2 = 10 -> 4P = 8 -> P = 2. Formasi W = 2P = 4.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 49,
+    "category": "TIU",
+    "text": "1, 2, 6, 24, 120, ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "720",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "600",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "480",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "840",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "240",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola faktorial/perkalian berurut: x2, x3, x4, x5, x6. 120 x 6 = 720.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 50,
+    "category": "TIU",
+    "text": "Sebuah proyek dapat dirampungkan 15 pekerja dalam 24 hari. Jika proyek ditargetkan selesai dalam 18 hari, berapa tambahan pekerja yang harus didatangkan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "20 orang",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "10 orang",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "8 orang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "12 orang",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "5 orang",
+        "score": 5
+      }
+    ],
+    "explanation": "Beban kerja = 15 x 24 = 360 orang-hari. Kebutuhan = 360 / 18 = 20 orang. Tambahan = 20 - 15 = 5 orang.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 51,
+    "category": "TIU",
+    "text": "Kran A dapat mengisi bak air hingga penuh dalam 4 jam, kran B dalam 6 jam. Pipa pembuangan C dapat mengosongkan bak tersebut dalam 12 jam. Jika kran A, B, dan pipa C dibuka bersama-sama dari bak kosong, berapa jam bak akan terisi penuh?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "3 jam",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "4,5 jam",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "4 jam",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "3,5 jam",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "2,5 jam",
+        "score": 0
+      }
+    ],
+    "explanation": "Laju kerja per jam: (1/4) + (1/6) - (1/12) = 3/12 + 2/12 - 1/12 = 4/12 = 1/3 bagian/jam. Waktu = 3 jam.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 52,
+    "category": "TIU",
+    "text": "Jika cuaca mendung dan angin kencang, penerbangan ditunda. Hari ini penerbangan tidak ditunda. Simpulan yang sah adalah ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Cuaca mendung",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Cuaca tidak mendung atau angin tidak kencang",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Cuaca cerah dan angin tidak kencang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Cuaca tidak mendung dan angin tidak kencang",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Angin kencang tetapi cuaca cerah",
+        "score": 0
+      }
+    ],
+    "explanation": "Modus tollens: ~(P dan Q) ekuivalen dengan ~P atau ~Q (Hukum De Morgan).",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 53,
+    "category": "TIU",
+    "text": "Toni lebih tinggi daripada Budi, namun lebih pendek daripada Doni. Riko lebih tinggi daripada Doni. Siapakah yang paling tinggi?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Toni",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Doni",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tidak dapat ditentukan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Riko",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Budi",
+        "score": 0
+      }
+    ],
+    "explanation": "Urutan tinggi: Riko > Doni > Toni > Budi.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 54,
+    "category": "TIU",
+    "text": "64, 32, 16, 20, 10, 5, 9, ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "5",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "18",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "13",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "4,5",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "3",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola perulangan: bagi 2, bagi 2, tambah 4. 64/2=32, 32/2=16, 16+4=20, 20/2=10, 10/2=5, 5+4=9, 9/2=4,5.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 55,
+    "category": "TIU",
+    "text": "Dinas Sumber Daya Air memiliki kuota 5 formasi, Badan Bencana 3 formasi, Dinas Perkebunan 2 formasi, dan Badan Penghubung 4 formasi. Berapa persentase kuota Dinas Bencana dari total seluruh alokasi formasi tersebut?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "14,28%",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "21,43%",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "25,00%",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "28,57%",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "20,00%",
+        "score": 0
+      }
+    ],
+    "explanation": "Total formasi = 5 + 3 + 2 + 4 = 14. Persentase = 3/14 x 100% = 21,43%.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 56,
+    "category": "TIU",
+    "text": "Empat berkas perkara (K, L, M, N) diperiksa satu per satu. Berkas K diperiksa sebelum L. Berkas M diperiksa setelah N. Jika Berkas L diperiksa lebih dulu daripada N, berkas manakah yang diperiksa pada urutan ketiga?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "M",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "L",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "N",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Tidak dapat ditentukan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "K",
+        "score": 0
+      }
+    ],
+    "explanation": "K < L, N < M, L < N. Urutan lengkap: K, L, N, M. Urutan ketiga adalah berkas N.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 57,
+    "category": "TIU",
+    "text": "IRIGASI : SAWAH = BENDUNGAN : ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Waduk",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Hutan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pintu air",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kanal",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sungai",
+        "score": 0
+      }
+    ],
+    "explanation": "Irigasi mengalirkan air ke sawah; bendungan menampung air di waduk.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 58,
+    "category": "TIU",
+    "text": "Lima pelari A, B, C, D, dan E masuk finis satu per satu. B finis sebelum C namun setelah A. D finis tepat sebelum E. C finis tepat sebelum D. Siapakah pelari yang finis di urutan kedua?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "E",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "A",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "B",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "C",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "D",
+        "score": 0
+      }
+    ],
+    "explanation": "Urutan masuk finis dari awal: A, B, C, D, E. Urutan kedua adalah B.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 59,
+    "category": "TIU",
+    "text": "Lima staf (P, Q, R, S, T) dijadwalkan audit berurutan. P mengaudit sebelum Q. R mengaudit setelah S. T mengaudit tepat sebelum P. S mengaudit di urutan pertama. Urutan audit yang benar dari awal hingga akhir adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "T, P, S, R, Q",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "S, R, T, P, Q",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "T, S, P, R, Q",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "S, T, P, R, Q",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "S, P, T, Q, R",
+        "score": 0
+      }
+    ],
+    "explanation": "S urutan 1. T tepat sebelum P. Q setelah P. R setelah S. Kombinasi valid tanpa tumpang-tindih: S, R, T, P, Q.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 60,
+    "category": "TIU",
+    "text": "KRONIK : AKUT = INSIDENTAL : ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Sporadis",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Acak",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Rutin",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Periodik",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Fluktuatif",
+        "score": 0
+      }
+    ],
+    "explanation": "Kronik berantonim dengan akut, insidental berantonim dengan rutin.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 61,
+    "category": "TIU",
+    "text": "5, 8, 14, 23, 35, ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "54",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "52",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "48",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "47",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "50",
+        "score": 5
+      }
+    ],
+    "explanation": "Pola selisih bertingkat kelipatan 3: +3, +6, +9, +12, berikutnya +15 (35 + 15 = 50).",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 62,
+    "category": "TIU",
+    "text": "Enam meja berjejer urut 1 sampai 6 dari kiri ke kanan. Meja F di posisi 1, Meja C di posisi 6. Meja B tepat di sebelah kanan Meja A. Meja D berada di antara Meja B dan E. Di nomor berapakah Meja E berada?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Nomor 3",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Nomor 5",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Nomor 2",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Nomor 6",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Nomor 4",
+        "score": 0
+      }
+    ],
+    "explanation": "Urutan posisi 1-6: F - A - B - D - E - C. Meja E berada di posisi 5.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 63,
+    "category": "TIU",
+    "text": "KULIT : SENTUHAN = LIDAH : ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Penglihatan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pengecapan",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Pendengaran",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Penciuman",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gerakan",
+        "score": 0
+      }
+    ],
+    "explanation": "Kulit alat indra sentuhan, lidah alat indra pengecapan.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 64,
+    "category": "TIU",
+    "text": "Semua berkas yang memenuhi syarat diverifikasi oleh tim hukum. Sebagian berkas sengketa lahan tidak diverifikasi oleh tim hukum. Simpulan yang tepat adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Sebagian berkas sengketa lahan tidak memenuhi syarat.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Semua berkas sengketa lahan tidak memenuhi syarat.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tidak ada berkas sengketa lahan yang memenuhi syarat.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Semua berkas sengketa lahan diverifikasi oleh tim hukum.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sebagian berkas sengketa lahan memenuhi syarat.",
+        "score": 0
+      }
+    ],
+    "explanation": "Karena jika memenuhi syarat pasti diverifikasi, yang tidak diverifikasi pasti tidak memenuhi syarat.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 65,
+    "category": "TIU",
+    "text": "Sebuah kendaraan melaju sejauh 180 km dalam waktu 3 jam. Berapa jam waktu tempuh untuk jarak 300 km dengan kecepatan konstan yang sama?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "5 jam",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "4,5 jam",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "4,8 jam",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "5,5 jam",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "4 jam",
+        "score": 0
+      }
+    ],
+    "explanation": "Kecepatan = 180 / 3 = 60 km/jam. Waktu = 300 / 60 = 5 jam.",
+    "subCategory": "TIU"
+  },
+  {
+    "id": 66,
+    "category": "TKP",
+    "text": "Terjadi perselisihan instruksi antara dokter ortopedi dan perawat pendamping mengenai batas mobilisasi pasien pasca-operasi yang sedang Anda tangani. Sikap Anda sebagai fisioterapis adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menjalankan terapi sesuai interpretasi Anda sendiri tanpa berkoordinasi ulang",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Mendengarkan masukan perawat lalu mengabaikan anjuran tertulis dari dokter spesialis",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Memilih mengikuti instruksi dokter tanpa mempedulikan catatan pemantauan harian perawat",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menunda sesi dan memfasilitasi koordinasi langsung antara dokter dan perawat untuk menyelaraskan rencana terapi bersama",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Mengeluhkan perselisihan tersebut ke media sosial internal rumah sakit",
+        "score": 2
+      }
+    ],
+    "explanation": "Membangun jejaring kolaborasi profesional lintas profesi demi memastikan keselamatan tindakan medis.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 67,
+    "category": "TKP",
+    "text": "Instalasi gizi sering berselisih jadwal dengan staf farmasi terkait batas waktu verifikasi formula enteral nutrisi klinis. Hal ini membuat distribusi makan pasien ICU tertunda. Sebagai staf instalasi gizi, sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Membuat laporan keluhan tertulis berkala untuk memperlihatkan kesalahan tim farmasi",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menutup pintu komunikasi dan membiarkan pimpinan masing-masing instalasi menyelesaikan masalah",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Menyalahkan staf farmasi secara sepihak setiap kali terjadi keterlambatan distribusi",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mengirimkan formula makanan pasien tanpa menunggu proses verifikasi farmasi",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Mengajak perwakilan tim farmasi duduk bersama menyusun Standard Operating Procedure batas waktu terpadu yang realistis",
+        "score": 5
+      }
+    ],
+    "explanation": "Kemitraan kerja kolaboratif dengan pemecahan masalah bersama untuk efektivitas alur pelayanan.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 68,
+    "category": "TKP",
+    "text": "Proyek integrasi basis data lintas dinas mengalami kebuntuan karena perwakilan dinas mitra bersikap tertutup dan enggan membagikan skema basis data dengan alasan kerahasiaan sektoral. Sebagai koordinator tim pengembang, langkah Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menghubungi pimpinan tinggi untuk mengeluarkan nota dinas paksaan kepada dinas tersebut",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Menyusun ulang arsitektur sistem tanpa melibatkan data dari dinas mitra tersebut",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mendekati staf teknis dinas tersebut secara informal di luar jam kerja untuk meminta skema data secara rahasia",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menghentikan integrasi modul dinas tersebut dan melanjutkan proyek hanya dengan dinas yang kooperatif",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menginisiasi forum koordinasi formal bersama pimpinan kedua pihak, merumuskan batas akses (SLA), dan menyepakati perjanjian kerahasiaan bersama (NDA)",
+        "score": 5
+      }
+    ],
+    "explanation": "Membangun jejaring kerja membutuhkan jembatan formal, perumusan batasan tanggung jawab, regulasi keamanan bersama, dan penyelarasan kepentingan antarlembaga.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 69,
+    "category": "TKP",
+    "text": "Anda ditugaskan merancang menu diet pasien pasca-operasi di daerah baru. Tokoh keluarga pasien menolak menu berbasis ikan laut karena memegang kepercayaan lokal bahwa luka akan membusuk jika makan ikan. Sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Memaksa pasien tetap mengonsumsi ikan karena kandungan proteinnya sudah terbukti klinis",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Menyetujui pantangan tersebut tanpa mencari alternatif gizi pengganti bagi proses penyembuhan pasien",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menghargai keyakinan tersebut dan mengganti sumber protein setara yang dapat diterima adat setempat sambil mengedukasi perlahan",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mengabaikan penolakan tersebut dan membiarkan nampan makanan tidak dimakan oleh pasien",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Memarahi keluarga pasien karena mempercayai takhayul yang bertentangan dengan sains",
+        "score": 2
+      }
+    ],
+    "explanation": "Menghormati keragaman budaya pasien tanpa mengorbankan pemenuhan kebutuhan nutrisi medis.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 70,
+    "category": "TKP",
+    "text": "Dalam rapat pembentukan panitia HUT RI, terjadi debat panas bernada sentimen etnis antara anggota tim asal suku A dan suku B terkait konsep busana dan pertunjukan tari. Suasana kerja mulai terpecah. Tindakan Anda selaku ketua panitia adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Memilih budaya suku mayoritas di kantor demi meredakan perdebatan secara cepat",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Meminta kedua belah pihak voting dan kubu yang kalah harus tunduk sepenuhnya",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menghentikan perdebatan, menegaskan komitmen inklusivitas tim, dan mengarahkan kesepakatan konsep karnaval nusantara yang merangkul perpaduan budaya kedua etnis dan budaya nusantara lainnya",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Memfasilitasi diskusi tertutup bagi perwakilan kedua kelompok untuk menemukan titik kompromi bergantian tahun",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Membatalkan seluruh mata acara pentas seni agar tidak ada pihak yang tersinggung",
+        "score": 2
+      }
+    ],
+    "explanation": "Kepemimpinan sosio-kultural bertumpu pada kemampuan mengelola keberagaman (diversity management), merajut persatuan, dan menciptakan solusi harmoni yang inklusif.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 71,
+    "category": "TKP",
+    "text": "Anda menemukan indikasi sebuah akun staf admin kantor digunakan oleh pihak luar untuk mengunduh pangkalan data kependudukan secara tidak wajar melalui koneksi VPN terenkripsi. Langkah Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mematikan seluruh server instansi secara manual tanpa koordinasi dengan pimpinan",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Segera memutus sesi login akun tersebut, mengunci kredensial akses, mendokumentasikan log traffic jaringan, dan melaporkannya ke Computer Security Incident Response Team (CSIRT) instansi",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menunggu sampai aktivitas download selesai untuk mengetahui berapa total data yang diambil",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menghubungi staf admin pemilik akun dan memarahinya karena ceroboh menjaga kata sandi",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengganti kata sandi akun tersebut secara mandiri lalu melanjutkan pekerjaan biasa",
+        "score": 4
+      }
+    ],
+    "explanation": "Kompetensi keamanan siber mensyaratkan tindakan mitigasi insiden terukur (isolasi akun, preservasi bukti log sistem, pelaporan rantai komando teknis) untuk mencegah eskalasi kebocoran data.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 72,
+    "category": "TKP",
+    "text": "Seorang warga lansia mendatangi kantor pelayanan publik Anda dengan kebingungan karena sistem pendaftaran telah beralih ke aplikasi online berbasis smartphone yang tidak ia miliki. Antrean loket sedang padat. Sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Meminjamkan ponsel pribadi Anda agar warga tersebut mencoba mendaftar secara mandiri",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Memintanya pulang dan menyuruh anggota keluarganya yang muda mendaftarkannya terlebih dahulu",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Menyuruhnya menunggu hingga loket sepi agar staf loket bisa membantunya membuat akun",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mengarahkan warga tersebut ke meja bantuan khusus dan membantu pendaftaran manual melalui akun pendamping dinas",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menjelaskan bahwa aturan sistem digital wajib dipatuhi oleh seluruh pemohon tanpa pengecualian",
+        "score": 3
+      }
+    ],
+    "explanation": "Memberikan pendampingan langsung melalui fasilitas layanan afirmatif/meja bantuan memastikan pelayanan inklusif dan mematuhi asas kepastian pelayanan publik tanpa melanggar regulasi.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 73,
+    "category": "TKP",
+    "text": "Sebagai nutrisionis, Anda dihubungi agen suplemen penurun berat badan non-BPOM yang menawarkan imbalan uang jika Anda merekomendasikan produknya kepada pasien obesitas rawat jalan. Sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak tawaran secara tegas karena bertentangan dengan etika profesi dan membahayakan pasien",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menerima produk untuk dikonsumsi sendiri tanpa merekomendasikannya ke pasien",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menolak halus dengan alasan saat ini pasien klinik obesitas sedang sepi",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Menerima tawaran tersebut asal pasien tidak mengalami efek samping berbahaya",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Mempertimbangkan tawaran jika komisi yang ditawarkan dinaikkan dua kali lipat",
+        "score": 2
+      }
+    ],
+    "explanation": "Menjaga integritas profesional, etika ASN, serta mencegah konflik kepentingan dan gratifikasi.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 74,
+    "category": "TKP",
+    "text": "Sebagai Pengawas Penyelenggaraan Urusan Pemerintahan Daerah (PPUPD) di Inspektorat Investigasi, Anda menemukan indikasi penyimpangan anggaran pengadaan barang oleh seorang kepala dinas yang memiliki pengaruh politik besar. Sikap Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengumpulkan bukti valid secara objektif, menyusun LHP sesuai fakta, dan melaporkannya ke Inspektur.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Membicarakan temuan secara informal dengan kepala dinas terkait agar temuan diperbaiki sebelum audit resmi selesai.",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Mengabaikan temuan tersebut demi menjaga keamanan posisi karir Anda.",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Membocorkan temuan tersebut kepada media massa agar mendapat kawalan publik.",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Mengkonsultasikan temuan kepada rekan tim terlebih dahulu untuk meminta perlindungan bersama sebelum melapor.",
+        "score": 4
+      }
+    ],
+    "explanation": "Integritas dan profesionalisme auditor/pengawas menuntut pelaporan berbasis bukti secara berjenjang melalui jalur resmi tanpa kompromi konflik kepentingan.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 75,
+    "category": "TKP",
+    "text": "Anda baru saja dipindahtugaskan ke kantor perwakilan di wilayah pelosok yang memiliki norma adat ketat mengenai larangan berbicara keras di tempat umum dan kewajiban mengenakan kain khas saat hari pasar. Langkah penyesuaian Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menjalankan aturan tersebut semata-mata bila sedang diawasi oleh aparat desa",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Mempelajari latar belakang norma tersebut dari tokoh lokal, menghormatinya, dan mengadaptasikan perilaku sehari-hari Anda",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Membeli kain khas dan memakainya, namun tetap berbicara seperti biasa karena itu gaya bawaan",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Menghindari interaksi dengan warga setempat di hari pasar agar terbebas dari sanksi adat",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meminta kepala kantor menerbitkan surat dispensasi bagi pegawai pendatang dari luar daerah",
+        "score": 1
+      }
+    ],
+    "explanation": "Kesadaran sosio-kultural menuntut kepekaan, kemauan beradaptasi, dan rasa hormat yang tulus terhadap kearifan lokal tempat pengabdian.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 76,
+    "category": "TKP",
+    "text": "Saat Anda bertugas sebagai fisioterapis di poliklinik, sistem antrean elektronik rumah sakit mendadak mati total sehingga antrean pasien menumpuk dan keluarga pasien mulai memprotes. Sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Melayani pasien yang kondisinya paling parah saja sambil menunggu sistem pulih",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Meminta perawat memanggil pasien berdasarkan urutan kedatangan manual seadanya",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menyuruh satpam menenangkan massa sementara Anda menunggu di ruang tindakan",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menghentikan sementara layanan sampai tim IT selesai memperbaiki server",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menjelaskan kendala teknis dengan sopan dan beralih ke registrasi manual agar pelayanan tetap berjalan urut",
+        "score": 5
+      }
+    ],
+    "explanation": "Mengedepankan kelangsungan layanan publik secara tanggap dan solutif di tengah gangguan operasional.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 77,
+    "category": "TKP",
+    "text": "Di grup WhatsApp resmi rumah sakit, seorang rekan kerja sering membagikan tautan video kajian radikal yang mengajak staf menolak upacara bendera dan membenci aparatur pemerintah. Sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mendiamkan tautan tersebut demi menjaga hubungan baik pertemanan",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Membalas unggahan tersebut di grup dengan kata-kata provokatif balik",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mengingatkan secara santun di ruang pribadi terkait aturan netralitas ASN dan melaporkan ke pimpinan/pihak berwenang jika berulang",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Keluar dari grup WhatsApp kantor agar pikiran tidak terpengaruh",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meneruskan pesan itu ke grup lain untuk meminta opini rekan luar instansi",
+        "score": 4
+      }
+    ],
+    "explanation": "Menunjukkan komitmen pencegahan radikalisme secara tegas, terukur, dan sesuai hierarki instansi.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 78,
+    "category": "TKP",
+    "text": "Petani lokal mengeluhkan prosedur sertifikasi keamanan pangan segar di kantor pengawasan mutu pertanian yang dinilai berbelit-belit dan lambat. Bagaimana Anda merespons keluhan tersebut?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima keluhan dengan empati, mengkaji titik perlambatan proses, dan mengusulkan simplifikasi alur tanpa melanggar parameter keselamatan pangan.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Membuat brosur panduan alur berkas dan membuka meja asistensi pengisian dokumen bagi pemohon.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menyarankan petani menggunakan calo atau konsultan swasta agar berkas cepat disetujui.",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menjelaskan bahwa prosedur memang harus rumit demi menjaga mutu standar nasional.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menyederhanakan prosedur secara sepihak dengan meloloskan uji mutu tanpa analisa lab.",
+        "score": 3
+      }
+    ],
+    "explanation": "Pelayanan prima menuntut perbaikan berkelanjutan (continuous improvement) dengan mendengarkan feedback pengguna layanan dan memangkas inefisiensi birokrasi.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 79,
+    "category": "TKP",
+    "text": "Dalam menyusun protokoler acara penerimaan tamu luar negeri di daerah, terjadi perbedaan pandangan antara perwakilan adat setempat yang ingin ritual panjang dan standar protokol kementerian luar negeri yang ringkas. Langkah Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Membiarkan ritual adat berlangsung penuh meski acara resmi tamu negara menjadi molor.",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Memfasilitasi dialog untuk menyelaraskan esensi penyambutan adat ke dalam durasi efisien sesuai protokol diplomatik.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menghapus ritual adat sepenuhnya karena berpotensi merusak jadwal diplomatik.",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Mengabaikan kedua standar dan menyusun rundown baru menurut inisiatif pribadi.",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Meminta pimpinan daerah untuk memutuskan tanpa memberikan telaah opsi solusi kompromi.",
+        "score": 4
+      }
+    ],
+    "explanation": "Kompetensi sosio-kultural menuntut kepekaan menghargai kearifan lokal sekaligus menjembataninya dengan norma aturan formal secara harmonis.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 80,
+    "category": "TKP",
+    "text": "Pelaporan berkas administrasi bulanan antar-seksi saat ini masih dikerjakan berulang-ulang melalui pengisian formulir kertas dan berkas spreadsheet terpisah yang rawan salah rekap. Sebagai staf fungsional, langkah Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Terus mengerjakan cara lama karena takut menimbulkan komplikasi teknis bagi pegawai lain",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Mengajukan proposal proyek pengadaan perangkat lunak berbiaya tinggi ke bendahara kantor",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menolak mengisi berkas manual dan menunggu pimpinan membeli sistem aplikasi ERP terpadu",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Merancang templat basis data daring terintegrasi (shared collaborative sheet) dengan hak akses terkelola dan membuat panduan singkat bagi seluruh staf",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menggunakan platform digital untuk diri sendiri tanpa membagikan metodenya ke seksi lain",
+        "score": 3
+      }
+    ],
+    "explanation": "Pemanfaatan TIK yang efektif mengedepankan inovasi praktis berdaya guna tinggi (low-cost, high-impact), kolaboratif, dan menyederhanakan birokrasi operasional instansi.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 81,
+    "category": "TKP",
+    "text": "Dua jam sebelum seminar nasional dimulai, sistem pendaftaran online berbasis aplikasi web yang Anda kelola mengalami crash akibat lonjakan kuota akses peserta. Respon Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengarahkan peserta ke form cadangan berbasis Google Forms/cloud alternatif sembari berkoordinasi menaikkan kapasitas resource server utama.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menutup pendaftaran dan meminta peserta pulang karena sistem rusak.",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Menyalahkan pihak penyedia cloud hosting atas gangguan server tersebut di depan peserta.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mengganti seluruh registrasi dengan formulir kertas fisik secara serentak.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Menunggu teknisi menyelesaikan restart server tanpa memberikan alternatif cara registrasi.",
+        "score": 3
+      }
+    ],
+    "explanation": "Literasi dan kompetensi TIK ditunjukkan dengan mitigasi cepat (failover mechanism) memanfaatkan perangkat alternatif yang mudah diakses pengguna saat server inti bermasalah.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 82,
+    "category": "TKP",
+    "text": "Anda sedang fokus memverifikasi data keselamatan paparan radiasi mingguan, tiba-tiba kepala seksi menugaskan Anda merapikan berkas akreditasi rumah sakit yang harus selesai esok hari. Tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak tugas baru karena merasa tugas harian sudah menyita seluruh waktu kerja",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Menunda pekerjaan harian sama sekali dan mengerjakannya minggu depan",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengeluhkan tumpukan beban kerja kepada rekan kerja di ruangan",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mengerjakan akreditasi asal selesai tanpa memeriksa akurasi dokumennya",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Menyusun matriks prioritas waktu kerja, mengerjakan berkas akreditasi mendesak, lalu merampungkan sisa verifikasi tepat batas",
+        "score": 5
+      }
+    ],
+    "explanation": "Efisiensi manajemen waktu dan ketahanan kerja dalam mengelola multi-penugasan bertekanan waktu.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 83,
+    "category": "TKP",
+    "text": "Unit gizi tempat Anda bekerja baru saja meluncurkan aplikasi e-dietary berbasis cloud. Beberapa rekan kerja senior mengeluhkan sistem baru tersebut lambat dan berniat kembali memakai formulir kertas. Sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Ikut menggunakan formulir kertas demi menjaga keharmonisan kerja sesama rekan",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Membiarkan para senior memakai kertas selama tugas mereka selesai tepat waktu",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Membantu rekan senior memahami alur aplikasi dan memberi masukan teknis ke tim pengembang aplikasi",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Menyarankan atasan untuk membatalkan penggunaan aplikasi baru karena menyulitkan tim",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Melaporkan ketidakpatuhan para senior kepada kepala instalasi gizi",
+        "score": 3
+      }
+    ],
+    "explanation": "Menunjukkan adaptasi digital sekaligus memfasilitasi rekan kerja bertransisi ke sistem TIK baru.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 84,
+    "category": "TKP",
+    "text": "Anda ditempatkan di fasilitas kesehatan wilayah terpencil di mana sebagian warga meyakini bahwa kelumpuhan akibat saraf terjepit harus diobati dukun, bukan fisioterapis. Langkah awal Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Membuat pamflet kesehatan medis tanpa melibatkan interaksi budaya masyarakat setempat",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Mendekati kepala desa dan tokoh adat setempat untuk berdialog, mengedukasi bertahap, dan merangkul mereka dalam program terapi",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Melarang keras praktik perdukunan dan mengancam akan mempolisikan dukun terkait",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Membiarkan masyarakat memilih sendiri tanpa perlu aktif melakukan penyuluhan",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menunggu pasien datang sendiri ke klinik tanpa inisiatif jemput bola",
+        "score": 3
+      }
+    ],
+    "explanation": "Sensitivitas sosial budaya melalui pendekatan kultural persuasif guna keberhasilan program layanan publik.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 85,
+    "category": "TKP",
+    "text": "Anda bertugas di PPUPD Inspektorat Pembantu dan ditugaskan memeriksa salah satu dinas yang menutup akses data pertanggungjawaban kegiatan. Sikap Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Melakukan pendekatan persuasif profesional, menjelaskan dasar hukum kewenangan pengawasan, dan membangun komunikasi koordinatif dengan pimpinan instansi terkait.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Meminta bantuan aparat penegak hukum secara informal untuk menakut-nakuti dinas terkait.",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Menerima saja data parsial yang diberikan dinas tersebut demi menghindari perselisihan.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Meminta surat perintah penegasan langsung dari Sekretaris Daerah untuk memaksa penyerahan data.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Menghentikan audit dan langsung menetapkan status dinas tersebut bermasalah.",
+        "score": 2
+      }
+    ],
+    "explanation": "Jejaring kerja audit internal mengutamakan koordinasi persuasif, komunikasi legal-normatif, dan kolaborasi konstruktif sebelum eskalasi paksaan.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 86,
+    "category": "TKP",
+    "text": "Instansi Anda beralih menggunakan platform manajemen arsip digital berbasis komputasi awan. Beberapa rekan kerja senior mengeluh lambat bekerja dan tetap bersikeras mencetak dokumen fisik secara ganda. Sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyarankan kepala kantor menunjuk admin khusus yang bertugas mengunggah berkas para pegawai senior",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Membuatkan pintasan pintas (shortcut) dan templat sederhana agar rekan senior lebih mudah mengunggah file",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan ketidakpatuhan mereka ke bagian pengawasan internal agar diberi teguran",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menawarkan bantuan pendampingan teknis satu-per-satu dan menunjukkan tips praktis penggunaan fitur otomatisasi cloud arsip",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Membiarkan mereka mencetak fisik selama pekerjaan mereka tuntas tepat waktu",
+        "score": 2
+      }
+    ],
+    "explanation": "Penguasaan TIK mencakup literasi teknologi dan kemampuan memfasilitasi transformasi digital bagi lingkungan sekitar secara persuasif dan solutif.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 87,
+    "category": "TKP",
+    "text": "Sebagai fisikawan medis, Anda menemukan adanya deviasi kecil pada kalibrasi dosis radioterapi sesaat sebelum jam kerja berakhir. Pasien pertama esok pagi dijadwalkan menerima terapi pukul 07.30. Tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Membiarkannya karena deviasi masih tergolong margin kesalahan minor yang dapat ditoleransi",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Mencatat deviasi tersebut dan berencana memperbaikinya besok pagi sebelum pasien datang",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menghentikan operasional alat besok pagi dan melimpahkan penyesuaian kalibrasi ke rekan sif berikutnya",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Segera mengulang kalibrasi hingga presisi sesuai standar malam ini juga meski harus lembur",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menghubungi teknisi vendor alat untuk datang besok siang memeriksa alat tersebut",
+        "score": 2
+      }
+    ],
+    "explanation": "Tanggung jawab integritas dan keselamatan pasien membutuhkan tindakan cepat penuntasan kalibrasi tanpa penundaan.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 88,
+    "category": "TKP",
+    "text": "Saat ditugaskan di puskesmas pelosok, sebagian masyarakat menolak imunisasi balita karena mempercayai mitos turun-temurun bahwa vaksin mengandung zat berbahaya. Langkah Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Hanya melayani imunisasi bagi warga pendatang yang bersedia secara sukarela.",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Melakukan pendekatan kultural melalui musyawarah dengan tokoh agama dan kepala adat setempat untuk memberikan edukasi kesehatan terpercaya.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Memaksa orang tua memvaksinasi anak dengan ancaman pemutusan bantuan sosial daerah.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menghentikan program imunisasi di desa tersebut untuk menghormati adat istiadat warga setempat.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Membagikan pamflet ilmiah medis ke rumah-rumah warga tanpa pendampingan kader lokal.",
+        "score": 4
+      }
+    ],
+    "explanation": "Hambatan sosio-kultural dalam kesehatan publik diselesaikan efektif melalui pendekatan modal sosial: pelibatan tokoh adat/agama dalam komunikasi persuasif.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 89,
+    "category": "TKP",
+    "text": "Seorang bawahan Anda yang kinerjanya unggul mulai menarik diri dari pergaulan kantor, sering menolak berjabat tangan dengan rekan lawan jenis secara ekstrem, dan melarang rekannya menghormati bendera merah putih saat upacara. Tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Langsung memecat pegawai tersebut tanpa proses pemeriksaan disiplin aparatur",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Menugaskannya di ruangan terisolasi agar pandangannya tidak menular ke staf yang lain",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengabaikannya selama output pekerjaan individunya tetap mencapai target kinerja pegawai (SKP)",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Mengucilkan pegawai tersebut bersama rekan satu divisi agar merasa tidak nyaman dan mundur",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Melakukan konseling pembinaan empat mata, mengklarifikasi perubahan sikapnya, menegaskan nilai-nilai dasar ASN/wawasan kebangsaan, dan merujuk ke tim konseling/pengawasan instansi",
+        "score": 5
+      }
+    ],
+    "explanation": "Penanganan dini radikalisme membutuhkan pembinaan terarah, klarifikasi persuasif, penguatan wawasan kebangsaan, dan kepatuhan pada mekanisme regulasi disiplin ASN.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 90,
+    "category": "TKP",
+    "text": "Seorang rekan kerja di fasilitas kesehatan menolak melayani fisioterapi pasien dari latar belakang etnis minoritas tertentu karena sentimen kelompok. Tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menasihati rekan tersebut sekali, jika tidak didengar membiarkan diskriminasi berlanjut",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menyindir rekan tersebut saat jam istirahat makan siang",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mengabaikan perbuatan rekan tersebut karena bukan urusan tugas pribadi Anda",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Mengambil alih tindakan pasien sementara waktu dan melaporkan tindakan diskriminatif rekan tersebut ke komite etik rumah sakit",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Mendukung rekan tersebut apabila latar belakang pasien memang berlawanan keyakinan",
+        "score": 2
+      }
+    ],
+    "explanation": "Menjaga kesetaraan layanan publik dan mengeliminasi bibit intoleransi atau ekstremisme di lingkungan instansi.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 91,
+    "category": "TKP",
+    "text": "Anda adalah staf tenaga sanitasi lingkungan/K3 rumah sakit. Anda melihat perawat senior membuang limbah medis tajam ke tempat sampah domestik non-medis karena wadah safety box penuh. Tindakan Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Membuat laporan tertulis pelanggaran SOP ke komite K3 tanpa menegur yang bersangkutan di tempat.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Memungut sendiri limbah tersebut tanpa memberi tahu perawat yang bersangkutan.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Membiarkannya karena perawat tersebut memiliki masa kerja lebih lama dan pengalaman klinis lebih tinggi.",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Mengambil foto limbah tersebut secara diam-diam dan mengunggahnya ke media sosial rumah sakit.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengingatkan langsung secara santun risiko penularan infeksi, segera menyediakan safety box baru, dan memastikan limbah dipindahkan sesuai standar K3.",
+        "score": 5
+      }
+    ],
+    "explanation": "Profesionalisme di bidang kesehatan mengutamakan keselamatan kerja dan pencegahan infeksi (K3) melalui koreksi langsung yang solutif dan asertif.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 92,
+    "category": "TKP",
+    "text": "Server basis data pusat perizinan padam total akibat gangguan jaringan nasional, menyebabkan puluhan pemohon izin usaha mengamuk di lobi kantor pelayanan. Sebagai staf loket, tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mencatat nomor kontak warga untuk dihubungi kembali ketika server sudah normal tanpa menerima berkas fisik",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menyalahkan pihak penyedia server pusat di depan warga agar kemarahan tidak tertuju ke kantor Anda",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Menemui warga, meminta maaf dengan tenang, menjelaskan status penanganan gangguan secara transparan, serta mengaktifkan pencatatan tanda terima berkas darurat (offline)",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Membagikan nomor call center kementerian pusat dan menyuruh warga komplain langsung ke sana",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Menutup pintu loket dan menunggu di ruang staf hingga teknisi memperbaiki server",
+        "score": 1
+      }
+    ],
+    "explanation": "Pelayanan prima dalam kondisi krisis berfokus pada empati, transparansi komunikasi, deeskalasi emosi masyarakat, dan penyediaan prosedur darurat operasional.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 93,
+    "category": "TKP",
+    "text": "Unit Anda dipercaya menjalankan inisiatif pengentasan kemiskinan perkotaan namun anggaran dinas sangat terbatas. Ada beberapa komunitas filantropi dan lembaga riset kampus yang memiliki program sejenis. Strategi Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyerahkan seluruh pelaksanaan program kepada pihak komunitas dan kampus tanpa keterlibatan dinas",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Menunda realisasi program hingga mendapat alokasi anggaran penambahan di APBD perubahan",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Memanfaatkan data riset kampus saja untuk membuat dokumen laporan tanpa turun ke lapangan",
+        "score": 4
+      },
+      {
+        "id": "D",
+        "text": "Meminta sumbangan uang tunai secara langsung dari komunitas lokal atas nama instansi dinas",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menggelar lokakarya multipihak untuk menyatukan peta sasaran, menyepakati pembagian peran program, dan mengkolaborasikan sumber daya tanpa tumpang tindih anggaran",
+        "score": 5
+      }
+    ],
+    "explanation": "Jejaring kerja efektif terwujud melalui kolaborasi strategis (pentahelix), penyelarasan sasaran bersama, dan efisiensi alokasi sumber daya antar-lembaga.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 94,
+    "category": "TKP",
+    "text": "Dalam audit kepatuhan terhadap bantuan operasional pemerintah daerah, Anda menemukan indikasi aliran dana hibah ke kelompok masyarakat yang berafiliasi dengan organisasi anti-konstitusi. Anda akan...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menghentikan audit aliran dana tersebut karena khawatir ancaman keamanan diri.",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Menghubungi pengurus kelompok penerima dana untuk mengklarifikasi ideologi mereka secara langsung.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menyusun nota dinas temuan khusus berbasis audit jejak keuangan dan segera menyerahkannya ke pimpinan untuk dikoordinasikan dengan instansi berwenang/BINDA.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Meminta dinas penyalur bantuan segera mencoret kelompok tersebut dari daftar penerima tanpa membuat laporan tertulis.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Menyelesaikan audit seperti biasa tanpa menonjolkan temuan afiliasi radikal tersebut.",
+        "score": 2
+      }
+    ],
+    "explanation": "Deteksi dini radikalisme dalam tata kelola keuangan negara memerlukan ketegasan dokumentasi formal dan koordinasi cepat berjenjang dengan pihak intelijen/keamanan.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 95,
+    "category": "TKP",
+    "text": "Hasil evaluasi tahunan Anda dinilai rendah oleh atasan baru dengan catatan performa yang tidak sesuai dengan realisasi portofolio kerja lapangan yang sebenarnya sudah Anda tuntaskan melampaui target. Sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menjelek-jelekkan kredibilitas atasan baru tersebut kepada rekan-rekan kerja yang lain",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Menyiapkan rekam jejak portofolio berbasis data valid, meminta audiensi evaluasi secara profesional, dan mendiskusikan gap persepsi kinerja dengan santun",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menolak menandatangani dokumen evaluasi dan mogok mengerjakan tugas baru",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menerima nilai tersebut secara pasrah dan menurunkan intensitas kerja di tahun berikutnya",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Langsung melayangkan gugatan ke Badan Kepegawaian Negara tanpa berdiskusi internal dengan atasan",
+        "score": 4
+      }
+    ],
+    "explanation": "Pengendalian diri matang tercermin dari ketenangan emosional, komunikasi asertif berlandaskan bukti empiris, dan komitmen penyelesaian sengketa kinerja secara konstruktif.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 96,
+    "category": "TKP",
+    "text": "Di grup percakapan internal unit kerja, seorang rekan mengunggah materi propaganda yang mendiskreditkan ideologi Pancasila dan menyerukan pembangkangan terhadap konstitusi negara demi sistem alternatif. Respons Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Langsung memblokir nomor rekan tersebut dan keluar dari grup kantor",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Mengingatkan secara santun namun tegas di grup bahwa materi tersebut bertentangan dengan sumpah ASN, meminta menghapusnya, serta mendokumentasikannya untuk dilaporkan ke atasan/tim kepatuhan",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mengabaikan pesan tersebut agar tidak memperkeruh suasana kerja dan menunggu atasan bertindak",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Membalas unggahan tersebut dengan hujatan keras hingga memicu perdebatan panjang",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Menghubungi rekan tersebut via jalur pribadi untuk menasihati tanpa melaporkan insiden ke instansi",
+        "score": 4
+      }
+    ],
+    "explanation": "Aparatur Sipil Negara berkewajiban aktif menjaga ideologi Pancasila, berani bersikap lugas melawan radikalisme, dan menempuh jalur pelaporan resmi.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 97,
+    "category": "TKP",
+    "text": "Menjelang tenggat pelaporan triwulan, dua rekan setim Anda mendadak izin sakit akibat kecelakaan. Beban kompilasi data bertambah tiga kali lipat, sementara target penyerahan tinggal dua hari lagi. Langkah Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengerjakan seadanya sesuai porsi awal Anda dan meminta dispensasi keterlambatan untuk sisa porsi rekan Anda",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Mengeluhkan kondisi beban kerja yang tidak seimbang di media sosial pribadi untuk melepas stres",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Mengerjakan porsi rekan sakit semampunya tanpa memilah skala urgensi berkas",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menyusun matriks prioritas kerja, mengidentifikasi data kritis, mengoptimalkan jam lembur secara efisien, serta melaporkan kondisi beban kerja kepada atasan",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Membagi sisa waktu secara ketat antara pekerjaan penting dan meminta bantuan lintas tim melalui izin atasan",
+        "score": 4
+      }
+    ],
+    "explanation": "Manajemen diri diukur dari kemampuan mengelola stres, menetapkan strategi pemecahan masalah berbasis skala prioritas, dan ketahanan dalam kondisi krisis.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 98,
+    "category": "TKP",
+    "text": "Sebagai penata keprotokolan, Anda mendapati koordinasi antara tim protokol dewan dan protokol eksekutif bupati kerap terjadi miskomunikasi terkait urutan sambutan kepala instansi. Solusi Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyelenggarakan simulasi bersama sebelum acara guna meminimalkan gesekan teknis.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Mengikuti kemauan tim protokol yang paling dominan demi menghindari keributan saat acara.",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Membuat nota kesepakatan SOP keprotokolan bersama dan forum koordinasi pra-acara terpadu.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Menghubungi pimpinan masing-masing instansi untuk saling menegur staf protokolnya.",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Menyerahkan persoalan urutan sambutan kepada pejabat bersangkutan di panggung.",
+        "score": 1
+      }
+    ],
+    "explanation": "Jejaring kerja efektif menyelesaikan friksi lintas instansi melalui pelembagaan SOP formal kolaboratif dan saluran komunikasi berkala.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 99,
+    "category": "TKP",
+    "text": "Sebagai tenaga rekam medis di fasilitas kesehatan pemerintah, server sistem Electronic Health Record (EHR) mati mendadak saat puluhan pasien antre berobat. Sikap Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mencatat antrean manual tetapi tidak memproses rujukan dokter sampai server pulih.",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Menyuruh pasien menunggu sampai teknisi IT menyelesaikan perbaikan server.",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Menghentikan pelayanan pendaftaran sementara hingga sistem kembali normal agar tidak kerja dua kali.",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Membagi tugas tim antara penanganan kendala sistem IT dan pelayanan registrasi semi-manual.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Segera mengaktifkan SOP pencatatan manual darurat, menginformasikan kendala secara transparan ke pasien, dan menghubungi tim IT untuk perbaikan sistem.",
+        "score": 5
+      }
+    ],
+    "explanation": "Pemanfaatan TIK yang adaptif mencakup kesiapan kontinjensi manual saat infrastruktur digital down tanpa memutus akses layanan publik dasar.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 100,
+    "category": "TKP",
+    "text": "Anda adalah Pengawas Mutu Hasil Pertanian di UPTD Balai Pengawasan Mutu. Saat inspeksi pasar, Anda mendapati produk pangan segar berformalin tinggi dipasok oleh koperasi binaan daerah. Apa yang Anda lakukan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengamankan sampel, menghentikan sementara peredaran produk berbahaya tersebut demi keselamatan konsumen, dan memberikan pembinaan teknis penjaminan mutu.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Membiarkan produk habis terjual hari itu namun memberikan peringatan tertulis untuk pasokan berikutnya.",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Menyita seluruh produk dan langsung mempublikasikan nama koperasi tersebut ke publik agar jera.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Melaporkan langsung ke pihak kepolisian tanpa melakukan uji laboratorium konfirmasi terlebih dahulu.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Meminta pengurus koperasi menarik produk secara mandiri sambil menunggu hasil uji lab resmi keluar.",
+        "score": 4
+      }
+    ],
+    "explanation": "Pelayanan publik dalam pengawasan mutu berorientasi pada perlindungan keselamatan konsumen segera yang dibarengi edukasi perbaikan sistem mutu.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 101,
+    "category": "TKP",
+    "text": "Seorang pasien BPJS merasa dianaktirikan karena waktu konsultasi gizinya terasa lebih singkat dibandingkan pasien umum sebelum dirinya. Pasien tersebut marah di depan ruang konsultasi. Sikap Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menjelaskan dengan tenang bahwa standar pelayanan sama, lalu mengecek kembali kebutuhan konseling pasien hingga ia merasa jelas",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Meminta bagian administrasi memindahkan pasien tersebut ke konselor lain",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menolak melayani pasien tersebut karena dinilai memiliki perangai buruk",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Meminta maaf seadanya dan langsung memanggil pasien antrean berikutnya",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Menegur pasien karena membuat kegaduhan dan mengganggu ketertiban poliklinik",
+        "score": 2
+      }
+    ],
+    "explanation": "Prinsip non-diskriminasi dan akuntabilitas komunikasi dalam melayani penerima layanan publik.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 102,
+    "category": "TKP",
+    "text": "Anda bertugas di loket admisi rawat inap rumah sakit umum. Seorang keluarga pasien melampiaskan amarah dengan membentak Anda karena kamar kelas rawat yang diinginkan penuh setelah Anda berdinas 10 jam nonstop. Sikap Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menangis dan mengeluh kepada pimpinan shift mengenai beban kerja yang tidak manusiawi.",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Membalas bentakan keluarga pasien untuk mempertahankan wibawa staf rumah sakit.",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Menjaga ketenangan emosi diri, mendengarkan keluhan dengan empati, menjelaskan kondisi ketersediaan kamar secara transparan, serta mencarikan opsi rujukan/kamar alternatif.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Menjelaskan bahwa kamar penuh secara singkat lalu meminta keluarga pasien mencari rumah sakit lain sendiri.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Meninggalkan loket admisi dan membiarkan petugas keamanan menangani keluarga pasien.",
+        "score": 2
+      }
+    ],
+    "explanation": "Manajemen diri dan kecerdasan emosional tingkat tinggi menuntut ASN mampu mengendalikan stres kerja fisik/psikis dan tetap menyajikan respon profesional serta solutif.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 103,
+    "category": "TKP",
+    "text": "Menjelang penetapan pemenang lelang proyek pengadaan barang, perwakilan dari salah satu vendor mendatangi rumah Anda pada malam hari untuk mengirimkan parsel mewah berisi barang elektronik bermerek atas nama silaturahmi. Tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Meminta vendor membawa pulang barang tersebut tetapi tetap membantunya memberi tips teknis lelang",
+        "score": 3
+      },
+      {
+        "id": "B",
+        "text": "Menolak dengan tegas secara sopan saat itu juga, menjelaskan kode etik jabatan, dan melaporkannya ke Unit Pengendalian Gratifikasi",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menerima barang tersebut demi menjaga hubungan baik dan berjanji tetap obyektif dalam penilaian",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Menolak pemberian tersebut secara diam-diam tanpa perlu membuat laporan ke atasan",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Menerimanya lalu menyumbangkan barang tersebut ke yayasan sosial agar berkah",
+        "score": 2
+      }
+    ],
+    "explanation": "Integritas tinggi menuntut penolakan tegas terhadap potensi gratifikasi/suap dan pelaporan resmi sesuai mekanisme tata kelola pemerintahan yang bersih.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 104,
+    "category": "TKP",
+    "text": "Seorang rekan kerja di kantor pengawasan sering membagikan narasi intoleran yang merendahkan suku dan agama tertentu serta menolak Pancasila di grup WhatsApp resmi kedinasan. Respons Anda...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Keluar dari grup WhatsApp kantor agar tidak terpengaruh lingkungan negatif.",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Menegur rekan tersebut secara pribadi untuk menghormati etika ASN dan mengingatkan nilai kebangsaan.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mendiamkan hal tersebut karena itu hak berpendapat individu masing-masing.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menegur dengan tegas batasan konten dinas, menyimpan bukti percakapan, dan melaporkan tindakan tersebut ke atasan/Biro Kepegawaian sesuai regulasi ASN.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Membalas pesannya di grup dengan argumen keras dan menyerang keyakinan pribadinya.",
+        "score": 2
+      }
+    ],
+    "explanation": "ASN wajib menjaga komitmen kebangsaan, bertindak tegas dan terukur dengan saluran pelaporan resmi saat radikalisme/intoleransi menyusup ke sarana kedinasan.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 105,
+    "category": "TKP",
+    "text": "Atasan langsung Anda secara tertulis meminta Anda meloloskan berkas audit sebuah yayasan terafiliasi dengan keluarganya yang nyata-nyata tidak memenuhi kelengkapan bukti transaksi keuangan. Tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengkonsultasikan perintah tersebut kepada pejabat setingkat lebih tinggi atau inspektorat secara tertutup",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menyampaikan secara resmi dan tertulis penolakan beserta pasal regulasi audit yang dilanggar, serta mencatat rekam jejak pemeriksaan secara utuh",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Meloloskan sebagian berkas yang tidak terlalu mencolok kekurangannya",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Meloloskannya demi loyalitas hierarki dan menjaga posisi karier Anda tetap aman",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menolak lisan kepada atasan lalu pura-pura menunda pengerjaan berkas tersebut",
+        "score": 3
+      }
+    ],
+    "explanation": "Profesionalisme ASN mensyaratkan ketaatan pada asas kepatuhan hukum dan objektivitas di atas loyalitas personal/atasan, dibuktikan dengan argumentasi formal yang akuntabel.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 106,
+    "category": "TKP",
+    "text": "Anda bertugas sebagai Penata Keprotokolan dalam acara sidang paripurna DPRD. Menjelang acara dimulai, susunan tempat duduk pejabat VVIP mendadak berubah karena kedatangan pejabat pusat yang tidak terkonfirmasi sebelumnya. Tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Segera menata ulang posisi kursi pejabat sesuai tata urutan keprotokolan negara tanpa mengganggu jalannya rundown.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menempatkan pejabat pusat tersebut di barisan kursi umum agar susunan VVIP yang lama tidak rusak.",
+        "score": 2
+      },
+      {
+        "id": "C",
+        "text": "Menolak penambahan tempat duduk pejabat pusat karena tidak ada konfirmasi tertulis sebelumnya.",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Meminta staf lain mengurus penambahan kursi sementara Anda fokus memandu jalannya acara MC.",
+        "score": 4
+      },
+      {
+        "id": "E",
+        "text": "Melapor ke pimpinan dan menunggu arahan pimpinan sebelum melakukan perubahan tempat duduk.",
+        "score": 3
+      }
+    ],
+    "explanation": "Sebagai penata keprotokolan, tuntutan utama adalah ketanggapan dan kepatuhan terhadap hierarki keprotokolan resmi secara cepat tanpa menimbulkan kekacauan seremonial.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 107,
+    "category": "TKP",
+    "text": "Rekan sejawat di unit radiologi lupa kata sandi akun SIMRS saat hendak mencatat data proteksi radiasi berkala, lalu meminta Anda meminjamkan akun dan sandi Anda. Anda akan...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Memberikan akun dan sandi karena rekan tersebut adalah teman satu tim tepercaya",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Meminjamkan akun dengan syarat Anda yang mengetikkan kata sandi di komputernya",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menolak meminjamkan akun dan segera mendampingi rekan melapor ke bagian IT untuk reset sandi resmi",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Menolak sambil memarahinya karena ceroboh mengingat kredensial sistem",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Membantu menginputkan data rekannya menggunakan akun Anda atas nama Anda",
+        "score": 4
+      }
+    ],
+    "explanation": "Menjaga keamanan data, integritas akses sistem informasi, dan kepatuhan prosedur TIK pemerintah.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 108,
+    "category": "TKP",
+    "text": "Pasien berkursi roda tidak dapat menuju ruang rehabilitasi medik karena lift gedung layanan sedang rusak mendadak. Anda yang berada di lokasi akan...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Meminta pasien pulang dan menjadwalkan ulang terapi di hari lain",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Meminta keluarga pasien mengangkat kursi roda sendiri melewati tangga darurat",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengeluhkan kerusakan lift fasilitas kepada bagian sarana prasarana tanpa menolong pasien",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Bersama petugas keamanan membantu memindahkan jalur pasien secara aman melalui lift servis/ramp alternatif atau menyiapkan penanganan darurat di lantai bawah",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menyuruh pasien menunggu di lantai bawah sampai teknisi berhasil membetulkan lift",
+        "score": 2
+      }
+    ],
+    "explanation": "Inisiatif cepat dan kepedulian tinggi terhadap pasien berkebutuhan khusus saat fasilitas fisik mengalami hambatan.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 109,
+    "category": "TKP",
+    "text": "Batas akhir penyusunan Laporan Hasil Pengawasan (LHP) tinggal 2 hari lagi, namun Anda mendadak ditugaskan pimpinan mewakili dinas menghadiri rapat koordinasi darurat provinsi. Bagaimana Anda mengaturnya?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mendelegasikan penulisan bagian LHP tertentu kepada rekan tim, menghadiri rapat, dan melanjutkan penyusunan laporan di luar jam kerja hingga tuntas tepat waktu.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Meminta rekan lain menggantikan rapat provinsi agar Anda tetap dapat mengetik LHP di kantor.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menolak penugasan rapat karena fokus menuntaskan LHP yang sudah memiliki target waktu.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mengerjakan LHP secara terburu-buru seadanya sebelum berangkat ke lokasi rapat.",
+        "score": 3
+      },
+      {
+        "id": "E",
+        "text": "Menghadiri rapat provinsi dan menunda penyelesaian LHP sampai ada teguran dari atasan.",
+        "score": 1
+      }
+    ],
+    "explanation": "Manajemen diri tercermin dari kemampuan mengatur skala prioritas, pembagian beban kerja tim, serta komitmen menyelesaikan tugas tepat waktu tanpa mengorbankan penugasan mendadak.",
+    "subCategory": "TKP"
+  },
+  {
+    "id": 110,
+    "category": "TKP",
+    "text": "Saat jadwal terapi pasien pasca-stroke sedang padat, kerabat dekat Anda menelepon meminta tolong diantar membeli kebutuhan rumah tangga mendadak yang bukan situasi darurat. Anda akan...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Meminta rekan sesama fisioterapis menggantikan pasien Anda tanpa izin supervisor",
+        "score": 2
+      },
+      {
+        "id": "B",
+        "text": "Menjelaskan situasi kerja dengan tergesa-gesa dan menyarankan menggunakan layanan transportasi online",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengabaikan telepon kerabat tanpa memberi kabar penolakan sama sekali",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Meninggalkan jadwal terapi sebentar dan mempercepat sesi pasien berikutnya",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menyelesaikan seluruh sesi terapi pasien secara fokus, lalu membantu kerabat setelah jam kerja usai",
+        "score": 5
+      }
+    ],
+    "explanation": "Mampu mengelola prioritas tugas kedinasan di atas kepentingan urusan pribadi non-urgensi.",
+    "subCategory": "TKP"
+  }
+]

@@ -114,6 +114,7 @@ export async function POST(req: NextRequest) {
       'tryout-4': () => import('@/data/packages/tryout-4.json').then(m => m.default as any[]).catch(() => []),
       'tryout-5': () => import('@/data/packages/tryout-5.json').then(m => m.default as any[]).catch(() => []),
       'tryout-6': () => import('@/data/packages/tryout-6.json').then(m => m.default as any[]).catch(() => []),
+      'tryout-7': () => import('@/data/packages/tryout-7.json').then(m => m.default as any[]).catch(() => []),
       'tryout-mini': () => import('@/data/packages/tryout-mini.json').then(m => m.default as any[]).catch(() => []),
     };
 
