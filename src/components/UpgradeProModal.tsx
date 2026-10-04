@@ -11,6 +11,7 @@ import {
   Check,
   Package,
   Copy,
+  ArrowClockwise,
 } from '@phosphor-icons/react';
 
 interface UpgradeProModalProps {
@@ -411,16 +412,54 @@ export function UpgradeProModal({
 
             {/* Actions */}
             <div className="space-y-2">
-              <a
-                href={orderInfo.paymentUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary w-full py-2.5 flex items-center justify-center gap-2 text-sm font-bold shadow-sm rounded-xl"
-              >
-                <QrCode size={16} weight="bold" />
-                Buka Halaman Pembayaran
-                <ArrowRight size={13} weight="bold" />
-              </a>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={async () => {
+                    setLoading(true);
+                    try {
+                      const res = await fetch('/api/payment/refresh-qris', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ orderId: orderInfo.orderId }),
+                      });
+                      const data = await res.json();
+                      if (data.qrDataUrl) {
+                        setOrderInfo((prev) => prev ? {
+                          ...prev,
+                          qrDataUrl: data.qrDataUrl,
+                          paymentUrl: data.paymentUrl || prev.paymentUrl,
+                          qrisMode: Boolean(data.qrisMode),
+                        } : null);
+                        alert('QR Code baru berhasil dibuat! Silakan scan ulang.');
+                      } else {
+                        alert('Gagal memperbarui QR: ' + (data.error || 'Coba lagi'));
+                      }
+                    } catch {
+                      alert('Gagal refresh QR. Coba lagi.');
+                    } finally {
+                      setLoading(false);
+                    }
+                  }}
+                  disabled={loading}
+                  className="btn-secondary flex-1 py-2 text-xs font-semibold flex items-center justify-center gap-1.5"
+                  title="Jika QR ditolak bank atau sudah kadaluarsa, klik ini untuk buat QR baru"
+                >
+                  <ArrowClockwise size={14} className={loading ? 'animate-spin' : ''} />
+                  QR Kadaluarsa? Refresh
+                </button>
+
+                <a
+                  href={orderInfo.paymentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary flex-1 py-2 text-xs font-semibold flex items-center justify-center gap-1.5 text-center"
+                  title="Alternatif bayar langsung via web Saweria"
+                >
+                  <QrCode size={14} />
+                  Bayar via Web
+                </a>
+              </div>
 
               <button
                 type="button"
