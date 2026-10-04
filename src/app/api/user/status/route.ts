@@ -10,12 +10,15 @@ export async function GET() {
       return NextResponse.json({ is_pro: false, logged_in: false });
     }
 
-    const payload = verifyToken(token);
+    const payload = await verifyToken(token);
     if (!payload?.userId) {
       return NextResponse.json({ is_pro: false, logged_in: false });
     }
 
     const sql = getDb();
+    if (!sql) {
+      return NextResponse.json({ is_pro: false, logged_in: false });
+    }
     const rows = await sql`
       SELECT is_pro, pro_activated_at, email FROM users WHERE id = ${payload.userId} LIMIT 1
     `;

@@ -44,6 +44,9 @@ export async function POST(req: NextRequest) {
     }
 
     const sql = getDb();
+    if (!sql) {
+      return NextResponse.json({ error: 'DATABASE_URL not set' }, { status: 500 });
+    }
 
     // Cek apakah donasi ini sudah pernah diproses (idempotency)
     const existing = await sql`
