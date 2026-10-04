@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/lib/db';
-import { makeDynamicQris, DEFAULT_BASE_QRIS } from '@/lib/saweria';
+import { createSaweriaQris } from '@/lib/saweria';
 import QRCode from 'qrcode';
 
 const SAWERIA_USERNAME = process.env.SAWERIA_USERNAME || 'faishaltsq';
-const BASE_QRIS = process.env.QRIS_BASE_STRING || DEFAULT_BASE_QRIS;
 
 export async function POST(req: NextRequest) {
   try {
@@ -29,12 +28,31 @@ export async function POST(req: NextRequest) {
 
     const paymentUrl = `https://saweria.co/${SAWERIA_USERNAME}?amount=${order.exact_amount}&message=${encodeURIComponent(msg)}`;
 
-    const qrisString = makeDynamicQris(BASE_QRIS, order.exact_amount);
-    const qrDataUrl = await QRCode.toDataURL(qrisString, {
+    try {
+      const result = await createSaweriaQris({
+        saweriaUsername: SAWERIA_USERNAME,
+        amount: order.exact_amount,
+        message: msg,
+        donorName: 'Lolos.in User',
+        donorEmail: order.user_email || 'user@lolos.in',
+      });
+
+      if (result.qrString && !result.qrString.startsWith('saweria-qris-')) {
+        const qrDataUrl = await QRCode.toDataURL(result.qrString, {
+          width: 300, margin: 2,
+          color: { dark: '#1e293b', light: '#ffffff' },
+        });
+        return NextResponse.json({ qrDataUrl, paymentUrl, qrisMode: true, refreshedAt: Date.now() });
+      }
+    } catch {
+      // fallback
+    }
+
+    const qrDataUrl = await QRCode.toDataURL(paymentUrl, {
       width: 300, margin: 2,
       color: { dark: '#1e293b', light: '#ffffff' },
     });
-    return NextResponse.json({ qrDataUrl, paymentUrl, qrisMode: true, refreshedAt: Date.now() });
+    return NextResponse.json({ qrDataUrl, paymentUrl, qrisMode: false, refreshedAt: Date.now() });
   } catch (e: unknown) {
     const msg = e instanceof Error ? e.message : 'Unknown error';
     return NextResponse.json({ error: msg }, { status: 500 });

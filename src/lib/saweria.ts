@@ -172,7 +172,7 @@ export async function createSaweriaQris(params: CreateQrisParams): Promise<QrisR
   let debugError: string | undefined;
 
   try {
-    const res = await fetch(`${SAWERIA_BACKEND}/donations/${userId}`, {
+    const res = await fetch(`${SAWERIA_BACKEND}/donations/snap/${userId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -249,12 +249,12 @@ export async function createSaweriaQris(params: CreateQrisParams): Promise<QrisR
  */
 export async function checkSaweriaQrisStatus(transactionId: string): Promise<{ paid: boolean; raw: unknown }> {
   try {
-    const res = await fetch(`${SAWERIA_BACKEND}/donations/qris/${transactionId}`, {
+    const res = await fetch(`${SAWERIA_BACKEND}/donations/qris/snap/${transactionId}`, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36',
         'Origin': 'https://saweria.co',
         'Referer': 'https://saweria.co/',
-        'Accept': 'application/json, text/plain, */*',
+        'Accept': 'application/json',
       },
       cache: 'no-store',
     });
@@ -264,11 +264,9 @@ export async function checkSaweriaQrisStatus(transactionId: string): Promise<{ p
     }
 
     const json = await res.json();
-    const data = json.data;
-
-    // Di Saweria: jika transaksi sudah dibayar, qr_string menjadi kosong atau null
-    const paid = !data || !data.qr_string || data.qr_string === '';
-    return { paid, raw: data };
+    const data = json?.data;
+    const isPaid = data?.transaction_status === 'SETTLED' || data?.transaction_status === 'SUCCESS' || (!data?.qr_string && data?.id);
+    return { paid: Boolean(isPaid), raw: data };
   } catch {
     return { paid: false, raw: null };
   }
