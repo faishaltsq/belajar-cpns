@@ -8,6 +8,19 @@ export async function GET(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
+  const sql = getDb();
+  let debugSource = 'none';
+  if (sql) {
+    try {
+      const check = await sql`SELECT count(*)::int as c FROM questions WHERE package_id = ${params.id}`;
+      debugSource = `db_count_${check[0]?.c}`;
+    } catch (e: any) {
+      debugSource = `db_error_${e?.message?.slice(0, 30)}`;
+    }
+  } else {
+    debugSource = 'no_sql_client';
+  }
+
   const questions = await loadPackage(params.id);
 
   if (!questions.length) {
@@ -34,7 +47,7 @@ export async function GET(
   }
 
   return NextResponse.json(
-    { questions, meta },
+    { questions, meta, _debug: { source: debugSource, q18_image: questions.find((q: any) => q.id === 18)?.image?.toString().slice(0, 60) || 'not_found' } },
     { headers: { 'Cache-Control': 'no-store' } }
   );
 }
