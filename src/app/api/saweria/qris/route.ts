@@ -94,6 +94,7 @@ export async function POST(req: NextRequest) {
       amountRaw: qris.amountRaw,
       qrString: qris.qrString,
       qrDataUrl: qris.qrDataUrl,
+      isSynthesized: qris.id.startsWith('saweria-qris-'),
       packageId,
       userEmail,
     });

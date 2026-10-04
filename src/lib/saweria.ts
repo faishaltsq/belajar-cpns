@@ -188,8 +188,14 @@ export async function createSaweriaQris(params: CreateQrisParams): Promise<QrisR
         txId = json.data.id || txId;
         amountRaw = json.data.amount_raw || amount;
       }
+    } else {
+      const errText = await res.text();
+      console.error(`[Saweria API Error] status=${res.status}:`, errText);
+      throw new Error(`Saweria API returned HTTP ${res.status}: ${errText}`);
     }
-  } catch {
+  } catch (apiErr: unknown) {
+    const msg = apiErr instanceof Error ? apiErr.message : String(apiErr);
+    console.error('[Saweria API Fetch Catch]:', msg);
     // If backend network call fails, proceed to dynamic QRIS synthesis below
   }
 
