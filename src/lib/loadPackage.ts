@@ -1,6 +1,42 @@
 import { Question } from '@/lib/types';
 import { getDb } from '@/lib/db';
 
+// Helper: replace static figural image paths with DB data-URL overrides (from admin crop editor)
+async function applyFiguralOverrides(questions: Question[]): Promise<Question[]> {
+  const sql = getDb();
+  if (!sql) return questions;
+  const needsOverride = questions.some(
+    (q) => typeof q.image === 'string' && q.image.includes('/images/questions/fig_')
+  );
+  if (!needsOverride) return questions;
+  try {
+    const rows = await sql`
+      SELECT number, image FROM questions
+      WHERE package_id = 'tryout-figural'
+        AND image LIKE 'data:image/%'
+    `;
+    if (!rows || rows.length === 0) return questions;
+    const overrideMap = new Map<string, string>();
+    for (const r of rows) {
+      const num = (r as { number: number }).number;
+      let fname = '';
+      if (num >= 1 && num <= 17)  fname = `fig_analogi_${String(num).padStart(2, '0')}.png`;
+      if (num >= 18 && num <= 31) fname = `fig_ketidaksamaan_${String(num - 17).padStart(2, '0')}.png`;
+      if (num >= 32 && num <= 46) fname = `fig_serial_${String(num - 31).padStart(2, '0')}.png`;
+      if (fname) overrideMap.set(fname, (r as { image: string }).image);
+    }
+    if (overrideMap.size === 0) return questions;
+    return questions.map((q) => {
+      if (!q.image || !String(q.image).includes('/images/questions/fig_')) return q;
+      const fname = String(q.image).split('/').pop()?.split('?')[0];
+      const override = fname ? overrideMap.get(fname) : undefined;
+      return override ? { ...q, image: override } : q;
+    });
+  } catch {
+    return questions;
+  }
+}
+
 const STATIC_PACKAGES: Record<string, () => Promise<Question[]>> = {
   'tryout-1': () => import('@/data/sample_questions.json').then((m) => m.default as unknown as Question[]),
   'tryout-2': () => import('@/data/packages/tryout-2.json').then((m) => m.default as unknown as Question[]),
@@ -57,11 +93,12 @@ export async function loadPackage(id: string): Promise<Question[]> {
     }
   }
 
-  // 2. Fallback ke file JSON statis
+  // 2. Fallback ke file JSON statis, lalu apply override gambar figural dari DB
   const loader = STATIC_PACKAGES[id];
   if (!loader) return [];
   try {
-    return await loader();
+    const questions = await loader();
+    return await applyFiguralOverrides(questions);
   } catch {
     return [];
   }

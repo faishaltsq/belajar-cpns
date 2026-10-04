@@ -44,14 +44,23 @@ export async function POST(req: NextRequest) {
         }
 
         if (numStart > 0) {
-          const res = await sql`
+          // Update in tryout-figural by question number
+          const res1 = await sql`
             UPDATE questions
             SET image = ${dataUrl}
             WHERE package_id = 'tryout-figural'
               AND number = ${numStart}
             RETURNING number
           `;
-          dbUpdated = Array.isArray(res) ? res.length : ((res as unknown as { rowCount: number }).rowCount || 0);
+          // ALSO update any other questions across ALL packages that reference this filename
+          const matchPattern = `%${safeName}%`;
+          const res2 = await sql`
+            UPDATE questions
+            SET image = ${dataUrl}
+            WHERE image LIKE ${matchPattern}
+            RETURNING number
+          `;
+          dbUpdated = (Array.isArray(res1) ? res1.length : 0) + (Array.isArray(res2) ? res2.length : 0);
         } else {
           const matchPattern = `%${safeName}%`;
           const res = await sql`
