@@ -150,7 +150,10 @@ export async function POST(req: NextRequest) {
           )
           ON CONFLICT (package_id, number) DO UPDATE SET
             text = EXCLUDED.text,
-            image = EXCLUDED.image,
+            image = CASE 
+              WHEN questions.image LIKE 'data:image/%' THEN questions.image
+              ELSE EXCLUDED.image
+            END,
             options = EXCLUDED.options,
             correct_answer = EXCLUDED.correct_answer,
             tkp_scores = EXCLUDED.tkp_scores
