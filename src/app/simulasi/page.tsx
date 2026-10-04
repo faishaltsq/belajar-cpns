@@ -92,7 +92,7 @@ export default function SimulasiPage() {
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition"
             >
               <Crown size={14} weight="fill" className="text-amber-500" />
-              Upgrade PRO (Test Rp 500)
+              Upgrade PRO (Test Rp 1rb)
             </button>
           )}
         </div>

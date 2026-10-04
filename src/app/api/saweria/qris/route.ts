@@ -11,9 +11,9 @@ export async function POST(req: NextRequest) {
     const packageId = body.packageId ? String(body.packageId).trim() : null;
     const customUsername = body.saweriaUsername ? String(body.saweriaUsername).trim() : undefined;
 
-    // Default price: Rp 500 untuk testing
-    if (!amount || isNaN(amount) || amount < 100) {
-      amount = 500;
+    // Default price: Rp 1.000 untuk testing (batas minimum QRIS nasional)
+    if (!amount || isNaN(amount) || amount < 1000) {
+      amount = 1000;
     }
 
     // Identifikasi user dari cookie atau body

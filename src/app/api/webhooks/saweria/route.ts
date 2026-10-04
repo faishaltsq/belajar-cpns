@@ -33,9 +33,9 @@ export async function POST(req: NextRequest) {
     const donatorEmail = (body.donator_email || '').trim().toLowerCase();
     const message = (body.message || '').trim();
 
-    // 2. Ambang batas harga dinamis (disetel Rp 500 untuk testing, bisa dioverride via env)
-    const PRO_THRESHOLD = Number(process.env.SAWERIA_PRO_PRICE || 500);
-    const TRYOUT_THRESHOLD = Number(process.env.SAWERIA_TRYOUT_PRICE || 500);
+    // 2. Ambang batas harga dinamis (disetel Rp 1.000 untuk testing batas minimum QRIS Bank Indonesia)
+    const PRO_THRESHOLD = Number(process.env.SAWERIA_PRO_PRICE || 1000);
+    const TRYOUT_THRESHOLD = Number(process.env.SAWERIA_TRYOUT_PRICE || 1000);
 
     // 3. Ekstrak target user email:
     // Cek apakah ada email di dalam teks pesan (user tulis "upgrade user@email.com" atau "[user@email.com]")

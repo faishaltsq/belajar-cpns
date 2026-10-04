@@ -74,19 +74,19 @@ describe('Saweria Dynamic Price Webhook', () => {
     expect(json.unlockedPackage).toBe(true);
   });
 
-  it('handles testing nominal Rp 500 correctly', async () => {
+  it('handles testing nominal Rp 1000 correctly', async () => {
     mockSql
       .mockResolvedValueOnce([]) // existingTx
-      .mockResolvedValueOnce([{ id: 'user-uuid-3', email: 'test500@example.com', is_pro: false, unlocked_packages: [] }])
+      .mockResolvedValueOnce([{ id: 'user-uuid-3', email: 'test1000@example.com', is_pro: false, unlocked_packages: [] }])
       .mockResolvedValueOnce([])
       .mockResolvedValueOnce([]);
 
     const payload = {
-      id: `test-tx-500-${Date.now()}`,
-      amount_raw: 500,
-      donator_name: 'Tester 500',
-      donator_email: 'test500@example.com',
-      message: 'upgrade PRO test500@example.com',
+      id: `test-tx-1000-${Date.now()}`,
+      amount_raw: 1000,
+      donator_name: 'Tester 1000',
+      donator_email: 'test1000@example.com',
+      message: 'upgrade PRO test1000@example.com',
     };
 
     const req = new NextRequest('http://localhost:3000/api/webhooks/saweria', {
@@ -99,7 +99,7 @@ describe('Saweria Dynamic Price Webhook', () => {
 
     const json = await res.json();
     expect(json.success).toBe(true);
-    expect(json.amount).toBe(500);
+    expect(json.amount).toBe(1000);
     expect(json.upgradedPro).toBe(true);
   });
 
