@@ -59,6 +59,7 @@ export async function POST(req: NextRequest) {
       // Graceful fallback ke Saweria Page jika API donation dibatasi oleh Cloudflare
       const activeUsername = customUsername || process.env.SAWERIA_USERNAME || 'faishaltsq';
       const saweriaUrl = `https://saweria.co/${activeUsername}?amount=${amount}&message=${encodeURIComponent(msg)}`;
+      const errMsg = qrisErr instanceof Error ? qrisErr.message : String(qrisErr);
       return NextResponse.json({
         success: true,
         fallback: true,
@@ -68,6 +69,7 @@ export async function POST(req: NextRequest) {
         amountRaw: amount,
         packageId,
         userEmail,
+        debugError: errMsg,
         message: 'Silakan lanjutkan pembayaran melalui halaman Saweria resmi.',
       });
     }
