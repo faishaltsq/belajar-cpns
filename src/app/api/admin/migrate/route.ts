@@ -16,6 +16,25 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    // 0. Update outdated figural image paths in questions table
+    try {
+      await sql`
+        UPDATE questions 
+        SET image = '/images/questions/fig_serial_03.png'
+        WHERE package_id = 'tryout-mini' AND number = 18 AND image LIKE '%fig_page%'
+      `;
+      await sql`
+        UPDATE questions 
+        SET image = '/images/questions/fig_serial_05.png'
+        WHERE package_id = 'tryout-mini' AND number = 19 AND image LIKE '%fig_page%'
+      `;
+      await sql`
+        UPDATE questions 
+        SET image = '/images/questions/fig_analogi_01.png'
+        WHERE package_id = 'tryout-mini' AND number = 20 AND image LIKE '%fig_page%'
+      `;
+    } catch {}
+
     // 1. Create tables
     await sql.query(`
       CREATE TABLE IF NOT EXISTS users (

@@ -8,3 +8,4 @@ node_modules/
 # Extracted PDF text
 extracted/
 __pycache__/
+.env.vercel.local
