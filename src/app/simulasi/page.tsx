@@ -11,8 +11,10 @@ type PkgItem = { id: string; label: string; desc: string; badge: string | null }
 export default function SimulasiPage() {
   const [packages, setPackages] = useState<PkgItem[]>(TRYOUT_LIST);
   const [isPro, setIsPro] = useState(false);
+  const [unlockedPackages, setUnlockedPackages] = useState<string[]>([]);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const [upgradeTrigger, setUpgradeTrigger] = useState('');
+  const [upgradePackageId, setUpgradePackageId] = useState<string | undefined>(undefined);
 
   // Paket yang gratis (tidak terkunci)
   const FREE_IDS = new Set(['tryout-mini', 'tryout-1', 'tryout-2']);
@@ -22,10 +24,15 @@ export default function SimulasiPage() {
       .then(r => r.json())
       .then(d => { if (d.packages?.length) setPackages(d.packages); })
       .catch(() => null);
-    // Cek status PRO
+    // Cek status PRO & unlocked packages
     fetch('/api/user/status')
       .then(r => r.json())
-      .then(d => setIsPro(d.is_pro || false))
+      .then(d => {
+        setIsPro(d.is_pro || false);
+        if (Array.isArray(d.unlocked_packages)) {
+          setUnlockedPackages(d.unlocked_packages);
+        }
+      })
       .catch(() => null);
   }, []);
 
@@ -92,13 +99,17 @@ export default function SimulasiPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {packages.map((pkg) => {
-            const isLocked = !isPro && !FREE_IDS.has(pkg.id);
+            const isLocked = !isPro && !FREE_IDS.has(pkg.id) && !unlockedPackages.includes(pkg.id);
 
             if (isLocked) {
               return (
                 <div
                   key={pkg.id}
-                  onClick={() => { setUpgradeTrigger(pkg.label); setUpgradeOpen(true); }}
+                  onClick={() => {
+                    setUpgradeTrigger(pkg.label);
+                    setUpgradePackageId(pkg.id);
+                    setUpgradeOpen(true);
+                  }}
                   className="card-modern p-5 group block cursor-pointer opacity-85 hover:opacity-100 relative overflow-hidden"
                 >
                   <div className="flex items-start justify-between mb-2">
@@ -112,7 +123,7 @@ export default function SimulasiPage() {
                   </div>
                   <p className="text-xs text-[var(--muted-foreground)] mb-3 leading-relaxed">{pkg.desc}</p>
                   <div className="flex items-center text-xs font-semibold text-amber-700">
-                    Buka dengan PRO (Saweria QRIS)
+                    Buka Akses (QRIS Saweria)
                     <ArrowRight size={13} weight="bold" className="ml-1" />
                   </div>
                 </div>
@@ -155,6 +166,7 @@ export default function SimulasiPage() {
           isOpen={upgradeOpen}
           onClose={() => setUpgradeOpen(false)}
           triggerPackage={upgradeTrigger}
+          packageId={upgradePackageId}
         />
       </div>
     </div>
