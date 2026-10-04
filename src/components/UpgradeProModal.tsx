@@ -367,10 +367,10 @@ export function UpgradeProModal({
             {/* Warning Box */}
             <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200 text-left text-xs text-amber-900 space-y-1">
               <div className="font-bold flex items-center gap-1.5">
-                ⚠️ PENTING:
+                💡 INFO PAJAK & BIAYA QRIS:
               </div>
               <p className="leading-relaxed text-[11px]">
-                Pastikan nominal transfer di Saweria <b>persis Rp {orderInfo.exactAmount.toLocaleString('id-ID')}</b>. Angka <b>+{orderInfo.uniqueCode}</b> di belakang adalah identifikasi unik pesanan Anda agar sistem langsung membuka akses secara otomatis tanpa perlu konfirmasi manual.
+                Saat scan QRIS di Saweria, total tagihan mungkin terdapat tambahan pajak/biaya QRIS (contoh: +Rp 9 dari Saweria). <b>Jangan khawatir</b>, sistem Lolos.in sudah dilengkapi toleransi pajak otomatis dan akan langsung mengaktifkan pesanan <b>ID #{orderInfo.orderId}</b> Anda.
               </p>
             </div>
 
@@ -397,13 +397,28 @@ export function UpgradeProModal({
                 onClick={async () => {
                   setLoading(true);
                   try {
+                    // 1. Cek status normal
                     const res = await fetch(`/api/payment/order-status?orderId=${orderInfo.orderId}`);
                     const data = await res.json();
                     if (data.paid) {
                       setStep('success');
-                    } else {
-                      alert('Pembayaran belum masuk. Jika baru saja scan, tunggu beberapa detik agar Saweria mengirimkan notifikasi.');
+                      return;
                     }
+
+                    // 2. Sinkronisasi aktif dengan transaksi terbaru Saweria (toleransi pajak QRIS)
+                    const sres = await fetch('/api/payment/sync', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ orderId: orderInfo.orderId }),
+                    });
+                    const sdata = await sres.json();
+                    if (sdata.paid) {
+                      setStep('success');
+                    } else {
+                      alert('Pembayaran belum terdeteksi di server Saweria. Jika baru saja menyelesaikan scan QRIS, mohon tunggu beberapa saat lalu klik tombol ini lagi.');
+                    }
+                  } catch {
+                    alert('Gagal mengecek status. Silakan coba sesaat lagi.');
                   } finally {
                     setLoading(false);
                   }
@@ -411,7 +426,7 @@ export function UpgradeProModal({
                 disabled={loading}
                 className="btn-secondary w-full py-2.5 text-xs font-semibold"
               >
-                {loading ? 'Mengecek...' : 'Cek Status Sekarang'}
+                {loading ? 'Mengecek ke Saweria...' : 'Cek Status Sekarang'}
               </button>
 
               <button

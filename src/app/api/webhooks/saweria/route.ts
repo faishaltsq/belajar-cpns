@@ -60,46 +60,36 @@ export async function POST(req: NextRequest) {
     let matchedOrderId: number | null = null;
     let orderTypeFromOrder: string | null = null;
 
-    // 3.5. VALIDASI LEWAT KODE UNIK NOMINAL (Layer 1 Utama)
-    // Cek apakah amount persis sama dengan order pending di payment_orders
+    // 3.5. VALIDASI MULTI-LAYER (Toleran terhadap Pajak QRIS Saweria)
     try {
-      let matchedOrders = await sql`
+      const orderIdMatch = message.match(/(?:id|order)\s*#?(\d+)/i);
+      const parsedOrderId = orderIdMatch ? Number(orderIdMatch[1]) : 0;
+
+      const matchedOrders = await sql`
         SELECT id, user_id, user_email, package_id, order_type
         FROM payment_orders
-        WHERE exact_amount = ${amount} AND status = 'pending'
-        ORDER BY created_at DESC
+        WHERE status = 'pending'
+          AND expires_at > NOW()
+          AND (
+            exact_amount = ${amount}
+            OR id = ${parsedOrderId}
+            OR (${targetEmail ? true : false} AND LOWER(user_email) = ${targetEmail || ''})
+            OR (
+              ${amount} >= 1000 AND (
+                (${amount} >= exact_amount AND ${amount} <= exact_amount + 60)
+                OR (${amount} >= base_amount AND ${amount} <= base_amount + 60)
+              )
+            )
+          )
+        ORDER BY 
+          CASE 
+            WHEN exact_amount = ${amount} THEN 1
+            WHEN id = ${parsedOrderId} THEN 2
+            ELSE 3
+          END,
+          created_at DESC
         LIMIT 1
       `;
-
-      // Layer 1.5 Fallback: Cek apakah ada Order ID dalam pesan (misal: "[ID #3]" atau "Order 3")
-      if (matchedOrders.length === 0) {
-        const orderIdMatch = message.match(/(?:id|order)\s*#?(\d+)/i);
-        if (orderIdMatch) {
-          const parsedId = Number(orderIdMatch[1]);
-          matchedOrders = await sql`
-            SELECT id, user_id, user_email, package_id, order_type
-            FROM payment_orders
-            WHERE id = ${parsedId} AND status = 'pending'
-            LIMIT 1
-          `;
-        }
-      }
-
-      // Layer 1.6 Fallback: Jika nominal donasi berada di range testing (1001 - 1999) dan ada 1 order pending dalam 15 menit
-      if (matchedOrders.length === 0 && amount >= 1001 && amount < 2000) {
-        const recentPending = await sql`
-          SELECT id, user_id, user_email, package_id, order_type
-          FROM payment_orders
-          WHERE status = 'pending'
-            AND base_amount = 1000
-            AND created_at > NOW() - INTERVAL '15 minutes'
-          ORDER BY created_at DESC
-          LIMIT 2
-        `;
-        if (recentPending.length === 1) {
-          matchedOrders = recentPending;
-        }
-      }
 
       if (matchedOrders.length > 0) {
         const ord = matchedOrders[0];

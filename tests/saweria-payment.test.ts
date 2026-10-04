@@ -124,6 +124,45 @@ describe('Saweria Dynamic Price Webhook', () => {
     expect(json.unlockedPackage).toBe(true);
   });
 
+  it('handles testing nominal with Saweria QRIS tax tolerance (e.g. Rp 1009 for Rp 1000 base order)', async () => {
+    mockSql
+      .mockResolvedValueOnce([   // payment_orders tolerance match in unified query
+        {
+          id: 55,
+          user_id: 'user-tax-tolerance',
+          user_email: 'tax@example.com',
+          package_id: 'tryout-4',
+          order_type: 'single',
+        },
+      ])
+      .mockResolvedValueOnce([]) // existingTx
+      .mockResolvedValueOnce([{ id: 'user-tax-tolerance', email: 'tax@example.com', is_pro: false, unlocked_packages: [] }])
+      .mockResolvedValueOnce([]) // update users
+      .mockResolvedValueOnce([]) // update payment_orders to paid
+      .mockResolvedValueOnce([]); // insert transactions
+
+    const payload = {
+      id: `test-tx-qris-tax-${Date.now()}`,
+      amount_raw: 1009, // Rp 1.000 + Rp 9 pajak QRIS Saweria
+      donator_name: 'Tax Tester',
+      donator_email: '',
+      message: 'beli ai', // Tanpa info paket/email di pesan
+    };
+
+    const req = new NextRequest('http://localhost:3000/api/webhooks/saweria', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+
+    const res = await saweriaWebhook(req);
+    expect(res.status).toBe(200);
+
+    const json = await res.json();
+    expect(json.success).toBe(true);
+    expect(json.amount).toBe(1009);
+    expect(json.unlockedPackage).toBe(true);
+  });
+
   it('handles testing nominal Rp 1000 correctly', async () => {
     mockSql
       .mockResolvedValueOnce([]) // payment_orders
