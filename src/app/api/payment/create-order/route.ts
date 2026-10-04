@@ -3,40 +3,18 @@ import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth';
 import { getDb } from '@/lib/db';
 import QRCode from 'qrcode';
-import { createSaweriaQris } from '@/lib/saweria';
 
 const SAWERIA_USERNAME = process.env.SAWERIA_USERNAME || 'faishaltsq';
 
-/** Buat QR code QRIS via Saweria snap API (invoice resmi Xendit) */
-async function buildQrPayload(exactAmount: number, msg: string, userEmail: string) {
+/** Buat QR code yang encode URL Saweria (user scan → buka halaman donasi) */
+async function buildQrPayload(exactAmount: number, msg: string) {
   const paymentUrl = `https://saweria.co/${SAWERIA_USERNAME}?amount=${exactAmount}&message=${encodeURIComponent(msg)}`;
-
-  try {
-    const result = await createSaweriaQris({
-      saweriaUsername: SAWERIA_USERNAME,
-      amount: exactAmount,
-      message: msg,
-      donorName: 'Lolos.in User',
-      donorEmail: userEmail || 'user@lolos.in',
-    });
-
-    if (result.qrString && !result.qrString.startsWith('saweria-qris-')) {
-      const qrDataUrl = await QRCode.toDataURL(result.qrString, {
-        width: 300, margin: 2,
-        color: { dark: '#1e293b', light: '#ffffff' },
-      });
-      return { qrDataUrl, paymentUrl, qrisMode: true as const, saweriaUsername: SAWERIA_USERNAME, snapTxId: result.id };
-    }
-  } catch (e) {
-    console.error('Saweria snap API failed:', e);
-  }
-
-  // Fallback URL
   const qrDataUrl = await QRCode.toDataURL(paymentUrl, {
-    width: 300, margin: 2,
+    width: 280,
+    margin: 2,
     color: { dark: '#1e293b', light: '#ffffff' },
   });
-  return { qrDataUrl, paymentUrl, qrisMode: false as const, saweriaUsername: SAWERIA_USERNAME, snapTxId: null };
+  return { qrDataUrl, paymentUrl, qrisMode: false as const, saweriaUsername: SAWERIA_USERNAME };
 }
 
 export async function POST(req: NextRequest) {
@@ -134,7 +112,7 @@ export async function POST(req: NextRequest) {
         const msg = orderType === 'single'
           ? `Akses ${packageId} [ID #${order.id}]`
           : `Upgrade PRO [ID #${order.id}]`;
-        const qrInfo = await buildQrPayload(order.exact_amount, msg, userEmail || '');
+        const qrInfo = await buildQrPayload(order.exact_amount, msg);
 
         return NextResponse.json({
           success: true,
@@ -187,7 +165,7 @@ export async function POST(req: NextRequest) {
     const msg = orderType === 'single'
       ? `Akses ${packageId} [ID #${orderId}]`
       : `Upgrade PRO [ID #${orderId}]`;
-    const qrInfo = await buildQrPayload(exactAmount, msg, userEmail || '');
+    const qrInfo = await buildQrPayload(exactAmount, msg);
 
     return NextResponse.json({
       success: true,
