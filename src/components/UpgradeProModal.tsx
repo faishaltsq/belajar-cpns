@@ -28,6 +28,8 @@ interface OrderInfo {
   uniqueCode: number;
   exactAmount: number;
   saweriaUsername: string;
+  paymentUrl: string;
+  qrDataUrl: string;
 }
 
 export function UpgradeProModal({
@@ -338,81 +340,83 @@ export function UpgradeProModal({
           </div>
         )}
 
-        {/* STEP 2: Instruksi Pembayaran dengan Nominal Unik */}
+        {/* STEP 2: QR Code + Instruksi Pembayaran */}
         {step === 'pay' && orderInfo && (
-          <div className="space-y-4 text-center">
-            {/* Box Nominal Unik */}
-            <div
-              className="p-4 rounded-2xl border text-center space-y-2"
-              style={{ background: 'var(--muted)', borderColor: 'var(--border)' }}
-            >
-              <div className="text-xs text-[var(--muted-foreground)]">Nominal Pembayaran (Tepat):</div>
-              <div className="flex items-center justify-center gap-2">
-                <div className="text-3xl font-black text-[var(--foreground)] tracking-tight">
-                  Rp {orderInfo.exactAmount.toLocaleString('id-ID')}
-                </div>
-                <button
-                  type="button"
-                  onClick={copyAmount}
-                  className="p-1.5 rounded-lg border hover:bg-[var(--card)] text-[var(--primary)] transition"
-                  title="Salin nominal"
-                >
-                  <Copy size={16} />
-                </button>
-              </div>
-              {copied && <div className="text-emerald-600 text-xs font-semibold">Nominal disalin!</div>}
-
-              {/* Badge Kode Unik */}
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-semibold">
-                <span>Kode Identifikasi ID: <b>+{orderInfo.uniqueCode}</b></span>
-              </div>
+          <div className="space-y-3 text-center">
+            {/* Nominal Unik */}
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-2xl font-black text-[var(--foreground)]">
+                Rp {orderInfo.exactAmount.toLocaleString('id-ID')}
+              </span>
+              <button
+                type="button"
+                onClick={copyAmount}
+                className="p-1 rounded-lg border hover:bg-[var(--card)] text-[var(--primary)] transition"
+                title="Salin nominal"
+              >
+                <Copy size={15} />
+              </button>
+              {copied && <span className="text-emerald-600 text-xs font-semibold">Disalin!</span>}
+            </div>
+            <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-semibold">
+              Kode unik pesanan: <b>+{orderInfo.uniqueCode}</b>
             </div>
 
-            {/* Panduan Pembayaran White-Label */}
-            <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200 text-left text-xs text-amber-900 space-y-2">
-              <div className="font-bold flex items-center gap-1.5 text-amber-950">
-                💡 PANDUAN PEMBAYARAN:
+            {/* QR Code langsung scan dari browser */}
+            <div className="flex flex-col items-center gap-1">
+              <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-sm inline-block">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={orderInfo.qrDataUrl}
+                  alt="QR Pembayaran Saweria"
+                  width={220}
+                  height={220}
+                  className="rounded-lg"
+                />
               </div>
-              <ol className="list-decimal list-inside space-y-1.5 leading-relaxed text-[11px]">
-                <li>Klik tombol <b>&quot;Buka Barcode QRIS Resmi&quot;</b> di bawah untuk menampilkan kode QR aktif.</li>
-                <li>Scan kode QR dengan <b>m-Banking</b> (BCA, Mandiri, BRI, BNI) atau <b>E-Wallet</b> (GoPay, DANA, OVO, ShopeePay).</li>
-                <li>Pastikan nominal transfer adalah <b>Rp {orderInfo.exactAmount.toLocaleString('id-ID')}</b> (digit <b>+{orderInfo.uniqueCode}</b> adalah pengenal unik pesananmu).</li>
-                <li>Setelah transfer berhasil, halaman ini akan <b>otomatis mendeteksi dan langsung aktif</b>!</li>
+              <p className="text-[10px] text-[var(--muted-foreground)] leading-snug max-w-[240px]">
+                📱 Scan QR ini dengan kamera HP / Google Lens untuk langsung membuka halaman pembayaran dengan nominal yang sudah terisi otomatis.
+              </p>
+            </div>
+
+            {/* Panduan singkat */}
+            <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200 text-left text-[11px] text-amber-900 space-y-1">
+              <ol className="list-decimal list-inside space-y-1 leading-relaxed">
+                <li>Scan QR di atas dengan kamera HP, atau klik tombol di bawah jika bayar dari perangkat ini.</li>
+                <li>Di halaman Saweria, pilih metode bayar: <b>QRIS / GoPay / DANA / OVO</b>.</li>
+                <li>Pastikan nominal <b>Rp {orderInfo.exactAmount.toLocaleString('id-ID')}</b> sudah terisi, lalu bayar.</li>
+                <li>Halaman ini akan <b>otomatis berhasil</b> begitu pembayaran dikonfirmasi.</li>
               </ol>
             </div>
 
-            {/* Waiting Indicator */}
-            <div className="flex items-center justify-center gap-2 text-xs text-amber-700 font-medium py-1">
-              <Spinner size={16} className="animate-spin" />
-              Menunggu pembayaran terkonfirmasi otomatis...
+            {/* Waiting */}
+            <div className="flex items-center justify-center gap-2 text-xs text-amber-700 font-medium">
+              <Spinner size={14} className="animate-spin" />
+              Menunggu pembayaran...
             </div>
 
             {/* Actions */}
-            <div className="space-y-2 pt-1">
-              <button
-                type="button"
-                onClick={openOfficialQris}
-                className="btn-primary w-full py-3 flex items-center justify-center gap-2 text-sm font-bold shadow-sm"
+            <div className="space-y-2">
+              <a
+                href={orderInfo.paymentUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full py-2.5 flex items-center justify-center gap-2 text-sm font-bold shadow-sm rounded-xl"
               >
-                <QrCode size={18} weight="bold" />
-                Buka Barcode QRIS Resmi
-                <ArrowRight size={14} weight="bold" />
-              </button>
+                <QrCode size={16} weight="bold" />
+                Buka Halaman Pembayaran
+                <ArrowRight size={13} weight="bold" />
+              </a>
 
               <button
                 type="button"
                 onClick={async () => {
                   setLoading(true);
                   try {
-                    // 1. Cek status normal
                     const res = await fetch(`/api/payment/order-status?orderId=${orderInfo.orderId}`);
                     const data = await res.json();
-                    if (data.paid) {
-                      setStep('success');
-                      return;
-                    }
+                    if (data.paid) { setStep('success'); return; }
 
-                    // 2. Sinkronisasi aktif dengan transaksi terbaru
                     const sres = await fetch('/api/payment/sync', {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
@@ -422,7 +426,7 @@ export function UpgradeProModal({
                     if (sdata.paid) {
                       setStep('success');
                     } else {
-                      alert('Pembayaran belum terdeteksi. Jika baru saja menyelesaikan scan QRIS, mohon tunggu beberapa detik lalu klik tombol ini lagi.');
+                      alert('Pembayaran belum terdeteksi. Tunggu beberapa detik lalu coba lagi.');
                     }
                   } catch {
                     alert('Gagal mengecek status. Silakan coba sesaat lagi.');
@@ -431,17 +435,17 @@ export function UpgradeProModal({
                   }
                 }}
                 disabled={loading}
-                className="btn-secondary w-full py-2.5 text-xs font-semibold"
+                className="btn-secondary w-full py-2 text-xs font-semibold"
               >
-                {loading ? 'Mengecek...' : 'Sudah Bayar? Cek Status Sekarang'}
+                {loading ? 'Mengecek...' : 'Sudah Bayar? Cek Status'}
               </button>
 
               <button
                 type="button"
                 onClick={() => setStep('info')}
-                className="text-xs text-[var(--muted-foreground)] hover:underline block mx-auto pt-1"
+                className="text-xs text-[var(--muted-foreground)] hover:underline block mx-auto"
               >
-                ← Kembali ke Pilihan Paket
+                ← Kembali
               </button>
             </div>
           </div>
