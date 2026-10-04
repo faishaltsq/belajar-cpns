@@ -182,23 +182,30 @@ export async function createSaweriaQris(params: CreateQrisParams): Promise<QrisR
         'Accept': 'application/json, text/plain, */*',
       },
       body: JSON.stringify(payload),
+      cache: 'no-store',
     });
 
-    if (res.ok) {
-      const json = await res.json();
-      if (json?.data?.qr_string) {
-        qrString = json.data.qr_string;
-        txId = json.data.id || txId;
-        amountRaw = json.data.amount_raw || amount;
-      }
+    const status = res.status;
+    const resText = await res.text();
+    let json: Record<string, any> = {};
+    try {
+      json = JSON.parse(resText);
+    } catch {
+      // not json
+    }
+
+    if (res.ok && json?.data?.qr_string) {
+      qrString = json.data.qr_string;
+      txId = json.data.id || txId;
+      amountRaw = json.data.amount_raw || amount;
+      debugError = `OK: txId=${txId}`;
     } else {
-      const errText = await res.text();
-      debugError = `Saweria API HTTP ${res.status}: ${errText}`;
-      console.error(`[Saweria API Error] status=${res.status}:`, errText);
+      debugError = `HTTP ${status}: ${resText.slice(0, 300)}`;
+      console.error(`[Saweria API Error] status=${status}:`, resText);
     }
   } catch (apiErr: unknown) {
     const msg = apiErr instanceof Error ? apiErr.message : String(apiErr);
-    debugError = `Saweria Fetch Catch: ${msg}`;
+    debugError = `Fetch Catch: ${msg}`;
     console.error('[Saweria API Fetch Catch]:', msg);
   }
 
