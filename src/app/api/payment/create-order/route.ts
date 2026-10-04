@@ -3,6 +3,44 @@ import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth';
 import { getDb } from '@/lib/db';
 import QRCode from 'qrcode';
+import { createSaweriaQris } from '@/lib/saweria';
+
+const SAWERIA_USERNAME = process.env.SAWERIA_USERNAME || 'faishaltsq';
+
+/** Buat QR code dari QRIS string resmi Saweria, atau fallback ke URL link */
+async function buildQrPayload(exactAmount: number, msg: string, userEmail: string) {
+  const paymentUrl = `https://saweria.co/${SAWERIA_USERNAME}?amount=${exactAmount}&message=${encodeURIComponent(msg)}`;
+
+  try {
+    const result = await createSaweriaQris({
+      saweriaUsername: SAWERIA_USERNAME,
+      amount: exactAmount,
+      message: msg,
+      donorName: 'Lolos.in User',
+      donorEmail: userEmail || 'user@lolos.in',
+    });
+
+    if (result.qrString && !result.qrString.startsWith('saweria-qris-')) {
+      // QRIS string resmi dari Xendit/Saweria — langsung bisa di-scan m-Banking
+      const qrDataUrl = await QRCode.toDataURL(result.qrString, {
+        width: 300,
+        margin: 2,
+        color: { dark: '#1e293b', light: '#ffffff' },
+      });
+      return { qrDataUrl, paymentUrl, qrisMode: true as const, saweriaUsername: SAWERIA_USERNAME };
+    }
+  } catch {
+    // fallthrough ke fallback
+  }
+
+  // Fallback: QR encode URL link Saweria (user scan → buka browser → bayar di sana)
+  const qrDataUrl = await QRCode.toDataURL(paymentUrl, {
+    width: 300,
+    margin: 2,
+    color: { dark: '#1e293b', light: '#ffffff' },
+  });
+  return { qrDataUrl, paymentUrl, qrisMode: false as const, saweriaUsername: SAWERIA_USERNAME };
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -96,16 +134,10 @@ export async function POST(req: NextRequest) {
 
       if (existing.length > 0) {
         const order = existing[0];
-        const saweriaUsername = process.env.SAWERIA_USERNAME || 'faishaltsq';
         const msg = orderType === 'single'
           ? `Akses ${packageId} [ID #${order.id}]`
           : `Upgrade PRO [ID #${order.id}]`;
-        const paymentUrl = `https://saweria.co/${saweriaUsername}?amount=${order.exact_amount}&message=${encodeURIComponent(msg)}`;
-        const qrDataUrl = await QRCode.toDataURL(paymentUrl, {
-          width: 300,
-          margin: 2,
-          color: { dark: '#1e293b', light: '#ffffff' },
-        });
+        const qrInfo = await buildQrPayload(order.exact_amount, msg, userEmail || '');
 
         return NextResponse.json({
           success: true,
@@ -116,9 +148,10 @@ export async function POST(req: NextRequest) {
           packageId,
           orderType,
           userEmail,
-          saweriaUsername,
-          paymentUrl,
-          qrDataUrl,
+          saweriaUsername: qrInfo.saweriaUsername,
+          paymentUrl: qrInfo.paymentUrl,
+          qrDataUrl: qrInfo.qrDataUrl,
+          qrisMode: qrInfo.qrisMode,
         });
       }
     }
@@ -152,16 +185,10 @@ export async function POST(req: NextRequest) {
     `;
 
     const orderId = inserted[0].id;
-    const saweriaUsername = process.env.SAWERIA_USERNAME || 'faishaltsq';
     const msg = orderType === 'single'
       ? `Akses ${packageId} [ID #${orderId}]`
       : `Upgrade PRO [ID #${orderId}]`;
-    const paymentUrl = `https://saweria.co/${saweriaUsername}?amount=${exactAmount}&message=${encodeURIComponent(msg)}`;
-    const qrDataUrl = await QRCode.toDataURL(paymentUrl, {
-      width: 300,
-      margin: 2,
-      color: { dark: '#1e293b', light: '#ffffff' },
-    });
+    const qrInfo = await buildQrPayload(exactAmount, msg, userEmail || '');
 
     return NextResponse.json({
       success: true,
@@ -172,9 +199,10 @@ export async function POST(req: NextRequest) {
       packageId,
       orderType,
       userEmail,
-      saweriaUsername,
-      paymentUrl,
-      qrDataUrl,
+      saweriaUsername: qrInfo.saweriaUsername,
+      paymentUrl: qrInfo.paymentUrl,
+      qrDataUrl: qrInfo.qrDataUrl,
+      qrisMode: qrInfo.qrisMode,
     });
   } catch (error: unknown) {
     const msg = error instanceof Error ? error.message : 'Unknown error';

@@ -30,6 +30,7 @@ interface OrderInfo {
   saweriaUsername: string;
   paymentUrl: string;
   qrDataUrl: string;
+  qrisMode: boolean;
 }
 
 export function UpgradeProModal({
@@ -368,24 +369,37 @@ export function UpgradeProModal({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={orderInfo.qrDataUrl}
-                  alt="QR Pembayaran Saweria"
+                  alt={orderInfo.qrisMode ? "QRIS Standar Pembayaran Nasional" : "QR Link Saweria"}
                   width={220}
                   height={220}
                   className="rounded-lg"
                 />
               </div>
               <p className="text-[10px] text-[var(--muted-foreground)] leading-snug max-w-[240px]">
-                📱 Scan QR ini dengan kamera HP / Google Lens untuk langsung membuka halaman pembayaran dengan nominal yang sudah terisi otomatis.
+                {orderInfo.qrisMode
+                  ? '📱 Scan QR ini langsung pakai m-Banking (BCA, Mandiri, BRI) atau E-Wallet (GoPay, DANA, OVO).'
+                  : '📱 Scan QR ini dengan kamera HP untuk langsung membuka halaman pembayaran.'}
               </p>
             </div>
 
             {/* Panduan singkat */}
             <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200 text-left text-[11px] text-amber-900 space-y-1">
               <ol className="list-decimal list-inside space-y-1 leading-relaxed">
-                <li>Scan QR di atas dengan kamera HP, atau klik tombol di bawah jika bayar dari perangkat ini.</li>
-                <li>Di halaman Saweria, pilih metode bayar: <b>QRIS / GoPay / DANA / OVO</b>.</li>
-                <li>Pastikan nominal <b>Rp {orderInfo.exactAmount.toLocaleString('id-ID')}</b> sudah terisi, lalu bayar.</li>
-                <li>Halaman ini akan <b>otomatis berhasil</b> begitu pembayaran dikonfirmasi.</li>
+                {orderInfo.qrisMode ? (
+                  <>
+                    <li>Buka aplikasi <b>m-Banking atau E-Wallet</b> pilihanmu.</li>
+                    <li>Pilih menu <b>Scan QRIS</b> lalu arahkan kamera ke barcode di atas.</li>
+                    <li>Pastikan nominal transfer adalah <b>Rp {orderInfo.exactAmount.toLocaleString('id-ID')}</b>.</li>
+                    <li>Selesaikan pembayaran. Halaman ini akan <b>otomatis terbuka</b>!</li>
+                  </>
+                ) : (
+                  <>
+                    <li>Scan QR di atas dengan kamera HP, atau klik tombol di bawah jika bayar dari perangkat ini.</li>
+                    <li>Di halaman Saweria, pilih metode bayar: <b>QRIS / GoPay / DANA / OVO</b>.</li>
+                    <li>Pastikan nominal <b>Rp {orderInfo.exactAmount.toLocaleString('id-ID')}</b> sudah terisi, lalu bayar.</li>
+                    <li>Halaman ini akan <b>otomatis berhasil</b> begitu pembayaran dikonfirmasi.</li>
+                  </>
+                )}
               </ol>
             </div>
 
