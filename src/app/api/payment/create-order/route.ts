@@ -3,43 +3,34 @@ import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth';
 import { getDb } from '@/lib/db';
 import QRCode from 'qrcode';
-import { createSaweriaQris } from '@/lib/saweria';
+import { makeDynamicQris, DEFAULT_BASE_QRIS } from '@/lib/saweria';
 
 const SAWERIA_USERNAME = process.env.SAWERIA_USERNAME || 'faishaltsq';
+const BASE_QRIS = process.env.QRIS_BASE_STRING || DEFAULT_BASE_QRIS;
 
-/** Buat QR code dari QRIS string resmi Saweria, atau fallback ke URL link */
-async function buildQrPayload(exactAmount: number, msg: string, userEmail: string) {
+/** Buat QR code QRIS dinamis langsung secara offline via standar EMVCo */
+async function buildQrPayload(exactAmount: number, msg: string) {
   const paymentUrl = `https://saweria.co/${SAWERIA_USERNAME}?amount=${exactAmount}&message=${encodeURIComponent(msg)}`;
 
   try {
-    const result = await createSaweriaQris({
-      saweriaUsername: SAWERIA_USERNAME,
-      amount: exactAmount,
-      message: msg,
-      donorName: 'Lolos.in User',
-      donorEmail: userEmail || 'user@lolos.in',
+    // Generate QRIS string dinamis dengan nominal unik dan CRC valid
+    const qrisString = makeDynamicQris(BASE_QRIS, exactAmount);
+    const qrDataUrl = await QRCode.toDataURL(qrisString, {
+      width: 300,
+      margin: 2,
+      color: { dark: '#1e293b', light: '#ffffff' },
     });
-
-    if (result.qrString && !result.qrString.startsWith('saweria-qris-')) {
-      // QRIS string resmi dari Xendit/Saweria — langsung bisa di-scan m-Banking
-      const qrDataUrl = await QRCode.toDataURL(result.qrString, {
-        width: 300,
-        margin: 2,
-        color: { dark: '#1e293b', light: '#ffffff' },
-      });
-      return { qrDataUrl, paymentUrl, qrisMode: true as const, saweriaUsername: SAWERIA_USERNAME };
-    }
-  } catch {
-    // fallthrough ke fallback
+    return { qrDataUrl, paymentUrl, qrisMode: true as const, saweriaUsername: SAWERIA_USERNAME };
+  } catch (e) {
+    console.error('Failed to make dynamic QRIS:', e);
+    // Fallback URL
+    const qrDataUrl = await QRCode.toDataURL(paymentUrl, {
+      width: 300,
+      margin: 2,
+      color: { dark: '#1e293b', light: '#ffffff' },
+    });
+    return { qrDataUrl, paymentUrl, qrisMode: false as const, saweriaUsername: SAWERIA_USERNAME };
   }
-
-  // Fallback: QR encode URL link Saweria (user scan → buka browser → bayar di sana)
-  const qrDataUrl = await QRCode.toDataURL(paymentUrl, {
-    width: 300,
-    margin: 2,
-    color: { dark: '#1e293b', light: '#ffffff' },
-  });
-  return { qrDataUrl, paymentUrl, qrisMode: false as const, saweriaUsername: SAWERIA_USERNAME };
 }
 
 export async function POST(req: NextRequest) {
@@ -137,7 +128,7 @@ export async function POST(req: NextRequest) {
         const msg = orderType === 'single'
           ? `Akses ${packageId} [ID #${order.id}]`
           : `Upgrade PRO [ID #${order.id}]`;
-        const qrInfo = await buildQrPayload(order.exact_amount, msg, userEmail || '');
+        const qrInfo = await buildQrPayload(order.exact_amount, msg);
 
         return NextResponse.json({
           success: true,
@@ -190,7 +181,7 @@ export async function POST(req: NextRequest) {
     const msg = orderType === 'single'
       ? `Akses ${packageId} [ID #${orderId}]`
       : `Upgrade PRO [ID #${orderId}]`;
-    const qrInfo = await buildQrPayload(exactAmount, msg, userEmail || '');
+    const qrInfo = await buildQrPayload(exactAmount, msg);
 
     return NextResponse.json({
       success: true,
