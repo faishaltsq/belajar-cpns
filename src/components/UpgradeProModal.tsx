@@ -100,33 +100,43 @@ export function UpgradeProModal({
   const targetAmount = 1000; // Testing nominal Rp 1.000 (batas minimum QRIS nasional)
   const targetPackageId = selectedPlan === 'single' ? packageId : undefined;
 
+  // Polling status saat user berada di step 'check' (menunggu webhook Saweria)
+  useEffect(() => {
+    if (step === 'check') {
+      if (pollTimerRef.current) clearInterval(pollTimerRef.current);
+
+      pollTimerRef.current = setInterval(async () => {
+        try {
+          const res = await fetch('/api/user/status');
+          const data = await res.json();
+          if (
+            data.is_pro ||
+            (targetPackageId && data.unlocked_packages?.includes(targetPackageId))
+          ) {
+            if (pollTimerRef.current) clearInterval(pollTimerRef.current);
+            setStep('success');
+          }
+        } catch {
+          // ignore network glitch
+        }
+      }, 3000);
+
+      return () => {
+        if (pollTimerRef.current) clearInterval(pollTimerRef.current);
+      };
+    }
+  }, [step, targetPackageId]);
+
   async function handleGenerateQris() {
     setLoadingQris(true);
     setErrorMessage('');
     try {
-      const res = await fetch('/api/saweria/qris', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          amount: targetAmount,
-          packageId: targetPackageId,
-          donorEmail: userEmail,
-        }),
-      });
-
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        throw new Error(data.error || 'Gagal membuat QRIS pembayaran.');
-      }
-
-      if (data.fallback && data.saweriaUrl) {
-        window.open(data.saweriaUrl, '_blank');
-        setStep('check');
-        return;
-      }
-
-      setQrisData(data);
-      setStep('qris');
+      const msg = targetPackageId
+        ? `Akses ${targetPackageId} [${userEmail || 'user'}]`
+        : `Upgrade PRO [${userEmail || 'user'}]`;
+      const saweriaUrl = `https://saweria.co/faishaltsq?amount=${targetAmount}&message=${encodeURIComponent(msg)}`;
+      window.open(saweriaUrl, '_blank');
+      setStep('check');
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Terjadi kesalahan.';
       setErrorMessage(msg);
@@ -462,6 +472,20 @@ export function UpgradeProModal({
                     Saya Sudah Selesai Bayar
                   </>
                 )}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  const msg = targetPackageId
+                    ? `Akses ${targetPackageId} [${userEmail || 'user'}]`
+                    : `Upgrade PRO [${userEmail || 'user'}]`;
+                  const saweriaUrl = `https://saweria.co/faishaltsq?amount=${targetAmount}&message=${encodeURIComponent(msg)}`;
+                  window.open(saweriaUrl, '_blank');
+                }}
+                className="btn-secondary w-full py-2.5 text-xs font-semibold"
+              >
+                Buka Ulang Halaman Saweria
               </button>
 
               <button
