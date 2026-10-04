@@ -33,8 +33,8 @@ export async function POST(req: NextRequest) {
     const donatorEmail = (body.donator_email || '').trim().toLowerCase();
     const message = (body.message || '').trim();
 
-    // 2. Ambang batas harga dinamis (disetel Rp 1.000 untuk testing batas minimum QRIS Bank Indonesia)
-    const PRO_THRESHOLD = Number(process.env.SAWERIA_PRO_PRICE || 1000);
+    // 2. Ambang batas harga
+    const PRO_THRESHOLD = Number(process.env.SAWERIA_PRO_PRICE || 40000);
     const TRYOUT_THRESHOLD = Number(process.env.SAWERIA_TRYOUT_PRICE || 1000);
 
     // 3. Ekstrak target user email:
@@ -63,13 +63,44 @@ export async function POST(req: NextRequest) {
     // 3.5. VALIDASI LEWAT KODE UNIK NOMINAL (Layer 1 Utama)
     // Cek apakah amount persis sama dengan order pending di payment_orders
     try {
-      const matchedOrders = await sql`
+      let matchedOrders = await sql`
         SELECT id, user_id, user_email, package_id, order_type
         FROM payment_orders
         WHERE exact_amount = ${amount} AND status = 'pending'
         ORDER BY created_at DESC
         LIMIT 1
       `;
+
+      // Layer 1.5 Fallback: Cek apakah ada Order ID dalam pesan (misal: "[ID #3]" atau "Order 3")
+      if (matchedOrders.length === 0) {
+        const orderIdMatch = message.match(/(?:id|order)\s*#?(\d+)/i);
+        if (orderIdMatch) {
+          const parsedId = Number(orderIdMatch[1]);
+          matchedOrders = await sql`
+            SELECT id, user_id, user_email, package_id, order_type
+            FROM payment_orders
+            WHERE id = ${parsedId} AND status = 'pending'
+            LIMIT 1
+          `;
+        }
+      }
+
+      // Layer 1.6 Fallback: Jika nominal donasi berada di range testing (1001 - 1999) dan ada 1 order pending dalam 15 menit
+      if (matchedOrders.length === 0 && amount >= 1001 && amount < 2000) {
+        const recentPending = await sql`
+          SELECT id, user_id, user_email, package_id, order_type
+          FROM payment_orders
+          WHERE status = 'pending'
+            AND base_amount = 1000
+            AND created_at > NOW() - INTERVAL '15 minutes'
+          ORDER BY created_at DESC
+          LIMIT 2
+        `;
+        if (recentPending.length === 1) {
+          matchedOrders = recentPending;
+        }
+      }
+
       if (matchedOrders.length > 0) {
         const ord = matchedOrders[0];
         matchedOrderId = ord.id;
@@ -118,9 +149,9 @@ export async function POST(req: NextRequest) {
         matchedUserId = u.id;
         const currentUnlocked: string[] = Array.isArray(u.unlocked_packages) ? u.unlocked_packages : [];
 
-        // Aturan Penyesuaian Harga:
-        // A. Jika ada target paket spesifik (bukan all-access) dan tidak ada kata 'pro': Buka paket tersebut
-        if (targetPackageId && !message.toLowerCase().includes('pro') && amount >= TRYOUT_THRESHOLD) {
+        // Aturan Penyesuaian Akses:
+        // A. Jika order adalah single package atau ada targetPackageId spesifik:
+        if (targetPackageId && (orderTypeFromOrder === 'single' || (!message.toLowerCase().includes('pro') && amount < PRO_THRESHOLD))) {
           if (!currentUnlocked.includes(targetPackageId)) {
             currentUnlocked.push(targetPackageId);
           }
@@ -131,8 +162,8 @@ export async function POST(req: NextRequest) {
           `;
           unlockedPackage = true;
         }
-        // B. Jika nominal >= PRO_THRESHOLD atau pesan menyatakan 'pro': Buka SEMUA (PRO)
-        else if (amount >= PRO_THRESHOLD || message.toLowerCase().includes('pro')) {
+        // B. Jika orderType 'pro' atau nominal >= PRO_THRESHOLD atau pesan menyatakan 'pro': Buka SEMUA (PRO)
+        else if (orderTypeFromOrder === 'pro' || amount >= PRO_THRESHOLD || message.toLowerCase().includes('pro')) {
           await sql`
             UPDATE users
             SET is_pro = TRUE,
