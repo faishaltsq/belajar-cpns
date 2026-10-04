@@ -27,9 +27,8 @@ export async function GET(
     return NextResponse.json({ error: 'Package not found' }, { status: 404 });
   }
 
-  // Fetch package settings from DB
+  // Fetch package settings from DB (reuse sql client already initialized above)
   let meta = { duration_sec: 6000, randomize_questions: false, randomize_options: false };
-  const sql = getDb();
   if (sql) {
     try {
       const rows = await sql`
