@@ -123,7 +123,7 @@ export default function SimulasiPage() {
                   </div>
                   <p className="text-xs text-[var(--muted-foreground)] mb-3 leading-relaxed">{pkg.desc}</p>
                   <div className="flex items-center text-xs font-semibold text-amber-700">
-                    Buka Akses (QRIS Saweria)
+                    Buka Akses via QRIS
                     <ArrowRight size={13} weight="bold" className="ml-1" />
                   </div>
                 </div>

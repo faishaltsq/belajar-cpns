@@ -45,34 +45,14 @@ export async function POST(req: NextRequest) {
       ? `Akses ${packageId} [${userEmail || 'user'}]`
       : `Upgrade PRO [${userEmail || 'user'}]`;
 
-    // Generate QRIS via Saweria
-    let qris;
-    try {
-      qris = await createSaweriaQris({
-        saweriaUsername: customUsername,
-        amount,
-        message: msg,
-        donorName,
-        donorEmail: userEmail || 'user@lolos.in',
-      });
-    } catch (qrisErr) {
-      // Graceful fallback ke Saweria Page jika API donation dibatasi oleh Cloudflare
-      const activeUsername = customUsername || process.env.SAWERIA_USERNAME || 'faishaltsq';
-      const saweriaUrl = `https://saweria.co/${activeUsername}?amount=${amount}&message=${encodeURIComponent(msg)}`;
-      const errMsg = qrisErr instanceof Error ? qrisErr.message : String(qrisErr);
-      return NextResponse.json({
-        success: true,
-        fallback: true,
-        saweriaUrl,
-        saweriaUsername: activeUsername,
-        amount,
-        amountRaw: amount,
-        packageId,
-        userEmail,
-        debugError: errMsg,
-        message: 'Silakan lanjutkan pembayaran melalui halaman Saweria resmi.',
-      });
-    }
+    // Generate QRIS resmi
+    const qris = await createSaweriaQris({
+      saweriaUsername: customUsername,
+      amount,
+      message: msg,
+      donorName,
+      donorEmail: userEmail || 'user@lolos.in',
+    });
 
     // Simpan pending transaksi ke DB
     if (sql) {
@@ -90,6 +70,21 @@ export async function POST(req: NextRequest) {
           status = 'pending',
           updated_at = NOW()
       `;
+
+      // Simpan juga ke payment_orders jika belum ada
+      try {
+        await sql`
+          INSERT INTO payment_orders (
+            user_id, user_email, package_id, order_type,
+            base_amount, unique_code, exact_amount, status, saweria_donation_id
+          ) VALUES (
+            ${userId}, ${userEmail || null}, ${packageId}, ${packageId ? 'single' : 'pro'},
+            ${amount}, 0, ${qris.amountRaw}, 'pending', ${qris.id}
+          )
+        `;
+      } catch {
+        // ignore duplicate
+      }
     }
 
     return NextResponse.json({
@@ -99,7 +94,6 @@ export async function POST(req: NextRequest) {
       amountRaw: qris.amountRaw,
       qrString: qris.qrString,
       qrDataUrl: qris.qrDataUrl,
-      saweriaUsername: qris.username,
       packageId,
       userEmail,
     });
