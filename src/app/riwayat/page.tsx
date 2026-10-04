@@ -2,7 +2,23 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ClockCounterClockwise, Trophy, XCircle, ArrowRight, BookOpen } from '@phosphor-icons/react';
+import { ClockCounterClockwise, Trophy, XCircle, ArrowRight, BookOpen, FloppyDisk, Play, Trash } from '@phosphor-icons/react';
+
+interface DraftItem {
+  packageId: string;
+  packageLabel: string;
+  answeredCount: number;
+  savedAt: string;
+}
+
+function formatPackageLabel(packageId: string) {
+  return packageId
+    .replace('tryout-mini', 'Tryout Mini')
+    .replace('tryout-figural', 'Tryout Figural Khusus')
+    .replace('tryout-', 'Tryout ')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 interface RiwayatItem {
   resultId: string;
@@ -16,42 +32,72 @@ interface RiwayatItem {
 
 export default function RiwayatPage() {
   const [history, setHistory] = useState<RiwayatItem[]>([]);
+  const [drafts, setDrafts] = useState<DraftItem[]>([]);
 
-  useEffect(() => {
-    // Collect all exam results from localStorage
+  function loadData() {
     const items: RiwayatItem[] = [];
+    const draftItems: DraftItem[] = [];
+
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
-      if (!key?.startsWith('exam_result_')) continue;
-      try {
+      if (key?.startsWith('exam_result_')) {
         const resultId = key.replace('exam_result_', '');
-        const raw = localStorage.getItem(key);
-        if (!raw) continue;
-        const r = JSON.parse(raw);
-        // packageId = resultId without trailing "-timestamp"
         const parts = resultId.split('-');
         const ts = Number(parts[parts.length - 1]);
         const packageId = isNaN(ts) ? resultId : parts.slice(0, -1).join('-');
-        const label = packageId
-          .replace('tryout-', 'Tryout ')
-          .replace('tryout-mini', 'Tryout Mini')
-          .replace(/-/g, ' ');
+        try {
+          const raw = localStorage.getItem(key);
+          if (!raw) continue;
+          const r = JSON.parse(raw);
+          items.push({
+            resultId,
+            packageId,
+            packageLabel: formatPackageLabel(packageId),
+            totalScore: r.totalScore ?? 0,
+            isPassedAll: r.isPassedAll ?? false,
+            completedAt: r.completedAt ?? new Date(ts || Date.now()).toISOString(),
+            durationSeconds: r.durationSeconds ?? 0,
+          });
+        } catch {}
+      }
+    }
 
-        items.push({
-          resultId,
-          packageId,
-          packageLabel: label.charAt(0).toUpperCase() + label.slice(1),
-          totalScore: r.totalScore ?? 0,
-          isPassedAll: r.isPassedAll ?? false,
-          completedAt: r.completedAt ?? new Date(ts || Date.now()).toISOString(),
-          durationSeconds: r.durationSeconds ?? 0,
-        });
+    // Drafts: exam_answers_* with at least 1 answered question
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (!key?.startsWith('exam_answers_')) continue;
+      const packageId = key.replace('exam_answers_', '');
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) continue;
+        const answers = JSON.parse(raw);
+        const answeredCount = Object.values(answers).filter(
+          (v) => v !== null && v !== undefined && v !== ''
+        ).length;
+        if (answeredCount === 0) continue;
+        const startTs = localStorage.getItem(`exam_start_${packageId}`);
+        const savedAt = startTs
+          ? new Date(Number(startTs)).toISOString()
+          : new Date().toISOString();
+        draftItems.push({ packageId, packageLabel: formatPackageLabel(packageId), answeredCount, savedAt });
       } catch {}
     }
-    // Sort newest first
+
     items.sort((a, b) => new Date(b.completedAt).getTime() - new Date(a.completedAt).getTime());
+    draftItems.sort((a, b) => new Date(b.savedAt).getTime() - new Date(a.savedAt).getTime());
     setHistory(items);
-  }, []);
+    setDrafts(draftItems);
+  }
+
+  useEffect(() => { loadData(); }, []);
+
+  function deleteDraft(packageId: string) {
+    if (!confirm(`Hapus draft "${formatPackageLabel(packageId)}"?`)) return;
+    localStorage.removeItem(`exam_answers_${packageId}`);
+    localStorage.removeItem(`exam_start_${packageId}`);
+    localStorage.removeItem(`exam_mode_${packageId}`);
+    loadData();
+  }
 
   function fmtDate(iso: string) {
     try {
@@ -81,10 +127,53 @@ export default function RiwayatPage() {
           <div>
             <h1 className="text-xl font-bold text-[var(--foreground)]">Riwayat Ujian</h1>
             <p className="text-xs text-[var(--muted-foreground)]">
-              {history.length} sesi tersimpan di perangkat ini
+              {history.length} sesi selesai · {drafts.length} draft tersimpan
             </p>
           </div>
         </div>
+
+        {/* DRAFT SECTION */}
+        {drafts.length > 0 && (
+          <div className="space-y-3">
+            <h2 className="text-sm font-bold text-[var(--foreground)] flex items-center gap-2">
+              <FloppyDisk size={16} weight="duotone" className="text-amber-500" />
+              Draft Tersimpan — Lanjutkan Pengerjaan
+            </h2>
+            {drafts.map((draft) => (
+              <div
+                key={draft.packageId}
+                className="card-modern p-4 flex items-center gap-4 border-l-4"
+                style={{ borderLeftColor: 'var(--primary)' }}
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                  <FloppyDisk size={20} weight="duotone" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-semibold text-sm text-[var(--foreground)]">{draft.packageLabel}</div>
+                  <div className="text-xs text-[var(--muted-foreground)] mt-0.5">
+                    {draft.answeredCount} soal terjawab · Disimpan {fmtDate(draft.savedAt)}
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <button
+                    onClick={() => deleteDraft(draft.packageId)}
+                    className="w-8 h-8 rounded-lg flex items-center justify-center text-red-400 hover:bg-red-50 hover:text-red-600 transition"
+                    title="Hapus draft"
+                  >
+                    <Trash size={15} weight="bold" />
+                  </button>
+                  <Link
+                    href={`/simulasi/${draft.packageId}`}
+                    className="btn-primary text-[11px] py-1.5 px-3 flex items-center gap-1.5"
+                  >
+                    <Play size={11} weight="fill" />
+                    Lanjutkan
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Info banner */}
         <div
@@ -111,7 +200,7 @@ export default function RiwayatPage() {
                     localStorage.removeItem(key);
                   }
                 }
-                setHistory([]);
+                loadData();
               }}
               className="text-red-500 hover:text-red-700 text-[10px] font-semibold whitespace-nowrap shrink-0 underline"
             >
