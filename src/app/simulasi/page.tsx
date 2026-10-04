@@ -2,18 +2,30 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { BookOpen, Timer, Target, ArrowRight, Star } from '@phosphor-icons/react';
+import { BookOpen, Timer, Target, ArrowRight, Star, Lock, Crown } from '@phosphor-icons/react';
 import { TRYOUT_LIST } from '@/lib/loadPackage';
+import { UpgradeProModal } from '@/components/UpgradeProModal';
 
 type PkgItem = { id: string; label: string; desc: string; badge: string | null };
 
 export default function SimulasiPage() {
   const [packages, setPackages] = useState<PkgItem[]>(TRYOUT_LIST);
+  const [isPro, setIsPro] = useState(false);
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
+  const [upgradeTrigger, setUpgradeTrigger] = useState('');
+
+  // Paket yang gratis (tidak terkunci)
+  const FREE_IDS = new Set(['tryout-mini', 'tryout-1', 'tryout-2']);
 
   useEffect(() => {
     fetch('/api/packages')
       .then(r => r.json())
       .then(d => { if (d.packages?.length) setPackages(d.packages); })
+      .catch(() => null);
+    // Cek status PRO
+    fetch('/api/user/status')
+      .then(r => r.json())
+      .then(d => setIsPro(d.is_pro || false))
       .catch(() => null);
   }, []);
 
@@ -65,37 +77,85 @@ export default function SimulasiPage() {
         </div>
 
         {/* Paket Tryout List */}
-        <h2 className="text-lg font-bold text-[var(--foreground)] mb-4 tracking-tight">Pilih Paket Tryout</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {packages.map((pkg) => (
-            <Link
-              key={pkg.id}
-              href={`/simulasi/${pkg.id}`}
-              className="card-modern p-5 group block"
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-bold text-[var(--foreground)] tracking-tight">Pilih Paket Tryout</h2>
+          {!isPro && (
+            <button
+              onClick={() => { setUpgradeTrigger('Akses Semua Paket'); setUpgradeOpen(true); }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition"
             >
-              <div className="flex items-start justify-between mb-2">
-                <h3 className="font-semibold text-[var(--foreground)] group-hover:opacity-70 transition-opacity">
-                  {pkg.label}
-                </h3>
-                {pkg.badge && (
-                  <span className={`badge-pill text-[10px] ${
-                    pkg.badge === 'Populer'
-                      ? 'bg-amber-50 text-amber-700 border border-amber-200'
-                      : 'badge-neutral'
-                  }`}>
-                    {pkg.badge === 'Populer' && <Star size={10} weight="fill" className="inline mr-0.5 -mt-0.5" />}
-                    {pkg.badge}
-                  </span>
-                )}
-              </div>
-              <p className="text-xs text-[var(--muted-foreground)] mb-3 leading-relaxed">{pkg.desc}</p>
-              <div className="flex items-center text-xs font-medium text-[var(--foreground)] group-hover:gap-2 transition-all">
-                Mulai Tryout
-                <ArrowRight size={13} weight="bold" className="ml-1" />
-              </div>
-            </Link>
-          ))}
+              <Crown size={14} weight="fill" className="text-amber-500" />
+              Upgrade PRO Rp 49rb
+            </button>
+          )}
         </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {packages.map((pkg) => {
+            const isLocked = !isPro && !FREE_IDS.has(pkg.id);
+
+            if (isLocked) {
+              return (
+                <div
+                  key={pkg.id}
+                  onClick={() => { setUpgradeTrigger(pkg.label); setUpgradeOpen(true); }}
+                  className="card-modern p-5 group block cursor-pointer opacity-85 hover:opacity-100 relative overflow-hidden"
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="font-semibold text-[var(--foreground)] flex items-center gap-1.5">
+                      {pkg.label}
+                    </h3>
+                    <span className="badge-pill text-[10px] bg-amber-100 text-amber-800 border border-amber-200 font-semibold flex items-center gap-1">
+                      <Lock size={10} weight="bold" />
+                      PRO
+                    </span>
+                  </div>
+                  <p className="text-xs text-[var(--muted-foreground)] mb-3 leading-relaxed">{pkg.desc}</p>
+                  <div className="flex items-center text-xs font-semibold text-amber-700">
+                    Buka dengan PRO (Saweria QRIS)
+                    <ArrowRight size={13} weight="bold" className="ml-1" />
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={pkg.id}
+                href={`/simulasi/${pkg.id}`}
+                className="card-modern p-5 group block"
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="font-semibold text-[var(--foreground)] group-hover:opacity-70 transition-opacity">
+                    {pkg.label}
+                  </h3>
+                  {pkg.badge && (
+                    <span className={`badge-pill text-[10px] ${
+                      pkg.badge === 'Populer'
+                        ? 'bg-amber-50 text-amber-700 border border-amber-200'
+                        : 'badge-neutral'
+                    }`}>
+                      {pkg.badge === 'Populer' && <Star size={10} weight="fill" className="inline mr-0.5 -mt-0.5" />}
+                      {pkg.badge}
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-[var(--muted-foreground)] mb-3 leading-relaxed">{pkg.desc}</p>
+                <div className="flex items-center text-xs font-medium text-[var(--foreground)] group-hover:gap-2 transition-all">
+                  Mulai Tryout
+                  <ArrowRight size={13} weight="bold" className="ml-1" />
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Modal Upgrade */}
+        <UpgradeProModal
+          isOpen={upgradeOpen}
+          onClose={() => setUpgradeOpen(false)}
+          triggerPackage={upgradeTrigger}
+        />
       </div>
     </div>
   );
