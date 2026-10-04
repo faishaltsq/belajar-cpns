@@ -23,8 +23,6 @@ export async function GET() {
           badge:
             r.id === 'tryout-mini'
               ? 'Coba Gratis'
-              : r.id === 'tryout-1'
-              ? 'Populer'
               : r.id.startsWith('tryout-gratis') || r.id.includes('coba')
               ? 'Custom'
               : null,

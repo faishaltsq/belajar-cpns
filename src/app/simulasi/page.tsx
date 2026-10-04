@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { BookOpen, Timer, Target, ArrowRight, Star, Lock, Crown } from '@phosphor-icons/react';
+import { BookOpen, Timer, Target, ArrowRight, Lock, Crown } from '@phosphor-icons/react';
 import { TRYOUT_LIST } from '@/lib/loadPackage';
 import { UpgradeProModal } from '@/components/UpgradeProModal';
 
@@ -141,12 +141,7 @@ export default function SimulasiPage() {
                     {pkg.label}
                   </h3>
                   {pkg.badge && (
-                    <span className={`badge-pill text-[10px] ${
-                      pkg.badge === 'Populer'
-                        ? 'bg-amber-50 text-amber-700 border border-amber-200'
-                        : 'badge-neutral'
-                    }`}>
-                      {pkg.badge === 'Populer' && <Star size={10} weight="fill" className="inline mr-0.5 -mt-0.5" />}
+                    <span className="badge-pill text-[10px] badge-neutral">
                       {pkg.badge}
                     </span>
                   )}

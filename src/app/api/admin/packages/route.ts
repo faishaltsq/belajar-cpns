@@ -66,7 +66,7 @@ export async function GET(req: NextRequest) {
       id: p.id,
       label: p.label,
       desc: p.desc || `${p.question_count || 0} soal (${Math.round((p.duration_sec || 6000) / 60)} menit)`,
-      badge: p.id === 'tryout-mini' ? 'Coba Gratis' : p.id === 'tryout-1' ? 'Populer' : 'Custom',
+      badge: p.id === 'tryout-mini' ? 'Coba Gratis' : 'Custom',
       duration_sec: p.duration_sec || 6000,
       randomize_questions: Boolean(p.randomize_questions),
       randomize_options: Boolean(p.randomize_options),
