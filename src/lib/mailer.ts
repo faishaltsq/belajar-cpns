@@ -1,12 +1,21 @@
 import nodemailer from 'nodemailer';
 
+interface MailAttachment {
+  filename: string;
+  content: string; // base64
+  encoding: 'base64';
+  contentType: string;
+  cid?: string; // for inline embed
+}
+
 interface SendMailOptions {
   to: string;
   subject: string;
   html: string;
+  attachments?: MailAttachment[];
 }
 
-export async function sendOtpEmail({ to, subject, html }: SendMailOptions): Promise<{ success: boolean; error?: string }> {
+export async function sendOtpEmail({ to, subject, html, attachments }: SendMailOptions): Promise<{ success: boolean; error?: string }> {
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
 
@@ -26,6 +35,12 @@ export async function sendOtpEmail({ to, subject, html }: SendMailOptions): Prom
         to,
         subject,
         html,
+        attachments: attachments?.map((a) => ({
+          filename: a.filename,
+          content: Buffer.from(a.content, 'base64'),
+          contentType: a.contentType,
+          cid: a.cid,
+        })),
       });
 
       return { success: true };

@@ -9,6 +9,8 @@ import {
   PaperPlaneTilt,
   CheckCircle,
   Spinner,
+  Image as ImageIcon,
+  Trash,
 } from '@phosphor-icons/react';
 import { generateWhatsAppLink, generateMailtoLink, SUPPORT_EMAIL } from '@/lib/support';
 
@@ -40,12 +42,16 @@ export function ReportIssueModal({
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const [imageBase64, setImageBase64] = useState<string | null>(null);
+  const [imageName, setImageName] = useState<string>('');
 
   useEffect(() => {
     if (!isOpen) {
       setSuccess(false);
       setErrorMsg('');
       setDescription('');
+      setImageBase64(null);
+      setImageName('');
       return;
     }
     // Fetch logged in user email if available
@@ -59,9 +65,36 @@ export function ReportIssueModal({
 
   if (!isOpen) return null;
 
-  const currentUrl = contextPage || (typeof window !== 'undefined' ? window.location.href : '');
+  function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      setErrorMsg('Format file harus berupa gambar (JPG, PNG, WebP).');
+      return;
+    }
+    // Limit to 2.5MB
+    if (file.size > 2.5 * 1024 * 1024) {
+      setErrorMsg('Ukuran gambar maksimal 2.5 MB.');
+      return;
+    }
+
+    setErrorMsg('');
+    setImageName(file.name);
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImageBase64(reader.result as string);
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function handleRemoveImage() {
+    setImageBase64(null);
+    setImageName('');
+  }
 
   function handleOpenWhatsApp() {
+    const currentUrl = contextPage || (typeof window !== 'undefined' ? window.location.href : '');
     const waUrl = generateWhatsAppLink({
       category,
       description: description || 'Halo Admin, saya mengalami kendala pada aplikasi.',
@@ -69,9 +102,16 @@ export function ReportIssueModal({
       pageUrl: currentUrl,
     });
     window.open(waUrl, '_blank');
+    // If image attached, remind user to also send it in WA chat
+    if (imageBase64) {
+      setTimeout(() => {
+        alert('📎 Kamu punya screenshot lampiran!\n\nSetelah chat WhatsApp terbuka, tempel/kirimkan juga gambar tersebut agar admin bisa melihat masalahnya dengan jelas. 🙏');
+      }, 600);
+    }
   }
 
   function handleOpenEmail() {
+    const currentUrl = contextPage || (typeof window !== 'undefined' ? window.location.href : '');
     const mailUrl = generateMailtoLink({
       category,
       description: description || 'Deskripsi kendala...',
@@ -89,6 +129,7 @@ export function ReportIssueModal({
     }
     setLoading(true);
     setErrorMsg('');
+    const currentUrl = contextPage || (typeof window !== 'undefined' ? window.location.href : '');
     try {
       const res = await fetch('/api/support/report', {
         method: 'POST',
@@ -99,6 +140,8 @@ export function ReportIssueModal({
           userEmail,
           pageUrl: currentUrl,
           deviceInfo: typeof navigator !== 'undefined' ? navigator.userAgent : '',
+          imageBase64: imageBase64 || null,
+          imageName: imageName || null,
         }),
       });
       const data = await res.json();
@@ -244,6 +287,45 @@ export function ReportIssueModal({
                   placeholder="Contoh: Saat membuka soal nomor 15, tampilan pilihan jawaban tidak muncul..."
                   className="w-full text-xs p-2.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] focus:ring-1 focus:ring-[var(--primary)] focus:outline-none"
                 />
+              </div>
+
+              {/* Screenshot Attachment */}
+              <div>
+                <label className="block text-[11px] font-semibold text-[var(--muted-foreground)] mb-1">
+                  Screenshot / Foto Masalah (opsional, maks 2.5 MB):
+                </label>
+                {imageBase64 ? (
+                  <div className="relative rounded-xl border border-[var(--border)] overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={imageBase64}
+                      alt="Preview screenshot"
+                      className="w-full max-h-40 object-contain bg-slate-50"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleRemoveImage}
+                      className="absolute top-1.5 right-1.5 p-1 rounded-lg bg-black/60 text-white hover:bg-red-600 transition"
+                      title="Hapus gambar"
+                    >
+                      <Trash size={14} weight="bold" />
+                    </button>
+                    <div className="px-2.5 py-1 text-[10px] text-[var(--muted-foreground)] truncate bg-[var(--muted)] border-t border-[var(--border)]">
+                      📎 {imageName}
+                    </div>
+                  </div>
+                ) : (
+                  <label className="flex items-center gap-2.5 w-full px-3 py-2.5 rounded-xl border border-dashed border-[var(--border)] bg-[var(--muted)] hover:bg-[var(--card)] cursor-pointer transition text-xs text-[var(--muted-foreground)]">
+                    <ImageIcon size={18} weight="duotone" className="text-[var(--primary)] shrink-0" />
+                    <span>Klik untuk pilih gambar (JPG, PNG, WebP)</span>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={handleImageChange}
+                    />
+                  </label>
+                )}
               </div>
 
               {errorMsg && (

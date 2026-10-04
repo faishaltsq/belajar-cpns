@@ -6,11 +6,19 @@ import { SUPPORT_EMAIL } from '@/lib/support';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { category, description, userEmail, pageUrl, deviceInfo } = body;
+    const { category, description, userEmail, pageUrl, deviceInfo, imageBase64, imageName } = body;
 
     if (!description || typeof description !== 'string' || description.trim().length === 0) {
       return NextResponse.json(
         { error: 'Deskripsi kendala wajib diisi.' },
+        { status: 400 }
+      );
+    }
+
+    // Validate image size (max 2MB base64 ≈ ~2.7MB string)
+    if (imageBase64 && typeof imageBase64 === 'string' && imageBase64.length > 3_000_000) {
+      return NextResponse.json(
+        { error: 'Ukuran gambar terlalu besar. Maks 2MB.' },
         { status: 400 }
       );
     }
@@ -41,6 +49,20 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. Kirim notifikasi email ke halo.lolosin.support@gmail.com jika SMTP/Resend aktif
+    const hasImage = imageBase64 && typeof imageBase64 === 'string' && imageBase64.length > 0;
+    // Strip data URI prefix if present (e.g. "data:image/png;base64,...")
+    const rawBase64 = hasImage ? imageBase64.replace(/^data:[^;]+;base64,/, '') : null;
+    const mimeType = hasImage && imageBase64.startsWith('data:')
+      ? imageBase64.split(';')[0].replace('data:', '')
+      : 'image/png';
+    const attachFilename = imageName || `screenshot-${Date.now()}.png`;
+
+    const imageHtml = hasImage
+      ? `<hr style="border:none;border-top:1px solid #e2e8f0;margin:16px 0;"/>
+         <h3 style="margin:0 0 8px;">Screenshot Lampiran:</h3>
+         <img src="cid:screenshot@lolosin" alt="Screenshot" style="max-width:100%;border-radius:8px;border:1px solid #e2e8f0;" />`
+      : '';
+
     try {
       await sendOtpEmail({
         to: SUPPORT_EMAIL,
@@ -57,8 +79,18 @@ export async function POST(req: NextRequest) {
             <blockquote style="background: #f8fafc; padding: 12px; border-left: 4px solid #c96442; margin: 0;">
               ${cleanDesc.replace(/\n/g, '<br/>')}
             </blockquote>
+            ${imageHtml}
           </div>
         `,
+        attachments: rawBase64
+          ? [{
+              filename: attachFilename,
+              content: rawBase64,
+              encoding: 'base64' as const,
+              contentType: mimeType,
+              cid: 'screenshot@lolosin',
+            }]
+          : undefined,
       });
     } catch (mailErr) {
       console.warn('[support] Email notification failed (non-blocking):', mailErr);
