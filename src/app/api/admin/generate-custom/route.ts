@@ -97,15 +97,28 @@ export async function POST(req: NextRequest) {
     await sql`DELETE FROM questions WHERE package_id = ${packageId}`;
 
     for (const q of numbered) {
+      // Derive correct_answer from options (the option id with score===5)
+      const correctOpt = q.options.find((o) => o.score === 5);
+      const correctAnswer = correctOpt?.id ?? null;
+
+      // Derive tkp_scores: { A: score, B: score, ... } for TKP questions
+      const tkpScores =
+        q.category === 'TKP'
+          ? q.options.reduce<Record<string, number>>((acc, o) => {
+              acc[o.id] = o.score;
+              return acc;
+            }, {})
+          : null;
+
       await sql`
         INSERT INTO questions (package_id, number, category, text, image, options, correct_answer, tkp_scores, explanation, difficulty)
         VALUES (
           ${packageId}, ${q.id}, ${q.category}, ${q.text}, ${q.image || null},
           ${JSON.stringify(q.options)}::jsonb,
-          ${(q as any).correctAnswer || null},
-          ${(q as any).tkpScores ? JSON.stringify((q as any).tkpScores) : null}::jsonb,
-          ${(q as any).explanation || null},
-          ${(q as any).difficulty || 'medium'}
+          ${correctAnswer},
+          ${tkpScores ? JSON.stringify(tkpScores) : null}::jsonb,
+          ${q.explanation || null},
+          'medium'
         )
       `;
     }

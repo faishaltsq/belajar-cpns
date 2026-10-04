@@ -104,25 +104,35 @@ export async function POST(req: Request) {
     await sql`DELETE FROM questions WHERE package_id = ${packageId}`;
 
     // Insert ke tabel questions
-    let orderIdx = 0;
+    let qNumber = 1;
     const insertedIds: string[] = [];
     for (const q of allQ) {
+      const opts = typeof q.options === 'string' ? JSON.parse(q.options) : q.options;
+      const isTKP = q.category === 'TKP';
+      const tkpScores = isTKP && Array.isArray(opts)
+        ? opts.reduce((acc: Record<string, number>, o: { id: string; score: number }) => {
+            acc[o.id] = o.score;
+            return acc;
+          }, {})
+        : null;
+
       await sql`
-        INSERT INTO questions (package_id, text, options, correct_answer, category, explanation, difficulty, order_index, image)
+        INSERT INTO questions (package_id, number, text, options, correct_answer, category, explanation, difficulty, image, tkp_scores)
         VALUES (
           ${packageId},
+          ${qNumber},
           ${q.text},
-          ${JSON.stringify(q.options)}::jsonb,
+          ${JSON.stringify(opts)}::jsonb,
           ${q.correct_answer},
           ${q.category},
           ${q.explanation || ''},
           ${q.difficulty || 'medium'},
-          ${orderIdx},
-          ${q.image || null}
+          ${q.image || null},
+          ${tkpScores ? JSON.stringify(tkpScores) : null}::jsonb
         )
       `;
       insertedIds.push(q.id);
-      orderIdx++;
+      qNumber++;
     }
 
     // Update question_count di paket
