@@ -88,3 +88,25 @@ describe('Saweria Dynamic Price Webhook', () => {
     delete process.env.SAWERIA_WEBHOOK_SECRET;
   });
 });
+
+import { makeDynamicQris, crc16Ccitt, DEFAULT_BASE_QRIS } from '@/lib/saweria';
+
+describe('Dynamic QRIS Synthesis', () => {
+  it('correctly generates dynamic QRIS with custom nominal', () => {
+    const qris10k = makeDynamicQris(DEFAULT_BASE_QRIS, 10000);
+    expect(qris10k).toContain('540510000');
+    expect(qris10k).toContain('5802ID');
+    // Verify CRC16 integrity
+    const payload = qris10k.slice(0, -4);
+    const expectedCrc = crc16Ccitt(payload);
+    expect(qris10k.slice(-4)).toBe(expectedCrc);
+  });
+
+  it('correctly sets dynamic initiation method tag 01 to 12', () => {
+    const qris49k = makeDynamicQris(DEFAULT_BASE_QRIS, 49000);
+    expect(qris49k.startsWith('000201010212')).toBe(true);
+    expect(qris49k).toContain('540549000');
+    const payload = qris49k.slice(0, -4);
+    expect(qris49k.slice(-4)).toBe(crc16Ccitt(payload));
+  });
+});

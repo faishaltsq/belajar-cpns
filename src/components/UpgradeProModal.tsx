@@ -377,6 +377,17 @@ export function UpgradeProModal({
               </div>
             </div>
 
+            {/* Tombol Simpan QRIS Image */}
+            <div>
+              <a
+                href={qrisData.qrDataUrl}
+                download={`QRIS-LolosIn-${qrisData.amountRaw}.png`}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold text-[var(--foreground)] hover:bg-[var(--muted)] transition"
+              >
+                Unduh Gambar QRIS
+              </a>
+            </div>
+
             {/* Detail Nominal */}
             <div
               className="p-3 rounded-xl border text-center space-y-0.5"
