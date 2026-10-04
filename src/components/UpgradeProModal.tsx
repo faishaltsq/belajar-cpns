@@ -11,7 +11,6 @@ import {
   Check,
   Package,
   Copy,
-  ArrowClockwise,
 } from '@phosphor-icons/react';
 
 interface UpgradeProModalProps {
