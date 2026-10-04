@@ -153,7 +153,7 @@ export async function createSaweriaQris(params: CreateQrisParams): Promise<QrisR
     agree: true,
     notUnderage: true,
     message: message || 'Lolos.in CPNS Tryout',
-    amount: Math.max(1000, Math.round(amount)),
+    amount: Math.max(100, Math.round(amount)),
     payment_type: 'qris',
     vote: '',
     currency: 'IDR',

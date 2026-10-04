@@ -74,6 +74,35 @@ describe('Saweria Dynamic Price Webhook', () => {
     expect(json.unlockedPackage).toBe(true);
   });
 
+  it('handles testing nominal Rp 500 correctly', async () => {
+    mockSql
+      .mockResolvedValueOnce([]) // existingTx
+      .mockResolvedValueOnce([{ id: 'user-uuid-3', email: 'test500@example.com', is_pro: false, unlocked_packages: [] }])
+      .mockResolvedValueOnce([])
+      .mockResolvedValueOnce([]);
+
+    const payload = {
+      id: `test-tx-500-${Date.now()}`,
+      amount_raw: 500,
+      donator_name: 'Tester 500',
+      donator_email: 'test500@example.com',
+      message: 'upgrade PRO test500@example.com',
+    };
+
+    const req = new NextRequest('http://localhost:3000/api/webhooks/saweria', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+
+    const res = await saweriaWebhook(req);
+    expect(res.status).toBe(200);
+
+    const json = await res.json();
+    expect(json.success).toBe(true);
+    expect(json.amount).toBe(500);
+    expect(json.upgradedPro).toBe(true);
+  });
+
   it('rejects invalid secret when expected secret is configured', async () => {
     process.env.SAWERIA_WEBHOOK_SECRET = 'my_super_secret';
 

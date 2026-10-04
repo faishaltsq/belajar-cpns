@@ -97,7 +97,7 @@ export function UpgradeProModal({
     }
   }, [step, qrisData?.donationId]);
 
-  const targetAmount = selectedPlan === 'single' ? 10000 : 49000;
+  const targetAmount = 500; // Testing nominal Rp 500
   const targetPackageId = selectedPlan === 'single' ? packageId : undefined;
 
   async function handleGenerateQris() {
@@ -184,7 +184,7 @@ export function UpgradeProModal({
                       Paket Ini Saja
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp 10.000
+                      Rp 500 <span className="text-[10px] font-normal text-amber-600">(Test)</span>
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       Buka {triggerPackage || '1 paket'}
@@ -201,14 +201,14 @@ export function UpgradeProModal({
                     }`}
                   >
                     <span className="absolute top-0 right-0 bg-amber-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-bl">
-                      HEMAT
+                      TEST
                     </span>
                     <div className="flex items-center gap-1.5 font-bold text-xs text-amber-800">
                       <Crown size={14} weight="fill" className="text-amber-500" />
                       PRO All-Access
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp 49.000
+                      Rp 500 <span className="text-[10px] font-normal text-amber-600">(Test)</span>
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       Semua Tryout 1–17

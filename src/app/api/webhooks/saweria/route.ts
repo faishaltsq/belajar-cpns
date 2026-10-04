@@ -33,9 +33,9 @@ export async function POST(req: NextRequest) {
     const donatorEmail = (body.donator_email || '').trim().toLowerCase();
     const message = (body.message || '').trim();
 
-    // 2. Ambang batas harga dinamis (bisa disetel via environment variable)
-    const PRO_THRESHOLD = Number(process.env.SAWERIA_PRO_PRICE || 40000);
-    const TRYOUT_THRESHOLD = Number(process.env.SAWERIA_TRYOUT_PRICE || 8000);
+    // 2. Ambang batas harga dinamis (disetel Rp 500 untuk testing, bisa dioverride via env)
+    const PRO_THRESHOLD = Number(process.env.SAWERIA_PRO_PRICE || 500);
+    const TRYOUT_THRESHOLD = Number(process.env.SAWERIA_TRYOUT_PRICE || 500);
 
     // 3. Ekstrak target user email:
     // Cek apakah ada email di dalam teks pesan (user tulis "upgrade user@email.com" atau "[user@email.com]")
@@ -91,19 +91,8 @@ export async function POST(req: NextRequest) {
         const currentUnlocked: string[] = Array.isArray(u.unlocked_packages) ? u.unlocked_packages : [];
 
         // Aturan Penyesuaian Harga:
-        // A. Jika nominal >= PRO_THRESHOLD (Rp 40k+), atau pesan menyatakan "PRO": Buka SEMUA (PRO)
-        if (amount >= PRO_THRESHOLD || message.toLowerCase().includes('pro')) {
-          await sql`
-            UPDATE users
-            SET is_pro = TRUE,
-                pro_activated_at = NOW(),
-                saweria_donation_id = ${donationId}
-            WHERE id = ${u.id}
-          `;
-          upgradedPro = true;
-        }
-        // B. Jika nominal >= TRYOUT_THRESHOLD (Rp 8k+) dan ada target paket: Buka paket tryout tersebut
-        else if (targetPackageId && amount >= TRYOUT_THRESHOLD) {
+        // A. Jika ada target paket spesifik (bukan all-access) dan tidak ada kata 'pro': Buka paket tersebut
+        if (targetPackageId && !message.toLowerCase().includes('pro') && amount >= TRYOUT_THRESHOLD) {
           if (!currentUnlocked.includes(targetPackageId)) {
             currentUnlocked.push(targetPackageId);
           }
@@ -113,6 +102,17 @@ export async function POST(req: NextRequest) {
             WHERE id = ${u.id}
           `;
           unlockedPackage = true;
+        }
+        // B. Jika nominal >= PRO_THRESHOLD atau pesan menyatakan 'pro': Buka SEMUA (PRO)
+        else if (amount >= PRO_THRESHOLD || message.toLowerCase().includes('pro')) {
+          await sql`
+            UPDATE users
+            SET is_pro = TRUE,
+                pro_activated_at = NOW(),
+                saweria_donation_id = ${donationId}
+            WHERE id = ${u.id}
+          `;
+          upgradedPro = true;
         }
       }
     }
