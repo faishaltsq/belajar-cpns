@@ -8,7 +8,6 @@ import {
   XCircle,
   ArrowRight,
   Spinner,
-  Gear,
   Check,
   Package,
 } from '@phosphor-icons/react';
@@ -44,8 +43,6 @@ export function UpgradeProModal({
   const [loadingQris, setLoadingQris] = useState(false);
   const [qrisData, setQrisData] = useState<QrisResponse | null>(null);
   const [userEmail, setUserEmail] = useState('');
-  const [saweriaUsername, setSaweriaUsername] = useState('faishaltsq');
-  const [showConfig, setShowConfig] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   const pollTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -113,7 +110,6 @@ export function UpgradeProModal({
         body: JSON.stringify({
           amount: targetAmount,
           packageId: targetPackageId,
-          saweriaUsername: saweriaUsername.trim(),
           donorEmail: userEmail,
         }),
       });
@@ -122,8 +118,6 @@ export function UpgradeProModal({
       if (!res.ok || !data.success) {
         throw new Error(data.error || 'Gagal membuat QRIS pembayaran.');
       }
-
-      if (data.saweriaUsername) setSaweriaUsername(data.saweriaUsername);
 
       if (data.fallback && data.saweriaUrl) {
         window.open(data.saweriaUrl, '_blank');
@@ -139,13 +133,6 @@ export function UpgradeProModal({
     } finally {
       setLoadingQris(false);
     }
-  }
-
-  function openDirectSaweria() {
-    const msg = userEmail ? `upgrade ${userEmail}` : 'upgrade';
-    const amount = targetAmount;
-    const url = `https://saweria.co/${saweriaUsername}?amount=${amount}&message=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
   }
 
   if (!isOpen) return null;
@@ -313,44 +300,6 @@ export function UpgradeProModal({
                   </>
                 )}
               </button>
-
-              <div className="flex items-center justify-between text-[11px] pt-1 px-1">
-                <button
-                  type="button"
-                  onClick={openDirectSaweria}
-                  className="text-[var(--muted-foreground)] hover:text-[var(--foreground)] underline"
-                >
-                  Bayar di saweria.co/{saweriaUsername}
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setShowConfig(!showConfig)}
-                  className="text-[var(--muted-foreground)] hover:text-[var(--foreground)] flex items-center gap-1"
-                >
-                  <Gear size={12} />
-                  Atur Saweria
-                </button>
-              </div>
-
-              {/* Pengaturan Username Saweria */}
-              {showConfig && (
-                <div className="p-3 rounded-xl border space-y-2 bg-[var(--muted)] text-xs mt-2">
-                  <label className="font-semibold text-[var(--foreground)] block">
-                    Target Username Saweria (Penerima):
-                  </label>
-                  <input
-                    type="text"
-                    value={saweriaUsername}
-                    onChange={(e) => setSaweriaUsername(e.target.value)}
-                    placeholder="misal: faishaltsq"
-                    className="w-full px-3 py-1.5 rounded-lg border bg-[var(--card)] text-xs font-mono"
-                  />
-                  <p className="text-[10px] text-[var(--muted-foreground)]">
-                    Ubah ke username Saweria milikmu jika ingin pembayaran masuk ke akunmu sendiri.
-                  </p>
-                </div>
-              )}
             </div>
           </div>
         )}
@@ -513,14 +462,6 @@ export function UpgradeProModal({
                     Saya Sudah Selesai Bayar
                   </>
                 )}
-              </button>
-
-              <button
-                type="button"
-                onClick={openDirectSaweria}
-                className="btn-secondary w-full py-2.5 text-xs font-semibold"
-              >
-                Buka Ulang Halaman Saweria
               </button>
 
               <button
