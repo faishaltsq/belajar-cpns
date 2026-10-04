@@ -45,7 +45,11 @@ export async function getSaweriaUserId(targetUsername?: string): Promise<{ userI
   try {
     const res = await fetch(`${SAWERIA_BACKEND}/users/${encodeURIComponent(username)}`, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'Origin': 'https://saweria.co',
+        'Referer': `https://saweria.co/${encodeURIComponent(username)}`,
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
       },
       next: { revalidate: 3600 },
     });
@@ -107,7 +111,10 @@ export async function createSaweriaQris(params: CreateQrisParams): Promise<QrisR
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+      'Origin': 'https://saweria.co',
+      'Referer': `https://saweria.co/${encodeURIComponent(username)}`,
+      'Accept': 'application/json, text/plain, */*',
     },
     body: JSON.stringify(payload),
   });
@@ -151,7 +158,10 @@ export async function checkSaweriaQrisStatus(transactionId: string): Promise<{ p
   try {
     const res = await fetch(`${SAWERIA_BACKEND}/donations/qris/${transactionId}`, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'Origin': 'https://saweria.co',
+        'Referer': 'https://saweria.co/',
+        'Accept': 'application/json, text/plain, */*',
       },
       cache: 'no-store',
     });
