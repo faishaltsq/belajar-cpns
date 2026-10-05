@@ -143,4 +143,5 @@ export const TRYOUT_LIST = [
   { id: 'tryout-23', label: 'Tryout 23 (HOTS)', desc: 'Bank Soal HOTS — 96 soal TWK & TIU referensi soal unggulan', badge: 'Bank Soal' },
   { id: 'tryout-24', label: 'Tryout 24 (HOTS)', desc: 'Bank Soal HOTS — 33 soal TWK level analisis mendalam', badge: 'Bank Soal' },
   { id: 'tryout-25', label: 'Tryout 25 (Latihan 1)', desc: 'Paket Latihan SKD 1 — 98 soal TWK, TIU, TKP terverifikasi kunci', badge: 'Latihan' },
+  { id: 'tryout-26', label: 'Tryout 26 (Latihan 2)', desc: 'Paket Latihan SKD 2 — soal TWK, TIU, TKP terverifikasi kunci', badge: 'Latihan' },
 ];
