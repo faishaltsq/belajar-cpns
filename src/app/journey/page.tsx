@@ -117,16 +117,32 @@ export default function JourneyPage() {
 
   function handleLogToday() {
     const today = todayStr();
+    if (streakDates.includes(today)) return; // sudah log hari ini, cegah spam
     // Catat tanggal ke streak
-    if (!streakDates.includes(today)) {
-      const next = [today, ...streakDates];
-      setStreakDates(next);
-      saveStreakDates(next);
-    }
+    const nextDates = [today, ...streakDates];
+    setStreakDates(nextDates);
+    saveStreakDates(nextDates);
     // Otomatis centang hari aktif di kurikulum
     if (!completed.has(activeDay)) {
       const next = new Set(completed);
       next.add(activeDay);
+      setCompleted(next);
+      saveCompleted(next);
+    }
+  }
+
+  function handleUndoToday() {
+    const today = todayStr();
+    // Hapus tanggal hari ini dari streak
+    const nextDates = streakDates.filter((d) => d !== today);
+    setStreakDates(nextDates);
+    saveStreakDates(nextDates);
+    // Cari hari terakhir yang dicentang hari ini (activeDay - 1 karena sudah geser)
+    // Undo centang hari terakhir yang completed
+    const lastCompleted = Math.max(...Array.from(completed));
+    if (lastCompleted > 0) {
+      const next = new Set(completed);
+      next.delete(lastCompleted);
       setCompleted(next);
       saveCompleted(next);
     }
@@ -142,7 +158,8 @@ export default function JourneyPage() {
 
   const pct = Math.round((completed.size / JOURNEY_DAYS.length) * 100);
   const streak = calcStreak(streakDates);
-  const loggedToday = streakDates.includes(todayStr()) && completed.has(activeDay);
+  // Sekali sehari: cukup cek apakah tanggal hari ini sudah ada di streakDates
+  const loggedToday = streakDates.includes(todayStr());
 
   // Group by phase
   const phases = [1, 2, 3] as const;
@@ -209,28 +226,40 @@ export default function JourneyPage() {
 
           {/* Tombol Sudah Mengerjakan Hari Ini */}
           {completed.size < 30 && (
-            <button
-              onClick={handleLogToday}
-              disabled={loggedToday}
-              className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition ${
-                loggedToday
-                  ? 'bg-green-100 text-green-700 cursor-default border-2 border-green-200'
-                  : 'text-white'
-              }`}
-              style={loggedToday ? {} : { background: '#c96442' }}
-            >
-              {loggedToday ? (
-                <>
-                  <CheckCircle size={18} weight="fill" />
-                  Sudah Mengerjakan Hari Ini ✓
-                </>
-              ) : (
-                <>
-                  <Fire size={18} weight="fill" />
-                  Sudah Mengerjakan Hari Ini
-                </>
+            <div className="space-y-1">
+              {loggedToday && (
+                <div className="flex justify-end">
+                  <button
+                    onClick={handleUndoToday}
+                    className="text-[11px] text-gray-400 hover:text-red-500 underline transition"
+                  >
+                    Batalkan hari ini
+                  </button>
+                </div>
               )}
-            </button>
+              <button
+                onClick={handleLogToday}
+                disabled={loggedToday}
+                className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition ${
+                  loggedToday
+                    ? 'bg-green-100 text-green-700 cursor-default border-2 border-green-200'
+                    : 'text-white'
+                }`}
+                style={loggedToday ? {} : { background: '#c96442' }}
+              >
+                {loggedToday ? (
+                  <>
+                    <CheckCircle size={18} weight="fill" />
+                    Sudah Mengerjakan Hari Ini ✓
+                  </>
+                ) : (
+                  <>
+                    <Fire size={18} weight="fill" />
+                    Sudah Mengerjakan Hari Ini
+                  </>
+                )}
+              </button>
+            </div>
           )}
           {completed.size < 30 && (
             <button
