@@ -71,7 +71,15 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-2">
             {user ? (
               <>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm" style={{ color: 'var(--muted-foreground)', background: 'var(--muted)' }}>
+                <Link
+                  href="/profil"
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                    pathname === '/profil'
+                      ? 'ring-2 ring-[var(--primary)]/30'
+                      : 'hover:opacity-80'
+                  }`}
+                  style={{ color: 'var(--muted-foreground)', background: 'var(--muted)' }}
+                >
                   <div
                     className="w-5 h-5 rounded-full text-white text-[10px] font-bold flex items-center justify-center"
                     style={{ background: 'var(--primary)' }}
@@ -79,7 +87,7 @@ export default function Navbar() {
                     {initials || <User size={10} weight="fill" />}
                   </div>
                   <span className="max-w-[120px] truncate">{user.name ?? user.phone ?? 'Pengguna'}</span>
-                </div>
+                </Link>
                 <button
                   onClick={logout}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors"
@@ -151,6 +159,15 @@ export default function Navbar() {
           </button>
           <div className="h-px my-1" style={{ background: 'var(--border)' }} />
           {user ? (
+            <>
+              <Link
+                href="/profil"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium"
+                style={{ color: 'var(--foreground)' }}
+              >
+                <User size={14} /> Profil Saya
+              </Link>
             <button
               onClick={() => { setMobileOpen(false); logout(); }}
               className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-left"
@@ -158,6 +175,7 @@ export default function Navbar() {
             >
               <SignOut size={14} /> Keluar
             </button>
+            </>
           ) : (
             <Link
               href="/simulasi"

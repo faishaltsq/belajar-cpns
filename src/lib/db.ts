@@ -72,6 +72,10 @@ export type DbUser = {
   password_hash: string;
   name: string;
   created_at: string;
+  is_pro?: boolean;
+  pro_activated_at?: string | null;
+  target_instansi?: string | null;
+  target_formasi?: string | null;
 };
 
 export async function findUserByEmail(email: string): Promise<DbUser | null> {
