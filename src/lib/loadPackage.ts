@@ -148,4 +148,5 @@ export const TRYOUT_LIST = [
   { id: 'tryout-28', label: 'Tryout 28 (Latihan 4)', desc: 'Paket Latihan SKD 4 — soal TWK, TIU, TKP terverifikasi kunci', badge: 'Latihan' },
   { id: 'tryout-29', label: 'Tryout 29 (Latihan 5)', desc: 'Paket Latihan SKD 5 — soal TWK, TIU, TKP terverifikasi kunci', badge: 'Latihan' },
   { id: 'tryout-30', label: 'Tryout 30 (Latihan 6)', desc: 'Paket Latihan SKD 6 — soal TWK, TIU, TKP terverifikasi kunci', badge: 'Latihan' },
+  { id: 'tryout-31', label: 'Tryout 31 (Latihan 7)', desc: 'Paket Latihan SKD 7 — soal TWK, TIU, TKP terverifikasi kunci', badge: 'Latihan' },
 ];
