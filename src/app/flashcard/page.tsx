@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, ArrowClockwise, CheckCircle, XCircle, Shuffle, Cards } from '@phosphor-icons/react';
+import { ArrowRight, ArrowClockwise, CheckCircle, XCircle, Shuffle, Cards } from '@phosphor-icons/react';
 import { FLASHCARD_DATA, Flashcard } from '@/data/flashcards';
 
 const STORAGE_KEY = 'lolos_mastered_flashcards';
@@ -116,16 +116,9 @@ export default function FlashcardPage() {
     <div className="min-h-screen pb-10" style={{ background: '#faf9f5' }}>
       {/* Header */}
       <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 py-3">
-        <div className="max-w-2xl mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
-            <ArrowLeft size={20} weight="bold" />
-            <span className="font-medium text-sm">Kembali</span>
-          </Link>
-          <div className="flex items-center gap-2">
-            <Cards size={22} weight="fill" style={{ color: '#c96442' }} />
-            <h1 className="text-base font-bold text-gray-800">Flashcard Hafalan</h1>
-          </div>
-          <div className="w-[72px]" /> {/* spacer */}
+        <div className="max-w-2xl mx-auto flex items-center justify-center gap-2">
+          <Cards size={22} weight="fill" style={{ color: '#c96442' }} />
+          <h1 className="text-base font-bold text-gray-800">Flashcard Hafalan</h1>
         </div>
       </div>
 
