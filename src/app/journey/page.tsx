@@ -99,17 +99,37 @@ export default function JourneyPage() {
 
   function toggleDay(day: number) {
     const next = new Set(completed);
-    if (next.has(day)) { next.delete(day); } else { next.add(day); }
+    if (next.has(day)) {
+      next.delete(day);
+    } else {
+      next.add(day);
+      // Catat streak juga kalau belum
+      const today = todayStr();
+      if (!streakDates.includes(today)) {
+        const nextDates = [today, ...streakDates];
+        setStreakDates(nextDates);
+        saveStreakDates(nextDates);
+      }
+    }
     setCompleted(next);
     saveCompleted(next);
   }
 
   function handleLogToday() {
     const today = todayStr();
-    if (streakDates.includes(today)) return;
-    const next = [today, ...streakDates];
-    setStreakDates(next);
-    saveStreakDates(next);
+    // Catat tanggal ke streak
+    if (!streakDates.includes(today)) {
+      const next = [today, ...streakDates];
+      setStreakDates(next);
+      saveStreakDates(next);
+    }
+    // Otomatis centang hari aktif di kurikulum
+    if (!completed.has(activeDay)) {
+      const next = new Set(completed);
+      next.add(activeDay);
+      setCompleted(next);
+      saveCompleted(next);
+    }
   }
 
   function resetAll() {
@@ -122,7 +142,7 @@ export default function JourneyPage() {
 
   const pct = Math.round((completed.size / JOURNEY_DAYS.length) * 100);
   const streak = calcStreak(streakDates);
-  const loggedToday = streakDates.includes(todayStr());
+  const loggedToday = streakDates.includes(todayStr()) && completed.has(activeDay);
 
   // Group by phase
   const phases = [1, 2, 3] as const;
