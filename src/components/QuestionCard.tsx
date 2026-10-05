@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { MagnifyingGlass, EyeSlash, Eye } from '@phosphor-icons/react';
 import { Question } from '@/lib/types';
+import { getSectionColors } from '@/lib/questionSections';
 
 interface QuestionCardProps {
   question: Question;
@@ -11,6 +12,8 @@ interface QuestionCardProps {
   isFlagged: boolean;
   eliminatedOptionIds?: string[];
   fontSize?: 'sm' | 'base' | 'lg';
+  /** Optional section context: position within section (e.g. "5 dari 35") */
+  sectionPosition?: { numberInSection: number; sectionTotal: number };
   onSelectOption: (optionId: string) => void;
   onToggleFlag: () => void;
   onToggleEliminate?: (optionId: string) => void;
@@ -24,12 +27,14 @@ export function QuestionCard({
   isFlagged,
   eliminatedOptionIds = [],
   fontSize = 'base',
+  sectionPosition,
   onSelectOption,
   onToggleFlag,
   onToggleEliminate,
   onChangeFontSize,
 }: QuestionCardProps) {
   const [imgZoom, setImgZoom] = useState(false);
+  const colors = getSectionColors(question.category);
 
   const textSizeClass =
     fontSize === 'sm' ? 'text-xs sm:text-sm' : fontSize === 'lg' ? 'text-base sm:text-lg' : 'text-sm sm:text-base';
@@ -40,10 +45,18 @@ export function QuestionCard({
         <div>
           {/* Header Kartu Soal */}
           <div className="flex items-center justify-between mb-4 pb-3" style={{ borderBottom: '1px solid var(--border)' }}>
-            <div className="flex items-center gap-3">
-              <span className="font-semibold text-base text-[var(--foreground)]">Soal {questionNumber}</span>
-              <span className="badge-pill badge-neutral text-[11px]">
-                {question.category} &bull; {question.subCategory}
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <span className="font-bold text-base text-[var(--foreground)]">Soal {questionNumber}</span>
+              <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border ${colors.bg} ${colors.text} ${colors.border}`}>
+                {question.category}
+                {sectionPosition && (
+                  <span className="font-normal opacity-80 ml-1">
+                    ({sectionPosition.numberInSection}/{sectionPosition.sectionTotal})
+                  </span>
+                )}
+              </span>
+              <span className="text-[11px] text-[var(--muted-foreground)]">
+                &bull; {question.subCategory}
               </span>
             </div>
 

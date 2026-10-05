@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Timer, TimerHandle } from '@/components/Timer';
 import { QuestionCard } from '@/components/QuestionCard';
@@ -15,6 +15,7 @@ import { CaretLeft, CaretRight, Desktop, Pause, SignOut, Warning } from '@phosph
 import { BKNThemeLayout } from '@/components/BKNThemeLayout';
 import { ExamType, EXAM_MODES } from '@/lib/examMode';
 import { mapKeyToAction } from '@/lib/examShortcuts';
+import { shuffleWithinSections, getQuestionSections } from '@/lib/questionSections';
 import { calculateTimePerQuestion } from '@/lib/timeTracker';
 
 const EXAM_DURATION = 6000; // 100 minutes
@@ -74,7 +75,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         }
 
         if (meta?.randomize_questions) {
-          loaded = [...loaded].sort(() => 0.5 - Math.random());
+          loaded = shuffleWithinSections(loaded);
         }
         if (meta?.randomize_options) {
           loaded = loaded.map((q) => ({
@@ -349,6 +350,18 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
   const currentAns = currentQ ? answers.get(currentQ.id) : undefined;
   const currentEliminated = currentQ ? Array.from(eliminatedOptions.get(currentQ.id) || []) : [];
 
+  // Compute section position for QuestionCard label (e.g. "TIU (5/35)")
+  const sectionPosition = useMemo(() => {
+    if (!currentQ) return undefined;
+    const sections = getQuestionSections(questions, answers);
+    const sec = sections.find((s) => currentIndex >= s.startIndex && currentIndex <= s.endIndex);
+    if (!sec) return undefined;
+    return {
+      numberInSection: currentIndex - sec.startIndex + 1,
+      sectionTotal: sec.totalCount,
+    };
+  }, [questions, answers, currentIndex, currentQ]);
+
   let answered = 0;
   let flagged = 0;
   answers.forEach((a) => {
@@ -537,6 +550,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
               isFlagged={currentAns?.isFlagged ?? false}
               eliminatedOptionIds={currentEliminated}
               fontSize={fontSize}
+              sectionPosition={sectionPosition}
               onSelectOption={handleSelectOption}
               onToggleFlag={handleToggleFlag}
               onToggleEliminate={handleToggleEliminate}
