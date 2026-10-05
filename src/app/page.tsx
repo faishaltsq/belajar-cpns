@@ -63,8 +63,8 @@ export default function LandingPage() {
             style={{ boxShadow: '0 0 0 1px var(--border)' }}
           >
             <div className="flex items-center gap-1.5">
-              <span className="font-semibold text-[var(--foreground)]">6 Paket</span>
-              <span>(660 Soal)</span>
+              <span className="font-semibold text-[var(--foreground)]">36 Paket</span>
+              <span>(3.816 Soal)</span>
             </div>
             <span className="w-1 h-1 rounded-full bg-slate-300" />
             <div className="flex items-center gap-1.5">

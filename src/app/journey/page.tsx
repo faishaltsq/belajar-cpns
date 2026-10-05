@@ -5,31 +5,61 @@ import Link from 'next/link';
 import { MapPin, CheckCircle, Lock, Lightning, Cards, Desktop, ArrowRight, Fire, ArrowCounterClockwise } from '@phosphor-icons/react';
 import { JOURNEY_DAYS, JourneyDay } from '@/data/journeySchedule';
 
-const STORAGE_KEY = 'lolos_journey_completed_days';
+const STORAGE_KEY_COMPLETED = 'lolos_journey_completed_days';
+const STORAGE_KEY_STREAK = 'lolos_journey_streak_dates';
+
+function todayStr(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
 
 function getCompleted(): Set<number> {
   if (typeof window === 'undefined') return new Set();
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(STORAGE_KEY_COMPLETED);
     return new Set(raw ? JSON.parse(raw) : []);
   } catch { return new Set(); }
 }
 
 function saveCompleted(set: Set<number>) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(set)));
+  localStorage.setItem(STORAGE_KEY_COMPLETED, JSON.stringify(Array.from(set)));
 }
 
-function calcStreak(completed: Set<number>): number {
-  // Streak = longest run of consecutive days from day 1 up to the latest completed
-  if (completed.size === 0) return 0;
-  const sorted = Array.from(completed).sort((a, b) => a - b);
-  let streak = 0, best = 0, prev = 0;
-  for (const d of sorted) {
-    if (d === prev + 1 || prev === 0) { streak++; } else { streak = 1; }
-    best = Math.max(best, streak);
-    prev = d;
+function getStreakDates(): string[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY_STREAK);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+}
+
+function saveStreakDates(dates: string[]) {
+  localStorage.setItem(STORAGE_KEY_STREAK, JSON.stringify(dates));
+}
+
+function prevDateStr(dateStr: string): string {
+  const dt = new Date(dateStr);
+  dt.setDate(dt.getDate() - 1);
+  return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
+}
+
+function calcStreak(dates: string[]): number {
+  if (dates.length === 0) return 0;
+  const unique = Array.from(new Set(dates)).sort().reverse();
+  const today = todayStr();
+  const yesterday = prevDateStr(today);
+  if (unique[0] !== today && unique[0] !== yesterday) return 0;
+  let streak = 0;
+  let expected = unique[0];
+  for (const d of unique) {
+    if (d === expected) {
+      streak++;
+      expected = prevDateStr(d);
+    } else {
+      break;
+    }
   }
-  return best;
+  return streak;
 }
 
 const actionIcon: Record<JourneyDay['actionType'], React.ReactNode> = {
@@ -49,15 +79,16 @@ const PHASE_LABELS: Record<number, { color: string; bg: string }> = {
 
 export default function JourneyPage() {
   const [completed, setCompleted] = useState<Set<number>>(new Set());
+  const [streakDates, setStreakDates] = useState<string[]>([]);
   const [loaded, setLoaded] = useState(false);
   const todayRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setCompleted(getCompleted());
+    setStreakDates(getStreakDates());
     setLoaded(true);
   }, []);
 
-  // Active day: first non-completed day
   const activeDay = JOURNEY_DAYS.find((d) => !completed.has(d.day))?.day ?? 30;
 
   useEffect(() => {
@@ -73,14 +104,25 @@ export default function JourneyPage() {
     saveCompleted(next);
   }
 
+  function handleLogToday() {
+    const today = todayStr();
+    if (streakDates.includes(today)) return;
+    const next = [today, ...streakDates];
+    setStreakDates(next);
+    saveStreakDates(next);
+  }
+
   function resetAll() {
     const empty = new Set<number>();
     setCompleted(empty);
     saveCompleted(empty);
+    setStreakDates([]);
+    saveStreakDates([]);
   }
 
   const pct = Math.round((completed.size / JOURNEY_DAYS.length) * 100);
-  const streak = calcStreak(completed);
+  const streak = calcStreak(streakDates);
+  const loggedToday = streakDates.includes(todayStr());
 
   // Group by phase
   const phases = [1, 2, 3] as const;
@@ -145,21 +187,50 @@ export default function JourneyPage() {
             </div>
           </div>
 
-          {/* CTA scroll to today */}
+          {/* Tombol Sudah Mengerjakan Hari Ini */}
+          {completed.size < 30 && (
+            <button
+              onClick={handleLogToday}
+              disabled={loggedToday}
+              className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition ${
+                loggedToday
+                  ? 'bg-green-100 text-green-700 cursor-default border-2 border-green-200'
+                  : 'text-white'
+              }`}
+              style={loggedToday ? {} : { background: '#c96442' }}
+            >
+              {loggedToday ? (
+                <>
+                  <CheckCircle size={18} weight="fill" />
+                  Sudah Mengerjakan Hari Ini ✓
+                </>
+              ) : (
+                <>
+                  <Fire size={18} weight="fill" />
+                  Sudah Mengerjakan Hari Ini
+                </>
+              )}
+            </button>
+          )}
           {completed.size < 30 && (
             <button
               onClick={() => todayRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold text-white"
-              style={{ background: '#c96442' }}
+              className="w-full flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-medium text-gray-500 border border-gray-200 hover:bg-gray-50 transition"
             >
-              Lanjutkan Belajar Hari Ini
-              <ArrowRight size={16} weight="bold" />
+              Lihat Materi Hari Ini
+              <ArrowRight size={14} weight="bold" />
             </button>
           )}
           {completed.size === 30 && (
             <div className="flex items-center gap-2 justify-center text-green-700 font-semibold text-sm">
               <CheckCircle size={20} weight="fill" /> Roadmap 30 Hari Selesai! 🎉
             </div>
+          )}
+
+          {streak > 0 && (
+            <p className="text-[10px] text-center text-gray-400">
+              🔥 Kamu sudah belajar {streak} hari berturut-turut. Jangan putus besok!
+            </p>
           )}
         </div>
 
