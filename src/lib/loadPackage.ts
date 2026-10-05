@@ -135,4 +135,12 @@ export const TRYOUT_LIST = [
   { id: 'tryout-15', label: 'Tryout 15', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru' },
   { id: 'tryout-16', label: 'Tryout 16', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru' },
   { id: 'tryout-17', label: 'Tryout 17', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru' },
+  { id: 'tryout-18', label: 'Tryout 18 (HOTS)', desc: 'Bank Soal HOTS — 110 soal TWK, TIU, TKP level Higher Order Thinking', badge: 'Bank Soal' },
+  { id: 'tryout-19', label: 'Tryout 19 (HOTS)', desc: 'Bank Soal HOTS — 115 soal TWK & TIU level analisis dan evaluasi', badge: 'Bank Soal' },
+  { id: 'tryout-20', label: 'Tryout 20 (HOTS)', desc: 'Bank Soal HOTS — 110 soal TWK & TIU referensi soal unggulan', badge: 'Bank Soal' },
+  { id: 'tryout-21', label: 'Tryout 21 (HOTS)', desc: 'Bank Soal HOTS — 110 soal TWK & TIU referensi soal unggulan', badge: 'Bank Soal' },
+  { id: 'tryout-22', label: 'Tryout 22 (HOTS)', desc: 'Bank Soal HOTS — 110 soal TWK & TIU referensi soal unggulan', badge: 'Bank Soal' },
+  { id: 'tryout-23', label: 'Tryout 23 (HOTS)', desc: 'Bank Soal HOTS — 96 soal TWK & TIU referensi soal unggulan', badge: 'Bank Soal' },
+  { id: 'tryout-24', label: 'Tryout 24 (HOTS)', desc: 'Bank Soal HOTS — 33 soal TWK level analisis mendalam', badge: 'Bank Soal' },
+  { id: 'tryout-25', label: 'Tryout 25 (Latihan 1)', desc: 'Paket Latihan SKD 1 — 98 soal TWK, TIU, TKP terverifikasi kunci', badge: 'Latihan' },
 ];
