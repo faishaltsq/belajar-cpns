@@ -11,6 +11,8 @@ const NAV_LINKS = [
   { href: '/', label: 'Beranda' },
   { href: '/simulasi', label: 'Simulasi CAT' },
   { href: '/drill', label: '⚡ Latihan Kilat' },
+  { href: '/flashcard', label: '🃏 Flashcard' },
+  { href: '/journey', label: '🗺️ Roadmap' },
   { href: '/psikotes', label: 'Tes Psikotes' },
   { href: '/riwayat', label: 'Riwayat' },
 ];

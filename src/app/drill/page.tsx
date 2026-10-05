@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Lightning, Brain, Globe, Star } from '@phosphor-icons/react';
+import { Lightning, Brain, Globe, Star, WarningCircle } from '@phosphor-icons/react';
+import { collectWrongQuestions } from '@/lib/wrongAnswers';
 
 const DRILL_TOPICS: {
   category: 'TWK' | 'TIU' | 'TKP';
@@ -40,6 +41,13 @@ const catMeta: Record<'TWK' | 'TIU' | 'TKP', { label: string; desc: string; colo
 };
 
 export default function DrillPage() {
+  const [wrongCount, setWrongCount] = useState(0);
+
+  useEffect(() => {
+    const list = collectWrongQuestions();
+    setWrongCount(list.length);
+  }, []);
+
   return (
     <div className="min-h-screen flex items-start justify-center p-4 py-8">
       <div className="max-w-3xl w-full space-y-6">
@@ -55,6 +63,32 @@ export default function DrillPage() {
             10 soal fokus per topik • Feedback instan setelah setiap jawaban • Tanpa batas waktu gugur
           </p>
         </div>
+
+        {/* Banner Ulang Soal Salah */}
+        {wrongCount > 0 && (
+          <div className="p-4 rounded-xl border border-orange-200 bg-orange-50 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-orange-500 text-white flex items-center justify-center shrink-0">
+                <WarningCircle size={22} weight="fill" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-orange-900">
+                  Ada {wrongCount} soal yang pernah kamu jawab salah!
+                </p>
+                <p className="text-[11px] text-orange-700">
+                  Perbaiki kelemahanmu dengan drilling khusus soal salah ini.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/drill/ulang-salah"
+              className="px-4 py-2 rounded-lg text-xs font-bold text-white shrink-0 shadow-sm"
+              style={{ background: '#c96442' }}
+            >
+              Latih Sekarang →
+            </Link>
+          </div>
+        )}
 
         {/* Stats banner */}
         <div

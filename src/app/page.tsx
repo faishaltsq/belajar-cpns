@@ -174,6 +174,76 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* FITUR AKSELERASI BELAJAR */}
+        <section className="mt-16">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+              Akselerasi Belajar Cerdas
+            </h2>
+            <p className="text-sm text-[var(--muted-foreground)] mt-2">
+              Tiga fitur personal untuk belajar lebih terarah, efisien, dan tidak membuang waktu.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {/* Journey */}
+            <div className="card-modern p-6 flex flex-col justify-between" style={{ borderTop: '3px solid #c96442' }}>
+              <div>
+                <div className="text-3xl mb-3">🗺️</div>
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
+                  30 Hari Terstruktur
+                </span>
+                <h3 className="font-semibold text-lg text-[var(--foreground)] mt-1 mb-2">
+                  Roadmap Belajar Harian
+                </h3>
+                <p className="text-xs text-[var(--muted-foreground)] leading-relaxed mb-6">
+                  Kurikulum 30 hari terstruktur: TWK → TIU → TKP → Simulasi Penuh. Cukup 15–20 menit sehari, centang hari yang sudah selesai.
+                </p>
+              </div>
+              <Link href="/journey" className="btn-secondary text-xs w-full py-2.5">
+                Mulai Roadmap 30 Hari →
+              </Link>
+            </div>
+
+            {/* Flashcard */}
+            <div className="card-modern p-6 flex flex-col justify-between" style={{ borderTop: '3px solid #8b5cf6' }}>
+              <div>
+                <div className="text-3xl mb-3">🃏</div>
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
+                  Hafalan Cepat
+                </span>
+                <h3 className="font-semibold text-lg text-[var(--foreground)] mt-1 mb-2">
+                  Flashcard Interaktif
+                </h3>
+                <p className="text-xs text-[var(--muted-foreground)] leading-relaxed mb-6">
+                  38 kartu hafalan kunci: Pasal UUD 1945, pecahan istimewa, silogisme, dan formula skor 5 TKP. Flip kartu, tandai yang sudah hafal.
+                </p>
+              </div>
+              <Link href="/flashcard" className="btn-secondary text-xs w-full py-2.5">
+                Buka Flashcard →
+              </Link>
+            </div>
+
+            {/* Ulang Soal Salah */}
+            <div className="card-modern p-6 flex flex-col justify-between" style={{ borderTop: '3px solid #f59e0b' }}>
+              <div>
+                <div className="text-3xl mb-3">⚡</div>
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
+                  Drill Adaptif
+                </span>
+                <h3 className="font-semibold text-lg text-[var(--foreground)] mt-1 mb-2">
+                  Ulang Soal Salah
+                </h3>
+                <p className="text-xs text-[var(--muted-foreground)] leading-relaxed mb-6">
+                  Sistem otomatis mengumpulkan soal yang pernah kamu jawab salah dari semua tryout, lalu menyajikannya sebagai sesi drill khusus.
+                </p>
+              </div>
+              <Link href="/drill/ulang-salah" className="btn-secondary text-xs w-full py-2.5">
+                Latih Soal Salah →
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* INTERACTIVE MINI TRYOUT */}
         <section className="mt-20">
           <div className="text-center mb-8">
