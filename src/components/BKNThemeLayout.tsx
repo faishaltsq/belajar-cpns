@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Question, ExamAnswer } from '@/lib/types';
+import { getQuestionSections, getSectionFullName } from '@/lib/questionSections';
 
 interface BKNThemeLayoutProps {
   questions: Question[];
@@ -31,6 +32,23 @@ export function BKNThemeLayout({
 }: BKNThemeLayoutProps) {
   const q = questions[currentIndex];
   const ans = q ? answers.get(q.id) : undefined;
+
+  // Compute dynamic section ranges from questions
+  const sections = React.useMemo(
+    () => getQuestionSections(questions, answers),
+    [questions, answers]
+  );
+
+  const activeSection = sections.find(
+    (s) => currentIndex >= s.startIndex && currentIndex <= s.endIndex
+  );
+
+  const sectionPosition = activeSection
+    ? {
+        numberInSection: currentIndex - activeSection.startIndex + 1,
+        sectionTotal: activeSection.totalCount,
+      }
+    : null;
 
   const getCellStyle = (qi: number) => {
     const a = answers.get(questions[qi]?.id);
@@ -96,7 +114,7 @@ export function BKNThemeLayout({
       <div style={{ maxWidth: 1200, margin: '12px auto', width: '100%', padding: '0 16px', display: 'flex', gap: 16, flex: 1 }}>
         {/* Main Question */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
-          {/* Category badge */}
+          {/* Category badge + section info */}
           <div style={{
             background: '#fff',
             borderRadius: 4,
@@ -106,19 +124,31 @@ export function BKNThemeLayout({
             justifyContent: 'space-between',
             border: '1px solid #ccc',
           }}>
-            <span style={{ fontWeight: 700, color: BKN_BLUE }}>
-              Soal {currentIndex + 1} dari {questions.length}
-            </span>
-            <span style={{
-              fontSize: 11,
-              fontWeight: 700,
-              padding: '2px 10px',
-              borderRadius: 3,
-              background: BKN_BLUE,
-              color: '#fff',
-            }}>
-              {q.category}
-            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ fontWeight: 700, color: BKN_BLUE }}>
+                Soal {currentIndex + 1} dari {questions.length}
+              </span>
+              {sectionPosition && (
+                <span style={{ fontSize: 11, color: '#555' }}>
+                  · {q.category} Soal ke-{sectionPosition.numberInSection} dari {sectionPosition.sectionTotal}
+                </span>
+              )}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{
+                fontSize: 11,
+                fontWeight: 700,
+                padding: '2px 10px',
+                borderRadius: 3,
+                background: BKN_BLUE,
+                color: '#fff',
+              }}>
+                {q.category}
+              </span>
+              <span style={{ fontSize: 10, color: '#666' }}>
+                {getSectionFullName(q.category)}
+              </span>
+            </div>
           </div>
 
           {/* Question text */}
@@ -231,36 +261,134 @@ export function BKNThemeLayout({
         </div>
 
         {/* Sidebar nomor soal */}
-        <aside style={{ width: 200, flexShrink: 0 }}>
+        <aside style={{ width: 230, flexShrink: 0 }}>
           <div style={{ background: '#fff', border: '1px solid #ccc', borderRadius: 4, overflow: 'hidden' }}>
-            <div style={{ background: BKN_BLUE, color: '#fff', padding: '8px 12px', fontWeight: 700, fontSize: 12 }}>
-              DAFTAR SOAL
+            <div style={{ background: BKN_BLUE, color: '#fff', padding: '8px 12px', fontWeight: 700, fontSize: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span>DAFTAR SOAL</span>
+              <span style={{ fontSize: 10, opacity: 0.85, fontWeight: 400 }}>
+                {Array.from(answers.values()).filter((a) => a.selectedOptionId != null && a.selectedOptionId !== '').length}/{questions.length}
+              </span>
             </div>
+
+            {/* Quick jump section buttons */}
+            {sections.length > 1 && (
+              <div style={{ padding: '8px 10px', background: '#f8fafc', borderBottom: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <div style={{ fontSize: 10, fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                  Lompat Sub-Tes:
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 4 }}>
+                  {sections.map((s) => {
+                    const isActive = activeSection?.category === s.category;
+                    return (
+                      <button
+                        key={s.category}
+                        type="button"
+                        onClick={() => onSelectIndex(s.startIndex)}
+                        title={`Lompat ke ${s.category} (No ${s.startNumber}–${s.endNumber})`}
+                        style={{
+                          padding: '4px 2px',
+                          borderRadius: 3,
+                          border: isActive ? `2px solid ${BKN_BLUE}` : '1px solid #cbd5e1',
+                          background: isActive ? BKN_BLUE : '#fff',
+                          color: isActive ? '#fff' : '#1e293b',
+                          fontWeight: 700,
+                          fontSize: 10,
+                          cursor: 'pointer',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          lineHeight: 1.2,
+                        }}
+                      >
+                        <span>{s.category}</span>
+                        <span style={{ fontSize: 9, opacity: 0.8, fontWeight: 400 }}>
+                          {s.answeredCount}/{s.totalCount}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
             {/* Legend */}
-            <div style={{ padding: '8px 12px', borderBottom: '1px solid #eee', fontSize: 10, display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <span>⬜ Belum dijawab</span>
-              <span style={{ color: '#16a34a' }}>🟩 Sudah dijawab</span>
-              <span style={{ color: '#dc2626' }}>🟥 Ragu-ragu</span>
+            <div style={{ padding: '6px 12px', borderBottom: '1px solid #eee', fontSize: 10, display: 'flex', justifyContent: 'space-between' }}>
+              <span>⬜ Belum</span>
+              <span style={{ color: '#16a34a', fontWeight: 600 }}>🟩 Sudah</span>
+              <span style={{ color: '#dc2626', fontWeight: 600 }}>🟥 Ragu</span>
             </div>
-            {/* Grid */}
-            <div style={{ padding: 10, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 5 }}>
-              {questions.map((_, qi) => (
-                <button
-                  key={qi}
-                  onClick={() => onSelectIndex(qi)}
-                  style={{
-                    ...getCellStyle(qi),
-                    borderRadius: 3,
-                    padding: '6px 2px',
-                    cursor: 'pointer',
-                    fontSize: 11,
-                    fontWeight: 600,
-                    fontFamily: 'monospace',
-                  }}
-                >
-                  {qi + 1}
-                </button>
-              ))}
+
+            {/* Grid grouped by section */}
+            <div style={{ padding: 10, maxHeight: 420, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {sections.length > 0 ? (
+                sections.map((s) => {
+                  const qs = questions.slice(s.startIndex, s.endIndex + 1);
+                  return (
+                    <div key={s.category}>
+                      {/* Section label in grid */}
+                      <div style={{
+                        background: '#f1f5f9',
+                        padding: '3px 6px',
+                        borderRadius: 3,
+                        marginBottom: 5,
+                        fontSize: 10,
+                        fontWeight: 700,
+                        color: BKN_BLUE,
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                      }}>
+                        <span>{s.category} ({s.startNumber}–{s.endNumber})</span>
+                        <span style={{ fontWeight: 400, color: '#64748b' }}>{s.answeredCount}/{s.totalCount}</span>
+                      </div>
+
+                      {/* Number buttons for this section */}
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 5 }}>
+                        {qs.map((_, i) => {
+                          const qi = s.startIndex + i;
+                          return (
+                            <button
+                              key={qi}
+                              onClick={() => onSelectIndex(qi)}
+                              style={{
+                                ...getCellStyle(qi),
+                                borderRadius: 3,
+                                padding: '6px 2px',
+                                cursor: 'pointer',
+                                fontSize: 11,
+                                fontWeight: 600,
+                                fontFamily: 'monospace',
+                              }}
+                            >
+                              {qi + 1}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                /* Fallback flat grid */
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 5 }}>
+                  {questions.map((_, qi) => (
+                    <button
+                      key={qi}
+                      onClick={() => onSelectIndex(qi)}
+                      style={{
+                        ...getCellStyle(qi),
+                        borderRadius: 3,
+                        padding: '6px 2px',
+                        cursor: 'pointer',
+                        fontSize: 11,
+                        fontWeight: 600,
+                        fontFamily: 'monospace',
+                      }}
+                    >
+                      {qi + 1}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </aside>
