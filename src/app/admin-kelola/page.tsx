@@ -8,12 +8,8 @@ import {
   PencilSimple,
   PlusCircle,
   Image as ImageIcon,
-  CheckCircle,
-  Warning,
   Eye,
   Trash,
-  ArrowRight,
-  ArrowsClockwise,
   Lock,
   SignOut,
   FolderOpen,
@@ -39,16 +35,8 @@ export default function AdminPage() {
   const [authError, setAuthError] = useState('');
 
   // Dashboard state
-  const [tab, setTab] = useState<'packages' | 'custom' | 'ebook' | 'bank' | 'media'>('packages');
+  const [tab, setTab] = useState<'packages' | 'media'>('packages');
 
-  // Bank soal state
-  const [bankStats, setBankStats] = useState<{ total: number; categories: { category: string; count: number; sub_count: number }[] }>({ total: 0, categories: [] });
-  const [bankBuilding, setBankBuilding] = useState(false);
-  const [bankTarget, setBankTarget] = useState('');
-  const [bankTwk, setBankTwk] = useState(30);
-  const [bankTiu, setBankTiu] = useState(35);
-  const [bankTkp, setBankTkp] = useState(45);
-  const [bankMessage, setBankMessage] = useState('');
   const [packages, setPackages] = useState<PackageMeta[]>([]);
   const [selectedPkgId, setSelectedPkgId] = useState<string>('tryout-1');
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -80,24 +68,6 @@ export default function AdminPage() {
   // Package settings state
   const [pkgSettings, setPkgSettings] = useState({ durationMinutes: 100, randomizeQuestions: false, randomizeOptions: false });
   const [savingSettings, setSavingSettings] = useState(false);
-
-  // Ebook Generator state
-  const [ebookStats, setEbookStats] = useState<{ total: number; categories: { category: string; count: number; sub_categories: number }[] } | null>(null);
-  const [ebookCategory, setEbookCategory] = useState<'TWK' | 'TIU' | 'TKP'>('TWK');
-  const [ebookCount, setEbookCount] = useState(5);
-  const [ebookTargetPkg, setEbookTargetPkg] = useState<string>('');
-  const [ebookGenerating, setEbookGenerating] = useState(false);
-  const [ebookResult, setEbookResult] = useState<{ success?: boolean; count?: number; error?: string } | null>(null);
-
-  // Custom Test Builder state
-  const [customTitle, setCustomTitle] = useState('Tryout Mini Uji Coba');
-  const [customPkgId, setCustomPkgId] = useState('tryout-mini');
-  const [twkCount, setTwkCount] = useState(10);
-  const [tiuCount, setTiuCount] = useState(10);
-  const [tkpCount, setTkpCount] = useState(10);
-  const [includeImages, setIncludeImages] = useState(true);
-  const [generating, setGenerating] = useState(false);
-  const [genResult, setGenResult] = useState<any>(null);
 
   // Check saved session PIN
   useEffect(() => {
@@ -293,83 +263,6 @@ export default function AdminPage() {
     }
   }
 
-  // Ebook Stats & Generate
-  async function loadEbookStats() {
-    try {
-      const res = await fetch('/api/admin/generate-ebook');
-      const data = await res.json();
-      if (res.ok) setEbookStats(data);
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-  async function handleEbookGenerate(e: React.FormEvent) {
-    e.preventDefault();
-    setEbookGenerating(true);
-    setEbookResult(null);
-    try {
-      const res = await fetch('/api/admin/generate-ebook', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          category: ebookCategory,
-          count: ebookCount,
-          packageId: ebookTargetPkg || undefined,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setEbookResult({ error: data.error || 'Gagal generate soal' });
-      } else {
-        setEbookResult({ success: true, count: data.count });
-        if (ebookTargetPkg) {
-          await loadPackageQuestions(ebookTargetPkg);
-        }
-      }
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'Koneksi gagal';
-      setEbookResult({ error: message });
-    } finally {
-      setEbookGenerating(false);
-    }
-  }
-
-  // Generate Custom Test
-  async function handleGenerateCustom(e: React.FormEvent) {
-    e.preventDefault();
-    setGenerating(true);
-    setGenResult(null);
-    try {
-      const res = await fetch('/api/admin/generate-custom', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-admin-pin': pin },
-        body: JSON.stringify({
-          packageId: customPkgId,
-          title: customTitle,
-          twkCount: Number(twkCount),
-          tiuCount: Number(tiuCount),
-          tkpCount: Number(tkpCount),
-          includeImages,
-        }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setGenResult(data);
-        // refresh packages
-        const pRes = await fetch('/api/admin/packages', { headers: { 'x-admin-pin': pin } });
-        if (pRes.ok) {
-          const pData = await pRes.json();
-          setPackages(pData.packages || []);
-        }
-      } else {
-        alert(data.error || 'Gagal generate');
-      }
-    } finally {
-      setGenerating(false);
-    }
-  }
-
   // Filtered questions
   const filteredQs = questions.filter((q) => {
     const matchCat = filterCat === 'ALL' || q.category === filterCat;
@@ -452,7 +345,7 @@ export default function AdminPage() {
             )}
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-[var(--foreground)] mt-1">
-            Manajemen Soal &amp; Custom Test Maker
+            Manajemen Soal &amp; Editor Seluruh Paket
           </h1>
         </div>
         <div className="flex items-center gap-2">
@@ -479,31 +372,6 @@ export default function AdminPage() {
           Editor Seluruh Paket ({packages.length})
         </button>
         <button
-          onClick={() => setTab('custom')}
-          className={`px-4 py-2 rounded-lg text-xs font-semibold transition ${
-            tab === 'custom'
-              ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
-              : 'text-[var(--muted-foreground)] hover:bg-[var(--muted)]'
-          }`}
-        >
-          <PlusCircle size={14} className="inline mr-1.5 -mt-0.5" />
-          Buat Contoh Uji Coba (Custom Test)
-        </button>
-        <button
-          onClick={() => {
-            setTab('ebook');
-            loadEbookStats();
-          }}
-          className={`px-4 py-2 rounded-lg text-xs font-semibold transition ${
-            tab === 'ebook'
-              ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
-              : 'text-[var(--muted-foreground)] hover:bg-[var(--muted)]'
-          }`}
-        >
-          <Database size={14} className="inline mr-1.5 -mt-0.5" />
-          Referensi Ebook AI
-        </button>
-        <button
           onClick={() => setTab('media')}
           className={`px-4 py-2 rounded-lg text-xs font-semibold transition ${
             tab === 'media'
@@ -513,22 +381,6 @@ export default function AdminPage() {
         >
           <ImageIcon size={14} className="inline mr-1.5 -mt-0.5" />
           Crop Gambar Figural
-        </button>
-        <button
-          onClick={() => {
-            setTab('bank');
-            fetch('/api/admin/question-bank')
-              .then(r => r.json())
-              .then(d => setBankStats({ total: Number(d.total), categories: d.stats || [] }))
-              .catch(() => {});
-          }}
-          className={`px-4 py-2 rounded-lg text-xs font-semibold transition ${
-            tab === 'bank'
-              ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
-              : 'text-[var(--muted-foreground)] hover:bg-[var(--muted)]'
-          }`}
-        >
-          🗄️ Bank Soal
         </button>
       </div>
 
@@ -996,393 +848,9 @@ export default function AdminPage() {
         </div>
       )}
 
-      {/* TAB 2: CUSTOM TEST MAKER */}
-      {tab === 'custom' && (
-        <div className="max-w-2xl mx-auto card-modern p-6 sm:p-8 space-y-6">
-          <div>
-            <h2 className="text-lg font-bold text-[var(--foreground)] tracking-tight">
-              Generator Contoh Uji Coba (Custom Test)
-            </h2>
-            <p className="text-xs text-[var(--muted-foreground)] mt-1">
-              Buat simulasi singkat agar calon peserta bisa mencoba platform tanpa harus mengerjakan full 110 butir (100 menit).
-            </p>
-          </div>
-
-          <form onSubmit={handleGenerateCustom} className="space-y-4">
-            <div>
-              <label className="block text-xs font-medium text-[var(--foreground)] mb-1">
-                Judul Paket
-              </label>
-              <input
-                type="text"
-                value={customTitle}
-                onChange={(e) => setCustomTitle(e.target.value)}
-                className="input-modern w-full text-xs"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-medium text-[var(--foreground)] mb-1">
-                ID Paket (Slug URL: /simulasi/[id])
-              </label>
-              <input
-                type="text"
-                value={customPkgId}
-                onChange={(e) => setCustomPkgId(e.target.value)}
-                className="input-modern w-full text-xs font-mono"
-                required
-              />
-              <p className="text-[11px] text-[var(--muted-foreground)] mt-1">
-                Akan diakses di: <code className="font-mono">/simulasi/{customPkgId}</code>
-              </p>
-            </div>
-
-            {/* Counts */}
-            <div className="grid grid-cols-3 gap-3">
-              <div>
-                <label className="block text-xs font-medium text-[var(--foreground)] mb-1">
-                  Jumlah TWK
-                </label>
-                <input
-                  type="number"
-                  min={1}
-                  max={50}
-                  value={twkCount}
-                  onChange={(e) => setTwkCount(Number(e.target.value))}
-                  className="input-modern w-full text-xs text-center font-bold"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-[var(--foreground)] mb-1">
-                  Jumlah TIU
-                </label>
-                <input
-                  type="number"
-                  min={1}
-                  max={50}
-                  value={tiuCount}
-                  onChange={(e) => setTiuCount(Number(e.target.value))}
-                  className="input-modern w-full text-xs text-center font-bold"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-[var(--foreground)] mb-1">
-                  Jumlah TKP
-                </label>
-                <input
-                  type="number"
-                  min={1}
-                  max={50}
-                  value={tkpCount}
-                  onChange={(e) => setTkpCount(Number(e.target.value))}
-                  className="input-modern w-full text-xs text-center font-bold"
-                />
-              </div>
-            </div>
-
-            <div className="card-subtle p-3 rounded-lg flex items-center justify-between text-xs">
-              <span className="text-[var(--muted-foreground)]">Total Soal Simulasi:</span>
-              <span className="font-bold text-[var(--foreground)] text-sm">
-                {Number(twkCount) + Number(tiuCount) + Number(tkpCount)} Butir Soal
-              </span>
-            </div>
-
-            {/* Include figural */}
-            <label className="flex items-center gap-2 cursor-pointer text-xs select-none">
-              <input
-                type="checkbox"
-                checked={includeImages}
-                onChange={(e) => setIncludeImages(e.target.checked)}
-                className="w-4 h-4 rounded accent-black"
-              />
-              <span className="font-medium text-[var(--foreground)]">
-                Sertakan Soal Figural Bergambar (dieksplor dari bank gambar ebook)
-              </span>
-            </label>
-
-            <button
-              type="submit"
-              disabled={generating}
-              className="btn-primary w-full py-2.5 text-sm"
-            >
-              {generating ? 'Sedang Meracik Soal...' : '🚀 Generate & Simpan Paket Test'}
-            </button>
-          </form>
-
-          {/* Success result card */}
-          {genResult && (
-            <div className="card-subtle p-4 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-900 space-y-3">
-              <div className="flex items-center gap-2 font-bold text-sm">
-                <CheckCircle size={18} weight="fill" className="text-emerald-600" />
-                Paket Berhasil Dibuat!
-              </div>
-              <div className="text-xs space-y-1">
-                <div>Total: <strong>{genResult.totalQuestions} soal</strong> ({genResult.twk} TWK, {genResult.tiu} TIU, {genResult.tkp} TKP)</div>
-                <div>Soal Bergambar: <strong>{genResult.withImages} butir</strong></div>
-              </div>
-              <Link
-                href={`/simulasi/${genResult.packageId}`}
-                target="_blank"
-                className="btn-primary inline-flex items-center gap-1.5 text-xs py-2 px-4"
-              >
-                <span>Coba Paket Sekarang</span>
-                <ArrowRight size={14} weight="bold" />
-              </Link>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* TAB EBOOK: AI GENERATOR DARI EBOOK */}
-      {tab === 'ebook' && (
-        <div className="space-y-6">
-          <div className="card-modern p-6">
-            <h2 className="text-base font-bold text-[var(--foreground)] mb-1">
-              Generator Soal dari Referensi Ebook CPNS
-            </h2>
-            <p className="text-xs text-[var(--muted-foreground)] mb-4">
-              AI akan membaca potongan materi &amp; pola soal dari ratusan ebook CPNS yang telah diekstrak,
-              lalu membuat soal BARU dengan redaksi berbeda (bukan copy-paste).
-            </p>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-              <div className="p-3 rounded-lg border text-center" style={{ borderColor: 'var(--border)' }}>
-                <div className="text-xl font-bold text-[var(--primary)]">
-                  {ebookStats ? ebookStats.total : '...'}
-                </div>
-                <div className="text-[10px] text-[var(--muted-foreground)]">Total Referensi di DB</div>
-              </div>
-              {ebookStats?.categories?.map((c) => (
-                <div key={c.category} className="p-3 rounded-lg border text-center" style={{ borderColor: 'var(--border)' }}>
-                  <div className="text-xl font-bold text-[var(--foreground)]">{c.count}</div>
-                  <div className="text-[10px] text-[var(--muted-foreground)]">
-                    Konteks {c.category}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Generator Form */}
-            <form onSubmit={handleEbookGenerate} className="space-y-4 max-w-xl">
-              <div>
-                <label className="block text-xs font-semibold text-[var(--foreground)] mb-1">
-                  Kategori Soal
-                </label>
-                <div className="flex gap-2">
-                  {(['TWK', 'TIU', 'TKP'] as const).map((cat) => (
-                    <button
-                      key={cat}
-                      type="button"
-                      onClick={() => setEbookCategory(cat)}
-                      className={`px-4 py-2 rounded-lg text-xs font-semibold border transition ${
-                        ebookCategory === cat
-                          ? 'bg-[var(--primary)] text-white border-transparent'
-                          : 'border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]'
-                      }`}
-                    >
-                      {cat}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-[var(--foreground)] mb-1">
-                  Jumlah Soal per Generate
-                </label>
-                <div className="flex items-center gap-2">
-                  {[3, 5, 10, 15].map((cnt) => (
-                    <button
-                      key={cnt}
-                      type="button"
-                      onClick={() => setEbookCount(cnt)}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition ${
-                        ebookCount === cnt
-                          ? 'bg-[var(--foreground)] text-[var(--background)] border-transparent'
-                          : 'border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]'
-                      }`}
-                    >
-                      {cnt} Soal
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className="text-xs font-semibold text-[var(--foreground)] mb-1">
-                  Target: Bank Soal
-                </p>
-                <p className="text-[10px] text-[var(--muted-foreground)]">
-                  Hasil generate otomatis tersimpan ke Bank Soal. Untuk merakit paket tryout dari stok bank, gunakan tab 🗄️ Bank Soal.
-                </p>
-              </div>
-
-              {ebookResult && (
-                <div
-                  className={`p-3 rounded-lg text-xs ${
-                    ebookResult.error
-                      ? 'bg-red-500/10 text-red-600 border border-red-500/20'
-                      : 'bg-green-500/10 text-green-600 border border-green-500/20'
-                  }`}
-                >
-                  {ebookResult.error
-                    ? `Gagal: ${ebookResult.error}`
-                    : `Berhasil membuat ${ebookResult.count} soal baru! Tersimpan di Bank Soal.`}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={ebookGenerating}
-                className="btn-primary text-xs px-5 py-2.5 flex items-center gap-2"
-              >
-                {ebookGenerating ? (
-                  <>
-                    <ArrowsClockwise size={14} className="animate-spin" />
-                    Sedang Membaca Ebook &amp; Generate Soal...
-                  </>
-                ) : (
-                  <>
-                    <Database size={14} />
-                    Generate {ebookCount} Soal {ebookCategory} dari Ebook
-                  </>
-                )}
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
-
-      {/* TAB 3: MEDIA & FIGURAL IMAGE GALLERY */}
+      {/* TAB: MEDIA & FIGURAL IMAGE GALLERY */}
       {tab === 'media' && (
         <FiguralCropEditor adminPin={pin} />
-      )}
-
-      {/* TAB: BANK SOAL */}
-      {tab === 'bank' && (
-        <div className="space-y-6">
-          {/* Header */}
-          <div className="card-modern p-6">
-            <h2 className="text-lg font-bold text-[var(--foreground)] mb-1">🗄️ Bank Soal</h2>
-            <p className="text-xs text-[var(--muted-foreground)]">
-              Stok soal yang sudah di-generate dari ebook AI. Generate sekali, gunakan berkali-kali ke paket tryout mana pun tanpa panggil LLM lagi.
-            </p>
-          </div>
-
-          {/* Stats Bank */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              { label: 'Total Soal di Bank', value: bankStats.total, color: 'text-[var(--primary)]' },
-              { label: 'TWK', value: bankStats.categories.find(c => c.category === 'TWK')?.count ?? 0, color: 'text-blue-600' },
-              { label: 'TIU', value: bankStats.categories.find(c => c.category === 'TIU')?.count ?? 0, color: 'text-violet-600' },
-              { label: 'TKP', value: bankStats.categories.find(c => c.category === 'TKP')?.count ?? 0, color: 'text-emerald-600' },
-            ].map(s => (
-              <div key={s.label} className="card-modern p-4 text-center">
-                <p className={`text-3xl font-bold ${s.color}`}>{s.value}</p>
-                <p className="text-[11px] text-[var(--muted-foreground)] mt-1">{s.label}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Rakit Paket */}
-          <div className="card-modern p-6 space-y-4">
-            <div>
-              <h3 className="text-sm font-bold text-[var(--foreground)]">⚡ Rakit Paket Tryout dari Bank Soal</h3>
-              <p className="text-xs text-[var(--muted-foreground)] mt-0.5">
-                Ambil soal acak dari bank sesuai komposisi → langsung isi paket tryout pilihan. Soal lama di paket akan diganti.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-semibold mb-1">Target Paket Tryout</label>
-                <select
-                  value={bankTarget}
-                  onChange={e => setBankTarget(e.target.value)}
-                  className="input-modern w-full text-xs"
-                >
-                  <option value="">-- Pilih Paket --</option>
-                  {packages.map(p => (
-                    <option key={p.id} value={p.id}>{p.label} ({p.totalQuestions} soal sekarang)</option>
-                  ))}
-                </select>
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  { label: 'TWK', val: bankTwk, set: setBankTwk },
-                  { label: 'TIU', val: bankTiu, set: setBankTiu },
-                  { label: 'TKP', val: bankTkp, set: setBankTkp },
-                ].map(f => (
-                  <div key={f.label}>
-                    <label className="block text-xs font-semibold mb-1">{f.label}</label>
-                    <input
-                      type="number"
-                      min={1}
-                      max={60}
-                      value={f.val}
-                      onChange={e => f.set(parseInt(e.target.value) || 0)}
-                      className="input-modern w-full text-xs"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <button
-                disabled={bankBuilding || !bankTarget}
-                onClick={async () => {
-                  if (!bankTarget) return;
-                  setBankBuilding(true);
-                  setBankMessage('');
-                  try {
-                    const res = await fetch('/api/admin/question-bank', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({ action: 'build_package', packageId: bankTarget, twk: bankTwk, tiu: bankTiu, tkp: bankTkp }),
-                    });
-                    const data = await res.json();
-                    if (data.success) {
-                      setBankMessage(`✅ Berhasil! Paket diisi ${data.inserted} soal (TWK: ${data.breakdown.twk}, TIU: ${data.breakdown.tiu}, TKP: ${data.breakdown.tkp})`);
-                      // Refresh packages list
-                      fetch('/api/admin/packages', { headers: { 'x-admin-pin': pin } })
-                        .then(r => r.json())
-                        .then(d => setPackages(d.packages || []))
-                        .catch(() => {});
-                    } else {
-                      setBankMessage(`❌ Gagal: ${data.error}`);
-                    }
-                  } catch {
-                    setBankMessage('❌ Network error');
-                  }
-                  setBankBuilding(false);
-                }}
-                className="btn-primary text-xs px-5 py-2.5 flex items-center gap-2 disabled:opacity-50"
-              >
-                {bankBuilding ? '⏳ Merakit...' : `⚡ Rakit ${bankTwk + bankTiu + bankTkp} Soal ke Paket`}
-              </button>
-              <span className="text-xs text-[var(--muted-foreground)]">
-                Total: {bankTwk + bankTiu + bankTkp} soal
-              </span>
-            </div>
-
-            {bankMessage && (
-              <div className={`text-xs p-3 rounded-xl ${bankMessage.startsWith('✅') ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
-                {bankMessage}
-              </div>
-            )}
-          </div>
-
-          {/* Info Generate */}
-          <div className="card-modern p-5 border-dashed" style={{ borderColor: 'var(--border)' }}>
-            <p className="text-xs text-[var(--muted-foreground)]">
-              💡 Untuk menambah stok bank soal, pergi ke tab <strong>Referensi Ebook AI</strong> dan generate soal — semua hasil generate otomatis masuk ke bank ini.
-              Semakin banyak stok di bank, semakin variatif paket tryout yang bisa dibuat!
-            </p>
-          </div>
-        </div>
       )}
     </div>
   );
