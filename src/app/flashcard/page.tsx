@@ -1,9 +1,28 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, ArrowClockwise, CheckCircle, XCircle, Shuffle, Cards } from '@phosphor-icons/react';
 import { FLASHCARD_DATA, Flashcard } from '@/data/flashcards';
+
+// Seeded shuffle deterministik — seed sama → urutan sama
+function seededShuffle<T>(arr: T[], seed: number): T[] {
+  const out = [...arr];
+  let s = seed;
+  for (let i = out.length - 1; i > 0; i--) {
+    s = (s * 1664525 + 1013904223) & 0xffffffff;
+    const j = Math.abs(s) % (i + 1);
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+// Seed dari tanggal kalender — beda tiap hari
+function todaySeed(): number {
+  const d = new Date();
+  return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+}
 
 const STORAGE_KEY = 'lolos_mastered_flashcards';
 
@@ -29,22 +48,35 @@ const TABS: { label: string; value: FilterCat }[] = [
 
 const catColor: Record<string, string> = { TWK: '#3b82f6', TIU: '#8b5cf6', TKP: '#f59e0b' };
 
-export default function FlashcardPage() {
-  const [filter, setFilter] = useState<FilterCat>('Semua');
+function FlashcardContent() {
+  const searchParams = useSearchParams();
+  const initialCat = (searchParams.get('category') as FilterCat) || 'Semua';
+  const validInitialCat = ['Semua', 'TWK', 'TIU', 'TKP'].includes(initialCat) ? initialCat : 'Semua';
+
+  const [filter, setFilter] = useState<FilterCat>(validInitialCat);
   const [mastered, setMastered] = useState<Set<string>>(new Set());
   const [deck, setDeck] = useState<Flashcard[]>([]);
   const [idx, setIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
+  // Sync category param jika URL berubah
+  useEffect(() => {
+    const cat = searchParams.get('category') as FilterCat;
+    if (cat && ['Semua', 'TWK', 'TIU', 'TKP'].includes(cat)) {
+      setFilter(cat);
+    }
+  }, [searchParams]);
+
   const filtered = useMemo(() => {
     return filter === 'Semua' ? FLASHCARD_DATA : FLASHCARD_DATA.filter((f) => f.category === filter);
   }, [filter]);
 
+  // Deck di-shuffle baru setiap hari menggunakan seed tanggal
   const buildDeck = useCallback(
     (m: Set<string>) => {
       const remaining = filtered.filter((f) => !m.has(f.id));
-      return remaining;
+      return seededShuffle(remaining, todaySeed());
     },
     [filtered]
   );
@@ -281,5 +313,19 @@ export default function FlashcardPage() {
         ) : null}
       </div>
     </div>
+  );
+}
+
+export default function FlashcardPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center" style={{ background: '#faf9f5' }}>
+          <div className="text-gray-500">Memuat flashcard...</div>
+        </div>
+      }
+    >
+      <FlashcardContent />
+    </Suspense>
   );
 }
