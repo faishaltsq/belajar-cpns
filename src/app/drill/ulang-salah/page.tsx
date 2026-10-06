@@ -16,7 +16,9 @@ export default function UlangSalahPage() {
 
   useEffect(() => {
     const wrong = collectWrongQuestions();
-    setItems(wrong.slice(0, 10));
+    // Shuffle agar 10 butir yang disajikan bervariasi tiap sesi
+    const shuffled = wrong.sort(() => Math.random() - 0.5);
+    setItems(shuffled.slice(0, 10));
     setLoaded(true);
   }, []);
 
@@ -47,7 +49,7 @@ export default function UlangSalahPage() {
   }
 
   function restart() {
-    const fresh = collectWrongQuestions().slice(0, 10);
+    const fresh = collectWrongQuestions().sort(() => Math.random() - 0.5).slice(0, 10);
     setItems(fresh);
     setIdx(0);
     setSelectedId(null);
@@ -161,7 +163,12 @@ export default function UlangSalahPage() {
         {q && (
           <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
             {q.image && (
-              <img src={q.image} alt="soal" className="mb-4 max-h-48 object-contain rounded-lg" />
+              <img
+                src={q.image}
+                alt="soal"
+                className="mb-4 max-h-48 object-contain rounded-lg"
+                onError={(e) => { (e.currentTarget as HTMLElement).style.display = 'none'; }}
+              />
             )}
             <p className="text-gray-800 leading-relaxed font-medium">{q.text}</p>
           </div>

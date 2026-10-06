@@ -29,30 +29,60 @@ export function collectWrongQuestions(): WrongQuestionItem[] {
 
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
-    if (!key?.startsWith('exam_result_')) continue;
-    const resultId = key.replace('exam_result_', '');
+    if (!key) continue;
 
-    try {
-      const qRaw = localStorage.getItem(`exam_questions_${resultId}`);
-      const aRaw = localStorage.getItem(`exam_user_answers_${resultId}`);
-      if (!qRaw || !aRaw) continue;
+    // Scan dari hasil Simulasi CAT (exam_result_*)
+    if (key.startsWith('exam_result_')) {
+      const resultId = key.replace('exam_result_', '');
+      try {
+        const qRaw = localStorage.getItem(`exam_questions_${resultId}`);
+        const aRaw = localStorage.getItem(`exam_user_answers_${resultId}`);
+        if (qRaw && aRaw) {
+          const questions: Question[] = JSON.parse(qRaw);
+          const answers: ExamAnswer[] = JSON.parse(aRaw);
+          const ansMap = new Map(answers.map((a) => [a.questionId, a.selectedOptionId]));
 
-      const questions: Question[] = JSON.parse(qRaw);
-      const answers: ExamAnswer[] = JSON.parse(aRaw);
-      const ansMap = new Map(answers.map((a) => [a.questionId, a.selectedOptionId]));
-
-      for (const q of questions) {
-        if (mastered.has(q.id) || map.has(q.id)) continue;
-        const chosenId = ansMap.get(q.id) ?? null;
-        const chosenOpt = q.options.find((o) => o.id === chosenId);
-        const maxScore = Math.max(...q.options.map((o) => o.score));
-        const userScore = chosenOpt ? chosenOpt.score : 0;
-        const isWrong = q.category === 'TKP' ? userScore < 4 : userScore < maxScore;
-        if (isWrong) {
-          map.set(q.id, { question: q, userAnswerId: chosenId, packageId: resultId });
+          for (const q of questions) {
+            if (mastered.has(q.id) || map.has(q.id)) continue;
+            const chosenId = ansMap.get(q.id) ?? null;
+            const chosenOpt = q.options.find((o) => o.id === chosenId);
+            const maxScore = Math.max(...q.options.map((o) => o.score));
+            const userScore = chosenOpt ? chosenOpt.score : 0;
+            const isWrong = q.category === 'TKP' ? userScore < 4 : userScore < maxScore;
+            if (isWrong) {
+              map.set(q.id, { question: q, userAnswerId: chosenId, packageId: `simulasi-${resultId}` });
+            }
+          }
         }
-      }
-    } catch { /* skip corrupt entries */ }
+      } catch { /* skip */ }
+    }
+
+    // Scan dari riwayat Drill per subkategori (drill_questions_*)
+    if (key.startsWith('drill_questions_')) {
+      const sessionId = key.replace('drill_questions_', '');
+      try {
+        const qRaw = localStorage.getItem(key);
+        const aRaw = localStorage.getItem(`drill_answers_${sessionId}`);
+        if (qRaw && aRaw) {
+          const questions: Question[] = JSON.parse(qRaw);
+          const answers: { questionId: number; selectedOptionId: string }[] = JSON.parse(aRaw);
+          const ansMap = new Map(answers.map((a) => [a.questionId, a.selectedOptionId]));
+
+          for (const q of questions) {
+            if (mastered.has(q.id) || map.has(q.id)) continue;
+            const chosenId = ansMap.get(q.id) ?? null;
+            const chosenOpt = q.options.find((o) => o.id === chosenId);
+            const maxScore = Math.max(...q.options.map((o) => o.score));
+            const userScore = chosenOpt ? chosenOpt.score : 0;
+            const isWrong = q.category === 'TKP' ? userScore < 4 : userScore < maxScore;
+            if (isWrong) {
+              map.set(q.id, { question: q, userAnswerId: chosenId, packageId: `drill-${sessionId}` });
+            }
+          }
+        }
+      } catch { /* skip */ }
+    }
   }
+
   return Array.from(map.values());
 }

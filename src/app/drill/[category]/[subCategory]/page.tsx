@@ -34,6 +34,7 @@ export default function DrillSessionPage({
   const [isFinished, setIsFinished] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [showExitConfirm, setShowExitConfirm] = useState(false);
+  const [answersMap, setAnswersMap] = useState<Record<number, string>>({});
 
   // Load questions matching category & subcategory from sample package or DB
   useEffect(() => {
@@ -70,6 +71,7 @@ export default function DrillSessionPage({
     const isCorrect = opt ? opt.score === maxScore : false;
 
     if (isCorrect) setCorrectCount((c) => c + 1);
+    setAnswersMap((prev) => ({ ...prev, [currentQ.id]: optId }));
   };
 
   const handleNext = () => {
@@ -78,6 +80,27 @@ export default function DrillSessionPage({
       setSelectedOption(null);
       setHasRevealed(false);
     } else {
+      // Simpan riwayat drill ke localStorage agar bisa dibaca wrongAnswers.ts
+      try {
+        const sessionId = `drill_${Date.now()}`;
+        const answers = Object.entries({ ...answersMap }).map(([qId, optId]) => ({
+          questionId: Number(qId),
+          selectedOptionId: optId,
+        }));
+        localStorage.setItem(`drill_questions_${sessionId}`, JSON.stringify(questions));
+        localStorage.setItem(`drill_answers_${sessionId}`, JSON.stringify(answers));
+        // Batasi riwayat drill: simpan max 20 sesi terakhir
+        const drillKeys = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k?.startsWith('drill_questions_')) drillKeys.push(k);
+        }
+        drillKeys.sort().slice(0, Math.max(0, drillKeys.length - 20)).forEach((k) => {
+          const id = k.replace('drill_questions_', '');
+          localStorage.removeItem(k);
+          localStorage.removeItem(`drill_answers_${id}`);
+        });
+      } catch { /* localStorage penuh atau private mode */ }
       setIsFinished(true);
     }
   };

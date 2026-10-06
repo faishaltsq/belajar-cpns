@@ -122,10 +122,12 @@ function FlashcardContent() {
   }
 
   function resetProgress() {
-    const empty = new Set<string>();
-    setMastered(empty);
-    saveMastered(empty);
-    setDeck(filtered);
+    // Hanya reset kartu di kategori yang sedang aktif
+    const idsToRemove = new Set(filtered.map((f) => f.id));
+    const next = new Set(Array.from(mastered).filter((id) => !idsToRemove.has(id)));
+    setMastered(next);
+    saveMastered(next);
+    setDeck(seededShuffle(filtered, todaySeed()));
     setIdx(0);
     setFlipped(false);
   }

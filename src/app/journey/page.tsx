@@ -83,9 +83,20 @@ export default function JourneyPage() {
   const [loaded, setLoaded] = useState(false);
   const todayRef = useRef<HTMLDivElement | null>(null);
 
+  // Simpan hari mana yang di-log oleh tombol hari ini (bukan manual toggle)
+  const [todayLoggedDay, setTodayLoggedDay] = useState<number | null>(null);
+
   useEffect(() => {
     setCompleted(getCompleted());
     setStreakDates(getStreakDates());
+    // Pulihkan hari yang di-log hari ini
+    try {
+      const saved = localStorage.getItem('lolos_journey_today_logged_day');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.date === todayStr()) setTodayLoggedDay(parsed.day);
+      }
+    } catch {}
     setLoaded(true);
   }, []);
 
@@ -117,35 +128,37 @@ export default function JourneyPage() {
 
   function handleLogToday() {
     const today = todayStr();
-    if (streakDates.includes(today)) return; // sudah log hari ini, cegah spam
-    // Catat tanggal ke streak
+    if (streakDates.includes(today)) return;
     const nextDates = [today, ...streakDates];
     setStreakDates(nextDates);
     saveStreakDates(nextDates);
-    // Otomatis centang hari aktif di kurikulum
     if (!completed.has(activeDay)) {
       const next = new Set(completed);
       next.add(activeDay);
       setCompleted(next);
       saveCompleted(next);
     }
+    // Catat secara eksplisit hari mana yang di-log hari ini, untuk Undo
+    setTodayLoggedDay(activeDay);
+    try {
+      localStorage.setItem('lolos_journey_today_logged_day', JSON.stringify({ date: today, day: activeDay }));
+    } catch {}
   }
 
   function handleUndoToday() {
     const today = todayStr();
-    // Hapus tanggal hari ini dari streak
     const nextDates = streakDates.filter((d) => d !== today);
     setStreakDates(nextDates);
     saveStreakDates(nextDates);
-    // Cari hari terakhir yang dicentang hari ini (activeDay - 1 karena sudah geser)
-    // Undo centang hari terakhir yang completed
-    const lastCompleted = Math.max(...Array.from(completed));
-    if (lastCompleted > 0) {
+    // Hapus hanya hari yang spesifik di-log oleh tombol hari ini
+    if (todayLoggedDay !== null && completed.has(todayLoggedDay)) {
       const next = new Set(completed);
-      next.delete(lastCompleted);
+      next.delete(todayLoggedDay);
       setCompleted(next);
       saveCompleted(next);
     }
+    setTodayLoggedDay(null);
+    try { localStorage.removeItem('lolos_journey_today_logged_day'); } catch {}
   }
 
   function resetAll() {
