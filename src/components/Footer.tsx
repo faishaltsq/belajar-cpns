@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { WhatsappLogo, EnvelopeSimple, WarningCircle } from '@phosphor-icons/react';
 import { ReportIssueModal } from './ReportIssueModal';
 import { SUPPORT_EMAIL, SUPPORT_WA_PHONE } from '@/lib/support';
+import Logo from './Logo';
 
 export default function Footer() {
   const pathname = usePathname();
@@ -29,11 +30,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
             {/* Brand */}
             <div className="space-y-3 lg:col-span-1">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-sm tracking-tight" style={{ color: 'var(--foreground)' }}>
-                  Lolos<span style={{ color: 'var(--primary)' }}>.in</span>
-                </span>
-              </div>
+              <Logo size="md" />
               <p className="text-xs leading-relaxed">
                 Platform simulasi CAT SKD dan latihan psikotes berbasis standar BKN untuk pejuang NIP 2026.
               </p>

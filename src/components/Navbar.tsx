@@ -6,6 +6,7 @@ import { SignOut, User, List, X, WarningCircle } from '@phosphor-icons/react';
 import { useUser } from '@/lib/useUser';
 import { useState } from 'react';
 import { ReportIssueModal } from './ReportIssueModal';
+import Logo from './Logo';
 
 const NAV_LINKS = [
   { href: '/', label: 'Beranda' },
@@ -43,9 +44,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
-          <span className="font-bold text-[16px] tracking-tight" style={{ color: 'var(--foreground)' }}>
-            Lolos<span style={{ color: 'var(--primary)' }}>.in</span>
-          </span>
+          <Logo size="sm" />
         </Link>
 
         {/* Desktop Nav Links */}
