@@ -12,8 +12,8 @@ import Logo from '@/components/Logo';
 function LoginFormContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const raw = searchParams.get('redirect') || '/simulasi/tryout-1';
-  const redirect = raw.startsWith('/') && !raw.startsWith('//') ? raw : '/simulasi/tryout-1';
+  const raw = searchParams.get('redirect') || '/simulasi';
+  const redirect = raw.startsWith('/') && !raw.startsWith('//') ? raw : '/simulasi';
 
   // step: 'form' | 'otp'
   const [step, setStep] = useState<'form' | 'otp'>('form');
