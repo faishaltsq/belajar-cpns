@@ -7,6 +7,7 @@ import { ArrowRight, ArrowClockwise, CheckCircle, XCircle, Shuffle, Cards } from
 import { FLASHCARD_DATA, Flashcard } from '@/data/flashcards';
 import { useUser } from '@/lib/useUser';
 import { getScopedJSON, setScopedJSON } from '@/lib/userStorage';
+import { GuestLimitModal } from '@/components/GuestLimitModal';
 
 // Seeded shuffle deterministik — seed sama → urutan sama
 function seededShuffle<T>(arr: T[], seed: number): T[] {
@@ -51,6 +52,16 @@ function FlashcardContent() {
   const [idx, setIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [showGuestModal, setShowGuestModal] = useState(false);
+
+  // Cek apakah guest sudah pernah mencoba flashcard
+  useEffect(() => {
+    if (!user && !userLoading && typeof window !== 'undefined') {
+      if (localStorage.getItem('lolos_guest_tried_flashcard') === 'true') {
+        setShowGuestModal(true);
+      }
+    }
+  }, [user, userLoading]);
 
   // Sync category param jika URL berubah
   useEffect(() => {
@@ -85,6 +96,13 @@ function FlashcardContent() {
   }, [filter, buildDeck, userId, userLoading]);
 
   function handleMastered() {
+    if (!user) {
+      try {
+        localStorage.setItem('lolos_guest_tried_flashcard', 'true');
+      } catch {}
+      setShowGuestModal(true);
+      return;
+    }
     const card = deck[idx];
     if (!card) return;
     const next = new Set(mastered);
@@ -98,6 +116,13 @@ function FlashcardContent() {
   }
 
   function handleNotYet() {
+    if (!user) {
+      try {
+        localStorage.setItem('lolos_guest_tried_flashcard', 'true');
+      } catch {}
+      setShowGuestModal(true);
+      return;
+    }
     // Move card to end of deck
     if (deck.length <= 1) { setFlipped(false); return; }
     const newDeck = [...deck];
@@ -308,6 +333,15 @@ function FlashcardContent() {
           </>
         ) : null}
       </div>
+
+      {/* Guest Limit Modal */}
+      <GuestLimitModal
+        isOpen={showGuestModal}
+        onClose={() => setShowGuestModal(false)}
+        featureName="Flashcard Hafalan"
+        title="Buka Seluruh Flashcard SKD"
+        description="Kamu telah mencoba sampel flashcard. Daftar atau masuk akun gratis sekarang untuk membuka ratusan kartu hafalan TWK, rumus cepat TIU, dan kata kunci TKP."
+      />
     </div>
   );
 }

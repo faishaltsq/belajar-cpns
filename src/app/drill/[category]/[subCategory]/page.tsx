@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Question } from '@/lib/types';
 import { useUser } from '@/lib/useUser';
 import { scopedKey } from '@/lib/userStorage';
+import { GuestLimitModal } from '@/components/GuestLimitModal';
 import {
   Lightning,
   CaretRight,
@@ -39,6 +40,16 @@ export default function DrillSessionPage({
   const [isPaused, setIsPaused] = useState(false);
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [answersMap, setAnswersMap] = useState<Record<number, string>>({});
+  const [showGuestModal, setShowGuestModal] = useState(false);
+
+  // Cek apakah guest sudah pernah mencoba drill sebelumnya
+  useEffect(() => {
+    if (!user && typeof window !== 'undefined') {
+      if (localStorage.getItem('lolos_guest_tried_drill') === 'true') {
+        setShowGuestModal(true);
+      }
+    }
+  }, [user]);
 
   // Load questions matching category & subcategory from sample package or DB
   useEffect(() => {
@@ -107,14 +118,24 @@ export default function DrillSessionPage({
           const id = k.replace(prefix, '');
           localStorage.removeItem(k);
           localStorage.removeItem(scopedKey(`drill_answers_${id}`, userId));
-        });
-      } catch { /* localStorage penuh atau private mode */ }
-      setIsFinished(true);
-    }
-  };
+          });
+          } catch { /* localStorage penuh atau private mode */ }
+          setIsFinished(true);
+          if (!user) {
+          try {
+            localStorage.setItem('lolos_guest_tried_drill', 'true');
+          } catch {}
+          setShowGuestModal(true);
+          }
+          }
+          };
 
-  const handleRestart = () => {
-    setCurrentIndex(0);
+          const handleRestart = () => {
+          if (!user) {
+          setShowGuestModal(true);
+          return;
+          }
+          setCurrentIndex(0);
     setSelectedOption(null);
     setHasRevealed(false);
     setCorrectCount(0);
@@ -383,6 +404,15 @@ export default function DrillSessionPage({
           </div>
         </div>
       )}
+
+      {/* Guest Limit Modal */}
+      <GuestLimitModal
+        isOpen={showGuestModal}
+        onClose={() => setShowGuestModal(false)}
+        featureName="Latihan Kilat"
+        title="Latihan Kilat Selesai!"
+        description="Kamu telah mencoba 1 sesi Latihan Kilat gratis. Daftar atau masuk akun sekarang untuk membuka semua topik latihan tanpa batas, menyimpan skor, dan melacak kelemahanmu."
+      />
     </div>
   );
 }

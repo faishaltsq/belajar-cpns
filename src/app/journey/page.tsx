@@ -6,6 +6,7 @@ import { MapPin, CheckCircle, Lock, Lightning, Cards, Desktop, ArrowRight, Fire,
 import { JOURNEY_DAYS, JourneyDay } from '@/data/journeySchedule';
 import { useUser } from '@/lib/useUser';
 import { getScopedJSON, setScopedJSON, removeScopedKey } from '@/lib/userStorage';
+import { GuestLimitModal } from '@/components/GuestLimitModal';
 
 const KEY_COMPLETED = 'journey_completed_days';
 const KEY_STREAK = 'journey_streak_dates';
@@ -63,10 +64,20 @@ export default function JourneyPage() {
   const [completed, setCompleted] = useState<Set<number>>(new Set());
   const [streakDates, setStreakDates] = useState<string[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [showGuestModal, setShowGuestModal] = useState(false);
   const todayRef = useRef<HTMLDivElement | null>(null);
 
   // Simpan hari mana yang di-log oleh tombol hari ini (bukan manual toggle)
   const [todayLoggedDay, setTodayLoggedDay] = useState<number | null>(null);
+
+  // Cek apakah guest sudah pernah mencoba mencatat progress roadmap
+  useEffect(() => {
+    if (!user && !userLoading && typeof window !== 'undefined') {
+      if (localStorage.getItem('lolos_guest_tried_journey') === 'true') {
+        setShowGuestModal(true);
+      }
+    }
+  }, [user, userLoading]);
 
   // Muat ulang state setiap kali user login / ganti akun / logout
   useEffect(() => {
@@ -120,6 +131,13 @@ export default function JourneyPage() {
     }
     setCompleted(next);
     setScopedJSON(KEY_COMPLETED, userId, Array.from(next));
+
+    if (!user) {
+      try {
+        localStorage.setItem('lolos_guest_tried_journey', 'true');
+      } catch {}
+      setShowGuestModal(true);
+    }
   }
 
   function handleLogToday() {
@@ -137,6 +155,13 @@ export default function JourneyPage() {
     }
     setTodayLoggedDay(activeDay);
     setScopedJSON(KEY_TODAY_LOGGED, userId, { date: today, day: activeDay });
+
+    if (!user) {
+      try {
+        localStorage.setItem('lolos_guest_tried_journey', 'true');
+      } catch {}
+      setShowGuestModal(true);
+    }
   }
 
   function handleUndoToday() {
@@ -398,6 +423,15 @@ export default function JourneyPage() {
           );
         })}
       </div>
+
+      {/* Guest Limit Modal */}
+      <GuestLimitModal
+        isOpen={showGuestModal}
+        onClose={() => setShowGuestModal(false)}
+        featureName="Roadmap 30 Hari"
+        title="Simpan Progres Belajarmu"
+        description="Kamu telah menandai materi belajar hari ini. Daftar atau masuk akun gratis agar progres kurikulum 30 hari dan streak belajarmu tidak hilang saat peramban ditutup."
+      />
     </div>
   );
 }

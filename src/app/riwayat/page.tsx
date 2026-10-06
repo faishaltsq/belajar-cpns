@@ -20,6 +20,7 @@ import {
   User,
 } from '@phosphor-icons/react';
 import { UpgradeProModal } from '@/components/UpgradeProModal';
+import { GuestLimitModal } from '@/components/GuestLimitModal';
 import { useUser } from '@/lib/useUser';
 import { scopedKey } from '@/lib/userStorage';
 
@@ -72,9 +73,16 @@ type MainTab = 'exam' | 'billing';
 type TransactionFilter = 'all' | 'paid' | 'pending' | 'cancelled';
 
 export default function RiwayatPage() {
-  const { user } = useUser();
+  const { user, loading: userLoading } = useUser();
   const userId = user?.id ?? null;
   const [activeTab, setActiveTab] = useState<MainTab>('exam');
+  const [showGuestModal, setShowGuestModal] = useState(false);
+
+  useEffect(() => {
+    if (!user && !userLoading) {
+      setShowGuestModal(true);
+    }
+  }, [user, userLoading]);
 
   // Exam history states
   const [history, setHistory] = useState<RiwayatItem[]>([]);
@@ -823,6 +831,15 @@ export default function RiwayatPage() {
           triggerPackage={selectedPayPackage.label}
         />
       )}
+
+      {/* Guest Limit Modal */}
+      <GuestLimitModal
+        isOpen={showGuestModal}
+        onClose={() => setShowGuestModal(false)}
+        featureName="Riwayat Belajar"
+        title="Riwayat Membutuhkan Akun"
+        description="Masuk atau buat akun gratis untuk menyimpan dan melihat seluruh rekam jejak tryout, analisis skor, dan paket yang kamu miliki secara permanen."
+      />
     </div>
   );
 }

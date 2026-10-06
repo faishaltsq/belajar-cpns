@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { KraepelinChart } from '@/components/psikotes/KraepelinChart';
 import type { KraepelinOverallResult } from '@/lib/types';
 import { ArrowLeft, ArrowClockwise } from '@phosphor-icons/react';
+import { useUser } from '@/lib/useUser';
+import { GuestLimitModal } from '@/components/GuestLimitModal';
 
 interface PenalaranResult {
   score: number;
@@ -17,11 +19,13 @@ interface PenalaranResult {
 function HasilContent() {
   const searchParams = useSearchParams();
   const type = searchParams.get('type') ?? 'kraepelin';
+  const { user, loading: userLoading } = useUser();
 
   const [kraepelinResult, setKraepelinResult] =
     useState<KraepelinOverallResult | null>(null);
   const [penalaranResult, setPenalaranResult] =
     useState<PenalaranResult | null>(null);
+  const [showGuestModal, setShowGuestModal] = useState(false);
 
   useEffect(() => {
     if (type === 'kraepelin') {
@@ -32,6 +36,16 @@ function HasilContent() {
       if (raw) setPenalaranResult(JSON.parse(raw));
     }
   }, [type]);
+
+  // Munculkan popup jika user guest selesai tes psikotes
+  useEffect(() => {
+    if (!user && !userLoading) {
+      try {
+        localStorage.setItem('lolos_guest_tried_psikotes', 'true');
+      } catch {}
+      setShowGuestModal(true);
+    }
+  }, [user, userLoading]);
 
   const repeatHref =
     type === 'kraepelin' ? '/psikotes/kraepelin' : '/psikotes/penalaran';
@@ -158,6 +172,15 @@ function HasilContent() {
           </Link>
         </div>
       </div>
+
+      {/* Guest Limit Modal */}
+      <GuestLimitModal
+        isOpen={showGuestModal}
+        onClose={() => setShowGuestModal(false)}
+        featureName="Simulasi Psikotes"
+        title="Buka Seluruh Tes Psikotes"
+        description="Kamu telah mencoba 1 simulasi psikotes. Daftar atau masuk akun gratis sekarang untuk membuka grafik ketahanan kerja lengkap, tes kecermatan angka hilang, dan tes penalaran lainnya."
+      />
     </div>
   );
 }
