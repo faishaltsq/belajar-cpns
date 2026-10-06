@@ -1,6 +1,9 @@
 'use client';
 
 import { useEffect, useState, useRef, useCallback } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useUser } from '@/lib/useUser';
 import {
   Crown,
   QrCode,
@@ -39,6 +42,9 @@ export function UpgradeProModal({
   triggerPackage,
   packageId,
 }: UpgradeProModalProps) {
+  const { user, loading: userLoading } = useUser();
+  const pathname = usePathname();
+
   const [selectedPlan, setSelectedPlan] = useState<'single' | 'pro'>('pro');
   const [step, setStep] = useState<'info' | 'pay' | 'success'>('info');
   const [loading, setLoading] = useState(false);
@@ -88,6 +94,9 @@ export function UpgradeProModal({
       return;
     }
 
+    // Jika belum login, jangan buat order — tampilkan auth gate
+    if (!user && !userLoading) return;
+
     const initialPlan = packageId && triggerPackage ? 'single' : 'pro';
     setSelectedPlan(initialPlan);
 
@@ -103,7 +112,7 @@ export function UpgradeProModal({
     return () => {
       if (pollTimerRef.current) clearInterval(pollTimerRef.current);
     };
-  }, [isOpen, packageId, triggerPackage, fetchOrder]);
+  }, [isOpen, packageId, triggerPackage, fetchOrder, user, userLoading]);
 
   // Polling status saat user berada di step 'pay'
   useEffect(() => {
@@ -161,6 +170,74 @@ export function UpgradeProModal({
   }
 
   if (!isOpen) return null;
+
+  // Auth Gate: Tampilkan popup ajakan login jika user belum login
+  if (!user && !userLoading) {
+    const loginUrl = `/login?redirect=${encodeURIComponent(pathname || '/simulasi')}`;
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-sm animate-fadeIn">
+        <div className="card-modern max-w-md w-full p-6 text-center space-y-5 relative bg-[var(--card)]">
+          {/* Tombol tutup */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition"
+          >
+            <XCircle size={22} weight="bold" />
+          </button>
+
+          {/* Ikon */}
+          <div
+            className="w-14 h-14 rounded-2xl mx-auto flex items-center justify-center text-white shadow-md"
+            style={{ background: '#c96442' }}
+          >
+            <Crown size={28} weight="fill" />
+          </div>
+
+          {/* Judul & deskripsi */}
+          <div className="space-y-1.5">
+            <h2 className="text-xl font-bold text-gray-800">
+              Masuk atau Buat Akun Dulu
+            </h2>
+            <p className="text-xs text-gray-500 leading-relaxed max-w-sm mx-auto">
+              Akses PRO dan paket tryout akan terikat permanen ke akun kamu.
+              Silakan login atau daftar gratis sebelum melanjutkan pembayaran.
+            </p>
+          </div>
+
+          {/* Info keuntungan */}
+          <div className="p-3.5 bg-orange-50/70 border border-orange-200 rounded-xl text-left space-y-2">
+            <div className="flex items-center gap-2 text-xs font-semibold text-orange-800">
+              <CheckCircle size={15} weight="fill" className="text-orange-600" />
+              <span>Keuntungan Akun Terdaftar:</span>
+            </div>
+            <ul className="text-[11px] text-gray-600 space-y-1 pl-5 list-disc">
+              <li>Akses tryout tidak hilang jika ganti browser / HP</li>
+              <li>Progress roadmap &amp; analisa kelemahan tersimpan aman</li>
+              <li>Status PRO aktif otomatis setelah QRIS terverifikasi</li>
+            </ul>
+          </div>
+
+          {/* Tombol aksi */}
+          <div className="flex flex-col gap-2 pt-1">
+            <Link
+              href={loginUrl}
+              className="w-full py-3 rounded-xl font-semibold text-white text-sm flex items-center justify-center gap-2 shadow-sm transition hover:opacity-90"
+              style={{ background: '#c96442' }}
+            >
+              <span>Masuk / Daftar Akun</span>
+              <ArrowRight size={16} weight="bold" />
+            </Link>
+            <button
+              onClick={onClose}
+              className="w-full py-2.5 rounded-xl text-xs font-medium text-gray-500 hover:bg-gray-100 transition"
+            >
+              Nanti Saja
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-sm animate-fadeIn">
