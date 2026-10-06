@@ -426,34 +426,34 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
       <header
         className="sticky top-0 z-40 backdrop-blur-md"
         style={{
-          backgroundColor: 'rgba(250, 249, 245, 0.9)',
+          backgroundColor: 'rgba(250, 249, 245, 0.95)',
           borderBottom: '1px solid var(--border)',
           boxShadow: '0 1px 3px rgba(61, 57, 41, 0.04)',
         }}
       >
-        <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+        <div className="max-w-screen-xl mx-auto px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-1.5 sm:gap-3 min-w-0">
             <button
               onClick={() => setShowExitModal(true)}
-              className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-red-600 hover:border-red-300 transition"
+              className="p-1 sm:px-2.5 sm:py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-red-600 hover:border-red-300 transition"
               style={{ borderColor: 'var(--border)' }}
               title="Keluar / Jeda Ujian"
             >
               <SignOut size={15} weight="bold" />
               <span className="hidden sm:inline">Keluar</span>
             </button>
-            <span className="font-semibold text-sm truncate text-[var(--foreground)]">Lolos.in</span>
-            <span className="badge-pill badge-neutral text-[10px] hidden md:inline-flex">
+            <span className="font-semibold text-xs sm:text-sm truncate text-[var(--foreground)]">Lolos.in</span>
+            <span className="badge-pill badge-neutral text-[9px] sm:text-[10px] hidden md:inline-flex">
               {examType === 'official' ? '🏆 Tryout Resmi' : '📖 Latihan Mandiri'}
             </span>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             {/* Tombol Pause (Khusus Practice Mode) */}
             {examType === 'practice' && (
               <button
                 onClick={() => setShowPauseModal(true)}
-                className="px-2.5 py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1 text-[var(--foreground)] hover:bg-[var(--muted)] transition"
+                className="p-1 sm:px-2.5 sm:py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1 text-[var(--foreground)] hover:bg-[var(--muted)] transition"
                 style={{ borderColor: 'var(--border)' }}
                 title="Jeda ujian sejenak"
               >
@@ -491,7 +491,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
             <button
               onClick={() => setShowFinishModal(true)}
-              className="btn-primary text-xs py-2 px-3.5 whitespace-nowrap"
+              className="btn-primary text-xs py-1.5 px-2.5 sm:py-2 sm:px-3.5 whitespace-nowrap"
             >
               Selesai
             </button>
@@ -544,7 +544,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
           />
         </>
       ) : (
-        <div className={`flex-1 max-w-screen-xl mx-auto w-full px-4 py-6 flex gap-6 ${showPauseModal ? 'filter blur-md select-none pointer-events-none' : ''}`}>
+        <div className={`flex-1 max-w-screen-xl mx-auto w-full px-3 sm:px-4 py-4 sm:py-6 flex gap-6 ${showPauseModal ? 'filter blur-md select-none pointer-events-none' : ''}`}>
           {/* Main Question Panel */}
           <div className="flex-1 flex flex-col gap-4 min-w-0">
             <QuestionCard

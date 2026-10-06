@@ -41,13 +41,13 @@ export function QuestionCard({
 
   return (
     <>
-      <div className="card-modern p-6 flex flex-col justify-between min-h-[460px]">
+      <div className="card-modern p-4 sm:p-6 flex flex-col justify-between min-h-[320px] sm:min-h-[460px]">
         <div>
           {/* Header Kartu Soal */}
-          <div className="flex items-center justify-between mb-4 pb-3" style={{ borderBottom: '1px solid var(--border)' }}>
-            <div className="flex items-center gap-2.5 flex-wrap">
-              <span className="font-bold text-base text-[var(--foreground)]">Soal {questionNumber}</span>
-              <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border ${colors.bg} ${colors.text} ${colors.border}`}>
+          <div className="flex items-center justify-between mb-3 sm:mb-4 pb-2.5 sm:pb-3" style={{ borderBottom: '1px solid var(--border)' }}>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-bold text-sm sm:text-base text-[var(--foreground)]">Soal {questionNumber}</span>
+              <span className={`px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold border ${colors.bg} ${colors.text} ${colors.border}`}>
                 {question.category}
                 {sectionPosition && (
                   <span className="font-normal opacity-80 ml-1">
@@ -55,12 +55,12 @@ export function QuestionCard({
                   </span>
                 )}
               </span>
-              <span className="text-[11px] text-[var(--muted-foreground)]">
+              <span className="text-[10px] sm:text-[11px] text-[var(--muted-foreground)] hidden sm:inline">
                 &bull; {question.subCategory}
               </span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* Font Size Selector */}
               {onChangeFontSize && (
                 <div className="hidden sm:flex items-center gap-1 border rounded-lg p-0.5" style={{ borderColor: 'var(--border)' }}>
@@ -88,20 +88,20 @@ export function QuestionCard({
                 </div>
               )}
 
-              <label className="flex items-center gap-1.5 cursor-pointer text-xs text-[var(--muted-foreground)] select-none">
+              <label className="flex items-center gap-1 sm:gap-1.5 cursor-pointer text-[10px] sm:text-xs text-[var(--muted-foreground)] select-none">
                 <input
                   type="checkbox"
                   checked={isFlagged}
                   onChange={onToggleFlag}
-                  className="w-4 h-4 rounded border-[var(--border)] accent-amber-500"
+                  className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded border-[var(--border)] accent-amber-500"
                 />
-                <span className={isFlagged ? 'text-amber-600 font-bold' : ''}>Ragu [R]</span>
+                <span className={isFlagged ? 'text-amber-600 font-bold' : ''}>Ragu</span>
               </label>
             </div>
           </div>
 
           {/* Teks Soal */}
-          <p className={`text-[var(--foreground)] leading-relaxed mb-4 whitespace-pre-line ${textSizeClass}`}>
+          <p className={`text-[var(--foreground)] leading-relaxed mb-3 sm:mb-4 whitespace-pre-line ${textSizeClass}`}>
             {question.text}
           </p>
 
@@ -154,10 +154,10 @@ export function QuestionCard({
                       if (!isEliminated) onSelectOption(opt.id);
                     }}
                     disabled={isEliminated}
-                    className="flex-1 text-left p-2.5 flex items-start gap-3 text-sm disabled:cursor-not-allowed"
+                    className="flex-1 text-left py-1.5 px-2 sm:p-2.5 flex items-start gap-2 sm:gap-3 text-sm disabled:cursor-not-allowed"
                   >
                     <span
-                      className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-xs font-semibold border ${
+                      className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-semibold border ${
                         isSelected
                           ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-transparent'
                           : 'bg-[var(--secondary)] border-[var(--border)] text-[var(--muted-foreground)]'
