@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Question } from '@/lib/types';
+import { useUser } from '@/lib/useUser';
+import { scopedKey } from '@/lib/userStorage';
 import {
   Lightning,
   CaretRight,
@@ -23,6 +25,8 @@ export default function DrillSessionPage({
   params: { category: string; subCategory: string };
 }) {
   const router = useRouter();
+  const { user } = useUser();
+  const userId = user?.id ?? null;
   const subCategoryDecoded = decodeURIComponent(params.subCategory);
 
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -87,18 +91,22 @@ export default function DrillSessionPage({
           questionId: Number(qId),
           selectedOptionId: optId,
         }));
-        localStorage.setItem(`drill_questions_${sessionId}`, JSON.stringify(questions));
-        localStorage.setItem(`drill_answers_${sessionId}`, JSON.stringify(answers));
-        // Batasi riwayat drill: simpan max 20 sesi terakhir
-        const drillKeys = [];
+        const qKey = scopedKey(`drill_questions_${sessionId}`, userId);
+        const aKey = scopedKey(`drill_answers_${sessionId}`, userId);
+        localStorage.setItem(qKey, JSON.stringify(questions));
+        localStorage.setItem(aKey, JSON.stringify(answers));
+
+        // Batasi riwayat drill: simpan max 20 sesi terakhir untuk user ini
+        const prefix = scopedKey('drill_questions_', userId);
+        const drillKeys: string[] = [];
         for (let i = 0; i < localStorage.length; i++) {
           const k = localStorage.key(i);
-          if (k?.startsWith('drill_questions_')) drillKeys.push(k);
+          if (k?.startsWith(prefix)) drillKeys.push(k);
         }
         drillKeys.sort().slice(0, Math.max(0, drillKeys.length - 20)).forEach((k) => {
-          const id = k.replace('drill_questions_', '');
+          const id = k.replace(prefix, '');
           localStorage.removeItem(k);
-          localStorage.removeItem(`drill_answers_${id}`);
+          localStorage.removeItem(scopedKey(`drill_answers_${id}`, userId));
         });
       } catch { /* localStorage penuh atau private mode */ }
       setIsFinished(true);

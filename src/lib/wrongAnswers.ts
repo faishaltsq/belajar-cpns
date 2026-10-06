@@ -1,4 +1,5 @@
 import { Question, ExamAnswer } from './types';
+import { getScopedJSON, setScopedJSON } from './userStorage';
 
 export interface WrongQuestionItem {
   question: Question;
@@ -6,37 +7,39 @@ export interface WrongQuestionItem {
   packageId: string;
 }
 
-const STORAGE_KEY_MASTERED = 'lolos_mastered_questions';
+const KEY_MASTERED = 'mastered_questions';
 
-export function getMasteredIds(): Set<number> {
+export function getMasteredIds(userId?: string | null): Set<number> {
   if (typeof window === 'undefined') return new Set();
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY_MASTERED);
-    return new Set(raw ? JSON.parse(raw) : []);
-  } catch { return new Set(); }
+  const arr = getScopedJSON<number[]>(KEY_MASTERED, userId, []);
+  return new Set(arr);
 }
 
-export function markMastered(questionId: number) {
-  const set = getMasteredIds();
+export function markMastered(questionId: number, userId?: string | null) {
+  const set = getMasteredIds(userId);
   set.add(questionId);
-  localStorage.setItem(STORAGE_KEY_MASTERED, JSON.stringify(Array.from(set)));
+  setScopedJSON(KEY_MASTERED, userId, Array.from(set));
 }
 
-export function collectWrongQuestions(): WrongQuestionItem[] {
+export function collectWrongQuestions(userId?: string | null): WrongQuestionItem[] {
   if (typeof window === 'undefined') return [];
-  const mastered = getMasteredIds();
+  const mastered = getMasteredIds(userId);
   const map = new Map<number, WrongQuestionItem>();
+
+  const scope = userId ? `u_${userId}` : 'guest';
+  const examPrefix = `lolos_${scope}_exam_result_`;
+  const drillPrefix = `lolos_${scope}_drill_questions_`;
 
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     if (!key) continue;
 
-    // Scan dari hasil Simulasi CAT (exam_result_*)
-    if (key.startsWith('exam_result_')) {
-      const resultId = key.replace('exam_result_', '');
+    // Scan dari hasil Simulasi CAT
+    if (key.startsWith(examPrefix)) {
+      const resultId = key.replace(examPrefix, '');
       try {
-        const qRaw = localStorage.getItem(`exam_questions_${resultId}`);
-        const aRaw = localStorage.getItem(`exam_user_answers_${resultId}`);
+        const qRaw = localStorage.getItem(`lolos_${scope}_exam_questions_${resultId}`);
+        const aRaw = localStorage.getItem(`lolos_${scope}_exam_user_answers_${resultId}`);
         if (qRaw && aRaw) {
           const questions: Question[] = JSON.parse(qRaw);
           const answers: ExamAnswer[] = JSON.parse(aRaw);
@@ -57,12 +60,12 @@ export function collectWrongQuestions(): WrongQuestionItem[] {
       } catch { /* skip */ }
     }
 
-    // Scan dari riwayat Drill per subkategori (drill_questions_*)
-    if (key.startsWith('drill_questions_')) {
-      const sessionId = key.replace('drill_questions_', '');
+    // Scan dari riwayat Drill per subkategori
+    if (key.startsWith(drillPrefix)) {
+      const sessionId = key.replace(drillPrefix, '');
       try {
         const qRaw = localStorage.getItem(key);
-        const aRaw = localStorage.getItem(`drill_answers_${sessionId}`);
+        const aRaw = localStorage.getItem(`lolos_${scope}_drill_answers_${sessionId}`);
         if (qRaw && aRaw) {
           const questions: Question[] = JSON.parse(qRaw);
           const answers: { questionId: number; selectedOptionId: string }[] = JSON.parse(aRaw);

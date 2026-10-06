@@ -11,6 +11,8 @@ import { PauseExamModal } from '@/components/PauseExamModal';
 import { ExitExamModal } from '@/components/ExitExamModal';
 import { calculateExamScore } from '@/lib/scoring';
 import { ExamAnswer, Question } from '@/lib/types';
+import { useUser } from '@/lib/useUser';
+import { scopedKey } from '@/lib/userStorage';
 import { CaretLeft, CaretRight, Desktop, Pause, SignOut, Warning } from '@phosphor-icons/react';
 import { BKNThemeLayout } from '@/components/BKNThemeLayout';
 import { ExamType, EXAM_MODES } from '@/lib/examMode';
@@ -22,9 +24,11 @@ const EXAM_DURATION = 6000; // 100 minutes
 
 export default function SimulasiPage({ params }: { params: { id: string } }) {
   const router = useRouter();
-  const storageKey = `exam_answers_${params.id}`;
-  const startKey = `exam_start_${params.id}`;
-  const modeKey = `exam_mode_${params.id}`;
+  const { user } = useUser();
+  const userId = user?.id ?? null;
+  const storageKey = scopedKey(`exam_answers_${params.id}`, userId);
+  const startKey = scopedKey(`exam_start_${params.id}`, userId);
+  const modeKey = scopedKey(`exam_mode_${params.id}`, userId);
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loadingQuestions, setLoadingQuestions] = useState(true);
@@ -270,10 +274,10 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         timePerQuestionRecord[q.id] = timeMap.get(idx) ?? 0;
       });
 
-      localStorage.setItem(`exam_result_${resultId}`, JSON.stringify(result));
-      localStorage.setItem(`exam_questions_${resultId}`, JSON.stringify(questions));
-      localStorage.setItem(`exam_user_answers_${resultId}`, JSON.stringify(answerArr));
-      localStorage.setItem(`exam_time_per_q_${resultId}`, JSON.stringify(timePerQuestionRecord));
+      localStorage.setItem(scopedKey(`exam_result_${resultId}`, userId), JSON.stringify(result));
+      localStorage.setItem(scopedKey(`exam_questions_${resultId}`, userId), JSON.stringify(questions));
+      localStorage.setItem(scopedKey(`exam_user_answers_${resultId}`, userId), JSON.stringify(answerArr));
+      localStorage.setItem(scopedKey(`exam_time_per_q_${resultId}`, userId), JSON.stringify(timePerQuestionRecord));
 
       // Kirim ke leaderboard jika official mode
       if (EXAM_MODES[examType].publishToLeaderboard) {

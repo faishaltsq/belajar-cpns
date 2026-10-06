@@ -4,8 +4,12 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen, WarningCircle, CheckCircle, ArrowRight, ArrowClockwise } from '@phosphor-icons/react';
 import { collectWrongQuestions, markMastered, WrongQuestionItem } from '@/lib/wrongAnswers';
+import { useUser } from '@/lib/useUser';
 
 export default function UlangSalahPage() {
+  const { user, loading: userLoading } = useUser();
+  const userId = user?.id ?? null;
+
   const [items, setItems] = useState<WrongQuestionItem[]>([]);
   const [idx, setIdx] = useState(0);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -15,12 +19,12 @@ export default function UlangSalahPage() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const wrong = collectWrongQuestions();
-    // Shuffle agar 10 butir yang disajikan bervariasi tiap sesi
+    if (userLoading) return;
+    const wrong = collectWrongQuestions(userId);
     const shuffled = wrong.sort(() => Math.random() - 0.5);
     setItems(shuffled.slice(0, 10));
     setLoaded(true);
-  }, []);
+  }, [userId, userLoading]);
 
   const q = items[idx]?.question;
   const prevAnswerId = items[idx]?.userAnswerId;
@@ -33,7 +37,7 @@ export default function UlangSalahPage() {
 
   function handleMastered() {
     if (!q) return;
-    markMastered(q.id);
+    markMastered(q.id, userId);
     setMasteredThisSession((n) => n + 1);
     nextQuestion();
   }
@@ -49,7 +53,7 @@ export default function UlangSalahPage() {
   }
 
   function restart() {
-    const fresh = collectWrongQuestions().sort(() => Math.random() - 0.5).slice(0, 10);
+    const fresh = collectWrongQuestions(userId).sort(() => Math.random() - 0.5).slice(0, 10);
     setItems(fresh);
     setIdx(0);
     setSelectedId(null);

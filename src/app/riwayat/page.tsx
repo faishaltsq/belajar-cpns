@@ -20,6 +20,8 @@ import {
   User,
 } from '@phosphor-icons/react';
 import { UpgradeProModal } from '@/components/UpgradeProModal';
+import { useUser } from '@/lib/useUser';
+import { scopedKey } from '@/lib/userStorage';
 
 interface DraftItem {
   packageId: string;
@@ -70,6 +72,8 @@ type MainTab = 'exam' | 'billing';
 type TransactionFilter = 'all' | 'paid' | 'pending' | 'cancelled';
 
 export default function RiwayatPage() {
+  const { user } = useUser();
+  const userId = user?.id ?? null;
   const [activeTab, setActiveTab] = useState<MainTab>('exam');
 
   // Exam history states
@@ -94,10 +98,13 @@ export default function RiwayatPage() {
     const items: RiwayatItem[] = [];
     const draftItems: DraftItem[] = [];
 
+    const examPrefix = scopedKey('exam_result_', userId);
+    const answersDraftPrefix = scopedKey('exam_answers_', userId);
+
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
-      if (key?.startsWith('exam_result_')) {
-        const resultId = key.replace('exam_result_', '');
+      if (key?.startsWith(examPrefix)) {
+        const resultId = key.replace(examPrefix, '');
         const parts = resultId.split('-');
         const ts = Number(parts[parts.length - 1]);
         const packageId = isNaN(ts) ? resultId : parts.slice(0, -1).join('-');
@@ -118,11 +125,11 @@ export default function RiwayatPage() {
       }
     }
 
-    // Drafts: exam_answers_* with at least 1 answered question
+    // Drafts: scoped exam_answers_* with at least 1 answered question
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
-      if (!key?.startsWith('exam_answers_')) continue;
-      const packageId = key.replace('exam_answers_', '');
+      if (!key?.startsWith(answersDraftPrefix)) continue;
+      const packageId = key.replace(answersDraftPrefix, '');
       try {
         const raw = localStorage.getItem(key);
         if (!raw) continue;
@@ -131,7 +138,7 @@ export default function RiwayatPage() {
           (v) => v !== null && v !== undefined && v !== ''
         ).length;
         if (answeredCount === 0) continue;
-        const startTs = localStorage.getItem(`exam_start_${packageId}`);
+        const startTs = localStorage.getItem(scopedKey(`exam_start_${packageId}`, userId));
         const savedAt = startTs
           ? new Date(Number(startTs)).toISOString()
           : new Date().toISOString();
@@ -173,13 +180,13 @@ export default function RiwayatPage() {
   useEffect(() => {
     loadExamData();
     loadBillingData();
-  }, []);
+  }, [userId]);
 
   function deleteDraft(packageId: string) {
     if (!confirm(`Hapus draft "${formatPackageLabel(packageId)}"?`)) return;
-    localStorage.removeItem(`exam_answers_${packageId}`);
-    localStorage.removeItem(`exam_start_${packageId}`);
-    localStorage.removeItem(`exam_mode_${packageId}`);
+    localStorage.removeItem(scopedKey(`exam_answers_${packageId}`, userId));
+    localStorage.removeItem(scopedKey(`exam_start_${packageId}`, userId));
+    localStorage.removeItem(scopedKey(`exam_mode_${packageId}`, userId));
     loadExamData();
   }
 
@@ -367,16 +374,11 @@ export default function RiwayatPage() {
                 <button
                   onClick={() => {
                     if (!confirm('Hapus semua riwayat ujian di perangkat ini?')) return;
+                    const scope = userId ? `u_${userId}` : 'guest';
+                    const prefix = `lolos_${scope}_exam_`;
                     for (let i = localStorage.length - 1; i >= 0; i--) {
                       const key = localStorage.key(i);
-                      if (
-                        key &&
-                        (key.startsWith('exam_result_') ||
-                          key.startsWith('exam_questions_') ||
-                          key.startsWith('exam_user_answers_') ||
-                          key.startsWith('exam_answers_') ||
-                          key.startsWith('exam_start_'))
-                      ) {
+                      if (key && key.startsWith(prefix)) {
                         localStorage.removeItem(key);
                       }
                     }

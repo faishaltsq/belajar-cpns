@@ -21,6 +21,7 @@ import {
   CaretLeft,
 } from '@phosphor-icons/react';
 import { useUser } from '@/lib/useUser';
+import { scopedKey } from '@/lib/userStorage';
 
 export default function HasilPage({ params }: { params: { resultId: string } }) {
   const { user, loading: userLoading } = useUser();
@@ -34,24 +35,26 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   const tryoutId = params.resultId.split('-').slice(0, -1).join('-');
   const retryPath = tryoutId ? `/simulasi/${tryoutId}` : '/simulasi/tryout-1';
 
+  const userId = user?.id ?? null;
+
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(`exam_result_${params.resultId}`);
+      const raw = localStorage.getItem(scopedKey(`exam_result_${params.resultId}`, userId));
       if (raw) {
         setResult(JSON.parse(raw));
       } else {
         setNotFound(true);
       }
-      const rawQ = localStorage.getItem(`exam_questions_${params.resultId}`);
-      const rawA = localStorage.getItem(`exam_user_answers_${params.resultId}`);
+      const rawQ = localStorage.getItem(scopedKey(`exam_questions_${params.resultId}`, userId));
+      const rawA = localStorage.getItem(scopedKey(`exam_user_answers_${params.resultId}`, userId));
       if (rawQ) setQuestions(JSON.parse(rawQ));
       if (rawA) setUserAnswers(JSON.parse(rawA));
-      const rawTime = localStorage.getItem(`exam_time_per_q_${params.resultId}`);
+      const rawTime = localStorage.getItem(scopedKey(`exam_time_per_q_${params.resultId}`, userId));
       if (rawTime) setTimeSpent(JSON.parse(rawTime));
     } catch {
       setNotFound(true);
     }
-  }, [params.resultId]);
+  }, [params.resultId, userId]);
 
   const diagnostic = useMemo(() => {
     if (!questions.length) return null;

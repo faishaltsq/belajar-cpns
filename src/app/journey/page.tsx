@@ -1,40 +1,19 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { MapPin, CheckCircle, Lock, Lightning, Cards, Desktop, ArrowRight, Fire, ArrowCounterClockwise } from '@phosphor-icons/react';
 import { JOURNEY_DAYS, JourneyDay } from '@/data/journeySchedule';
+import { useUser } from '@/lib/useUser';
+import { getScopedJSON, setScopedJSON, removeScopedKey } from '@/lib/userStorage';
 
-const STORAGE_KEY_COMPLETED = 'lolos_journey_completed_days';
-const STORAGE_KEY_STREAK = 'lolos_journey_streak_dates';
+const KEY_COMPLETED = 'journey_completed_days';
+const KEY_STREAK = 'journey_streak_dates';
+const KEY_TODAY_LOGGED = 'journey_today_logged_day';
 
 function todayStr(): string {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-}
-
-function getCompleted(): Set<number> {
-  if (typeof window === 'undefined') return new Set();
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY_COMPLETED);
-    return new Set(raw ? JSON.parse(raw) : []);
-  } catch { return new Set(); }
-}
-
-function saveCompleted(set: Set<number>) {
-  localStorage.setItem(STORAGE_KEY_COMPLETED, JSON.stringify(Array.from(set)));
-}
-
-function getStreakDates(): string[] {
-  if (typeof window === 'undefined') return [];
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY_STREAK);
-    return raw ? JSON.parse(raw) : [];
-  } catch { return []; }
-}
-
-function saveStreakDates(dates: string[]) {
-  localStorage.setItem(STORAGE_KEY_STREAK, JSON.stringify(dates));
 }
 
 function prevDateStr(dateStr: string): string {
@@ -78,6 +57,9 @@ const PHASE_LABELS: Record<number, { color: string; bg: string }> = {
 };
 
 export default function JourneyPage() {
+  const { user, loading: userLoading } = useUser();
+  const userId = user?.id ?? null;
+
   const [completed, setCompleted] = useState<Set<number>>(new Set());
   const [streakDates, setStreakDates] = useState<string[]>([]);
   const [loaded, setLoaded] = useState(false);
@@ -86,19 +68,34 @@ export default function JourneyPage() {
   // Simpan hari mana yang di-log oleh tombol hari ini (bukan manual toggle)
   const [todayLoggedDay, setTodayLoggedDay] = useState<number | null>(null);
 
+  // Muat ulang state setiap kali user login / ganti akun / logout
   useEffect(() => {
-    setCompleted(getCompleted());
-    setStreakDates(getStreakDates());
-    // Pulihkan hari yang di-log hari ini
-    try {
-      const saved = localStorage.getItem('lolos_journey_today_logged_day');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.date === todayStr()) setTodayLoggedDay(parsed.day);
-      }
-    } catch {}
+    if (userLoading) return;
+
+    if (!userId) {
+      // Jika guest / logged out: tampilkan state kosong/bersih total (tidak ada data leak)
+      setCompleted(new Set());
+      setStreakDates([]);
+      setTodayLoggedDay(null);
+      setLoaded(true);
+      return;
+    }
+
+    const savedCompleted = getScopedJSON<number[]>(KEY_COMPLETED, userId, []);
+    setCompleted(new Set(savedCompleted));
+
+    const savedStreaks = getScopedJSON<string[]>(KEY_STREAK, userId, []);
+    setStreakDates(savedStreaks);
+
+    const savedTodayLog = getScopedJSON<{ date: string; day: number } | null>(KEY_TODAY_LOGGED, userId, null);
+    if (savedTodayLog && savedTodayLog.date === todayStr()) {
+      setTodayLoggedDay(savedTodayLog.day);
+    } else {
+      setTodayLoggedDay(null);
+    }
+
     setLoaded(true);
-  }, []);
+  }, [userId, userLoading]);
 
   const activeDay = JOURNEY_DAYS.find((d) => !completed.has(d.day))?.day ?? 30;
 
@@ -114,16 +111,15 @@ export default function JourneyPage() {
       next.delete(day);
     } else {
       next.add(day);
-      // Catat streak juga kalau belum
       const today = todayStr();
       if (!streakDates.includes(today)) {
         const nextDates = [today, ...streakDates];
         setStreakDates(nextDates);
-        saveStreakDates(nextDates);
+        setScopedJSON(KEY_STREAK, userId, nextDates);
       }
     }
     setCompleted(next);
-    saveCompleted(next);
+    setScopedJSON(KEY_COMPLETED, userId, Array.from(next));
   }
 
   function handleLogToday() {
@@ -131,42 +127,42 @@ export default function JourneyPage() {
     if (streakDates.includes(today)) return;
     const nextDates = [today, ...streakDates];
     setStreakDates(nextDates);
-    saveStreakDates(nextDates);
+    setScopedJSON(KEY_STREAK, userId, nextDates);
+
     if (!completed.has(activeDay)) {
       const next = new Set(completed);
       next.add(activeDay);
       setCompleted(next);
-      saveCompleted(next);
+      setScopedJSON(KEY_COMPLETED, userId, Array.from(next));
     }
-    // Catat secara eksplisit hari mana yang di-log hari ini, untuk Undo
     setTodayLoggedDay(activeDay);
-    try {
-      localStorage.setItem('lolos_journey_today_logged_day', JSON.stringify({ date: today, day: activeDay }));
-    } catch {}
+    setScopedJSON(KEY_TODAY_LOGGED, userId, { date: today, day: activeDay });
   }
 
   function handleUndoToday() {
     const today = todayStr();
     const nextDates = streakDates.filter((d) => d !== today);
     setStreakDates(nextDates);
-    saveStreakDates(nextDates);
-    // Hapus hanya hari yang spesifik di-log oleh tombol hari ini
+    setScopedJSON(KEY_STREAK, userId, nextDates);
+
     if (todayLoggedDay !== null && completed.has(todayLoggedDay)) {
       const next = new Set(completed);
       next.delete(todayLoggedDay);
       setCompleted(next);
-      saveCompleted(next);
+      setScopedJSON(KEY_COMPLETED, userId, Array.from(next));
     }
     setTodayLoggedDay(null);
-    try { localStorage.removeItem('lolos_journey_today_logged_day'); } catch {}
+    removeScopedKey(KEY_TODAY_LOGGED, userId);
   }
 
   function resetAll() {
     const empty = new Set<number>();
     setCompleted(empty);
-    saveCompleted(empty);
+    setScopedJSON(KEY_COMPLETED, userId, []);
     setStreakDates([]);
-    saveStreakDates([]);
+    setScopedJSON(KEY_STREAK, userId, []);
+    setTodayLoggedDay(null);
+    removeScopedKey(KEY_TODAY_LOGGED, userId);
   }
 
   const pct = Math.round((completed.size / JOURNEY_DAYS.length) * 100);

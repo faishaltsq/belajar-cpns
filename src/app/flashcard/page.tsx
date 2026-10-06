@@ -5,6 +5,8 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, ArrowClockwise, CheckCircle, XCircle, Shuffle, Cards } from '@phosphor-icons/react';
 import { FLASHCARD_DATA, Flashcard } from '@/data/flashcards';
+import { useUser } from '@/lib/useUser';
+import { getScopedJSON, setScopedJSON } from '@/lib/userStorage';
 
 // Seeded shuffle deterministik — seed sama → urutan sama
 function seededShuffle<T>(arr: T[], seed: number): T[] {
@@ -24,19 +26,7 @@ function todaySeed(): number {
   return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
 }
 
-const STORAGE_KEY = 'lolos_mastered_flashcards';
-
-function getMasteredIds(): Set<string> {
-  if (typeof window === 'undefined') return new Set();
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return new Set(raw ? JSON.parse(raw) : []);
-  } catch { return new Set(); }
-}
-
-function saveMastered(ids: Set<string>) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(ids)));
-}
+const KEY_MASTERED_FLASHCARDS = 'mastered_flashcards';
 
 type FilterCat = 'Semua' | 'TWK' | 'TIU' | 'TKP';
 const TABS: { label: string; value: FilterCat }[] = [
@@ -50,6 +40,8 @@ const catColor: Record<string, string> = { TWK: '#3b82f6', TIU: '#8b5cf6', TKP: 
 
 function FlashcardContent() {
   const searchParams = useSearchParams();
+  const { user, loading: userLoading } = useUser();
+  const userId = user?.id ?? null;
   const initialCat = (searchParams.get('category') as FilterCat) || 'Semua';
   const validInitialCat = ['Semua', 'TWK', 'TIU', 'TKP'].includes(initialCat) ? initialCat : 'Semua';
 
@@ -82,13 +74,15 @@ function FlashcardContent() {
   );
 
   useEffect(() => {
-    const m = getMasteredIds();
+    if (userLoading) return;
+    const savedIds = getScopedJSON<string[]>(KEY_MASTERED_FLASHCARDS, userId, []);
+    const m = new Set(savedIds);
     setMastered(m);
     setDeck(buildDeck(m));
     setIdx(0);
     setFlipped(false);
     setLoaded(true);
-  }, [filter, buildDeck]);
+  }, [filter, buildDeck, userId, userLoading]);
 
   function handleMastered() {
     const card = deck[idx];
@@ -96,7 +90,7 @@ function FlashcardContent() {
     const next = new Set(mastered);
     next.add(card.id);
     setMastered(next);
-    saveMastered(next);
+    setScopedJSON(KEY_MASTERED_FLASHCARDS, userId, Array.from(next));
     const newDeck = deck.filter((_, i) => i !== idx);
     setDeck(newDeck);
     if (idx >= newDeck.length) setIdx(Math.max(0, newDeck.length - 1));
@@ -126,7 +120,7 @@ function FlashcardContent() {
     const idsToRemove = new Set(filtered.map((f) => f.id));
     const next = new Set(Array.from(mastered).filter((id) => !idsToRemove.has(id)));
     setMastered(next);
-    saveMastered(next);
+    setScopedJSON(KEY_MASTERED_FLASHCARDS, userId, Array.from(next));
     setDeck(seededShuffle(filtered, todaySeed()));
     setIdx(0);
     setFlipped(false);
