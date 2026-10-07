@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/lib/db';
+import { checkKlikQrisStatus } from '@/lib/klikqris';
 
 export async function POST(req: NextRequest) {
   try {
@@ -28,40 +29,20 @@ export async function POST(req: NextRequest) {
 
     const order = orders[0];
 
-    // Jika sudah lunas, langsung return success
+    // Jika sudah lunas di DB, langsung return success
     if (order.status === 'paid') {
       return NextResponse.json({ success: true, paid: true, order });
     }
 
-    // 2. Cari transaksi Saweria dalam 15 menit terakhir yang cocok
-    // Kriteria:
-    // A. Pesan mengandung order ID (misal: "ID #3", "#3")
-    // B. ATAU exact_amount persis sama
-    // C. ATAU nominal dalam toleransi pajak QRIS [base_amount s.d. base_amount + 60] atau [exact_amount s.d. exact_amount + 60]
-    const candidates = await sql`
-      SELECT id, donation_id, amount, message, matched_user_id, created_at
-      FROM saweria_transactions
-      WHERE status = 'success'
-        AND created_at > (NOW() - INTERVAL '30 minutes')
-        AND (
-          message ILIKE ${`%#${order.id}%`}
-          OR amount = ${order.exact_amount}
-          OR (amount >= ${order.base_amount} AND amount <= ${order.base_amount + 60})
-          OR (amount >= ${order.exact_amount} AND amount <= ${order.exact_amount + 60})
-        )
-      ORDER BY created_at DESC
-      LIMIT 1
-    `;
+    // 2. Hubungi API status KlikQRIS
+    const qrisStatus = await checkKlikQrisStatus(`INV-${order.id}`);
 
-    if (candidates.length > 0) {
-      const tx = candidates[0];
-
+    if (qrisStatus.success && qrisStatus.status === 'PAID') {
       // Mark order as paid
       await sql`
         UPDATE payment_orders
         SET status = 'paid',
-            paid_at = NOW(),
-            saweria_donation_id = ${tx.donation_id}
+            paid_at = NOW()
         WHERE id = ${order.id}
       `;
 
@@ -91,22 +72,12 @@ export async function POST(req: NextRequest) {
             await sql`
               UPDATE users
               SET is_pro = TRUE,
-                  pro_activated_at = NOW(),
-                  saweria_donation_id = ${tx.donation_id}
+                  pro_activated_at = NOW()
               WHERE id = ${u.id}
             `;
           }
         }
       }
-
-      // Link transaction
-      await sql`
-        UPDATE saweria_transactions
-        SET matched_user_id = ${order.user_id || null},
-            matched_user_email = ${order.user_email || null},
-            package_id = ${order.package_id || null}
-        WHERE donation_id = ${tx.donation_id}
-      `;
 
       return NextResponse.json({
         success: true,
@@ -118,7 +89,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       paid: false,
-      message: 'Pembayaran belum terdeteksi. Silakan tunggu 1-2 menit setelah scan QRIS.',
+      message: 'Pembayaran belum terdeteksi. Silakan tunggu beberapa detik setelah scan QRIS.',
     });
   } catch (error: unknown) {
     const msg = error instanceof Error ? error.message : 'Unknown error';

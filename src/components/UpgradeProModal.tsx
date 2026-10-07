@@ -27,13 +27,13 @@ interface UpgradeProModalProps {
 
 interface OrderInfo {
   orderId: number;
+  invoiceCode?: string;
   baseAmount: number;
   uniqueCode: number;
   exactAmount: number;
-  saweriaUsername: string;
-  paymentUrl: string;
-  qrDataUrl: string;
-  qrisMode: boolean;
+  qrisUrl?: string;
+  qrisImage?: string;
+  gateway?: string;
 }
 
 export function UpgradeProModal({
@@ -437,54 +437,36 @@ export function UpgradeProModal({
               </div>
             </div>
 
-            {/* QR Code link ke Saweria */}
-            <div className="flex flex-col items-center gap-1.5">
+            {/* QR Code QRIS Dinamis */}
+            <div className="flex flex-col items-center gap-2">
               <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-sm inline-block">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={orderInfo.qrDataUrl}
-                  alt="QR Link Pembayaran Saweria"
-                  width={180}
-                  height={180}
-                  className="rounded-lg"
+                  src={orderInfo.qrisImage || orderInfo.qrisUrl || ''}
+                  alt={`QRIS Pembayaran INV-${orderInfo.orderId}`}
+                  width={220}
+                  height={220}
+                  className="rounded-lg object-contain mx-auto"
                 />
               </div>
-              <p className="text-[11px] text-[var(--muted-foreground)] leading-snug max-w-[260px]">
-                📱 Scan QR dengan kamera HP / Google Lens untuk buka Saweria, atau klik tombol di bawah jika bayar di perangkat ini.
+              <p className="text-[11px] text-[var(--muted-foreground)] leading-snug max-w-[280px]">
+                📱 Scan QRIS di atas menggunakan m-Banking (BCA, Mandiri, BRI, BNI, BSI) atau E-Wallet (GoPay, OVO, DANA, ShopeePay).
               </p>
             </div>
 
-            {/* Panduan 4 Langkah Lengkap */}
+            {/* Panduan Pembayaran QRIS */}
             <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-left text-[11px] text-slate-800 space-y-2">
               <div className="font-bold text-slate-900 flex items-center gap-1.5">
-                <span>📋 Cara Bayar di Saweria:</span>
+                <span>📋 Petunjuk Pembayaran:</span>
               </div>
               <ol className="list-decimal list-inside space-y-1.5 leading-relaxed text-slate-700">
-                <li>
-                  Klik tombol <b>&quot;Buka Halaman Pembayaran&quot;</b> di bawah (atau scan QR di atas).
-                </li>
-                <li>
-                  Isi kolom <b>Nominal</b> persis <b className="text-amber-900 font-mono">Rp {orderInfo.exactAmount.toLocaleString('id-ID')}</b> (jangan dibulatkan agar sistem bisa memverifikasi otomatis).
-                </li>
-                <li>
-                  Isi nama &amp; email kamu, lalu pada kolom pesan tulis: <b className="font-mono text-slate-900">ID #{orderInfo.orderId}</b>.
-                </li>
-                <li>
-                  Pilih metode bayar <b>QRIS</b> lalu scan barcode QRIS Saweria menggunakan m-Banking atau E-Wallet kamu.
-                </li>
+                <li>Buka aplikasi <b>m-Banking</b> atau <b>E-Wallet</b> favoritmu.</li>
+                <li>Pilih menu <b>Scan QRIS / Bayar</b>.</li>
+                <li>Arahkan kamera ke kode QRIS di atas (atau screenshot jika di HP).</li>
+                <li>Pastikan total tagihan persis <b className="text-amber-900 font-mono">Rp {orderInfo.exactAmount.toLocaleString('id-ID')}</b>.</li>
+                <li>Konfirmasi pembayaran — akun kamu akan aktif otomatis secara instan!</li>
               </ol>
             </div>
-
-            {/* Tombol Utama Buka Saweria */}
-            <a
-              href={orderInfo.paymentUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary w-full py-3 flex items-center justify-center gap-2 text-sm font-bold shadow-md rounded-xl active:scale-98"
-            >
-              <ArrowRight size={16} weight="bold" />
-              Buka Halaman Pembayaran Saweria
-            </a>
 
             {/* Waiting Spinner */}
             <div className="flex items-center justify-center gap-2 text-xs text-amber-700 font-medium pt-1">

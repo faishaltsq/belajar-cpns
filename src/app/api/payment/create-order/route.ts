@@ -2,20 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth';
 import { getDb } from '@/lib/db';
-import QRCode from 'qrcode';
-
-const SAWERIA_USERNAME = process.env.SAWERIA_USERNAME || 'faishaltsq';
-
-/** Buat QR code yang encode URL Saweria (user scan → buka halaman donasi) */
-async function buildQrPayload(exactAmount: number, msg: string) {
-  const paymentUrl = `https://saweria.co/${SAWERIA_USERNAME}?amount=${exactAmount}&message=${encodeURIComponent(msg)}`;
-  const qrDataUrl = await QRCode.toDataURL(paymentUrl, {
-    width: 280,
-    margin: 2,
-    color: { dark: '#1e293b', light: '#ffffff' },
-  });
-  return { qrDataUrl, paymentUrl, qrisMode: false as const, saweriaUsername: SAWERIA_USERNAME };
-}
+import { createKlikQrisTransaction } from '@/lib/klikqris';
 
 export async function POST(req: NextRequest) {
   try {
@@ -23,12 +10,12 @@ export async function POST(req: NextRequest) {
     const orderType = body.orderType === 'single' ? 'single' : 'pro';
     const packageId = body.packageId ? String(body.packageId).trim() : null;
 
-    // Nominal dasar (testing default Rp 1.000, atau sesuai env)
+    // Default price: PRO 49.000 (or custom env/testing), Single Tryout 15.000
     const baseAmount = Number(
       body.baseAmount ||
       (orderType === 'single'
-        ? process.env.SAWERIA_TRYOUT_PRICE || 1000
-        : process.env.SAWERIA_PRO_PRICE || 1000)
+        ? process.env.KLIKQRIS_TRYOUT_PRICE || process.env.SAWERIA_TRYOUT_PRICE || 15000
+        : process.env.KLIKQRIS_PRO_PRICE || process.env.SAWERIA_PRO_PRICE || 49000)
     );
 
     // Ambil identitas user dari cookie token
@@ -109,24 +96,29 @@ export async function POST(req: NextRequest) {
 
       if (existing.length > 0) {
         const order = existing[0];
-        const msg = orderType === 'single'
-          ? `Akses ${packageId} [ID #${order.id}]`
-          : `Upgrade PRO [ID #${order.id}]`;
-        const qrInfo = await buildQrPayload(order.exact_amount, msg);
+        const keterangan = orderType === 'single'
+          ? `Lolos.in - Akses ${packageId}`
+          : 'Lolos.in - Upgrade Akun PRO';
+
+        const klikQrisRes = await createKlikQrisTransaction({
+          orderId: `INV-${order.id}`,
+          amount: order.base_amount,
+          keterangan,
+        });
 
         return NextResponse.json({
           success: true,
           orderId: order.id,
+          invoiceCode: `INV-${order.id}`,
           baseAmount: order.base_amount,
           uniqueCode: order.unique_code,
           exactAmount: order.exact_amount,
           packageId,
           orderType,
           userEmail,
-          saweriaUsername: qrInfo.saweriaUsername,
-          paymentUrl: qrInfo.paymentUrl,
-          qrDataUrl: qrInfo.qrDataUrl,
-          qrisMode: qrInfo.qrisMode,
+          qrisUrl: klikQrisRes.qrisUrl,
+          qrisImage: klikQrisRes.qrisImage,
+          gateway: 'klikqris',
         });
       }
     }
@@ -149,7 +141,7 @@ export async function POST(req: NextRequest) {
 
     const exactAmount = baseAmount + uniqueCode;
 
-    // 3. Simpan order baru
+    // 3. Simpan order baru di database
     const inserted = await sql`
       INSERT INTO payment_orders (
         user_id, user_email, package_id, order_type,
@@ -162,24 +154,40 @@ export async function POST(req: NextRequest) {
     `;
 
     const orderId = inserted[0].id;
-    const msg = orderType === 'single'
-      ? `Akses ${packageId} [ID #${orderId}]`
-      : `Upgrade PRO [ID #${orderId}]`;
-    const qrInfo = await buildQrPayload(exactAmount, msg);
+    const keterangan = orderType === 'single'
+      ? `Lolos.in - Akses ${packageId}`
+      : 'Lolos.in - Upgrade Akun PRO';
+
+    // 4. Hubungi API KlikQRIS untuk generate dynamic QRIS
+    const klikQrisRes = await createKlikQrisTransaction({
+      orderId: `INV-${orderId}`,
+      amount: baseAmount,
+      keterangan,
+    });
+
+    // Update exact amount jika KlikQRIS mengembalikan total_amount dengan unique code server KlikQRIS
+    if (klikQrisRes.totalAmount && klikQrisRes.totalAmount !== exactAmount) {
+      await sql`
+        UPDATE payment_orders
+        SET exact_amount = ${klikQrisRes.totalAmount},
+            unique_code = ${klikQrisRes.uniqueCode}
+        WHERE id = ${orderId}
+      `;
+    }
 
     return NextResponse.json({
       success: true,
       orderId,
+      invoiceCode: `INV-${orderId}`,
       baseAmount,
-      uniqueCode,
-      exactAmount,
+      uniqueCode: klikQrisRes.uniqueCode || uniqueCode,
+      exactAmount: klikQrisRes.totalAmount || exactAmount,
       packageId,
       orderType,
       userEmail,
-      saweriaUsername: qrInfo.saweriaUsername,
-      paymentUrl: qrInfo.paymentUrl,
-      qrDataUrl: qrInfo.qrDataUrl,
-      qrisMode: qrInfo.qrisMode,
+      qrisUrl: klikQrisRes.qrisUrl,
+      qrisImage: klikQrisRes.qrisImage,
+      gateway: 'klikqris',
     });
   } catch (error: unknown) {
     const msg = error instanceof Error ? error.message : 'Unknown error';
