@@ -121,32 +121,14 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 2. Cari kode unik nominal random (1–999) yang belum terpakai
-    const usedCodesRows = await sql`
-      SELECT unique_code FROM payment_orders
-      WHERE base_amount = ${baseAmount}
-        AND status = 'pending'
-        AND expires_at > NOW()
-    `;
-    const usedCodes = new Set(usedCodesRows.map((r: Record<string, any>) => Number(r.unique_code)));
-
-    let uniqueCode: number;
-    let attempts = 0;
-    do {
-      uniqueCode = Math.floor(Math.random() * 99) + 1; // 1–99
-      attempts++;
-    } while (usedCodes.has(uniqueCode) && attempts < 100);
-
-    const exactAmount = baseAmount + uniqueCode;
-
-    // 3. Simpan order baru di database
+    // 2. Simpan order baru di database (unique_code & exact_amount diupdate setelah response KlikQRIS)
     const inserted = await sql`
       INSERT INTO payment_orders (
         user_id, user_email, package_id, order_type,
         base_amount, unique_code, exact_amount, status
       ) VALUES (
         ${userId}, ${userEmail || null}, ${packageId}, ${orderType},
-        ${baseAmount}, ${uniqueCode}, ${exactAmount}, 'pending'
+        ${baseAmount}, ${0}, ${baseAmount}, 'pending'
       )
       RETURNING id
     `;
@@ -177,8 +159,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Gunakan totalAmount dan uniqueCode resmi yang dihasilkan KlikQRIS
-    // agar nominal di modal PERSIS SAMA dengan nominal di QRIS barcode KlikQRIS
-    const finalExactAmount = klikQrisRes.totalAmount || exactAmount;
+    const finalExactAmount = klikQrisRes.totalAmount || baseAmount;
     const finalUniqueCode = klikQrisRes.uniqueCode || (finalExactAmount - baseAmount);
 
     // Update exact amount & simpan signature + qrisUrl + qrisImage KlikQRIS
