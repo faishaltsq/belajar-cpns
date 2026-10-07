@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
       if (userId) {
         existing = packageId
           ? await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
               FROM payment_orders
               WHERE user_id = ${userId} 
                 AND order_type = ${orderType} 
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
               ORDER BY created_at DESC LIMIT 1
             `
           : await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
               FROM payment_orders
               WHERE user_id = ${userId} 
                 AND order_type = ${orderType} 
@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
       } else if (userEmail) {
         existing = packageId
           ? await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
               FROM payment_orders
               WHERE LOWER(user_email) = ${userEmail} 
                 AND order_type = ${orderType} 
@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
               ORDER BY created_at DESC LIMIT 1
             `
           : await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
               FROM payment_orders
               WHERE LOWER(user_email) = ${userEmail} 
                 AND order_type = ${orderType} 
@@ -96,30 +96,28 @@ export async function POST(req: NextRequest) {
 
       if (existing.length > 0) {
         const order = existing[0];
-        const keterangan = orderType === 'single'
-          ? `Lolos.in - Akses ${packageId}`
-          : 'Lolos.in - Upgrade Akun PRO';
 
-        const klikQrisRes = await createKlikQrisTransaction({
-          orderId: `INV-${order.id}`,
-          amount: order.base_amount,
-          keterangan,
-        });
+        // Jika order lama sudah punya QRIS tersimpan, langsung pakai — skip re-call KlikQRIS
+        // (KlikQRIS menolak order_id yang sudah pernah dibuat sebelumnya)
+        if (order.qris_image || order.qris_url) {
+          return NextResponse.json({
+            success: true,
+            orderId: order.id,
+            invoiceCode: `INV-${order.id}`,
+            baseAmount: order.base_amount,
+            uniqueCode: order.unique_code,
+            exactAmount: order.exact_amount,
+            packageId,
+            orderType,
+            userEmail,
+            qrisUrl: order.qris_url || '',
+            qrisImage: order.qris_image || '',
+            gateway: 'klikqris',
+          });
+        }
 
-        return NextResponse.json({
-          success: true,
-          orderId: order.id,
-          invoiceCode: `INV-${order.id}`,
-          baseAmount: order.base_amount,
-          uniqueCode: order.unique_code,
-          exactAmount: order.exact_amount,
-          packageId,
-          orderType,
-          userEmail,
-          qrisUrl: klikQrisRes.qrisUrl,
-          qrisImage: klikQrisRes.qrisImage,
-          gateway: 'klikqris',
-        });
+        // Order pending ada tapi QRIS kosong (dibuat saat API key salah) — hapus & buat ulang
+        await sql`DELETE FROM payment_orders WHERE id = ${order.id}`;
       }
     }
 
@@ -175,22 +173,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Update exact amount & simpan signature KlikQRIS untuk verifikasi webhook
-    if (klikQrisRes.totalAmount && klikQrisRes.totalAmount !== exactAmount) {
-      await sql`
-        UPDATE payment_orders
-        SET exact_amount = ${klikQrisRes.totalAmount},
-            unique_code = ${klikQrisRes.uniqueCode},
-            signature = ${klikQrisRes.signature || null}
-        WHERE id = ${orderId}
-      `;
-    } else if (klikQrisRes.signature) {
-      await sql`
-        UPDATE payment_orders
-        SET signature = ${klikQrisRes.signature}
-        WHERE id = ${orderId}
-      `;
-    }
+    // Update exact amount & simpan signature + qrisUrl + qrisImage KlikQRIS
+    await sql`
+      UPDATE payment_orders
+      SET exact_amount = ${klikQrisRes.totalAmount || exactAmount},
+          unique_code = ${klikQrisRes.uniqueCode || uniqueCode},
+          signature = ${klikQrisRes.signature || null},
+          qris_url = ${klikQrisRes.qrisUrl || null},
+          qris_image = ${klikQrisRes.qrisImage || null}
+      WHERE id = ${orderId}
+    `;
 
     return NextResponse.json({
       success: true,
