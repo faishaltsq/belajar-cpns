@@ -165,12 +165,19 @@ export async function POST(req: NextRequest) {
       keterangan,
     });
 
-    // Update exact amount jika KlikQRIS mengembalikan total_amount dengan unique code server KlikQRIS
+    // Update exact amount & simpan signature KlikQRIS untuk verifikasi webhook
     if (klikQrisRes.totalAmount && klikQrisRes.totalAmount !== exactAmount) {
       await sql`
         UPDATE payment_orders
         SET exact_amount = ${klikQrisRes.totalAmount},
-            unique_code = ${klikQrisRes.uniqueCode}
+            unique_code = ${klikQrisRes.uniqueCode},
+            signature = ${klikQrisRes.signature || null}
+        WHERE id = ${orderId}
+      `;
+    } else if (klikQrisRes.signature) {
+      await sql`
+        UPDATE payment_orders
+        SET signature = ${klikQrisRes.signature}
         WHERE id = ${orderId}
       `;
     }

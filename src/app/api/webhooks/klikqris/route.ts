@@ -43,9 +43,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Database unavailable' }, { status: 500 });
     }
 
-    // 1. Query order
+    // 1. Query order — include signature for verification
     const orderRows = await sql`
-      SELECT id, user_id, user_email, package_id, order_type, exact_amount, status
+      SELECT id, user_id, user_email, package_id, order_type, exact_amount, status, signature
       FROM payment_orders
       WHERE id = ${orderId}
       LIMIT 1
@@ -56,6 +56,13 @@ export async function POST(req: NextRequest) {
     }
 
     const order = orderRows[0];
+
+    // Signature verification (double security check dari KlikQRIS)
+    const incomingSig = body.signature || body.data?.signature;
+    if (order.signature && incomingSig && order.signature !== incomingSig) {
+      console.warn(`[KlikQRIS Webhook] Signature mismatch for order #${orderId}`);
+      return NextResponse.json({ error: 'Invalid signature' }, { status: 403 });
+    }
 
     // 2. Idempotency: if already paid, return 200 immediately
     if (order.status === 'paid') {

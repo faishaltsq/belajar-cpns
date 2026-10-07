@@ -135,4 +135,32 @@ describe('POST /api/webhooks/klikqris', () => {
     const json = await res.json();
     expect(json.success).toBe(true);
   });
+
+  it('rejects webhook with mismatched signature (403)', async () => {
+    mockSql.mockResolvedValueOnce([
+      {
+        id: 104,
+        user_id: 'usr-1',
+        user_email: 'user@test.com',
+        package_id: null,
+        order_type: 'pro',
+        exact_amount: 50012,
+        status: 'pending',
+        signature: 'correct-sig-from-create-order',
+      },
+    ]);
+
+    const req = new NextRequest('http://localhost:3000/api/webhooks/klikqris', {
+      method: 'POST',
+      body: JSON.stringify({
+        order_id: 'INV-104',
+        status: 'PAID',
+        signature: 'wrong-sig-tampered',
+      }),
+    });
+    const res = await klikQrisWebhook(req);
+    expect(res.status).toBe(403);
+    const json = await res.json();
+    expect(json.error).toContain('signature');
+  });
 });
