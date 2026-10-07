@@ -39,7 +39,7 @@ export async function createKlikQrisTransaction(
 
   // If no API key configured (e.g. offline dev mode), fallback to mock synthesized QR
   if (!apiKey || !merchantId) {
-    const uniqueCode = Math.floor(Math.random() * 900) + 100;
+    const uniqueCode = Math.floor(Math.random() * 99) + 1;
     const totalAmount = params.amount + uniqueCode;
     const mockQrDataUrl = await QRCode.toDataURL(`KLIKQRIS_MOCK_${params.orderId}_${totalAmount}`, {
       width: 280,

@@ -133,7 +133,7 @@ export async function POST(req: NextRequest) {
     let uniqueCode: number;
     let attempts = 0;
     do {
-      uniqueCode = Math.floor(Math.random() * 999) + 1; // 1–999
+      uniqueCode = Math.floor(Math.random() * 99) + 1; // 1–99
       attempts++;
     } while (usedCodes.has(uniqueCode) && attempts < 100);
 
@@ -157,9 +157,10 @@ export async function POST(req: NextRequest) {
       : 'Lolos.in - Upgrade Akun PRO';
 
     // 4. Hubungi API KlikQRIS untuk generate dynamic QRIS
+    // Kirim exactAmount (sudah termasuk unique code kita) agar KlikQRIS tidak menambah kode unik sendiri
     const klikQrisRes = await createKlikQrisTransaction({
       orderId: `INV-${orderId}`,
-      amount: baseAmount,
+      amount: exactAmount,
       keterangan,
     });
 
@@ -176,8 +177,8 @@ export async function POST(req: NextRequest) {
     // Update exact amount & simpan signature + qrisUrl + qrisImage KlikQRIS
     await sql`
       UPDATE payment_orders
-      SET exact_amount = ${klikQrisRes.totalAmount || exactAmount},
-          unique_code = ${klikQrisRes.uniqueCode || uniqueCode},
+      SET exact_amount = ${exactAmount},
+          unique_code = ${uniqueCode},
           signature = ${klikQrisRes.signature || null},
           qris_url = ${klikQrisRes.qrisUrl || null},
           qris_image = ${klikQrisRes.qrisImage || null}
@@ -189,8 +190,8 @@ export async function POST(req: NextRequest) {
       orderId,
       invoiceCode: `INV-${orderId}`,
       baseAmount,
-      uniqueCode: klikQrisRes.uniqueCode || uniqueCode,
-      exactAmount: klikQrisRes.totalAmount || exactAmount,
+      uniqueCode,
+      exactAmount,
       packageId,
       orderType,
       userEmail,
