@@ -169,6 +169,15 @@ body {
   border: 1px solid rgba(201, 100, 66, 0.25);
 }
 
+/* Hide scrollbar — still scrollable */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Backward compatibility aliases */
 .clay-card {
   @apply card-modern;
