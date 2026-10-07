@@ -76,6 +76,7 @@ export async function createKlikQrisTransaction(
     });
 
     const json = await res.json();
+    console.log('[KlikQRIS create] HTTP', res.status, '| status:', json.status, '| message:', json.message);
     if (!res.ok || !json.status) {
       return {
         success: false,

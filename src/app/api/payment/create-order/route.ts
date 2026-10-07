@@ -165,6 +165,16 @@ export async function POST(req: NextRequest) {
       keterangan,
     });
 
+    // Jika KlikQRIS gagal, rollback order & return error dengan pesan jelas
+    if (!klikQrisRes.success) {
+      await sql`DELETE FROM payment_orders WHERE id = ${orderId}`;
+      console.error('[create-order] KlikQRIS gagal:', klikQrisRes.error);
+      return NextResponse.json(
+        { error: `Gagal generate QRIS: ${klikQrisRes.error || 'KlikQRIS tidak merespons'}` },
+        { status: 502 }
+      );
+    }
+
     // Update exact amount & simpan signature KlikQRIS untuk verifikasi webhook
     if (klikQrisRes.totalAmount && klikQrisRes.totalAmount !== exactAmount) {
       await sql`
