@@ -157,11 +157,11 @@ export async function POST(req: NextRequest) {
       : 'Lolos.in - Upgrade Akun PRO';
 
     // 4. Hubungi API KlikQRIS untuk generate dynamic QRIS
-    // Kirim exactAmount (sudah termasuk unique code kita) agar KlikQRIS tidak menambah kode unik sendiri
+    // Kirim baseAmount murni — KlikQRIS yang akan mengenerate totalAmount dan kode uniknya sendiri
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://belajar-cpns-saas.vercel.app';
     const klikQrisRes = await createKlikQrisTransaction({
       orderId: `INV-${orderId}`,
-      amount: exactAmount,
+      amount: baseAmount,
       keterangan,
       callbackUrl: `${appUrl}/api/webhooks/klikqris`,
     });
@@ -176,11 +176,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Gunakan totalAmount dan uniqueCode resmi yang dihasilkan KlikQRIS
+    // agar nominal di modal PERSIS SAMA dengan nominal di QRIS barcode KlikQRIS
+    const finalExactAmount = klikQrisRes.totalAmount || exactAmount;
+    const finalUniqueCode = klikQrisRes.uniqueCode || (finalExactAmount - baseAmount);
+
     // Update exact amount & simpan signature + qrisUrl + qrisImage KlikQRIS
     await sql`
       UPDATE payment_orders
-      SET exact_amount = ${exactAmount},
-          unique_code = ${uniqueCode},
+      SET exact_amount = ${finalExactAmount},
+          unique_code = ${finalUniqueCode},
           signature = ${klikQrisRes.signature || null},
           qris_url = ${klikQrisRes.qrisUrl || null},
           qris_image = ${klikQrisRes.qrisImage || null}
@@ -192,8 +197,8 @@ export async function POST(req: NextRequest) {
       orderId,
       invoiceCode: `INV-${orderId}`,
       baseAmount,
-      uniqueCode,
-      exactAmount,
+      uniqueCode: finalUniqueCode,
+      exactAmount: finalExactAmount,
       packageId,
       orderType,
       userEmail,
