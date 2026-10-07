@@ -158,10 +158,12 @@ export async function POST(req: NextRequest) {
 
     // 4. Hubungi API KlikQRIS untuk generate dynamic QRIS
     // Kirim exactAmount (sudah termasuk unique code kita) agar KlikQRIS tidak menambah kode unik sendiri
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://belajar-cpns-saas.vercel.app';
     const klikQrisRes = await createKlikQrisTransaction({
       orderId: `INV-${orderId}`,
       amount: exactAmount,
       keterangan,
+      callbackUrl: `${appUrl}/api/webhooks/klikqris`,
     });
 
     // Jika KlikQRIS gagal, rollback order & return error dengan pesan jelas
