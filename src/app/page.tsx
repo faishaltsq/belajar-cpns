@@ -25,18 +25,12 @@ export default function LandingPage() {
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-20">
         {/* HERO SECTION */}
         <section className="text-center max-w-3xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full badge-neutral text-xs font-medium mb-6">
-            <Sparkle size={13} weight="fill" className="text-amber-500" />
-            <span>Standar Resmi Permenpan RB &amp; BKN 2026</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
             Persiapan Lolos SKD CPNS 2026 Lebih Terukur.
           </h1>
 
           <p className="mt-5 text-base sm:text-lg text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto">
-            Simulasi CAT 110 butir dengan sistem skoring resmi, timer 100 menit, dan modul psikotes Kraepelin serta penalaran analitis.
+            Simulasi CAT 110 butir dengan sistem skoring otomatis, timer 100 menit, dan modul psikotes Kraepelin serta penalaran analitis.
           </p>
 
           {/* CTA Buttons */}
@@ -71,11 +65,6 @@ export default function LandingPage() {
               <span className="font-semibold text-[var(--foreground)]">100 Menit</span>
               <span>Timer CAT</span>
             </div>
-            <span className="w-1 h-1 rounded-full bg-slate-300" />
-            <div className="flex items-center gap-1.5">
-              <CheckCircle size={14} weight="fill" className="text-emerald-500" />
-              <span>Skor Real-Time BKN</span>
-            </div>
           </div>
         </section>
 
@@ -101,7 +90,7 @@ export default function LandingPage() {
                   <Timer size={20} weight="duotone" />
                 </div>
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
-                  SKD Resmi BKN
+                  Simulasi CAT SKD
                 </span>
                 <h3 className="font-semibold text-lg text-[var(--foreground)] mt-1 mb-2">
                   Simulasi CAT SKD
