@@ -70,7 +70,7 @@ export default function SimulasiPage() {
   }, []);
 
   const filtered = useMemo(() => {
-    let list = packages;
+    let list = packages.map(p => ({ ...p, section: p.section || ('standard' as TryoutSection) }));
     if (activeTab !== 'all') list = list.filter(p => p.section === activeTab);
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();

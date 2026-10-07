@@ -16,17 +16,20 @@ export async function GET() {
         ORDER BY created_at ASC
       `;
       if (rows && rows.length > 0) {
-        const pkgs = rows.map((r) => ({
-          id: r.id,
-          label: r.label,
-          desc: r.desc || `${r.question_count} soal (${Math.round((r.duration_sec || 6000) / 60)} menit)`,
-          badge:
-            r.id === 'tryout-mini'
-              ? 'Coba Gratis'
-              : r.id.startsWith('tryout-gratis') || r.id.includes('coba')
-              ? 'Custom'
-              : null,
-        }));
+        // Merge DB rows dengan metadata section dari TRYOUT_LIST
+        const metaMap = new Map(TRYOUT_LIST.map(p => [p.id, p]));
+        const pkgs = rows.map((r) => {
+          const meta = metaMap.get(r.id as string);
+          return {
+            id: r.id,
+            label: r.label,
+            desc: r.desc || `${r.question_count} soal (${Math.round((r.duration_sec || 6000) / 60)} menit)`,
+            badge: meta?.badge ?? (r.id === 'tryout-mini' ? 'Coba Gratis' : null),
+            section: meta?.section ?? 'standard',
+            questionCount: meta?.questionCount ?? (r.question_count || 110),
+            durationMin: meta?.durationMin ?? Math.round((r.duration_sec || 6000) / 60),
+          };
+        });
         return NextResponse.json(
           { packages: pkgs },
           {
