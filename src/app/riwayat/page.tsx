@@ -103,6 +103,21 @@ export default function RiwayatPage() {
   const [selectedPayPackage, setSelectedPayPackage] = useState<{ id?: string; label?: string } | null>(null);
 
   function loadExamData() {
+    // Guest: tidak simpan riwayat, bersihkan data temporary
+    if (!userId) {
+      setHistory([]);
+      setDrafts([]);
+      try {
+        const guestKeys: string[] = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k?.startsWith('lolos_guest_exam_')) guestKeys.push(k);
+        }
+        guestKeys.forEach(k => localStorage.removeItem(k));
+      } catch {}
+      return;
+    }
+
     const items: RiwayatItem[] = [];
     const draftItems: DraftItem[] = [];
 

@@ -40,27 +40,33 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   useEffect(() => {
     if (userLoading) return;
     try {
-      let raw = localStorage.getItem(scopedKey(`exam_result_${params.resultId}`, userId));
-      // Fallback: coba cari sebagai guest jika user belum login atau sesi bergeser
-      if (!raw && userId) {
-        raw = localStorage.getItem(scopedKey(`exam_result_${params.resultId}`, null));
+      let raw: string | null = null;
+      let rawQ: string | null = null;
+      let rawA: string | null = null;
+      let rawTime: string | null = null;
+
+      if (userId) {
+        // User login: baca dari localStorage
+        raw = localStorage.getItem(scopedKey(`exam_result_${params.resultId}`, userId));
+        rawQ = localStorage.getItem(scopedKey(`exam_questions_${params.resultId}`, userId));
+        rawA = localStorage.getItem(scopedKey(`exam_user_answers_${params.resultId}`, userId));
+        rawTime = localStorage.getItem(scopedKey(`exam_time_per_q_${params.resultId}`, userId));
+      } else {
+        // Guest: baca dari sessionStorage (temporary, hilang saat tab ditutup)
+        raw = sessionStorage.getItem(`guest_exam_result_${params.resultId}`);
+        rawQ = sessionStorage.getItem(`guest_exam_questions_${params.resultId}`);
+        rawA = sessionStorage.getItem(`guest_exam_user_answers_${params.resultId}`);
+        rawTime = sessionStorage.getItem(`guest_exam_time_per_q_${params.resultId}`);
       }
+
       if (raw) {
         setResult(JSON.parse(raw));
         setNotFound(false);
       } else {
         setNotFound(true);
       }
-
-      const rawQ = localStorage.getItem(scopedKey(`exam_questions_${params.resultId}`, userId)) ||
-        localStorage.getItem(scopedKey(`exam_questions_${params.resultId}`, null));
-      const rawA = localStorage.getItem(scopedKey(`exam_user_answers_${params.resultId}`, userId)) ||
-        localStorage.getItem(scopedKey(`exam_user_answers_${params.resultId}`, null));
       if (rawQ) setQuestions(JSON.parse(rawQ));
       if (rawA) setUserAnswers(JSON.parse(rawA));
-
-      const rawTime = localStorage.getItem(scopedKey(`exam_time_per_q_${params.resultId}`, userId)) ||
-        localStorage.getItem(scopedKey(`exam_time_per_q_${params.resultId}`, null));
       if (rawTime) setTimeSpent(JSON.parse(rawTime));
     } catch {
       setNotFound(true);

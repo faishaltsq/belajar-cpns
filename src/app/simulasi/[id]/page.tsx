@@ -274,10 +274,20 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         timePerQuestionRecord[q.id] = timeMap.get(idx) ?? 0;
       });
 
-      localStorage.setItem(scopedKey(`exam_result_${resultId}`, userId), JSON.stringify(result));
-      localStorage.setItem(scopedKey(`exam_questions_${resultId}`, userId), JSON.stringify(questions));
-      localStorage.setItem(scopedKey(`exam_user_answers_${resultId}`, userId), JSON.stringify(answerArr));
-      localStorage.setItem(scopedKey(`exam_time_per_q_${resultId}`, userId), JSON.stringify(timePerQuestionRecord));
+      // Simpan data: user login pakai localStorage (permanen), guest pakai sessionStorage (temporary)
+      if (userId) {
+        localStorage.setItem(scopedKey(`exam_result_${resultId}`, userId), JSON.stringify(result));
+        localStorage.setItem(scopedKey(`exam_questions_${resultId}`, userId), JSON.stringify(questions));
+        localStorage.setItem(scopedKey(`exam_user_answers_${resultId}`, userId), JSON.stringify(answerArr));
+        localStorage.setItem(scopedKey(`exam_time_per_q_${resultId}`, userId), JSON.stringify(timePerQuestionRecord));
+      } else {
+        try {
+          sessionStorage.setItem(`guest_exam_result_${resultId}`, JSON.stringify(result));
+          sessionStorage.setItem(`guest_exam_questions_${resultId}`, JSON.stringify(questions));
+          sessionStorage.setItem(`guest_exam_user_answers_${resultId}`, JSON.stringify(answerArr));
+          sessionStorage.setItem(`guest_exam_time_per_q_${resultId}`, JSON.stringify(timePerQuestionRecord));
+        } catch {}
+      }
 
       // Kirim ke leaderboard jika official mode
       if (EXAM_MODES[examType].publishToLeaderboard) {

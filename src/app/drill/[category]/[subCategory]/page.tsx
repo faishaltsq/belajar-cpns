@@ -51,12 +51,20 @@ export default function DrillSessionPage({
     }
   }, [user]);
 
+  // Strip "Soal nomor X (Kategori):" prefix — artefak dari data lama, tidak relevan di mode acak
+  function stripQuestionPrefix(text: string): string {
+    return text.replace(/^Soal\s+(?:nomor|no\.?)\s+\d+(?:\s*\([^)]*\))?\s*:\s*/i, '').trim();
+  }
+
   // Load questions matching category & subcategory from sample package or DB
   useEffect(() => {
     fetch('/api/questions/tryout-1')
       .then((r) => (r.ok ? r.json() : { questions: [] }))
       .then((d) => {
-        const all: Question[] = d.questions || [];
+        const all: Question[] = (d.questions || []).map((q: Question) => ({
+          ...q,
+          text: stripQuestionPrefix(q.text),
+        }));
         let matched = all.filter(
           (q) =>
             q.category.toUpperCase() === params.category.toUpperCase() &&

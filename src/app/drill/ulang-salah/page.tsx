@@ -20,7 +20,13 @@ export default function UlangSalahPage() {
 
   useEffect(() => {
     if (userLoading) return;
-    const wrong = collectWrongQuestions(userId);
+    const wrong = collectWrongQuestions(userId).map((item) => ({
+      ...item,
+      question: {
+        ...item.question,
+        text: item.question.text.replace(/^Soal\s+(?:nomor|no\.?)\s+\d+(?:\s*\([^)]*\))?\s*:\s*/i, '').trim(),
+      },
+    }));
     const shuffled = wrong.sort(() => Math.random() - 0.5);
     setItems(shuffled.slice(0, 10));
     setLoaded(true);
