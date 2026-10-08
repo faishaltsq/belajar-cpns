@@ -97,9 +97,11 @@ export async function POST(req: NextRequest) {
       if (existing.length > 0) {
         const order = existing[0];
 
-        // Jika order lama sudah punya QRIS tersimpan, langsung pakai — skip re-call KlikQRIS
-        // (KlikQRIS menolak order_id yang sudah pernah dibuat sebelumnya)
-        if (order.qris_image || order.qris_url) {
+        // Jika order lama sudah punya QRIS tersimpan (base64 real), langsung pakai — skip re-call KlikQRIS
+        // Tolak sandbox dummy URL (storage/sandbox) agar order baru di-generate ulang
+        const hasRealQris = order.qris_image?.startsWith('data:image') || 
+          (order.qris_url && !order.qris_url.includes('/sandbox/'));
+        if (hasRealQris) {
           return NextResponse.json({
             success: true,
             orderId: order.id,
