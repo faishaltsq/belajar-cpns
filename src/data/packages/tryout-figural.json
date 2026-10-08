@@ -32,7 +32,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Refleksi horizontal.",
     "difficulty": "medium"
   },
@@ -69,7 +69,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Sisi bertambah 1, bintang berkurang 1.",
     "difficulty": "medium"
   },
@@ -106,7 +106,7 @@
         "score": 5
       }
     ],
-    "correctAnswer": "4",
+    "correctAnswer": "E",
     "explanation": "Gambar 1 turun, sisi bertambah 2.",
     "difficulty": "medium"
   },
@@ -143,7 +143,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "1",
+    "correctAnswer": "B",
     "explanation": "Gambar menjadi tinggi kurus.",
     "difficulty": "medium"
   },
@@ -180,7 +180,7 @@
         "score": 5
       }
     ],
-    "correctAnswer": "4",
+    "correctAnswer": "E",
     "explanation": "Pencerminan horizontal.",
     "difficulty": "medium"
   },
@@ -217,7 +217,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "0",
+    "correctAnswer": "A",
     "explanation": "Sisi jadi 6, lingkaran pindah horizontal.",
     "difficulty": "medium"
   },
@@ -254,7 +254,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "1",
+    "correctAnswer": "B",
     "explanation": "Segitiga→segienam, sisi +3.",
     "difficulty": "medium"
   },
@@ -291,7 +291,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "0",
+    "correctAnswer": "A",
     "explanation": "Segiempat hitam di tengah.",
     "difficulty": "medium"
   },
@@ -328,7 +328,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Gambar 1+3 digabung, irisan dihilangkan.",
     "difficulty": "medium"
   },
@@ -365,7 +365,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Kecil→besar, besar→kecil.",
     "difficulty": "medium"
   },
@@ -402,7 +402,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Pola refleksi dan rotasi.",
     "difficulty": "medium"
   },
@@ -439,7 +439,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Pola refleksi dan rotasi.",
     "difficulty": "medium"
   },
@@ -476,7 +476,7 @@
         "score": 5
       }
     ],
-    "correctAnswer": "4",
+    "correctAnswer": "E",
     "explanation": "Pola refleksi dan rotasi.",
     "difficulty": "medium"
   },
@@ -513,7 +513,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "1",
+    "correctAnswer": "B",
     "explanation": "Pola refleksi dan rotasi.",
     "difficulty": "medium"
   },
@@ -550,7 +550,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "0",
+    "correctAnswer": "A",
     "explanation": "Refleksi horizontal.",
     "difficulty": "medium"
   },
@@ -587,7 +587,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "0",
+    "correctAnswer": "A",
     "explanation": "Putar 90° searah jarum jam.",
     "difficulty": "medium"
   },
@@ -624,7 +624,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "3",
+    "correctAnswer": "D",
     "explanation": "Warna hitam, buang seperempat kiri bawah.",
     "difficulty": "medium"
   },
@@ -661,7 +661,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "0",
+    "correctAnswer": "A",
     "explanation": "Dua gambar kembar berhimpitan, kecuali A.",
     "difficulty": "medium"
   },
@@ -698,7 +698,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "3",
+    "correctAnswer": "D",
     "explanation": "D berisi 2 bangun ruang.",
     "difficulty": "medium"
   },
@@ -735,7 +735,7 @@
         "score": 5
       }
     ],
-    "correctAnswer": "4",
+    "correctAnswer": "E",
     "explanation": "Bulatan hitam jumlah genap, kecuali E.",
     "difficulty": "medium"
   },
@@ -772,7 +772,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Rotasi ke kanan.",
     "difficulty": "medium"
   },
@@ -809,7 +809,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Ketiga gambar bersatu.",
     "difficulty": "medium"
   },
@@ -846,7 +846,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "3",
+    "correctAnswer": "D",
     "explanation": "Jumlah titik ganjil.",
     "difficulty": "medium"
   },
@@ -883,7 +883,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "0",
+    "correctAnswer": "A",
     "explanation": "Dirotasi.",
     "difficulty": "medium"
   },
@@ -920,7 +920,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "3",
+    "correctAnswer": "D",
     "explanation": "Rotasi.",
     "difficulty": "medium"
   },
@@ -957,7 +957,7 @@
         "score": 5
       }
     ],
-    "correctAnswer": "4",
+    "correctAnswer": "E",
     "explanation": "Rotasi.",
     "difficulty": "medium"
   },
@@ -994,7 +994,7 @@
         "score": 5
       }
     ],
-    "correctAnswer": "4",
+    "correctAnswer": "E",
     "explanation": "Hitung jumlah garisnya.",
     "difficulty": "medium"
   },
@@ -1031,7 +1031,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "3",
+    "correctAnswer": "D",
     "explanation": "Rotasi.",
     "difficulty": "medium"
   },
@@ -1068,7 +1068,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Gambarnya berpotongan.",
     "difficulty": "medium"
   },
@@ -1105,7 +1105,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "1",
+    "correctAnswer": "B",
     "explanation": "Rotasi.",
     "difficulty": "medium"
   },
@@ -1142,7 +1142,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Rotasi.",
     "difficulty": "medium"
   },
@@ -1179,7 +1179,7 @@
         "score": 5
       }
     ],
-    "correctAnswer": "4",
+    "correctAnswer": "E",
     "explanation": "Objek terkecil jadi pembungkus.",
     "difficulty": "medium"
   },
@@ -1216,7 +1216,7 @@
         "score": 5
       }
     ],
-    "correctAnswer": "4",
+    "correctAnswer": "E",
     "explanation": "Garis siku-siku berputar 90°.",
     "difficulty": "medium"
   },
@@ -1253,7 +1253,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "0",
+    "correctAnswer": "A",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   },
@@ -1290,7 +1290,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "3",
+    "correctAnswer": "D",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   },
@@ -1327,7 +1327,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "1",
+    "correctAnswer": "B",
     "explanation": "Arah panah berpindah.",
     "difficulty": "medium"
   },
@@ -1364,7 +1364,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   },
@@ -1401,7 +1401,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "0",
+    "correctAnswer": "A",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   },
@@ -1438,7 +1438,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "1",
+    "correctAnswer": "B",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   },
@@ -1475,7 +1475,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Segitiga+6=9, Segi4+4=8, Segi5+2=7.",
     "difficulty": "medium"
   },
@@ -1512,7 +1512,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "3",
+    "correctAnswer": "D",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   },
@@ -1549,7 +1549,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   },
@@ -1586,7 +1586,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   },
@@ -1623,7 +1623,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "1",
+    "correctAnswer": "B",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   },
@@ -1660,7 +1660,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "2",
+    "correctAnswer": "C",
     "explanation": "Objek hitam→besar.",
     "difficulty": "medium"
   },
@@ -1697,7 +1697,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": "3",
+    "correctAnswer": "D",
     "explanation": "Pola pertambahan elemen.",
     "difficulty": "medium"
   }
