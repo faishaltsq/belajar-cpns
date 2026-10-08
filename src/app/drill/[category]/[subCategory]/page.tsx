@@ -58,22 +58,32 @@ export default function DrillSessionPage({
 
   // Load questions matching category & subcategory from sample package or DB
   useEffect(() => {
-    fetch('/api/questions/tryout-1')
+    const isFigural = subCategoryDecoded.toLowerCase() === 'figural';
+    // Figural: ambil dari bank soal bergambar murni, bukan tryout-1 yang tidak punya gambar
+    const targetPackage = isFigural ? 'tryout-figural-2' : 'tryout-1';
+
+    fetch(`/api/questions/${targetPackage}`)
       .then((r) => (r.ok ? r.json() : { questions: [] }))
       .then((d) => {
         const all: Question[] = (d.questions || []).map((q: Question) => ({
           ...q,
           text: stripQuestionPrefix(q.text),
         }));
-        let matched = all.filter(
-          (q) =>
-            q.category.toUpperCase() === params.category.toUpperCase() &&
-            q.subCategory?.toLowerCase() === subCategoryDecoded.toLowerCase()
-        );
-        if (matched.length < 5) {
+        let matched: Question[];
+        if (isFigural) {
+          // Hanya soal yang benar-benar punya gambar
+          matched = all.filter((q) => Boolean(q.image));
+        } else {
           matched = all.filter(
-            (q) => q.category.toUpperCase() === params.category.toUpperCase()
+            (q) =>
+              q.category.toUpperCase() === params.category.toUpperCase() &&
+              q.subCategory?.toLowerCase() === subCategoryDecoded.toLowerCase()
           );
+          if (matched.length < 5) {
+            matched = all.filter(
+              (q) => q.category.toUpperCase() === params.category.toUpperCase()
+            );
+          }
         }
         const shuffled = [...matched].sort(() => 0.5 - Math.random()).slice(0, 10);
         setQuestions(shuffled);

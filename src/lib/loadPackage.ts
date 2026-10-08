@@ -56,6 +56,8 @@ const STATIC_PACKAGES: Record<string, () => Promise<Question[]>> = {
   'tryout-16': () => import('@/data/packages/tryout-16.json').then((m) => m.default as unknown as Question[]).catch(() => []),
   'tryout-17': () => import('@/data/packages/tryout-17.json').then((m) => m.default as unknown as Question[]).catch(() => []),
   'tryout-mini': () => import('@/data/packages/tryout-mini.json').then((m) => m.default as unknown as Question[]).catch(() => []),
+  'tryout-figural': () => import('@/data/packages/tryout-figural.json').then((m) => m.default as unknown as Question[]).catch(() => []),
+  'tryout-figural-2': () => import('@/data/packages/tryout-figural-2.json').then((m) => m.default as unknown as Question[]).catch(() => []),
 };
 
 export async function loadPackage(id: string): Promise<Question[]> {
@@ -146,19 +148,20 @@ export const TRYOUT_LIST: PkgItem[] = [
   { id: 'tryout-5', label: 'Tryout 5', desc: 'Sejarah Indonesia, kuantitatif, dan TKP adaptasi', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
   { id: 'tryout-6', label: 'Tryout 6', desc: 'Bhinneka Tunggal Ika, deduktif, dan kepemimpinan', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
   { id: 'tryout-7', label: 'Tryout 7', desc: 'Pilar Kebangsaan, silogisme, dan TKP jejaring kerja', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
-  // ── special (figural + bergambar) ──
-  { id: 'tryout-figural', label: 'Tryout Figural Khusus I', desc: '46 soal penalaran figural bergambar: Analogi, Ketidaksamaan, dan Serial Pola resmi', badge: 'Bergambar', section: 'special', questionCount: 46, durationMin: 45 },
-  { id: 'tryout-figural-2', label: 'Tryout Figural Khusus II (82 Soal)', desc: 'Bank soal figural lengkap: Serial, Analogi, Ketidaksamaan, Jaring-jaring Ruang, & Rotasi', badge: 'Terbaru', section: 'special', questionCount: 82, durationMin: 80 },
-  { id: 'tryout-8', label: 'Tryout 8', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
-  { id: 'tryout-9', label: 'Tryout 9', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
-  { id: 'tryout-10', label: 'Tryout 10', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
-  { id: 'tryout-11', label: 'Tryout 11', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
-  { id: 'tryout-12', label: 'Tryout 12', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
-  { id: 'tryout-13', label: 'Tryout 13', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
-  { id: 'tryout-14', label: 'Tryout 14', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
-  { id: 'tryout-15', label: 'Tryout 15', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
-  { id: 'tryout-16', label: 'Tryout 16', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
-  { id: 'tryout-17', label: 'Tryout 17', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
+  // ── special (100% figural bergambar — murni soal bergambar) ──
+  { id: 'tryout-figural', label: 'Tryout Figural Khusus I', desc: '46 butir soal murni figural bergambar: Analogi, Ketidaksamaan, dan Serial Pola BKN', badge: 'Bergambar', section: 'special', questionCount: 46, durationMin: 45 },
+  { id: 'tryout-figural-2', label: 'Tryout Figural Khusus II', desc: '82 butir soal murni figural: Serial Pola, Persamaan Gambar, Jaring-jaring Ruang 3D, & Rotasi', badge: 'Terbaru', section: 'special', questionCount: 82, durationMin: 80 },
+  // ── standard (110 soal CAT BKN — bukan murni figural) ──
+  { id: 'tryout-8', label: 'Tryout 8', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
+  { id: 'tryout-9', label: 'Tryout 9', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
+  { id: 'tryout-10', label: 'Tryout 10', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
+  { id: 'tryout-11', label: 'Tryout 11', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
+  { id: 'tryout-12', label: 'Tryout 12', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
+  { id: 'tryout-13', label: 'Tryout 13', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
+  { id: 'tryout-14', label: 'Tryout 14', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
+  { id: 'tryout-15', label: 'Tryout 15', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
+  { id: 'tryout-16', label: 'Tryout 16', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
+  { id: 'tryout-17', label: 'Tryout 17', desc: 'Standar CAT BKN — 30 TWK, 35 TIU, 45 TKP', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
   // ── hots ──
   { id: 'tryout-18', label: 'Tryout 18 (HOTS)', desc: 'Standar CAT BKN — 110 soal HOTS (30 TWK, 35 TIU, 45 TKP)', badge: 'HOTS', section: 'hots', questionCount: 110, durationMin: 100 },
   { id: 'tryout-19', label: 'Tryout 19 (HOTS)', desc: 'Standar CAT BKN — 110 soal HOTS (30 TWK, 35 TIU, 45 TKP)', badge: 'HOTS', section: 'hots', questionCount: 110, durationMin: 100 },
