@@ -50,17 +50,36 @@ export async function POST(req: NextRequest) {
             SET image = ${dataUrl}
             WHERE package_id = 'tryout-figural'
               AND number = ${numStart}
-            RETURNING number
+            RETURNING number, text
           `;
-          // ALSO update any other questions across ALL packages that reference this filename
+          // Update other packages by filename LIKE (handles first crop)
           const matchPattern = `%${safeName}%`;
           const res2 = await sql`
             UPDATE questions
             SET image = ${dataUrl}
             WHERE image LIKE ${matchPattern}
+              AND package_id != 'tryout-figural'
             RETURNING number
           `;
-          dbUpdated = (Array.isArray(res1) ? res1.length : 0) + (Array.isArray(res2) ? res2.length : 0);
+          // Update other packages by question text match (handles re-crop after first crop)
+          // This covers tryout-mini and any other package that already has data:image but same question text
+          let res3Count = 0;
+          if (Array.isArray(res1) && res1.length > 0 && res1[0].text) {
+            const qText = res1[0].text as string;
+            const res3 = await sql`
+              UPDATE questions
+              SET image = ${dataUrl}
+              WHERE text = ${qText}
+                AND package_id != 'tryout-figural'
+                AND image IS NOT NULL
+                AND image != ''
+              RETURNING number
+            `;
+            res3Count = Array.isArray(res3) ? res3.length : 0;
+          }
+          dbUpdated = (Array.isArray(res1) ? res1.length : 0)
+            + (Array.isArray(res2) ? res2.length : 0)
+            + res3Count;
         } else {
           const matchPattern = `%${safeName}%`;
           const res = await sql`
