@@ -1,0 +1,3118 @@
+[
+  {
+    "id": 101,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_01.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "Objek terkecil menjadi pembungkus pada urutan berikutnya. Posisi objek kecil berpindah sudut searah jarum jam.",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 102,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_02.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "Dua garis pembentuk sudut siku-siku berputar 90 derajat searah jarum jam.",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 103,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_03.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 104,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_04.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 105,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_05.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Arah panah berpindah ke kiri/kanan dan turun ke bawah.",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 106,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_06.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 107,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_08.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 108,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_09.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Segitiga (3) + 6 lingkaran = 9. Segiempat (4) + 4 lingkaran = 8. Segilima (5) + 2 lingkaran = 7.",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 109,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_10.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 110,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_11.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 111,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_12.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 112,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_13.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 113,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_14.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Objek berwarna hitam akan menjadi gambar besar pada urutan berikutnya.",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 114,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Lengkapilah pola gambar di bawah ini.",
+    "image": "fig_tiu_15.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "TIU SKD CPNS.pdf"
+  },
+  {
+    "id": 115,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_01.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 116,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_02.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 117,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_03.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 118,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_04.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 119,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_05.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 120,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_06.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 121,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_07.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 122,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_08.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 123,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_09.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 124,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_10.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 125,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_11.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 126,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_12.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 127,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_13.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 128,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_14.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 129,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_15.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 130,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_16.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 131,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_17.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 132,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_18.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 133,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_19.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 134,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang tidak mempunyai persamaan dengan gambar-gambar lainnya, atau tentukan kelanjutan pola gambar.",
+    "image": "fig_variasi_20.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 135,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_01.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 136,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_02.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 137,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_03.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 138,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_04.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 139,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_05.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 140,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_06.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 141,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_07.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 142,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_08.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 143,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_09.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 144,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_10.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 145,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_11.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 146,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_12.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 147,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_13.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 148,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_14.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 149,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Perhatikan seri gambar berikut dan tentukan satu gambar yang merupakan kelanjutan dari seri gambar tersebut.",
+    "image": "fig_seri_15.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 150,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_01.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 151,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_02.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 152,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_03.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 153,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_04.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 154,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_05.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 155,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_06.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 156,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_07.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 157,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_08.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 158,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_09.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 159,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_10.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 160,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_11.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 161,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_12.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 162,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_13.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 163,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_14.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 164,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan satu gambar yang mempunyai persamaan dengan gambar yang menjadi soal.",
+    "image": "fig_persamaan_15.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "",
+    "difficulty": "medium",
+    "source": "Soal-CPNS-Paket-1.pdf"
+  },
+  {
+    "id": 165,
+    "category": "TIU",
+    "subCategory": "Figural Visualisasi",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q06.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Jaring-jaring yang benar untuk bangun ruang tersebut adalah opsi A.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 166,
+    "category": "TIU",
+    "subCategory": "Figural Visualisasi",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q07.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "Bangun ruang yang terbentuk dari jaring-jaring adalah opsi D.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 167,
+    "category": "TIU",
+    "subCategory": "Figural Visualisasi",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q08.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "Jaring-jaring yang benar untuk gambar tersebut adalah opsi D.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 168,
+    "category": "TIU",
+    "subCategory": "Figural Visualisasi",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q09.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bangun yang benar untuk jaring-jaring tersebut adalah opsi B.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 169,
+    "category": "TIU",
+    "subCategory": "Figural Visualisasi",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q10.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bangun yang benar untuk jaring-jaring tersebut adalah opsi B.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 170,
+    "category": "TIU",
+    "subCategory": "Figural Ketidaksamaan",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q11.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "Perhatikan gambar E, posisi garisnya berlawanan dengan yang lain.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 171,
+    "category": "TIU",
+    "subCategory": "Figural Ketidaksamaan",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q12.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "Bangun D memiliki perbedaan orientasi/elemen dengan bangun lainnya.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 172,
+    "category": "TIU",
+    "subCategory": "Figural Ketidaksamaan",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q13.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "Gambar E memiliki jumlah elemen/pola yang tidak konsisten.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 173,
+    "category": "TIU",
+    "subCategory": "Figural Ketidaksamaan",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q14.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Gambar A memiliki perbedaan pola dari yang lain.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 174,
+    "category": "TIU",
+    "subCategory": "Figural Ketidaksamaan",
+    "text": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut.",
+    "image": "fig_bumn3_q15.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "Gambar E merupakan kelanjutan atau pola yang berbeda dari kelompoknya.",
+    "difficulty": "medium",
+    "source": "5_6327771640704796042.pdf"
+  },
+  {
+    "id": 175,
+    "category": "TIU",
+    "subCategory": "Figural Ketidaksamaan",
+    "text": "Manakah gambar yang tidak sama?",
+    "image": "fig_modul1_01.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Lihat pola B,C,D dan E garis memotong lingkaran - sedangkan yang A tidak memotong lingkaran.",
+    "difficulty": "medium",
+    "source": "SOAL FIGURAL 1.pdf"
+  },
+  {
+    "id": 176,
+    "category": "TIU",
+    "subCategory": "Figural Ketidaksamaan",
+    "text": "Manakah gambar yang tidak sama?",
+    "image": "fig_modul1_02.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pola A,C,D dan E adalah pola bilangan ganjil - sedangkan yang B adalah pola bilangan genap.",
+    "difficulty": "medium",
+    "source": "SOAL FIGURAL 1.pdf"
+  },
+  {
+    "id": 177,
+    "category": "TIU",
+    "subCategory": "Figural Visualisasi",
+    "text": "Pilihlah gambar yang benar dengan mencocokkan jaring-jaring.",
+    "image": "fig_modul1_03.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Dalam jaring adalah bangun prisma segi empat dengan sisi berbentuk sama kaki. Kuncinya di ujung sebelah kanan.",
+    "difficulty": "medium",
+    "source": "SOAL FIGURAL 1.pdf"
+  },
+  {
+    "id": 178,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Manakah pencerminan yang benar dari gambar soal?",
+    "image": "fig_modul1_04.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Cari gambar terbalik dari soal (pencerminan).",
+    "difficulty": "medium",
+    "source": "SOAL FIGURAL 1.pdf"
+  },
+  {
+    "id": 179,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Manakah gambar yang serupa (rotasi) dari gambar soal?",
+    "image": "fig_modul1_05.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Gambar yang serupa adalah opsi C (diputar 45 derajat searah jarum jam).",
+    "difficulty": "medium",
+    "source": "SOAL FIGURAL 1.pdf"
+  },
+  {
+    "id": 180,
+    "category": "TIU",
+    "subCategory": "Figural Rotasi",
+    "text": "Manakah gambar yang serupa (rotasi) dari gambar soal?",
+    "image": "fig_modul1_06.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "Gambar yang serupa adalah opsi E (diputar 90 derajat searah jarum jam).",
+    "difficulty": "medium",
+    "source": "SOAL FIGURAL 1.pdf"
+  },
+  {
+    "id": 181,
+    "category": "TIU",
+    "subCategory": "Figural Serial",
+    "text": "Tentukan lanjutan pola dari gambar-gambar berikut.",
+    "image": "fig_modul1_07.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Arah kepala panah berlawanan arah pada gambar berikutnya, posisi panah semakin menurun ke bawah.",
+    "difficulty": "medium",
+    "source": "SOAL FIGURAL 1.pdf"
+  },
+  {
+    "id": 182,
+    "category": "TIU",
+    "subCategory": "Figural Analogi",
+    "text": "Tentukan analogi gambar berikut.",
+    "image": "fig_modul1_08.png",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gambar A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gambar B",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gambar C",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gambar D",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Gambar E",
+        "score": 5
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "Segitiga menjadi segiempat, segiempat menjadi segilima, segilima menjadi segienam, segienam menjadi segitujuh.",
+    "difficulty": "medium",
+    "source": "SOAL FIGURAL 1.pdf"
+  }
+]

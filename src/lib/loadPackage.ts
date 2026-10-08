@@ -147,7 +147,8 @@ export const TRYOUT_LIST: PkgItem[] = [
   { id: 'tryout-6', label: 'Tryout 6', desc: 'Bhinneka Tunggal Ika, deduktif, dan kepemimpinan', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
   { id: 'tryout-7', label: 'Tryout 7', desc: 'Pilar Kebangsaan, silogisme, dan TKP jejaring kerja', badge: null, section: 'standard', questionCount: 110, durationMin: 100 },
   // ── special (figural + bergambar) ──
-  { id: 'tryout-figural', label: 'Tryout Figural Khusus', desc: '46 soal penalaran figural bergambar: Analogi, Ketidaksamaan, dan Serial Pola resmi', badge: 'Bergambar', section: 'special', questionCount: 46, durationMin: 45 },
+  { id: 'tryout-figural', label: 'Tryout Figural Khusus I', desc: '46 soal penalaran figural bergambar: Analogi, Ketidaksamaan, dan Serial Pola resmi', badge: 'Bergambar', section: 'special', questionCount: 46, durationMin: 45 },
+  { id: 'tryout-figural-2', label: 'Tryout Figural Khusus II (82 Soal)', desc: 'Bank soal figural lengkap: Serial, Analogi, Ketidaksamaan, Jaring-jaring Ruang, & Rotasi', badge: 'Terbaru', section: 'special', questionCount: 82, durationMin: 80 },
   { id: 'tryout-8', label: 'Tryout 8', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
   { id: 'tryout-9', label: 'Tryout 9', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
   { id: 'tryout-10', label: 'Tryout 10', desc: 'Standar CAT BKN — 110 soal resmi + 12 soal figural bergambar', badge: 'Baru', section: 'special', questionCount: 110, durationMin: 100 },
