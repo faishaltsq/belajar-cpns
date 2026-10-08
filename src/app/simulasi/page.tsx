@@ -183,6 +183,11 @@ export default function SimulasiPage() {
             {pkg.label}
           </h3>
           <div className="flex items-center gap-1.5 shrink-0">
+            {FREE_IDS.has(pkg.id) && (
+              <span className="badge-pill text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                Gratis
+              </span>
+            )}
             {hasDraft && (
               <span className="badge-pill text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
                 Draft: {draftCount} Soal
