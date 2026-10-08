@@ -45,6 +45,33 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // 0. Guard: tolak jika user sudah Pro atau sudah unlock paket ini
+    if (userId) {
+      const userRows = await sql`
+        SELECT is_pro, unlocked_packages FROM users WHERE id = ${userId} LIMIT 1
+      `;
+      if (userRows.length > 0) {
+        const { is_pro, unlocked_packages } = userRows[0];
+        const unlockedArr: string[] = Array.isArray(unlocked_packages) ? unlocked_packages : [];
+
+        // Jika user sudah Pro, semua paket sudah terbuka, dilarang beli lagi
+        if (is_pro) {
+          return NextResponse.json(
+            { error: 'ALREADY_PRO', message: 'Akun kamu sudah berstatus PRO. Semua paket tryout sudah terbuka.' },
+            { status: 409 }
+          );
+        }
+
+        // Jika paket satuan spesifik sudah terbuka
+        if (orderType === 'single' && packageId && unlockedArr.includes(packageId)) {
+          return NextResponse.json(
+            { error: 'ALREADY_UNLOCKED', message: `Paket ${packageId} sudah terbuka untuk akunmu.` },
+            { status: 409 }
+          );
+        }
+      }
+    }
+
     // 1. Cek apakah user sudah punya order pending yang aktif untuk tipe paket ini dalam masa berlaku
     if (userId || userEmail) {
       let existing: Record<string, any>[] = [];

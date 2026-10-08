@@ -46,7 +46,7 @@ export function UpgradeProModal({
   const pathname = usePathname();
 
   const [selectedPlan, setSelectedPlan] = useState<'single' | 'pro'>('pro');
-  const [step, setStep] = useState<'info' | 'pay' | 'success'>('info');
+  const [step, setStep] = useState<'info' | 'pay' | 'success' | 'already_pro'>('info');
   const [loading, setLoading] = useState(false);
   const [orderInfo, setOrderInfo] = useState<OrderInfo | null>(null);
   const [userEmail, setUserEmail] = useState('');
@@ -74,6 +74,8 @@ export function UpgradeProModal({
       const data = await res.json();
       if (data.success) {
         setOrderInfo(data);
+      } else if (data.error === 'ALREADY_PRO' || data.error === 'ALREADY_UNLOCKED') {
+        setStep('already_pro');
       } else {
         setErrorMessage(data.error || 'Gagal menyiapkan pesanan pembayaran.');
       }
@@ -104,10 +106,16 @@ export function UpgradeProModal({
       .then((r) => r.json())
       .then((d) => {
         if (d.email) setUserEmail(d.email);
+        // Guard: jika user sudah Pro, langsung tampilkan layar konfirmasi
+        if (d.is_pro) {
+          setStep('already_pro');
+          return;
+        }
+        fetchOrder(initialPlan);
       })
-      .catch(() => null);
-
-    fetchOrder(initialPlan);
+      .catch(() => {
+        fetchOrder(initialPlan);
+      });
 
     return () => {
       if (pollTimerRef.current) clearInterval(pollTimerRef.current);
@@ -254,6 +262,8 @@ export function UpgradeProModal({
           <h3 className="text-lg font-bold text-[var(--foreground)]">
             {step === 'success'
               ? 'Pembayaran Berhasil! 🎉'
+              : step === 'already_pro'
+              ? 'Akun Sudah PRO'
               : step === 'pay'
               ? 'Selesaikan Pembayaran QRIS'
               : triggerPackage
@@ -530,6 +540,31 @@ export function UpgradeProModal({
           </div>
         )}
 
+        {/* STEP ALREADY PRO */}
+        {step === 'already_pro' && (
+          <div className="space-y-4 text-center py-4">
+            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+              <Crown size={36} weight="fill" />
+            </div>
+            <div className="space-y-1">
+              <h4 className="text-base font-bold text-[var(--foreground)]">
+                Akun Kamu Sudah PRO!
+              </h4>
+              <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">
+                Semua paket tryout dan fitur premium sudah terbuka penuh untuk akunmu. Tidak perlu membeli paket lagi.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={onClose}
+              className="btn-primary w-full py-2.5 text-xs font-semibold"
+            >
+              Tutup & Mulai Latihan
+            </button>
+          </div>
+        )}
+
         {/* STEP 3: Sukses */}
         {step === 'success' && (
           <div className="space-y-4 text-center py-3">
@@ -559,7 +594,7 @@ export function UpgradeProModal({
           </div>
         )}
 
-        {step !== 'success' && (
+        {step !== 'success' && step !== 'already_pro' && (
           <button
             type="button"
             onClick={onClose}
