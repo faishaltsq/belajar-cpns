@@ -38,23 +38,34 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   const userId = user?.id ?? null;
 
   useEffect(() => {
+    if (userLoading) return;
     try {
-      const raw = localStorage.getItem(scopedKey(`exam_result_${params.resultId}`, userId));
+      let raw = localStorage.getItem(scopedKey(`exam_result_${params.resultId}`, userId));
+      // Fallback: coba cari sebagai guest jika user belum login atau sesi bergeser
+      if (!raw && userId) {
+        raw = localStorage.getItem(scopedKey(`exam_result_${params.resultId}`, null));
+      }
       if (raw) {
         setResult(JSON.parse(raw));
+        setNotFound(false);
       } else {
         setNotFound(true);
       }
-      const rawQ = localStorage.getItem(scopedKey(`exam_questions_${params.resultId}`, userId));
-      const rawA = localStorage.getItem(scopedKey(`exam_user_answers_${params.resultId}`, userId));
+
+      const rawQ = localStorage.getItem(scopedKey(`exam_questions_${params.resultId}`, userId)) ||
+        localStorage.getItem(scopedKey(`exam_questions_${params.resultId}`, null));
+      const rawA = localStorage.getItem(scopedKey(`exam_user_answers_${params.resultId}`, userId)) ||
+        localStorage.getItem(scopedKey(`exam_user_answers_${params.resultId}`, null));
       if (rawQ) setQuestions(JSON.parse(rawQ));
       if (rawA) setUserAnswers(JSON.parse(rawA));
-      const rawTime = localStorage.getItem(scopedKey(`exam_time_per_q_${params.resultId}`, userId));
+
+      const rawTime = localStorage.getItem(scopedKey(`exam_time_per_q_${params.resultId}`, userId)) ||
+        localStorage.getItem(scopedKey(`exam_time_per_q_${params.resultId}`, null));
       if (rawTime) setTimeSpent(JSON.parse(rawTime));
     } catch {
       setNotFound(true);
     }
-  }, [params.resultId, userId]);
+  }, [params.resultId, userId, userLoading]);
 
   const diagnostic = useMemo(() => {
     if (!questions.length) return null;

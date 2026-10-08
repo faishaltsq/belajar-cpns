@@ -117,6 +117,14 @@ export default function JourneyPage() {
   }, [loaded]);
 
   function toggleDay(day: number) {
+    if (!user) {
+      try {
+        localStorage.setItem('lolos_guest_tried_journey', 'true');
+      } catch {}
+      setShowGuestModal(true);
+      return;
+    }
+
     const next = new Set(completed);
     if (next.has(day)) {
       next.delete(day);
@@ -131,16 +139,17 @@ export default function JourneyPage() {
     }
     setCompleted(next);
     setScopedJSON(KEY_COMPLETED, userId, Array.from(next));
+  }
 
+  function handleLogToday() {
     if (!user) {
       try {
         localStorage.setItem('lolos_guest_tried_journey', 'true');
       } catch {}
       setShowGuestModal(true);
+      return;
     }
-  }
 
-  function handleLogToday() {
     const today = todayStr();
     if (streakDates.includes(today)) return;
     const nextDates = [today, ...streakDates];
@@ -155,13 +164,6 @@ export default function JourneyPage() {
     }
     setTodayLoggedDay(activeDay);
     setScopedJSON(KEY_TODAY_LOGGED, userId, { date: today, day: activeDay });
-
-    if (!user) {
-      try {
-        localStorage.setItem('lolos_guest_tried_journey', 'true');
-      } catch {}
-      setShowGuestModal(true);
-    }
   }
 
   function handleUndoToday() {

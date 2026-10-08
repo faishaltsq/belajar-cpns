@@ -134,10 +134,23 @@ export default function RiwayatPage() {
     }
 
     // Drafts: scoped exam_answers_* with at least 1 answered question
+    // Skip & purge official mode drafts (official = no resume allowed)
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (!key?.startsWith(answersDraftPrefix)) continue;
       const packageId = key.replace(answersDraftPrefix, '');
+
+      // Auto-purge abandoned official drafts
+      const savedMode = localStorage.getItem(scopedKey(`exam_mode_${packageId}`, userId));
+      if (savedMode === 'official') {
+        try {
+          localStorage.removeItem(key);
+          localStorage.removeItem(scopedKey(`exam_start_${packageId}`, userId));
+          localStorage.removeItem(scopedKey(`exam_mode_${packageId}`, userId));
+        } catch {}
+        continue;
+      }
+
       try {
         const raw = localStorage.getItem(key);
         if (!raw) continue;

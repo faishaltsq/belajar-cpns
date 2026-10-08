@@ -618,6 +618,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
       {/* Modal Exit */}
       <ExitExamModal
         isOpen={showExitModal}
+        examType={examType}
         onCancel={() => setShowExitModal(false)}
         onSaveDraft={() => {
           // Answers sudah terautosave di localStorage
@@ -627,6 +628,16 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         onSubmitNow={() => {
           setShowExitModal(false);
           submitExam(answers);
+        }}
+        onAbandon={() => {
+          // Official mode: hapus semua draft, skor hangus
+          try {
+            localStorage.removeItem(storageKey);
+            localStorage.removeItem(startKey);
+            localStorage.removeItem(modeKey);
+          } catch {}
+          setShowExitModal(false);
+          router.push('/simulasi');
         }}
       />
 

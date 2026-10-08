@@ -5,10 +5,12 @@ import Link from 'next/link';
 import {
   BookOpen, Timer, Target, ArrowRight, Lock, Crown,
   MagnifyingGlass, X, Gift, Certificate, ImageSquare, Brain, Barbell,
-  ListBullets
+  ListBullets, Play
 } from '@phosphor-icons/react';
 import { TRYOUT_LIST, SECTION_META, type TryoutSection, type PkgItem } from '@/lib/loadPackage';
 import { UpgradeProModal } from '@/components/UpgradeProModal';
+import { useUser } from '@/lib/useUser';
+import { scopedKey } from '@/lib/userStorage';
 
 const SECTION_ORDER: TryoutSection[] = ['starter', 'standard', 'special', 'hots', 'drill'];
 
@@ -41,17 +43,45 @@ function badgeClasses(badge: string | null): string {
 }
 
 export default function SimulasiPage() {
+  const { user } = useUser();
+  const userId = user?.id ?? null;
+
   const [packages, setPackages] = useState<PkgItem[]>(TRYOUT_LIST);
   const [isPro, setIsPro] = useState(false);
   const [unlockedPackages, setUnlockedPackages] = useState<string[]>([]);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const [upgradeTrigger, setUpgradeTrigger] = useState('');
   const [upgradePackageId, setUpgradePackageId] = useState<string | undefined>(undefined);
+  const [activeDrafts, setActiveDrafts] = useState<Record<string, { count: number }>>({});
 
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<TryoutSection | 'all'>('all');
 
   const FREE_IDS = new Set(['tryout-mini', 'tryout-1', 'tryout-2']);
+
+  // Deteksi draft aktif untuk setiap paket
+  useEffect(() => {
+    try {
+      const draftsMap: Record<string, { count: number }> = {};
+      packages.forEach(pkg => {
+        const answersKey = scopedKey(`exam_answers_${pkg.id}`, userId);
+        const modeKey = scopedKey(`exam_mode_${pkg.id}`, userId);
+        const savedMode = localStorage.getItem(modeKey);
+        // Hanya mode practice (atau legacy tanpa mode) yang bisa dilanjutkan
+        if (savedMode === 'official') return;
+
+        const raw = localStorage.getItem(answersKey);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          const count = Array.isArray(parsed) ? parsed.length : Object.keys(parsed).length;
+          if (count > 0) {
+            draftsMap[pkg.id] = { count };
+          }
+        }
+      });
+      setActiveDrafts(draftsMap);
+    } catch {}
+  }, [packages, userId]);
 
   useEffect(() => {
     fetch('/api/packages')
@@ -139,6 +169,9 @@ export default function SimulasiPage() {
       );
     }
 
+    const hasDraft = !!activeDrafts[pkg.id];
+    const draftCount = activeDrafts[pkg.id]?.count ?? 0;
+
     return (
       <Link
         key={pkg.id}
@@ -150,6 +183,11 @@ export default function SimulasiPage() {
             {pkg.label}
           </h3>
           <div className="flex items-center gap-1.5 shrink-0">
+            {hasDraft && (
+              <span className="badge-pill text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                Draft: {draftCount} Soal
+              </span>
+            )}
             {pkg.badge && (
               <span className={`badge-pill text-[10px] font-semibold border ${badgeClasses(pkg.badge)}`}>
                 {pkg.badge}
@@ -160,10 +198,17 @@ export default function SimulasiPage() {
         <p className="text-xs text-[var(--muted-foreground)] mb-2.5 leading-relaxed line-clamp-2">{pkg.desc}</p>
         <div className="flex items-center justify-between">
           {infoPill}
-          <span className="text-xs font-medium text-[var(--foreground)] flex items-center gap-1 group-hover:gap-2 transition-all">
-            Mulai Tryout
-            <ArrowRight size={12} weight="bold" />
-          </span>
+          {hasDraft ? (
+            <span className="text-xs font-semibold text-amber-700 flex items-center gap-1 group-hover:gap-2 transition-all">
+              <Play size={12} weight="fill" />
+              Lanjutkan Simulasi
+            </span>
+          ) : (
+            <span className="text-xs font-medium text-[var(--foreground)] flex items-center gap-1 group-hover:gap-2 transition-all">
+              Mulai Tryout
+              <ArrowRight size={12} weight="bold" />
+            </span>
+          )}
         </div>
       </Link>
     );
