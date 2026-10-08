@@ -14,6 +14,20 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: 'Lolos.in — Simulasi CAT SKD CPNS 2026 Gratis',
   description: 'Lolos.in: platform simulasi ujian CAT SKD CPNS 2026 standar BKN dengan penilaian otomatis TWK, TIU, dan TKP. Gratis, tanpa login.',
+  metadataBase: new URL('https://lolos.in'),
+  openGraph: {
+    title: 'Lolos.in — Simulasi CAT SKD CPNS 2026',
+    description: '36 Paket Tryout CAT · 3.816 Soal · Timer 100 Menit · Skor Otomatis TWK/TIU/TKP · Gratis tanpa login.',
+    url: 'https://lolos.in',
+    siteName: 'Lolos.in',
+    locale: 'id_ID',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lolos.in — Simulasi CAT SKD CPNS 2026',
+    description: '36 Paket Tryout CAT · 3.816 Soal · Timer 100 Menit · Skor Otomatis TWK/TIU/TKP · Gratis tanpa login.',
+  },
 };
 
 export default function RootLayout({

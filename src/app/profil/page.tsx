@@ -241,6 +241,57 @@ export default function ProfilPage() {
           )}
         </div>
 
+        {/* ── PASSING GRADE TRACKER ── */}
+        {(stats?.totalExams ?? 0) > 0 && (
+          <div className="card-modern p-5 space-y-3">
+            <div className="flex items-center justify-between">
+              <h2 className="text-sm font-bold text-[var(--foreground)]">Target Lulus SKD</h2>
+              <span className="text-[10px] text-[var(--muted-foreground)]">Passing Grade Resmi BKN 2024</span>
+            </div>
+            {[
+              { label: 'TWK', passing: 65, maxScore: 150 },
+              { label: 'TIU', passing: 80, maxScore: 175 },
+              { label: 'TKP', passing: 166, maxScore: 225 },
+            ].map(({ label, passing, maxScore }) => {
+              // Estimasi skor per sub-tes dari rata-rata (proporsional dari stats.avgScore/550)
+              const ratio = maxScore / 550;
+              const estimatedScore = Math.round((stats?.avgScore ?? 0) * ratio);
+              const highest = Math.round((stats?.highestScore ?? 0) * ratio);
+              const pct = Math.min((highest / maxScore) * 100, 100);
+              const passingPct = (passing / maxScore) * 100;
+              const isPassed = highest >= passing;
+              return (
+                <div key={label}>
+                  <div className="flex items-center justify-between text-xs mb-1">
+                    <span className="font-semibold text-[var(--foreground)]">{label}</span>
+                    <span className={isPassed ? 'text-emerald-600 font-semibold' : 'text-red-500 font-semibold'}>
+                      {highest} / {passing} (passing)
+                    </span>
+                  </div>
+                  <div className="relative rounded-full h-2" style={{ background: 'var(--muted)' }}>
+                    {/* Passing grade marker */}
+                    <div
+                      className="absolute top-0 h-2 w-0.5 bg-slate-400 z-10 rounded-full"
+                      style={{ left: `${passingPct}%` }}
+                    />
+                    {/* Progress bar */}
+                    <div
+                      className="h-2 rounded-full transition-all"
+                      style={{
+                        width: `${pct}%`,
+                        backgroundColor: isPassed ? '#059669' : '#c96442',
+                      }}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+            <p className="text-[10px] text-[var(--muted-foreground)] pt-1">
+              Estimasi berdasarkan skor tertinggi tryout kamu. Skor aktual tiap sub-tes terlihat di detail hasil tryout.
+            </p>
+          </div>
+        )}
+
         {/* ── FORM PROFIL ── */}
         <div className="card-modern p-5 space-y-4">
           <h2 className="text-sm font-bold text-[var(--foreground)]">Informasi Akun</h2>

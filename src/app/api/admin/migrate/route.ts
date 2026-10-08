@@ -94,6 +94,17 @@ export async function POST(req: NextRequest) {
     await sql.query(`CREATE INDEX IF NOT EXISTS idx_results_user ON exam_results(user_id)`);
     await sql.query(`CREATE INDEX IF NOT EXISTS idx_results_package ON exam_results(package_id)`);
 
+    // Table password_resets untuk fitur lupa password
+    await sql.query(`
+      CREATE TABLE IF NOT EXISTS password_resets (
+        id SERIAL PRIMARY KEY,
+        email VARCHAR(255) NOT NULL,
+        otp VARCHAR(6) NOT NULL,
+        expires_at TIMESTAMPTZ NOT NULL,
+        created_at TIMESTAMPTZ DEFAULT NOW()
+      )
+    `);
+
     // 2. Seed packages from static JSON files bundled in the build
     const meta: Record<string, { title: string; duration: number }> = {
       'tryout-1': { title: 'Paket Tryout SKD 01 (Standar CAT BKN)', duration: 6000 },

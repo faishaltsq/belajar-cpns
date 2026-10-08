@@ -15,14 +15,16 @@ function LoginFormContent() {
   const raw = searchParams.get('redirect') || '/simulasi';
   const redirect = raw.startsWith('/') && !raw.startsWith('//') ? raw : '/simulasi';
 
-  // step: 'form' | 'otp'
-  const [step, setStep] = useState<'form' | 'otp'>('form');
+  // step: 'form' | 'otp' | 'forgot' | 'reset'
+  const [step, setStep] = useState<'form' | 'otp' | 'forgot' | 'reset'>('form');
   const [isRegister, setIsRegister] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
   const [name, setName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const [resending, setResending] = useState(false);
   const [resendSuccess, setResendSuccess] = useState(false);
@@ -135,6 +137,54 @@ function LoginFormContent() {
     }
   };
 
+  const handleForgotPassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch('/api/auth/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Gagal mengirim kode OTP.');
+      setOtpDigits(['', '', '', '', '', '']);
+      setStep('reset');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Terjadi kesalahan.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleResetPassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const otp = otpDigits.join('');
+    if (otp.length < 6) return setError('Masukkan 6 digit kode OTP.');
+    if (newPassword.length < 6) return setError('Password baru minimal 6 karakter.');
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch('/api/auth/reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, otp, newPassword }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Gagal mereset password.');
+      setSuccessMsg('Password berhasil diubah. Silakan login dengan password baru.');
+      setStep('form');
+      setIsRegister(false);
+      setPassword('');
+      setOtpDigits(['', '', '', '', '', '']);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Terjadi kesalahan.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const benefits = [
     { icon: ChartLineUp, text: 'Simpan otomatis riwayat tryout & grafik progres' },
     { icon: Trophy, text: 'Bandingkan ranking dengan peserta nasional' },
@@ -236,6 +286,100 @@ function LoginFormContent() {
     );
   }
 
+  // ── STEP FORGOT ────────────────────────────────────────────
+  if (step === 'forgot') {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="w-full max-w-md">
+          <Link href="/" className="inline-flex items-center gap-2 mb-8">
+            <Logo size="lg" />
+          </Link>
+          <div className="card-modern p-8">
+            <div className="text-center mb-6">
+              <div className="inline-flex p-3 rounded-2xl bg-[var(--muted)] mb-3">
+                <Lock size={28} weight="duotone" style={{ color: 'var(--primary)' }} />
+              </div>
+              <h1 className="text-xl font-bold text-[var(--foreground)]">Lupa Kata Sandi</h1>
+              <p className="text-xs text-[var(--muted-foreground)] mt-1">Masukkan email akunmu. Kami akan kirimkan kode OTP 6 digit.</p>
+            </div>
+            {error && <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs">{error}</div>}
+            <form onSubmit={handleForgotPassword} className="space-y-4">
+              <div>
+                <label htmlFor="forgot-email" className="block text-xs font-medium text-[var(--foreground)] mb-1.5">Email Akun</label>
+                <div className="relative">
+                  <Envelope size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--muted-foreground)]" weight="duotone" />
+                  <input id="forgot-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email@kamu.com" required autoFocus className="input-modern w-full !pl-10 text-sm" />
+                </div>
+              </div>
+              <button type="submit" disabled={loading} className="btn-primary w-full py-2.5 text-sm">
+                {loading ? <><SpinnerGap size={16} weight="bold" className="animate-spin" /><span>Mengirim...</span></> : <><span>Kirim Kode OTP</span><ArrowRight size={16} weight="bold" /></>}
+              </button>
+            </form>
+            <div className="mt-4 text-center">
+              <button type="button" onClick={() => { setStep('form'); setError(''); }} className="text-xs text-[var(--muted-foreground)] underline hover:opacity-80">Kembali ke form login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ── STEP RESET ─────────────────────────────────────────────
+  if (step === 'reset') {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="w-full max-w-md">
+          <Link href="/" className="inline-flex items-center gap-2 mb-8">
+            <Logo size="lg" />
+          </Link>
+          <div className="card-modern p-8">
+            <div className="text-center mb-6">
+              <div className="inline-flex p-3 rounded-2xl bg-[var(--muted)] mb-3">
+                <CheckCircle size={28} weight="duotone" style={{ color: 'var(--primary)' }} />
+              </div>
+              <h1 className="text-xl font-bold text-[var(--foreground)]">Masukkan Kode & Password Baru</h1>
+              <p className="text-xs text-[var(--muted-foreground)] mt-1">Kode OTP 6 digit dikirim ke <strong>{email}</strong>. Berlaku 10 menit.</p>
+            </div>
+            {error && <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs">{error}</div>}
+            <form onSubmit={handleResetPassword} className="space-y-4">
+              {/* OTP digits */}
+              <div>
+                <label className="block text-xs font-medium text-[var(--foreground)] mb-2">Kode OTP</label>
+                <div className="flex gap-2 justify-center">
+                  {otpDigits.map((d, i) => (
+                    <input key={i} ref={otpRefs[i]} type="text" inputMode="numeric" maxLength={1} value={d}
+                      onChange={(e) => handleOtpChange(i, e.target.value)}
+                      onKeyDown={(e) => handleOtpKeyDown(i, e)}
+                      className="w-10 h-12 text-center text-lg font-bold border-2 rounded-xl focus:border-[var(--primary)] focus:outline-none bg-[var(--card)] text-[var(--foreground)] transition"
+                      style={{ borderColor: d ? 'var(--primary)' : 'var(--border)' }}
+                    />
+                  ))}
+                </div>
+              </div>
+              {/* New password */}
+              <div>
+                <label htmlFor="new-password" className="block text-xs font-medium text-[var(--foreground)] mb-1.5">Password Baru</label>
+                <div className="relative">
+                  <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--muted-foreground)]" weight="duotone" />
+                  <input id="new-password" type={showPassword ? 'text' : 'password'} minLength={6} value={newPassword} onChange={(e) => setNewPassword(e.target.value)} placeholder="••••••••" required autoComplete="new-password" className="input-modern w-full !pl-10 !pr-11 text-sm" />
+                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition" aria-label="Toggle password">
+                    {showPassword ? <EyeSlash size={16} weight="duotone" /> : <Eye size={16} weight="duotone" />}
+                  </button>
+                </div>
+              </div>
+              <button type="submit" disabled={loading} className="btn-primary w-full py-2.5 text-sm">
+                {loading ? <><SpinnerGap size={16} weight="bold" className="animate-spin" /><span>Memproses...</span></> : <><span>Reset Password</span><ArrowRight size={16} weight="bold" /></>}
+              </button>
+            </form>
+            <div className="mt-4 text-center">
+              <button type="button" onClick={() => { setStep('forgot'); setError(''); setOtpDigits(['', '', '', '', '', '']); }} className="text-xs text-[var(--muted-foreground)] underline hover:opacity-80">Minta kode ulang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // ── STEP FORM ─────────────────────────────────────────────
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
@@ -265,6 +409,12 @@ function LoginFormContent() {
               </div>
             ))}
           </div>
+
+          {successMsg && (
+            <div className="mb-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-medium">
+              {successMsg}
+            </div>
+          )}
 
           {error && (
             <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs">
@@ -312,9 +462,20 @@ function LoginFormContent() {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-xs font-medium text-[var(--foreground)] mb-1.5">
-                Password{isRegister && <span className="text-[var(--muted-foreground)] font-normal"> (Min. 6 karakter)</span>}
-              </label>
+              <div className="flex items-center justify-between mb-1.5">
+                <label htmlFor="password" className="block text-xs font-medium text-[var(--foreground)]">
+                  Password{isRegister && <span className="text-[var(--muted-foreground)] font-normal"> (Min. 6 karakter)</span>}
+                </label>
+                {!isRegister && (
+                  <button
+                    type="button"
+                    onClick={() => { setError(''); setSuccessMsg(''); setStep('forgot'); }}
+                    className="text-[10px] text-[var(--primary)] hover:underline font-medium"
+                  >
+                    Lupa password?
+                  </button>
+                )}
+              </div>
               <div className="relative">
                 <Lock size={16} className="text-[var(--muted-foreground)] absolute left-3.5 top-1/2 -translate-y-1/2" weight="duotone" />
                 <input

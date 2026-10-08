@@ -194,3 +194,19 @@ body {
 .clay-input {
   @apply input-modern;
 }
+
+@media print {
+  header, footer, [data-floating-support], .print\:hidden {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .card-modern {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    background: #ffffff !important;
+    page-break-inside: avoid;
+  }
+}

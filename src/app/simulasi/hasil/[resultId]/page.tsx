@@ -19,6 +19,7 @@ import {
   Ranking,
   House,
   CaretLeft,
+  Printer,
 } from '@phosphor-icons/react';
 import { useUser } from '@/lib/useUser';
 import { scopedKey } from '@/lib/userStorage';
@@ -302,7 +303,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
         </div>
 
         {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-3 pt-3">
+        <div className="flex flex-col sm:flex-row gap-3 pt-3 print:hidden">
           <Link
             href="/simulasi"
             className="btn-secondary flex-1 flex items-center justify-center gap-2 py-3 px-6 text-sm"
@@ -310,6 +311,14 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
             <House size={16} weight="bold" />
             Kembali ke Menu Utama
           </Link>
+          <button
+            type="button"
+            onClick={() => window.print()}
+            className="btn-secondary flex-1 flex items-center justify-center gap-2 py-3 px-6 text-sm"
+          >
+            <Printer size={16} weight="bold" />
+            Cetak / Simpan PDF
+          </button>
           <Link
             href={retryPath}
             className="btn-primary flex-1 flex items-center justify-center gap-2 py-3 px-6 text-sm"
