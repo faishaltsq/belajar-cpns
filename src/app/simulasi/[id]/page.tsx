@@ -149,6 +149,15 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, []);
 
+  // Keluar fullscreen otomatis saat unmount (navigasi keluar halaman ujian)
+  useEffect(() => {
+    return () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen().catch(() => {});
+      }
+    };
+  }, []);
+
   // Konfirmasi saat back/forward browser (Next.js router)
   useEffect(() => {
     const handlePopState = () => {
@@ -309,6 +318,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
       localStorage.removeItem(storageKey);
       localStorage.removeItem(startKey);
+      if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       router.push(`/simulasi/hasil/${resultId}`);
     },
     [params.id, storageKey, startKey, router, questions, examType]
@@ -632,15 +642,18 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         onCancel={() => setShowExitModal(false)}
         onSaveDraft={() => {
           // Answers sudah terautosave di localStorage
+          if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
           setShowExitModal(false);
           router.push('/simulasi');
         }}
         onSubmitNow={() => {
+          if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
           setShowExitModal(false);
           submitExam(answers);
         }}
         onAbandon={() => {
           // Official mode: hapus semua draft, skor hangus
+          if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
           try {
             localStorage.removeItem(storageKey);
             localStorage.removeItem(startKey);
