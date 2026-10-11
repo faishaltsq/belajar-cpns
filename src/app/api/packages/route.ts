@@ -18,6 +18,7 @@ export async function GET() {
       if (rows && rows.length > 0) {
         // Merge DB rows dengan metadata section dari TRYOUT_LIST
         const metaMap = new Map(TRYOUT_LIST.map(p => [p.id, p]));
+        const orderMap = new Map(TRYOUT_LIST.map((p, idx) => [p.id, idx]));
         const pkgs = rows.map((r) => {
           const meta = metaMap.get(r.id as string);
           return {
@@ -30,6 +31,8 @@ export async function GET() {
             durationMin: meta?.durationMin ?? Math.round((r.duration_sec || 6000) / 60),
           };
         });
+        // Sort sesuai urutan kanonikal TRYOUT_LIST
+        pkgs.sort((a, b) => (orderMap.get(a.id) ?? 999) - (orderMap.get(b.id) ?? 999));
         return NextResponse.json(
           { packages: pkgs },
           {

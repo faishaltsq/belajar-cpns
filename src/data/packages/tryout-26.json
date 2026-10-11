@@ -1,0 +1,4072 @@
+[
+  {
+    "id": 1,
+    "category": "TWK",
+    "text": "Berdasarkan ketentuan Pasal 20 UU No. 25 Tahun 2009 tentang Pelayanan Publik, penyusunan dan penetapan standar pelayanan oleh penyelenggara wajib mengikutsertakan...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Hanya instansi pengawas internal pemerintah dan aparat penegak hukum.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Masyarakat dan pihak terkait guna menjamin transparansi serta akuntabilitas.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Lembaga legislatif daerah sebagai penentu utama tolak ukur standar layanan.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pihak ketiga atau sektor swasta yang mendanai fasilitas pelayanan publik.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Hanya pejabat struktural eselon tertinggi di lingkungan unit penyelenggara.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Pasal 20 ayat (1) UU No. 25 Tahun 2009 mewajibkan penyelenggara mengikutsertakan masyarakat dan pihak terkait dalam penyusunan serta penetapan standar pelayanan untuk mengakomodasi kebutuhan pengguna layanan.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2,
+    "category": "TWK",
+    "text": "Publik menanti perwujudan komitmen pemerintah dalam menaikkan mutu pendidikan lewat alokasi bujet 20% dari APBN serta APBD. Namun kenyataannya, baru segelintir pemerintah daerah yang memenuhi standar mandatory spending tersebut. Padahal pembenahan sektor edukasi dan kesehatan masuk agenda prioritas nasional. Realisasi komitmen ini di lapangan dinilai masih sangat mengecewakan. Pernyataan yang tidak selaras dengan wacana di atas adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pemerintah berkomitmen menetapkan anggaran pendidikan sebesar 20% dari APBN dan APBD.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mayoritas pemerintah daerah belum mampu menyalurkan anggaran pendidikan minimal 20%.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Komitmen penetapan anggaran pendidikan sebesar 20% telah dipastikan batal oleh pemerintah.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Akses serta mutu fasilitas pendidikan dan kesehatan tercantum dalam program prioritas pemerintah.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pencapaian implementasi target-target pembangunan pendidikan nasional masih mengecewakan.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Klaim bahwa janji pemerintah dipastikan batal bertentangan dengan teks. Bacaan hanya menyoroti realisasi anggaran di tingkat daerah yang belum optimal, bukan pembatalan komitmen resmi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3,
+    "category": "TWK",
+    "text": "Dalam tata hukum Indonesia, Pancasila berkedudukan sebagai...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "hukum tertulis yang menempati hierarki tertinggi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "norma hukum yang setingkat dengan UUD 1945",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "sumber dari segala sumber hukum negara",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "aturan hukum yang sejajar dengan Ketetapan MPR",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "hukum positif paling tinggi di Indonesia",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Berdasarkan alinea keempat Pembukaan UUD 1945, Pancasila ditetapkan sebagai dasar negara sekaligus sumber dari segala sumber hukum. Seluruh aturan hukum yang berlaku di Indonesia wajib bersumber dan tidak boleh bertentangan dengan nilai-nilai Pancasila.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "category": "TWK",
+    "text": "Prinsip dalam tata kelola negara hukum yang mengedepankan dasar regulasi, kelayakan, serta rasa keadilan pada setiap ketetapan aparatur negara disebut sebagai asas ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Akuntabilitas",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Profesionalitas",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Proporsionalitas",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kepastian hukum",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Tertib penyelenggaraan negara",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Asas kepastian hukum adalah asas dalam negara hukum yang mengutamakan landasan peraturan perundang-undangan, kepatutan, dan keadilan dalam setiap kebijakan penyelenggara negara. Tujuannya adalah menjamin perlindungan terhadap hak-hak sah yang telah dimiliki seseorang berdasarkan ketetapan pejabat atau badan administrasi negara.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "category": "TWK",
+    "text": "Di era digital, polarisasi opini di media sosial kerap mengancam persatuan bangsa akibat sentimen SARA. Peran ASN dalam mengaktualisasikan pilar Sila Ketiga Pancasila untuk mengatasi disintegrasi tersebut adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Membatasi akses internet publik pada kelompok yang terindikasi radikal secara sepihak.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menjadi perekat bangsa melalui edukasi literasi digital serta klarifikasi fakta bernarasi persatuan.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan semua akun media sosial yang berbeda pandangan politik kepada aparat penegak hukum.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Membentuk kelompok tandingan di media sosial guna membela kebijakan pemerintah secara agresif.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menghindari partisipasi dalam ruang digital guna menjaga netralitas aparatur sipil negara.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Sila Ketiga mengamanatkan persatuan. ASN bertindak sebagai perekat dan pemersatu bangsa melalui edukasi dan tindakan preventif terhadap polarisasi, bukan bertindak represif atau pasif.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "category": "TWK",
+    "text": "Tujuan awal pendirian Sarekat Islam menitikberatkan perjuangannya pada sektor...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Agama",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Perekonomian dan perdagangan",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Sosial kemasyarakatan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Politik nasional",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kedaerahan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Berdasarkan anggaran dasar pendiriannya, fokus utama Sarekat Islam adalah memajukan jiwa kewirausahaan pedagang pribumi, membantu anggota yang menghadapi persaingan usaha, memperluas pengajaran, serta meningkatkan martabat rakyat bumiputra secara ekonomi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "category": "TWK",
+    "text": "Ciri khas yang menjadi keunggulan ideologi Pancasila adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "respons perlawanan terhadap paham liberalisme dan kapitalisme",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "sikap penolakan atas pemerintahan monarki absolut",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "penegakan dan penghormatan hak asasi manusia semata",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "penegasan kedudukan Indonesia sebagai negara hukum",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "keselarasan, keseimbangan, serta keserasian pada setiap aspek kehidupan",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Karakteristik khas ideologi Pancasila bersumber dari nilai-nilai luhur budaya bangsa yang menekankan prinsip keselarasan, keseimbangan, dan keserasian dalam hubungan antarindividu, masyarakat, negara, maupun lingkungan hidup.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 8,
+    "category": "TWK",
+    "text": "Pembatasan masa jabatan Presiden Republik Indonesia setelah amendemen UUD 1945 tertuang dalam pasal ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasal 6A",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pasal 7",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Pasal 7A",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pasal 7B",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pasal 7C",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Pasal 7 UUD 1945 menyatakan: \"Presiden dan Wakil Presiden memegang jabatan selama lima tahun, dan sesudahnya dapat dipilih kembali dalam jabatan yang sama, hanya untuk satu kali masa jabatan.\"",
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "category": "TWK",
+    "text": "Menurut Pembukaan UUD 1945, keberhasilan meraih kemerdekaan merupakan anugerah yang diberkati oleh Tuhan Yang Maha Esa karena...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "keinginan hidup merdeka merupakan tekad luhur seluruh rakyat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "bangsa Indonesia merupakan bangsa yang beriman dan religius",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "kemerdekaan tersebut telah diperjuangkan sejak masa lampau",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "banyaknya korban jiwa dan raga demi meraih kemerdekaan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "kemerdekaan adalah rahmat cuma-cuma tanpa perlu perjuangan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Frasa 'Atas berkat rahmat Allah Yang Maha Kuasa' pada alinea ketiga Pembukaan UUD 1945 membuktikan bahwa bangsa Indonesia adalah bangsa yang religius. Keyakinan ini menegaskan bahwa perjuangan kemerdekaan berhasil berkat penyertaan dan pertolongan Tuhan Yang Maha Kuasa.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "category": "TWK",
+    "text": "Pasal dalam UUD 1945 berikut yang tidak mengalami perubahan pada Amendemen Kedua adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasal 18",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pasal 20",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pasal 24",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Pasal 28",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pasal 36",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Amendemen Kedua ditetapkan pada Sidang Tahunan MPR tanggal 18 Agustus 2000. Pasal-pasal yang diubah meliputi Pasal 18, 18A, 18B, 19, 20 ayat (5), 20A, 22A, 22B, Bab IXA Pasal 25E, Bab X Pasal 26 ayat (2) dan (3), Pasal 27 ayat (3), Bab XA Pasal 28A sampai 28J, Bab XII Pasal 30, serta Bab XV Pasal 36A, 36B, dan 36C. Pasal 24 baru diubah pada Amendemen Ketiga.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 11,
+    "category": "TWK",
+    "text": "Berikut ini yang bukan merupakan bagian dari lima prinsip kesusilaan (Pancasila Krama) dalam Kitab Sutasoma adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "larangan melakukan kekerasan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "larangan melakukan pencurian",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "larangan berbicara bohong",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "larangan meluapkan rasa marah",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "larangan mengonsumsi minuman keras",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Dalam Kitab Sutasoma karya Mpu Tantular, istilah Pancasila dimaknai sebagai lima aturan kesusilaan (Pancasila Krama), yakni larangan melakukan kekerasan, mencuri, berwatak dengki, berbohong, dan mengonsumsi minuman memabukkan. Dengan demikian, larangan marah bukan merupakan bagian dari Pancasila Krama.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 12,
+    "category": "TWK",
+    "text": "Alasan utama Indonesia memberikan dukungan penuh terhadap Asia-Pacific Economic Cooperation (APEC) adalah karena APEC....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "mendorong kemajuan ekonomi khusus kawasan negara-negara anggota ASEAN",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "menjamin proteksi bagi komoditas hasil pertanian negara-negara Asia Pasifik",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "mempromosikan sistem perekonomian yang berakar pada ekonomi kerakyatan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "memperluas integrasi dan kerja sama ekonomi antarnegara kawasan Asia Pasifik",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "mewajibkan keanggotaan seluruh negara yang berada di Asia Tenggara",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Asia-Pacific Economic Cooperation (APEC) berfokus mempererat kerja sama ekonomi kawasan Asia Pasifik. Indonesia mendukung organisasi ini karena mendorong integrasi perekonomian negara-negara lingkar Asia Pasifik.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 13,
+    "category": "TWK",
+    "text": "(1) Kawanan anjing laut utara (Mirounga angustirostris) tengah berganti kulit di pesisir pantai sekitar San Simeon, California. (2) Lokasi pesisir ini telah lama menjadi tempat berkumpul primadona bagi satwa tersebut. (3) Ketika musim panas tiba, anjing laut melalui fase perontokan kulit besar-besaran selama kurang lebih sebulan. (4) Sepanjang periode tersebut, bulu dan lapisan epidermis mereka luruh sepenuhnya. (5) Guna mempertahankan panas tubuh selama pergantian berlangsung, mereka berkerumun di bibir pantai seraya menanti bulu dan kulit baru tumbuh sempurna.\n\nGagasan utama paragraf di atas terletak pada kalimat nomor....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "(2)",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "(3)",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "(4)",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "(5)",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Paragraf tersebut mengusung alur deduktif dengan gagasan utama di kalimat pembuka (1). Kalimat tersebut memaparkan informasi umum seputar fase pergantian kulit anjing laut utara di San Simeon, California, yang lantas diperinci oleh kalimat-kalimat pengembang berikutnya.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 14,
+    "category": "TWK",
+    "text": "Ketentuan mengenai hak setiap warga negara untuk memperoleh pendidikan diatur dalam UUD 1945 pasal ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasal 31 ayat (1)",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Pasal 31 ayat (2)",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pasal 31 ayat (3)",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pasal 31 ayat (4)",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pasal 31 ayat (5)",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Berdasarkan Pasal 31 UUD 1945: Ayat (1) menegaskan bahwa setiap warga negara berhak mendapatkan pendidikan. Ayat (2) mewajibkan setiap warga negara mengikuti pendidikan dasar dengan pembiayaan oleh pemerintah. Ayat (3) mengatur sistem pendidikan nasional. Ayat (4) menetapkan prioritas anggaran pendidikan sekurang-kurangnya 20%. Ayat (5) mengatur kemajuan ilmu pengetahuan dan teknologi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 15,
+    "category": "TWK",
+    "text": "Sebelum dilakukan amandemen, ketentuan UUD 1945 menetapkan bahwa kedaulatan berada di tangan rakyat dan dijalankan sepenuhnya oleh...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mahkamah Agung",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Perdana Menteri",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Presiden",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Majelis Permusyawaratan Rakyat",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Dewan Perwakilan Rakyat",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Berdasarkan naskah asli Pasal 1 ayat (2) UUD 1945 sebelum diamandemen, ditegaskan bahwa kedaulatan berada di tangan rakyat dan dilaksanakan sepenuhnya oleh Majelis Permusyawaratan Rakyat (MPR).",
+    "difficulty": "medium"
+  },
+  {
+    "id": 16,
+    "category": "TWK",
+    "text": "Pelaksanaan sidang pengadilan yang bermula dari pengaduan pihak yang menderita kerugian merupakan karakteristik dari...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "hukum pidana",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "hukum publik",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "hukum perdata",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "yurisprudensi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "traktat",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Hukum perdata mengurus hubungan personal antarindividu dengan fokus pada hak-hak perseorangan. Pokok ciri hukum perdata mencakup pemulihan hak atas tuntutan pihak yang dirugikan, di mana korban bertindak langsung sebagai pihak penggugat dalam persidangan.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 17,
+    "category": "TWK",
+    "text": "Pernyataan berikut yang bukan merupakan poin penting dalam Dekrit Presiden 5 Juli 1959 adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pembubaran Konstituante",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pembentukan MPRS dalam waktu sesingkat-singkatnya",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pembentukan DPAS dalam waktu sesingkat-singkatnya",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pemberlakuan kembali UUD 1945 dan pembatalan berlakunya UUDS 1950",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pelaksanaan pemilihan Presiden dan Wakil Presiden sesegera mungkin",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Isi pokok Dekrit Presiden 5 Juli 1959 adalah: 1) Pembubaran Konstituante; 2) Berlakunya kembali UUD 1945 dan tidak berlakunya lagi UUDS 1950; 3) Pembentukan MPRS dan DPAS dalam waktu sesingkat-singkatnya. Pemilihan Presiden dan Wakil Presiden tidak tercantum dalam isi dekrit.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 18,
+    "category": "TWK",
+    "text": "ExxonMobil memegang komitmen tinggi dalam mengendalikan risiko keselamatan kerja. Titik awal pencapaian nir-kecelakaan ditempuh lewat penguatan motivasi serta keterlibatan aktif pegawai guna meminimalkan insiden, diiringi inspeksi dan pembenahan fasilitas berkala. ExxonMobil meyakini area kerja yang aman memacu performa maksimal. Pemanfaatan teknologi mutakhir turut dikerahkan demi aktivitas operasional yang makin aman, sehat, dan ramah lingkungan. Standar keselamatan, kesehatan, dan perlindungan lingkungan menjadi pilar sentral perusahaan. Kesimpulan paling tepat untuk bacaan tersebut adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "ExxonMobil menempatkan keselamatan kerja pegawainya sebagai prioritas paling mendasar.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "ExxonMobil hanya memakai dua tahapan utama guna menggapai target performa kerja.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Suasana tempat kerja yang terjamin aman otomatis menghasilkan kinerja unggul.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Penerapan inovasi teknologi mutakhir menjadi syarat tunggal keselamatan kerja di ExxonMobil.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Karyawan ExxonMobil diwajibkan bekerja mandiri saat menginspeksi kerusakan peralatan.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Gagasan pokok berada pada awal wacana, yakni tekad kuat ExxonMobil menangani risiko keselamatan kerja, yang kemudian diperinci oleh kalimat-kalimat pengembang berikutnya.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 19,
+    "category": "TWK",
+    "text": "Upaya memelihara persatuan dan kesatuan yang selaras dengan hakikat Bhinneka Tunggal Ika tercermin dari sikap...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "kemampuan beradaptasi semata dalam lingkungan pergaulan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "pelestarian kebudayaan asli dari daerah masing-masing secara terpisah",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "sikap inklusif tanpa memperlakukan orang lain secara diskriminatif atas dasar suku",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "penolakan terhadap masuknya unsur budaya luar demi menjaga kemurnian tradisi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "pandangan pesimistis bahwa keberagaman masyarakat sulit disatukan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Bhinneka Tunggal Ika bermakna berbeda-beda tetapi tetap satu kesatuan. Membina persatuan di tengah keanekaragaman ras, suku, dan agama menuntut sikap nondiskriminatif, khususnya tidak membeda-bedakan asal-usul kesukuan dalam tata pergaulan sosial.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 20,
+    "category": "TWK",
+    "text": "Berdasarkan UU No. 48 Tahun 2009 tentang Kekuasaan Kehakiman, fungsi pengawasan internal pada lembaga peradilan diemban oleh...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menteri Hukum dan Hak Asasi Manusia",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mahkamah Konstitusi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Komisi Yudisial",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Presiden",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Mahkamah Agung",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Berdasarkan UU No. 48 Tahun 2009 tentang Kekuasaan Kehakiman dan UU No. 3 Tahun 2009 tentang Mahkamah Agung, pengawasan internal lembaga peradilan dijalankan oleh Mahkamah Agung. Sementara itu, pengawasan eksternal terhadap perilaku hakim dipegang oleh Komisi Yudisial sesuai UU No. 22 Tahun 2004.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 21,
+    "category": "TWK",
+    "text": "Pendirian Badan Pertimbangan Pendidikan Nasional (BPPN) yang anggotanya ditetapkan oleh kepala negara berfungsi sebagai...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "perangkat pemberi pertimbangan dan masukan bagi presiden terkait urusan pendidikan",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "aparat penjamin serta pengendali mutu pendidikan bagi institusi swasta",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "organisasi independen nonpemerintah yang mengurusi pengembangan sekolah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "satuan kerja setingkat kementerian khusus pembuat regulasi teknis pembelajaran",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "badan audit eksternal pemantau tata pamong kebudayaan dan kurikulum",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Sesuai Keputusan Presiden No. 30 Tahun 1989 dan Pasal 48 UU No. 2 Tahun 1989, BPPN dibentuk sebagai mitra strategis nonstruktural yang menyuplai telaah, anjuran, pemikiran, serta usulan kepada pemerintah mengenai arah tata kelola sistem pendidikan nasional.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 22,
+    "category": "TWK",
+    "text": "Berdasarkan Konvensi Wina 1969, urutan tahapan resmi dalam pembuatan perjanjian internasional meliputi...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Perundingan, penandatanganan, dan pengesahan",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Perundingan, pengesahan, dan penandatanganan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Penandatanganan, perundingan, dan ratifikasi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Perundingan dan penandatanganan semata",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Penandatanganan dan pengesahan saja",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Konvensi Wina 1969 tentang Hukum Perjanjian Internasional menetapkan tiga tahapan pokok pembuatan perjanjian bilateral maupun multilateral secara berurutan, yaitu: (1) Perundingan (negotiation), (2) Penandatanganan (signature), dan (3) Pengesahan atau ratifikasi (ratification).",
+    "difficulty": "medium"
+  },
+  {
+    "id": 23,
+    "category": "TWK",
+    "text": "Resmi bergabung ke ASEAN pada 3 Agustus 1995, Vietnam diharapkan mampu mentransformasi model perekonomian sosialis komunisnya menjadi sistem ekonomi....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "industri",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "pasar",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "kapitalis",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "liberalis",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "terpimpin",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "ASEAN berharap Vietnam beralih ke sistem ekonomi liberal yang memberikan ruang kebebasan penuh bagi tiap pelaku usaha untuk menggerakkan perekonomian serta mencari keuntungan.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 24,
+    "category": "TWK",
+    "text": "Unsur yang menjadi pembeda utama antara bentuk negara dengan bentuk kenegaraan adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Kedaulatan negara",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Rakyat negara",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Kekayaan alam",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Wilayah teritorial",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pengakuan internasional",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Menurut Oppenheim-Lauterpacht, unsur pembentuk negara (konstitutif) mencakup rakyat, wilayah, serta pemerintah yang berdaulat. Bentuk teritorial berfokus pada ruang batas fisik wilayah seperti negara kepulauan, sedangkan bentuk kenegaraan menitikberatkan pada sistem pemerintahan dan ikatan ideologinya.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 25,
+    "category": "TWK",
+    "text": "Manakah pernyataan di bawah ini yang tergolong ke dalam kalimat efektif?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dalam perundingan itu melahirkan lima butir kesepakatan yang wajib dipatuhi bersama.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Dalam musyawarah warga memutuskan bahwa saudara Andi terpilih sebagai pimpinan koperasi.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tersendatnya pembangunan fasilitas umum itu lantaran perancangan yang ceroboh dan evaluasi lemah.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Meskipun negara Brasil tercatat sebagai pemasok kapas utama dunia, tetapi nilai jual tekstilnya tetap mahal.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Budiman bertekad meraih peringkat pertama di sekolahnya, tetapi ia harus berpuas di urutan ketiga.",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Kalimat E efektif karena memiliki subjek-predikat yang utuh serta memakai konjungsi intrakalimat 'tetapi' secara tepat. Opsi A dan B kehilangan subjek akibat penempatan preposisi 'dalam' di awal klausul. Opsi C tidak berstruktur baku (tanpa predikat jelas). Opsi D mengalami pleonasme konjungsi antarklausa akibat menduetkan 'meskipun' dengan 'tetapi'.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 26,
+    "category": "TWK",
+    "text": "Faktor fundamental yang wajib dijaga dalam implementasi otonomi daerah di Indonesia adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "pengerukan keuntungan dari potensi sumber daya daerah secara maksimal",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "pemeliharaan norma dan nilai tradisional daerah tanpa perubahan",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "perancangan program kerja pembangunan sektoral terpadu di kawasan daerah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "terpeliharanya keutuhan integrasi serta persatuan dan kesatuan bangsa",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "otonomi tanpa batas bagi kepala daerah dalam menjalankan kekuasaan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Pemberian otonomi daerah menurut UUD NRI 1945 ditujukan untuk memajukan kesejahteraan lokal tanpa mengorbankan stabilitas nasional. Pilar terpenting pelaksanaannya adalah memastikan persatuan dan kesatuan NKRI tetap tegak kokoh.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 27,
+    "category": "TWK",
+    "text": "Kementerian Agama semestinya mampu menyelenggarakan ibadah haji secara jauh lebih prima. Sesuai regulasi termutakhir, instansi ini tetap mengemban peran ganda sebagai regulator sekaligus operator, bahkan ikut memilah keanggotaan komisi pengawas. Transformasi manajerial diharapkan mampu mendongkrak mutu pelayanan publik. Kendati demikian, keluhan jemaah terus mencuat lantaran belum tampak pembenahan mendasar. Baru-baru ini tercatat 89 calon jemaah asal Jakarta terjangkit diare setibanya di Madinah, disinyalir akibat menyantap konsumsi basi atau tidak higienis. Petaka higienitas ini semestinya dapat dicegah jika pihak katering konsisten menjaga mutu hidangan dan tim medis rutin memantau kelayakan makanan jemaah secara berkala.\n\nPernyataan berikut yang bukan merupakan opini dari teks di atas adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Jemaah calon haji asal Indonesia belum memperoleh pelayanan optimal dari Kementerian Agama.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Kementerian Agama dinilai kurang profesional dalam memfasilitasi operasional ibadah haji.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tata kelola Kementerian Agama yang rapuh menyebabkan mandeknya peningkatan mutu layanan haji.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Kelalaian tim medis dalam mengawasi pasokan katering menjadi pemicu jemaah mengonsumsi makanan basi.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Koordinasi antarlini internal kepanitiaan haji di Kementerian Agama belum berjalan harmonis.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Fokus bacaan menyoroti kasus diare jemaah di Madinah akibat hidangan katering basi dan peran ideal instansi terkait. Pernyataan pilihan C merupakan simpulan berlebihan yang tidak diutarakan secara langsung maupun tersirat sebagai opini dalam paragraf tersebut.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 28,
+    "category": "TWK",
+    "text": "Organisasi pergerakan nasional Budi Utomo yang didirikan pada tanggal 20 Mei 1908 diprakarsai oleh...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mohammad Yamin",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "H. Samanhudi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "dr. Wahidin Sudirohusodo",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Dr. Douwes Dekker",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "R.P. Sosrokartono",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Kelahiran Budi Utomo pada 20 Mei 1908 dipelopori oleh gagasan dr. Wahidin Sudirohusodo mengenai dana pendidikan bagi kaum bumiputra. Adapun tokoh lainnya: Mohammad Yamin mendirikan Gerindo, H. Samanhudi mendirikan Sarekat Islam, Dr. Douwes Dekker mendirikan Indische Partij, dan R.P. Sosrokartono aktif dalam Perhimpunan Indonesia.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 29,
+    "category": "TWK",
+    "text": "Berikut ini merupakan kriteria dan persyaratan resmi untuk diterima menjadi negara anggota PBB, kecuali....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "memiliki komitmen cinta damai",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "berstatus sebagai negara merdeka dan berdaulat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "bersedia menjalankan semua kewajiban sesuai Piagam PBB",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "direkomendasikan Dewan Keamanan lalu disahkan Majelis Umum PBB",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "menganut asas politik kenegaraan individualis",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Syarat utama masuk PBB: negara merdeka, cinta damai, siap tunduk pada Piagam PBB, serta mendapat rekomendasi Dewan Keamanan sebelum disahkan oleh Majelis Umum. Asas individualis bukan merupakan syarat.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 30,
+    "category": "TWK",
+    "text": "BPUPKI membentuk Panitia Sembilan pada 22 Juni 1945 untuk merumuskan dasar negara. Tokoh berikut yang bukan merupakan anggota Panitia Sembilan adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mr. Achmad Soebardjo",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mr. Mohammad Yamin",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "H. Agus Salim",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Abikoesno Tjokrosoejoso",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Prof. Dr. Soepomo",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Anggota Panitia Sembilan terdiri atas Ir. Soekarno, Drs. Mohammad Hatta, Mr. Achmad Soebardjo, Mr. Mohammad Yamin, K.H. Wahid Hasjim, Abdoel Kahar Moezakir, Abikoesno Tjokrosoejoso, H. Agus Salim, dan Mr. A.A. Maramis. Prof. Dr. Soepomo adalah perumus dasar negara dalam sidang BPUPKI, namun bukan anggota Panitia Sembilan.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 31,
+    "category": "TIU",
+    "text": "Tentukan satu jenis tanaman berikut yang tidak berada dalam kelompok yang sejenis!",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Kamboja",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Melati",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Mawar Merah",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Kemuning",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Anggrek Bulan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Kamboja, melati, kemuning, dan anggrek bulan dikenal sebagai tanaman dengan bunga yang identik berwarna putih. Mawar merah tidak tergolong ke dalam kelompok bunga berwarna putih tersebut.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 32,
+    "category": "TIU",
+    "text": "NISBI >< ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Relatif",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mutlak",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Semu",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Maya",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Bergantung",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Nisbi berarti relatif atau hanya terlihat menurut keadaan tertentu; lawannya adalah mutlak (absolut/pasti).",
+    "difficulty": "medium"
+  },
+  {
+    "id": 33,
+    "category": "TIU",
+    "text": "Bila Arman menyukai buah jeruk, Azman pasti menyukai buah pepaya. Keduanya adalah saudara kandung, dan diketahui Azman tidak menyukai pepaya melainkan menyukai jeruk. Kesimpulannya adalah ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Arman maupun Azman keduanya menyukai jeruk.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Arman bersama Azman gemar mengonsumsi pepaya.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Arman tidak menyukai jeruk.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Segala hal yang digemari Azman pasti digemari Arman.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Arman dan Azman sama-sama menolak mengonsumsi jeruk.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Menggunakan prinsip Modus Tollens: Premis 1 (P → Q) menyatakan jika Arman suka jeruk, maka Azman suka pepaya. Premis 2 (~Q) menyatakan Azman tidak suka pepaya. Simpulannya adalah ~P, yaitu Arman tidak menyukai jeruk.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 34,
+    "category": "TIU",
+    "text": "Antonim dari kata GULITA adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Hewan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Nirsinar",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Remang-remang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Silau",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Benderang",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Gulita bermakna gelap atau pekat. Lawan kata yang tepat untuk gulita adalah benderang (terang).",
+    "difficulty": "medium"
+  },
+  {
+    "id": 35,
+    "category": "TIU",
+    "text": "Jika x = 24% dari 150 dan y = 15% dari 240, maka hubungan antara x dan y adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "x > y",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "x < y",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "x = y",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "2x = 3y",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Hubungan x dan y tidak dapat ditentukan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "x = (24/100) * 150 = 36; y = (15/100) * 240 = 36. Nilai x sama dengan y.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 36,
+    "category": "TIU",
+    "text": "Apabila Fransen mengenakan baju hitam, ia pasti memakai celana cokelat. Apabila Fransen memakai celana cokelat, Krisna akan memakai celana hitam. Faktanya, Indah mengenakan celana perak. Simpulan yang benar adalah ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Krisna tidak mengenakan kemeja cokelat.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Fransen mengenakan celana hitam.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Krisna sama sekali tidak punya celana hitam.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Krisna memutuskan memakai baju cokelat.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Fransen tidak mengenakan baju hitam.",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Berdasarkan premis implikasi bertingkat dan fakta pembanding kondisi yang ada, Fransen tidak memakai baju hitam.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 37,
+    "category": "TIU",
+    "text": "Berapakah angka kelanjutan dari deret 12, 24, 18, 36, 30, ...?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "26",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "24",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "42",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "48",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "60",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Pola deret bergantian: dikali 2, lalu dikurangi 6. 12 × 2 = 24; 24 - 6 = 18; 18 × 2 = 36; 36 - 6 = 30; 30 × 2 = 60.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 38,
+    "category": "TIU",
+    "text": "CHIKUNGUNYA : NYAMUK = PES : ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Kecoak",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Lalat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tungau",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Lintah",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tikus",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Penyakit chikungunya ditularkan melalui perantara vektor nyamuk, sedangkan penyakit pes ditularkan melalui perantara tikus.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 39,
+    "category": "TIU",
+    "text": "Jika diketahui 17a - 13b = 27, maka berapakah nilai dari 273b - 357a?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "567",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "297",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "177",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "-297",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "-567",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Faktorkan persamaan: 273b - 357a = -21(17a - 13b). Substitusikan nilai yang diketahui: -21 × 27 = -567.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 40,
+    "category": "TIU",
+    "text": "Pohon kurma mampu menghasilkan buah bermutu baik apabila dipelihara dengan tekun. Teguh memiliki lahan kebun kurma di area pekarangan belakang rumahnya dan senantiasa merawat tanaman tersebut.",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pohon kurma pada kebun Teguh mampu berbuah dengan baik.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Hasil panen kurma di kebun Teguh terasa sangat segar.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Tanaman kurma milik Teguh gagal menghasilkan buah.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Tanaman yang menghasilkan buah wajib dirawat setiap hari.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Teguh tergolong sebagai pemuda yang rajin.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Perawatan yang konsisten membuat pohon kurma berbuah baik. Karena Teguh selalu merawat kebun kurmanya, maka pohon kurma milik Teguh dapat berbuah dengan optimal.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 41,
+    "category": "TIU",
+    "text": "Apabila diketahui 2ak + 2 = 10 dan 4bk + 4 = 6, berapakah nilai dari a/b?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "3/4",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "1/2",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "8",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "6",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "3",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Dari persamaan pertama: 2ak + 2 = 10 menghasilkan ak = 8 / 2 = 4. Dari persamaan kedua: 4bk + 4 = 6 menghasilkan bk = 2 / 4 = 1/2. Nilai a/b diperoleh dari perbandingan (ak)/(bk) = 4 / (1/2) = 8.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 42,
+    "category": "TIU",
+    "text": "BERGEGAS =",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Terburu-buru",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Berguncang",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Gempar",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Gagasan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Rileks",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Menurut KBBI, 'bergegas' didefinisikan sebagai bertindak cepat-cepat, bersegera, tergesa-gesa, atau terburu-buru menyikapi suatu keadaan.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 43,
+    "category": "TIU",
+    "text": "Berdasarkan pembagian posisi parkir para eksekutif tersebut, apa warna kendaraan yang digunakan oleh wakil presiden?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Hijau",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Kuning",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Biru",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Ungu",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Merah",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Urutan slot kendaraan dari nomor 1 hingga 5 berturut-turut adalah: slot 1 merah (CEO), slot 2 biru (presiden), slot 3 hijau (wakil presiden), slot 4 kuning (sekretaris), dan slot 5 ungu (bendahara). Jadi, mobil wakil presiden berwarna hijau.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 44,
+    "category": "TIU",
+    "text": "Seluruh bunga yang tumbuh di Taman Khatulistiwa memiliki kelopak putih. Sementara itu, setiap wanita menyukai aneka bunga. Hari ini, Tika terlihat membawa setangkai bunga biru.",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Kaum wanita menyukai bunga berwarna biru.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Bunga berwarna biru dapat ditemukan di Taman Khatulistiwa.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Wanita tidak menyukai bunga berwarna putih.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Tika sama sekali tidak menyukai bunga.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Bunga yang dibawa Tika dipastikan bukan berasal dari Taman Khatulistiwa.",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Seluruh tanaman bunga di Taman Khatulistiwa berwarna putih. Karena bunga yang dibawa Tika berwarna biru, dapat disimpulkan bahwa bunga tersebut tidak berasal dari Taman Khatulistiwa.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 45,
+    "category": "TIU",
+    "text": "Seluruh pegawai yang bertugas di Kantor Kelurahan wajib memakai dasi. Toni adalah pemuda rajin yang sedang menjalani program magang di Kantor Kelurahan. Kesimpulan yang tepat adalah ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Toni tidak pernah mengenakan dasi.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Toni tercatat sebagai pegawai tetap di Kantor Kelurahan.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Toni senantiasa mengenakan dasi di mana pun berada.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Toni mengenakan dasi saat bertugas di Kantor Kelurahan.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Toni berprestasi unggul karena ketekunannya bekerja.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Karena seluruh staf/pekerja di lingkungan Kantor Kelurahan wajib berdasi dan Toni magang di sana, Toni mengenakan dasi saat berada di kantor tersebut.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 46,
+    "category": "TIU",
+    "text": "Tentukan dua bilangan lanjutan pada barisan berikut: 505, 128, 377, 127, 250, 126, ..., ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "211, 192",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "186, 168",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "172, 127",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "135, 136",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "124, 125",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Suku ganjil dihasilkan dari selisih suku ganjil sebelumnya dengan suku genap sebelumnya: 505 - 128 = 377, 377 - 127 = 250, 250 - 126 = 124. Suku genap berkurang 1 secara berurutan: 128, 127, 126, 125. Dua bilangan berikutnya adalah 124 dan 125.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 47,
+    "category": "TIU",
+    "text": "Berdasarkan silsilah keluarga tersebut, manakah pernyataan yang benar mengenai J dan K?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "J adalah laki-laki dan K adalah perempuan.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "J adalah perempuan dan K adalah laki-laki.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Keduanya berjenis kelamin perempuan.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Keduanya berjenis kelamin laki-laki.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Hubungan jenis kelamin keduanya tidak dapat ditentukan.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Berdasarkan data bagan: K(M), E(F), H(F), I(M), L(M), G(F), J(M), dan F(M) dengan kode M = Laki-laki dan F = Perempuan. Keduanya berkode M, sehingga J dan K berjenis kelamin laki-laki.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 48,
+    "category": "TIU",
+    "text": "SENGAT : LEBAH = ... : GAJAH",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Telinga",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Gading",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Ekor",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Madu",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tikus",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Alat perlindungan atau pertahanan diri pada lebah adalah sengat, sedangkan pada gajah adalah gading.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 49,
+    "category": "TIU",
+    "text": "Pilihlah salah satu objek yang tidak tergolong ke dalam kelompok yang sama!",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Telepon",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Radio",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Televisi",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "AC",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Pager",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Telepon, radio, televisi, dan pager merupakan perangkat yang bekerja memanfaatkan transmisi gelombang radio atau elektromagnetik. Sementara itu, AC merupakan mesin pengondisi udara yang tidak berbasis transmisi gelombang tersebut.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 50,
+    "category": "TIU",
+    "text": "Perubahan iklim memicu pergeseran pola tanam di sektor agrikultur nasional. Sebagian besar petani tadah hujan di wilayah timur mengalami penurunan produktivitas hingga 30% akibat kemunduran musim penghujan. Pemerintah daerah mulai menggalakkan varietas padi tahan kekeringan serta optimalisasi embung penampung air. Simpulan utama paragraf tersebut adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Varietas padi tahan kekeringan gagal meningkatkan produktivitas petani.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Penurunan produktivitas pertanian memicu kemunduran musim penghujan.",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Perubahan iklim menurunkan produktivitas petani tadah hujan sehingga mendorong adaptasi benih dan air.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Wilayah timur menjadi sentra krisis pangan nasional akibat kemarau panjang.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Embung penampung air sepenuhnya mengatasi masalah keterlambatan hujan di timur.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Simpulan merangkum premis utama: dampak negatif iklim pada produktivitas tadah hujan dan tindakan adaptasi pengadaan benih serta embung.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 51,
+    "category": "TIU",
+    "text": "PESAWAT TERBANG : HANGGAR = MOBIL : ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Jalan raya",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Bengkel",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Ruang pamer",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Rumah",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Garasi",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Pesawat terbang diparkir atau disimpan di dalam hanggar, sedangkan mobil disimpan di dalam garasi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 52,
+    "category": "TIU",
+    "text": "EKSKAVASI = ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Penimbunan",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Penggalian",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Pembongkaran",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Perobohan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pembersihan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Ekskavasi menurut KBBI bermakna proses penggalian yang dilakukan untuk menemukan benda purbakala.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 53,
+    "category": "TIU",
+    "text": "Tentukan huruf lanjutan pada barisan berikut: A, B, D, G, K, ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "L, M",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "M, N",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "O, V",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "P",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Q, T",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Konversi posisi alfabet ke angka: A(1), B(2), D(4), G(7), K(11). Selisih antarsuku meningkat: +1, +2, +3, +4, maka berikutnya +5. 11 + 5 = 16, yaitu huruf P.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 54,
+    "category": "TIU",
+    "text": "Antonim dari kata ULTIMA adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Awal",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Akhir",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Final",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Biasa",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Peringatan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Ultima bermakna bagian akhir atau final. Lawan kata yang tepat untuk kata tersebut adalah awal.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 55,
+    "category": "TIU",
+    "text": "Semua analis data menguasai SQL. Sebagian staf operasional adalah analis data. Kesimpulan yang tepat adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Semua staf operasional menguasai SQL.",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sebagian staf operasional menguasai SQL.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Semua penguasa SQL adalah staf operasional.",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sebagian analis data bukan staf operasional dan tidak menguasai SQL.",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Staf operasional yang bukan analis data pasti tidak tahu SQL.",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Silogisme kategori Darii: premis universal positif bertemu partikular positif menghasilkan simpulan partikular positif.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 56,
+    "category": "TIU",
+    "text": "KINCIR : ANGIN = ... : ...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dinamo : Roda",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Turbin : Air",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Baterai : Listrik",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Layar : Perahu",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Kompas : Arah",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Hubungan fungsional penggerak daya: Kincir digerakkan oleh angin; Turbin digerakkan oleh air.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 57,
+    "category": "TIU",
+    "text": "Tentukan dua bilangan yang tepat untuk melengkapi deret berikut: 2, 3, 4, 4, 4, 5, 8, ..., ..., 16, 6.",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "4, 6",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "5, 6",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "4, 8",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "5, 8",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "4, 12",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Deret terdiri dari tiga pola berselang: Pola 1 (suku 1, 4, 7, 10) dikali 2 berturut-turut (2, 4, 8, 16); Pola 2 (suku 2, 5, 8, 11) ditambah 1 berturut-turut (3, 4, 5, 6); Pola 3 (suku 3, 6, 9) ditambah 1 berturut-turut (4, 5, 6). Suku pengisi adalah 5 dan 6.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 58,
+    "category": "TIU",
+    "text": "Informasi berikut digunakan untuk menjawab soal nomor 56—58.\n\nSebuah perusahaan mengatur deretan slot parkir khusus untuk para pejabat eksekutif dengan urutan: CEO, presiden, wakil presiden, sekretaris, dan bendahara. Petugas parkir memastikan posisi mobil berdasarkan warnanya: kuning, hijau, ungu, merah, dan biru. Para pejabat tersebut bernama Alice, Bert, Cheryl, David, dan Enid.\n- Mobil pada posisi pertama berwarna merah.\n- Mobil biru berada tepat di antara mobil merah dan hijau.\n- Mobil di posisi paling akhir berwarna ungu.\n- Sekretaris menggunakan mobil kuning.\n- Mobil Alice berdampingan dengan mobil David.\n- Enid mengendarai mobil hijau.\n- Mobil Bert berada di antara mobil Cheryl dan Enid.\n- Mobil David berada di posisi paling ujung.\n\nBerdasarkan keterangan tersebut, siapakah yang menjabat sebagai CEO?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Alice",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Bert",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Cheryl",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "David",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Enid",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "CEO menempati slot pertama yang berwarna merah. David menempati slot terakhir (nomor 5) bersama mobil ungunya, dan Alice berada tepat di sebelahnya (slot 4). Enid mengendarai mobil hijau (slot 3). Bert berada di antara Cheryl dan Enid, sehingga Bert di slot 2 dan Cheryl di slot 1. Dengan demikian, Cheryl menduduki posisi CEO.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 59,
+    "category": "TIU",
+    "text": "Berdasarkan bagan yang tersedia, siapa sajakah yang berjenis kelamin perempuan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "E, H, dan J",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "E, F, dan G",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "E, H, dan G",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "C, H, dan J",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Tidak dapat ditentukan dari data yang ada",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Berdasarkan penanda kode: M = Laki-laki dan F = Perempuan. Anggota keluarga dengan penanda F adalah E, H, dan G.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 60,
+    "category": "TIU",
+    "text": "TOLAN =",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Kerabat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sahabat",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Rival",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Orang tua",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Dorongan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Berdasarkan KBBI, kata 'tolan' memiliki arti kawan, teman, atau rekan karib. Dengan demikian, padanan kata yang tepat adalah sahabat.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 61,
+    "category": "TIU",
+    "text": "Jika x/y = 2/3 dan y/z = 3/4, berapakah nilai dari x/z?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "2/3",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "3/4",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "1/3",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "1/2",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "3/5",
+        "score": 0
+      }
+    ],
+    "correctAnswer": null,
+    "tkpScores": null,
+    "explanation": "Kalikan kedua perbandingan: (x/y) × (y/z) = x/z. Diperoleh: (2/3) × (3/4) = 2/4 = 1/2.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 62,
+    "category": "TIU",
+    "text": "Jika a = 7 dan b = 2, serta x = (a - b)² dan y = (b - a)², hubungan matematis yang tepat adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "2x < 2y",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "x < y",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "x > y",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "x = y",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "x dan y tidak dapat ditentukan",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Nilai x dihitung sebagai (7 - 2)² = 5² = 25. Nilai y dihitung sebagai (2 - 7)² = (-5)² = 25. Karena kedua nilai menghasilkan angka 25, maka ditarik simpulan bahwa x = y.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 63,
+    "category": "TIU",
+    "text": "Manakah di antara pilihan berikut yang tidak termasuk dalam kelompok yang sama?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Semen",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pasir",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Air",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Bata",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Cangkul",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Semen, pasir, air, dan bata merupakan material dasar bangunan. Sebaliknya, cangkul tergolong peralatan atau perkakas kerja, bukan material bangunan.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 64,
+    "category": "TIU",
+    "text": "Berapakah hasil dari setengah bagian dari 1/9?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "1/80",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "1/40",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "1/30",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "1/18",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "1/9",
+        "score": 0
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Hitung nilai setengah bagian: 1/2 × 1/9 = 1/18.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 65,
+    "category": "TIU",
+    "text": "Berdasarkan susunan parkir eksekutif pada informasi sebelumnya, siapakah yang menjabat sebagai sekretaris perusahaan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Enid",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "David",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Cheryl",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Bert",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Alice",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Posisi keempat diperuntukkan bagi sekretaris yang membawa mobil warna kuning. David berada di slot kelima, dan Alice parkir tepat di sebelah David (slot keempat). Maka, Alice merupakan sekretaris perusahaan tersebut.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 66,
+    "category": "TKP",
+    "text": "Ketika organisasi menghadapi krisis internal terkait tata kelola keuangan yang berujung pada defisit signifikan, sikap yang Anda ambil adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menjaga kerahasiaan krisis internal tersebut dan fokus pada tugas pokok tanpa mencampuri urusan keuangan.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Mendorong pimpinan tertinggi untuk mengambil tindakan tegas terhadap pihak yang terlibat dalam masalah tersebut.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Tidak mempermasalahkan krisis tersebut lebih jauh karena penanganannya bukan bagian dari lingkup kerja saya.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menuntut kepala divisi keuangan untuk bertanggung jawab penuh atas kerugian yang dialami organisasi.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menyarankan agar seluruh anggota organisasi segera melakukan tindakan penyelamatan bersama.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda dalam mengemukakan pendapat dengan bijak tanpa menyakiti orang lain. Pilihan Jawaban Poin Nilai A 5 B 2 C 4 D 3 E 1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 67,
+    "category": "TKP",
+    "text": "Bagaimana reaksi Anda saat atasan menugaskan Anda mengantarkan dokumen penting ke pihak klien?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Langsung melaksanakannya tanpa menunda.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menganalisis situasinya terlebih dahulu sebelum menolong.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mengalkulasi pengorbanan waktu dan tenaga yang dibutuhkan.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menanyakan kompensasi yang akan diperoleh.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Bangga karena peran diri dipandang penting.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui kepedulian Anda terhadap kesulitan yang dialami atasan atau rekan kerja Anda dalam menyelesaikan pekerjaan mereka. Pilihan Jawaban Poin Nilai A: 5, B: 3, C: 2, D: 1, E: 4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 68,
+    "category": "TKP",
+    "text": "Bagaimana cara Anda memandang dan menyelesaikan sebuah permasalahan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Langsung bertindak menuntaskannya tanpa banyak pertimbangan.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Merenungkan dan memikirkan situasinya secara mendalam terlebih dahulu.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Berkonsultasi dengan orang lain guna memperoleh saran pemecahan.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mengumpulkan informasi, mempertimbangkan opsi, lalu mengeksekusi rencana.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Mengerjakan semampu diri sembari mencari alternatif terbaik.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda dalam melakukan perencanaan guna mengatasi sebuah masalah. Pilihan Jawaban Poin Nilai: A 3, B 1, C 2, D 5, E 4.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 69,
+    "category": "TKP",
+    "text": "Anda sedang menyelesaikan tugas ketika jam kantor hampir berakhir. Sikap Anda adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menunda penyelesaian pekerjaan tersebut ke hari berikutnya.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Bersiap pulang dan mengemasi barang bersama rekan kerja.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Bertahan di kantor menyelesaikan tugas asalkan mendapatkan uang lembur.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Tetap menyelesaikan tugas di kantor meski tanpa uang lembur.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Membawa sisa pekerjaan tersebut untuk diselesaikan di rumah.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengukur kepedulian dan komitmen kerja saat kepentingan pribadi berbenturan dengan tanggung jawab pekerjaan. Pilihan Jawaban dan Poin Nilai: A = 1, B = 2, C = 3, D = 5, E = 4.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 70,
+    "category": "TKP",
+    "text": "Saat tersedia peluang untuk berkompetisi pada bidang yang Anda gemari dan kuasai, sikap Anda adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Hanya bersedia mendaftar apabila memiliki peluang besar untuk menang.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Memilih untuk tidak berpartisipasi dalam ajang perlombaan tersebut.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Berupaya memenangkan persaingan lewat peningkatan kemampuan serta keahlian diri.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mencari celah dan kekurangan yang dimiliki oleh peserta pesaing.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menghindari kompetisi karena merasa enggan dan khawatir mengalami kegagalan.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui sikap Anda ketika berhadapan dengan kesempatan dan tantangan dalam mencapai tujuan. Pilihan Jawaban Poin Nilai A 4 B 2 C 5 D 3 E 1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 71,
+    "category": "TKP",
+    "text": "Di grup percakapan pegawai non-kedinasan, seorang rekan kerja aktif membagikan narasi yang mempertanyakan legitimasi konstitusi negara, menjelekkan simbol negara, dan menyerukan penegakan sistem alternatif dengan dalih pemurnian moral bangsa. Tanggapan Anda terhadap situasi ini adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menyanggah konten tersebut secara santun berbasis ideologi Pancasila, menghentikan penyebarannya di grup, lalu melaporkannya ke divisi kepegawaian.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menyampaikan teguran personal lewat pesan pribadi bahwa materi tersebut melanggar sumpah ASN dan berpotensi pidana.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Mengamankan bukti tangkapan layar lalu mengirimkannya anonim ke kanal aduan resmi instansi tanpa konfrontasi.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Memilih keluar dari grup percakapan agar rekam jejak digital Anda tidak terseret paham terlarang.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mendiamkannya karena menganggap hal itu wujud kebebasan berpendapat di ruang personal.",
+        "score": 1
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Sikap tegas meluruskan penyimpangan ideologi secara terbuka dan menempuh jalur pelaporan regulasi ASN.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 72,
+    "category": "TKP",
+    "text": "Kapan menurut Anda etos kerja yang tinggi paling mutlak dibutuhkan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Ketika berada dalam kondisi mendesak.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Setiap saat selama menjalankan tugas kedinasan.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Apabila situasi serta lingkungan kerja mendukung.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Ketika orang lain menuntut hal tersebut.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Hanya jika pimpinan yang menginstruksikan.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui inisiatif Anda ketika berada pada situasi yang memaksa Anda untuk mengambil keputusan. Pilihan Jawaban Poin Nilai A: 3, B: 5, C: 4, D: 1, E: 2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 73,
+    "category": "TKP",
+    "text": "Apakah Anda bersedia melepas pekerjaan dengan kompensasi finansial yang menguntungkan apabila suasananya menjemukan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Tentu saja, karena kesesuaian minat dan gairah kerja merupakan prioritas utama.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Kemungkinan besar bersedia mengundurkan diri.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mempertimbangkan kembali berdasarkan faktor dan konsekuensi lain.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Tidak bersedia, sebab imbalan materi yang diperoleh sangat menguntungkan.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menerima keadaan apa adanya dan tetap menjalani pekerjaan tersebut.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui sikap Anda ketika berhadapan dengan kesempatan dan tantangan dalam mencapai tujuan. Pilihan Jawaban Poin Nilai A 5 B 4 C 2 D 3 E 1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 74,
+    "category": "TKP",
+    "text": "Apakah bersikap keras dan tegas dalam memimpin itu diperlukan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Sangat diperlukan dalam setiap kondisi",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Cukup diperlukan secara umum",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Terkadang diperlukan pada situasi dan kondisi tertentu",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Tidak perlu diterapkan",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Sangat tidak diperlukan sama sekali",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Soal ini menilai fleksibilitas dan ketepatan gaya kepemimpinan dalam mengoordinasikan tim. Poin: A=3, B=2, C=5, D=4, E=1.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 75,
+    "category": "TKP",
+    "text": "Anda ditunjuk memimpin gugus tugas lintas instansi untuk penanganan bencana. Tim Anda berisikan perwakilan dengan rentang usia, kultur kerja instansi, dan tingkat senioritas yang sangat beragam, memicu friksi komunikasi serta progres lambat. Langkah pertama Anda untuk menyatukan tim adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menggelar forum penyelarasan target bersama, membagi peran spesifik berbasis kompetensi riil, dan menyepakati protokol komunikasi terbuka.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Melakukan pendekatan personal ke tokoh-tokoh senior di tim untuk meminta dukungan moral dalam memimpin anggota muda.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menetapkan aturan kerja tegas dengan sanksi tertulis bagi anggota yang memperlambat alur koordinasi gugus.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Mengambil alih beban kerja kritis seorang diri untuk memastikan target minimum instansi tetap terpenuhi.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Membiarkan gesekan mereda dengan sendirinya seiring berjalannya dinamika lapangan tugas bencana.",
+        "score": 1
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Kepemimpinan inklusif membangun tujuan terpadu, pembagian peran objektif, dan saluran komunikasi konstruktif.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 76,
+    "category": "TKP",
+    "text": "Anda dikenal sebagai karyawan yang berdedikasi dan tekun. Meski demikian, masa depan tidak pernah dapat diprediksi secara pasti.",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Tetap berisiko terkena pemutusan hubungan kerja saat kondisi perekonomian nasional memburuk.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Pasti terbebas dari ancaman pemutusan hubungan kerja berkat kinerja dan loyalitas tinggi.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Konsistensi dan kerja keras yang ditunjukkan akan membuka peluang kemajuan karier ke depan.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Pengurangan pegawai dalam jumlah besar tidak banyak memengaruhi reputasi tempat bekerja.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Karyawan berprestasi dan rajin sudah sepatutnya mendapatkan jaminan tidak diberhentikan.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui seberapa besar motivasi dan tekad Anda dalam menghadapi segala kondisi dan tantangan di masa mendatang. Pilihan Jawaban Poin Nilai A 3 B 2 C 5 D 1 E 4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 77,
+    "category": "TKP",
+    "text": "Apakah Anda rutin menyusun daftar tugas harian berdasarkan tingkat urgensi dan prioritas pekerjaan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Selalu mencatatnya sebagai dasar pertimbangan dalam mengambil keputusan.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menyusun daftar sekadar sebagai pengingat jadwal harian.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mencatat tugas secara terperinci untuk memperjelas pertimbangan, sasaran, dan tenggat waktu.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Jarang mencatat karena seluruh daftar tugas sudah terekam baik dalam ingatan.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Tidak memerlukan agenda harian dan langsung menyelesaikan tugas yang paling mendesak.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui kemampuan Anda bekerja terorganisir sesuai dengan rencana dan membuat prioritas pekerjaan. Pilihan Jawaban Poin Nilai: A 4, B 3, C 5, D 2, E 1.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 78,
+    "category": "TKP",
+    "text": "Terkait dinamika kerja sama tim, apakah Anda lebih menghendaki staf yang selalu patuh dan mengikuti setiap instruksi Anda?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Ya, karena bawahan yang patuh membuat pekerjaan jauh lebih mudah dikelola.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Saya menyadari bahwa tidak semua anggota staf memiliki karakter seperti itu.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Kepatuhan penuh hanya diperlukan pada situasi kerja yang mendesak atau krusial.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Tidak, saya lebih mengapresiasi staf yang memiliki inisiatif tinggi, aktif, dan inovatif.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Saya menghargai dan menerima seluruh keragaman karakter staf dalam lingkungan kerja.",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui cara Anda beradaptasi dengan lingkungan dan rekan kerja. Pilihan Jawaban Poin Nilai A 1 B 2 C 4 D 3 E 5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 79,
+    "category": "TKP",
+    "text": "Bagaimana respons Anda ketika menerima hasil evaluasi kinerja pribadi yang kurang memuaskan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Melakukan refleksi diri untuk mengenali kekurangan yang perlu diperbaiki.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Mengikuti ujian atau uji kompetensi ulang.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Meningkatkan usaha dan belajar lebih giat agar mutu kerja meningkat.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mengabaikan hasil tersebut dan melanjutkan aktivitas seperti biasa.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Merasa kecewa dan larut dalam kesedihan.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengukur seberapa besar motivasi Anda mengintrospeksi dan memperbaiki diri atas kritik serta masukan yang diterima. Pilihan Jawaban Poin Nilai A 4 B 3 C 5 D 1 E 2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 80,
+    "category": "TKP",
+    "text": "Menjelang batas akhir penginputan laporan kinerja tahunan instansi, sistem digital internal mengalami gangguan teknis parah dan tim IT memprediksi perbaikan memakan waktu minimal 12 jam. Sementara itu, keterlambatan laporan akan berdampak langsung pada pemotongan tunjangan kinerja seluruh divisi Anda. Tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mencatat data secara manual dalam spreadsheet sementara, memobilisasi rekan kerja untuk rekonsiliasi data darurat, dan segera mengunggahnya saat sistem pulih.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menghubungi tim IT berkala menanyakan estimasi pemulihan sambil mengumpulkan draf dokumen siap input.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Melaporkan kendala server ke pimpinan instansi untuk meminta perpanjangan tenggat waktu resmi.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Menunggu instruksi resmi pimpinan divisi terkait langkah mitigasi keterlambatan sistem.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menghentikan pengerjaan sementara waktu karena kerusakan sistem murni di luar wewenang divisi Anda.",
+        "score": 1
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Tindakan proaktif mencari alternatif penyelesaian kerja menjamin target tercapai tanpa alasan kendala teknis.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 81,
+    "category": "TKP",
+    "text": "Bagaimana pandangan Anda mengenai sikap tegas?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Tegas namun tetap memiliki empati dan kepekaan.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Tegas tetapi luwes serta mampu menyesuaikan diri dengan situasi.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Tegas secara kaku dan mutlak.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Tegas dalam bersikap serta lugas menyatakan ya atau tidak.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Tegas tanpa memedulikan perasaan orang lain.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengukur kapasitas kepemimpinan Anda dalam mengoordinasikan bawahan. Pilihan jawaban dan poin nilai: A = 3, B = 4, C = 1, D = 5, E = 2.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 82,
+    "category": "TKP",
+    "text": "Bagaimana reaksi serta perasaan Anda saat harus menuntaskan perselisihan antarpribadi di dalam tim kerja?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menilainya sebagai sarana pembelajaran yang positif dan menyenangkan.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menganggap situasi tersebut sebagai beban permasalahan yang sangat besar.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Memandangnya sebagai persoalan bersama yang wajib diselesaikan secara solid oleh tim.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menganggap hal itu murni tanggung jawab kedua pihak yang tengah berselisih.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menyerahkan kepada ketua tim sebagai penanggung jawab tunggal penengah masalah.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui sikap dan kedewasaan Anda saat kepentingan pribadi berbenturan dengan kepentingan tim atau kelompok. Pilihan Jawaban Poin Nilai: A 1, B 2, C 4, D 5, E 3.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 83,
+    "category": "TKP",
+    "text": "Saat sedang bersantap siang mendampingi keponakan berumur empat tahun, hal yang Anda lakukan adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Langsung menyuapinya supaya lekas selesai.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Membiarkannya belajar makan secara mandiri.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mengajaknya berbagi makanan dari piring yang sama.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menyerahkan pengawasannya kepada ibunya.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Bersikap santai dan tidak ambil pusing.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui rasa kepedulian Anda terhadap pekerjaan ketika kepentingan pribadi Anda berbenturan dengan kepentingan pekerjaan. Pilihan Jawaban Poin Nilai A: 3, B: 5, C: 4, D: 2, E: 1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 84,
+    "category": "TKP",
+    "text": "Ketika staf melakukan kekeliruan dalam bekerja, tindakan yang tepat diambil seorang pemimpin adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Segera mengingatkan staf yang bersangkutan.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Konsisten memberikan arahan dan nasihat pembinaan.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Memberikan sanksi hukuman yang berat.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Membiarkan saja dan bersikap tidak peduli.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menganalisis terlebih dahulu signifikansi dampak kesalahan tersebut.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui kecakapan kepemimpinan Anda dalam mengarahkan dan mengoordinasikan bawahan. Pilihan jawaban dan poin nilai: A = 5, B = 4, C = 2, D = 1, E = 3.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 85,
+    "category": "TKP",
+    "text": "Anda ditempatkan di unit pelayanan publik daerah pelosok dengan norma adat yang melarang interaksi tatap muka langsung antara perempuan dan laki-laki bukan keluarga dalam ruangan tertutup. Kebijakan operasional standar kantor Anda mensyaratkan wawancara tertutup demi kerahasiaan data pemohon. Sikap Anda menghadapi situasi ini adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menata ulang bilik pelayanan menjadi semi-terbuka dengan partisi kaca transparan agar tetap akuntabel, privat, dan selaras nilai lokal.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Meminta izin tokoh adat setempat untuk menerapkan dispensasi khusus selama jam operasional pelayanan resmi kantor.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menyesuaikan petugas pewawancara sesuai gender pemohon layanan meski beban kerja antrian jadi timpang.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Tetap menjalankan SOP awal kantor secara kaku karena aturan kedinasan negara mengatasi norma lokal.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Mengabaikan kerahasiaan data dengan memindahkan seluruh proses wawancara ke ruang tunggu terbuka warga.",
+        "score": 1
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Adaptasi cerdas menghormati kearifan lokal tanpa menabrak kepatuhan dan integritas operasional kerja.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 86,
+    "category": "TKP",
+    "text": "Sebagai Pejabat Pembuat Komitmen (PPK), Anda mendapati salah satu rekan kerja senior sekaligus kerabat dekat mengajukan dokumen reimbursement perjalanan dinas fiktif senilai belasan juta rupiah. Beliau memohon bantuan Anda menandatanganinya karena sedang terdesak biaya rumah sakit keluarganya. Respons Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menolak tegas menandatangani klaim fiktif tersebut dan memberikan pinjaman pribadi atau membuka donasi internal membantunya.",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Menolak pengajuan klaim fiktif dan menyarankan opsi pinjaman resmi melalui koperasi kantor.",
+        "score": 4
+      },
+      {
+        "id": "C",
+        "text": "Menolak berkas tanpa memberikan solusi dan meminta berkas ditarik kembali sebelum diaudit pemeriksa.",
+        "score": 3
+      },
+      {
+        "id": "D",
+        "text": "Meminta rekan tersebut mengurangi nominal klaim fiktif agar tidak menimbulkan kecurigaan saat audit berkas.",
+        "score": 2
+      },
+      {
+        "id": "E",
+        "text": "Menyetujui klaim tersebut atas dasar kemanusiaan dengan perjanjian lisan uang diganti bulan depan.",
+        "score": 1
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Menjunjung prinsip nol toleransi fraud APBN/APBD sambil tetap menawarkan empati personal di luar sistem kedinasan.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 87,
+    "category": "TKP",
+    "text": "Tindakan yang Anda ambil sesaat setelah menuntaskan suatu pekerjaan adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Segera beralih menyelesaikan tugas berikutnya.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Mengambil jeda untuk beristirahat.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Membuka media sosial guna memantau kabar terbaru kerabat.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menghabiskan waktu dengan membaca koran.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Memeriksa ulang potensi kekeliruan hasil kerja sebelum berpindah kegiatan.",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Tujuan soal ini adalah untuk mengetahui semangat Anda berinovasi dan berkreasi dalam bekerja untuk mencapai tujuan Anda. Pilihan Jawaban Poin Nilai A: 3, B: 4, C: 1, D: 2, E: 5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 88,
+    "category": "TKP",
+    "text": "Jika atasan menugaskan suatu pekerjaan namun hasil akhirnya kurang memuaskan, sikap saya...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Memaklumi bahwa perintah tidak selalu dapat terlaksana secara sempurna",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Tetap memaksakan diri menjalankan instruksi meski hasilnya mengecewakan",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Tidak merasa kecewa kendati hasilnya belum sesuai harapan",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Sekadar menerima hasil tersebut tanpa tindak lanjut evaluasi",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Tetap berkomitmen menuntaskan tugas secara bertanggung jawab",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Soal ini mengukur kegigihan dan tanggung jawab dalam menuntaskan amanah pekerjaan. Poin: A=3, B=1, C=4, D=2, E=5.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 89,
+    "category": "TKP",
+    "text": "Apakah Anda tetap bersedia mendiskusikan suatu hal meskipun forum secara terbuka tidak sependapat dengan Anda?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Tetap berpegang teguh mempertahankan argumen pribadi.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menyimak sudut pandang pihak lain terlebih dahulu.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Mengevaluasi kembali argumen dan mengupayakan titik temu.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Memilih mengalah demi menghindari perdebatan.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Meninggalkan ruangan diskusi.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui kemampuan Anda dalam mengendalikan diri ketika pendapat Anda ditolak oleh orang lain. Apakah kondisi tersebut menyulut emosi Anda atau memotivasi Anda untuk memperbaiki diri. Pilihan Jawaban Poin Nilai: A 2, B 4, C 5, D 3, E 1.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 90,
+    "category": "TKP",
+    "text": "Karakteristik lingkungan kerja yang paling memotivasi dan membuat Anda nyaman adalah tempat yang...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Sesuai dengan minat serta bakat yang saya miliki.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Dipenuhi oleh banyak rekan kerja yang sudah saya kenal akrab sebelumnya.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menyajikan suasana dan tantangan yang benar-benar baru bagi saya.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Memberikan keuntungan finansial memadai meskipun kurang selaras dengan minat pribadi.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Apa adanya sesuai dengan penempatan yang diberikan tanpa preferensi khusus.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui cara Anda beradaptasi dengan lingkungan dan rekan kerja yang baru. Pilihan Jawaban Poin Nilai A 4 B 2 C 5 D 3 E 1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 91,
+    "category": "TKP",
+    "text": "Menurut Anda, mengambil keputusan yang sulit bagi seorang pemimpin merupakan suatu...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Hal yang biasa saja",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Risiko yang tak terelakkan",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Kewajiban yang harus dijalankan",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Hal yang memerlukan pertimbangan khusus",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Keharusan yang mutlak",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Soal ini mengukur tanggung jawab kepemimpinan dalam pengambilan keputusan. Poin: A=2, B=1, C=5, D=4, E=3.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 92,
+    "category": "TKP",
+    "text": "Saat menghadiri diskusi kerja, atasan menolak gagasan yang Anda sampaikan. Bagaimana Anda menyikapinya?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima keputusan tersebut secara tenang dan berlapang dada.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menolak keputusan itu dan menuntut penjelasan langsung dari atasan.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Merasa kecewa dan enggan menyampaikan ide lagi di masa mendatang.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menerima penolakan tersebut sembari meminta penjelasan alasan di baliknya.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Merasa kecewa, tetapi tetap menanyakan alternatif ide yang lebih baik dari atasan.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui kemampuan Anda dalam mengendalikan diri ketika pendapat Anda ditolak oleh orang lain. Apakah kondisi tersebut menyulut emosi Anda atau memotivasi Anda untuk memperbaiki diri. Pilihan Jawaban Poin Nilai: A 3, B 4, C 1, D 5, E 2.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 93,
+    "category": "TKP",
+    "text": "Apakah Anda termasuk pribadi yang gemar menceritakan rahasia kepada orang lain?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Sangat gemar berbagi rahasia.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Cukup sering membagikan rahasia.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Biasa saja dalam menyikapi rahasia.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Tidak suka membeberkan rahasia.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Merasa hal tersebut sama sekali bukan cerminan kepribadian saya.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda bertanggung jawab atas kepercayaan yang diberikan oleh orang lain. Pilihan Jawaban Poin Nilai: A 2, B 3, C 5, D 4, E 1.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 94,
+    "category": "TKP",
+    "text": "Bagaimana reaksi Anda saat pandangan atau pendapat yang Anda sampaikan ditolak oleh atasan dalam sebuah diskusi?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima keputusan atasan tersebut dengan lapang dada dan tenang.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Merasa keberatan dan menuntut atasan memberikan penjelasan detail.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Merasa kecewa lalu memutuskan untuk enggan mengutarakan pendapat lagi di masa mendatang.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menerima keputusan penolakan tersebut sembari meminta masukan mengenai alasan penolakannya.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menunjukkan kekecewaan sambil menanyakan alternatif ide dari atasan yang dianggap lebih baik.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui bagaimana cara Anda beradaptasi dengan kondisi yang berjalan tidak sesuai dengan rencana Anda. Pilihan Jawaban Poin Nilai A 4 B 2 C 1 D 5 E 3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 95,
+    "category": "TKP",
+    "text": "Menurut pandangan Anda, capaian nilai akademis yang Anda raih selama menempuh pendidikan akan ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menentukan secara mutlak jenis profesi pekerjaan Anda nantinya.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menjadi representasi cerminan masa depan Anda.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Sama sekali tidak memiliki dampak atau pengaruh apa pun.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Membantu mengantarkan Anda menuju tahap wawancara kerja.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Berdampak biasa saja pada masa depan karier saya.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui pemahaman dan kemampuan Anda dalam memotivasi diri untuk terus belajar dan berkembang. Pilihan Jawaban Poin Nilai: A 3, B 4, C 1, D 5, E 2.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 96,
+    "category": "TKP",
+    "text": "Bagaimana pandangan Anda mengenai prinsip Pareto yang menyebutkan bahwa 80% efektivitas kerja berasal dari 20% sasaran prioritas?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Fokus paling utama terletak pada pencapaian sasaran.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Efisiensi dalam pelaksanaan proses adalah hal yang paling pokok.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menjalankan proses adalah yang terpenting kendati hasil akhirnya belum sesuai target.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Sasaran harus dapat diwujudkan melalui pelaksanaan proses yang terbaik.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Sasaran kerja wajib diselesaikan melalui prosedur proses yang semestinya.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui kemampuan Anda bekerja secara terorganisasi sesuai rencana serta terampil menetapkan prioritas pekerjaan. Pilihan Jawaban Poin Nilai: A 1, B 2, C 3, D 5, E 4.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 97,
+    "category": "TKP",
+    "text": "Anda memiliki kecukupan finansial untuk membiayai pendidikan anak, namun ia enggan melanjutkan sekolah. Sikap Anda adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Memaksanya agar tetap mau bersekolah.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Membiarkannya secara bebas menentukan jalan hidup sendiri.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Memberinya keleluasaan sembari terus memotivasinya agar bersemangat kembali ke sekolah.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mendidik dan membimbingnya secara mandiri di rumah.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menghadirkan guru les privat khusus untuk mengajarnya di rumah.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengukur kemampuan Anda dalam memotivasi orang lain agar terus belajar dan mengembangkan diri. Pilihan Jawaban Poin Nilai: A 1, B 4, C 5, D 3, E 2.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 98,
+    "category": "TKP",
+    "text": "Anda ditugaskan oleh pimpinan menjadi notulis dalam Rapat Badan Pertimbangan Jabatan dan Kepangkatan. Respons Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menghindari rekan kerja yang mendesak untuk mengetahui hasil rapat",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menceritakan hasil rapat kepada rekan sejawat dengan rasa bangga",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Memberitahukan hasil rapat kepada anggota keluarga",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menyampaikan hasil rapat terbatas kepada sahabat dekat di kantor",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menjaga kerahasiaan dan tidak membocorkan hasil rapat karena di luar wewenang",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Soal ini menilai integritas, profesionalisme, serta kepatuhan menjaga rahasia jabatan. Poin: A=4, B=1, C=3, D=2, E=5.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 99,
+    "category": "TKP",
+    "text": "Setelah berhasil menuntaskan sebuah tanggung jawab pekerjaan dengan baik, apa yang akan Anda lakukan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Cukup berpuas diri sehingga tidak perlu lagi memaksakan diri.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menjaga komitmen untuk terus mengerahkan seluruh kemampuan terbaik.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Bertekad mengerjakan rangkaian tugas berikutnya dengan kualitas yang lebih unggul.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Merasa belum puas dan terus memacu diri untuk hasil yang lebih baik.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Bekerja dengan upaya secukupnya pada kesempatan berikutnya.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengetahui seberapa besar motivasi dan tekad Anda dalam menghadapi segala kondisi dan tantangan di masa mendatang. Pilihan Jawaban Poin Nilai A 1 B 4 C 5 D 3 E 2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 100,
+    "category": "TKP",
+    "text": "Ketika Anda sedang menyelesaikan tugas dari atasan, rekan kerja tidak sengaja mencabut kabel stopkontak hingga komputer Anda mati. Sikap yang Anda tunjukkan adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Memarahi rekan kerja tersebut atas kelalaiannya.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menerima permohonan maaf dari rekan kerja tersebut dengan lapang dada.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Meminta rekan kerja tersebut bertanggung jawab atas kendala yang ditimbulkan.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Memaklumi kejadian tersebut karena murni faktor ketidaksengajaan.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menghela napas panjang untuk mengendalikan emosi.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengukur kematangan emosi, toleransi, dan sikap pemaaf Anda ketika menghadapi kelalaian tanpa sengaja dari orang lain. Pilihan Jawaban dan Poin Nilai: A = 1, B = 5, C = 3, D = 4, E = 2.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 101,
+    "category": "TKP",
+    "text": "Saat beban kerja Anda sedang renggang, Anda diminta menggantikan tugas rekan yang sedang sakit. Sikap Anda adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mempelajari rincian tugas tersebut terlebih dahulu sebelum bersedia menerimanya.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Segera menyanggupi permintaan tersebut dengan sigap.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Meminta rekan tersebut mencari rekan lain sebagai pengganti.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mempertimbangkan beban tugas tersebut sebelum memberi kepastian.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Membantu mencarikan rekan kerja lain untuk menggantikannya.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk menilai kesigapan dan kepedulian Anda dalam membantu rekan kerja yang membutuhkan bantuan di tengah kelonggaran waktu pribadi. Pilihan Jawaban dan Poin Nilai: A = 4, B = 5, C = 1, D = 3, E = 2.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 102,
+    "category": "TKP",
+    "text": "Ketika orang-orang di sekitar saya membutuhkan bantuan, saya akan ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Segera memberikan bantuan secara langsung.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menyelesaikan pekerjaan pribadi saya terlebih dahulu, baru kemudian menolong.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menanyakan masalah yang dihadapi terlebih dahulu, lalu membantu jika memungkinkan.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Mengkonsultasikan hal tersebut terlebih dahulu kepada atasan.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Mencari tahu permasalahannya, lalu memastikan tugas saya selesai sebelum membantu jika mampu.",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengukur kepedulian, kehati-hatian, dan kesigapan dalam membantu orang lain tanpa mengabaikan tanggung jawab pribadi. Pilihan Jawaban dan Poin Nilai: A = 2, B = 3, C = 4, D = 1, E = 5.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 103,
+    "category": "TKP",
+    "text": "Bagi saya pribadi, bekerja merupakan wujud dari...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Ibadah dan pengabdian",
+        "score": 5
+      },
+      {
+        "id": "B",
+        "text": "Tugas yang harus diselesaikan",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Kewajiban moral dan profesional",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Kebutuhan hidup sehari-hari",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Sarana mencari nafkah semata",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "A",
+    "tkpScores": null,
+    "explanation": "Soal ini mengukur motivasi kerja dan nilai spiritual dalam memandang profesi. Poin: A=5, B=3, C=4, D=2, E=1.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 104,
+    "category": "TKP",
+    "text": "Ketika resmi bertugas sebagai PNS dan mendadak mengalami krisis finansial pribadi, apa yang akan Anda lakukan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mencari pekerjaan sampingan yang halal di luar jam kerja untuk menambah pendapatan.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Meminjam uang secara baik-baik kepada rekan kerja di kantor.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mengajukan pinjaman finansial langsung kepada pimpinan instansi.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Memutuskan mengundurkan diri dari posisi PNS.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menggunakan kewenangan jabatan untuk melakukan tindakan korupsi.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Soal ini menguji integritas dan pemecahan masalah kebutuhan hidup sebagai aparatur negara secara wajar dan legal. Distribusi poin: A=3, B=5, C=4, D=2, E=1.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 105,
+    "category": "TKP",
+    "text": "Rekan kerja Anda tidak dapat menghadiri acara penyerahan ijazah SMA anaknya karena harus bertugas ke luar kota. Sikap Anda adalah ....",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Berpandangan bahwa rekan Anda memiliki hak penuh untuk menentukan prioritas agendanya.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menyarankan rekan Anda untuk mempertimbangkan kembali jadwal keberangkatannya.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Mendesak rekan Anda membatalkan tugas dinas tersebut.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menyarankan agar anaknya mengambil ijazah secara mandiri.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Memaklumi bahwa agenda dinas dan urusan keluarga terkadang berbenturan secara bersamaan.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Soal ini bertujuan untuk mengukur kepedulian dan kepekaan sosial saat rekan kerja menghadapi benturan antara kewajiban tugas dan momen penting keluarga. Pilihan Jawaban dan Poin Nilai: A = 3, B = 5, C = 4, D = 1, E = 2.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 106,
+    "category": "TKP",
+    "text": "Beberapa rekan kerja Anda pulang 30 menit lebih awal dari ketentuan jam kerja kantor. Menghadapi situasi tersebut, tindakan Anda adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Ikut pulang lebih awal bersama rekan-rekan tersebut.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Membiarkan mereka pulang duluan karena pekerjaan Anda sendiri belum selesai.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Tetap bertahan di kantor dan pulang sesuai dengan jam operasional yang berlaku.",
+        "score": 5
+      },
+      {
+        "id": "D",
+        "text": "Mempercepat penyelesaian pekerjaan agar bisa segera menyusul pulang.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Mencatat dan melaporkan kebiasaan tersebut kepada atasan pada keesokan harinya.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "C",
+    "tkpScores": null,
+    "explanation": "Soal ini mengukur profesionalisme dan disiplin kerja di tengah lingkungan yang kurang tertib. Distribusi poin: A=1, B=3, C=5, D=2, E=4.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 107,
+    "category": "TKP",
+    "text": "Anda memimpin sebuah instansi bergengsi. Suatu hari sahabat dekat Anda meminta tolong agar anaknya diloloskan bekerja di instansi tersebut tanpa seleksi, bahkan menawarkan sejumlah uang dan fasilitas pribadi sebagai imbalan. Apa respons Anda?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima tawaran tersebut tanpa mengambil imbalannya demi menjaga pertemanan.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Berbasa-basi terlebih dahulu lalu menyetujuinya karena sungkan kepada sahabat.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Menolak permintaan tersebut secara tegas dan keras.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Menolaknya secara santun dan mengarahkan agar sang anak tetap mengikuti prosedur seleksi resmi.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Menerima permintaannya dan mengikutsertakan sang anak dalam tes hanya sebagai syarat formalitas.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Soal ini menilai integritas dan kepatuhan terhadap aturan kerja tanpa tergiur imbalan materi. Distribusi poin: A=2, B=3, C=4, D=5, E=1.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 108,
+    "category": "TKP",
+    "text": "Sebagai seorang pemimpin, apakah Anda memandang perlu untuk melakukan konsultasi sebelum mengambil keputusan?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Hanya berkonsultasi kepada atasan atau dalam hal yang berhubungan langsung dengan target kinerja.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Berkonsultasi dengan orang tua maupun pihak berpengalaman meski pembahasannya di luar urusan pekerjaan.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Cukup meminta saran dari pimpinan atau bawahan yang dapat dipercaya.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Tidak perlu, karena seorang pemimpin semestinya telah paham langkah apa yang harus diambil.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Perlu dilakukan sesekali tanpa berlebihan, sebab pemimpin wajib mandiri dalam mengambil keputusan final.",
+        "score": 5
+      }
+    ],
+    "correctAnswer": "E",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengukur rasa tanggung jawab dan kemandirian Anda sebagai pemimpin dalam membuat sebuah keputusan strategis. Pilihan Jawaban Poin Nilai: A 2, B 4, C 3, D 1, E 5.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 109,
+    "category": "TKP",
+    "text": "Sebagai aparatur sipil negara (ASN), capaian utama apa yang menjadi target karier Anda?",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Cukup menjadi pegawai biasa tanpa banyak beban.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menyerahkan sepenuhnya pada kebijakan pimpinan.",
+        "score": 3
+      },
+      {
+        "id": "C",
+        "text": "Membangun jejaring dan relasi seluas-luasnya.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Senantiasa berinovasi serta produktif dalam setiap bidang pekerjaan.",
+        "score": 5
+      },
+      {
+        "id": "E",
+        "text": "Bekerja mengikuti arus yang ada.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "D",
+    "tkpScores": null,
+    "explanation": "Tujuan soal ini adalah untuk mengetahui semangat Anda berinovasi dan berkreasi dalam bekerja untuk mencapai tujuan Anda. Pilihan Jawaban Poin Nilai A: 2, B: 1, C: 4, D: 5, E: 3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 110,
+    "category": "TKP",
+    "text": "Ketika usulan kerja yang saya ajukan dinilai kurang tepat oleh atasan, sikap saya adalah...",
+    "image": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Merasa sangat terpukul dan kecewa atas penolakan tersebut.",
+        "score": 4
+      },
+      {
+        "id": "B",
+        "text": "Menyusun dan mencari alternatif gagasan lain yang lebih relevan serta tepat sasaran.",
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "Menunjukkan rasa kecewa, tetapi berupaya segera melupakan penolakan tersebut.",
+        "score": 2
+      },
+      {
+        "id": "D",
+        "text": "Tetap bersikeras mempertahankan argumen agar atasan bersedia menerima usulan tersebut.",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Menganggap penolakan ide sebagai hal yang biasa dialami dalam pekerjaan.",
+        "score": 4
+      }
+    ],
+    "correctAnswer": "B",
+    "tkpScores": null,
+    "explanation": "Tujuan dari soal ini adalah untuk mengetahui bagaimana cara Anda beradaptasi dengan kondisi yang berjalan tidak sesuai dengan rencana Anda. Pilihan Jawaban Poin Nilai A 2 B 5 C 4 D 1 E 3",
+    "difficulty": "medium"
+  }
+]
