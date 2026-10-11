@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Lightning, Brain, Globe, Star, WarningCircle } from '@phosphor-icons/react';
 import { collectWrongQuestions } from '@/lib/wrongAnswers';
+import { useUser } from '@/lib/useUser';
 
 const DRILL_TOPICS: {
   category: 'TWK' | 'TIU' | 'TKP';
@@ -41,12 +42,18 @@ const catMeta: Record<'TWK' | 'TIU' | 'TKP', { label: string; desc: string; colo
 };
 
 export default function DrillPage() {
+  const { user, loading } = useUser();
   const [wrongCount, setWrongCount] = useState(0);
 
   useEffect(() => {
-    const list = collectWrongQuestions();
+    // Saran perbaikan soal salah hanya untuk user yang login
+    if (loading || !user) {
+      setWrongCount(0);
+      return;
+    }
+    const list = collectWrongQuestions(user.id);
     setWrongCount(list.length);
-  }, []);
+  }, [user, loading]);
 
   return (
     <div className="min-h-screen flex items-start justify-center p-4 py-8">

@@ -20,6 +20,12 @@ export default function UlangSalahPage() {
 
   useEffect(() => {
     if (userLoading) return;
+    // Hanya tampilkan soal salah untuk user yang login — guest tidak punya riwayat personal
+    if (!userId) {
+      setItems([]);
+      setLoaded(true);
+      return;
+    }
     const wrong = collectWrongQuestions(userId).map((item) => ({
       ...item,
       question: {
@@ -77,6 +83,25 @@ export default function UlangSalahPage() {
   }
 
   if (items.length === 0) {
+    // Belum login → arahkan ke login
+    if (!userId) {
+      return (
+        <div className="min-h-screen flex flex-col items-center justify-center px-4 gap-6" style={{ background: '#faf9f5' }}>
+          <WarningCircle size={64} weight="fill" color="#c96442" />
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">Masuk Akun Dulu</h2>
+            <p className="text-gray-600 max-w-sm">
+              Saran perbaikan soal salah disimpan per akun. Masuk atau daftar agar sistem bisa melacak kesalahanmu.
+            </p>
+          </div>
+          <Link href="/login" className="px-6 py-3 rounded-xl font-semibold text-white" style={{ background: '#c96442' }}>
+            Masuk / Daftar
+          </Link>
+          <Link href="/drill" className="text-sm text-gray-500 underline">Kembali ke Latihan Drill</Link>
+        </div>
+      );
+    }
+
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4 gap-6" style={{ background: '#faf9f5' }}>
         <CheckCircle size={64} weight="fill" color="#22c55e" />
