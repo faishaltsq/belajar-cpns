@@ -196,17 +196,23 @@ body {
 }
 
 @media print {
-  header, footer, [data-floating-support], .print\:hidden {
+  header, nav, footer, aside, [data-floating-support], .print\:hidden, .no-print {
     display: none !important;
   }
   body {
     background: #ffffff !important;
     color: #000000 !important;
   }
-  .card-modern {
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  .card-modern, .card-subtle {
     box-shadow: none !important;
-    border: 1px solid #ccc !important;
+    border: 1px solid #d1d5db !important;
     background: #ffffff !important;
+    break-inside: avoid;
     page-break-inside: avoid;
   }
 }

@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     `;
 
     // Kirim email OTP
-    await sendOtpEmail({
+    const result = await sendOtpEmail({
       to: normalizedEmail,
       subject: 'Kode Reset Password — Lolos.in',
       html: `
@@ -49,7 +49,28 @@ export async function POST(req: Request) {
       `,
     });
 
-    return NextResponse.json({ success: true, message: 'Kode OTP sudah dikirim ke email.' });
+    const isDev = process.env.NODE_ENV !== 'production';
+
+    if (!result.success) {
+      console.warn('[forgot-password] Email gagal terkirim:', result.error);
+      if (isDev) {
+        return NextResponse.json({
+          success: true,
+          message: 'Mode Pengujian: Kode OTP ' + otp,
+          devOtp: otp,
+        });
+      }
+      return NextResponse.json(
+        { error: 'Gagal mengirim email reset password. Pastikan email aktif atau hubungi layanan bantuan.' },
+        { status: 503 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Kode OTP sudah dikirim ke email.',
+      ...(isDev ? { devOtp: otp } : {}),
+    });
   } catch (err: unknown) {
     console.error('[forgot-password]', err);
     return NextResponse.json({ error: 'Terjadi kesalahan server.' }, { status: 500 });

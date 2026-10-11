@@ -67,6 +67,10 @@ function LoginFormContent() {
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Gagal mendaftar.');
 
+        if (data.devOtp && String(data.devOtp).length === 6) {
+          setOtpDigits(String(data.devOtp).split(''));
+          setSuccessMsg(data.notice || 'Mode Pengujian: Kode OTP otomatis terisi.');
+        }
         setStep('otp');
       } else {
         // LOGIN → langsung set cookie
@@ -129,6 +133,10 @@ function LoginFormContent() {
         return;
       }
       if (!res.ok) throw new Error(data.error || 'Gagal mengirim ulang.');
+      if (data.devOtp && String(data.devOtp).length === 6) {
+        setOtpDigits(String(data.devOtp).split(''));
+        setSuccessMsg(data.notice || 'Mode Pengujian: Kode OTP otomatis terisi.');
+      }
       setResendSuccess(true);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Gagal mengirim ulang.');
@@ -149,7 +157,12 @@ function LoginFormContent() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Gagal mengirim kode OTP.');
-      setOtpDigits(['', '', '', '', '', '']);
+      if (data.devOtp && String(data.devOtp).length === 6) {
+        setOtpDigits(String(data.devOtp).split(''));
+        setSuccessMsg('Mode Pengujian: Kode OTP otomatis terisi.');
+      } else {
+        setOtpDigits(['', '', '', '', '', '']);
+      }
       setStep('reset');
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Terjadi kesalahan.');

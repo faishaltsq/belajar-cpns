@@ -60,15 +60,32 @@ export async function POST(req: Request) {
       html,
     });
 
+    const isDev = process.env.NODE_ENV !== 'production';
+
     if (!result.success) {
-      console.error('[auth/register] Email gagal terkirim:', result.error);
-      // Tetap lanjut — OTP sudah tersimpan di DB, user bisa minta kirim ulang
+      console.warn('[auth/register] Email gagal terkirim:', result.error);
+      if (isDev) {
+        return NextResponse.json({
+          success: true,
+          requireOtp: true,
+          email: email.toLowerCase(),
+          devOtp: otp,
+          notice: 'Mode Pengujian: Gunakan kode OTP ' + otp,
+        });
+      }
+      return NextResponse.json(
+        {
+          error: 'Layanan email verifikasi sedang mengalami kendala. Silakan coba beberapa saat lagi atau hubungi bantuan.',
+        },
+        { status: 503 }
+      );
     }
 
     return NextResponse.json({
       success: true,
       requireOtp: true,
       email: email.toLowerCase(),
+      ...(isDev ? { devOtp: otp } : {}),
     });
   } catch (error: unknown) {
     if (error instanceof Error) console.error('[auth/register]', error.message);
