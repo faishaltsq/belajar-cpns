@@ -2,7 +2,13 @@ import bcrypt from 'bcryptjs';
 import { SignJWT, jwtVerify } from 'jose';
 
 function getSecret(): Uint8Array {
-  const secret = process.env.JWT_SECRET || 'lolos-in-default-production-jwt-secret-key-2026';
+  const secret = process.env.JWT_SECRET;
+  if (!secret) {
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error('FATAL: JWT_SECRET environment variable is missing in production.');
+    }
+    return new TextEncoder().encode('lolos-in-dev-only-secret-not-for-production-key-2026');
+  }
   return new TextEncoder().encode(secret);
 }
 

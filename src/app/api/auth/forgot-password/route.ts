@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getDb, findUserByEmail } from '@/lib/db';
 import { sendOtpEmail } from '@/lib/mailer';
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 function generateOTP(): string {
   return String(Math.floor(100000 + Math.random() * 900000));
@@ -8,6 +9,15 @@ function generateOTP(): string {
 
 export async function POST(req: Request) {
   try {
+    const ip = getClientIp(req);
+    const rl = checkRateLimit(`forgot-password:${ip}`, 5, 900);
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: `Terlalu banyak permintaan reset password. Coba lagi dalam ${rl.retryAfterSeconds} detik.` },
+        { status: 429, headers: { 'Retry-After': String(rl.retryAfterSeconds) } }
+      );
+    }
+
     const { email } = await req.json();
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       return NextResponse.json({ error: 'Format email tidak valid.' }, { status: 400 });

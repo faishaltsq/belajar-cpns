@@ -1,9 +1,19 @@
 import { NextResponse } from 'next/server';
 import { createToken } from '@/lib/auth';
 import { createUser, getDb } from '@/lib/db';
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 export async function POST(req: Request) {
   try {
+    const ip = getClientIp(req);
+    const rl = checkRateLimit(`verify-otp:${ip}`, 5, 300);
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: `Terlalu banyak percobaan verifikasi. Coba lagi dalam ${rl.retryAfterSeconds} detik.` },
+        { status: 429, headers: { 'Retry-After': String(rl.retryAfterSeconds) } }
+      );
+    }
+
     const { email, otp } = await req.json();
 
     if (!email || !otp) {

@@ -2,13 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { loadPackage, TRYOUT_LIST } from '@/lib/loadPackage';
 import { getDb } from '@/lib/db';
 import { Question } from '@/lib/types';
-
-const ADMIN_PIN = process.env.ADMIN_PIN || '123456';
-
-function isAuthorized(req: NextRequest): boolean {
-  const pin = req.headers.get('x-admin-pin') || req.nextUrl.searchParams.get('pin');
-  return pin === ADMIN_PIN;
-}
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -21,7 +15,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 // POST /api/admin/generate-custom
 export async function POST(req: NextRequest) {
-  if (!isAuthorized(req)) {
+  if (!isAuthorizedAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

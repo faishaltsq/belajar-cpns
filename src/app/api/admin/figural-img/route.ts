@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/lib/db';
-
-const ADMIN_PIN = process.env.ADMIN_PIN || '123456';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 // Question number → filename mapping
 function filenameToNumber(fname: string): number {
@@ -15,11 +14,6 @@ function filenameToNumber(fname: string): number {
 }
 
 export async function GET(req: NextRequest) {
-  const pin = req.headers.get('x-admin-pin') || req.nextUrl.searchParams.get('pin');
-  if (pin !== ADMIN_PIN) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
-
   const filename = req.nextUrl.searchParams.get('filename');
   if (!filename) {
     return NextResponse.json({ error: 'Missing filename param' }, { status: 400 });

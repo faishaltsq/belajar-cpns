@@ -14,7 +14,8 @@ export async function GET(
       leaderboard: list,
       totalParticipants: list.length,
     });
-  } catch (e) {
-    return NextResponse.json({ error: String(e) }, { status: 500 });
+  } catch (e: unknown) {
+    if (e instanceof Error) console.error('[api/leaderboard]', e.message);
+    return NextResponse.json({ error: 'Gagal memuat papan peringkat.' }, { status: 500 });
   }
 }

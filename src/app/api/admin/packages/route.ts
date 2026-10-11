@@ -4,17 +4,11 @@ import path from 'path';
 import { TRYOUT_LIST, loadPackage } from '@/lib/loadPackage';
 import { getDb } from '@/lib/db';
 import { Question } from '@/lib/types';
-
-const ADMIN_PIN = process.env.ADMIN_PIN || '123456';
-
-function isAuthorized(req: NextRequest): boolean {
-  const pin = req.headers.get('x-admin-pin') || req.nextUrl.searchParams.get('pin');
-  return pin === ADMIN_PIN;
-}
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 // GET /api/admin/packages — list all packages or load questions & settings of one package
 export async function GET(req: NextRequest) {
-  if (!isAuthorized(req)) {
+  if (!isAuthorizedAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -92,7 +86,7 @@ export async function GET(req: NextRequest) {
 
 // POST /api/admin/packages — add a new question to a package
 export async function POST(req: NextRequest) {
-  if (!isAuthorized(req)) {
+  if (!isAuthorizedAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -145,7 +139,7 @@ export async function POST(req: NextRequest) {
 
 // PUT /api/admin/packages — update a question
 export async function PUT(req: NextRequest) {
-  if (!isAuthorized(req)) {
+  if (!isAuthorizedAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -201,7 +195,7 @@ export async function PUT(req: NextRequest) {
 
 // DELETE /api/admin/packages — delete a question or an entire package
 export async function DELETE(req: NextRequest) {
-  if (!isAuthorized(req)) {
+  if (!isAuthorizedAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -252,7 +246,7 @@ export async function DELETE(req: NextRequest) {
 
 // PATCH /api/admin/packages — update package settings (duration, randomize)
 export async function PATCH(req: NextRequest) {
-  if (!isAuthorized(req)) {
+  if (!isAuthorizedAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

@@ -2,12 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import { getDb } from '@/lib/db';
-
-const ADMIN_PIN = process.env.ADMIN_PIN || '123456';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 export async function POST(req: NextRequest) {
-  const pin = req.headers.get('x-admin-pin');
-  if (pin !== ADMIN_PIN) {
+  if (!isAuthorizedAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

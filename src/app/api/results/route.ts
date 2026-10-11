@@ -11,19 +11,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    // Ambil userId dari body atau otomatis dari cookie cpns_token
-    let finalUserId = userId;
-    if (!finalUserId) {
-      const cookieStore = cookies();
-      const token = cookieStore.get('cpns_token')?.value;
-      if (token) {
-        const payload = await verifyToken(token);
-        if (payload?.userId) finalUserId = payload.userId;
-      }
+    // Keamanan IDOR: Hanya gunakan userId dari token sesi terverifikasi
+    let finalUserId: string | undefined = undefined;
+    const cookieStore = cookies();
+    const token = cookieStore.get('cpns_token')?.value;
+    if (token) {
+      const payload = await verifyToken(token);
+      if (payload?.userId) finalUserId = payload.userId;
     }
 
     const id = await saveExamResult({
-      userId: finalUserId || undefined,
+      userId: finalUserId,
       packageId,
       answers: answers ?? {},
       scoreTwk: scoreTwk ?? 0,
@@ -34,7 +32,8 @@ export async function POST(req: NextRequest) {
       durationUsed: durationUsed ?? undefined,
     });
     return NextResponse.json({ success: true, id });
-  } catch (e) {
-    return NextResponse.json({ error: String(e) }, { status: 500 });
+  } catch (e: unknown) {
+    if (e instanceof Error) console.error('[api/results]', e.message);
+    return NextResponse.json({ error: 'Gagal menyimpan hasil ujian.' }, { status: 500 });
   }
 }

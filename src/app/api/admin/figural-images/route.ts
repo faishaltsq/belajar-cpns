@@ -2,8 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import { getDb } from '@/lib/db';
-
-const ADMIN_PIN = process.env.ADMIN_PIN || '123456';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 // Question number → filename mapping
 function numberToFilename(num: number): string | null {
@@ -14,8 +13,7 @@ function numberToFilename(num: number): string | null {
 }
 
 export async function GET(req: NextRequest) {
-  const pin = req.headers.get('x-admin-pin');
-  if (pin !== ADMIN_PIN) {
+  if (!isAuthorizedAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -71,7 +69,7 @@ export async function GET(req: NextRequest) {
     return {
       filename: f,
       url: isOverridden
-        ? `/api/admin/figural-img?filename=${f}&pin=${pin}`
+        ? `/api/admin/figural-img?filename=${f}`
         : `/images/questions/${f}`,
       size,
       overridden: isOverridden,

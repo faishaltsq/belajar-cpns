@@ -1,9 +1,19 @@
 import { NextResponse } from 'next/server';
 import { verifyPassword, createToken } from '@/lib/auth';
 import { findUserByEmail } from '@/lib/db';
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 export async function POST(req: Request) {
   try {
+    const ip = getClientIp(req);
+    const rl = checkRateLimit(`login:${ip}`, 10, 60);
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: `Terlalu banyak percobaan masuk. Coba lagi dalam ${rl.retryAfterSeconds} detik.` },
+        { status: 429, headers: { 'Retry-After': String(rl.retryAfterSeconds) } }
+      );
+    }
+
     const { email, password } = await req.json();
 
     if (!email || !password) {

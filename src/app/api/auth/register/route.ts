@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { hashPassword } from '@/lib/auth';
 import { findUserByEmail, getDb } from '@/lib/db';
 import { sendOtpEmail } from '@/lib/mailer';
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 function validateEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
@@ -13,6 +14,15 @@ function generateOTP(): string {
 
 export async function POST(req: Request) {
   try {
+    const ip = getClientIp(req);
+    const rl = checkRateLimit(`register:${ip}`, 5, 300);
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: `Terlalu banyak permintaan pendaftaran. Coba lagi dalam ${rl.retryAfterSeconds} detik.` },
+        { status: 429, headers: { 'Retry-After': String(rl.retryAfterSeconds) } }
+      );
+    }
+
     const { email, password, name } = await req.json();
 
     if (!email || !validateEmail(email)) {

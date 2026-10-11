@@ -57,11 +57,13 @@ export async function POST(req: NextRequest) {
 
     const order = orderRows[0];
 
-    // Signature verification (double security check dari KlikQRIS)
+    // Signature verification (wajib jika order memiliki signature terdaftar)
     const incomingSig = body.signature || body.data?.signature;
-    if (order.signature && incomingSig && order.signature !== incomingSig) {
-      console.warn(`[KlikQRIS Webhook] Signature mismatch for order #${orderId}`);
-      return NextResponse.json({ error: 'Invalid signature' }, { status: 403 });
+    if (order.signature) {
+      if (!incomingSig || order.signature !== incomingSig) {
+        console.warn(`[KlikQRIS Webhook] Signature mismatch or missing for order #${orderId}`);
+        return NextResponse.json({ error: 'Invalid signature' }, { status: 403 });
+      }
     }
 
     // 2. Idempotency: if already paid, return 200 immediately
