@@ -10,12 +10,12 @@ export async function POST(req: NextRequest) {
     const orderType = body.orderType === 'single' ? 'single' : 'pro';
     const packageId = body.packageId ? String(body.packageId).trim() : null;
 
-    // Default price: PRO 49.000 (or custom env/testing), Single Tryout 15.000
+    // Default price: PRO 150.000, Single Tryout 5.000
     const baseAmount = Number(
       body.baseAmount ||
       (orderType === 'single'
-        ? process.env.KLIKQRIS_TRYOUT_PRICE || process.env.SAWERIA_TRYOUT_PRICE || 15000
-        : process.env.KLIKQRIS_PRO_PRICE || process.env.SAWERIA_PRO_PRICE || 49000)
+        ? process.env.KLIKQRIS_TRYOUT_PRICE || process.env.SAWERIA_TRYOUT_PRICE || 5000
+        : process.env.KLIKQRIS_PRO_PRICE || process.env.SAWERIA_PRO_PRICE || 150000)
     );
 
     // Ambil identitas user dari cookie token

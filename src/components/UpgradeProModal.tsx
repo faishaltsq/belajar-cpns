@@ -68,7 +68,7 @@ export function UpgradeProModal({
         body: JSON.stringify({
           orderType: plan,
           packageId: plan === 'single' ? packageId : null,
-          baseAmount: 1000, // Testing nominal Rp 1.000
+          baseAmount: plan === 'single' ? 5000 : 150000,
         }),
       });
       const data = await res.json();
@@ -300,7 +300,7 @@ export function UpgradeProModal({
                       Paket Ini Saja
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp {orderInfo?.exactAmount && selectedPlan === 'single' ? orderInfo.exactAmount.toLocaleString('id-ID') : '1.000'}
+                      Rp 5.000
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       Buka {triggerPackage || '1 paket'}
@@ -324,7 +324,7 @@ export function UpgradeProModal({
                       PRO All-Access
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp {orderInfo?.exactAmount && selectedPlan === 'pro' ? orderInfo.exactAmount.toLocaleString('id-ID') : '1.000'}
+                      Rp 150.000
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       Semua Tryout 1–17
@@ -410,7 +410,7 @@ export function UpgradeProModal({
                 ) : (
                   <>
                     <QrCode size={18} weight="bold" />
-                    Bayar Rp {orderInfo?.exactAmount?.toLocaleString('id-ID') || '1.000'} via QRIS
+                    Bayar Rp {(selectedPlan === 'single' ? 5000 : 150000).toLocaleString('id-ID')} via QRIS
                     <ArrowRight size={14} weight="bold" />
                   </>
                 )}
