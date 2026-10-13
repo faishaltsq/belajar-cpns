@@ -98,7 +98,82 @@ export interface KraepelinOverallResult {
 export interface ReasoningQuestion {
   id: number;
   type: 'deret_angka' | 'logika_spasial' | 'analogi_gambar';
+  category?: 'deret' | 'silogisme' | 'spasial';
   questionText: string;
   options: { id: string; text: string; score: number }[];
   explanation: string;
 }
+
+// ========================
+// TES KECERMATAN
+// ========================
+
+export interface KecermatanKeyItem {
+  letter: 'A' | 'B' | 'C' | 'D' | 'E';
+  value: string;
+}
+
+export interface KecermatanReferenceTable {
+  type: 'angka' | 'huruf';
+  keys: KecermatanKeyItem[];
+}
+
+export interface KecermatanQuestion {
+  displayedValues: string[];
+  missingValue: string;
+  correctLetter: 'A' | 'B' | 'C' | 'D' | 'E';
+}
+
+export interface KecermatanInput {
+  columnIndex: number;
+  questionIndex: number;
+  selectedLetter: 'A' | 'B' | 'C' | 'D' | 'E';
+  correctLetter: 'A' | 'B' | 'C' | 'D' | 'E';
+  isCorrect: boolean;
+  timeSpentMs: number;
+}
+
+export interface KecermatanColumnResult {
+  columnIndex: number;
+  totalAttempts: number;
+  correctCount: number;
+  wrongCount: number;
+  accuracy: number;
+  speedPerMinute: number;
+}
+
+export interface KecermatanOverallResult {
+  type: 'angka' | 'huruf';
+  totalQuestionsAnswered: number;
+  totalCorrect: number;
+  totalWrong: number;
+  overallAccuracy: number;
+  averageSpeedPerColumn: number;
+  stabilityScore: number;
+  columnResults: KecermatanColumnResult[];
+  grade: 'Sangat Baik' | 'Baik' | 'Cukup' | 'Perlu Latihan';
+}
+
+// ========================
+// TES KEPRIBADIAN (PAPI KOSTICK)
+// ========================
+
+export type KepribadianDimensionKey = 'L' | 'A' | 'D' | 'S' | 'R';
+
+export interface KepribadianDimensionScore {
+  key: KepribadianDimensionKey;
+  label: string;
+  score: number;
+  maxScore: number;
+  percentage: number;
+  description: string;
+}
+
+export interface KepribadianOverallResult {
+  totalAnswered: number;
+  dimensions: Record<KepribadianDimensionKey, KepribadianDimensionScore>;
+  dominantTraits: string[];
+  asnFitSummary: string;
+  recommendations: string[];
+}
+

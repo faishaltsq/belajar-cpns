@@ -1,0 +1,1532 @@
+[
+  {
+    "id": 1,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "3, 6, 12, 24, 48, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "72",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "96",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "84",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "108",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "120",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola perkalian 2 berturut-turut: 48 x 2 = 96."
+  },
+  {
+    "id": 2,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "2, 5, 10, 17, 26, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "35",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "37",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "39",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "40",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "42",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola selisih bilangan ganjil (+3, +5, +7, +9, +11). Maka 26 + 11 = 37."
+  },
+  {
+    "id": 3,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "100, 95, 85, 70, 50, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "25",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "30",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "20",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "35",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "15",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola pengurangan bertingkat (-5, -10, -15, -20, -25). Maka 50 - 25 = 25."
+  },
+  {
+    "id": 4,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "1, 1, 2, 3, 5, 8, 13, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "19",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "20",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "21",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "22",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "24",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret Fibonacci: 8 + 13 = 21."
+  },
+  {
+    "id": 5,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "4, 7, 12, 19, 28, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "37",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "39",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "41",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "43",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "45",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola penambahan bilangan ganjil bertingkat (+3, +5, +7, +9, +11): 28 + 11 = 39."
+  },
+  {
+    "id": 6,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "A, C, E, G, I, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "J",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "K",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "L",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "M",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "N",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola melompati 1 huruf abjad (+2): I (+2) = K."
+  },
+  {
+    "id": 7,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "81, 27, 9, 3, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "0",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "1",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "1/3",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "2",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "3",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola pembagian 3 secara konstan: 3 / 3 = 1."
+  },
+  {
+    "id": 8,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "5, 8, 14, 23, 35, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "48",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "49",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "50",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "52",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "55",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola penambahan (+3, +6, +9, +12, +15). Maka 35 + 15 = 50."
+  },
+  {
+    "id": 9,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "B, E, H, K, N, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "P",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Q",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "R",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "S",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "O",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola melompati 2 huruf (+3): N (+3) = Q."
+  },
+  {
+    "id": 10,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "2, 3, 5, 8, 13, 21, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "31",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "33",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "34",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "35",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "37",
+        "score": 0
+      }
+    ],
+    "explanation": "Deret Fibonacci: 13 + 21 = 34."
+  },
+  {
+    "id": 11,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "64, 32, 16, 8, 4, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "0",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "1",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "2",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "3",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "-2",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola pembagian 2 secara berurutan: 4 / 2 = 2."
+  },
+  {
+    "id": 12,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "1, 4, 9, 16, 25, 36, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "47",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "48",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "49",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "50",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "52",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola bilangan kuadrat: 1^2, 2^2, 3^2, 4^2, 5^2, 6^2, 7^2 = 49."
+  },
+  {
+    "id": 13,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "Z, X, V, T, R, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "P",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Q",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "O",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "N",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "M",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola mundur 2 huruf alfabet: R (-2) = P."
+  },
+  {
+    "id": 14,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "3, 5, 9, 17, 33, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "63",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "65",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "67",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "69",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "71",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola penambahan kali dua (+2, +4, +8, +16, +32): 33 + 32 = 65."
+  },
+  {
+    "id": 15,
+    "category": "deret",
+    "type": "deret_angka",
+    "questionText": "12, 14, 13, 15, 14, 16, ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "14",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "15",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "16",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "17",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "18",
+        "score": 0
+      }
+    ],
+    "explanation": "Pola selang-seling (+2, -1, +2, -1, +2, -1): 16 - 1 = 15."
+  },
+  {
+    "id": 16,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Semua ASN wajib mematuhi kode etik dinas. Sebagian pegawai honorer diangkat menjadi ASN. Kesimpulan yang sah adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Semua honorer wajib mematuhi kode etik dinas",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sebagian pegawai honorer wajib mematuhi kode etik dinas",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Tidak ada pegawai honorer yang mematuhi kode etik dinas",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Semua yang mematuhi kode etik dinas adalah pegawai honorer",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sebagian ASN bukan merupakan pegawai honorer",
+        "score": 0
+      }
+    ],
+    "explanation": "Premis partikular (sebagian) bertemu premis universal (semua) menghasilkan kesimpulan partikular."
+  },
+  {
+    "id": 17,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Jika hari hujan deras, maka jalan protokol tergenang air. Hari ini jalan protokol tidak tergenang air. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hari ini hujan sangat deras",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Hari ini tidak hujan deras",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Hujan turun tetapi jalan tidak tergenang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Kemarin terjadi hujan deras",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Jalan protokol diperbaiki saluran airnya",
+        "score": 0
+      }
+    ],
+    "explanation": "Modus Tollens: p -> q, ~q, maka ~p. Jalan tidak tergenang -> Hari ini tidak hujan deras."
+  },
+  {
+    "id": 18,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Semua peserta ujian yang lulus memiliki kartu tanda peserta. Danu tidak memiliki kartu tanda peserta. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Danu mungkin lulus ujian",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Danu tidak lulus ujian",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Danu tetap mengikuti ujian",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Danu kehilangan kartu tanda peserta saat ujian",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sebagian peserta ujian tidak memiliki kartu",
+        "score": 0
+      }
+    ],
+    "explanation": "Semua yang lulus memiliki kartu. Danu tidak memiliki kartu. Maka Danu tidak lulus ujian."
+  },
+  {
+    "id": 19,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Semua pejabat publik wajib melaporkan LHKPN. Pak Rahmat adalah pejabat publik. Kesimpulan yang sah:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pak Rahmat tidak wajib melaporkan LHKPN",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pak Rahmat wajib melaporkan LHKPN",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Pak Rahmat telah menyelesaikan audit LHKPN",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sebagian pejabat publik adalah Pak Rahmat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "LHKPN hanya diperuntukkan bagi pejabat eselon satu",
+        "score": 0
+      }
+    ],
+    "explanation": "Silogisme kategorik standar: Subjek individual termasuk dalam kelas subjek universal."
+  },
+  {
+    "id": 20,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Tidak ada koruptor yang berintegritas. Sebagian pemimpin berintegritas tinggi. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Semua pemimpin adalah koruptor",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sebagian pemimpin bukan koruptor",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Semua yang berintegritas adalah pemimpin",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Tidak ada pemimpin yang bukan koruptor",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Koruptor pasti tidak memiliki jabatan pemimpin",
+        "score": 0
+      }
+    ],
+    "explanation": "Sebagian pemimpin berintegritas tinggi, dan yang berintegritas bukan koruptor."
+  },
+  {
+    "id": 21,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Jika seorang ASN berprestasi luar biasa, ia berhak mendapat kenaikan pangkat istimewa. Budi tidak berhak mendapat kenaikan pangkat istimewa. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Budi pasti pegawai yang malas",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Budi tidak berprestasi luar biasa",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Budi menolak promosi jabatan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Budi merupakan pejabat struktural",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Semua ASN tidak berprestasi luar biasa",
+        "score": 0
+      }
+    ],
+    "explanation": "Modus Tollens: p -> q, ~q, maka ~p."
+  },
+  {
+    "id": 22,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Semua komputer kantor terhubung jaringan intranet. Perangkat X tidak terhubung jaringan intranet. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Perangkat X adalah komputer kantor yang rusak",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Perangkat X bukan komputer kantor",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Semua perangkat selain komputer terhubung intranet",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sebagian komputer kantor tidak terhubung intranet",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Jaringan intranet sedang mengalami pemeliharaan",
+        "score": 0
+      }
+    ],
+    "explanation": "Kontraposisi logika universal."
+  },
+  {
+    "id": 23,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Beberapa dokumen rahasia disimpan di brankas utama. Semua yang disimpan di brankas utama dijaga ketat. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Semua dokumen rahasia dijaga ketat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Beberapa dokumen rahasia dijaga ketat",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Tidak ada dokumen rahasia yang dijaga ketat",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Semua yang dijaga ketat adalah dokumen rahasia",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Brankas utama hanya berisi dokumen rahasia negara",
+        "score": 0
+      }
+    ],
+    "explanation": "Penggabungan premis partikular dan universal menghasilkan kesimpulan partikular."
+  },
+  {
+    "id": 24,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Jika target PAD tercapai, maka insentif pegawai cair. Target PAD triwulan ini tercapai. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Insentif pegawai cair",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Insentif pegawai ditunda",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pegawai lembur triwulan ini",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Target PAD dinaikkan oleh bupati",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Hanya sebagian pegawai menerima insentif",
+        "score": 0
+      }
+    ],
+    "explanation": "Modus Ponens: p -> q, p berlaku, maka q berlaku."
+  },
+  {
+    "id": 25,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Semua kendaraan dinas berpelat nomor merah. Mobil sedan hitam itu tidak berpelat nomor merah. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mobil sedan hitam itu kendaraan dinas kepala kantor",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Mobil sedan hitam itu bukan kendaraan dinas",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Mobil sedan hitam itu sedang disewa pemerintah",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Semua kendaraan pelat merah adalah sedan hitam",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sebagian kendaraan dinas tidak berpelat merah",
+        "score": 0
+      }
+    ],
+    "explanation": "Penolakan konsekuen menghasilkan penolakan anteseden."
+  },
+  {
+    "id": 26,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Semua dokter memiliki STR aktif. Sebagian penulis buku kesehatan adalah dokter. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Semua penulis buku kesehatan memiliki STR aktif",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sebagian penulis buku kesehatan memiliki STR aktif",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Tidak ada dokter yang menjadi penulis buku",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Penulis buku kesehatan pasti memiliki klinik",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "STR aktif hanya dimiliki oleh penulis buku kesehatan",
+        "score": 0
+      }
+    ],
+    "explanation": "Sebagian anggota kelompok penulis adalah dokter yang memiliki STR aktif."
+  },
+  {
+    "id": 27,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Jika berkas administrasi lengkap, pemohon menerima tanda terima resmi. Pak Joko tidak menerima tanda terima resmi. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Berkas administrasi Pak Joko belum lengkap",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Pak Joko membatalkan permohonannya",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Petugas loket sedang istirahat siang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Semua berkas pemohon pasti hilang",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pak Joko adalah petugas verifikator",
+        "score": 0
+      }
+    ],
+    "explanation": "Modus Tollens: q ditolak, maka p ditolak."
+  },
+  {
+    "id": 28,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Semua inovasi pelayanan publik bertujuan mempermudah masyarakat. Layanan Silancar adalah inovasi pelayanan publik. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Layanan Silancar dikelola oleh pihak swasta",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Layanan Silancar bertujuan mempermudah masyarakat",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Semua yang mempermudah masyarakat disebut Silancar",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sebagian layanan publik tidak mempermudah masyarakat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Masyarakat belum menggunakan Layanan Silancar",
+        "score": 0
+      }
+    ],
+    "explanation": "Deduksi kategoris silogisme standar."
+  },
+  {
+    "id": 29,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Tidak ada pegawai korup yang berhak menerima penghargaan satyalancana. Pak Hendra menerima penghargaan satyalancana. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pak Hendra adalah pegawai korup",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pak Hendra bukan pegawai korup",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Semua pegawai berhak menerima satyalancana",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Satyalancana diberikan tanpa seleksi integritas",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pak Hendra telah pensiun dari kedinasan",
+        "score": 0
+      }
+    ],
+    "explanation": "Premis negatif mutlak: Pak Hendra berada di luar himpunan pegawai korup."
+  },
+  {
+    "id": 30,
+    "category": "silogisme",
+    "type": "analogi_gambar",
+    "questionText": "Jika anggaran disetujui DPRD, pengadaan barang segera dilelang. Anggaran telah disetujui DPRD. Kesimpulan:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pengadaan barang segera dilelang",
+        "score": 1
+      },
+      {
+        "id": "B",
+        "text": "Pengadaan barang dibatalkan sepihak",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "DPRD meninjau ulang alokasi pagu",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Hanya sebagian barang yang dilelang",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Pelelangan ditunda tahun depan",
+        "score": 0
+      }
+    ],
+    "explanation": "Modus Ponens: Anteseden terpenuhi maka konsekuen terjadi."
+  },
+  {
+    "id": 31,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Sebuah kubus memiliki sisi bertuliskan angka 1 sampai 6. Jika angka 1 berseberangan dengan 6, 2 dengan 5, dan 3 dengan 4, manakah yang MUSTAHIL terlihat bersamaan dari satu sudut pandang?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Angka 1, 2, dan 3",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Angka 1 dan 6",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Angka 2, 4, dan 6",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Angka 3, 5, dan 6",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Angka 1, 4, dan 5",
+        "score": 0
+      }
+    ],
+    "explanation": "Dua sisi yang saling berseberangan (angka 1 dan 6) tidak akan pernah bisa terlihat bersamaan dari satu sudut pandang mata."
+  },
+  {
+    "id": 32,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Jika sebuah segitiga sama sisi diputar berlawanan arah jarum jam sebesar 120 derajat mengelilingi titik pusatnya, bentuk yang dihasilkan akan...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Menghadap ke bawah",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Menempati posisi semula secara simetris",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Miring 45 derajat ke kiri",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Berubah ukuran menjadi lebih kecil",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Menjadi segitiga siku-siku",
+        "score": 0
+      }
+    ],
+    "explanation": "Segitiga sama sisi memiliki simetri putar tingkat 3 (setiap 360/3 = 120 derajat menempati posisi simetris awal)."
+  },
+  {
+    "id": 33,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Sebuah lembar kertas persegi dilipat dua ke kanan, lalu dilipat dua lagi ke bawah, kemudian sudut kanan bawah digunting segitiga. Saat dibuka kembali, lubang guntingan berada di...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Keempat pojok luar kertas",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Tepat di tengah kertas berupa bentuk belah ketupat",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Hanya satu sisi tepi atas kertas",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Dua lubang di sisi kiri kertas",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Membentuk garis diagonal lurus",
+        "score": 0
+      }
+    ],
+    "explanation": "Sudut lipatan dalam yang digunting adalah titik pusat lembaran kertas, sehingga saat dibuka akan membentuk satu lubang simetris di tengah."
+  },
+  {
+    "id": 34,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Berapa banyak bidang sisi yang dimiliki oleh sebuah prisma segi enam?",
+    "options": [
+      {
+        "id": "A",
+        "text": "6 bidang sisi",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "7 bidang sisi",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "8 bidang sisi",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "12 bidang sisi",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "18 bidang sisi",
+        "score": 0
+      }
+    ],
+    "explanation": "Prisma segi-n memiliki n + 2 bidang sisi (6 sisi tegak + 1 alas + 1 tutup = 8 bidang sisi)."
+  },
+  {
+    "id": 35,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Sebuah balok kayu berukuran 3x3x3 dicat merah pada seluruh permukaan luarnya, kemudian dipotong menjadi 27 kubus kecil 1x1x1. Berapa banyak kubus kecil yang memiliki tepat 3 sisi berwarna merah?",
+    "options": [
+      {
+        "id": "A",
+        "text": "4 kubus kecil",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "6 kubus kecil",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "8 kubus kecil",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "12 kubus kecil",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "1 kubus kecil",
+        "score": 0
+      }
+    ],
+    "explanation": "Kubus dengan tepat 3 sisi bercat merah selalu berada di posisi 8 titik sudut pojok (vertex) balok."
+  },
+  {
+    "id": 36,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Pada balok 3x3x3 dari soal sebelumnya, berapa banyak kubus kecil yang SAMA SEKALI TIDAK memiliki warna cat merah?",
+    "options": [
+      {
+        "id": "A",
+        "text": "0 kubus kecil",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "1 kubus kecil",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "4 kubus kecil",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "6 kubus kecil",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "8 kubus kecil",
+        "score": 0
+      }
+    ],
+    "explanation": "Kubus tanpa cat berada tepat di lapisan tengah paling dalam: (3-2) x (3-2) x (3-2) = 1 kubus kecil."
+  },
+  {
+    "id": 37,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Jika jarum jam menunjukkan pukul 03.30, berapa derajat besar sudut terkecil yang dibentuk kedua jarum jam?",
+    "options": [
+      {
+        "id": "A",
+        "text": "70 derajat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "75 derajat",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "80 derajat",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "85 derajat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "90 derajat",
+        "score": 0
+      }
+    ],
+    "explanation": "Pada pukul 03.30 jarum menit di angka 6 (180 derajat). Jarum pendek di 3 + (30/60) = 3.5 jam (105 derajat). Sudut = 180 - 105 = 75 derajat."
+  },
+  {
+    "id": 38,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Sebuah dadu standar dilempar. Jika sisi atas menunjukkan 4, dan sisi depan menunjukkan 2, maka sisi manakah yang berada di bagian bawah?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sisi 1",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Sisi 3",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Sisi 5",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Sisi 6",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Sisi 2",
+        "score": 0
+      }
+    ],
+    "explanation": "Pada dadu standar, jumlah angka dua sisi yang berseberangan selalu 7. Jika atas 4, maka bawah = 7 - 4 = 3."
+  },
+  {
+    "id": 39,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Jika sebuah pola panah mengarah ke UTARA, kemudian dicerminkan terhadap cermin vertikal di sisi kanannya, lalu diputar 90 derajat searah jarum jam, ke manakah arah panah sekarang?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Barat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Timur",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Selatan",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Utara",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Barat Laut",
+        "score": 0
+      }
+    ],
+    "explanation": "Pencerminan vertikal terhadap sumbu tegak tetap mempertahankan arah UTARA. Diputar 90 derajat searah jarum jam dari UTARA menjadi arah TIMUR."
+  },
+  {
+    "id": 40,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Sebuah jaring-jaring kubus terdiri dari 6 bujur sangkar yang terhubung. Pola mana yang TIDAK DAPAT dirangkai menjadi kubus sempurna?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pola 1-4-1 (salib T)",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Pola 2-3-1 (pola tangga)",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Pola 2-2-2",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Pola 4 kotak membentuk bujur sangkar besar 2x2 dengan 2 ekor",
+        "score": 1
+      },
+      {
+        "id": "E",
+        "text": "Pola 3-3",
+        "score": 0
+      }
+    ],
+    "explanation": "Jaring-jaring yang memiliki blok bujur sangkar 2x2 akan saling tumpang tindih dan tidak dapat membentuk kubus berongga."
+  },
+  {
+    "id": 41,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Berapa jumlah rusuk yang dimiliki oleh sebuah limas segi lima?",
+    "options": [
+      {
+        "id": "A",
+        "text": "8 rusuk",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "10 rusuk",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "12 rusuk",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "15 rusuk",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "6 rusuk",
+        "score": 0
+      }
+    ],
+    "explanation": "Limas segi-n memiliki 2n rusuk. Limas segi lima memiliki 2 x 5 = 10 rusuk (5 rusuk alas + 5 rusuk tegak)."
+  },
+  {
+    "id": 42,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Berapa banyak diagonal ruang yang dimiliki oleh sebuah kubus?",
+    "options": [
+      {
+        "id": "A",
+        "text": "2 diagonal ruang",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "4 diagonal ruang",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "6 diagonal ruang",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "8 diagonal ruang",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "12 diagonal ruang",
+        "score": 0
+      }
+    ],
+    "explanation": "Kubus memiliki 4 diagonal ruang yang menghubungkan titik sudut berseberangan melewati pusat bangun."
+  },
+  {
+    "id": 43,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Jika bayangan suatu benda tegak lurus mengarah ke Barat Daya pada pukul 09.00 pagi, maka arah sumber cahaya matahari berasal dari...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Barat Laut",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Timur Laut",
+        "score": 1
+      },
+      {
+        "id": "C",
+        "text": "Tenggara",
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "Selatan",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Barat",
+        "score": 0
+      }
+    ],
+    "explanation": "Arah bayangan selalu berlawanan 180 derajat dengan sumber cahaya. Lawan dari Barat Daya adalah Timur Laut."
+  },
+  {
+    "id": 44,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Sebuah lingkaran dipotong oleh 3 garis lurus yang saling berpotongan di dalam lingkaran. Jumlah daerah maksimum yang dapat terbentuk adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "5 daerah",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "6 daerah",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "7 daerah",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "8 daerah",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "9 daerah",
+        "score": 0
+      }
+    ],
+    "explanation": "Rumus pembagian bidang lingkaran oleh n garis lurus: R(n) = (n^2 + n + 2) / 2. Untuk n=3: (9 + 3 + 2)/2 = 14/2 = 7 daerah."
+  },
+  {
+    "id": 45,
+    "category": "spasial",
+    "type": "logika_spasial",
+    "questionText": "Sebuah pola bentuk berotasi 45 derajat searah jarum jam pada setiap langkah. Pada langkah ke-8 dari posisi awal, posisi bentuk tersebut adalah...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Miring 45 derajat",
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "Miring 90 derajat",
+        "score": 0
+      },
+      {
+        "id": "C",
+        "text": "Kembali ke orientasi posisi awal (360 derajat)",
+        "score": 1
+      },
+      {
+        "id": "D",
+        "text": "Berbalik arah 180 derajat",
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "Miring 270 derajat",
+        "score": 0
+      }
+    ],
+    "explanation": "8 kali rotasi 45 derajat = 8 x 45 = 360 derajat (satu putaran penuh kembali ke posisi semula)."
+  }
+]

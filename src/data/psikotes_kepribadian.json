@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "optionA": { "text": "Saya adalah seorang pekerja keras yang bertekad mencapai target kerja setinggi mungkin.", "dimension": "A" },
+    "optionB": { "text": "Saya senang mengambil inisiatif memimpin dan mengarahkan rekan kerja dalam kelompok.", "dimension": "L" }
+  },
+  {
+    "id": 2,
+    "optionA": { "text": "Saya sangat teliti dan memeriksa pekerjaan berulang kali agar terhindar dari kesalahan.", "dimension": "D" },
+    "optionB": { "text": "Saya mudah bergaul dan menjalin hubungan hangat dengan orang-orang baru.", "dimension": "S" }
+  },
+  {
+    "id": 3,
+    "optionA": { "text": "Saya selalu mematuhi instruksi pimpinan dan prosedur birokrasi yang berlaku ketat.", "dimension": "R" },
+    "optionB": { "text": "Saya terdorong untuk menyelesaikan masalah paling rumit terlebih dahulu daripada tugas mudah.", "dimension": "A" }
+  },
+  {
+    "id": 4,
+    "optionA": { "text": "Saya suka mengambil tanggung jawab penuh atas keberhasilan proyek tim.", "dimension": "L" },
+    "optionB": { "text": "Saya menyusun rencana kerja dan jadwal harian secara teratur dan sistematis.", "dimension": "D" }
+  },
+  {
+    "id": 5,
+    "optionA": { "text": "Saya mendengarkan keluhan rekan kerja dan berusaha membantu mencari jalan keluar.", "dimension": "S" },
+    "optionB": { "text": "Saya berpegang teguh pada prinsip legalitas dan integritas meskipun ada desakan lain.", "dimension": "R" }
+  },
+  {
+    "id": 6,
+    "optionA": { "text": "Saya ingin dikenal sebagai pegawai yang berprestasi dan berdaya saing tinggi.", "dimension": "A" },
+    "optionB": { "text": "Saya aktif berpartisipasi dalam kegiatan kelompok dan membangun kerja sama tim yang kompak.", "dimension": "S" }
+  },
+  {
+    "id": 7,
+    "optionA": { "text": "Saya percaya diri dalam membuat keputusan penting di situasi darurat atau mendesak.", "dimension": "L" },
+    "optionB": { "text": "Saya selalu memverifikasi data dan fakta dokumen sebelum menyerahkannya kepada atasan.", "dimension": "D" }
+  },
+  {
+    "id": 8,
+    "optionA": { "text": "Saya menghormati jenjang otoritas dan hierarki formal di instansi pemerintahan.", "dimension": "R" },
+    "optionB": { "text": "Saya berani menawarkan gagasan baru yang membawa perubahan positif bagi instansi.", "dimension": "L" }
+  },
+  {
+    "id": 9,
+    "optionA": { "text": "Saya berusaha menyelesaikan setiap tugas sebelum batas waktu yang ditentukan tiba.", "dimension": "A" },
+    "optionB": { "text": "Saya mengutamakan ketertiban tata ruang dan kerapian arsip administrasi kantor.", "dimension": "D" }
+  },
+  {
+    "id": 10,
+    "optionA": { "text": "Saya mampu meredam konflik antarrekan kerja dengan komunikasi diplomatis.", "dimension": "S" },
+    "optionB": { "text": "Saya bekerja dengan motivasi internal yang kuat tanpa perlu diawasi terus-menerus.", "dimension": "A" }
+  },
+  {
+    "id": 11,
+    "optionA": { "text": "Saya taat pada jam kerja, SOP pelayanan, dan regulasi dinas tanpa tawar-menawar.", "dimension": "R" },
+    "optionB": { "text": "Saya siap menjadi juru bicara dan mengoordinasikan tim saat mempresentasikan proyek.", "dimension": "L" }
+  },
+  {
+    "id": 12,
+    "optionA": { "text": "Saya tidak nyaman jika ada dokumen kerja yang formatnya tidak rapi atau salah ketik.", "dimension": "D" },
+    "optionB": { "text": "Saya merasa bersemangat ketika bekerja bersama orang banyak dalam suasana akrab.", "dimension": "S" }
+  },
+  {
+    "id": 13,
+    "optionA": { "text": "Saya mengejar kualitas hasil kerja di atas rata-rata standar yang diminta atasan.", "dimension": "A" },
+    "optionB": { "text": "Saya menaati kode etik jabatan dan menjaga rahasia dinas dengan penuh amanah.", "dimension": "R" }
+  },
+  {
+    "id": 14,
+    "optionA": { "text": "Saya suka membimbing dan memberikan arahan kerja kepada pegawai yang lebih junior.", "dimension": "L" },
+    "optionB": { "text": "Saya memastikan setiap rincian teknis pekerjaan telah sesuai standar operasional.", "dimension": "D" }
+  },
+  {
+    "id": 15,
+    "optionA": { "text": "Saya senang memotivasi orang lain agar bersemangat menghadapi beban kerja tinggi.", "dimension": "S" },
+    "optionB": { "text": "Saya berfokus pada target capaian kinerja individu demi kemajuan organisasi.", "dimension": "A" }
+  },
+  {
+    "id": 16,
+    "optionA": { "text": "Saya mematuhi keputusan bersama dan petunjuk tertulis instansi tanpa membantah.", "dimension": "R" },
+    "optionB": { "text": "Saya mampu meyakinkan rekan kerja untuk mengikuti usulan perbaikan sistem kerja.", "dimension": "L" }
+  },
+  {
+    "id": 17,
+    "optionA": { "text": "Saya merencanakan langkah-langkah kerja secara runut dari awal hingga akhir.", "dimension": "D" },
+    "optionB": { "text": "Saya meluangkan waktu untuk mendengar aspirasi masyarakat penerima layanan publik.", "dimension": "S" }
+  },
+  {
+    "id": 18,
+    "optionA": { "text": "Saya bertekad menyelesaikan tugas sulit sekalipun orang lain menganggapnya mustahil.", "dimension": "A" },
+    "optionB": { "text": "Saya bertindak tegas dan adil saat diberi wewenang memimpin suatu rapat koordinasi.", "dimension": "L" }
+  },
+  {
+    "id": 19,
+    "optionA": { "text": "Saya menolak segala bentuk kompromi yang melanggar aturan dan hukum kedinasan.", "dimension": "R" },
+    "optionB": { "text": "Saya selalu mengorganisasikan file dan dokumen kerja agar mudah dicari sewaktu-waktu.", "dimension": "D" }
+  },
+  {
+    "id": 20,
+    "optionA": { "text": "Saya mengedepankan musyawarah mufakat dalam mengambil keputusan kelompok.", "dimension": "S" },
+    "optionB": { "text": "Saya terus belajar mandiri untuk memperbarui kompetensi dan sertifikasi keahlian saya.", "dimension": "A" }
+  },
+  {
+    "id": 21,
+    "optionA": { "text": "Saya berani mengambil risiko yang terukur demi kemajuan program instansi.", "dimension": "L" },
+    "optionB": { "text": "Saya konsisten menjaga kedisiplinan dan kepatuhan pada tata tertib instansi.", "dimension": "R" }
+  },
+  {
+    "id": 22,
+    "optionA": { "text": "Saya cermat memeriksa angka, tanggal, dan nama dalam laporan pertanggungjawaban.", "dimension": "D" },
+    "optionB": { "text": "Saya tanggap terhadap suasana hati rekan kerja dan siap memberikan dukungan moral.", "dimension": "S" }
+  },
+  {
+    "id": 23,
+    "optionA": { "text": "Saya ingin hasil karya saya diakui bermanfaat luas bagi masyarakat dan bangsa.", "dimension": "A" },
+    "optionB": { "text": "Saya siap menertibkan situasi jika kelompok kerja kehilangan fokus dan arah.", "dimension": "L" }
+  },
+  {
+    "id": 24,
+    "optionA": { "text": "Saya mengikuti instruksi pimpinan secara loyal dan loyalitas pada negara.", "dimension": "R" },
+    "optionB": { "text": "Saya mengidentifikasi kejanggalan kecil dalam berkas administrasi sebelum diparaf.", "dimension": "D" }
+  },
+  {
+    "id": 25,
+    "optionA": { "text": "Saya aktif menciptakan atmosfer kerja yang menyenangkan dan bebas stres.", "dimension": "S" },
+    "optionB": { "text": "Saya selalu berusaha melampaui ekspektasi output kerja yang ditetapkan pimpinan.", "dimension": "A" }
+  },
+  {
+    "id": 26,
+    "optionA": { "text": "Saya mampu mendelegasikan tugas sesuai bakat dan kemampuan masing-masing anggota tim.", "dimension": "L" },
+    "optionB": { "text": "Saya menjunjung tinggi etika kedinasan dan tidak menerima gratifikasi dalam bentuk apa pun.", "dimension": "R" }
+  },
+  {
+    "id": 27,
+    "optionA": { "text": "Saya menyukai tugas yang menuntut presisi tinggi dan kepatuhan pada checklist teknis.", "dimension": "D" },
+    "optionB": { "text": "Saya berusaha membangun hubungan kemitraan yang luas dengan pemangku kepentingan.", "dimension": "S" }
+  },
+  {
+    "id": 28,
+    "optionA": { "text": "Saya memiliki dorongan kuat untuk menjadi yang terbaik di bidang keahlian saya.", "dimension": "A" },
+    "optionB": { "text": "Saya tidak segan mengingatkan rekan kerja yang melanggar aturan integritas kantor.", "dimension": "R" }
+  },
+  {
+    "id": 29,
+    "optionA": { "text": "Saya cepat bertindak saat terjadi kebuntuan koordinasi di antara anggota tim.", "dimension": "L" },
+    "optionB": { "text": "Saya membuat catatan terperinci atas setiap disposisi surat masuk dan keluar.", "dimension": "D" }
+  },
+  {
+    "id": 30,
+    "optionA": { "text": "Saya memprioritaskan kepentingan publik di atas kepentingan pribadi atau golongan.", "dimension": "R" },
+    "optionB": { "text": "Saya selalu antusias berkolaborasi dengan lintas divisi demi keberhasilan bersama.", "dimension": "S" }
+  }
+]
