@@ -605,14 +605,22 @@ export default function RiwayatPage() {
                         Kamu belum memiliki paket berbayar aktif. Dapatkan akses ke paket tryout SKD lengkap dengan
                         pembahasan detail.
                       </p>
-                      <button
-                        type="button"
-                        onClick={() => setSelectedPayPackage({})}
-                        className="btn-primary inline-flex items-center gap-1.5 text-xs py-1.5 px-3.5"
-                      >
-                        <Sparkle size={14} weight="fill" />
-                        Upgrade ke PRO Mulai Rp 1.000
-                      </button>
+                      <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedPayPackage({})}
+                          className="btn-primary inline-flex items-center gap-1.5 text-xs py-1.5 px-3.5 shadow-sm"
+                        >
+                          <Sparkle size={14} weight="fill" />
+                          Upgrade ke PRO (Rp 150.000)
+                        </button>
+                        <Link
+                          href="/simulasi"
+                          className="btn-secondary inline-flex items-center gap-1.5 text-xs py-1.5 px-3.5"
+                        >
+                          Beli Paket Satuan Mulai Rp 5.000
+                        </Link>
+                      </div>
                     </div>
                   )}
                 </div>
