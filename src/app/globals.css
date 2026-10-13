@@ -145,28 +145,30 @@ body {
   box-shadow: 0 0 0 3px rgba(201, 100, 66, 0.15);
 }
 
-/* Pill Badge */
-.badge-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  border-radius: 9999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
+@layer components {
+  /* Pill Badge */
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
 
-.badge-neutral {
-  background-color: var(--secondary);
-  color: var(--secondary-foreground);
-  border: 1px solid var(--border);
-}
+  .badge-neutral {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    border: 1px solid var(--border);
+  }
 
-.badge-amber {
-  background-color: rgba(201, 100, 66, 0.12);
-  color: #b05730;
-  border: 1px solid rgba(201, 100, 66, 0.25);
+  .badge-amber {
+    background-color: rgba(201, 100, 66, 0.12);
+    color: #b05730;
+    border: 1px solid rgba(201, 100, 66, 0.25);
+  }
 }
 
 /* Hide scrollbar — still scrollable */

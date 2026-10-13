@@ -64,7 +64,7 @@ export const Timer = forwardRef<TimerHandle, TimerProps>(
 
     return (
       <div
-        className={`flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl font-mono font-bold text-sm sm:text-base border transition-colors ${
+        className={`h-8 flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 rounded-xl font-mono font-bold text-xs sm:text-sm border transition-colors shrink-0 ${
           isCritical
             ? 'bg-red-50 text-red-600 border-red-300 animate-pulse'
             : isWarning
@@ -82,8 +82,8 @@ export const Timer = forwardRef<TimerHandle, TimerProps>(
         }
         title={isCritical ? 'Waktu hampir habis!' : isWarning ? 'Sisa waktu 10 menit' : ''}
       >
-        <TimerIcon size={18} weight="duotone" />
-        <span>
+        <TimerIcon size={15} weight="duotone" className="shrink-0" />
+        <span className="leading-none tracking-tight">
           {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
         </span>
         {isCritical && (
@@ -92,7 +92,7 @@ export const Timer = forwardRef<TimerHandle, TimerProps>(
           </span>
         )}
         {isWarning && !isCritical && (
-          <span className="text-[9px] font-bold hidden sm:inline">10 menit</span>
+          <span className="text-[9px] font-bold hidden sm:inline">10 mnt</span>
         )}
       </div>
     );

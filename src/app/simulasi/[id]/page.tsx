@@ -453,45 +453,50 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
           boxShadow: '0 1px 3px rgba(61, 57, 41, 0.04)',
         }}
       >
-        <div className="max-w-screen-xl mx-auto px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
-          <div className="flex items-center gap-1.5 sm:gap-3 min-w-0">
+        <div className="max-w-screen-xl mx-auto px-2.5 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-4">
+          {/* Sisi Kiri: Keluar, Brand, Navigasi Soal Mobile, Mode Badge (Desktop) */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0 shrink-0">
             <button
               onClick={() => setShowExitModal(true)}
-              className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-red-600 hover:border-red-300 transition shrink-0"
+              className="h-8 px-2 sm:px-2.5 rounded-xl border text-xs font-semibold flex items-center justify-center gap-1.5 text-[var(--muted-foreground)] hover:text-red-600 hover:border-red-300 transition shrink-0"
               style={{ borderColor: 'var(--border)' }}
               title="Keluar / Jeda Ujian"
             >
-              <SignOut size={15} weight="bold" />
+              <SignOut size={16} weight="bold" />
               <span className="hidden sm:inline">Keluar</span>
             </button>
-            <span className="font-bold text-xs sm:text-sm text-[var(--foreground)] hidden xs:inline shrink-0">Lolos.in</span>
+
+            <span className="font-bold text-xs sm:text-sm text-[var(--foreground)] hidden sm:inline shrink-0">
+              Lolos.in
+            </span>
 
             {/* Tombol Cepat Buka Daftar Soal di Header Mobile */}
             <button
               type="button"
               onClick={() => setShowMobileNavModal(true)}
-              className="flex items-center gap-1 px-2 py-1 sm:px-2.5 rounded-lg border border-[var(--border)] text-xs font-bold text-[var(--foreground)] bg-[var(--card)] hover:border-[var(--primary)] transition lg:hidden shadow-xs shrink-0"
+              className="h-8 px-2 sm:px-2.5 rounded-xl border border-[var(--border)] text-xs font-bold text-[var(--foreground)] bg-[var(--card)] hover:border-[var(--primary)] transition lg:hidden shadow-xs shrink-0 flex items-center gap-1.5"
               title="Buka daftar nomor soal"
             >
               <SquaresFour size={15} weight="bold" className="text-[var(--primary)]" />
               <span>{currentIndex + 1}/{questions.length}</span>
             </button>
 
-            <span className="badge-pill badge-neutral text-[9px] sm:text-[10px] hidden md:inline-flex shrink-0">
+            {/* Mode Ujian - hanya tampil di layar md ke atas agar header mobile lega */}
+            <span className="hidden md:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold border bg-[var(--secondary)] text-[var(--secondary-foreground)] border-[var(--border)] shrink-0">
               {examType === 'official' ? '🏆 Tryout Resmi' : '📖 Latihan Mandiri'}
             </span>
           </div>
 
-          <div className="flex items-center gap-1.5 sm:gap-3">
+          {/* Sisi Kanan: Pause, Mode BKN, Timer, Selesai */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             {/* Tombol Pause (Khusus Practice Mode) */}
             {examType === 'practice' && (
               <button
                 onClick={() => setShowPauseModal(true)}
-                className="p-1 sm:px-2.5 sm:py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1 text-[var(--foreground)] hover:bg-[var(--muted)] transition"
-                style={{ borderColor: 'var(--border)' }}
+                className="h-8 px-2 sm:px-2.5 rounded-xl border border-[var(--border)] text-xs font-semibold flex items-center justify-center gap-1 text-[var(--foreground)] bg-[var(--card)] hover:bg-[var(--muted)] hover:border-[var(--primary)] transition shrink-0 shadow-xs"
                 title="Jeda ujian sejenak"
               >
-                <Pause size={14} weight="bold" />
+                <Pause size={15} weight="bold" />
                 <span className="hidden sm:inline">Jeda</span>
               </button>
             )}
@@ -504,7 +509,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
                 localStorage.setItem('cat_view_mode', next);
               }}
               title="Beralih ke tampilan BKN asli"
-              className="hidden sm:flex items-center gap-1 text-[10px] font-bold px-2.5 py-1.5 rounded-lg border transition"
+              className="hidden sm:flex h-8 items-center gap-1 text-[10px] font-bold px-2.5 rounded-xl border transition shrink-0"
               style={{
                 borderColor: 'var(--border)',
                 background: 'var(--secondary)',
@@ -525,7 +530,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
             <button
               onClick={() => setShowFinishModal(true)}
-              className="btn-primary text-xs py-1.5 px-2.5 sm:py-2 sm:px-3.5 whitespace-nowrap"
+              className="h-8 btn-primary text-xs py-0 px-3 sm:px-4 rounded-xl font-bold whitespace-nowrap shrink-0 shadow-xs"
             >
               Selesai
             </button>
