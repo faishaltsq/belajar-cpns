@@ -299,7 +299,7 @@ export default function AdminPage() {
               type="password"
               value={pin}
               onChange={(e) => setPin(e.target.value)}
-              placeholder="PIN Admin (Default: 123456)"
+              placeholder="Masukkan PIN Admin"
               className="input-modern w-full text-center text-lg tracking-widest font-mono"
               autoFocus
             />
