@@ -116,3 +116,17 @@ export function getSectionFullName(cat: string): string {
 export function getSectionColors(cat: string) {
   return SECTION_COLORS[cat] || SECTION_COLORS['TWK'];
 }
+
+
+/**
+ * Determines if a drag-down gesture on a bottom sheet exceeds closing threshold.
+ */
+export function shouldCloseSheetOnDrag(
+  offsetY: number,
+  velocityY: number = 0,
+  threshold: number = 75
+): boolean {
+  if (offsetY >= threshold) return true;
+  if (velocityY > 0.35 && offsetY > 25) return true;
+  return false;
+}

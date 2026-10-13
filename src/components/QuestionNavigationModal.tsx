@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useMemo, useState, useEffect, useRef } from 'react';
+import React, { useMemo, useState, useEffect, useRef, useCallback } from 'react';
 import { Question, ExamAnswer } from '@/lib/types';
-import { getQuestionSections, getSectionColors, getSectionFullName } from '@/lib/questionSections';
+import { getQuestionSections, getSectionColors, getSectionFullName, shouldCloseSheetOnDrag } from '@/lib/questionSections';
 import { X, SquaresFour, Flag, CheckCircle, Circle } from '@phosphor-icons/react';
 
 interface QuestionNavigationModalProps {
@@ -26,14 +26,96 @@ export function QuestionNavigationModal({
   const [filterCategory, setFilterCategory] = useState<string>('all');
   const activeBtnRef = useRef<HTMLButtonElement | null>(null);
 
+  // Dragging & closing animation states
+  const [isClosing, setIsClosing] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const pointerStartY = useRef(0);
+  const pointerStartTime = useRef(0);
+
+  // Close with smooth slide-down animation
+  const handleRequestClose = useCallback(() => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onClose();
+      setIsClosing(false);
+      setDragOffset(0);
+    }, 220);
+  }, [onClose]);
+
+  // Jump to index with smooth slide-down
+  const handleSelectAndClose = useCallback((index: number) => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onSelectIndex(index);
+      onClose();
+      setIsClosing(false);
+      setDragOffset(0);
+    }, 220);
+  }, [onSelectIndex, onClose]);
+
+  // Pointer drag events on handle & header
+  const handlePointerDown = (e: React.PointerEvent) => {
+    // Only primary mouse button or touch
+    if (e.button !== 0 && e.pointerType === 'mouse') return;
+    pointerStartY.current = e.clientY;
+    pointerStartTime.current = Date.now();
+    setIsDragging(true);
+    try {
+      (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    } catch {}
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDragging) return;
+    const deltaY = e.clientY - pointerStartY.current;
+    if (deltaY > 0) {
+      setDragOffset(deltaY);
+    } else {
+      // Rubber-band resistance when dragging upwards
+      setDragOffset(deltaY * 0.15);
+    }
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    try {
+      (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+    } catch {}
+
+    const dt = Math.max(1, Date.now() - pointerStartTime.current);
+    const dy = Math.max(0, dragOffset);
+    const velocity = dy / dt; // px per ms
+
+    if (shouldCloseSheetOnDrag(dy, velocity, 75)) {
+      handleRequestClose();
+    } else {
+      // Snap back to top smoothly
+      setDragOffset(0);
+    }
+  };
+
   // Auto scroll to active question when modal opens
   useEffect(() => {
     if (isOpen) {
+      setIsClosing(false);
+      setDragOffset(0);
       setTimeout(() => {
         activeBtnRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
       }, 150);
     }
   }, [isOpen]);
+
+  // Escape key handler
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') handleRequestClose();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isOpen, handleRequestClose]);
 
   if (!isOpen) return null;
 
@@ -51,21 +133,55 @@ export function QuestionNavigationModal({
     ? sections
     : sections.filter((s) => s.category === filterCategory);
 
+  const backdropOpacity = dragOffset > 0 ? Math.max(0.15, 1 - dragOffset / 350) : undefined;
+
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity animate-fade-in"
-        onClick={onClose}
+        className={`fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity ${
+          isClosing ? 'animate-fade-out' : 'animate-fade-in'
+        }`}
+        style={{ opacity: backdropOpacity }}
+        onClick={handleRequestClose}
       />
 
       {/* Modal / Bottom Sheet */}
-      <div className="relative w-full max-w-xl max-h-[88vh] sm:max-h-[82vh] bg-[var(--card)] rounded-t-3xl sm:rounded-3xl border border-[var(--border)] shadow-2xl flex flex-col overflow-hidden z-10 animate-slide-up">
-        {/* Handle bar on mobile */}
-        <div className="w-12 h-1.5 bg-[var(--border)] rounded-full mx-auto mt-3 mb-1 sm:hidden shrink-0" />
+      <div
+        className={`relative w-full max-w-xl max-h-[88vh] sm:max-h-[82vh] bg-[var(--card)] rounded-t-3xl sm:rounded-3xl border border-[var(--border)] shadow-2xl flex flex-col overflow-hidden z-10 ${
+          isClosing
+            ? 'animate-sheet-out'
+            : isDragging
+            ? ''
+            : 'animate-sheet-in'
+        }`}
+        style={{
+          transform: dragOffset > 0 ? `translateY(${dragOffset}px)` : undefined,
+          transition: isDragging ? 'none' : 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
+      >
+        {/* Drag Handle Bar on Mobile & Tablet */}
+        <div
+          className="w-full pt-3 pb-1 cursor-grab active:cursor-grabbing flex flex-col items-center justify-center select-none touch-none shrink-0"
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+        >
+          <div className="w-14 h-1.5 bg-[var(--border)] hover:bg-[var(--muted-foreground)]/50 rounded-full transition-colors" />
+          <span className="text-[10px] text-[var(--muted-foreground)] font-medium mt-1 opacity-70">
+            Tarik ke bawah untuk menutup
+          </span>
+        </div>
 
-        {/* Header */}
-        <div className="px-5 py-3.5 border-b border-[var(--border)] flex items-center justify-between shrink-0 bg-[var(--card)]">
+        {/* Header (also draggable) */}
+        <div
+          className="px-5 py-3 border-b border-[var(--border)] flex items-center justify-between shrink-0 bg-[var(--card)] cursor-grab active:cursor-grabbing select-none touch-none"
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+        >
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl bg-amber-50 text-[var(--primary)] flex items-center justify-center border border-amber-200">
               <SquaresFour size={18} weight="bold" />
@@ -81,7 +197,8 @@ export function QuestionNavigationModal({
           </div>
 
           <button
-            onClick={onClose}
+            onClick={handleRequestClose}
+            onPointerDown={(e) => e.stopPropagation()}
             className="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] transition"
             aria-label="Tutup"
           >
@@ -191,10 +308,7 @@ export function QuestionNavigationModal({
                       <button
                         key={q.id}
                         ref={isCurrent ? activeBtnRef : undefined}
-                        onClick={() => {
-                          onSelectIndex(idx);
-                          onClose();
-                        }}
+                        onClick={() => handleSelectAndClose(idx)}
                         className={`h-11 sm:h-12 w-full rounded-2xl border text-xs sm:text-sm flex flex-col items-center justify-center relative transition-all active:scale-95 ${btnStyle} ${
                           isCurrent
                             ? 'ring-3 ring-[var(--foreground)] ring-offset-2 ring-offset-[var(--card)] font-black scale-102'
@@ -239,7 +353,7 @@ export function QuestionNavigationModal({
           </div>
 
           <button
-            onClick={onClose}
+            onClick={handleRequestClose}
             className="btn-primary text-xs py-2 px-4 shadow-xs"
           >
             Tutup

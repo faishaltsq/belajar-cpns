@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getQuestionSections } from '../src/lib/questionSections';
+import { getQuestionSections, shouldCloseSheetOnDrag } from '../src/lib/questionSections';
 import { Question, ExamAnswer } from '../src/lib/types';
 
 describe('Question Navigation Modal Helper Logic', () => {
@@ -28,5 +28,22 @@ describe('Question Navigation Modal Helper Logic', () => {
     expect(sections[2].category).toBe('TKP');
     expect(sections[2].totalCount).toBe(1);
     expect(sections[2].answeredCount).toBe(0);
+  });
+
+  describe('shouldCloseSheetOnDrag', () => {
+    it('returns true when drag offset reaches threshold', () => {
+      expect(shouldCloseSheetOnDrag(75, 0, 75)).toBe(true);
+      expect(shouldCloseSheetOnDrag(100, 0, 75)).toBe(true);
+      expect(shouldCloseSheetOnDrag(50, 0, 75)).toBe(false);
+    });
+
+    it('returns true on fast swipe down with moderate offset', () => {
+      expect(shouldCloseSheetOnDrag(40, 0.5, 75)).toBe(true);
+      expect(shouldCloseSheetOnDrag(10, 0.5, 75)).toBe(false);
+    });
+
+    it('returns false on upward drag', () => {
+      expect(shouldCloseSheetOnDrag(-30, -0.2, 75)).toBe(false);
+    });
   });
 });
