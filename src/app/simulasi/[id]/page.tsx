@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Timer, TimerHandle } from '@/components/Timer';
 import { QuestionCard } from '@/components/QuestionCard';
 import { QuestionNavigationGrid } from '@/components/QuestionNavigationGrid';
+import { QuestionNavigationModal } from '@/components/QuestionNavigationModal';
 import { FinishExamModal } from '@/components/FinishExamModal';
 import { ExamModeModal } from '@/components/ExamModeModal';
 import { PauseExamModal } from '@/components/PauseExamModal';
@@ -13,7 +14,7 @@ import { calculateExamScore } from '@/lib/scoring';
 import { ExamAnswer, Question } from '@/lib/types';
 import { useUser } from '@/lib/useUser';
 import { scopedKey } from '@/lib/userStorage';
-import { CaretLeft, CaretRight, Desktop, Pause, SignOut, Warning } from '@phosphor-icons/react';
+import { CaretLeft, CaretRight, Desktop, Pause, SignOut, Warning, SquaresFour } from '@phosphor-icons/react';
 import { BKNThemeLayout } from '@/components/BKNThemeLayout';
 import { ExamType, EXAM_MODES } from '@/lib/examMode';
 import { mapKeyToAction } from '@/lib/examShortcuts';
@@ -42,6 +43,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
   const [showExitModal, setShowExitModal] = useState(false);
   const [showPauseModal, setShowPauseModal] = useState(false);
   const [showModeModal, setShowModeModal] = useState(false);
+  const [showMobileNavModal, setShowMobileNavModal] = useState(false);
 
   // Mode Ujian
   const [examType, setExamType] = useState<ExamType>('official');
@@ -455,15 +457,27 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
           <div className="flex items-center gap-1.5 sm:gap-3 min-w-0">
             <button
               onClick={() => setShowExitModal(true)}
-              className="p-1 sm:px-2.5 sm:py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-red-600 hover:border-red-300 transition"
+              className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-red-600 hover:border-red-300 transition shrink-0"
               style={{ borderColor: 'var(--border)' }}
               title="Keluar / Jeda Ujian"
             >
               <SignOut size={15} weight="bold" />
               <span className="hidden sm:inline">Keluar</span>
             </button>
-            <span className="font-semibold text-xs sm:text-sm truncate text-[var(--foreground)]">Lolos.in</span>
-            <span className="badge-pill badge-neutral text-[9px] sm:text-[10px] hidden md:inline-flex">
+            <span className="font-bold text-xs sm:text-sm text-[var(--foreground)] hidden xs:inline shrink-0">Lolos.in</span>
+
+            {/* Tombol Cepat Buka Daftar Soal di Header Mobile */}
+            <button
+              type="button"
+              onClick={() => setShowMobileNavModal(true)}
+              className="flex items-center gap-1 px-2 py-1 sm:px-2.5 rounded-lg border border-[var(--border)] text-xs font-bold text-[var(--foreground)] bg-[var(--card)] hover:border-[var(--primary)] transition lg:hidden shadow-xs shrink-0"
+              title="Buka daftar nomor soal"
+            >
+              <SquaresFour size={15} weight="bold" className="text-[var(--primary)]" />
+              <span>{currentIndex + 1}/{questions.length}</span>
+            </button>
+
+            <span className="badge-pill badge-neutral text-[9px] sm:text-[10px] hidden md:inline-flex shrink-0">
               {examType === 'official' ? '🏆 Tryout Resmi' : '📖 Latihan Mandiri'}
             </span>
           </div>
@@ -579,22 +593,35 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
               onToggleFlag={handleToggleFlag}
               onToggleEliminate={handleToggleEliminate}
               onChangeFontSize={handleChangeFontSize}
+              onOpenNavModal={() => setShowMobileNavModal(true)}
             />
 
             {/* Navigation buttons */}
-            <div className="flex justify-between gap-3">
+            <div className="flex items-center justify-between gap-2 sm:gap-3">
               <button
                 onClick={() => handleNavigateIndex(Math.max(0, currentIndex - 1))}
                 disabled={currentIndex === 0}
-                className="btn-secondary text-xs py-2.5 px-4 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                className="btn-secondary text-xs sm:text-sm py-2.5 px-3 sm:px-4 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 shrink-0"
               >
                 <CaretLeft size={16} weight="bold" />
                 <span>Sebelumnya <span className="opacity-50 text-[10px] hidden sm:inline">[←]</span></span>
               </button>
+
+              {/* Mobile Quick-jump button */}
+              <button
+                type="button"
+                onClick={() => setShowMobileNavModal(true)}
+                className="flex-1 max-w-[200px] py-2.5 px-2 sm:px-3 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--primary)] text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-xs transition active:scale-98 lg:hidden"
+                title="Buka daftar nomor soal"
+              >
+                <SquaresFour size={16} weight="bold" className="text-[var(--primary)]" />
+                <span>No. {currentIndex + 1} / {questions.length}</span>
+              </button>
+
               <button
                 onClick={() => handleNavigateIndex(Math.min(questions.length - 1, currentIndex + 1))}
                 disabled={currentIndex === questions.length - 1}
-                className="btn-primary text-xs py-2.5 px-4 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                className="btn-primary text-xs sm:text-sm py-2.5 px-3 sm:px-4 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 shrink-0"
               >
                 <span>Selanjutnya <span className="opacity-75 text-[10px] hidden sm:inline">[→]</span></span>
                 <CaretRight size={16} weight="bold" />
@@ -662,6 +689,16 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
           setShowExitModal(false);
           router.push('/simulasi');
         }}
+      />
+
+      {/* Modal Navigasi Nomor Soal Mobile */}
+      <QuestionNavigationModal
+        isOpen={showMobileNavModal}
+        onClose={() => setShowMobileNavModal(false)}
+        questions={questions}
+        answers={answers}
+        currentIndex={currentIndex}
+        onSelectIndex={handleNavigateIndex}
       />
 
       {/* Modal Finish / Submit */}
