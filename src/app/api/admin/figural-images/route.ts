@@ -1,16 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { getDb } from '@/lib/db';
 import { isAuthorizedAdmin } from '@/lib/adminAuth';
-
-// Question number → filename mapping
-function numberToFilename(num: number): string | null {
-  if (num >= 1 && num <= 17) return `fig_analogi_${String(num).padStart(2, '0')}.png`;
-  if (num >= 18 && num <= 31) return `fig_ketidaksamaan_${String(num - 17).padStart(2, '0')}.png`;
-  if (num >= 32 && num <= 46) return `fig_serial_${String(num - 31).padStart(2, '0')}.png`;
-  return null;
-}
 
 export async function GET(req: NextRequest) {
   if (!isAuthorizedAdmin(req)) {
@@ -37,42 +28,19 @@ export async function GET(req: NextRequest) {
     ];
   }
 
-  // Check DB for data URL overrides
-  const dbOverrides = new Map<string, string>();
-  try {
-    const sql = getDb();
-    if (sql) {
-      const rows = await sql`
-        SELECT number, image FROM questions
-        WHERE package_id = 'tryout-figural'
-          AND image LIKE 'data:image/%'
-      `;
-      for (const row of rows) {
-        const fname = numberToFilename((row as { number: number }).number);
-        if (fname) {
-          dbOverrides.set(fname, (row as { image: string }).image);
-        }
-      }
-    }
-  } catch {
-    // DB unavailable — fall back to disk only
-  }
-
-  // Build response: prefer DB override, fallback to static file path
+  // Build response: semua gambar disajikan via /api/admin/figural-img yang menangani
+  // redirect otomatis ke static file bila belum di-crop, atau serve data URL dari DB
   const images = knownFiles.map(f => {
     let size = 0;
     try {
       size = fs.statSync(path.join(dir, f)).size;
     } catch { /* Vercel runtime: static files served separately */ }
 
-    const isOverridden = dbOverrides.has(f);
     return {
       filename: f,
-      url: isOverridden
-        ? `/api/admin/figural-img?filename=${f}`
-        : `/images/questions/${f}`,
+      url: `/api/admin/figural-img?filename=${f}`,
       size,
-      overridden: isOverridden,
+      overridden: false,
     };
   });
 

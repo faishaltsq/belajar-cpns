@@ -29,68 +29,48 @@ export async function POST(req: NextRequest) {
     try {
       const sql = getDb();
       if (sql) {
-        // Derive question number from filename for reliable re-crop support
-        // (after first crop, image is a data URL and won't match LIKE '%fig_*%')
-        const filenameMatch = safeName.match(/^fig_(analogi|ketidaksamaan|serial)_(\d+)\.png$/);
-        let numStart = 0;
-        if (filenameMatch) {
-          const type = filenameMatch[1];
-          const n = parseInt(filenameMatch[2], 10);
-          if (type === 'analogi')        numStart = n;
-          if (type === 'ketidaksamaan')  numStart = n + 17;
-          if (type === 'serial')         numStart = n + 31;
-        }
+        // Generic: update semua soal yang image field-nya referensi filename ini (semua paket)
+        const matchPattern = `%${safeName}%`;
+        const resByFilename = await sql`
+          UPDATE questions
+          SET image = ${dataUrl}
+          WHERE image LIKE ${matchPattern}
+          RETURNING number, package_id
+        `;
+        dbUpdated += Array.isArray(resByFilename) ? resByFilename.length : 0;
 
-        if (numStart > 0) {
-          // Update in tryout-figural by question number
-          const res1 = await sql`
-            UPDATE questions
-            SET image = ${dataUrl}
-            WHERE package_id = 'tryout-figural'
-              AND number = ${numStart}
-            RETURNING number, text
-          `;
-          // Update other packages by filename LIKE (handles first crop)
-          const matchPattern = `%${safeName}%`;
-          const res2 = await sql`
-            UPDATE questions
-            SET image = ${dataUrl}
-            WHERE image LIKE ${matchPattern}
-              AND package_id != 'tryout-figural'
-            RETURNING number
-          `;
-          // Update other packages by question text match (handles re-crop after first crop)
-          // This covers tryout-mini and any other package that already has data:image but same question text
-          let res3Count = 0;
-          if (Array.isArray(res1) && res1.length > 0 && res1[0].text) {
-            const qText = res1[0].text as string;
-            const res3 = await sql`
-              UPDATE questions
-              SET image = ${dataUrl}
-              WHERE text = ${qText}
-                AND package_id != 'tryout-figural'
-                AND image IS NOT NULL
-                AND image != ''
-              RETURNING number
-            `;
-            res3Count = Array.isArray(res3) ? res3.length : 0;
-          }
-          dbUpdated = (Array.isArray(res1) ? res1.length : 0)
-            + (Array.isArray(res2) ? res2.length : 0)
-            + res3Count;
+        // Re-crop support: jika sudah pernah di-crop (data URL sudah ada), cari via question text match
+        // Ambil text dari soal yang baru saja di-update (atau yang imagenya cocok secara filename)
+        if (dbUpdated === 0) {
+          // Fallback: cari berdasarkan teks soal yang sama (paket duplikat)
+          console.warn(`[save-cropped-image] No rows matched LIKE '%${safeName}%' — file may already be data URL`);
         } else {
-          const matchPattern = `%${safeName}%`;
-          const res = await sql`
-            UPDATE questions
-            SET image = ${dataUrl}
-            WHERE image LIKE ${matchPattern}
-            RETURNING number
-          `;
-          dbUpdated = Array.isArray(res) ? res.length : ((res as unknown as { rowCount: number }).rowCount || 0);
+          // Sync cross-package: update soal di paket lain yang punya teks soal sama tapi image sudah data URL
+          const updatedRows = Array.isArray(resByFilename) ? resByFilename as { number: number; package_id: string }[] : [];
+          for (const row of updatedRows.slice(0, 5)) {
+            const qTextRows = await sql`
+              SELECT text FROM questions
+              WHERE number = ${row.number} AND package_id = ${row.package_id}
+              LIMIT 1
+            `;
+            if (qTextRows.length > 0) {
+              const qText = (qTextRows[0] as { text: string }).text;
+              const crossRes = await sql`
+                UPDATE questions
+                SET image = ${dataUrl}
+                WHERE text = ${qText}
+                  AND package_id != ${row.package_id}
+                  AND image IS NOT NULL
+                  AND image != ''
+                RETURNING number
+              `;
+              dbUpdated += Array.isArray(crossRes) ? crossRes.length : 0;
+            }
+          }
         }
       }
     } catch (dbErr) {
-      console.warn('DB update skipped:', (dbErr as Error).message);
+      console.warn('[save-cropped-image] DB update skipped:', (dbErr as Error).message);
     }
 
     // 2. Also try writing to local disk (local dev only, EROFS on Vercel = ignored)
