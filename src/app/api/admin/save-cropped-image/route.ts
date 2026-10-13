@@ -39,11 +39,23 @@ export async function POST(req: NextRequest) {
         `;
         dbUpdated += Array.isArray(resByFilename) ? resByFilename.length : 0;
 
-        // Re-crop support: jika sudah pernah di-crop (data URL sudah ada), cari via question text match
-        // Ambil text dari soal yang baru saja di-update (atau yang imagenya cocok secara filename)
+        // Re-crop support: jika sudah pernah di-crop (data URL sudah ada), cari via figural_filename_map
         if (dbUpdated === 0) {
-          // Fallback: cari berdasarkan teks soal yang sama (paket duplikat)
-          console.warn(`[save-cropped-image] No rows matched LIKE '%${safeName}%' — file may already be data URL`);
+          const mapRows = await sql`
+            SELECT package_id, question_number FROM figural_filename_map
+            WHERE filename = ${safeName}
+            LIMIT 1
+          `;
+          if (mapRows.length > 0) {
+            const { package_id, question_number } = mapRows[0] as { package_id: string; question_number: number };
+            const resMap = await sql`
+              UPDATE questions
+              SET image = ${dataUrl}
+              WHERE package_id = ${package_id} AND number = ${question_number}
+              RETURNING number
+            `;
+            dbUpdated += Array.isArray(resMap) ? resMap.length : 0;
+          }
         } else {
           // Sync cross-package: update soal di paket lain yang punya teks soal sama tapi image sudah data URL
           const updatedRows = Array.isArray(resByFilename) ? resByFilename as { number: number; package_id: string }[] : [];

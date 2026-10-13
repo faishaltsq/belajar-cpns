@@ -20,11 +20,29 @@ export async function GET(req: NextRequest) {
 
     // Generic lookup: cari di semua paket berdasarkan image LIKE '%filename%'
     const matchPattern = `%${filename}%`;
-    const rows = await sql`
+    let rows = await sql`
       SELECT image FROM questions
       WHERE image LIKE ${matchPattern}
       LIMIT 1
     `;
+
+    // Fallback: gambar sudah di-crop (data URL) sehingga LIKE gagal.
+    // Gunakan figural_filename_map untuk lookup berdasarkan package_id + number.
+    if (rows.length === 0) {
+      const mapRows = await sql`
+        SELECT package_id, question_number FROM figural_filename_map
+        WHERE filename = ${filename}
+        LIMIT 1
+      `;
+      if (mapRows.length > 0) {
+        const { package_id, question_number } = mapRows[0] as { package_id: string; question_number: number };
+        rows = await sql`
+          SELECT image FROM questions
+          WHERE package_id = ${package_id} AND number = ${question_number}
+          LIMIT 1
+        `;
+      }
+    }
 
     if (rows.length === 0) {
       return NextResponse.redirect(new URL(`/images/questions/${filename}`, req.url));
