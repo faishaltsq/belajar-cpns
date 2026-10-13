@@ -50,17 +50,42 @@ export async function POST(req: Request) {
       VALUES (${email.toLowerCase()}, ${otp}, ${passwordHash}, ${name?.trim() || 'Peserta CPNS'}, ${expiresAt.toISOString()})
     `;
 
+    const appUrl =
+      process.env.NEXT_PUBLIC_APP_URL ||
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://belajar-cpns-saas.vercel.app');
+    const verifyLink = `${appUrl}/api/auth/verify-link?email=${encodeURIComponent(email.toLowerCase())}&otp=${otp}`;
+
     const html = `
-      <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
-        <h2 style="color:#c96442;margin-bottom:8px">Lolos.in</h2>
-        <p style="color:#333;margin-bottom:16px">Halo <strong>${name || 'Peserta'}</strong>,</p>
-        <p style="color:#555;margin-bottom:16px">Gunakan kode berikut untuk menyelesaikan pendaftaran:</p>
-        <div style="background:#faf9f5;border:2px solid #c96442;border-radius:12px;padding:24px;text-align:center;margin-bottom:16px">
-          <span style="font-size:36px;font-weight:bold;letter-spacing:8px;color:#c96442">${otp}</span>
+      <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:28px;background:#ffffff;border:1px solid #eee;border-radius:16px">
+        <h2 style="color:#c96442;margin-bottom:8px;font-size:24px">Lolos.in</h2>
+        <p style="color:#333;margin-bottom:16px;font-size:15px">Halo <strong>${name || 'Peserta'}</strong>,</p>
+        <p style="color:#555;margin-bottom:24px;font-size:14px;line-height:1.5">
+          Terima kasih telah mendaftar. Klik tombol di bawah ini untuk langsung memverifikasi akun dan masuk ke platform:
+        </p>
+
+        <!-- Tombol Verifikasi Sekali Klik -->
+        <div style="text-align:center;margin:28px 0">
+          <a href="${verifyLink}" style="display:inline-block;background:#c96442;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;padding:14px 32px;border-radius:10px;box-shadow:0 2px 8px rgba(201,100,66,0.3)">
+            ✓ Verifikasi & Masuk Sekarang
+          </a>
         </div>
-        <p style="color:#888;font-size:12px">Kode berlaku selama <strong>10 menit</strong>. Jangan bagikan ke siapapun.</p>
-        <hr style="border:none;border-top:1px solid #eee;margin:16px 0">
-        <p style="color:#aaa;font-size:11px">Jika kamu tidak merasa mendaftar, abaikan email ini.</p>
+
+        <p style="color:#777;font-size:13px;text-align:center;margin:16px 0">
+          Atau masukkan kode berikut secara manual di halaman verifikasi:
+        </p>
+
+        <!-- Kode OTP Manual -->
+        <div style="background:#faf9f5;border:2px dashed #c96442;border-radius:12px;padding:16px;text-align:center;margin-bottom:20px">
+          <span style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#c96442">${otp}</span>
+        </div>
+
+        <p style="color:#888;font-size:12px;line-height:1.4">
+          • Link dan kode ini berlaku selama <strong>10 menit</strong>.<br>
+          • Jika tombol di atas tidak dapat diklik, salin tautan berikut ke browser:<br>
+          <a href="${verifyLink}" style="color:#c96442;word-break:break-all;font-size:11px">${verifyLink}</a>
+        </p>
+        <hr style="border:none;border-top:1px solid #eee;margin:20px 0">
+        <p style="color:#aaa;font-size:11px">Jika kamu tidak merasa mendaftar di Lolos.in, abaikan email ini.</p>
       </div>
     `;
 
