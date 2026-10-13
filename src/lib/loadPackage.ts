@@ -199,3 +199,19 @@ export const TRYOUT_LIST: PkgItem[] = [
   { id: 'tryout-33', label: 'Tryout 33 (Latihan 9)', desc: 'Standar CAT BKN — 110 soal (30 TWK, 35 TIU, 45 TKP)', badge: 'Latihan', section: 'drill', questionCount: 110, durationMin: 100 },
   { id: 'tryout-34', label: 'Tryout 34 (Latihan 10)', desc: 'Standar CAT BKN — 110 soal (30 TWK, 35 TIU, 45 TKP)', badge: 'Latihan', section: 'drill', questionCount: 110, durationMin: 100 },
 ];
+
+/** Total paket tryout yang tersedia di platform (dinamis dari TRYOUT_LIST) */
+export const TOTAL_TRYOUT_PACKAGES = TRYOUT_LIST.length;
+
+/** Total paket standar berformat CAT BKN 110 soal (tryout-1 s.d. tryout-34) */
+export const TOTAL_STANDARD_PACKAGES = TRYOUT_LIST.filter(p => p.questionCount === 110).length;
+
+/** Label rentang tryout standar untuk teks UI (misal: "Tryout 1–34") */
+export const TRYOUT_STANDARD_RANGE = (() => {
+  const std = TRYOUT_LIST.filter(p => /^tryout-\d+$/.test(p.id))
+    .map(p => parseInt(p.id.replace('tryout-', ''), 10))
+    .filter(n => !isNaN(n))
+    .sort((a, b) => a - b);
+  if (std.length === 0) return 'Semua Tryout';
+  return `Tryout ${std[0]}–${std[std.length - 1]}`;
+})();

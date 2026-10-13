@@ -15,6 +15,7 @@ import {
   Package,
   Copy,
 } from '@phosphor-icons/react';
+import { TOTAL_TRYOUT_PACKAGES, TRYOUT_STANDARD_RANGE } from '@/lib/loadPackage';
 
 interface UpgradeProModalProps {
   isOpen: boolean;
@@ -327,7 +328,7 @@ export function UpgradeProModal({
                       Rp 150.000
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
-                      Semua Tryout 1–17
+                      {TRYOUT_STANDARD_RANGE}
                     </div>
                   </button>
                 </div>
@@ -346,7 +347,7 @@ export function UpgradeProModal({
                 <>
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
-                    Buka seluruh 19 paket tryout (110 soal standar CAT BKN)
+                    Buka seluruh {TOTAL_TRYOUT_PACKAGES} paket tryout (standar CAT BKN + Figural)
                   </div>
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
