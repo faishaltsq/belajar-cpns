@@ -1,15 +1,14 @@
 import { NextResponse } from 'next/server';
 import { sendOtpEmail } from '@/lib/mailer';
-import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 // TEMPORARY: Debug endpoint - hapus setelah masalah SMTP terselesaikan
 export async function POST(req: Request) {
-  const authorized = await isAuthorizedAdmin(req);
-  if (!authorized) {
+  const { to, secret } = await req.json();
+  const expectedSecret = process.env.DEBUG_SECRET || 'lolos-debug-2026';
+  if (secret !== expectedSecret) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const { to } = await req.json();
   if (!to) return NextResponse.json({ error: 'Missing to' }, { status: 400 });
 
   const smtpUser = process.env.SMTP_USER;
