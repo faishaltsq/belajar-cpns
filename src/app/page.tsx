@@ -26,7 +26,7 @@ export default function LandingPage() {
         {/* HERO SECTION */}
         <section className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-            Persiapan Lolos SKD CPNS 2026 Lebih Terukur.
+            Persiapan Lolos SKD CPNS 2027 Lebih Terukur.
           </h1>
 
           <p className="mt-5 text-base sm:text-lg text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto">
@@ -258,7 +258,7 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <h3 className="text-lg font-bold text-[var(--foreground)]">
-                  Nilai Ambang Batas SKD CPNS 2026
+                  Nilai Ambang Batas SKD CPNS 2027
                 </h3>
                 <p className="text-xs text-[var(--muted-foreground)] mt-1">
                   Keputusan Menteri PANRB No. 321 Tahun 2024 untuk Formasi Umum
@@ -335,7 +335,7 @@ export default function LandingPage() {
           <div className="max-w-2xl mx-auto space-y-3">
             {[
               {
-                q: 'Berapa passing grade resmi SKD CPNS 2026?',
+                q: 'Berapa passing grade resmi SKD CPNS 2027?',
                 a: 'Sesuai Kepmen PANRB 321/2024, nilai ambang batas umum: TWK 65, TIU 80, dan TKP 166. Anda wajib melampaui batas minimal di ketiga kategori secara bersamaan.',
               },
               {

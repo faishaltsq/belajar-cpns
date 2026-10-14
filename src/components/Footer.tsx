@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="space-y-3 lg:col-span-1">
               <Logo size="md" />
               <p className="text-xs leading-relaxed">
-                Platform simulasi CAT SKD dan latihan psikotes berbasis standar BKN untuk pejuang NIP 2026.
+                Platform simulasi CAT SKD dan latihan psikotes berbasis standar BKN untuk pejuang NIP 2027.
               </p>
             </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
             {/* Info Seleksi */}
             <div className="space-y-2">
               <h4 className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--foreground)' }}>
-                Info Seleksi 2026
+                Info Seleksi 2027
               </h4>
               <ul className="space-y-1.5 text-xs">
                 <li>Kepmen PANRB 321/2024</li>

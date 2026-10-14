@@ -20,13 +20,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Lolos.in — Simulasi CAT SKD CPNS 2026 Gratis',
+    default: 'Lolos.in — Simulasi CAT SKD CPNS 2027 Gratis',
     template: '%s | Lolos.in',
   },
-  description: 'Lolos.in: platform simulasi ujian CAT SKD CPNS 2026 standar BKN dengan penilaian otomatis TWK, TIU, dan TKP. Gratis, tanpa login.',
+  description: 'Lolos.in: platform simulasi ujian CAT SKD CPNS 2027 standar BKN dengan penilaian otomatis TWK, TIU, dan TKP. Gratis, tanpa login.',
   metadataBase: new URL('https://lolos.in'),
   openGraph: {
-    title: 'Lolos.in — Simulasi CAT SKD CPNS 2026',
+    title: 'Lolos.in — Simulasi CAT SKD CPNS 2027',
     description: '36 Paket Tryout CAT · 3.816 Soal · Timer 100 Menit · Skor Otomatis TWK/TIU/TKP · Gratis tanpa login.',
     url: 'https://lolos.in',
     siteName: 'Lolos.in',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lolos.in — Simulasi CAT SKD CPNS 2026',
+    title: 'Lolos.in — Simulasi CAT SKD CPNS 2027',
     description: '36 Paket Tryout CAT · 3.816 Soal · Timer 100 Menit · Skor Otomatis TWK/TIU/TKP · Gratis tanpa login.',
   },
 };
