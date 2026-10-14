@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
     const ip = getClientIp(req);
     const rl = checkRateLimit(`verify-otp:${ip}`, 5, 300);
     if (!rl.success) {
-      const url = new URL('/register', req.nextUrl.origin);
+      const url = new URL('/login', req.nextUrl.origin);
       url.searchParams.set('error', 'Terlalu banyak percobaan. Coba lagi nanti.');
       return NextResponse.redirect(url);
     }
@@ -23,12 +23,12 @@ export async function GET(req: NextRequest) {
     const origin = req.nextUrl.origin;
 
     if (!email || !otp) {
-      return NextResponse.redirect(new URL('/register?error=Link+verifikasi+tidak+valid.', origin));
+      return NextResponse.redirect(new URL('/login?error=Link+verifikasi+tidak+valid.', origin));
     }
 
     const sql = getDb();
     if (!sql) {
-      return NextResponse.redirect(new URL('/register?error=Kesalahan+server.+Coba+lagi.', origin));
+      return NextResponse.redirect(new URL('/login?error=Kesalahan+server.+Coba+lagi.', origin));
     }
 
     const rows = await sql`
@@ -42,7 +42,7 @@ export async function GET(req: NextRequest) {
 
     if (rows.length === 0) {
       return NextResponse.redirect(
-        new URL('/register?error=Link+verifikasi+sudah+kedaluwarsa+atau+tidak+valid.', origin)
+        new URL('/login?error=Link+verifikasi+sudah+kedaluwarsa+atau+tidak+valid.', origin)
       );
     }
 
@@ -61,7 +61,7 @@ export async function GET(req: NextRequest) {
       const existing = await sql`SELECT id, email, name FROM users WHERE email = ${email.toLowerCase()} LIMIT 1`;
       if (existing.length === 0) {
         return NextResponse.redirect(
-          new URL('/register?error=Gagal+membuat+akun.+Hubungi+bantuan.', origin)
+          new URL('/login?error=Gagal+membuat+akun.+Hubungi+bantuan.', origin)
         );
       }
       user = existing[0];
@@ -88,7 +88,7 @@ export async function GET(req: NextRequest) {
   } catch (error: unknown) {
     if (error instanceof Error) console.error('[auth/verify-link]', error.message);
     return NextResponse.redirect(
-      new URL('/register?error=Terjadi+kesalahan+server.', new URL(req.url).origin)
+      new URL('/login?error=Terjadi+kesalahan+server.', new URL(req.url).origin)
     );
   }
 }

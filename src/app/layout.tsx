@@ -19,7 +19,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Lolos.in — Simulasi CAT SKD CPNS 2026 Gratis',
+  title: {
+    default: 'Lolos.in — Simulasi CAT SKD CPNS 2026 Gratis',
+    template: '%s | Lolos.in',
+  },
   description: 'Lolos.in: platform simulasi ujian CAT SKD CPNS 2026 standar BKN dengan penilaian otomatis TWK, TIU, dan TKP. Gratis, tanpa login.',
   metadataBase: new URL('https://lolos.in'),
   openGraph: {

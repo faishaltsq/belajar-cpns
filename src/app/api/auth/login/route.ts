@@ -22,12 +22,12 @@ export async function POST(req: Request) {
 
     const user = await findUserByEmail(email);
     if (!user) {
-      return NextResponse.json({ error: 'Email belum terdaftar. Silakan daftar terlebih dahulu.' }, { status: 404 });
+      return NextResponse.json({ error: 'Email atau password salah.' }, { status: 401 });
     }
 
     const valid = await verifyPassword(password, user.password_hash);
     if (!valid) {
-      return NextResponse.json({ error: 'Password salah. Periksa kembali.' }, { status: 401 });
+      return NextResponse.json({ error: 'Email atau password salah.' }, { status: 401 });
     }
 
     const token = await createToken({ email: user.email, userId: user.id });

@@ -3,6 +3,7 @@ import { hashPassword } from '@/lib/auth';
 import { findUserByEmail, getDb } from '@/lib/db';
 import { sendOtpEmail } from '@/lib/mailer';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
+import { escapeHtml } from '@/lib/sanitize';
 
 function validateEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
@@ -55,10 +56,12 @@ export async function POST(req: Request) {
       (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://belajar-cpns-saas.vercel.app');
     const verifyLink = `${appUrl}/api/auth/verify-link?email=${encodeURIComponent(email.toLowerCase())}&otp=${otp}`;
 
+    const safeName = escapeHtml(name?.trim() || 'Peserta');
+
     const html = `
       <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:28px;background:#ffffff;border:1px solid #eee;border-radius:16px">
         <h2 style="color:#c96442;margin-bottom:8px;font-size:24px">Lolos.in</h2>
-        <p style="color:#333;margin-bottom:16px;font-size:15px">Halo <strong>${name || 'Peserta'}</strong>,</p>
+        <p style="color:#333;margin-bottom:16px;font-size:15px">Halo <strong>${safeName}</strong>,</p>
         <p style="color:#555;margin-bottom:24px;font-size:14px;line-height:1.5">
           Terima kasih telah mendaftar. Klik tombol di bawah ini untuk langsung memverifikasi akun dan masuk ke platform:
         </p>

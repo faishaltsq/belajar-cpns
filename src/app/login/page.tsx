@@ -14,6 +14,7 @@ function LoginFormContent() {
   const searchParams = useSearchParams();
   const raw = searchParams.get('redirect') || '/simulasi';
   const redirect = raw.startsWith('/') && !raw.startsWith('//') ? raw : '/simulasi';
+  const urlError = searchParams.get('error');
 
   // step: 'form' | 'otp' | 'forgot' | 'reset'
   const [step, setStep] = useState<'form' | 'otp' | 'forgot' | 'reset'>('form');
@@ -23,7 +24,7 @@ function LoginFormContent() {
   const [newPassword, setNewPassword] = useState('');
   const [name, setName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(urlError || '');
   const [successMsg, setSuccessMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const [resending, setResending] = useState(false);
@@ -157,13 +158,19 @@ function LoginFormContent() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Gagal mengirim kode OTP.');
+
+      // Mode dev: devOtp tersedia → auto-isi dan pindah ke form reset
       if (data.devOtp && String(data.devOtp).length === 6) {
         setOtpDigits(String(data.devOtp).split(''));
         setSuccessMsg('Mode Pengujian: Kode OTP otomatis terisi.');
+        setStep('reset');
       } else {
+        // Produksi: tampilkan konfirmasi generik di halaman forgot,
+        // JANGAN paksa masuk ke reset form (email mungkin tidak terdaftar)
+        setSuccessMsg('Jika email Anda terdaftar, kode OTP sudah dikirim. Silakan cek kotak masuk dan folder spam, lalu masukkan kode di bawah ini.');
         setOtpDigits(['', '', '', '', '', '']);
+        setStep('reset');
       }
-      setStep('reset');
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Terjadi kesalahan.');
     } finally {
@@ -262,6 +269,12 @@ function LoginFormContent() {
                   />
                 ))}
               </div>
+
+              {otpDigits.join('').length < 6 && otpDigits.join('').length > 0 && (
+                <p className="text-center text-[11px] text-amber-600 font-medium">
+                  Masukkan 6 digit angka ({otpDigits.join('').length}/6)
+                </p>
+              )}
 
               <button
                 type="submit"
