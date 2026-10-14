@@ -10,7 +10,7 @@ import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 export async function GET(req: NextRequest) {
   try {
     const ip = getClientIp(req);
-    const rl = checkRateLimit(`verify-otp:${ip}`, 5, 300);
+    const rl = await checkRateLimit(`verify-otp:${ip}`, 5, 300);
     if (!rl.success) {
       const url = new URL('/login', req.nextUrl.origin);
       url.searchParams.set('error', 'Terlalu banyak percobaan. Coba lagi nanti.');

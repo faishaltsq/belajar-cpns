@@ -6,7 +6,7 @@ import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 export async function POST(req: Request) {
   try {
     const ip = getClientIp(req);
-    const rl = checkRateLimit(`reset-password:${ip}`, 5, 300);
+    const rl = await checkRateLimit(`reset-password:${ip}`, 5, 300);
     if (!rl.success) {
       return NextResponse.json(
         { error: `Terlalu banyak percobaan reset password. Coba lagi dalam ${rl.retryAfterSeconds} detik.` },

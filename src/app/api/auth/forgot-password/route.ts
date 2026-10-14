@@ -10,7 +10,7 @@ function generateOTP(): string {
 export async function POST(req: Request) {
   try {
     const ip = getClientIp(req);
-    const rl = checkRateLimit(`forgot-password:${ip}`, 5, 900);
+    const rl = await checkRateLimit(`forgot-password:${ip}`, 5, 900);
     if (!rl.success) {
       return NextResponse.json(
         { error: `Terlalu banyak permintaan reset password. Coba lagi dalam ${rl.retryAfterSeconds} detik.` },

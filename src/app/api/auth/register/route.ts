@@ -16,7 +16,7 @@ function generateOTP(): string {
 export async function POST(req: Request) {
   try {
     const ip = getClientIp(req);
-    const rl = checkRateLimit(`register:${ip}`, 5, 300);
+    const rl = await checkRateLimit(`register:${ip}`, 5, 300);
     if (!rl.success) {
       return NextResponse.json(
         { error: `Terlalu banyak permintaan pendaftaran. Coba lagi dalam ${rl.retryAfterSeconds} detik.` },
