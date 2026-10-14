@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/db';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 /**
  * GET /api/admin/question-bank
@@ -7,6 +8,9 @@ import { getDb } from '@/lib/db';
  * List soal dari bank
  */
 export async function GET(req: Request) {
+  if (!isAuthorizedAdmin(req)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
   const sql = getDb();
   if (!sql) return NextResponse.json({ error: 'DB not configured' }, { status: 500 });
 
@@ -65,6 +69,9 @@ export async function GET(req: Request) {
  * Ambil soal random dari bank sesuai komposisi → masukkan ke paket
  */
 export async function POST(req: Request) {
+  if (!isAuthorizedAdmin(req)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
   const sql = getDb();
   if (!sql) return NextResponse.json({ error: 'DB not configured' }, { status: 500 });
 

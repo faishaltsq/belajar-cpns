@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/db';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 const ROUTER_URL = 'https://rb4hc5v.abc-tunnel.us/v1/chat/completions';
 
@@ -9,6 +10,9 @@ const ROUTER_URL = 'https://rb4hc5v.abc-tunnel.us/v1/chat/completions';
  * Ambil konteks random dari ebook_contexts → kirim ke LLM → return soal baru
  */
 export async function POST(req: Request) {
+  if (!isAuthorizedAdmin(req)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
   try {
     const apiKey = process.env.HERMES_CUSTOM_LOCALHOST_20128_API_KEY;
     if (!apiKey) {
@@ -181,7 +185,10 @@ RESPOND dalam format JSON ARRAY, tanpa markdown code block:
 }
 
 // GET: cek statistik ebook_contexts
-export async function GET() {
+export async function GET(req: Request) {
+  if (!isAuthorizedAdmin(req)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
   const sql = getDb();
   if (!sql) return NextResponse.json({ error: 'DB not configured' }, { status: 500 });
 

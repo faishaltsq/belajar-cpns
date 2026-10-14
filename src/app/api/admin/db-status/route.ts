@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
 import { isDbConnected } from '@/lib/db';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
-export async function GET() {
-  const adminKey = process.env.ADMIN_SECRET_KEY;
-  // ponytail: no auth check here — endpoint returns boolean only, no sensitive data
+export async function GET(req: Request) {
+  if (!isAuthorizedAdmin(req)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
 
   const connected = await isDbConnected();
   const hasEnv = Boolean(process.env.DATABASE_URL || process.env.POSTGRES_URL);

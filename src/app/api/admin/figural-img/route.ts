@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/lib/db';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 export async function GET(req: NextRequest) {
+  if (!isAuthorizedAdmin(req)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const filename = req.nextUrl.searchParams.get('filename');
   if (!filename) {
     return NextResponse.json({ error: 'Missing filename param' }, { status: 400 });
