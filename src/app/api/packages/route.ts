@@ -25,7 +25,7 @@ export async function GET() {
             id: r.id,
             label: r.label,
             desc: r.desc || `${r.question_count} soal (${Math.round((r.duration_sec || 6000) / 60)} menit)`,
-            badge: meta?.badge ?? (r.id === 'tryout-mini' ? 'Coba Gratis' : null),
+            badge: meta?.badge ?? null,
             section: meta?.section ?? 'standard',
             questionCount: meta?.questionCount ?? (r.question_count || 110),
             durationMin: meta?.durationMin ?? Math.round((r.duration_sec || 6000) / 60),

@@ -193,7 +193,7 @@ export default function SimulasiPage() {
                 Draft: {draftCount} Soal
               </span>
             )}
-            {pkg.badge && (
+            {pkg.badge && !FREE_IDS.has(pkg.id) && (
               <span className={`badge-pill text-[10px] font-semibold border ${badgeClasses(pkg.badge)}`}>
                 {pkg.badge}
               </span>
@@ -289,14 +289,22 @@ export default function SimulasiPage() {
               )}
             </div>
             {!isPro && (
-              <button
-                onClick={() => { setUpgradeTrigger('Akses Semua Paket'); setUpgradeOpen(true); }}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition whitespace-nowrap shrink-0"
-              >
-                <Crown size={14} weight="fill" className="text-amber-500" />
-                <span className="hidden sm:inline">Upgrade PRO</span>
-                <span className="sm:hidden">PRO</span>
-              </button>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                {/* Banner benefit PRO — ringkasan cepat */}
+                <div className="hidden sm:flex items-center gap-3 text-[11px] text-amber-800 font-medium">
+                  <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 34 Paket CAT BKN</span>
+                  <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 120+ Soal Figural</span>
+                  <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> Drill + Ranking</span>
+                </div>
+                <button
+                  onClick={() => { setUpgradeTrigger('Akses Semua Paket'); setUpgradeOpen(true); }}
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition whitespace-nowrap shrink-0"
+                >
+                  <Crown size={14} weight="fill" className="text-amber-500" />
+                  <span className="hidden sm:inline">Upgrade PRO — mulai Rp 5.000</span>
+                  <span className="sm:hidden">PRO mulai Rp 5.000</span>
+                </button>
+              </div>
             )}
           </div>
 

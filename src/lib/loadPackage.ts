@@ -156,7 +156,7 @@ export const SECTION_META: Record<TryoutSection, { title: string; iconName: stri
 
 export const TRYOUT_LIST: PkgItem[] = [
   // ── starter ──
-  { id: 'tryout-mini', label: 'Tryout Mini', desc: 'Uji coba cepat 30 soal (10 TWK, 10 TIU, 10 TKP) + soal figural bergambar', badge: 'Coba Gratis', section: 'starter', questionCount: 30, durationMin: 30 },
+  { id: 'tryout-mini', label: 'Tryout Mini', desc: 'Uji coba cepat 30 soal (10 TWK, 10 TIU, 10 TKP) + soal figural bergambar', badge: null, section: 'starter', questionCount: 30, durationMin: 30 },
   { id: 'tryout-1', label: 'Tryout 1', desc: 'Paket soal perdana — TWK, TIU, TKP standar BKN', badge: null, section: 'starter', questionCount: 110, durationMin: 100 },
   { id: 'tryout-2', label: 'Tryout 2', desc: 'Fokus Pancasila, analogi verbal, dan TKP integritas', badge: null, section: 'starter', questionCount: 110, durationMin: 100 },
   // ── standard ──
