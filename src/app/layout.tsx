@@ -38,6 +38,12 @@ export const metadata: Metadata = {
     title: 'Lolos.in — Simulasi CAT SKD CPNS 2027',
     description: '36 Paket Tryout CAT · 3.816 Soal · Timer 100 Menit · Skor Otomatis TWK/TIU/TKP · Gratis tanpa login.',
   },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Lolos.in',
+  },
 };
 
 export default function RootLayout({

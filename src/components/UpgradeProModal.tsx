@@ -53,6 +53,7 @@ export function UpgradeProModal({
   const [userEmail, setUserEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [copied, setCopied] = useState(false);
+  const [syncFeedback, setSyncFeedback] = useState<{ type: 'warning' | 'error'; text: string } | null>(null);
 
   const pollTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -487,10 +488,24 @@ export function UpgradeProModal({
 
             {/* Tombol Cek Manual & Kontak Admin */}
             <div className="space-y-2 pt-1 border-t border-[var(--border)]">
+              {syncFeedback && (
+                <div
+                  className={`p-2.5 rounded-xl text-xs text-left flex items-start gap-2 ${
+                    syncFeedback.type === 'warning'
+                      ? 'bg-amber-50 border border-amber-200 text-amber-900'
+                      : 'bg-red-50 border border-red-200 text-red-900'
+                  }`}
+                >
+                  <span className="font-bold shrink-0">ℹ</span>
+                  <span>{syncFeedback.text}</span>
+                </div>
+              )}
+
               <button
                 type="button"
                 onClick={async () => {
                   setLoading(true);
+                  setSyncFeedback(null);
                   try {
                     const res = await fetch(`/api/payment/order-status?orderId=${orderInfo.orderId}`);
                     const data = await res.json();
@@ -505,10 +520,16 @@ export function UpgradeProModal({
                     if (sdata.paid) {
                       setStep('success');
                     } else {
-                      alert('Pembayaran belum terdeteksi. Pastikan kamu sudah transfer nominal yang persis sama, lalu coba lagi 10-15 detik kemudian.');
+                      setSyncFeedback({
+                        type: 'warning',
+                        text: 'Pembayaran belum terdeteksi di mutasi QRIS. Pastikan nominal transfer persis hingga kode unik terakhir, lalu coba lagi dalam 15-30 detik.',
+                      });
                     }
                   } catch {
-                    alert('Gagal mengecek status. Silakan coba sesaat lagi.');
+                    setSyncFeedback({
+                      type: 'error',
+                      text: 'Gagal mengecek status otomatis. Periksa jaringan Anda atau hubungi Admin WhatsApp di bawah.',
+                    });
                   } finally {
                     setLoading(false);
                   }

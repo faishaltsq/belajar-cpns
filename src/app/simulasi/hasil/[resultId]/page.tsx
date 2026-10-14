@@ -20,7 +20,10 @@ import {
   House,
   CaretLeft,
   Printer,
+  WhatsappLogo,
+  Copy,
 } from '@phosphor-icons/react';
+import { generateShareText, getWhatsAppShareUrl } from '@/lib/shareResult';
 import { useUser } from '@/lib/useUser';
 import { scopedKey } from '@/lib/userStorage';
 
@@ -32,6 +35,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   const [notFound, setNotFound] = useState(false);
   const [activeTab, setActiveTab] = useState<'summary' | 'review' | 'leaderboard'>('summary');
   const [timeSpent, setTimeSpent] = useState<Record<number, number>>({});
+  const [shareCopied, setShareCopied] = useState(false);
 
   const tryoutId = params.resultId.split('-').slice(0, -1).join('-');
   const retryPath = tryoutId ? `/simulasi/${tryoutId}` : '/simulasi/tryout-1';
@@ -326,6 +330,71 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
             <ArrowCounterClockwise size={16} weight="bold" />
             Coba Simulasi Lagi
           </Link>
+        </div>
+
+        {/* Tombol Bagikan Hasil */}
+        <div className="flex flex-col sm:flex-row gap-2 pt-1 print:hidden">
+          <button
+            type="button"
+            onClick={async () => {
+              if (!result) return;
+              const tryoutLabel = tryoutId
+                ? tryoutId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+                : 'Simulasi SKD';
+              const shareText = generateShareText({
+                tryoutLabel,
+                totalScore: result.totalScore,
+                twk: result.twk.score,
+                tiu: result.tiu.score,
+                tkp: result.tkp.score,
+                isPassedAll: result.isPassedAll,
+              });
+
+              if (typeof navigator !== 'undefined' && navigator.share) {
+                try {
+                  await navigator.share({
+                    title: 'Hasil Simulasi CAT SKD CPNS 2027 - Lolos.in',
+                    text: shareText,
+                    url: window.location.origin + '/simulasi',
+                  });
+                  return;
+                } catch {
+                  // user cancelled or not supported, fallback
+                }
+              }
+              window.open(getWhatsAppShareUrl(shareText), '_blank');
+            }}
+            className="flex-1 flex items-center justify-center gap-2 py-3 px-6 text-sm font-semibold rounded-xl transition"
+            style={{ background: '#25D366', color: '#fff' }}
+          >
+            <WhatsappLogo size={18} weight="fill" />
+            Bagikan Hasil ke WhatsApp
+          </button>
+
+          <button
+            type="button"
+            onClick={async () => {
+              if (!result) return;
+              const tryoutLabel = tryoutId
+                ? tryoutId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+                : 'Simulasi SKD';
+              const shareText = generateShareText({
+                tryoutLabel,
+                totalScore: result.totalScore,
+                twk: result.twk.score,
+                tiu: result.tiu.score,
+                tkp: result.tkp.score,
+                isPassedAll: result.isPassedAll,
+              });
+              await navigator.clipboard.writeText(shareText);
+              setShareCopied(true);
+              setTimeout(() => setShareCopied(false), 2500);
+            }}
+            className="btn-secondary flex-1 flex items-center justify-center gap-2 py-3 px-6 text-sm"
+          >
+            <Copy size={16} weight="bold" />
+            {shareCopied ? 'Teks Skor Disalin!' : 'Salin Ringkasan Skor'}
+          </button>
         </div>
       </div>
     </div>
