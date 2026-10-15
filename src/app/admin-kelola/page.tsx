@@ -235,9 +235,14 @@ export default function AdminPage() {
     if (authed) {
       loadPackageQuestions(selectedPkgId);
       // Cek DB connection
-      fetch('/api/admin/db-status').then(r => r.json()).then(setDbStatus).catch(() => null);
+      fetch('/api/admin/db-status', {
+        headers: { 'x-admin-pin': pin },
+      })
+        .then((r) => r.json())
+        .then(setDbStatus)
+        .catch(() => null);
     }
-  }, [authed, selectedPkgId]);
+  }, [authed, selectedPkgId, pin]);
 
   // Save single question
   async function handleSaveQuestion() {

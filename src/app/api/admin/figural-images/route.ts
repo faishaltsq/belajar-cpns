@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { getDb } from '@/lib/db';
 import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 export async function GET(req: NextRequest) {
@@ -28,19 +29,42 @@ export async function GET(req: NextRequest) {
     ];
   }
 
-  // Build response: semua gambar disajikan via /api/admin/figural-img yang menangani
-  // redirect otomatis ke static file bila belum di-crop, atau serve data URL dari DB
+  // Check DB for cropped data URL overrides
+  const dbOverrides = new Map<string, string>();
+  try {
+    const sql = getDb();
+    if (sql) {
+      const rows = await sql`
+        SELECT m.filename, q.image
+        FROM figural_filename_map m
+        JOIN questions q ON q.package_id = m.package_id AND q.number = m.question_number
+        WHERE q.image LIKE 'data:image/%'
+      `;
+      for (const row of rows) {
+        const r = row as { filename: string; image: string };
+        if (r.filename && r.image) {
+          dbOverrides.set(r.filename, r.image);
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('[figural-images] DB override lookup skipped:', (err as Error).message);
+  }
+
+  // Build response: prefer DB override (data URL), fallback to direct static file path
   const images = knownFiles.map(f => {
     let size = 0;
     try {
       size = fs.statSync(path.join(dir, f)).size;
     } catch { /* Vercel runtime: static files served separately */ }
 
+    const override = dbOverrides.get(f);
+
     return {
       filename: f,
-      url: `/api/admin/figural-img?filename=${f}`,
+      url: override || `/images/questions/${f}`,
       size,
-      overridden: false,
+      overridden: Boolean(override),
     };
   });
 

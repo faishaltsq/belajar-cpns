@@ -73,6 +73,14 @@ describe('admin route guards', () => {
     expect(res.status).toBe(401);
   });
 
+  it('figural-images GET returns 401 when guard rejects', async () => {
+    mockGuard.mockReturnValue(false);
+    const { GET } = await import('@/app/api/admin/figural-images/route');
+    const req = new Request('https://x.dev/api/admin/figural-images');
+    const res = await GET(req as any);
+    expect(res.status).toBe(401);
+  });
+
   it('guard passes through when authorized (question-bank GET reaches DB branch)', async () => {
     mockGuard.mockReturnValue(true);
     const { GET } = await import('@/app/api/admin/question-bank/route');
