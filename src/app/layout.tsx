@@ -5,6 +5,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SupportFloatingButton } from '@/components/SupportFloatingButton';
+import { Analytics } from '@vercel/analytics/next';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -172,6 +173,7 @@ export default function RootLayout({
         {children}
         <SupportFloatingButton />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
