@@ -43,6 +43,44 @@ export default function DrillSessionPage({
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [answersMap, setAnswersMap] = useState<Record<number, string>>({});
   const [showGuestModal, setShowGuestModal] = useState(false);
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
+
+  // Latihan sedang berjalan: keluar lewat menu/back/refresh harus dikonfirmasi dulu
+  const sessionActive = questions.length > 0 && !isFinished && !loading;
+  const [allowLeave, setAllowLeave] = useState(false);
+
+  useEffect(() => {
+    if (!sessionActive || allowLeave) return;
+    const onBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = '';
+    };
+    window.addEventListener('beforeunload', onBeforeUnload);
+    // Tangkap klik link internal (Navbar & link mana pun) sebelum navigasi terjadi
+    const onClickCapture = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const anchor = (e.target as HTMLElement)?.closest?.('a[href]') as HTMLAnchorElement | null;
+      if (!anchor) return;
+      const href = anchor.getAttribute('href') || '';
+      if (!href || href.startsWith('#') || href.startsWith('http') || anchor.target === '_blank') return;
+      if (href === window.location.pathname) return;
+      e.preventDefault();
+      e.stopPropagation();
+      setPendingHref(href);
+    };
+    document.addEventListener('click', onClickCapture, true);
+    return () => {
+      window.removeEventListener('beforeunload', onBeforeUnload);
+      document.removeEventListener('click', onClickCapture, true);
+    };
+  }, [sessionActive, allowLeave]);
+
+  const leaveTo = (href: string) => {
+    setAllowLeave(true);
+    setPendingHref(null);
+    setShowExitConfirm(false);
+    router.push(href);
+  };
 
   // Cek apakah guest sudah pernah mencoba drill sebelumnya
   useEffect(() => {
@@ -402,31 +440,38 @@ export default function DrillSessionPage({
         )}
       </div>
 
-      {/* Exit Confirmation Modal */}
-      {showExitConfirm && (
+      {/* Exit Confirmation Modal — dipakai untuk tombol Keluar, klik menu Navbar, dan tombol back browser */}
+      {(showExitConfirm || pendingHref) && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">
           <div className="card-modern max-w-sm w-full p-6 text-center space-y-4 bg-[var(--card)]">
             <div className="w-10 h-10 rounded-full mx-auto flex items-center justify-center bg-red-100 text-red-600">
               <SignOut size={20} weight="bold" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[var(--foreground)]">Keluar dari Latihan?</h3>
+              <h3 className="text-sm font-bold text-[var(--foreground)]">
+                {pendingHref ? 'Tinggalkan Latihan?' : 'Keluar dari Latihan?'}
+              </h3>
               <p className="text-xs text-[var(--muted-foreground)] mt-1">
-                Progres sesi {currentIndex + 1}/{questions.length} soal tidak akan tersimpan jika kamu keluar sekarang.
+                {pendingHref
+                  ? `Latihan masih berjalan di soal ${currentIndex + 1} dari ${questions.length}. Progres sesi ini tidak akan tersimpan jika kamu pindah halaman sekarang.`
+                  : `Progres sesi ${currentIndex + 1}/${questions.length} soal tidak akan tersimpan jika kamu keluar sekarang.`}
               </p>
             </div>
             <div className="flex gap-2">
               <button
-                onClick={() => setShowExitConfirm(false)}
+                onClick={() => {
+                  setShowExitConfirm(false);
+                  setPendingHref(null);
+                }}
                 className="btn-secondary flex-1 py-2 text-xs"
               >
-                Batal
+                Lanjut Latihan
               </button>
               <button
-                onClick={() => router.push('/drill')}
+                onClick={() => leaveTo(pendingHref || '/drill')}
                 className="flex-1 py-2 text-xs font-semibold rounded-xl bg-red-600 hover:bg-red-700 text-white transition"
               >
-                Ya, Keluar
+                Ya, Tinggalkan
               </button>
             </div>
           </div>

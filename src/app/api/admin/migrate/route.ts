@@ -187,7 +187,10 @@ export async function POST(req: NextRequest) {
             END,
             options = EXCLUDED.options,
             correct_answer = EXCLUDED.correct_answer,
-            tkp_scores = EXCLUDED.tkp_scores
+            tkp_scores = EXCLUDED.tkp_scores,
+            -- explanations must heal on re-seed: an early import wrote misaligned
+            -- rows and skipping this column made the corruption permanent
+            explanation = EXCLUDED.explanation
         `;
       }
       totalSeeded += questions.length;
