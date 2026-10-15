@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin-kelola/', '/profil/'],
       },
     ],
-    sitemap: 'https://lolos.in/sitemap.xml',
+    sitemap: 'https://lolosin.com/sitemap.xml',
   };
 }
