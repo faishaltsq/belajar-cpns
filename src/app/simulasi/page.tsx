@@ -8,6 +8,7 @@ import {
   ListBullets, Play
 } from '@phosphor-icons/react';
 import { TRYOUT_LIST, TOTAL_TRYOUT_PACKAGES, SECTION_META, type TryoutSection, type PkgItem } from '@/lib/loadPackage';
+import { FREE_PACKAGE_IDS } from '@/lib/pricing';
 import { UpgradeProModal } from '@/components/UpgradeProModal';
 import { useUser } from '@/lib/useUser';
 import { scopedKey } from '@/lib/userStorage';
@@ -57,7 +58,8 @@ export default function SimulasiPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<TryoutSection | 'all'>('all');
 
-  const FREE_IDS = new Set(['tryout-mini', 'tryout-1', 'tryout-2']);
+  // One definition of "free" for both the grid and bundle validation.
+  const FREE_IDS = new Set(FREE_PACKAGE_IDS);
 
   // Deteksi draft aktif untuk setiap paket
   useEffect(() => {

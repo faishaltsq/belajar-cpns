@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { priceFor, isOrderType, PRICE_TABLE } from '@/lib/pricing';
+import { priceFor, isOrderType, PRICE_TABLE, validateBundlePackageIds, BUNDLE_SIZE, FREE_PACKAGE_IDS } from '@/lib/pricing';
 
 describe('pricing module', () => {
   afterEach(() => {
@@ -150,5 +150,61 @@ describe('simulasi upsell banner', () => {
     // TRYOUT_LIST.length, not a number that goes stale when a package is added
     expect(src).toMatch(/\{TOTAL_TRYOUT_PACKAGES\}/);
     expect(src).not.toMatch(/\d+ Paket CAT BKN/);
+  });
+});
+
+// ---------------------------------------------------------
+// Task 3.2: bundle selection validation
+// ---------------------------------------------------------
+describe('validateBundlePackageIds', () => {
+  const free = new Set(FREE_PACKAGE_IDS);
+
+  it('accepts exactly BUNDLE_SIZE paid packages', () => {
+    const ids = ['tryout-4', 'tryout-5', 'tryout-6', 'tryout-7', 'tryout-8'];
+    expect(BUNDLE_SIZE).toBe(5);
+    const res = validateBundlePackageIds(ids, [], free);
+    expect(res.ok).toBe(true);
+    if (res.ok) expect(res.ids).toHaveLength(5);
+  });
+
+  it('rejects the wrong count', () => {
+    expect(validateBundlePackageIds(['tryout-4'], [], free).ok).toBe(false);
+    expect(validateBundlePackageIds([], [], free).ok).toBe(false);
+  });
+
+  it('rejects free packages', () => {
+    const res = validateBundlePackageIds(
+      ['tryout-mini', 'tryout-4', 'tryout-5', 'tryout-6', 'tryout-7'], [], free);
+    expect(res.ok).toBe(false);
+    if (!res.ok) expect(res.reason).toMatch(/gratis/i);
+  });
+
+  it('rejects packages the user already owns', () => {
+    const res = validateBundlePackageIds(
+      ['tryout-4', 'tryout-5', 'tryout-6', 'tryout-7', 'tryout-8'],
+      ['tryout-6'], free);
+    expect(res.ok).toBe(false);
+    if (!res.ok) expect(res.reason).toMatch(/tryout-6/);
+  });
+
+  it('rejects duplicates in the selection', () => {
+    const res = validateBundlePackageIds(
+      ['tryout-4', 'tryout-4', 'tryout-5', 'tryout-6', 'tryout-7'], [], free);
+    expect(res.ok).toBe(false);
+  });
+
+  it('rejects non-array input', () => {
+    expect(validateBundlePackageIds('tryout-4' as any, [], free).ok).toBe(false);
+    expect(validateBundlePackageIds(undefined as any, [], free).ok).toBe(false);
+  });
+
+  it('is the only definition of the free set the simulasi grid gates on', async () => {
+    const fs = await import('fs');
+    const path = await import('path');
+    const src = fs.readFileSync(path.join(process.cwd(), 'src/app/simulasi/page.tsx'), 'utf8');
+    // simulasi must read the set from pricing, not restate it as a literal —
+    // two literals drift and a bundle would then sell a free package
+    expect(src).toContain('FREE_PACKAGE_IDS');
+    expect(src).not.toMatch(/FREE_IDS\s*=\s*new Set\(\s*\[/);
   });
 });
