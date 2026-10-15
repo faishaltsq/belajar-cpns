@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/lib/db';
 import { isOrderEligibleForReminder, buildAbandonedReminderEmail } from '@/lib/abandonedReminder';
 import { sendOtpEmail } from '@/lib/mailer';
+import { BUNDLE_SIZE } from '@/lib/pricing';
 
 export const dynamic = 'force-dynamic';
 
@@ -45,7 +46,9 @@ export async function POST(req: NextRequest) {
 
       if (!isEligible) continue;
 
-      const pkgLabel = order.order_type === 'pro' ? 'PRO All-Access' : (order.package_id || 'Paket Tryout');
+      const pkgLabel = order.order_type === 'pro' ? 'PRO All-Access'
+        : order.order_type === 'bundle' ? `Paket Bundle ${BUNDLE_SIZE} Tryout`
+        : (order.package_id || 'Paket Tryout');
       const emailContent = buildAbandonedReminderEmail(Number(order.id), Number(order.exact_amount), pkgLabel);
 
       const sendRes = await sendOtpEmail({

@@ -58,7 +58,7 @@ interface ActivePackage {
 
 interface TransactionItem {
   id: number;
-  orderType: 'single' | 'pro';
+  orderType: 'single' | 'bundle' | 'pro';
   packageId: string | null;
   packageTitle: string;
   baseAmount: number;
@@ -751,7 +751,9 @@ export default function RiwayatPage() {
                           <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs flex items-center justify-between">
                             <span className="font-semibold text-slate-800">{tx.packageTitle}</span>
                             <span className="text-[10px] text-slate-500 uppercase tracking-wider">
-                              {tx.orderType === 'pro' ? 'Akses PRO' : 'Paket Satuan'}
+                              {tx.orderType === 'pro' ? 'Akses PRO'
+                                : tx.orderType === 'bundle' ? 'Paket Bundle'
+                                : 'Paket Satuan'}
                             </span>
                           </div>
 

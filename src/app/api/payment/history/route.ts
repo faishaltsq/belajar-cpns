@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth';
 import { getDb } from '@/lib/db';
+import { BUNDLE_SIZE } from '@/lib/pricing';
 
 export async function GET() {
   try {
@@ -44,7 +45,7 @@ export async function GET() {
     const orderRows = await sql`
       SELECT
         id, order_type, package_id, base_amount, unique_code, exact_amount,
-        status, created_at, expires_at, paid_at
+        status, created_at, expires_at, paid_at, package_ids
       FROM payment_orders
       WHERE user_id = ${payload.userId}
          OR (user_email IS NOT NULL AND LOWER(user_email) = LOWER(${user.email || ''}))
@@ -60,7 +61,9 @@ export async function GET() {
       }
 
       let packageTitle = 'Paket Member PRO (Akses Semua Tryout)';
-      if (r.order_type === 'single' && r.package_id) {
+      if (r.order_type === 'bundle') {
+        packageTitle = `Bundle ${Array.isArray(r.package_ids) ? r.package_ids.length : BUNDLE_SIZE} Paket Tryout`;
+      } else if (r.order_type === 'single' && r.package_id) {
         packageTitle = titleMap.get(r.package_id) || `Paket ${r.package_id}`;
       }
 

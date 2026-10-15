@@ -153,3 +153,33 @@ describe('bundle UI', () => {
     expect(ids).not.toContain('tryout-4');
   });
 });
+
+// ---------------------------------------------------------
+// Task 3.6: a bundle order must never be labelled PRO
+// ---------------------------------------------------------
+describe('bundle labelling', () => {
+  const read = async (rel: string) => {
+    const fs = await import('fs');
+    const path = await import('path');
+    return fs.readFileSync(path.join(process.cwd(), rel), 'utf8');
+  };
+
+  it('history route maps bundle to a readable title', async () => {
+    const src = await read('src/app/api/payment/history/route.ts');
+    expect(src).toMatch(/order_type === 'bundle'/);
+    // and it must select the column it reads the title from
+    expect(src).toMatch(/package_ids/);
+  });
+
+  it('abandoned reminder labels bundle orders', async () => {
+    const src = await read('src/app/api/payment/abandoned-reminders/route.ts');
+    expect(src).toMatch(/order_type === 'bundle'/);
+  });
+
+  it('riwayat page accepts the bundle order type', async () => {
+    const src = await read('src/app/riwayat/page.tsx');
+    expect(src).toMatch(/'bundle'/);
+    // the label chain must not send a bundle straight to PRO wording
+    expect(src).not.toMatch(/orderType === 'pro' \? 'Akses PRO'\s*:\s*'Paket Satuan'/);
+  });
+});
