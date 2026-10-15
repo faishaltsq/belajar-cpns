@@ -3,20 +3,25 @@ import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth';
 import { getDb } from '@/lib/db';
 import { createKlikQrisTransaction } from '@/lib/klikqris';
+import { priceFor, isOrderType } from '@/lib/pricing';
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
-    const orderType = body.orderType === 'single' ? 'single' : 'pro';
+    // orderType is validated, never coerced. An unknown value is rejected so a
+    // caller cannot ride a typo into a higher-privilege tier.
+    const orderType = isOrderType(body.orderType) ? body.orderType : null;
+    if (!orderType) {
+      return NextResponse.json(
+        { error: 'INVALID_ORDERTYPE', message: 'orderType harus salah satu dari: single, bundle, pro.' },
+        { status: 400 }
+      );
+    }
     const packageId = body.packageId ? String(body.packageId).trim() : null;
 
-    // Default price: PRO 150.000, Single Tryout 5.000
-    const baseAmount = Number(
-      body.baseAmount ||
-      (orderType === 'single'
-        ? process.env.KLIKQRIS_TRYOUT_PRICE || process.env.SAWERIA_TRYOUT_PRICE || 5000
-        : process.env.KLIKQRIS_PRO_PRICE || process.env.SAWERIA_PRO_PRICE || 150000)
-    );
+    // Price comes from the server table only. body.baseAmount is deliberately
+    // not read — clients must not be able to set what they pay.
+    const baseAmount = priceFor(orderType);
 
     // Ambil identitas user dari cookie token
     let userId: string | null = null;

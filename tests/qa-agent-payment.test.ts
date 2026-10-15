@@ -78,9 +78,9 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
       mockCreateKlikQris.mockResolvedValueOnce({
         success: true,
         orderId: 'INV-501',
-        amount: 150000,
+        amount: 59000,
         uniqueCode: 123,
-        totalAmount: 150123,
+        totalAmount: 59123,
         status: 'PENDING',
         qrisUrl: 'https://klikqris.com/qris_501.png',
         qrisImage: 'data:image/png;base64,mockqr501',
@@ -99,9 +99,9 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
       expect(json.success).toBe(true);
       expect(json.orderId).toBe(501);
       expect(json.invoiceCode).toBe('INV-501');
-      expect(json.baseAmount).toBe(150000);
+      expect(json.baseAmount).toBe(59000);
       expect(json.uniqueCode).toBe(123);
-      expect(json.exactAmount).toBe(150123);
+      expect(json.exactAmount).toBe(59123);
       expect(json.orderType).toBe('pro');
       expect(json.packageId).toBeNull();
       expect(json.gateway).toBe('klikqris');
@@ -149,7 +149,7 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
       expect(json.packageId).toBe('tryout-8');
     });
 
-    it('honors custom baseAmount override from request body when supplied', async () => {
+    it('ignores a client-supplied baseAmount and prices from the server table', async () => {
       mockSql.mockResolvedValueOnce([]); // no existing pending order
       mockSql.mockResolvedValueOnce([{ id: 503 }]); // insert order
       mockSql.mockResolvedValueOnce([]); // update order
@@ -157,9 +157,9 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
       mockCreateKlikQris.mockResolvedValueOnce({
         success: true,
         orderId: 'INV-503',
-        amount: 49000,
+        amount: 59000,
         uniqueCode: 15,
-        totalAmount: 49015,
+        totalAmount: 59015,
         status: 'PENDING',
       });
 
@@ -167,6 +167,7 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
         method: 'POST',
         body: JSON.stringify({
           orderType: 'pro',
+          // A hostile client posts a token price; the server must refuse it.
           baseAmount: 49000,
           userEmail: 'guest@test.com',
         }),
@@ -175,9 +176,11 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
       const res = await createOrderHandler(req);
       expect(res.status).toBe(200);
       const json = await res.json();
-      expect(json.baseAmount).toBe(49000);
-      expect(json.exactAmount).toBe(49015);
+      expect(json.baseAmount).toBe(59000);
+      expect(json.exactAmount).toBe(59015);
       expect(json.uniqueCode).toBe(15);
+      // and the posted amount never reaches the payment gateway
+      expect(mockCreateKlikQris.mock.calls[0][0].amount).toBe(59000);
     });
 
     it('rejects order creation with 409 ALREADY_PRO when user is already PRO', async () => {
