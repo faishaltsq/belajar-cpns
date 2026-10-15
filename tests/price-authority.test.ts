@@ -134,7 +134,11 @@ describe('create-order price authority', () => {
       mockCreateKlikQris.mockResolvedValueOnce(okGateway(59000));
 
       const res = await createOrder(
-        makeRequest(orderType === 'single' ? { orderType, packageId: 'tryout-9' } : { orderType })
+        makeRequest(orderType === 'single'
+          ? { orderType, packageId: 'tryout-9' }
+          : orderType === 'bundle'
+          ? { orderType, packageIds: ['tryout-4','tryout-5','tryout-6','tryout-7','tryout-8'] }
+          : { orderType })
       );
       expect(res.status, `orderType=${orderType}`).toBe(200);
     }

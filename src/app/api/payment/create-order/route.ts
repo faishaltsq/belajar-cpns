@@ -3,7 +3,13 @@ import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth';
 import { getDb } from '@/lib/db';
 import { createKlikQrisTransaction } from '@/lib/klikqris';
-import { priceFor, isOrderType } from '@/lib/pricing';
+import {
+  priceFor,
+  isOrderType,
+  validateBundlePackageIds,
+  FREE_PACKAGE_IDS,
+  BUNDLE_SIZE,
+} from '@/lib/pricing';
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,6 +24,30 @@ export async function POST(req: NextRequest) {
       );
     }
     const packageId = body.packageId ? String(body.packageId).trim() : null;
+
+    // Bundle shape is validated before any database round trip so malformed
+    // input never reaches the guard or creates a row. Ownership is checked
+    // further down, once the user's unlocked list is loaded.
+    let bundleIds: string[] | null = null;
+    if (orderType === 'bundle') {
+      const check = validateBundlePackageIds(
+        body.packageIds,
+        [],
+        new Set<string>(FREE_PACKAGE_IDS)
+      );
+      if (!check.ok) {
+        return NextResponse.json(
+          { error: 'INVALID_BUNDLE', message: check.reason },
+          { status: 400 }
+        );
+      }
+      bundleIds = check.ids;
+    }
+
+    // A bundle must not store package_id = NULL: the pending-order dedupe query
+    // matches on package_id, so NULL rows would never be found and every click
+    // would open a new order.
+    const effectivePackageId = orderType === 'bundle' ? 'bundle' : packageId;
 
     // Price comes from the server table only. body.baseAmount is deliberately
     // not read — clients must not be able to set what they pay.
@@ -74,6 +104,18 @@ export async function POST(req: NextRequest) {
             { status: 409 }
           );
         }
+
+        // Sebagian isi bundle sudah dimiliki — jangan kenakan Rp 18.000 untuk
+        // akses yang sudah ada.
+        if (orderType === 'bundle' && bundleIds) {
+          const already = bundleIds.find((id) => unlockedArr.includes(id));
+          if (already) {
+            return NextResponse.json(
+              { error: 'ALREADY_UNLOCKED', message: `Paket ${already} sudah terbuka untuk akunmu.` },
+              { status: 409 }
+            );
+          }
+        }
       }
     }
 
@@ -81,13 +123,13 @@ export async function POST(req: NextRequest) {
     if (userId || userEmail) {
       let existing: Record<string, any>[] = [];
       if (userId) {
-        existing = packageId
+        existing = effectivePackageId
           ? await sql`
               SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
               FROM payment_orders
               WHERE user_id = ${userId} 
                 AND order_type = ${orderType} 
-                AND package_id = ${packageId}
+                AND package_id = ${effectivePackageId}
                 AND status = 'pending'
                 AND expires_at > NOW()
               ORDER BY created_at DESC LIMIT 1
@@ -103,13 +145,13 @@ export async function POST(req: NextRequest) {
               ORDER BY created_at DESC LIMIT 1
             `;
       } else if (userEmail) {
-        existing = packageId
+        existing = effectivePackageId
           ? await sql`
               SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
               FROM payment_orders
               WHERE LOWER(user_email) = ${userEmail} 
                 AND order_type = ${orderType} 
-                AND package_id = ${packageId}
+                AND package_id = ${effectivePackageId}
                 AND status = 'pending'
                 AND expires_at > NOW()
               ORDER BY created_at DESC LIMIT 1
@@ -141,7 +183,8 @@ export async function POST(req: NextRequest) {
             baseAmount: order.base_amount,
             uniqueCode: order.unique_code,
             exactAmount: order.exact_amount,
-            packageId,
+            packageId: effectivePackageId,
+            packageIds: bundleIds,
             orderType,
             userEmail,
             qrisUrl: order.qris_url || '',
@@ -159,10 +202,11 @@ export async function POST(req: NextRequest) {
     const inserted = await sql`
       INSERT INTO payment_orders (
         user_id, user_email, package_id, order_type,
-        base_amount, unique_code, exact_amount, status
+        base_amount, unique_code, exact_amount, status, package_ids
       ) VALUES (
-        ${userId}, ${userEmail || null}, ${packageId}, ${orderType},
-        ${baseAmount}, ${0}, ${baseAmount}, 'pending'
+        ${userId}, ${userEmail || null}, ${effectivePackageId}, ${orderType},
+        ${baseAmount}, ${0}, ${baseAmount}, 'pending',
+        ${bundleIds ? JSON.stringify(bundleIds) : null}::jsonb
       )
       RETURNING id
     `;
@@ -170,6 +214,8 @@ export async function POST(req: NextRequest) {
     const orderId = inserted[0].id;
     const keterangan = orderType === 'single'
       ? `Lolos.in - Akses ${packageId}`
+      : orderType === 'bundle'
+      ? `Lolos.in - Paket Bundle ${BUNDLE_SIZE} Tryout`
       : 'Lolos.in - Upgrade Akun PRO';
 
     // 4. Hubungi API KlikQRIS untuk generate dynamic QRIS
@@ -214,7 +260,8 @@ export async function POST(req: NextRequest) {
       baseAmount,
       uniqueCode: finalUniqueCode,
       exactAmount: finalExactAmount,
-      packageId,
+      packageId: effectivePackageId,
+      packageIds: bundleIds,
       orderType,
       userEmail,
       qrisUrl: klikQrisRes.qrisUrl,
