@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SupportFloatingButton } from '@/components/SupportFloatingButton';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -186,6 +187,7 @@ export default function RootLayout({
         <SupportFloatingButton />
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
