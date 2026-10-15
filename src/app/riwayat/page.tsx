@@ -612,7 +612,7 @@ export default function RiwayatPage() {
                           className="btn-primary inline-flex items-center gap-1.5 text-xs py-1.5 px-3.5 shadow-sm"
                         >
                           <Sparkle size={14} weight="fill" />
-                          Upgrade ke PRO (Rp 150.000)
+                          Upgrade ke PRO (Rp 59.000)
                         </button>
                         <Link
                           href="/simulasi"

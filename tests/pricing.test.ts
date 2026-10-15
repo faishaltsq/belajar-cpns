@@ -64,3 +64,91 @@ describe('pricing module', () => {
     }
   });
 });
+
+// ---------------------------------------------------------
+// Task 1.1: benefit copy must match what is actually gated
+// ---------------------------------------------------------
+describe('benefit copy honesty', () => {
+  const read = async (rel: string) => {
+    const fs = await import('fs');
+    const path = await import('path');
+    return fs.readFileSync(path.join(process.cwd(), rel), 'utf8');
+  };
+
+  const sections = async () => {
+    const modal = await read('src/components/UpgradeProModal.tsx');
+    const start = modal.indexOf("selectedPlan === 'pro' ? (");
+    const mid = modal.indexOf(') : (', start);
+    const end = modal.indexOf(')}', mid);
+    return { pro: modal.slice(start, mid), single: modal.slice(mid, end) };
+  };
+
+  it('does not sell free features as PRO benefits', async () => {
+    const { pro } = await sections();
+    // /drill/[category]/[subCategory] never checks is_pro — it is free
+    expect(pro).not.toMatch(/drill subkategori/i);
+    expect(pro).not.toMatch(/Bank Soal 300/);
+  });
+
+  it('does not list the leaderboard as a paid single-package perk', async () => {
+    const { single } = await sections();
+    // the leaderboard is ungated and free for everyone
+    expect(single).not.toMatch(/leaderboard nasional/i);
+    expect(single).not.toMatch(/Analitik skor dan leaderboard/i);
+  });
+
+  it('lists the rekap soal salah as an explicit PRO-only benefit', async () => {
+    const { pro } = await sections();
+    expect(pro).toMatch(/rekap/i);
+    expect(pro).toMatch(/salah/i);
+  });
+
+  it('publishes the new PRO price in the layout Product schema', async () => {
+    const layout = await read('src/app/layout.tsx');
+    expect(layout).toMatch(/price:\s*'59000'/);
+    expect(layout).not.toMatch(/price:\s*'150000'/);
+  });
+
+  it('keeps the GA4 measurement id intact', async () => {
+    const layout = await read('src/app/layout.tsx');
+    expect(layout).toContain('G-FR0BKC6GX3');
+  });
+});
+
+// ---------------------------------------------------------
+// Task 1.2: the simulasi upsell banner must not mislabel price or perks
+// ---------------------------------------------------------
+describe('simulasi upsell banner', () => {
+  const readSim = async () => {
+    const fs = await import('fs');
+    const path = await import('path');
+    return fs.readFileSync(
+      path.join(process.cwd(), 'src/app/simulasi/page.tsx'),
+      'utf8'
+    );
+  };
+
+  it('prices the PRO button at the PRO tier, not the single-package tier', async () => {
+    const src = await readSim();
+    const cta = src.match(/Upgrade PRO[^<]*<\/span>/)?.[0] ?? '';
+    expect(cta).toContain('59.000');
+    expect(cta).not.toContain('5.000');
+  });
+
+  it('does not advertise the free drill feature as a PRO perk', async () => {
+    const src = await readSim();
+    const banner = src.slice(
+      src.indexOf('Banner benefit PRO'),
+      src.indexOf('</button>', src.indexOf('Banner benefit PRO'))
+    );
+    // /drill/[category]/[subCategory] has no is_pro check anywhere
+    expect(banner).not.toMatch(/Drill/);
+  });
+
+  it('states the package count from the shared constant', async () => {
+    const src = await readSim();
+    // TRYOUT_LIST.length, not a number that goes stale when a package is added
+    expect(src).toMatch(/\{TOTAL_TRYOUT_PACKAGES\}/);
+    expect(src).not.toMatch(/\d+ Paket CAT BKN/);
+  });
+});

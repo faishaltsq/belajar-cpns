@@ -7,7 +7,7 @@ import {
   MagnifyingGlass, X, Gift, Certificate, ImageSquare, Brain, Barbell,
   ListBullets, Play
 } from '@phosphor-icons/react';
-import { TRYOUT_LIST, SECTION_META, type TryoutSection, type PkgItem } from '@/lib/loadPackage';
+import { TRYOUT_LIST, TOTAL_TRYOUT_PACKAGES, SECTION_META, type TryoutSection, type PkgItem } from '@/lib/loadPackage';
 import { UpgradeProModal } from '@/components/UpgradeProModal';
 import { useUser } from '@/lib/useUser';
 import { scopedKey } from '@/lib/userStorage';
@@ -292,17 +292,17 @@ export default function SimulasiPage() {
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                 {/* Banner benefit PRO — ringkasan cepat */}
                 <div className="hidden sm:flex items-center gap-3 text-[11px] text-amber-800 font-medium">
-                  <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 34 Paket CAT BKN</span>
+                  <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> {TOTAL_TRYOUT_PACKAGES} Paket CAT BKN</span>
                   <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 120+ Soal Figural</span>
-                  <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> Drill + Ranking</span>
+                  <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> Rekap Soal Salah</span>
                 </div>
                 <button
                   onClick={() => { setUpgradeTrigger('Akses Semua Paket'); setUpgradeOpen(true); }}
                   className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition whitespace-nowrap shrink-0"
                 >
                   <Crown size={14} weight="fill" className="text-amber-500" />
-                  <span className="hidden sm:inline">Upgrade PRO — mulai Rp 5.000</span>
-                  <span className="sm:hidden">PRO mulai Rp 5.000</span>
+                  <span className="hidden sm:inline">Upgrade PRO — Rp 59.000</span>
+                  <span className="sm:hidden">PRO Rp 59.000</span>
                 </button>
               </div>
             )}

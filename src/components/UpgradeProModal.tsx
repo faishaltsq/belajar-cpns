@@ -327,7 +327,7 @@ export function UpgradeProModal({
                       PRO All-Access
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp 150.000
+                      Rp 59.000
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       {TRYOUT_STANDARD_RANGE}
@@ -349,19 +349,19 @@ export function UpgradeProModal({
                 <>
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
-                    Buka seluruh {TOTAL_TRYOUT_PACKAGES} paket tryout (standar CAT BKN + Figural)
+                    Buka seluruh {TOTAL_TRYOUT_PACKAGES} paket tryout, termasuk soal figural bergambar
                   </div>
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
-                    120+ soal figural bergambar resmi & rotasi matriks
+                    Rekap otomatis semua soal yang pernah kamu salah, dikelompokkan per subkategori
                   </div>
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
-                    Bank Soal 300+ & fitur drill subkategori lengkap
+                    Riwayat tryout tersimpan selamanya, tidak pernah dihapus
                   </div>
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
-                    Akses aktif selamanya sampai kamu lulus CPNS 🎯
+                    Akses aktif selamanya sampai kamu lulus CPNS
                   </div>
                 </>
               ) : (
@@ -372,11 +372,7 @@ export function UpgradeProModal({
                   </div>
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
-                    110 Soal standar CAT BKN lengkap dengan pembahasan resmi
-                  </div>
-                  <div className="flex items-center gap-2 text-[var(--foreground)]">
-                    <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
-                    Analitik skor dan leaderboard nasional
+                    Soal standar CAT BKN lengkap dengan pembahasan resmi
                   </div>
                 </>
               )}

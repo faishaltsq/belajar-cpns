@@ -131,7 +131,19 @@ const jsonLd = {
         },
         {
           '@type': 'Offer',
-          price: '150000',
+          price: '5000',
+          priceCurrency: 'IDR',
+          category: 'Single Package',
+        },
+        {
+          '@type': 'Offer',
+          price: '18000',
+          priceCurrency: 'IDR',
+          category: 'Bundle 5 Packages',
+        },
+        {
+          '@type': 'Offer',
+          price: '59000',
           priceCurrency: 'IDR',
           category: 'PRO All-Access',
         },
