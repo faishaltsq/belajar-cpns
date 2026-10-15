@@ -5,7 +5,7 @@ import { DRILL_TOPICS } from '@/lib/drillHelper';
 const BASE_URL = 'https://lolosin.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString();
+  const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: now, changeFrequency: 'daily', priority: 1.0 },
