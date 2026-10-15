@@ -681,7 +681,7 @@ describe('groupByCategory', () => {
 
   it('returns all three keys even when empty', () => {
     const grouped = groupByCategory([]);
-    expect(Object.keys(grouped).sort()).toEqual(['TKP', 'TIU', 'TWK']);
+    expect(Object.keys(grouped).sort()).toEqual(['TIU', 'TKP', 'TWK']);
   });
 });
 ```
