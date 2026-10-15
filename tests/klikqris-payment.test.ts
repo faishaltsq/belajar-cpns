@@ -7,6 +7,7 @@ vi.mock('@/lib/db', () => ({
 }));
 
 import { POST as klikQrisWebhook } from '@/app/api/webhooks/klikqris/route';
+import { GET as getOrderStatus } from '@/app/api/payment/order-status/route';
 
 describe('POST /api/webhooks/klikqris', () => {
   beforeEach(() => {
@@ -162,5 +163,58 @@ describe('POST /api/webhooks/klikqris', () => {
     expect(res.status).toBe(403);
     const json = await res.json();
     expect(json.error).toContain('signature');
+  });
+});
+
+describe('GET /api/payment/order-status', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('rejects request missing both orderId and exactAmount with 400', async () => {
+    const req = new NextRequest('http://localhost:3000/api/payment/order-status');
+    const res = await getOrderStatus(req);
+    expect(res.status).toBe(400);
+    const json = await res.json();
+    expect(json.error).toContain('required');
+  });
+
+  it('rejects invalid non-numeric orderId with 400 Bad Request', async () => {
+    const req = new NextRequest('http://localhost:3000/api/payment/order-status?orderId=nonexistent_999');
+    const res = await getOrderStatus(req);
+    expect(res.status).toBe(400);
+    const json = await res.json();
+    expect(json.error).toContain('Invalid orderId format');
+  });
+
+  it('returns 404 when valid integer orderId is not found', async () => {
+    mockSql.mockResolvedValueOnce([]);
+    const req = new NextRequest('http://localhost:3000/api/payment/order-status?orderId=99999');
+    const res = await getOrderStatus(req);
+    expect(res.status).toBe(404);
+    const json = await res.json();
+    expect(json.error).toContain('Order not found');
+  });
+
+  it('returns order status when orderId is valid and exists', async () => {
+    mockSql.mockResolvedValueOnce([
+      {
+        id: 105,
+        user_id: 'usr-123',
+        user_email: 'user@test.com',
+        package_id: null,
+        order_type: 'pro',
+        exact_amount: 50123,
+        status: 'paid',
+        paid_at: '2026-10-14T10:00:00Z',
+      },
+    ]);
+    const req = new NextRequest('http://localhost:3000/api/payment/order-status?orderId=105');
+    const res = await getOrderStatus(req);
+    expect(res.status).toBe(200);
+    const json = await res.json();
+    expect(json.paid).toBe(true);
+    expect(json.status).toBe('paid');
+    expect(json.exactAmount).toBe(50123);
   });
 });
