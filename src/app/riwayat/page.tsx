@@ -22,6 +22,7 @@ import {
 import { UpgradeProModal } from '@/components/UpgradeProModal';
 import { GuestLimitModal } from '@/components/GuestLimitModal';
 import { useUser } from '@/lib/useUser';
+import { TOTAL_TRYOUT_PACKAGES } from '@/lib/loadPackage';
 import { scopedKey } from '@/lib/userStorage';
 
 interface DraftItem {
@@ -556,7 +557,7 @@ export default function RiwayatPage() {
                               </span>
                             </div>
                             <p className="text-xs text-amber-900/80 mt-0.5">
-                              Akses tak terbatas ke seluruh 19+ paket tryout SKD CPNS dan fitur pembahasan lengkap.
+                              Akses tak terbatas ke seluruh {TOTAL_TRYOUT_PACKAGES} paket tryout SKD CPNS dan fitur pembahasan lengkap.
                             </p>
                             {proActivatedAt && (
                               <p className="text-[10px] text-amber-800/70 mt-1">
@@ -566,12 +567,20 @@ export default function RiwayatPage() {
                           </div>
                         </div>
 
-                        <Link
-                          href="/simulasi"
-                          className="btn-primary text-xs py-1.5 px-3 shrink-0 shadow-sm flex items-center gap-1"
-                        >
-                          <Play size={12} weight="fill" /> Kerjakan Tryout
-                        </Link>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <Link
+                            href="/rekap"
+                            className="btn-secondary text-xs py-1.5 px-3 flex items-center gap-1"
+                          >
+                            <BookOpen size={12} weight="bold" /> Rekap Soal Salah
+                          </Link>
+                          <Link
+                            href="/simulasi"
+                            className="btn-primary text-xs py-1.5 px-3 shadow-sm flex items-center gap-1"
+                          >
+                            <Play size={12} weight="fill" /> Kerjakan Tryout
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   ) : activePackages.length > 0 ? (

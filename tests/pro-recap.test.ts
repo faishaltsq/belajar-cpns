@@ -74,3 +74,47 @@ describe('GET /api/pro/recap', () => {
     expect(res.status).toBe(403);
   });
 });
+
+// tests/pro-recap.test.ts  (append)
+describe('/rekap page', () => {
+  it('exists and is a client component that calls the recap endpoint', async () => {
+    const fs = await import('fs');
+    const path = await import('path');
+    const p = path.join(process.cwd(), 'src/app/rekap/page.tsx');
+    expect(fs.existsSync(p)).toBe(true);
+    const src = fs.readFileSync(p, 'utf8');
+    expect(src).toMatch(/'use client'/);
+    expect(src).toMatch(/\/api\/pro\/recap/);
+    // must not use lucide-react (project constraint)
+    expect(src).not.toMatch(/lucide-react/);
+  });
+
+  it('handles the 403 PRO gate with a readable state', async () => {
+    const fs = await import('fs');
+    const path = await import('path');
+    const src = fs.readFileSync(
+      path.join(process.cwd(), 'src/app/rekap/page.tsx'), 'utf8');
+    expect(src).toMatch(/403|PRO_REQUIRED/);
+  });
+});
+
+describe('/riwayat surfaces the recap to PRO users', () => {
+  const readRiwayat = async () => {
+    const fs = await import('fs');
+    const path = await import('path');
+    return fs.readFileSync(path.join(process.cwd(), 'src/app/riwayat/page.tsx'), 'utf8');
+  };
+
+  it('links PRO users to the recap from the PRO card', async () => {
+    const src = await readRiwayat();
+    expect(src).toMatch(/href="\/rekap"/);
+    expect(src).toMatch(/Soal Salah/);
+  });
+
+  it('does not publish a stale hardcoded package count', async () => {
+    const src = await readRiwayat();
+    // TRYOUT_LIST has grown to 37; a literal here already says 19+
+    expect(src).not.toMatch(/19\+ paket/);
+    expect(src).toMatch(/\{TOTAL_TRYOUT_PACKAGES\}/);
+  });
+});
