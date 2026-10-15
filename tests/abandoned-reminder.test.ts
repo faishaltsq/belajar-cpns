@@ -37,6 +37,6 @@ describe('Abandoned Cart Reminder Helper', () => {
     expect(email.subject).toContain('PRO All-Access');
     expect(email.html).toContain('Rp 150.123');
     expect(email.html).toContain('#1024');
-    expect(email.html).toContain('https://belajar-cpns-saas.vercel.app/simulasi');
+    expect(email.html).toContain('https://lolosin.com/simulasi');
   });
 });

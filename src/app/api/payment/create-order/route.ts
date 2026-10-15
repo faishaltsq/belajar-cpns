@@ -169,7 +169,7 @@ export async function POST(req: NextRequest) {
 
     // 4. Hubungi API KlikQRIS untuk generate dynamic QRIS
     // Kirim baseAmount murni — KlikQRIS yang akan mengenerate totalAmount dan kode uniknya sendiri
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://belajar-cpns-saas.vercel.app';
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://lolosin.com';
     const klikQrisRes = await createKlikQrisTransaction({
       orderId: `INV-${orderId}`,
       amount: baseAmount,

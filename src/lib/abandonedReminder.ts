@@ -18,7 +18,7 @@ export function buildAbandonedReminderEmail(
   orderId: number,
   exactAmount: number,
   packageLabel: string,
-  appUrl: string = 'https://belajar-cpns-saas.vercel.app/simulasi'
+  appUrl: string = 'https://lolosin.com/simulasi'
 ): { subject: string; html: string } {
   const formattedAmount = exactAmount.toLocaleString('id-ID');
   const subject = `[Lolos.in] Selesaikan Akses ${packageLabel} Anda`;

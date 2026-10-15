@@ -15,7 +15,7 @@ export function generateShareText({
   tiu,
   tkp,
   isPassedAll,
-  siteUrl = 'https://belajar-cpns-saas.vercel.app/simulasi',
+  siteUrl = 'https://lolosin.com/simulasi',
 }: ShareTextParams): string {
   const statusEmoji = isPassedAll ? '🎉' : '💪';
   const statusText = isPassedAll ? 'LOLOS PASSING GRADE' : 'BELUM MEMENUHI PASSING GRADE';

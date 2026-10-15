@@ -53,7 +53,7 @@ export async function POST(req: Request) {
 
     const appUrl =
       process.env.NEXT_PUBLIC_APP_URL ||
-      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://belajar-cpns-saas.vercel.app');
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://lolosin.com');
     const verifyLink = `${appUrl}/api/auth/verify-link?email=${encodeURIComponent(email.toLowerCase())}&otp=${otp}`;
 
     const safeName = escapeHtml(name?.trim() || 'Peserta');
