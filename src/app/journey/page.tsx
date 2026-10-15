@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { MapPin, CheckCircle, Lock, Lightning, Cards, Desktop, ArrowRight, Fire, ArrowCounterClockwise } from '@phosphor-icons/react';
 import { JOURNEY_DAYS, JourneyDay } from '@/data/journeySchedule';
@@ -17,29 +17,12 @@ function todayStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
+import { calcStreak } from '@/lib/journeyHelper';
+
 function prevDateStr(dateStr: string): string {
   const dt = new Date(dateStr);
   dt.setDate(dt.getDate() - 1);
   return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
-}
-
-function calcStreak(dates: string[]): number {
-  if (dates.length === 0) return 0;
-  const unique = Array.from(new Set(dates)).sort().reverse();
-  const today = todayStr();
-  const yesterday = prevDateStr(today);
-  if (unique[0] !== today && unique[0] !== yesterday) return 0;
-  let streak = 0;
-  let expected = unique[0];
-  for (const d of unique) {
-    if (d === expected) {
-      streak++;
-      expected = prevDateStr(d);
-    } else {
-      break;
-    }
-  }
-  return streak;
 }
 
 const actionIcon: Record<JourneyDay['actionType'], React.ReactNode> = {

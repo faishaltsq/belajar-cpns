@@ -2413,7 +2413,7 @@
       {
         "id": "A",
         "text": "Memaksakan segala cara agar hal yang dibutuhkan tetap tercapai.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
@@ -2423,7 +2423,7 @@
       {
         "id": "C",
         "text": "Berikhtiar semaksimal mungkin untuk memperoleh hasil yang diinginkan.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -2433,7 +2433,7 @@
       {
         "id": "E",
         "text": "Menghentikan usaha apabila secara rasional penyelesaian memang mustahil tercapai.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "B",
@@ -2487,7 +2487,7 @@
       {
         "id": "A",
         "text": "Mengajak rekan tersebut bersantap bersama di kantor.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
@@ -2709,7 +2709,7 @@
       {
         "id": "A",
         "text": "Ketercapaian target individu secara otomatis akan mewujudkan pencapaian target tim.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -2724,7 +2724,7 @@
       {
         "id": "D",
         "text": "Menuntaskan target individu terlebih dahulu, baru kemudian beralih ke target tim.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
@@ -2820,17 +2820,17 @@
       {
         "id": "A",
         "text": "Langsung mencetaknya menggunakan fasilitas printer kantor.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
         "text": "Mencetak di kantor, tetapi menyediakan kertas sendiri.",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
         "text": "Mencetak di kantor setelah jam kerja resmi berakhir.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -2840,7 +2840,7 @@
       {
         "id": "E",
         "text": "Mencetak di kantor ketika printer sedang tidak dipakai orang lain.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "D",
@@ -2894,12 +2894,12 @@
       {
         "id": "A",
         "text": "Memerlukan waktu adaptasi beberapa saat untuk mengenal rekan-rekan baru.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Bersikap pasif dan menunggu rekan kerja lain berinisiatif mengajak berkenalan.",
-        "score": 3
+        "score": 1
       },
       {
         "id": "C",
@@ -2909,7 +2909,7 @@
       {
         "id": "D",
         "text": "Baru berinisiatif berkenalan saat menemui kendala dan butuh bantuan.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
@@ -2931,7 +2931,7 @@
       {
         "id": "A",
         "text": "Menyerahkan obat yang diminta secara diam-diam karena situasi dinilai aman.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
@@ -2941,7 +2941,7 @@
       {
         "id": "C",
         "text": "Meminta pertimbangan rekan kerja terlebih dahulu sebelum mengambil keputusan.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -2951,7 +2951,7 @@
       {
         "id": "E",
         "text": "Menerima uang yang disodorkan lalu melayani pembelian obat tersebut.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "D",
@@ -3042,7 +3042,7 @@
       {
         "id": "A",
         "text": "Menuntaskannya secara mandiri.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
@@ -3057,12 +3057,12 @@
       {
         "id": "D",
         "text": "Meminta bantuan dan menuntaskannya secara kolaboratif, meski sesekali menyelesaikannya sendiri.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Selalu bergantung pada pertolongan orang lain.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "C",
@@ -3079,12 +3079,12 @@
       {
         "id": "A",
         "text": "Saya merasa sungkan menolak lantaran khawatir membuat orang tersebut tersinggung.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
         "text": "Sebisa mungkin saya mengakomodasi permintaan orang lain selama masih sanggup memenuhinya.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
@@ -3094,12 +3094,12 @@
       {
         "id": "D",
         "text": "Saya jarang menerima permintaan orang lain yang dirasa kurang mendesak.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Saya senantiasa menolak permintaan bantuan apabila hal tersebut tidak begitu penting.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "C",
@@ -3136,7 +3136,7 @@
       {
         "id": "E",
         "text": "Wadah bagi anak untuk bersosialisasi dan berteman.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "B",
@@ -3153,7 +3153,7 @@
       {
         "id": "A",
         "text": "Saya selalu lebih leluasa menuntaskan pekerjaan secara mandiri.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -3168,12 +3168,12 @@
       {
         "id": "D",
         "text": "Saya lebih menikmati kolaborasi kelompok, meski tetap mandiri saat dibutuhkan.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Saya selalu lebih optimal saat bekerja dalam kelompok.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "C",
@@ -3227,12 +3227,12 @@
       {
         "id": "A",
         "text": "Ya, karena saya menganggap rekan diskusi patut dipercaya.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
         "text": "Tergantung kedekatan, saya biasanya membatasinya hanya untuk keluarga dan sahabat.",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
@@ -3242,12 +3242,12 @@
       {
         "id": "D",
         "text": "Jarang berbagi informasi karena khawatir disalahgunakan pihak lain.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Menahan opini dan informasi demi menjaga batas profesionalitas.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "C",
@@ -3338,12 +3338,12 @@
       {
         "id": "A",
         "text": "Kurang penting, hal yang terpenting adalah pencapaian target kerja.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Cukup penting, tetapi bukan merupakan prioritas utama.",
-        "score": 3
+        "score": 1
       },
       {
         "id": "C",
@@ -3412,12 +3412,12 @@
       {
         "id": "A",
         "text": "Menyelidiki pihak-pihak yang patut disalahkan atas kegagalan tersebut.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
         "text": "Mengambil jeda waktu untuk menenangkan pikiran terlebih dahulu.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
@@ -3432,7 +3432,7 @@
       {
         "id": "E",
         "text": "Mencari pertolongan dan masukan dari lebih banyak rekan kerja.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "D",
@@ -3523,17 +3523,17 @@
       {
         "id": "A",
         "text": "Lugas dan terperinci.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Garis besar dan berlandaskan fakta.",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
         "text": "Konkret dan tegas.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -3543,7 +3543,7 @@
       {
         "id": "E",
         "text": "Lugas dan berpendirian teguh.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "D",
@@ -3560,12 +3560,12 @@
       {
         "id": "A",
         "text": "Saya melimpahkan seluruh pekerjaan kepada bawahan, sementara saya berfokus pada fungsi kontrol dan pengawasan.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Saya mendelegasikan sebagian besar tugas kepada staf dan memegang sebagian sisanya sendiri.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
@@ -3575,12 +3575,12 @@
       {
         "id": "D",
         "text": "Saya hanya menyerahkan sebagian kecil tugas kepada staf.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Saya hampir tidak pernah melimpahkan tugas pekerjaan kepada staf.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "C",
@@ -3597,7 +3597,7 @@
       {
         "id": "A",
         "text": "Selalu, karena transparansi penuh adalah fondasi utama kerja tim.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
@@ -3607,7 +3607,7 @@
       {
         "id": "C",
         "text": "Menyampaikan gambaran besar secara garis besar saja.",
-        "score": 2
+        "score": 3
       },
       {
         "id": "D",
@@ -3634,17 +3634,17 @@
       {
         "id": "A",
         "text": "Ketepatan waktu adalah segalanya.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
         "text": "Tepat waktu merupakan bentuk apresiasi terhadap orang lain melalui perencanaan matang.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
         "text": "Harus mampu memaksimalkan waktu secara otomatis dan efektif.",
-        "score": 2
+        "score": 3
       },
       {
         "id": "D",
@@ -3654,7 +3654,7 @@
       {
         "id": "E",
         "text": "Tetap tenang sambil berupaya semaksimal mungkin.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "D",
@@ -3745,7 +3745,7 @@
       {
         "id": "A",
         "text": "Saya hampir tidak pernah meluangkan waktu untuk memikirkan dan merencanakan pekerjaan.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -3755,7 +3755,7 @@
       {
         "id": "C",
         "text": "Saya selalu mengagendakan evaluasi dan membuat perencanaan berkala meskipun pelaksanaannya tidak selalu rutin.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -3765,7 +3765,7 @@
       {
         "id": "E",
         "text": "Saya baru menata ulang rencana kerja saat merasa benar-benar perlu berpikir kembali.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "D",
@@ -3797,12 +3797,12 @@
       {
         "id": "D",
         "text": "Saya hampir tidak pernah membantah arahan atasan, kecuali jika situasinya benar-benar tidak memungkinkan.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Saya tetap melaksanakannya karena bagaimanapun hal tersebut merupakan instruksi langsung dari atasan.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "C",
@@ -3819,7 +3819,7 @@
       {
         "id": "A",
         "text": "Menerima tawaran tersebut mengingat ketatnya persaingan seleksi.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -3856,17 +3856,17 @@
       {
         "id": "A",
         "text": "Membaginya berdasarkan kecocokan karakter dan kepribadian masing-masing.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Membaginya murni berdasarkan minat dan kemauan mereka.",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
         "text": "Membaginya berpatokan pada keahlian teknis dan keterampilan spesifik.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -3876,7 +3876,7 @@
       {
         "id": "E",
         "text": "Membagikannya secara kaku berdasarkan hierarki posisi formal.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "D",
@@ -3930,17 +3930,17 @@
       {
         "id": "A",
         "text": "Menuntaskan tugas lembur dan langsung membatalkan janji temu tersebut.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Menolak instruksi kerja lembur demi menepati agenda pribadi.",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
         "text": "Tetap di tempat kerja tetapi mencari celah waktu untuk pergi sejenak.",
-        "score": 2
+        "score": 1
       },
       {
         "id": "D",
@@ -3967,12 +3967,12 @@
       {
         "id": "A",
         "text": "Memilih untuk mengabaikannya agar tidak membebani diri.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
         "text": "Merasa cemas jika tindakan yang diambil berakhir dengan kegagalan.",
-        "score": 3
+        "score": 1
       },
       {
         "id": "C",
@@ -3982,12 +3982,12 @@
       {
         "id": "D",
         "text": "Meminta masukan dari pihak lain lalu langsung berani mencobanya terlebih dahulu.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Menunda pengerjaan sampai situasinya menjadi lebih sederhana.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "C",

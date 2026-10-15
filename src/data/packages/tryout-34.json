@@ -2487,17 +2487,17 @@
       {
         "id": "A",
         "text": "Membelikan cinderamata sederhana dengan harga terjangkau.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
         "text": "Tetap membelikan kado bernilai tinggi walau terpaksa berutang.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
         "text": "Memutuskan untuk tidak memberikan kado lantaran ketiadaan anggaran.",
-        "score": 2
+        "score": 3
       },
       {
         "id": "D",
@@ -2507,7 +2507,7 @@
       {
         "id": "E",
         "text": "Berlagak tidak ingat akan hari ulang tahun sahabat tersebut.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "D",
@@ -2645,17 +2645,17 @@
       {
         "id": "C",
         "text": "Kurang setuju, karena kegiatan tersebut cenderung menghamburkan anggaran kantor.",
-        "score": 2
+        "score": 3
       },
       {
         "id": "D",
         "text": "Ragu, mengingat tidak semua pegawai berminat mengikuti kegiatan rekreasi bersama.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Kurang setuju, sebaiknya kegiatan tersebut dikhususkan bagi jajaran pimpinan saja.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "B",
@@ -2672,7 +2672,7 @@
       {
         "id": "A",
         "text": "Menyelenggarakan acara semeriah mungkin demi memberikan kesan mendalam bagi seluruh peserta.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
@@ -2687,12 +2687,12 @@
       {
         "id": "D",
         "text": "Menyiapkan seluruh sarana dan prasarana pendukung yang memadai.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Mempersiapkan kesiapan para atlet yang akan bertanding secara optimal.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "B",
@@ -2709,7 +2709,7 @@
       {
         "id": "A",
         "text": "Memilih untuk berhenti menjadi aparatur sipil negara.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -2724,7 +2724,7 @@
       {
         "id": "D",
         "text": "Langsung mengajukan permohonan pembatalan atau pindah tugas.",
-        "score": 1
+        "score": 3
       },
       {
         "id": "E",
@@ -2783,17 +2783,17 @@
       {
         "id": "A",
         "text": "Menyampaikan permohonan maaf serta berterus terang bahwa Anda tidak memiliki dana lebih.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Memberikan pinjaman dari sisa tabungan Anda yang pas-pasan tersebut.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
         "text": "Menolak permohonan pinjaman demi menjaga kebutuhan pribadi.",
-        "score": 2
+        "score": 1
       },
       {
         "id": "D",
@@ -2803,7 +2803,7 @@
       {
         "id": "E",
         "text": "Menyarankan rekan tersebut untuk mencari pinjaman ke pihak lain.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "D",
@@ -2820,12 +2820,12 @@
       {
         "id": "A",
         "text": "Berupaya agar tidak membebani tuan rumah.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Turut membantu kerepotan semampu Anda.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
@@ -2835,12 +2835,12 @@
       {
         "id": "D",
         "text": "Bersikap santai layaknya berada di rumah pribadi.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Merasa canggung hingga kesulitan beristirahat.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "C",
@@ -2857,17 +2857,17 @@
       {
         "id": "A",
         "text": "Asisten pribadi",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
         "text": "Sopir pribadi",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
         "text": "Sekretaris pribadi",
-        "score": 2
+        "score": 3
       },
       {
         "id": "D",
@@ -3042,17 +3042,17 @@
       {
         "id": "A",
         "text": "Merasa cemas hingga kesulitan tidur sepanjang malam.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
         "text": "Menenangkan diri malam ini agar tidak terlalu tertekan apabila gagal menang.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
         "text": "Menyerahkan sepenuhnya hasil akhir kepada takdir.",
-        "score": 2
+        "score": 3
       },
       {
         "id": "D",
@@ -3062,7 +3062,7 @@
       {
         "id": "E",
         "text": "Menuntut diri sendiri harus menang tanpa kompromi.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "D",
@@ -3168,12 +3168,12 @@
       {
         "id": "D",
         "text": "Membatasi kuota kedatangan pelamar untuk hari-hari seleksi selanjutnya.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Menghentikan agenda wawancara kerja dengan dalih semua formasi lowongan telah terisi.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "C",
@@ -3232,7 +3232,7 @@
       {
         "id": "B",
         "text": "Cenderung mengeksplorasi kegiatan-kegiatan baru.",
-        "score": 3
+        "score": 1
       },
       {
         "id": "C",
@@ -3242,12 +3242,12 @@
       {
         "id": "D",
         "text": "Menyelingi pekerjaan tersebut dengan kegiatan lain.",
-        "score": 1
+        "score": 3
       },
       {
         "id": "E",
         "text": "Mengerjakan beberapa aktivitas berbeda secara bersamaan.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "C",
@@ -3412,12 +3412,12 @@
       {
         "id": "A",
         "text": "Meminta pasangan membantu merapikan barang-barang yang diperlukan",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
         "text": "Meminta asisten mempersiapkan semua perlengkapan keberangkatan",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
@@ -3427,12 +3427,12 @@
       {
         "id": "D",
         "text": "Menyiapkan kebutuhan pribadi secara mandiri apabila waktu memungkinkan",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Membawa barang-barang seadanya tanpa persiapan berlebih",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "C",
@@ -3560,12 +3560,12 @@
       {
         "id": "A",
         "text": "Penerima tamu kehormatan.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Pengisi hiburan acara.",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
@@ -3597,12 +3597,12 @@
       {
         "id": "A",
         "text": "Membatalkan niat untuk meneruskan pendidikan ke jenjang lebih tinggi.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
         "text": "Menuntut orang tua agar tetap menanggung biaya sekolah saya.",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
@@ -3612,12 +3612,12 @@
       {
         "id": "D",
         "text": "Berikhtiar mencari program beasiswa pendidikan.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Mencari orang tua asuh yang bersedia menanggung biaya studi.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "C",
@@ -3676,7 +3676,7 @@
       {
         "id": "B",
         "text": "Menghentikan motor dan meminta izin untuk mendahului.",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
@@ -3691,7 +3691,7 @@
       {
         "id": "E",
         "text": "Menurunkan kecepatan seraya meminta izin melintas lebih dahulu.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "C",
@@ -3708,12 +3708,12 @@
       {
         "id": "A",
         "text": "Memilih diam karena menyadari keterbatasan kemampuan tim sendiri.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
         "text": "Menghindar agar tidak terlihat sebagai pendukung kubu yang diprediksi kalah.",
-        "score": 3
+        "score": 1
       },
       {
         "id": "C",
@@ -3723,12 +3723,12 @@
       {
         "id": "D",
         "text": "Memaklumi kekalahan tersebut karena sedari awal sudah diperkirakan.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Memberikan dukungan sekadar agar tidak dicap tidak loyal oleh rekan kerja.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "C",
@@ -3930,7 +3930,7 @@
       {
         "id": "A",
         "text": "Menerima keputusan atasan tanpa perlawanan.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -3940,17 +3940,17 @@
       {
         "id": "C",
         "text": "Memilih untuk mengundurkan diri dari pekerjaan.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
         "text": "Melaporkan atasan ke Komisi Nasional HAM.",
-        "score": 1
+        "score": 3
       },
       {
         "id": "E",
         "text": "Menyuarakan keberatan terhadap atasan melalui media sosial atau media massa.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "B",
@@ -3977,17 +3977,17 @@
       {
         "id": "C",
         "text": "Mengendalikan arah diskusi agar kesimpulannya sejalan dengan opini pribadi Anda.",
-        "score": 2
+        "score": 1
       },
       {
         "id": "D",
         "text": "Mendominasi pembicaraan dengan langsung memberikan solusi dan ide sepihak.",
-        "score": 1
+        "score": 3
       },
       {
         "id": "E",
         "text": "Cukup bertindak sebagai penengah pasif yang semata-mata menghitung suara mayoritas.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "B",

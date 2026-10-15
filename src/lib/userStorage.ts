@@ -4,6 +4,13 @@
  * agar data terisolasi per akun.
  */
 
+export const GUEST_TRIAL_KEYS = [
+  'lolos_guest_tried_drill',
+  'lolos_guest_tried_flashcard',
+  'lolos_guest_tried_journey',
+  'lolos_guest_tried_psikotes',
+] as const;
+
 export function scopedKey(featureKey: string, userId?: string | null): string {
   const scope = userId ? `u_${userId}` : 'guest';
   return `lolos_${scope}_${featureKey}`;
@@ -28,5 +35,26 @@ export function removeScopedKey(featureKey: string, userId: string | null | unde
   if (typeof window === 'undefined') return;
   try {
     localStorage.removeItem(scopedKey(featureKey, userId));
+  } catch {}
+}
+
+export function clearGuestTrialFlags(): void {
+  if (typeof window === 'undefined') return;
+  GUEST_TRIAL_KEYS.forEach((k) => {
+    try { localStorage.removeItem(k); } catch {}
+  });
+}
+
+export function clearAllGuestData(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    const keysToRemove: string[] = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && (key.startsWith('lolos_guest_') || (GUEST_TRIAL_KEYS as readonly string[]).includes(key))) {
+        keysToRemove.push(key);
+      }
+    }
+    keysToRemove.forEach((k) => localStorage.removeItem(k));
   } catch {}
 }

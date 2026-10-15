@@ -2,6 +2,28 @@ import { Question } from '@/lib/types';
 import { getDb } from '@/lib/db';
 
 // Helper: replace static figural image paths with DB data-URL overrides (from admin crop editor)
+export function normalizeQuestionScores(questions: Question[]): Question[] {
+  return questions.map((q) => {
+    if (q.category === 'TKP' && Array.isArray(q.options) && q.options.length === 5) {
+      const scores = q.options.map((o) => (typeof o.score === 'number' ? o.score : 0));
+      const isClean = scores.slice().sort((a, b) => a - b).join(',') === '1,2,3,4,5';
+      if (!isClean) {
+        // Deterministically rank options preserving original relative weight
+        const sortedIndices = [0, 1, 2, 3, 4].sort((i, j) => {
+          const diff = scores[i] - scores[j];
+          return diff !== 0 ? diff : i - j;
+        });
+        const newOptions = q.options.map((o) => ({ ...o }));
+        sortedIndices.forEach((origIdx, rankIdx) => {
+          newOptions[origIdx].score = rankIdx + 1; // 1 to 5
+        });
+        return { ...q, options: newOptions };
+      }
+    }
+    return q;
+  });
+}
+
 async function applyFiguralOverrides(questions: Question[]): Promise<Question[]> {
   const sql = getDb();
   if (!sql) return questions;
@@ -116,7 +138,7 @@ export async function loadPackage(id: string): Promise<Question[]> {
           }
           return row;
         });
-        return await applyFiguralOverrides(normalized as unknown as Question[]);
+        return normalizeQuestionScores(await applyFiguralOverrides(normalized as unknown as Question[]));
       }
     } catch {
       // Fallback ke file lokal jika query gagal
@@ -128,7 +150,7 @@ export async function loadPackage(id: string): Promise<Question[]> {
   if (!loader) return [];
   try {
     const questions = await loader();
-    return await applyFiguralOverrides(questions);
+    return normalizeQuestionScores(await applyFiguralOverrides(questions));
   } catch {
     return [];
   }

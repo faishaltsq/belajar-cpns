@@ -20,6 +20,8 @@ import {
   SignOut,
 } from '@phosphor-icons/react';
 
+import { stripQuestionPrefix, matchSubCategory } from '@/lib/drillHelper';
+
 export default function DrillSessionPage({
   params,
 }: {
@@ -58,36 +60,6 @@ export default function DrillSessionPage({
       }
     }
   }, [user, userLoading]);
-
-  // Strip "Soal nomor X (Kategori):" prefix — artefak dari data lama, tidak relevan di mode acak
-  function stripQuestionPrefix(text: string): string {
-    return text.replace(/^Soal\s+(?:nomor|no\.?)\s+\d+(?:\s*\([^)]*\))?\s*:\s*/i, '').trim();
-  }
-
-  function matchSubCategory(qSub: string | undefined, target: string, text?: string): boolean {
-    const t = target.toLowerCase();
-    const s = (qSub || '').toLowerCase();
-    const txt = (text || '').toLowerCase();
-    if (s === t) return true;
-    if (t === 'pancasila') return s.includes('pancasila') || txt.includes('pancasila');
-    if (t === 'uud 1945') return s.includes('uud') || s.includes('1945') || txt.includes('uud 1945');
-    if (t === 'bela negara') return s.includes('bela negara') || txt.includes('bela negara');
-    if (t === 'nasionalisme') return s.includes('nasional') || txt.includes('nasionalisme');
-    if (t === 'integritas') return s.includes('integritas') || txt.includes('integritas');
-    if (t === 'bahasa indonesia') return s.includes('bahasa') || s.includes('indonesia');
-    if (t === 'analogi') return s.includes('analogi') || txt.includes('analogi');
-    if (t === 'silogisme') return s.includes('silogisme') || txt.includes('kesimpulan');
-    if (t === 'analitis') return s.includes('analitis') || txt.includes('urutan');
-    if (t === 'deret angka') return s.includes('deret');
-    if (t === 'soal cerita') return s.includes('cerita') || s.includes('berhitung');
-    if (t === 'pelayanan publik') return s.includes('pelayanan');
-    if (t === 'profesionalisme') return s.includes('profesional');
-    if (t === 'anti-radikalisme') return s.includes('radikalisme');
-    if (t === 'jejaring kerja') return s.includes('jejaring');
-    if (t === 'tik') return s.includes('teknologi') || s.includes('tik') || s.includes('komunikasi');
-    if (t === 'sosial budaya') return s.includes('sosial') || s.includes('budaya');
-    return s.includes(t) || t.includes(s);
-  }
 
   // Load questions matching category & subcategory from sample package or DB
   useEffect(() => {

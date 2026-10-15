@@ -8,6 +8,7 @@ import {
   ChartLineUp, Trophy, Brain, SpinnerGap, User, CheckCircle
 } from '@phosphor-icons/react';
 import Logo from '@/components/Logo';
+import { clearGuestTrialFlags } from '@/lib/userStorage';
 
 function LoginFormContent() {
   const router = useRouter();
@@ -83,9 +84,7 @@ function LoginFormContent() {
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Gagal masuk.');
         // Bersihkan seluruh flag limit guest saat user resmi login
-        ['lolos_guest_tried_drill', 'lolos_guest_tried_flashcard', 'lolos_guest_tried_journey', 'lolos_guest_tried_psikotes'].forEach((k) => {
-          try { localStorage.removeItem(k); } catch {}
-        });
+        clearGuestTrialFlags();
         window.dispatchEvent(new Event('auth-change'));
         window.location.href = redirect;
       }
@@ -111,9 +110,7 @@ function LoginFormContent() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Kode OTP tidak valid.');
       // Bersihkan seluruh flag limit guest saat user resmi login
-      ['lolos_guest_tried_drill', 'lolos_guest_tried_flashcard', 'lolos_guest_tried_journey', 'lolos_guest_tried_psikotes'].forEach((k) => {
-        try { localStorage.removeItem(k); } catch {}
-      });
+      clearGuestTrialFlags();
       window.dispatchEvent(new Event('auth-change'));
       window.location.href = redirect;
     } catch (err: unknown) {

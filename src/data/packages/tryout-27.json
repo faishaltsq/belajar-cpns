@@ -2043,7 +2043,7 @@
       {
         "id": "A",
         "text": "11.990",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
@@ -2066,7 +2066,7 @@
         "score": 0
       }
     ],
-    "correctAnswer": null,
+    "correctAnswer": "A",
     "tkpScores": null,
     "explanation": "250 pon = 125 kg; 6,75 ton = 6.750 kg; 36.000 ons = 3.600 kg (asumsi 1 ons = 0,1 kg) atau 1.800 kg (ons Belanda); 15 kuintal = 1.500 kg; 1.500 dag = 15 kg. Total tergantung konversi ons.",
     "difficulty": "medium"
@@ -2423,17 +2423,17 @@
       {
         "id": "C",
         "text": "Tetap masuk bekerja seperti biasa dan melayat ke rumah duka usai jam kerja.",
-        "score": 2
+        "score": 3
       },
       {
         "id": "D",
         "text": "Menitipkan ucapan duka cita melalui tetangga yang lain.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Memilih tetap bekerja karena merasa tidak memiliki hubungan dekat dengan almarhum.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "B",
@@ -2746,7 +2746,7 @@
       {
         "id": "A",
         "text": "Menyarankan tamu tersebut untuk kembali pulang agar tidak membuang waktu menanti.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -2761,7 +2761,7 @@
       {
         "id": "D",
         "text": "Menghubungi atasan agar segera kembali ke kantor secepatnya.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
@@ -2820,7 +2820,7 @@
       {
         "id": "A",
         "text": "Faktor fundamental bagi keberlangsungan hidup.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
@@ -2830,7 +2830,7 @@
       {
         "id": "C",
         "text": "Hak istimewa khusus bagi masyarakat yang berminat menempuhnya.",
-        "score": 2
+        "score": 3
       },
       {
         "id": "D",
@@ -2857,7 +2857,7 @@
       {
         "id": "A",
         "text": "Pola perencanaan saya tersusun sistematis dan disiplin mengikuti jadwal kerja.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
@@ -2872,12 +2872,12 @@
       {
         "id": "D",
         "text": "Pola perencanaan saya berjalan rapi sekaligus tetap adaptif terhadap situasi dinamis.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Saya terbiasa bekerja mengalir tanpa memerlukan rancangan perencanaan tertulis.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "B",
@@ -2894,12 +2894,12 @@
       {
         "id": "A",
         "text": "Patuh dan loyal sepenuhnya terhadap setiap instruksi maupun arahan pimpinan.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
         "text": "Menuntaskan tugas secara optimal melalui penerapan standar mutu kerja yang tinggi.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
@@ -2909,12 +2909,12 @@
       {
         "id": "D",
         "text": "Membangun relasi positif dan harmonis dengan pimpinan beserta seluruh rekan kerja.",
-        "score": 1
+        "score": 3
       },
       {
         "id": "E",
         "text": "Bekerja secara tertib sesuai koridor regulasi yang ditetapkan pimpinan.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "C",
@@ -2931,7 +2931,7 @@
       {
         "id": "A",
         "text": "Bersikap acuh tak acuh dan tidak memedulikannya.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
@@ -2946,12 +2946,12 @@
       {
         "id": "D",
         "text": "Mengajak orang tersebut berdiskusi langsung perihal alasan ketidaksukaannya.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Mengundurkan diri dari pekerjaan akibat merasa tertekan.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "C",
@@ -2968,7 +2968,7 @@
       {
         "id": "A",
         "text": "Mendiamkan hal tersebut dan tidak mengambil tindakan apa pun.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -2983,12 +2983,12 @@
       {
         "id": "D",
         "text": "Memberitahukan kepada pembeli tunanetra tersebut bahwa ia telah dicurangi.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Melaporkan kecurangan kasir kepada pengelola atau pemilik supermarket.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "B",
@@ -3079,7 +3079,7 @@
       {
         "id": "A",
         "text": "Saya tidak pernah menganggap interupsi tersebut sebagai hambatan berarti.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
@@ -3116,7 +3116,7 @@
       {
         "id": "A",
         "text": "Menyatakan bahwa kegagalan tersebut di luar tanggung jawab saya.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
@@ -3126,7 +3126,7 @@
       {
         "id": "C",
         "text": "Menuntut staf bersangkutan untuk menanggung seluruh konsekuensinya.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -3136,7 +3136,7 @@
       {
         "id": "E",
         "text": "Memandang kekeliruan tersebut mutlak kesalahan personal anggota tim semata.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "D",
@@ -3163,17 +3163,17 @@
       {
         "id": "C",
         "text": "Daerah dengan panorama lingkungan yang asri.",
-        "score": 2
+        "score": 1
       },
       {
         "id": "D",
         "text": "Lingkungan tempat tinggal yang tenang dan nyaman.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Wilayah dengan tatanan birokrasi dan sosial yang tertib.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "B",
@@ -3190,12 +3190,12 @@
       {
         "id": "A",
         "text": "Pribadi yang sukar memahami pola pikir orang lain.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
         "text": "Pribadi yang memiliki prinsip jelas bertentangan dengan saya.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
@@ -3205,12 +3205,12 @@
       {
         "id": "D",
         "text": "Pribadi yang sulit diajak bekerja sama dalam tim.",
-        "score": 1
+        "score": 3
       },
       {
         "id": "E",
         "text": "Pribadi yang kapasitas kerjanya berada di bawah saya.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "C",
@@ -3227,7 +3227,7 @@
       {
         "id": "A",
         "text": "Rasa amarah",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -3237,7 +3237,7 @@
       {
         "id": "C",
         "text": "Rasa kecewa",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -3247,7 +3247,7 @@
       {
         "id": "E",
         "text": "Rasa tertekan",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "D",
@@ -3264,12 +3264,12 @@
       {
         "id": "A",
         "text": "Terus melanjutkan obrolan santai tersebut tanpa memedulikan situasi.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
         "text": "Memesan makanan kembali agar memiliki alasan yang sah untuk tetap duduk di dalam restoran.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
@@ -3279,12 +3279,12 @@
       {
         "id": "D",
         "text": "Sengaja menyisakan makanan di meja agar tetap bisa duduk berlama-lama.",
-        "score": 1
+        "score": 3
       },
       {
         "id": "E",
         "text": "Berpura-pura tidak memperhatikan bahwa restoran sudah mulai merapikan meja.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "C",
@@ -3338,7 +3338,7 @@
       {
         "id": "A",
         "text": "Ikut melanggar aturan tersebut karena dinilai terlalu membatasi dan sulit dipatuhi.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -3348,7 +3348,7 @@
       {
         "id": "C",
         "text": "Tetap berkomitmen mematuhi aturan tersebut meski rekan lain banyak yang melanggar.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -3358,7 +3358,7 @@
       {
         "id": "E",
         "text": "Mengusulkan agar aturan yang sulit dijalankan tersebut sebaiknya ditinjau kembali.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "D",
@@ -3427,12 +3427,12 @@
       {
         "id": "D",
         "text": "Lingkungan dengan sifat dan karakter yang bertolak belakang dengan saya.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Saya tidak terlalu memedulikan kepribadian rekan kerja di sekitar saya.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "C",
@@ -3486,7 +3486,7 @@
       {
         "id": "A",
         "text": "Menuntaskan laporan terlebih dahulu karena atasan berpotensi memintanya secara mendadak.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -3671,7 +3671,7 @@
       {
         "id": "A",
         "text": "Berperan sebagai konseptor kreatif yang rajin memicu ide-ide segar.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
@@ -3686,12 +3686,12 @@
       {
         "id": "D",
         "text": "Berperan aktif menjembatani perbedaan demi menemukan titik temu.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Cenderung bersikap netral dan mengikuti konsensus akhir kelompok.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "B",
@@ -3745,7 +3745,7 @@
       {
         "id": "A",
         "text": "Menimpakan kesalahan kepada pihak lain.",
-        "score": 4
+        "score": 1
       },
       {
         "id": "B",
@@ -3760,12 +3760,12 @@
       {
         "id": "D",
         "text": "Memeriksa keterlibatan pihak lain yang ikut memicu masalah tersebut.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Mengharapkan bantuan orang lain guna membereskan permasalahan tersebut.",
-        "score": 4
+        "score": 3
       }
     ],
     "correctAnswer": "B",
@@ -3782,7 +3782,7 @@
       {
         "id": "A",
         "text": "Cepat memahami arahan dan penjelasan yang disampaikan.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
@@ -3792,7 +3792,7 @@
       {
         "id": "C",
         "text": "Selalu mematuhi setiap petunjuk dan saran yang Anda berikan.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -3802,7 +3802,7 @@
       {
         "id": "E",
         "text": "Bersikap biasa saja dan tidak banyak menuntut.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "D",
@@ -3829,17 +3829,17 @@
       {
         "id": "C",
         "text": "Mengeluh dan merasa kesal terhadap perubahan tersebut.",
-        "score": 2
+        "score": 3
       },
       {
         "id": "D",
         "text": "Merasa panik dan cemas menghadapi ritme baru.",
-        "score": 1
+        "score": 2
       },
       {
         "id": "E",
         "text": "Tetap memilih berpatokan pada jadwal yang lama.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "B",
@@ -3893,12 +3893,12 @@
       {
         "id": "A",
         "text": "Tetap mempercepat laju perjalanan menuju kantor seorang diri.",
-        "score": 4
+        "score": 2
       },
       {
         "id": "B",
         "text": "Mencarikan atau memanggilkan jasa ojek payung bagi rekan kerja tersebut.",
-        "score": 3
+        "score": 4
       },
       {
         "id": "C",
@@ -3908,12 +3908,12 @@
       {
         "id": "D",
         "text": "Menyampaikan permohonan maaf karena tidak dapat membagikan payung Anda kepadanya.",
-        "score": 1
+        "score": 3
       },
       {
         "id": "E",
         "text": "Memilih ikut berteduh bersamanya hingga hujan benar-benar reda.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "C",
@@ -3967,17 +3967,17 @@
       {
         "id": "A",
         "text": "Mengambil alih seluruh sisa tanggung jawab tersebut secara mandiri.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
         "text": "Melimpahkan penyelesaian tugas kepada pemimpin tim.",
-        "score": 3
+        "score": 2
       },
       {
         "id": "C",
         "text": "Mendorong rekan tersebut secara persuasif agar segera merampungkan tugas kendati hasilnya tidak optimal.",
-        "score": 2
+        "score": 4
       },
       {
         "id": "D",
@@ -3987,7 +3987,7 @@
       {
         "id": "E",
         "text": "Bersikap acuh tak acuh selama kewajiban individu saya sendiri sudah tuntas.",
-        "score": 4
+        "score": 1
       }
     ],
     "correctAnswer": "D",
@@ -4041,7 +4041,7 @@
       {
         "id": "A",
         "text": "Berhenti melaju tepat pada batas garis marka jalan.",
-        "score": 4
+        "score": 3
       },
       {
         "id": "B",
@@ -4051,17 +4051,17 @@
       {
         "id": "C",
         "text": "Mengikuti ajakan teman untuk menerobos tanpa pertimbangan panjang.",
-        "score": 2
+        "score": 1
       },
       {
         "id": "D",
         "text": "Memilih tetap berhenti meskipun teman saya memutuskan terus melaju.",
-        "score": 1
+        "score": 4
       },
       {
         "id": "E",
         "text": "Ikut melaju menyeberang persimpangan mengikuti kendaraan lainnya.",
-        "score": 4
+        "score": 2
       }
     ],
     "correctAnswer": "B",

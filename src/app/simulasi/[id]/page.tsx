@@ -30,6 +30,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
   const storageKey = scopedKey(`exam_answers_${params.id}`, userId);
   const startKey = scopedKey(`exam_start_${params.id}`, userId);
   const modeKey = scopedKey(`exam_mode_${params.id}`, userId);
+  const indexKey = scopedKey(`exam_index_${params.id}`, userId);
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loadingQuestions, setLoadingQuestions] = useState(true);
@@ -107,6 +108,14 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
       const savedFont = localStorage.getItem('cat_font_size') as 'sm' | 'base' | 'lg' | null;
       if (savedFont) setFontSize(savedFont);
 
+      const savedIndex = localStorage.getItem(indexKey);
+      if (savedIndex) {
+        const parsed = parseInt(savedIndex, 10);
+        if (!isNaN(parsed) && parsed >= 0) {
+          setCurrentIndex(parsed);
+        }
+      }
+
       const savedMode = localStorage.getItem(modeKey) as ExamType | null;
       if (savedMode) {
         setExamType(savedMode);
@@ -140,6 +149,12 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     const obj: ExamAnswer[] = Array.from(answers.values());
     localStorage.setItem(storageKey, JSON.stringify(obj));
   }, [answers, storageKey, hydrated]);
+
+  // Autosave active question index
+  useEffect(() => {
+    if (!hydrated) return;
+    localStorage.setItem(indexKey, String(currentIndex));
+  }, [currentIndex, indexKey, hydrated]);
 
   // Konfirmasi sebelum meninggalkan halaman (tutup tab / refresh / navigasi luar)
   useEffect(() => {
@@ -320,10 +335,11 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
       localStorage.removeItem(storageKey);
       localStorage.removeItem(startKey);
+      localStorage.removeItem(indexKey);
       if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       router.push(`/simulasi/hasil/${resultId}`);
     },
-    [params.id, storageKey, startKey, router, questions, examType]
+    [params.id, storageKey, startKey, indexKey, router, questions, examType]
   );
 
   const answersRef = useRef(answers);
