@@ -59,7 +59,7 @@ export default function SimulasiPage() {
   const [activeTab, setActiveTab] = useState<TryoutSection | 'all'>('all');
 
   // One definition of "free" for both the grid and bundle validation.
-  const FREE_IDS = new Set(FREE_PACKAGE_IDS);
+  const FREE_IDS = new Set<string>(FREE_PACKAGE_IDS);
 
   // Deteksi draft aktif untuk setiap paket
   useEffect(() => {

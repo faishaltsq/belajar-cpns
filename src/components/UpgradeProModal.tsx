@@ -16,6 +16,7 @@ import {
   Copy,
 } from '@phosphor-icons/react';
 import { TOTAL_TRYOUT_PACKAGES, TRYOUT_STANDARD_RANGE } from '@/lib/loadPackage';
+import { BUNDLE_SIZE } from '@/lib/pricing';
 
 interface UpgradeProModalProps {
   isOpen: boolean;
@@ -46,7 +47,7 @@ export function UpgradeProModal({
   const { user, loading: userLoading } = useUser();
   const pathname = usePathname();
 
-  const [selectedPlan, setSelectedPlan] = useState<'single' | 'pro'>('pro');
+  const [selectedPlan, setSelectedPlan] = useState<'single' | 'bundle' | 'pro'>('pro');
   const [step, setStep] = useState<'info' | 'pay' | 'success' | 'already_pro'>('info');
   const [loading, setLoading] = useState(false);
   const [orderInfo, setOrderInfo] = useState<OrderInfo | null>(null);
@@ -57,10 +58,15 @@ export function UpgradeProModal({
 
   const pollTimerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Default bundle: the standard CAT-format set (tryout-8..12). Chosen because
+  // they carry a full correct_answer on every row and read as a coherent
+  // starter set; a stale non-empty selection is kept so re-opening preserves it.
+  const [bundleIds, setBundleIds] = useState<string[]>(['tryout-8', 'tryout-9', 'tryout-10', 'tryout-11', 'tryout-12']);
+
   const targetPackageId = selectedPlan === 'single' ? packageId : undefined;
 
   // Function to create or fetch pending order with unique code
-  const fetchOrder = useCallback(async (plan: 'single' | 'pro') => {
+  const fetchOrder = useCallback(async (plan: 'single' | 'bundle' | 'pro', pkgIds?: string[]) => {
     setLoading(true);
     setErrorMessage('');
     try {
@@ -70,6 +76,7 @@ export function UpgradeProModal({
         body: JSON.stringify({
           orderType: plan,
           packageId: plan === 'single' ? packageId : null,
+          packageIds: plan === 'bundle' ? pkgIds : undefined,
           // No amount is sent: the server prices every order from its own
           // table, so the UI and the charge can never disagree.
         }),
@@ -162,9 +169,9 @@ export function UpgradeProModal({
     }
   }, [step, orderInfo?.orderId, targetPackageId]);
 
-  function handleSelectPlan(plan: 'single' | 'pro') {
+  function handleSelectPlan(plan: 'single' | 'bundle' | 'pro') {
     setSelectedPlan(plan);
-    fetchOrder(plan);
+    fetchOrder(plan, plan === 'bundle' ? bundleIds : undefined);
   }
 
 
@@ -288,7 +295,7 @@ export function UpgradeProModal({
                 <label className="text-xs font-semibold text-[var(--muted-foreground)]">
                   PILIH JENIS AKSES:
                 </label>
-                <div className="grid grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-3 gap-2.5">
                   <button
                     type="button"
                     onClick={() => handleSelectPlan('single')}
@@ -307,6 +314,30 @@ export function UpgradeProModal({
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       Buka {triggerPackage || '1 paket'}
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => handleSelectPlan('bundle')}
+                    className={`p-3 rounded-xl border text-left transition relative overflow-hidden ${
+                      selectedPlan === 'bundle'
+                        ? 'border-amber-500 bg-amber-50/60 ring-2 ring-amber-400/30'
+                        : 'border-[var(--border)] hover:bg-[var(--muted)]'
+                    }`}
+                  >
+                    <span className="absolute top-0 right-0 bg-emerald-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-bl">
+                      HEMAT 28%
+                    </span>
+                    <div className="flex items-center gap-1.5 font-bold text-xs text-emerald-700">
+                      <Package size={14} weight="duotone" />
+                      Bundle 5 Paket
+                    </div>
+                    <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
+                      Rp 18.000
+                    </div>
+                    <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
+                      Rp 3.600 per paket
                     </div>
                   </button>
 
@@ -343,7 +374,11 @@ export function UpgradeProModal({
               style={{ background: 'var(--muted)', borderColor: 'var(--border)' }}
             >
               <div className="font-semibold text-[var(--foreground)] mb-1">
-                {selectedPlan === 'pro' ? 'Keuntungan PRO All-Access:' : 'Keuntungan Paket Satuan:'}
+                {selectedPlan === 'pro'
+                  ? 'Keuntungan PRO All-Access:'
+                  : selectedPlan === 'bundle'
+                  ? 'Keuntungan Paket Bundle:'
+                  : 'Keuntungan Paket Satuan:'}
               </div>
               {selectedPlan === 'pro' ? (
                 <>
@@ -362,6 +397,25 @@ export function UpgradeProModal({
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
                     Akses aktif selamanya sampai kamu lulus CPNS
+                  </div>
+                </>
+              ) : selectedPlan === 'bundle' ? (
+                <>
+                  <div className="flex items-center gap-2 text-[var(--foreground)]">
+                    <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
+                    Buka {BUNDLE_SIZE} paket tryout CAT, aktif selamanya
+                  </div>
+                  <div className="flex items-center gap-2 text-[var(--foreground)]">
+                    <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
+                    Hemat 28% dibanding membeli satuan (Rp 25.000)
+                  </div>
+                  <div className="flex items-center gap-2 text-[var(--foreground)]">
+                    <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
+                    Soal standar CAT BKN lengkap dengan pembahasan
+                  </div>
+                  <div className="flex items-center gap-2 text-[var(--foreground)]">
+                    <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
+                    Riwayat tryout tersimpan selamanya, tidak pernah dihapus
                   </div>
                 </>
               ) : (

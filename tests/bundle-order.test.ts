@@ -107,3 +107,49 @@ describe('bundle order creation', () => {
     expect(res.status).toBe(400);
   });
 });
+
+// ---------------------------------------------------------
+// Task 3.5: three-tier bundle selection in the upgrade modal
+// ---------------------------------------------------------
+describe('bundle UI', () => {
+  const readModal = async () => {
+    const fs = await import('fs');
+    const path = await import('path');
+    return fs.readFileSync(
+      path.join(process.cwd(), 'src/components/UpgradeProModal.tsx'), 'utf8');
+  };
+
+  it('offers three tiers with the real prices', async () => {
+    const src = await readModal();
+    expect(src).toMatch(/'bundle'/);
+    expect(src).toMatch(/Rp 18\.000|18000/);
+    expect(src).toMatch(/Rp 59\.000|59000/);
+    expect(src).toMatch(/grid-cols-3/);
+  });
+
+  it('sends packageIds for the bundle tier', async () => {
+    const src = await readModal();
+    expect(src).toMatch(/packageIds/);
+    // and never an amount — the server owns the price
+    expect(src).not.toMatch(/baseAmount: plan/);
+  });
+
+  it('states the bundle saving from the numbers it actually charges', async () => {
+    const src = await readModal();
+    // 5 x 5000 = 25000 vs 18000 is 28%, not 20%
+    expect(src).toMatch(/HEMAT 28%/);
+    expect(src).not.toMatch(/HEMAT 20%/);
+    expect(src).toMatch(/Rp 3\.600 per paket|3\.600 per paket/);
+  });
+
+  it('preselects a CAT-format bundle of exactly BUNDLE_SIZE packages', async () => {
+    const src = await readModal();
+    const m = src.match(/useState<string\[\]>\(\[(.*?)\]\)/);
+    expect(m, 'default bundle literal not found').toBeTruthy();
+    const ids = m![1].split(',').map((s) => s.trim().replace(/^['"]|['"]$/g, ''));
+    expect(ids).toHaveLength(5);
+    expect(new Set(ids).size).toBe(5);
+    // tryout-3..6 ship zero correct_answer rows, so they grade wrong
+    expect(ids).not.toContain('tryout-4');
+  });
+});
