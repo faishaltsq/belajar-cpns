@@ -125,7 +125,7 @@ export async function POST(req: NextRequest) {
       if (userId) {
         existing = effectivePackageId
           ? await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image, package_ids
               FROM payment_orders
               WHERE user_id = ${userId} 
                 AND order_type = ${orderType} 
@@ -135,7 +135,7 @@ export async function POST(req: NextRequest) {
               ORDER BY created_at DESC LIMIT 1
             `
           : await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image, package_ids
               FROM payment_orders
               WHERE user_id = ${userId} 
                 AND order_type = ${orderType} 
@@ -147,7 +147,7 @@ export async function POST(req: NextRequest) {
       } else if (userEmail) {
         existing = effectivePackageId
           ? await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image, package_ids
               FROM payment_orders
               WHERE LOWER(user_email) = ${userEmail} 
                 AND order_type = ${orderType} 
@@ -157,7 +157,7 @@ export async function POST(req: NextRequest) {
               ORDER BY created_at DESC LIMIT 1
             `
           : await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image
+              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image, package_ids
               FROM payment_orders
               WHERE LOWER(user_email) = ${userEmail} 
                 AND order_type = ${orderType} 
@@ -176,6 +176,22 @@ export async function POST(req: NextRequest) {
         const hasRealQris = order.qris_image?.startsWith('data:image') || 
           (order.qris_url && !order.qris_url.includes('/sandbox/'));
         if (hasRealQris) {
+          // Pilihan bundle bisa berubah antar-klik (nominal bundle flat, QRIS tetap
+          // valid): samakan package_ids tersimpan dengan pilihan terbaru supaya
+          // webhook membuka tepat paket yang dipilih saat bayar.
+          const finalBundleIds = bundleIds;
+          if (orderType === 'bundle' && bundleIds) {
+            const stored: string[] = Array.isArray(order.package_ids) ? order.package_ids : [];
+            const same = stored.length === bundleIds.length && bundleIds.every((id) => stored.includes(id));
+            if (!same) {
+              await sql`
+                UPDATE payment_orders
+                SET package_ids = ${JSON.stringify(bundleIds)}::jsonb
+                WHERE id = ${order.id}
+              `;
+            }
+          }
+
           return NextResponse.json({
             success: true,
             orderId: order.id,
@@ -184,7 +200,7 @@ export async function POST(req: NextRequest) {
             uniqueCode: order.unique_code,
             exactAmount: order.exact_amount,
             packageId: effectivePackageId,
-            packageIds: bundleIds,
+            packageIds: finalBundleIds,
             orderType,
             userEmail,
             qrisUrl: order.qris_url || '',

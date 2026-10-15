@@ -12,11 +12,13 @@ import {
   ArrowRight,
   Spinner,
   Check,
+  CheckSquare,
+  Square,
   Package,
   Copy,
 } from '@phosphor-icons/react';
-import { TOTAL_TRYOUT_PACKAGES, TRYOUT_STANDARD_RANGE } from '@/lib/loadPackage';
-import { BUNDLE_SIZE } from '@/lib/pricing';
+import { TOTAL_TRYOUT_PACKAGES, TRYOUT_STANDARD_RANGE, TRYOUT_LIST } from '@/lib/loadPackage';
+import { BUNDLE_SIZE, FREE_PACKAGE_IDS } from '@/lib/pricing';
 
 interface UpgradeProModalProps {
   isOpen: boolean;
@@ -62,11 +64,18 @@ export function UpgradeProModal({
   // they carry a full correct_answer on every row and read as a coherent
   // starter set; a stale non-empty selection is kept so re-opening preserves it.
   const [bundleIds, setBundleIds] = useState<string[]>(['tryout-8', 'tryout-9', 'tryout-10', 'tryout-11', 'tryout-12']);
+  // Paket yang sudah terbuka untuk akun ini — tidak boleh masuk pilihan bundle.
+  const [unlockedPackages, setUnlockedPackages] = useState<string[]>([]);
 
   const targetPackageId = selectedPlan === 'single' ? packageId : undefined;
 
+  // Paket yang bisa dipilih untuk bundle: bukan paket gratis, belum dimiliki user
+  const bundleSelectable = TRYOUT_LIST.filter(
+    (p) => !(FREE_PACKAGE_IDS as readonly string[]).includes(p.id) && !unlockedPackages.includes(p.id)
+  );
+
   // Function to create or fetch pending order with unique code
-  const fetchOrder = useCallback(async (plan: 'single' | 'bundle' | 'pro', pkgIds?: string[]) => {
+  const fetchOrder = useCallback(async (plan: 'single' | 'bundle' | 'pro', pkgIds?: string[]): Promise<boolean> => {
     setLoading(true);
     setErrorMessage('');
     try {
@@ -84,14 +93,18 @@ export function UpgradeProModal({
       const data = await res.json();
       if (data.success) {
         setOrderInfo(data);
-      } else if (data.error === 'ALREADY_PRO' || data.error === 'ALREADY_UNLOCKED') {
-        setStep('already_pro');
-      } else {
-        setErrorMessage(data.error || 'Gagal menyiapkan pesanan pembayaran.');
+        return true;
       }
+      if (data.error === 'ALREADY_PRO' || data.error === 'ALREADY_UNLOCKED') {
+        setStep('already_pro');
+        return false;
+      }
+      setErrorMessage(data.error || 'Gagal menyiapkan pesanan pembayaran.');
+      return false;
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Koneksi bermasalah.';
       setErrorMessage(msg);
+      return false;
     } finally {
       setLoading(false);
     }
@@ -116,6 +129,11 @@ export function UpgradeProModal({
       .then((r) => r.json())
       .then((d) => {
         if (d.email) setUserEmail(d.email);
+        if (Array.isArray(d.unlocked_packages)) {
+          setUnlockedPackages(d.unlocked_packages);
+          // Paket yang sudah dimiliki tidak boleh tersisa di pilihan bundle
+          setBundleIds((prev) => prev.filter((id) => !d.unlocked_packages.includes(id)));
+        }
         // Guard: jika user sudah Pro, langsung tampilkan layar konfirmasi
         if (d.is_pro) {
           setStep('already_pro');
@@ -170,12 +188,48 @@ export function UpgradeProModal({
   }, [step, orderInfo?.orderId, targetPackageId]);
 
   function handleSelectPlan(plan: 'single' | 'bundle' | 'pro') {
+    setErrorMessage('');
     setSelectedPlan(plan);
-    fetchOrder(plan, plan === 'bundle' ? bundleIds : undefined);
+    if (plan === 'bundle') {
+      // Isi pilihan sampai penuh dari paket yang masih bisa dibeli, lalu mint order
+      const valid = bundleIds.filter((id) => bundleSelectable.some((p) => p.id === id));
+      const ids = valid.length === BUNDLE_SIZE
+        ? valid
+        : [
+            ...valid,
+            ...bundleSelectable.filter((p) => !valid.includes(p.id)).slice(0, BUNDLE_SIZE - valid.length).map((p) => p.id),
+          ];
+      setBundleIds(ids);
+      if (ids.length !== BUNDLE_SIZE) {
+        setErrorMessage(`Paket yang masih bisa dibeli tinggal ${ids.length}. Upgrade PRO untuk membuka semuanya.`);
+        return;
+      }
+      fetchOrder('bundle', ids);
+      return;
+    }
+    fetchOrder(plan);
   }
 
+  function toggleBundleId(id: string) {
+    setErrorMessage('');
+    setBundleIds((prev) => {
+      if (prev.includes(id)) return prev.filter((x) => x !== id);
+      if (prev.length >= BUNDLE_SIZE) return prev;
+      return [...prev, id];
+    });
+  }
 
-  function handleProceedToPay() {
+  async function handleProceedToPay() {
+    // Pilihan bundle bisa berubah setelah QR dibuat — mint ulang supaya server
+    // menyimpan daftar paket terbaru pada order yang sama (nominal bundle flat).
+    if (selectedPlan === 'bundle') {
+      if (bundleIds.length !== BUNDLE_SIZE) {
+        setErrorMessage(`Pilih tepat ${BUNDLE_SIZE} paket dulu.`);
+        return;
+      }
+      const ok = await fetchOrder('bundle', bundleIds);
+      if (!ok) return;
+    }
     setStep('pay');
   }
 
@@ -368,6 +422,70 @@ export function UpgradeProModal({
               </div>
             )}
 
+            {/* Picker Bundle: user pilih sendiri 5 paketnya */}
+            {selectedPlan === 'bundle' && (
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <label className="text-xs font-semibold text-[var(--muted-foreground)]">
+                    PILIH {BUNDLE_SIZE} PAKET:
+                  </label>
+                  <span
+                    className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
+                      bundleIds.length === BUNDLE_SIZE
+                        ? 'bg-emerald-100 text-emerald-700'
+                        : 'bg-amber-100 text-amber-700'
+                    }`}
+                  >
+                    {bundleIds.length}/{BUNDLE_SIZE} terpilih
+                  </span>
+                </div>
+                <div className="max-h-56 overflow-y-auto rounded-xl border border-[var(--border)] divide-y divide-[var(--border)]">
+                  {bundleSelectable.map((p) => {
+                    const picked = bundleIds.includes(p.id);
+                    return (
+                      <button
+                        key={p.id}
+                        type="button"
+                        onClick={() => toggleBundleId(p.id)}
+                        className={`w-full flex items-start gap-2.5 p-2.5 text-left transition ${
+                          picked ? 'bg-amber-50/70' : 'hover:bg-[var(--muted)]'
+                        }`}
+                      >
+                        {picked ? (
+                          <CheckSquare size={17} weight="fill" className="text-amber-600 shrink-0 mt-0.5" />
+                        ) : (
+                          <Square size={17} weight="regular" className="text-gray-300 shrink-0 mt-0.5" />
+                        )}
+                        <span className="min-w-0 flex-1">
+                          <span className="flex items-center gap-1.5">
+                            <span className="text-xs font-semibold text-[var(--foreground)]">{p.label}</span>
+                            {p.badge && (
+                              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-100 text-amber-700">
+                                {p.badge}
+                              </span>
+                            )}
+                          </span>
+                          <span className="block text-[10px] text-[var(--muted-foreground)] leading-snug mt-0.5">
+                            {p.questionCount} soal
+                          </span>
+                        </span>
+                      </button>
+                    );
+                  })}
+                  {bundleSelectable.length === 0 && (
+                    <div className="p-3 text-[11px] text-[var(--muted-foreground)]">
+                      Semua paket sudah terbuka untuk akunmu.
+                    </div>
+                  )}
+                </div>
+                {bundleSelectable.length > 0 && bundleSelectable.length < BUNDLE_SIZE && (
+                  <p className="text-[10px] text-amber-700">
+                    Sisa paket yang bisa dibeli hanya {bundleSelectable.length}. Ambil PRO untuk membuka semuanya.
+                  </p>
+                )}
+              </div>
+            )}
+
             {/* Benefit Box */}
             <div
               className="p-3.5 rounded-xl border text-xs space-y-1.5"
@@ -453,7 +571,7 @@ export function UpgradeProModal({
               <button
                 type="button"
                 onClick={handleProceedToPay}
-                disabled={loading || !orderInfo}
+                disabled={loading || !orderInfo || (selectedPlan === 'bundle' && bundleIds.length !== BUNDLE_SIZE)}
                 className="btn-primary w-full py-3 flex items-center justify-center gap-2 text-sm font-bold shadow-sm disabled:opacity-60"
               >
                 {loading ? (

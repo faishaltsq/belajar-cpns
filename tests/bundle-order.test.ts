@@ -106,6 +106,49 @@ describe('bundle order creation', () => {
     const res = await createOrder(req({ orderType: 'bundle' }));
     expect(res.status).toBe(400);
   });
+
+  it('re-syncs package_ids when the selection changes on an existing pending order', async () => {
+    const NEW_SELECTION = ['tryout-4', 'tryout-5', 'tryout-6', 'tryout-7', 'tryout-9'];
+    mockSql
+      .mockResolvedValueOnce([{ is_pro: false, unlocked_packages: [] }]) // guard
+      .mockResolvedValueOnce([{                                          // existing pending order
+        id: 705, exact_amount: 18009, unique_code: 9, base_amount: 18000,
+        status: 'pending', expires_at: '2099-01-01',
+        qris_url: 'https://x/q.png', qris_image: 'data:image/png;base64,q',
+        package_ids: VALID,                                              // stale selection
+      }])
+      .mockResolvedValueOnce([]);                                        // UPDATE package_ids
+
+    const res = await createOrder(req({ orderType: 'bundle', packageIds: NEW_SELECTION }));
+    const json = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(json.orderId).toBe(705);
+    // the stale QRIS is reused (no gateway round trip, no price change)…
+    expect(mockCreateKlikQris).not.toHaveBeenCalled();
+    expect(json.baseAmount).toBe(18000);
+    // …but the stored selection follows the latest pick
+    expect(json.packageIds).toEqual(NEW_SELECTION);
+    const updateSql = mockSql.mock.calls[2][0].join('?');
+    expect(updateSql).toMatch(/UPDATE payment_orders/);
+    expect(mockSql.mock.calls[2].slice(1).flat()).toContain(JSON.stringify(NEW_SELECTION));
+  });
+
+  it('does not touch package_ids when the selection is unchanged', async () => {
+    mockSql
+      .mockResolvedValueOnce([{ is_pro: false, unlocked_packages: [] }])
+      .mockResolvedValueOnce([{
+        id: 706, exact_amount: 18009, unique_code: 9, base_amount: 18000,
+        status: 'pending', expires_at: '2099-01-01',
+        qris_url: 'https://x/q.png', qris_image: 'data:image/png;base64,q',
+        package_ids: VALID,
+      }]);
+
+    const res = await createOrder(req({ orderType: 'bundle', packageIds: VALID }));
+    expect(res.status).toBe(200);
+    // guard + existing only — no UPDATE round trip
+    expect(mockSql).toHaveBeenCalledTimes(2);
+  });
 });
 
 // ---------------------------------------------------------
@@ -151,6 +194,24 @@ describe('bundle UI', () => {
     expect(new Set(ids).size).toBe(5);
     // tryout-3..6 ship zero correct_answer rows, so they grade wrong
     expect(ids).not.toContain('tryout-4');
+  });
+
+  it('lets the buyer pick which packages the bundle contains', async () => {
+    const src = await readModal();
+    // a real picker over the catalogue, capped at BUNDLE_SIZE and never offering
+    // free/owned packages
+    expect(src).toMatch(/toggleBundleId/);
+    expect(src).toMatch(/bundleSelectable/);
+    expect(src).toMatch(/prev\.length >= BUNDLE_SIZE/);
+    expect(src).toMatch(/FREE_PACKAGE_IDS/);
+    expect(src).toMatch(/unlockedPackages/);
+    // the pay button is blocked until the selection is complete
+    expect(src).toMatch(/bundleIds\.length !== BUNDLE_SIZE/);
+  });
+
+  it('re-mints the order on pay so the stored selection is the final one', async () => {
+    const src = await readModal();
+    expect(src).toMatch(/await fetchOrder\('bundle', bundleIds\)/);
   });
 });
 
