@@ -183,3 +183,37 @@ describe('create-order ownership guard', () => {
     expect(mockCreateKlikQris.mock.calls[0][0]).not.toHaveProperty('baseAmount');
   });
 });
+
+// ---------------------------------------------------------
+// Task 0.3: the client must not send prices
+// ---------------------------------------------------------
+describe('UpgradeProModal sends no price to the server', () => {
+  const readModal = async () => {
+    const fs = await import('fs');
+    const path = await import('path');
+    return fs.readFileSync(
+      path.join(process.cwd(), 'src/components/UpgradeProModal.tsx'),
+      'utf8'
+    );
+  };
+
+  it('builds the create-order body from orderType only', async () => {
+    const src = await readModal();
+    const start = src.indexOf("body: JSON.stringify({");
+    expect(start, 'create-order request body not found').toBeGreaterThan(-1);
+    const end = src.indexOf('}),', start);
+    const bodyBlock = src.slice(start, end);
+
+    expect(bodyBlock).toContain('orderType');
+    // the posted amount is what the server used to trust — it must be gone
+    expect(bodyBlock).not.toMatch(/baseAmount/);
+    expect(bodyBlock).not.toMatch(/5000|150000/);
+  });
+
+  it('renders the pay button amount from the server response', async () => {
+    const src = await readModal();
+    // a hardcoded ladder lets the UI drift from the price table again
+    expect(src).not.toMatch(/selectedPlan === 'single' \? 5000 : 150000/);
+    expect(src).toContain('orderInfo?.baseAmount');
+  });
+});

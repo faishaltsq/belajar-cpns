@@ -70,7 +70,8 @@ export function UpgradeProModal({
         body: JSON.stringify({
           orderType: plan,
           packageId: plan === 'single' ? packageId : null,
-          baseAmount: plan === 'single' ? 5000 : 150000,
+          // No amount is sent: the server prices every order from its own
+          // table, so the UI and the charge can never disagree.
         }),
       });
       const data = await res.json();
@@ -412,7 +413,7 @@ export function UpgradeProModal({
                 ) : (
                   <>
                     <QrCode size={18} weight="bold" />
-                    Bayar Rp {(selectedPlan === 'single' ? 5000 : 150000).toLocaleString('id-ID')} via QRIS
+                    Bayar Rp {(orderInfo?.baseAmount ?? 0).toLocaleString('id-ID')} via QRIS
                     <ArrowRight size={14} weight="bold" />
                   </>
                 )}
