@@ -85,12 +85,18 @@ function HasilContent() {
 
   // Guest trigger modal
   useEffect(() => {
-    if (!user && !userLoading) {
+    if (userLoading) return;
+    if (user) {
+      setShowGuestModal(false);
       try {
-        localStorage.setItem('lolos_guest_tried_psikotes', 'true');
+        localStorage.removeItem('lolos_guest_tried_psikotes');
       } catch {}
-      setShowGuestModal(true);
+      return;
     }
+    try {
+      localStorage.setItem('lolos_guest_tried_psikotes', 'true');
+    } catch {}
+    setShowGuestModal(true);
   }, [user, userLoading]);
 
   const getRepeatHref = () => {

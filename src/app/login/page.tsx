@@ -82,6 +82,10 @@ function LoginFormContent() {
         });
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Gagal masuk.');
+        // Bersihkan seluruh flag limit guest saat user resmi login
+        ['lolos_guest_tried_drill', 'lolos_guest_tried_flashcard', 'lolos_guest_tried_journey', 'lolos_guest_tried_psikotes'].forEach((k) => {
+          try { localStorage.removeItem(k); } catch {}
+        });
         window.dispatchEvent(new Event('auth-change'));
         window.location.href = redirect;
       }
@@ -106,6 +110,10 @@ function LoginFormContent() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Kode OTP tidak valid.');
+      // Bersihkan seluruh flag limit guest saat user resmi login
+      ['lolos_guest_tried_drill', 'lolos_guest_tried_flashcard', 'lolos_guest_tried_journey', 'lolos_guest_tried_psikotes'].forEach((k) => {
+        try { localStorage.removeItem(k); } catch {}
+      });
       window.dispatchEvent(new Event('auth-change'));
       window.location.href = redirect;
     } catch (err: unknown) {

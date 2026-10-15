@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useUser } from '@/lib/useUser';
 import {
   LockKey,
   CheckCircle,
@@ -29,8 +30,10 @@ export function GuestLimitModal({
   redirectUrl,
 }: GuestLimitModalProps) {
   const pathname = usePathname();
+  const { user } = useUser();
 
-  if (!isOpen) return null;
+  // Defense-in-depth: jika user sudah terautentikasi (login), jangan pernah render modal pembatas guest
+  if (!isOpen || Boolean(user)) return null;
 
   const resolvedRedirect = redirectUrl || pathname || '/';
   const loginUrl = `/login?redirect=${encodeURIComponent(resolvedRedirect)}`;

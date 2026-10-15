@@ -72,7 +72,15 @@ export default function JourneyPage() {
 
   // Cek apakah guest sudah pernah mencoba mencatat progress roadmap
   useEffect(() => {
-    if (!user && !userLoading && typeof window !== 'undefined') {
+    if (userLoading) return;
+    if (user) {
+      setShowGuestModal(false);
+      try {
+        localStorage.removeItem('lolos_guest_tried_journey');
+      } catch {}
+      return;
+    }
+    if (typeof window !== 'undefined') {
       if (localStorage.getItem('lolos_guest_tried_journey') === 'true') {
         setShowGuestModal(true);
       }

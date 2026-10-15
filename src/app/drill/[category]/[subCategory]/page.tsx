@@ -26,7 +26,7 @@ export default function DrillSessionPage({
   params: { category: string; subCategory: string };
 }) {
   const router = useRouter();
-  const { user } = useUser();
+  const { user, loading: userLoading } = useUser();
   const userId = user?.id ?? null;
   const subCategoryDecoded = decodeURIComponent(params.subCategory);
 
@@ -44,12 +44,20 @@ export default function DrillSessionPage({
 
   // Cek apakah guest sudah pernah mencoba drill sebelumnya
   useEffect(() => {
-    if (!user && typeof window !== 'undefined') {
+    if (userLoading) return;
+    if (user) {
+      setShowGuestModal(false);
+      try {
+        localStorage.removeItem('lolos_guest_tried_drill');
+      } catch {}
+      return;
+    }
+    if (typeof window !== 'undefined') {
       if (localStorage.getItem('lolos_guest_tried_drill') === 'true') {
         setShowGuestModal(true);
       }
     }
-  }, [user]);
+  }, [user, userLoading]);
 
   // Strip "Soal nomor X (Kategori):" prefix — artefak dari data lama, tidak relevan di mode acak
   function stripQuestionPrefix(text: string): string {
