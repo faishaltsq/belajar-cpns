@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
 
     // 1. Query order — include signature for verification
     const orderRows = await sql`
-      SELECT id, user_id, user_email, package_id, order_type, exact_amount, status, signature
+      SELECT id, user_id, user_email, package_id, order_type, exact_amount, status, signature, package_ids
       FROM payment_orders
       WHERE id = ${orderId}
       LIMIT 1
@@ -81,7 +81,8 @@ export async function POST(req: NextRequest) {
         WHERE id = ${order.id}
       `;
 
-      // Update user access
+      // Update user access. Every order_type is handled explicitly so a new
+      // tier can never silently fall through to full PRO (Finding 5).
       if (order.user_id) {
         if (order.order_type === 'pro') {
           await sql`
@@ -90,19 +91,32 @@ export async function POST(req: NextRequest) {
                 pro_activated_at = NOW()
             WHERE id = ${order.user_id}
           `;
-        } else if (order.order_type === 'single' && order.package_id) {
-          const userRows = await sql`SELECT unlocked_packages FROM users WHERE id = ${order.user_id} LIMIT 1`;
-          if (userRows.length > 0) {
-            const current: string[] = Array.isArray(userRows[0].unlocked_packages) ? userRows[0].unlocked_packages : [];
-            if (!current.includes(order.package_id)) {
-              current.push(order.package_id);
-              await sql`
-                UPDATE users
-                SET unlocked_packages = ${JSON.stringify(current)}::jsonb
-                WHERE id = ${order.user_id}
-              `;
+        } else if (
+          (order.order_type === 'single' && order.package_id) ||
+          order.order_type === 'bundle'
+        ) {
+          const toUnlock: string[] = order.order_type === 'bundle'
+            ? (Array.isArray(order.package_ids) ? order.package_ids : [])
+            : [order.package_id as string];
+
+          if (toUnlock.length > 0) {
+            const userRows = await sql`SELECT unlocked_packages FROM users WHERE id = ${order.user_id} LIMIT 1`;
+            if (userRows.length > 0) {
+              const current: string[] = Array.isArray(userRows[0].unlocked_packages)
+                ? userRows[0].unlocked_packages : [];
+              const merged = [...current];
+              for (const id of toUnlock) if (!merged.includes(id)) merged.push(id);
+              if (merged.length !== current.length) {
+                await sql`
+                  UPDATE users
+                  SET unlocked_packages = ${JSON.stringify(merged)}::jsonb
+                  WHERE id = ${order.user_id}
+                `;
+              }
             }
           }
+        } else {
+          console.warn(`[KlikQRIS Webhook] Unknown order_type "${order.order_type}" for order #${orderId} — access not granted`);
         }
       }
 

@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     // 1. Ambil order yang dimaksud
     const orders = await sql`
-      SELECT id, user_id, user_email, package_id, order_type, base_amount, exact_amount, status
+      SELECT id, user_id, user_email, package_id, order_type, base_amount, exact_amount, status, package_ids
       FROM payment_orders
       WHERE id = ${orderId}
       LIMIT 1
@@ -59,22 +59,35 @@ export async function POST(req: NextRequest) {
           const u = userRows[0];
           const currentUnlocked: string[] = Array.isArray(u.unlocked_packages) ? u.unlocked_packages : [];
 
-          if (order.order_type === 'single' && order.package_id) {
-            if (!currentUnlocked.includes(order.package_id)) {
-              currentUnlocked.push(order.package_id);
-            }
-            await sql`
-              UPDATE users
-              SET unlocked_packages = ${JSON.stringify(currentUnlocked)}::jsonb
-              WHERE id = ${u.id}
-            `;
-          } else {
+          // Every order_type is handled explicitly: an unhandled value must
+          // grant nothing, never fall through to full PRO (Finding 5).
+          if (order.order_type === 'pro') {
             await sql`
               UPDATE users
               SET is_pro = TRUE,
                   pro_activated_at = NOW()
               WHERE id = ${u.id}
             `;
+          } else if (
+            (order.order_type === 'single' && order.package_id) ||
+            order.order_type === 'bundle'
+          ) {
+            const toUnlock: string[] = order.order_type === 'bundle'
+              ? (Array.isArray(order.package_ids) ? order.package_ids : [])
+              : [order.package_id as string];
+
+            if (toUnlock.length > 0) {
+              for (const id of toUnlock) {
+                if (!currentUnlocked.includes(id)) currentUnlocked.push(id);
+              }
+              await sql`
+                UPDATE users
+                SET unlocked_packages = ${JSON.stringify(currentUnlocked)}::jsonb
+                WHERE id = ${u.id}
+              `;
+            }
+          } else {
+            console.warn(`[payment/sync] Unknown order_type "${order.order_type}" — access not granted`);
           }
         }
       }
