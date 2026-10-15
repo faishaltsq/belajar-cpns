@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+    google: 'kVSkf51NifWF-5mOh50_mjq1Fq7BcA6o0pOwSwyGPCI',
   },
   openGraph: {
     title: 'Lolos.in — Simulasi CAT SKD CPNS 2027 & Psikotes Online',
