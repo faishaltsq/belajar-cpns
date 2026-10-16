@@ -201,6 +201,8 @@ export default function UlangSalahPage() {
               <img
                 src={q.image}
                 alt="soal"
+                loading="lazy"
+                decoding="async"
                 className="mb-4 max-h-48 object-contain rounded-lg"
                 onError={(e) => { (e.currentTarget as HTMLElement).style.display = 'none'; }}
               />

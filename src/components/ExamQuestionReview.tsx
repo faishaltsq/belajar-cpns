@@ -274,6 +274,8 @@ export function ExamQuestionReview({
                     <img
                       src={currentItem.question.image}
                       alt={`Soal #${currentItem.question.id}`}
+                      loading="lazy"
+                      decoding="async"
                       className="rounded-xl border max-h-64 mx-auto object-contain cursor-zoom-in"
                       style={{ borderColor: 'var(--border)', backgroundColor: 'var(--card)' }}
                       onClick={() => setZoomImage(currentItem.question.image || null)}
@@ -329,6 +331,8 @@ export function ExamQuestionReview({
                             <img
                               src={opt.image}
                               alt={`Opsi ${opt.id}`}
+                              loading="lazy"
+                              decoding="async"
                               className="mt-2 max-h-24 rounded border object-contain"
                               style={{ borderColor: 'var(--border)' }}
                             />

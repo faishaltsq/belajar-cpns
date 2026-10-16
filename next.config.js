@@ -46,6 +46,16 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // Content-hashed filenames: safe to cache forever at the edge + browser
+        source: '/images/questions/derived/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
     ];
   },
 };

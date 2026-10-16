@@ -183,6 +183,8 @@ export function QuestionCard({
                 <img
                   src={question.image}
                   alt={`Ilustrasi soal ${questionNumber}`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain block mx-auto"
                   style={{ maxHeight: 420 }}
                   onError={(e) => {
@@ -251,6 +253,8 @@ export function QuestionCard({
                           <img
                             src={opt.image}
                             alt={`Opsi ${opt.id}`}
+                            loading="lazy"
+                            decoding="async"
                             className="rounded-lg max-h-32 object-contain border"
                             style={{ borderColor: 'var(--border)' }}
                             onError={(e) => {

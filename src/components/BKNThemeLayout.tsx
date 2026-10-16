@@ -157,6 +157,8 @@ export function BKNThemeLayout({
               <img
                 src={q.image}
                 alt="Soal"
+                loading="lazy"
+                decoding="async"
                 style={{ maxWidth: '100%', maxHeight: 380, objectFit: 'contain', marginBottom: 16, display: 'block', margin: '0 auto 16px' }}
               />
             )}

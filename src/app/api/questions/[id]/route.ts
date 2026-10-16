@@ -8,27 +8,15 @@ export async function GET(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  const sql = getDb();
-  let debugSource = 'none';
-  if (sql) {
-    try {
-      const check = await sql`SELECT count(*)::int as c FROM questions WHERE package_id = ${params.id}`;
-      debugSource = `db_count_${check[0]?.c}`;
-    } catch (e: any) {
-      debugSource = `db_error_${e?.message?.slice(0, 30)}`;
-    }
-  } else {
-    debugSource = 'no_sql_client';
-  }
-
   const questions = await loadPackage(params.id);
 
   if (!questions.length) {
     return NextResponse.json({ error: 'Package not found' }, { status: 404 });
   }
 
-  // Fetch package settings from DB (reuse sql client already initialized above)
+  // Fetch package settings from DB
   let meta = { duration_sec: 6000, randomize_questions: false, randomize_options: false };
+  const sql = getDb();
   if (sql) {
     try {
       const rows = await sql`
@@ -46,7 +34,13 @@ export async function GET(
   }
 
   return NextResponse.json(
-    { questions, meta, _debug: { source: debugSource, q18_image: questions.find((q: any) => q.id === 18)?.image?.toString().slice(0, 60) || 'not_found' } },
-    { headers: { 'Cache-Control': 'no-store' } }
+    { questions, meta },
+    {
+      headers: {
+        // 20–120 KB of public question data per package: let the CDN absorb
+        // repeat loads for 5 minutes; browser revalidates (max-age=0).
+        'Cache-Control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=600',
+      },
+    }
   );
 }

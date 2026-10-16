@@ -349,6 +349,8 @@ export default function DrillSessionPage({
               <img
                 src={currentQ.image}
                 alt="Gambar Soal"
+                loading="lazy"
+                decoding="async"
                 className="max-h-56 mx-auto rounded border object-contain"
                 style={{ borderColor: 'var(--border)' }}
               />
