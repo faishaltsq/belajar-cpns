@@ -2,19 +2,31 @@ import bcrypt from 'bcryptjs';
 import { SignJWT, jwtVerify } from 'jose';
 import crypto from 'crypto';
 
+let warnedMissingSecret = false;
+
 function getSecret(): Uint8Array {
   const secret = process.env.JWT_SECRET;
-  if (!secret) {
-    // Jika JWT_SECRET belum diset di hosting, turunkan secret unik dari hash DATABASE_URL
-    // agar token tetap aman, tidak crash, dan tidak menggunakan default string publik
-    const dbUrl = process.env.DATABASE_URL;
-    if (dbUrl) {
-      const derived = crypto.createHash('sha256').update(dbUrl + '-lolos-in-salt-2026').digest();
-      return new Uint8Array(derived);
-    }
-    return new TextEncoder().encode('lolos-in-dev-only-secret-not-for-production-key-2026');
+  if (secret) return new TextEncoder().encode(secret);
+
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error('JWT_SECRET is not set. Refusing to sign or verify tokens in production.');
   }
-  return new TextEncoder().encode(secret);
+
+  if (!warnedMissingSecret) {
+    console.warn(
+      '[auth] JWT_SECRET is not set — using an insecure development secret. Never deploy without JWT_SECRET.'
+    );
+    warnedMissingSecret = true;
+  }
+
+  // Dev/test fallback only: derive a per-deployment secret so tokens stay
+  // invalid across environments without ever falling back to a public literal.
+  const dbUrl = process.env.DATABASE_URL;
+  if (dbUrl) {
+    const derived = crypto.createHash('sha256').update(dbUrl + '-lolos-in-salt-2026').digest();
+    return new Uint8Array(derived);
+  }
+  return new Uint8Array(crypto.createHash('sha256').update('lolos-in-local-dev-only').digest());
 }
 
 export async function hashPassword(password: string): Promise<string> {

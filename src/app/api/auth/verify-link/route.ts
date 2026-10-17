@@ -4,11 +4,33 @@ import { createToken } from '@/lib/auth';
 import { createUser, getDb } from '@/lib/db';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
+// Creates a user and sets a session cookie, so it must never be prerendered or
+// cached — a cached redirect would hand a session to the wrong visitor.
+export const dynamic = 'force-dynamic';
+
 // GET /api/auth/verify-link?email=...&otp=...
 // Dipakai dari link "Verifikasi Akun" di email OTP
 // Setelah OTP valid: buat user, set cookie JWT, redirect ke /
 export async function GET(req: NextRequest) {
   try {
+    const origin = req.nextUrl.origin;
+
+    // CSRF gate: reject cross-site navigations before any state is touched
+    // (including the rate-limit write). Absent headers are allowed so
+    // programmatic/header-less requests keep working.
+    const fetchSite = (req.headers.get('sec-fetch-site') || '').trim().toLowerCase();
+    if (fetchSite && fetchSite !== 'same-origin' && fetchSite !== 'none') {
+      return NextResponse.redirect(
+        new URL('/login?error=Permintaan+tidak+valid.+Buka+tautan+verifikasi+langsung.', origin)
+      );
+    }
+    const requestOrigin = req.headers.get('origin');
+    if (requestOrigin && requestOrigin !== origin) {
+      return NextResponse.redirect(
+        new URL('/login?error=Permintaan+tidak+valid.+Buka+tautan+verifikasi+langsung.', origin)
+      );
+    }
+
     const ip = getClientIp(req);
     const rl = await checkRateLimit(`verify-otp:${ip}`, 5, 300);
     if (!rl.success) {
@@ -19,8 +41,6 @@ export async function GET(req: NextRequest) {
 
     const email = req.nextUrl.searchParams.get('email') ?? '';
     const otp = req.nextUrl.searchParams.get('otp') ?? '';
-
-    const origin = req.nextUrl.origin;
 
     if (!email || !otp) {
       return NextResponse.redirect(new URL('/login?error=Link+verifikasi+tidak+valid.', origin));

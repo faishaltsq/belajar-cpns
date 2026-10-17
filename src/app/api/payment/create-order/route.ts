@@ -13,6 +13,16 @@ import {
 
 export async function POST(req: NextRequest) {
   try {
+    const token = cookies().get('cpns_token')?.value;
+    if (!token) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    const payload = await verifyToken(token);
+    if (!payload?.userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    const userId = payload.userId;
+
     const body = await req.json().catch(() => ({}));
     // orderType is validated, never coerced. An unknown value is rejected so a
     // caller cannot ride a typo into a higher-privilege tier.
@@ -53,40 +63,21 @@ export async function POST(req: NextRequest) {
     // not read — clients must not be able to set what they pay.
     const baseAmount = priceFor(orderType);
 
-    // Ambil identitas user dari cookie token
-    let userId: string | null = null;
-    let userEmail: string = (body.userEmail || '').trim().toLowerCase();
-
-    const token = cookies().get('cpns_token')?.value;
-    if (token) {
-      const payload = await verifyToken(token);
-      if (payload?.userId) {
-        userId = payload.userId;
-        if (!userEmail && payload.email) {
-          userEmail = payload.email.toLowerCase();
-        }
-      }
-    }
-
     const sql = getDb();
     if (!sql) {
       return NextResponse.json({ error: 'DATABASE_URL not set' }, { status: 500 });
     }
 
-    if (userId && !userEmail) {
-      const u = await sql`SELECT email FROM users WHERE id = ${userId} LIMIT 1`;
-      if (u.length > 0 && u[0].email) {
-        userEmail = u[0].email.toLowerCase();
-      }
-    }
-
-    // 0. Guard: tolak jika user sudah Pro atau sudah unlock paket ini
-    if (userId) {
+    // 0. Guard: tolak jika user sudah Pro atau sudah unlock paket ini.
+    // Email diambil dari tabel users — body.userEmail tidak pernah dipercaya.
+    let userEmail: string | null = null;
+    {
       const userRows = await sql`
-        SELECT is_pro, unlocked_packages FROM users WHERE id = ${userId} LIMIT 1
+        SELECT is_pro, unlocked_packages, email FROM users WHERE id = ${userId} LIMIT 1
       `;
       if (userRows.length > 0) {
-        const { is_pro, unlocked_packages } = userRows[0];
+        const { is_pro, unlocked_packages, email } = userRows[0];
+        userEmail = email ? String(email).toLowerCase() : null;
         const unlockedArr: string[] = Array.isArray(unlocked_packages) ? unlocked_packages : [];
 
         // Jika user sudah Pro, semua paket sudah terbuka, dilarang beli lagi
@@ -120,10 +111,9 @@ export async function POST(req: NextRequest) {
     }
 
     // 1. Cek apakah user sudah punya order pending yang aktif untuk tipe paket ini dalam masa berlaku
-    if (userId || userEmail) {
+    {
       let existing: Record<string, any>[] = [];
-      if (userId) {
-        existing = effectivePackageId
+      existing = effectivePackageId
           ? await sql`
               SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image, package_ids
               FROM payment_orders
@@ -144,29 +134,6 @@ export async function POST(req: NextRequest) {
                 AND expires_at > NOW()
               ORDER BY created_at DESC LIMIT 1
             `;
-      } else if (userEmail) {
-        existing = effectivePackageId
-          ? await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image, package_ids
-              FROM payment_orders
-              WHERE LOWER(user_email) = ${userEmail} 
-                AND order_type = ${orderType} 
-                AND package_id = ${effectivePackageId}
-                AND status = 'pending'
-                AND expires_at > NOW()
-              ORDER BY created_at DESC LIMIT 1
-            `
-          : await sql`
-              SELECT id, exact_amount, unique_code, base_amount, status, expires_at, qris_url, qris_image, package_ids
-              FROM payment_orders
-              WHERE LOWER(user_email) = ${userEmail} 
-                AND order_type = ${orderType} 
-                AND package_id IS NULL
-                AND status = 'pending'
-                AND expires_at > NOW()
-              ORDER BY created_at DESC LIMIT 1
-            `;
-      }
 
       if (existing.length > 0) {
         const order = existing[0];
@@ -220,7 +187,7 @@ export async function POST(req: NextRequest) {
         user_id, user_email, package_id, order_type,
         base_amount, unique_code, exact_amount, status, package_ids
       ) VALUES (
-        ${userId}, ${userEmail || null}, ${effectivePackageId}, ${orderType},
+        ${userId}, ${userEmail}, ${effectivePackageId}, ${orderType},
         ${baseAmount}, ${0}, ${baseAmount}, 'pending',
         ${bundleIds ? JSON.stringify(bundleIds) : null}::jsonb
       )

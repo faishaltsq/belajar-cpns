@@ -150,6 +150,10 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
     });
 
     it('ignores a client-supplied baseAmount and prices from the server table', async () => {
+      mockCookieStore.get.mockReturnValue({ value: 'valid-token' });
+      mockVerifyToken.mockResolvedValue({ userId: 'u-103', email: 'user3@test.com' });
+
+      mockSql.mockResolvedValueOnce([{ is_pro: false, unlocked_packages: [], email: 'user3@test.com' }]); // guard + email
       mockSql.mockResolvedValueOnce([]); // no existing pending order
       mockSql.mockResolvedValueOnce([{ id: 503 }]); // insert order
       mockSql.mockResolvedValueOnce([]); // update order
@@ -169,7 +173,6 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
           orderType: 'pro',
           // A hostile client posts a token price; the server must refuse it.
           baseAmount: 49000,
-          userEmail: 'guest@test.com',
         }),
       });
 
@@ -255,6 +258,10 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
     });
 
     it('rolls back database entry and returns 502 when KlikQRIS API returns error', async () => {
+      mockCookieStore.get.mockReturnValue({ value: 'valid-token' });
+      mockVerifyToken.mockResolvedValue({ userId: 'u-104', email: 'user4@test.com' });
+
+      mockSql.mockResolvedValueOnce([{ is_pro: false, unlocked_packages: [], email: 'user4@test.com' }]); // guard + email
       mockSql.mockResolvedValueOnce([]); // no existing order
       mockSql.mockResolvedValueOnce([{ id: 601 }]); // INSERT order
       mockSql.mockResolvedValueOnce([]); // DELETE on rollback
@@ -274,7 +281,6 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
         body: JSON.stringify({
           orderType: 'single',
           packageId: 'tryout-9',
-          userEmail: 'guest@test.com',
         }),
       });
 
@@ -367,8 +373,8 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
           signature: 'valid-sig-12345',
         },
       ]);
-      // 2. UPDATE payment_orders to paid
-      mockSql.mockResolvedValueOnce([]);
+      // 2. UPDATE payment_orders to paid (atomic transition returns the row)
+      mockSql.mockResolvedValueOnce([{ id: 702 }]);
       // 3. UPDATE users is_pro = true
       mockSql.mockResolvedValueOnce([]);
 
@@ -436,8 +442,8 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
           signature: 'nested-sig-704',
         },
       ]);
-      // UPDATE payment_orders to paid
-      mockSql.mockResolvedValueOnce([]);
+      // UPDATE payment_orders to paid (atomic transition returns the row)
+      mockSql.mockResolvedValueOnce([{ id: 704 }]);
       // SELECT users unlocked_packages
       mockSql.mockResolvedValueOnce([{ unlocked_packages: ['tryout-1'] }]);
       // UPDATE users unlocked_packages
@@ -470,7 +476,7 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
           user_id: 'u-705',
           order_type: 'single',
           status: 'pending',
-          signature: null,
+          signature: 'sig-705',
         },
       ]);
       // UPDATE payment_orders SET status = 'expired'
@@ -481,6 +487,7 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
         body: JSON.stringify({
           order_id: 'INV-705',
           status: 'EXPIRED',
+          signature: 'sig-705',
         }),
       });
 
@@ -626,6 +633,21 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
   // 4. Order Status Input Sanitization (/api/payment/order-status)
   // =========================================================================
   describe('4. Order Status Input Sanitization (GET /api/payment/order-status)', () => {
+    beforeEach(() => {
+      // Order status now requires an authenticated session; input-validation
+      // assertions below run as a signed-in caller.
+      mockCookieStore.get.mockReturnValue({ value: 'valid-token' });
+      mockVerifyToken.mockResolvedValue({ userId: 'u-901', email: 'u901@test.com' });
+    });
+
+    it('returns 401 without a session cookie', async () => {
+      mockCookieStore.get.mockReturnValue(null);
+      const req = new NextRequest('http://localhost:3000/api/payment/order-status?orderId=901');
+      const res = await getOrderStatusHandler(req);
+      expect(res.status).toBe(401);
+      expect(mockSql).not.toHaveBeenCalled();
+    });
+
     it('returns 400 when neither orderId nor exactAmount is supplied', async () => {
       const req = new NextRequest('http://localhost:3000/api/payment/order-status');
       const res = await getOrderStatusHandler(req);
@@ -727,6 +749,7 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
     });
 
     it('resolves latest order when queried via exactAmount', async () => {
+      mockVerifyToken.mockResolvedValue({ userId: 'u-902', email: 'u902@test.com' });
       mockSql.mockResolvedValueOnce([
         {
           id: 902,

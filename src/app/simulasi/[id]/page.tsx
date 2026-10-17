@@ -280,7 +280,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
 
   // Submit Exam
   const submitExam = useCallback(
-    (answersMap: Map<number, ExamAnswer>) => {
+    async (answersMap: Map<number, ExamAnswer>) => {
       if (submittingRef.current) return;
       submittingRef.current = true;
 
@@ -290,8 +290,38 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
         EXAM_DURATION
       );
       const answerArr = Array.from(answersMap.values());
-      const result = calculateExamScore(questions, answerArr, durationSeconds);
+      const answerRecord = Object.fromEntries(
+        answerArr.map((a) => [a.questionId, a.selectedOptionId])
+      );
       const resultId = `${params.id}-${Date.now()}`;
+
+      // The questions payload no longer carries option scores, so the server is
+      // the only thing that can score a submission. POST first and use the
+      // returned result as the number of record; the local computation is only
+      // a fallback for the offline/failed case (audit F2).
+      let result = calculateExamScore(questions, answerArr, durationSeconds);
+      let serverResultId: string | null = null;
+      let scoreSnapshot: { questionId: number; score: number; maxScore: number }[] = [];
+
+      if (EXAM_MODES[examType].publishToLeaderboard) {
+        try {
+          const res = await fetch('/api/results', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              packageId: params.id,
+              answers: answerRecord,
+              durationUsed: durationSeconds,
+            }),
+          });
+          if (res.ok) {
+            const data = await res.json();
+            if (data?.result) result = data.result;
+            if (typeof data?.id === 'string' && data.id) serverResultId = data.id;
+            if (Array.isArray(data?.questionScores)) scoreSnapshot = data.questionScores;
+          }
+        } catch {}
+      }
 
       // Hitung durasi per soal dari events
       const timeMap = calculateTimePerQuestion(timeEventsRef.current, Date.now());
@@ -301,36 +331,31 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
       });
 
       // Simpan data: user login pakai localStorage (permanen), guest pakai sessionStorage (temporary)
+      // The score snapshot is what the wrong-answer collector reads, since the
+      // stored questions no longer carry per-option scores (audit F3).
+      const scoreMap: Record<string, { score: number; maxScore: number }> = {};
+      for (const s of scoreSnapshot) scoreMap[String(s.questionId)] = { score: s.score, maxScore: s.maxScore };
+
       if (userId) {
         localStorage.setItem(scopedKey(`exam_result_${resultId}`, userId), JSON.stringify(result));
         localStorage.setItem(scopedKey(`exam_questions_${resultId}`, userId), JSON.stringify(questions));
         localStorage.setItem(scopedKey(`exam_user_answers_${resultId}`, userId), JSON.stringify(answerArr));
         localStorage.setItem(scopedKey(`exam_time_per_q_${resultId}`, userId), JSON.stringify(timePerQuestionRecord));
+        localStorage.setItem(scopedKey(`exam_scores_${resultId}`, userId), JSON.stringify(scoreMap));
+        if (serverResultId) {
+          localStorage.setItem(scopedKey(`exam_server_id_${resultId}`, userId), serverResultId);
+        }
       } else {
         try {
           sessionStorage.setItem(`guest_exam_result_${resultId}`, JSON.stringify(result));
           sessionStorage.setItem(`guest_exam_questions_${resultId}`, JSON.stringify(questions));
           sessionStorage.setItem(`guest_exam_user_answers_${resultId}`, JSON.stringify(answerArr));
           sessionStorage.setItem(`guest_exam_time_per_q_${resultId}`, JSON.stringify(timePerQuestionRecord));
+          sessionStorage.setItem(`guest_exam_scores_${resultId}`, JSON.stringify(scoreMap));
+          if (serverResultId) {
+            sessionStorage.setItem(`guest_exam_server_id_${resultId}`, serverResultId);
+          }
         } catch {}
-      }
-
-      // Kirim ke leaderboard jika official mode
-      if (EXAM_MODES[examType].publishToLeaderboard) {
-        fetch('/api/results', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            packageId: params.id,
-            answers: Object.fromEntries(answerArr.map((a) => [a.questionId, a.selectedOptionId])),
-            scoreTwk: result.twk.score,
-            scoreTiu: result.tiu.score,
-            scoreTkp: result.tkp.score,
-            totalScore: result.totalScore,
-            isPassed: result.isPassedAll,
-            durationUsed: durationSeconds,
-          }),
-        }).catch(() => {});
       }
 
       localStorage.removeItem(storageKey);
@@ -339,7 +364,7 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
       if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       router.push(`/simulasi/hasil/${resultId}`);
     },
-    [params.id, storageKey, startKey, indexKey, router, questions, examType]
+    [params.id, storageKey, startKey, indexKey, router, questions, examType, userId]
   );
 
   const answersRef = useRef(answers);

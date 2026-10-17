@@ -6,6 +6,17 @@ vi.mock('@/lib/db', () => ({
   getDb: () => mockSql,
 }));
 
+// order-status now requires a session and filters by the session's user_id
+// (audit F4), so these tests authenticate as a fixed user.
+vi.mock('next/headers', () => ({
+  cookies: () => ({ get: (name: string) => (name === 'cpns_token' ? { value: 'test-token' } : undefined) }),
+}));
+
+vi.mock('@/lib/auth', () => ({
+  verifyToken: vi.fn(async () => ({ userId: 'usr-123' })),
+  hashPassword: vi.fn(),
+}));
+
 import { POST as klikQrisWebhook } from '@/app/api/webhooks/klikqris/route';
 import { GET as getOrderStatus } from '@/app/api/payment/order-status/route';
 
@@ -46,12 +57,13 @@ describe('POST /api/webhooks/klikqris', () => {
         order_type: 'pro',
         exact_amount: 50012,
         status: 'paid',
+        signature: 'sig-101',
       },
     ]);
 
     const req = new NextRequest('http://localhost:3000/api/webhooks/klikqris', {
       method: 'POST',
-      body: JSON.stringify({ order_id: 'INV-101', status: 'PAID' }),
+      body: JSON.stringify({ order_id: 'INV-101', status: 'PAID', signature: 'sig-101' }),
     });
     const res = await klikQrisWebhook(req);
     expect(res.status).toBe(200);
@@ -72,10 +84,11 @@ describe('POST /api/webhooks/klikqris', () => {
         order_type: 'pro',
         exact_amount: 50012,
         status: 'pending',
+        signature: 'sig-abc',
       },
     ]);
-    // 2. UPDATE payment_orders to paid
-    mockSql.mockResolvedValueOnce([]);
+    // 2. UPDATE payment_orders to paid (atomic transition returns the row)
+    mockSql.mockResolvedValueOnce([{ id: 102 }]);
     // 3. UPDATE users is_pro = true
     mockSql.mockResolvedValueOnce([]);
 
@@ -106,10 +119,11 @@ describe('POST /api/webhooks/klikqris', () => {
         order_type: 'single',
         exact_amount: 15012,
         status: 'pending',
+        signature: 'sig-nested',
       },
     ]);
-    // 2. UPDATE payment_orders to paid
-    mockSql.mockResolvedValueOnce([]);
+    // 2. UPDATE payment_orders to paid (atomic transition returns the row)
+    mockSql.mockResolvedValueOnce([{ id: 103 }]);
     // 3. SELECT users unlocked_packages
     mockSql.mockResolvedValueOnce([
       { unlocked_packages: ['starter-1'] },
@@ -216,5 +230,26 @@ describe('GET /api/payment/order-status', () => {
     expect(json.paid).toBe(true);
     expect(json.status).toBe('paid');
     expect(json.exactAmount).toBe(50123);
+  });
+
+  it('does not echo the buyer identity back to the caller (audit F4)', async () => {
+    mockSql.mockResolvedValueOnce([
+      {
+        id: 105,
+        user_id: 'usr-123',
+        user_email: 'user@test.com',
+        package_id: null,
+        order_type: 'pro',
+        exact_amount: 50123,
+        status: 'paid',
+        paid_at: '2026-10-14T10:00:00Z',
+      },
+    ]);
+    const req = new NextRequest('http://localhost:3000/api/payment/order-status?orderId=105');
+    const res = await getOrderStatus(req);
+    const json = await res.json();
+    expect(json).not.toHaveProperty('user_id');
+    expect(json).not.toHaveProperty('user_email');
+    expect(JSON.stringify(json)).not.toContain('user@test.com');
   });
 });

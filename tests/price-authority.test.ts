@@ -50,9 +50,10 @@ function sqlText(): string {
 
 beforeEach(() => {
   vi.resetAllMocks();
-  mockCookieStore.get.mockReturnValue(undefined);
-  mockVerifyToken.mockResolvedValue(null);
-  // INSERT ... RETURNING id, then the post-gateway UPDATE
+  // create-order now requires a session (audit F4); pricing tests run signed in.
+  mockCookieStore.get.mockReturnValue({ value: 'tok' });
+  mockVerifyToken.mockResolvedValue({ userId: 'u-price', email: 'price@test.com' });
+  // guard, dedupe, INSERT ... RETURNING id, then the post-gateway UPDATE
   mockSql.mockResolvedValue([{ id: 901 }]);
 });
 
@@ -89,7 +90,11 @@ describe('create-order price authority', () => {
     await createOrder(makeRequest({ orderType: 'pro', baseAmount: 1 }));
 
     // The INSERT parameters carry 59000, never the posted 1
-    const insertParams = mockSql.mock.calls[0].slice(1).flat();
+    const insertCall = mockSql.mock.calls.find((c) =>
+      Array.isArray(c[0]) && String(c[0].join('?')).includes('INSERT INTO payment_orders')
+    );
+    expect(insertCall, 'INSERT INTO payment_orders not found').toBeDefined();
+    const insertParams = insertCall!.slice(1).flat();
     expect(insertParams).toContain(59000);
     expect(insertParams).not.toContain(1);
   });
@@ -128,8 +133,8 @@ describe('create-order price authority', () => {
   it('still accepts the three known order types', async () => {
     for (const orderType of ['single', 'bundle', 'pro']) {
       vi.clearAllMocks();
-      mockCookieStore.get.mockReturnValue(undefined);
-      mockVerifyToken.mockResolvedValue(null);
+      mockCookieStore.get.mockReturnValue({ value: 'tok' });
+      mockVerifyToken.mockResolvedValue({ userId: 'u-price', email: 'price@test.com' });
       mockSql.mockResolvedValue([{ id: 901 }]);
       mockCreateKlikQris.mockResolvedValueOnce(okGateway(59000));
 

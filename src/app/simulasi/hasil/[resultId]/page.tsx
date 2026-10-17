@@ -49,6 +49,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
       let rawQ: string | null = null;
       let rawA: string | null = null;
       let rawTime: string | null = null;
+      let serverId: string | null = null;
 
       if (userId) {
         // User login: baca dari localStorage
@@ -56,12 +57,14 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
         rawQ = localStorage.getItem(scopedKey(`exam_questions_${params.resultId}`, userId));
         rawA = localStorage.getItem(scopedKey(`exam_user_answers_${params.resultId}`, userId));
         rawTime = localStorage.getItem(scopedKey(`exam_time_per_q_${params.resultId}`, userId));
+        serverId = localStorage.getItem(scopedKey(`exam_server_id_${params.resultId}`, userId));
       } else {
         // Guest: baca dari sessionStorage (temporary, hilang saat tab ditutup)
         raw = sessionStorage.getItem(`guest_exam_result_${params.resultId}`);
         rawQ = sessionStorage.getItem(`guest_exam_questions_${params.resultId}`);
         rawA = sessionStorage.getItem(`guest_exam_user_answers_${params.resultId}`);
         rawTime = sessionStorage.getItem(`guest_exam_time_per_q_${params.resultId}`);
+        serverId = sessionStorage.getItem(`guest_exam_server_id_${params.resultId}`);
       }
 
       if (raw) {
@@ -73,6 +76,18 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
       if (rawQ) setQuestions(JSON.parse(rawQ));
       if (rawA) setUserAnswers(JSON.parse(rawA));
       if (rawTime) setTimeSpent(JSON.parse(rawTime));
+
+      // The pre-exam questions payload has no option scores or explanations, so
+      // the review tab needs the authoritative copy. Results written before
+      // this change have no server id and fall back to the local snapshot.
+      if (serverId) {
+        fetch(`/api/results/${serverId}/review`)
+          .then((r) => (r.ok ? r.json() : null))
+          .then((data) => {
+            if (data?.questions?.length) setQuestions(data.questions);
+          })
+          .catch(() => {});
+      }
     } catch {
       setNotFound(true);
     }

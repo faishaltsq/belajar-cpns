@@ -36,15 +36,15 @@ describe('bundle fulfilment — webhook path', () => {
   it('appends all bundle packages and does not set is_pro', async () => {
     mockSql
       .mockResolvedValueOnce([{ id: 1, user_id: 'u-1', user_email: null, package_id: 'bundle',
-        order_type: 'bundle', exact_amount: 18000, status: 'pending', signature: null,
+        order_type: 'bundle', exact_amount: 18000, status: 'pending', signature: 'sig-bundle-1',
         package_ids: BUNDLE }])                                  // order SELECT
-      .mockResolvedValueOnce([])                                 // UPDATE payment_orders
+      .mockResolvedValueOnce([{ id: 1 }])                        // UPDATE payment_orders (atomic)
       .mockResolvedValueOnce([{ unlocked_packages: [] }])        // SELECT users
       .mockResolvedValueOnce([]);                                // UPDATE users
 
     const req = new NextRequest('http://localhost:3000/api/webhooks/klikqris', {
       method: 'POST',
-      body: JSON.stringify({ order_id: 'INV-1', status: 'PAID', total_amount: 18000 }),
+      body: JSON.stringify({ order_id: 'INV-1', status: 'PAID', total_amount: 18000, signature: 'sig-bundle-1' }),
     });
     const res = await webhook(req);
     expect(res.status).toBe(200);
@@ -60,7 +60,7 @@ describe('bundle fulfilment — manual sync path', () => {
       .mockResolvedValueOnce([{ id: 1, user_id: 'u-1', user_email: null, package_id: 'bundle',
         order_type: 'bundle', base_amount: 18000, exact_amount: 18000, status: 'pending',
         package_ids: BUNDLE }])                                  // order SELECT
-      .mockResolvedValueOnce([])                                 // UPDATE payment_orders
+      .mockResolvedValueOnce([{ id: 1 }])                        // UPDATE payment_orders (atomic)
       .mockResolvedValueOnce([{ id: 'u-1', email: 'a@b.c', is_pro: false, unlocked_packages: [] }])
       .mockResolvedValueOnce([]);                                // UPDATE users
     mockCheckKlikQris.mockResolvedValue({ success: true, status: 'PAID' });
@@ -79,7 +79,7 @@ describe('bundle fulfilment — manual sync path', () => {
     mockSql
       .mockResolvedValueOnce([{ id: 2, user_id: 'u-1', user_email: null, package_id: null,
         order_type: 'pro', base_amount: 59000, exact_amount: 59000, status: 'pending' }])
-      .mockResolvedValueOnce([])
+      .mockResolvedValueOnce([{ id: 2 }])                        // UPDATE payment_orders (atomic)
       .mockResolvedValueOnce([{ id: 'u-1', email: 'a@b.c', is_pro: false, unlocked_packages: [] }])
       .mockResolvedValueOnce([]);
     mockCheckKlikQris.mockResolvedValue({ success: true, status: 'PAID' });

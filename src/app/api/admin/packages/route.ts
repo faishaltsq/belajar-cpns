@@ -6,6 +6,13 @@ import { getDb } from '@/lib/db';
 import { Question } from '@/lib/types';
 import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
+/** Package ids become filesystem path segments — restrict to the charset real packages use. */
+const PACKAGE_ID_PATTERN = /^[a-z0-9-]{1,64}$/;
+
+function isValidPackageId(id: unknown): id is string {
+  return typeof id === 'string' && PACKAGE_ID_PATTERN.test(id);
+}
+
 // GET /api/admin/packages — list all packages or load questions & settings of one package
 export async function GET(req: NextRequest) {
   if (!isAuthorizedAdmin(req)) {
@@ -15,6 +22,9 @@ export async function GET(req: NextRequest) {
   const pkgId = req.nextUrl.searchParams.get('id');
 
   if (pkgId) {
+    if (!isValidPackageId(pkgId)) {
+      return NextResponse.json({ error: 'Invalid package id' }, { status: 400 });
+    }
     const qs = await loadPackage(pkgId);
     let settings = { duration_sec: 6000, randomize_questions: false, randomize_options: false };
     const sql = getDb();
@@ -96,6 +106,9 @@ export async function POST(req: NextRequest) {
     if (!packageId || !question) {
       return NextResponse.json({ error: 'packageId and question required' }, { status: 400 });
     }
+    if (!isValidPackageId(packageId)) {
+      return NextResponse.json({ error: 'Invalid package id' }, { status: 400 });
+    }
 
     const qs = await loadPackage(packageId);
     const nextNumber = qs.length > 0 ? Math.max(...qs.map((q) => q.id)) + 1 : 1;
@@ -149,6 +162,9 @@ export async function PUT(req: NextRequest) {
 
     if (!packageId || !question || !question.id) {
       return NextResponse.json({ error: 'packageId and valid question required' }, { status: 400 });
+    }
+    if (!isValidPackageId(packageId)) {
+      return NextResponse.json({ error: 'Invalid package id' }, { status: 400 });
     }
 
     const filePath =
@@ -206,6 +222,9 @@ export async function DELETE(req: NextRequest) {
   if (!pkgId) {
     return NextResponse.json({ error: 'package id required' }, { status: 400 });
   }
+  if (!isValidPackageId(pkgId)) {
+    return NextResponse.json({ error: 'Invalid package id' }, { status: 400 });
+  }
 
   const sql = getDb();
 
@@ -256,6 +275,9 @@ export async function PATCH(req: NextRequest) {
 
     if (!packageId) {
       return NextResponse.json({ error: 'packageId required' }, { status: 400 });
+    }
+    if (!isValidPackageId(packageId)) {
+      return NextResponse.json({ error: 'Invalid package id' }, { status: 400 });
     }
 
     const durationSec = durationMinutes ? durationMinutes * 60 : undefined;

@@ -1,10 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/lib/db';
 import { sendOtpEmail } from '@/lib/mailer';
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
+import { escapeHtml } from '@/lib/sanitize';
 import { SUPPORT_EMAIL } from '@/lib/support';
+
+const ALLOWED_IMAGE_TYPES: Record<string, true> = {
+  'image/png': true,
+  'image/jpeg': true,
+  'image/gif': true,
+  'image/webp': true,
+};
+const ATTACHMENT_FILENAME_RE = /^[A-Za-z0-9._-]{1,80}$/;
 
 export async function POST(req: NextRequest) {
   try {
+    const ip = getClientIp(req);
+    const rl = await checkRateLimit(`support-report:${ip}`, 5, 300);
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: `Terlalu banyak laporan terkirim. Coba lagi dalam ${rl.retryAfterSeconds} detik.` },
+        { status: 429, headers: { 'Retry-After': String(rl.retryAfterSeconds) } }
+      );
+    }
+
     const body = await req.json();
     const { category, description, userEmail, pageUrl, deviceInfo, imageBase64, imageName } = body;
 
@@ -19,6 +38,30 @@ export async function POST(req: NextRequest) {
     if (imageBase64 && typeof imageBase64 === 'string' && imageBase64.length > 3_000_000) {
       return NextResponse.json(
         { error: 'Ukuran gambar terlalu besar. Maks 2MB.' },
+        { status: 400 }
+      );
+    }
+
+    const hasImage = imageBase64 && typeof imageBase64 === 'string' && imageBase64.length > 0;
+
+    // Strip data URI prefix if present (e.g. "data:image/png;base64,...")
+    const rawBase64 = hasImage ? imageBase64.replace(/^data:[^;]+;base64,/, '') : null;
+
+    let mimeType = 'image/png';
+    if (hasImage && imageBase64.startsWith('data:')) {
+      const declared = imageBase64.slice(5).split(';')[0].trim().toLowerCase();
+      if (ALLOWED_IMAGE_TYPES[declared] !== true) {
+        return NextResponse.json(
+          { error: 'Format gambar tidak didukung. Gunakan PNG, JPEG, GIF, atau WebP.' },
+          { status: 400 }
+        );
+      }
+      mimeType = declared;
+    }
+
+    if (imageName != null && imageName !== '' && (typeof imageName !== 'string' || !ATTACHMENT_FILENAME_RE.test(imageName))) {
+      return NextResponse.json(
+        { error: 'Nama file lampiran tidak valid.' },
         { status: 400 }
       );
     }
@@ -49,13 +92,13 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. Kirim notifikasi email ke halo.lolosin.support@gmail.com jika SMTP/Resend aktif
-    const hasImage = imageBase64 && typeof imageBase64 === 'string' && imageBase64.length > 0;
-    // Strip data URI prefix if present (e.g. "data:image/png;base64,...")
-    const rawBase64 = hasImage ? imageBase64.replace(/^data:[^;]+;base64,/, '') : null;
-    const mimeType = hasImage && imageBase64.startsWith('data:')
-      ? imageBase64.split(';')[0].replace('data:', '')
-      : 'image/png';
     const attachFilename = imageName || `screenshot-${Date.now()}.png`;
+
+    const safeCategory = escapeHtml(cleanCategory);
+    const safeEmail = escapeHtml(cleanEmail || 'Tidak disertakan');
+    const safeUrl = escapeHtml(cleanUrl);
+    const safeAgent = escapeHtml(userAgent);
+    const safeDesc = escapeHtml(cleanDesc).replace(/\n/g, '<br/>');
 
     const imageHtml = hasImage
       ? `<hr style="border:none;border-top:1px solid #e2e8f0;margin:16px 0;"/>
@@ -70,14 +113,14 @@ export async function POST(req: NextRequest) {
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
             <h2 style="color: #c96442; margin-top: 0;">Laporan Kendala Baru (#${reportId || 'N/A'})</h2>
-            <p><strong>Kategori:</strong> ${cleanCategory}</p>
-            <p><strong>Email Pelapor:</strong> ${cleanEmail || 'Tidak disertakan'}</p>
-            <p><strong>Halaman:</strong> <a href="${cleanUrl}">${cleanUrl}</a></p>
-            <p><strong>Perangkat / Browser:</strong> <code>${userAgent}</code></p>
+            <p><strong>Kategori:</strong> ${safeCategory}</p>
+            <p><strong>Email Pelapor:</strong> ${safeEmail}</p>
+            <p><strong>Halaman:</strong> <a href="${safeUrl}">${safeUrl}</a></p>
+            <p><strong>Perangkat / Browser:</strong> <code>${safeAgent}</code></p>
             <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 16px 0;" />
             <h3>Deskripsi Masalah:</h3>
             <blockquote style="background: #f8fafc; padding: 12px; border-left: 4px solid #c96442; margin: 0;">
-              ${cleanDesc.replace(/\n/g, '<br/>')}
+              ${safeDesc}
             </blockquote>
             ${imageHtml}
           </div>

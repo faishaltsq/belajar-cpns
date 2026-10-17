@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { loadPackage } from '@/lib/loadPackage';
 import { getDb } from '@/lib/db';
+import { toPublicQuestions } from '@/lib/questionPayload';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,7 +35,11 @@ export async function GET(
   }
 
   return NextResponse.json(
-    { questions, meta },
+    // Scores, the correct answer, and the explanation are stripped: this
+    // endpoint is unauthenticated and CDN-cached, so anything in the body is
+    // public. The key is served by /api/results/[id]/review to the owner of a
+    // submitted result, and one question at a time by /api/drill/check.
+    { questions: toPublicQuestions(questions), meta },
     {
       headers: {
         // 20–120 KB of public question data per package: let the CDN absorb

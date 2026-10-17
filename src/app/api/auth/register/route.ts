@@ -34,31 +34,61 @@ export async function POST(req: Request) {
     }
 
     const existing = await findUserByEmail(email);
-    if (existing) {
-      return NextResponse.json({ error: 'Email sudah terdaftar. Silakan login.' }, { status: 409 });
-    }
 
     const sql = getDb();
     if (!sql) throw new Error('Database not configured');
 
     const otp = generateOTP();
+    // Hash unconditionally so response timing does not depend on account existence.
     const passwordHash = await hashPassword(password);
-    const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
+    const isDev = process.env.NODE_ENV !== 'production';
 
-    await sql`DELETE FROM email_otps WHERE email = ${email.toLowerCase()}`;
-    await sql`
-      INSERT INTO email_otps (email, otp, temp_password_hash, temp_name, expires_at)
-      VALUES (${email.toLowerCase()}, ${otp}, ${passwordHash}, ${name?.trim() || 'Peserta CPNS'}, ${expiresAt.toISOString()})
-    `;
+    // The verify link must live on the same domain the mail claims to come from.
+    // A link pointing at *.vercel.app while the From: says lolosin.com is a
+    // classic phishing signature and pushes the mail toward spam.
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://lolosin.com';
 
-    const appUrl =
-      process.env.NEXT_PUBLIC_APP_URL ||
-      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://lolosin.com');
-    const verifyLink = `${appUrl}/api/auth/verify-link?email=${encodeURIComponent(email.toLowerCase())}&otp=${otp}`;
+    let result: { success: boolean; error?: string };
 
-    const safeName = escapeHtml(name?.trim() || 'Peserta');
+    if (existing) {
+      // Account already exists: identical response shape, notice sent by email.
+      // Never touch email_otps here — an attacker must not be able to invalidate
+      // a pending legit registration's OTP or mint one for the existing account.
+      result = await sendOtpEmail({
+        to: email,
+        subject: 'Akun Lolos.in Kamu Sudah Terdaftar',
+        html: `
+          <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:28px;background:#ffffff;border:1px solid #eee;border-radius:16px">
+            <h2 style="color:#c96442;margin-bottom:8px;font-size:24px">Lolos.in</h2>
+            <p style="color:#333;margin-bottom:16px;font-size:15px">Halo <strong>${escapeHtml(name?.trim() || 'Peserta')}</strong>,</p>
+            <p style="color:#555;margin-bottom:24px;font-size:14px;line-height:1.5">
+              Email ini sudah terdaftar di Lolos.in. Kalau kamu memang ingin masuk, silakan login seperti biasa.
+              Kalau lupa password, gunakan fitur pemulihan di halaman login.
+            </p>
+            <div style="text-align:center;margin:28px 0">
+              <a href="${appUrl}/login" style="display:inline-block;background:#c96442;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;padding:14px 32px;border-radius:10px">
+                Buka Halaman Login
+              </a>
+            </div>
+            <hr style="border:none;border-top:1px solid #eee;margin:20px 0">
+            <p style="color:#aaa;font-size:11px">Jika kamu tidak merasa mendaftar di Lolos.in, abaikan email ini.</p>
+          </div>
+        `,
+      });
+    } else {
+      const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
 
-    const html = `
+      await sql`DELETE FROM email_otps WHERE email = ${email.toLowerCase()}`;
+      await sql`
+        INSERT INTO email_otps (email, otp, temp_password_hash, temp_name, expires_at)
+        VALUES (${email.toLowerCase()}, ${otp}, ${passwordHash}, ${name?.trim() || 'Peserta CPNS'}, ${expiresAt.toISOString()})
+      `;
+
+      const verifyLink = `${appUrl}/api/auth/verify-link?email=${encodeURIComponent(email.toLowerCase())}&otp=${otp}`;
+
+      const safeName = escapeHtml(name?.trim() || 'Peserta');
+
+      const html = `
       <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:28px;background:#ffffff;border:1px solid #eee;border-radius:16px">
         <h2 style="color:#c96442;margin-bottom:8px;font-size:24px">Lolos.in</h2>
         <p style="color:#333;margin-bottom:16px;font-size:15px">Halo <strong>${safeName}</strong>,</p>
@@ -92,13 +122,12 @@ export async function POST(req: Request) {
       </div>
     `;
 
-    const result = await sendOtpEmail({
-      to: email,
-      subject: `Kode Verifikasi Lolos.in: ${otp}`,
-      html,
-    });
-
-    const isDev = process.env.NODE_ENV !== 'production';
+      result = await sendOtpEmail({
+        to: email,
+        subject: `Kode Verifikasi Lolos.in: ${otp}`,
+        html,
+      });
+    }
 
     if (!result.success) {
       console.warn('[auth/register] Email gagal terkirim:', result.error);

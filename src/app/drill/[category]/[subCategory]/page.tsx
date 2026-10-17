@@ -108,12 +108,18 @@ export default function DrillSessionPage({
       targetPackages.map((pkg) =>
         fetch(`/api/questions/${pkg}`)
           .then((r) => (r.ok ? r.json() : { questions: [] }))
-          .then((d) => d.questions || [])
-          .catch(() => [])
+          .then((d) => ({ pkg, questions: (d.questions || []) as Question[] }))
+          .catch(() => ({ pkg, questions: [] as Question[] }))
       )
     )
       .then((results) => {
-        const all: Question[] = results.flat().map((q: Question) => ({
+        // Remember which package each question came from — /api/drill/check
+        // needs the package id to look the answer key up.
+        const owner: Record<number, string> = {};
+        for (const r of results) for (const q of r.questions) owner[q.id] = r.pkg;
+        setPackageByQuestion(owner);
+
+        const all: Question[] = results.flatMap((r) => r.questions).map((q) => ({
           ...q,
           text: stripQuestionPrefix(q.text),
         }));
@@ -142,17 +148,47 @@ export default function DrillSessionPage({
 
   const currentQ = questions[currentIndex];
 
+  // The questions payload no longer carries option scores, so correctness is
+  // decided by the server, one question at a time (/api/drill/check). State is
+  // keyed by question id so revisiting a question does not re-ask.
+  const [revealByQuestion, setRevealByQuestion] = useState<
+    Record<number, { isCorrect: boolean; explanation: string; correctOptionId: string | null; userScore: number; maxScore: number }>
+  >({});
+  const [packageByQuestion, setPackageByQuestion] = useState<Record<number, string>>({});
+  const reveal = currentQ ? revealByQuestion[currentQ.id] : undefined;
+
   const handleSelect = (optId: string) => {
     if (hasRevealed || isPaused) return;
     setSelectedOption(optId);
     setHasRevealed(true);
 
-    const opt = currentQ.options.find((o) => o.id === optId);
-    const maxScore = Math.max(...currentQ.options.map((o) => o.score));
-    const isCorrect = opt ? opt.score === maxScore : false;
+    const q = currentQ;
+    setAnswersMap((prev) => ({ ...prev, [q.id]: optId }));
 
-    if (isCorrect) setCorrectCount((c) => c + 1);
-    setAnswersMap((prev) => ({ ...prev, [currentQ.id]: optId }));
+    const pkg = packageByQuestion[q.id];
+    if (!pkg) return;
+
+    fetch('/api/drill/check', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ packageId: pkg, questionId: q.id, selectedOptionId: optId }),
+    })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (!data) return;
+        setRevealByQuestion((prev) => ({
+          ...prev,
+          [q.id]: {
+            isCorrect: Boolean(data.isCorrect),
+            explanation: typeof data.explanation === 'string' ? data.explanation : '',
+            correctOptionId: typeof data.correctOptionId === 'string' ? data.correctOptionId : null,
+            userScore: typeof data.userScore === 'number' ? data.userScore : 0,
+            maxScore: typeof data.maxScore === 'number' ? data.maxScore : 0,
+          },
+        }));
+        if (data.isCorrect) setCorrectCount((c) => c + 1);
+      })
+      .catch(() => {});
   };
 
   const handleNext = () => {
@@ -173,6 +209,15 @@ export default function DrillSessionPage({
         localStorage.setItem(qKey, JSON.stringify(questions));
         localStorage.setItem(aKey, JSON.stringify(answers));
 
+        // Points earned per question, keyed by question id. The stored question
+        // snapshots carry no option scores (audit F3), so this is the only
+        // record of how the learner did — wrongAnswers.ts reads it.
+        const drillScores: Record<string, { score: number; maxScore: number }> = {};
+        for (const [qId, r] of Object.entries(revealByQuestion)) {
+          drillScores[qId] = { score: r.userScore, maxScore: r.maxScore };
+        }
+        localStorage.setItem(scopedKey(`drill_scores_${sessionId}`, userId), JSON.stringify(drillScores));
+
         // Batasi riwayat drill: simpan max 20 sesi terakhir untuk user ini
         const prefix = scopedKey('drill_questions_', userId);
         const drillKeys: string[] = [];
@@ -184,6 +229,7 @@ export default function DrillSessionPage({
           const id = k.replace(prefix, '');
           localStorage.removeItem(k);
           localStorage.removeItem(scopedKey(`drill_answers_${id}`, userId));
+          localStorage.removeItem(scopedKey(`drill_scores_${id}`, userId));
           });
           } catch { /* localStorage penuh atau private mode */ }
           setIsFinished(true);
@@ -363,8 +409,9 @@ export default function DrillSessionPage({
             <div className="space-y-2">
               {currentQ.options.map((opt, oi) => {
                 const isSelected = selectedOption === opt.id;
-                const maxScoreVal = Math.max(...currentQ.options.map((o) => o.score));
-                const isCorrect = opt.score === maxScoreVal;
+                // Correctness comes from the server reveal, not from a score in
+                // the payload (audit F3).
+                const isCorrect = reveal?.correctOptionId === opt.id;
 
                 let styleClass = 'border-[var(--border)] hover:bg-[var(--muted)] text-[var(--foreground)]';
                 if (hasRevealed) {
@@ -423,7 +470,7 @@ export default function DrillSessionPage({
                   <span>Pembahasan Singkat:</span>
                 </div>
                 <p className="text-[var(--foreground)] leading-relaxed">
-                  {currentQ.explanation || 'Pembahasan belum tersedia untuk butir ini.'}
+                  {reveal?.explanation || 'Pembahasan belum tersedia untuk butir ini.'}
                 </p>
               </div>
             )}

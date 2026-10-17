@@ -35,7 +35,9 @@ export function calculateSubcategoryDiagnostic(
     const item = statsMap.get(key)!;
     item.total += 1;
 
-    const maxScore = Math.max(...q.options.map((o) => o.score ?? 0));
+    // Empty options or a score-less payload must not turn into a bogus 100%:
+    // Math.max() of nothing is -Infinity, and maxScore 0 means "ungradeable".
+    const maxScore = q.options.length > 0 ? Math.max(...q.options.map((o) => o.score ?? 0)) : 0;
     item.max += maxScore;
 
     const chosenId = ansMap.get(q.id) ?? null;

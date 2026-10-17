@@ -9,6 +9,11 @@ vi.mock('@/lib/db', () => ({
   getDb: () => mockSql,
 }));
 
+const mockSendOtpEmail = vi.fn().mockResolvedValue({ success: true });
+vi.mock('@/lib/mailer', () => ({
+  sendOtpEmail: (...args: unknown[]) => mockSendOtpEmail(...args),
+}));
+
 describe('Support Helpers', () => {
   it('has correct support email and WhatsApp admin number', () => {
     expect(SUPPORT_EMAIL).toBe('halo.lolosin.support@gmail.com');
@@ -55,6 +60,38 @@ describe('POST /api/support/report', () => {
     expect(res.status).toBe(400);
     const json = await res.json();
     expect(json.error).toBeDefined();
+  });
+
+  it('escapes a hostile pageUrl before it reaches the notification HTML (audit F6)', async () => {
+    mockSendOtpEmail.mockClear();
+    const req = new NextRequest('http://localhost:3000/api/support/report', {
+      method: 'POST',
+      body: JSON.stringify({
+        category: 'Bug Teknis',
+        description: 'halo',
+        pageUrl: 'https://x.test/"><script>alert(1)</script>',
+      }),
+    });
+    const res = await supportReportRoute(req);
+    expect(res.status).toBe(200);
+
+    const html = String(mockSendOtpEmail.mock.calls[0]?.[0]?.html ?? '');
+    expect(html).not.toContain('<script>');
+    expect(html).toContain('&lt;script&gt;');
+  });
+
+  it('refuses an attachment filename that is not a plain name (audit F6)', async () => {
+    const req = new NextRequest('http://localhost:3000/api/support/report', {
+      method: 'POST',
+      body: JSON.stringify({
+        category: 'Bug Teknis',
+        description: 'halo',
+        imageName: '../../../etc/passwd',
+        imageBase64: 'data:image/png;base64,iVBORw0KGgo=',
+      }),
+    });
+    const res = await supportReportRoute(req);
+    expect(res.status).toBe(400);
   });
 
   it('accepts valid report and returns success', async () => {

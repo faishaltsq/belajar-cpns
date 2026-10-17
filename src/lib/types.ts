@@ -3,6 +3,11 @@ export type QuestionCategory = 'TWK' | 'TIU' | 'TKP';
 export interface Option {
   id: string;
   text: string;
+  /**
+   * Point value. Always present on the server. It is stripped at the wire
+   * boundary by `toPublicQuestion` before the pre-exam questions payload goes
+   * out — `5` marks the correct option, so shipping it leaks the key.
+   */
   score: number;
   image?: string;
 }
@@ -13,6 +18,7 @@ export interface Question {
   subCategory: string;
   text: string;
   options: Option[];
+  /** Server-side only for the pre-exam payload; see `toPublicQuestion`. */
   explanation: string;
   image?: string;
 }

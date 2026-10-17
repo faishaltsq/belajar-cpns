@@ -301,7 +301,7 @@ export function ExamQuestionReview({
                   <p className="text-[11px] font-semibold text-[var(--muted-foreground)]">Pilihan Jawaban:</p>
                   {currentItem.question.options.map((opt) => {
                     const isUserChoice = opt.id === currentItem.chosenId;
-                    const isBestOption = opt.score === currentItem.maxScore;
+                    const isBestOption = currentItem.maxScore > 0 && opt.score === currentItem.maxScore;
 
                     let rowStyle = 'border-[var(--border)] bg-transparent';
                     let badgeStyle = 'bg-[var(--secondary)] text-[var(--muted-foreground)]';
@@ -346,12 +346,12 @@ export function ExamQuestionReview({
                           )}
                           <span
                             className={`font-mono font-semibold text-[11px] ${
-                              opt.score === currentItem.maxScore
+                              currentItem.maxScore > 0 && opt.score === currentItem.maxScore
                                 ? 'text-emerald-700'
                                 : 'text-[var(--muted-foreground)]'
                             }`}
                           >
-                            Skor: {opt.score}
+                            Skor: {opt.score ?? 0}
                           </span>
                         </div>
                       </div>

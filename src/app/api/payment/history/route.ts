@@ -42,13 +42,15 @@ export async function GET() {
     for (const p of pkgRows) titleMap.set(p.id, p.title);
 
     // 3. Query all transactions for this user
+    // Ownership is by user_id only. The old `OR LOWER(user_email) = ...` branch
+    // matched on a mutable, unverified field, so an account whose email equals
+    // another buyer's could read their orders.
     const orderRows = await sql`
       SELECT
         id, order_type, package_id, base_amount, unique_code, exact_amount,
         status, created_at, expires_at, paid_at, package_ids
       FROM payment_orders
       WHERE user_id = ${payload.userId}
-         OR (user_email IS NOT NULL AND LOWER(user_email) = LOWER(${user.email || ''}))
       ORDER BY created_at DESC
     `;
 

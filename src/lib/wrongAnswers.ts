@@ -7,7 +7,25 @@ export interface WrongQuestionItem {
   packageId: string;
 }
 
+/** Per-question points recorded at submit time, keyed by question id. */
+interface QuestionScore {
+  score: number;
+  maxScore: number;
+}
+type QuestionScoreMap = Record<string, QuestionScore>;
+
 const KEY_MASTERED = 'mastered_questions';
+
+/**
+ * A question counts as wrong when the server-scored points fall short of what
+ * the question was worth. The pre-exam payload no longer carries `options[].score`
+ * (audit F3), so the points come from the snapshot the submit handler saved
+ * alongside the answers, not from re-deriving them on the client.
+ */
+function isWrongAnswer(category: Question['category'], earned: number, maxScore: number): boolean {
+  if (category === 'TKP') return earned < 4;
+  return earned < maxScore;
+}
 
 export function getMasteredIds(userId?: string | null): Set<number> {
   if (typeof window === 'undefined') return new Set();
@@ -40,19 +58,20 @@ export function collectWrongQuestions(userId?: string | null): WrongQuestionItem
       try {
         const qRaw = localStorage.getItem(`lolos_${scope}_exam_questions_${resultId}`);
         const aRaw = localStorage.getItem(`lolos_${scope}_exam_user_answers_${resultId}`);
+        const sRaw = localStorage.getItem(`lolos_${scope}_exam_scores_${resultId}`);
         if (qRaw && aRaw) {
           const questions: Question[] = JSON.parse(qRaw);
           const answers: ExamAnswer[] = JSON.parse(aRaw);
+          const scores: QuestionScoreMap = sRaw ? JSON.parse(sRaw) : {};
           const ansMap = new Map(answers.map((a) => [a.questionId, a.selectedOptionId]));
 
           for (const q of questions) {
             if (mastered.has(q.id) || map.has(q.id)) continue;
             const chosenId = ansMap.get(q.id) ?? null;
-            const chosenOpt = q.options.find((o) => o.id === chosenId);
-            const maxScore = Math.max(...q.options.map((o) => o.score));
-            const userScore = chosenOpt ? chosenOpt.score : 0;
-            const isWrong = q.category === 'TKP' ? userScore < 4 : userScore < maxScore;
-            if (isWrong) {
+            const recorded = scores[String(q.id)];
+            const earned = recorded?.score ?? 0;
+            const maxScore = recorded?.maxScore ?? 0;
+            if (isWrongAnswer(q.category, earned, maxScore)) {
               map.set(q.id, { question: q, userAnswerId: chosenId, packageId: `simulasi-${resultId}` });
             }
           }
@@ -66,19 +85,20 @@ export function collectWrongQuestions(userId?: string | null): WrongQuestionItem
       try {
         const qRaw = localStorage.getItem(key);
         const aRaw = localStorage.getItem(`lolos_${scope}_drill_answers_${sessionId}`);
+        const sRaw = localStorage.getItem(`lolos_${scope}_drill_scores_${sessionId}`);
         if (qRaw && aRaw) {
           const questions: Question[] = JSON.parse(qRaw);
           const answers: { questionId: number; selectedOptionId: string }[] = JSON.parse(aRaw);
+          const scores: QuestionScoreMap = sRaw ? JSON.parse(sRaw) : {};
           const ansMap = new Map(answers.map((a) => [a.questionId, a.selectedOptionId]));
 
           for (const q of questions) {
             if (mastered.has(q.id) || map.has(q.id)) continue;
             const chosenId = ansMap.get(q.id) ?? null;
-            const chosenOpt = q.options.find((o) => o.id === chosenId);
-            const maxScore = Math.max(...q.options.map((o) => o.score));
-            const userScore = chosenOpt ? chosenOpt.score : 0;
-            const isWrong = q.category === 'TKP' ? userScore < 4 : userScore < maxScore;
-            if (isWrong) {
+            const recorded = scores[String(q.id)];
+            const earned = recorded?.score ?? 0;
+            const maxScore = recorded?.maxScore ?? 0;
+            if (isWrongAnswer(q.category, earned, maxScore)) {
               map.set(q.id, { question: q, userAnswerId: chosenId, packageId: `drill-${sessionId}` });
             }
           }

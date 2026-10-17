@@ -1,8 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
+import { verifyToken } from '@/lib/auth';
 import { getDb } from '@/lib/db';
 
 export async function GET(req: NextRequest) {
   try {
+    const token = cookies().get('cpns_token')?.value;
+    if (!token) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    const payload = await verifyToken(token);
+    if (!payload?.userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const rawOrderId = req.nextUrl.searchParams.get('orderId');
     const rawExactAmount = req.nextUrl.searchParams.get('exactAmount');
 
@@ -35,15 +46,15 @@ export async function GET(req: NextRequest) {
 
     const rows = numericOrderId
       ? await sql`
-          SELECT id, user_id, user_email, package_id, order_type, exact_amount, status, paid_at
+          SELECT id, user_id, package_id, order_type, exact_amount, status, paid_at
           FROM payment_orders
           WHERE id = ${numericOrderId}
           LIMIT 1
         `
       : await sql`
-          SELECT id, user_id, user_email, package_id, order_type, exact_amount, status, paid_at
+          SELECT id, user_id, package_id, order_type, exact_amount, status, paid_at
           FROM payment_orders
-          WHERE exact_amount = ${numericAmount}
+          WHERE exact_amount = ${numericAmount} AND user_id = ${payload.userId}
           ORDER BY created_at DESC
           LIMIT 1
         `;
@@ -53,6 +64,13 @@ export async function GET(req: NextRequest) {
     }
 
     const order = rows[0];
+
+    // Order milik user lain tidak boleh terlihat. Order lama tanpa user_id
+    // (legacy) tetap bisa dibaca oleh caller yang terautentikasi.
+    if (order.user_id && order.user_id !== payload.userId) {
+      return NextResponse.json({ error: 'Order not found' }, { status: 404 });
+    }
+
     const isPaid = order.status === 'paid';
 
     return NextResponse.json({

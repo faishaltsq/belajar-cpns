@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import crypto from 'crypto';
 import { getDb } from '@/lib/db';
+import { grantEntitlement, toEntitlementOrder } from '@/lib/grantEntitlement';
 
 interface KlikQrisWebhookPayload {
   order_id?: string;
@@ -57,13 +59,31 @@ export async function POST(req: NextRequest) {
 
     const order = orderRows[0];
 
-    // Signature verification (wajib jika order memiliki signature terdaftar)
+    // Signature verification is unconditional (audit F1). A legacy order with
+    // signature = NULL is rejected too — otherwise anyone who guesses the
+    // sequential integer order id can claim it. Comparison is timing-safe and
+    // never throws: lengths are checked first.
     const incomingSig = body.signature || body.data?.signature;
-    if (order.signature) {
-      if (!incomingSig || order.signature !== incomingSig) {
-        console.warn(`[KlikQRIS Webhook] Signature mismatch or missing for order #${orderId}`);
-        return NextResponse.json({ error: 'Invalid signature' }, { status: 403 });
-      }
+    if (!order.signature || !incomingSig) {
+      console.warn(`[KlikQRIS Webhook] Missing signature for order #${orderId}`);
+      return NextResponse.json({ error: 'Invalid signature' }, { status: 403 });
+    }
+
+    const expectedSig = Buffer.from(String(order.signature), 'utf-8');
+    const providedSig = Buffer.from(String(incomingSig), 'utf-8');
+    if (
+      expectedSig.length !== providedSig.length ||
+      !crypto.timingSafeEqual(expectedSig, providedSig)
+    ) {
+      console.warn(`[KlikQRIS Webhook] Signature mismatch for order #${orderId}`);
+      return NextResponse.json({ error: 'Invalid signature' }, { status: 403 });
+    }
+
+    // Amount check: reject underpayment. paidAmount === 0 means the gateway
+    // did not report an amount, which is tolerated for backward compatibility.
+    if (paidAmount > 0 && paidAmount < Number(order.exact_amount)) {
+      console.warn(`[KlikQRIS Webhook] Underpaid order #${orderId}: ${paidAmount} < ${order.exact_amount}`);
+      return NextResponse.json({ error: 'Underpaid amount' }, { status: 400 });
     }
 
     // 2. Idempotency: if already paid, return 200 immediately
@@ -73,52 +93,24 @@ export async function POST(req: NextRequest) {
 
     // 3. Process payment if status is PAID / SUCCESS
     if (status === 'PAID' || status === 'SUCCESS') {
-      // Update order to paid
-      await sql`
+      // Atomic transition (audit F3): only the request that flips the row from
+      // 'pending' to 'paid' grants entitlement, so concurrent webhook
+      // deliveries cannot double-grant.
+      const transitioned = await sql`
         UPDATE payment_orders
         SET status = 'paid',
             paid_at = NOW()
         WHERE id = ${order.id}
+          AND status = 'pending'
+        RETURNING id
       `;
 
-      // Update user access. Every order_type is handled explicitly so a new
-      // tier can never silently fall through to full PRO (Finding 5).
-      if (order.user_id) {
-        if (order.order_type === 'pro') {
-          await sql`
-            UPDATE users
-            SET is_pro = true,
-                pro_activated_at = NOW()
-            WHERE id = ${order.user_id}
-          `;
-        } else if (
-          (order.order_type === 'single' && order.package_id) ||
-          order.order_type === 'bundle'
-        ) {
-          const toUnlock: string[] = order.order_type === 'bundle'
-            ? (Array.isArray(order.package_ids) ? order.package_ids : [])
-            : [order.package_id as string];
-
-          if (toUnlock.length > 0) {
-            const userRows = await sql`SELECT unlocked_packages FROM users WHERE id = ${order.user_id} LIMIT 1`;
-            if (userRows.length > 0) {
-              const current: string[] = Array.isArray(userRows[0].unlocked_packages)
-                ? userRows[0].unlocked_packages : [];
-              const merged = [...current];
-              for (const id of toUnlock) if (!merged.includes(id)) merged.push(id);
-              if (merged.length !== current.length) {
-                await sql`
-                  UPDATE users
-                  SET unlocked_packages = ${JSON.stringify(merged)}::jsonb
-                  WHERE id = ${order.user_id}
-                `;
-              }
-            }
-          }
-        } else {
-          console.warn(`[KlikQRIS Webhook] Unknown order_type "${order.order_type}" for order #${orderId} — access not granted`);
-        }
+      if (transitioned.length === 0) {
+        return NextResponse.json({ success: true, message: 'Already processed' }, { status: 200 });
       }
+
+      const grantOrder = toEntitlementOrder(order);
+      if (grantOrder) await grantEntitlement(sql, grantOrder);
 
       return NextResponse.json({
         success: true,

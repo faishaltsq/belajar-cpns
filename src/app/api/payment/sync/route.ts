@@ -1,9 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
 import { getDb } from '@/lib/db';
+import { verifyToken } from '@/lib/auth';
 import { checkKlikQrisStatus } from '@/lib/klikqris';
+import { grantEntitlement, toEntitlementOrder } from '@/lib/grantEntitlement';
 
 export async function POST(req: NextRequest) {
   try {
+    // Manual payment sync. It used to answer any caller who guessed an order id
+    // and echo the whole order row back — including user_id and user_email
+    // (audit F4). Callers are the checkout poller and the billing page, both
+    // signed in, so a session is required and the order must be theirs.
+    const token = cookies().get('cpns_token')?.value;
+    if (!token) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    const auth = await verifyToken(token);
+    if (!auth?.userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { orderId } = await req.json();
 
     if (!orderId) {
@@ -15,11 +31,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'DATABASE_URL not set' }, { status: 500 });
     }
 
-    // 1. Ambil order yang dimaksud
+    // 1. Ambil order yang dimaksud — dibatasi ke milik pemanggil, sehingga
+    // order milik akun lain tidak bisa disinkronkan maupun dibaca.
     const orders = await sql`
       SELECT id, user_id, user_email, package_id, order_type, base_amount, exact_amount, status, package_ids
       FROM payment_orders
       WHERE id = ${orderId}
+        AND user_id = ${auth.userId}
       LIMIT 1
     `;
 
@@ -31,65 +49,28 @@ export async function POST(req: NextRequest) {
 
     // Jika sudah lunas di DB, langsung return success
     if (order.status === 'paid') {
-      return NextResponse.json({ success: true, paid: true, order });
+      return NextResponse.json({ success: true, paid: true });
     }
 
     // 2. Hubungi API status KlikQRIS
     const qrisStatus = await checkKlikQrisStatus(`INV-${order.id}`);
 
     if (qrisStatus.success && qrisStatus.status === 'PAID') {
-      // Mark order as paid
-      await sql`
+      // Atomic transition (audit F3): only the request that flips the row from
+      // 'pending' to 'paid' grants entitlement, so concurrent callers cannot
+      // double-grant.
+      const transitioned = await sql`
         UPDATE payment_orders
         SET status = 'paid',
             paid_at = NOW()
         WHERE id = ${order.id}
+          AND status = 'pending'
+        RETURNING id
       `;
 
-      // Unlock user package or activate PRO
-      const targetUserId = order.user_id;
-      const targetUserEmail = order.user_email;
-
-      if (targetUserId || targetUserEmail) {
-        const userRows = targetUserId
-          ? await sql`SELECT id, email, is_pro, unlocked_packages FROM users WHERE id = ${targetUserId} LIMIT 1`
-          : await sql`SELECT id, email, is_pro, unlocked_packages FROM users WHERE LOWER(email) = ${targetUserEmail.toLowerCase()} LIMIT 1`;
-
-        if (userRows.length > 0) {
-          const u = userRows[0];
-          const currentUnlocked: string[] = Array.isArray(u.unlocked_packages) ? u.unlocked_packages : [];
-
-          // Every order_type is handled explicitly: an unhandled value must
-          // grant nothing, never fall through to full PRO (Finding 5).
-          if (order.order_type === 'pro') {
-            await sql`
-              UPDATE users
-              SET is_pro = TRUE,
-                  pro_activated_at = NOW()
-              WHERE id = ${u.id}
-            `;
-          } else if (
-            (order.order_type === 'single' && order.package_id) ||
-            order.order_type === 'bundle'
-          ) {
-            const toUnlock: string[] = order.order_type === 'bundle'
-              ? (Array.isArray(order.package_ids) ? order.package_ids : [])
-              : [order.package_id as string];
-
-            if (toUnlock.length > 0) {
-              for (const id of toUnlock) {
-                if (!currentUnlocked.includes(id)) currentUnlocked.push(id);
-              }
-              await sql`
-                UPDATE users
-                SET unlocked_packages = ${JSON.stringify(currentUnlocked)}::jsonb
-                WHERE id = ${u.id}
-              `;
-            }
-          } else {
-            console.warn(`[payment/sync] Unknown order_type "${order.order_type}" — access not granted`);
-          }
-        }
+      const grantOrder = toEntitlementOrder(order);
+      if (transitioned.length > 0 && grantOrder) {
+        await grantEntitlement(sql, grantOrder);
       }
 
       return NextResponse.json({
