@@ -4,6 +4,10 @@ import robots from '@/app/robots';
 import { pageMeta, NOINDEX, SITE_URL } from '@/lib/seo';
 import { generateMetadata as tryoutMeta } from '@/app/simulasi/[id]/layout';
 import { generateMetadata as drillMeta } from '@/app/drill/[category]/[subCategory]/layout';
+import { DRILL_CONTENT } from '@/data/drillContent';
+import { DRILL_TOPICS } from '@/lib/drillHelper';
+import { TRYOUT_LIST } from '@/lib/loadPackage';
+import { TRYOUT_SEO } from '@/data/tryoutSeo';
 
 describe('SEO & Search Engine Indexing Suite', () => {
   it('robots.txt points to canonical lolosin.com sitemap and allows public paths', () => {
@@ -86,5 +90,50 @@ describe('SEO & Search Engine Indexing Suite', () => {
   it('unknown drill topic is noindexed', () => {
     const meta = drillMeta({ params: { category: 'TWK', subCategory: 'Bukan Topik' } });
     expect(meta.robots).toEqual({ index: false, follow: true });
+  });
+});
+
+describe('Server-rendered SEO content', () => {
+  it('every drill topic has unique material', () => {
+    const topics = Object.keys(DRILL_CONTENT);
+    expect(topics.length).toBe(18);
+
+    const headings = new Set(topics.map((t) => DRILL_CONTENT[t].heading));
+    expect(headings.size).toBe(topics.length);
+
+    const intros = new Set(topics.map((t) => DRILL_CONTENT[t].intro));
+    expect(intros.size).toBe(topics.length);
+
+    for (const topic of topics) {
+      const c = DRILL_CONTENT[topic];
+      const chars = c.intro.length + c.sections.reduce((n, s) => n + s.body.join(' ').length, 0);
+      expect(chars, `${topic} content too thin`).toBeGreaterThan(1000);
+      expect(c.sections.length).toBeGreaterThanOrEqual(3);
+      expect(c.tips.length).toBeGreaterThanOrEqual(3);
+    }
+  });
+
+  it('every drill topic in DRILL_TOPICS has material', () => {
+    for (const t of DRILL_TOPICS) {
+      expect(DRILL_CONTENT[t.subCategory], `missing content: ${t.subCategory}`).toBeDefined();
+    }
+  });
+
+  it('every tryout package has its own topic signature', () => {
+    for (const pkg of TRYOUT_LIST) {
+      const seo = TRYOUT_SEO[pkg.id];
+      expect(seo, `missing seo: ${pkg.id}`).toBeDefined();
+      expect(seo.topics.length).toBeGreaterThan(0);
+      const total = seo.breakdown.reduce((n, b) => n + b.count, 0);
+      expect(total, `${pkg.id} breakdown mismatch`).toBe(pkg.questionCount);
+    }
+  });
+
+  it('tryout descriptions are not duplicated across packages', () => {
+    const descs = TRYOUT_LIST.map((p) => {
+      const seo = TRYOUT_SEO[p.id];
+      return `${p.label}: ${seo.breakdown.map((b) => `${b.count} ${b.category}`).join(', ')} | ${seo.topics.slice(0, 4).join(', ')}`;
+    });
+    expect(new Set(descs).size).toBe(descs.length);
   });
 });

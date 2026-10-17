@@ -140,7 +140,14 @@ export const DRILL_CONTENT: Record<string, DrillContent> = {
         heading: 'Wawasan nusantara',
         body: [
           'Wawasan nusantara adalah cara pandang bangsa Indonesia terhadap diri dan lingkungannya sebagai negara kepulauan yang utuh. Konsep ini menempatkan wilayah darat, laut, dan udara sebagai satu kesatuan politik, ekonomi, sosial budaya, serta pertahanan keamanan.',
-          'Deklarasi Djuanda 1957 menjadi dasar lahirnya konsep negara kepulauan yang kemudian diakui dalam Konvensi Hukum Laut PBB 1982.',
+          'Deklarasi Djuanda 1957 menjadi dasar lahirnya konsep negara kepulauan yang kemudian diakui dalam Konvensi Hukum Laut PBB 1982. Sejak itu Indonesia diakui sebagai negara kepulauan yang mengatur laut teritorial dan zona ekonomi eksklusifnya sendiri.',
+        ],
+      },
+      {
+        heading: 'Nasionalisme dalam praktik ASN',
+        body: [
+          'Nasionalisme bukan sekadar sikap, melainkan perilaku yang bisa diamati. Wujudnya antara lain menggunakan produk dalam negeri, menjaga fasilitas publik, membayar pajak tepat waktu, serta menolak segala bentuk provokasi yang memecah persatuan.',
+          'Di lingkungan kerja, nasionalisme tampak dari kesediaan ditempatkan di daerah terpencil, penggunaan bahasa Indonesia yang baik dalam pelayanan, dan sikap adil terhadap masyarakat dari latar belakang apa pun.',
         ],
       },
     ],
