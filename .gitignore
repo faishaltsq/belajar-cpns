@@ -11,3 +11,4 @@ node_modules/
 extracted/
 __pycache__/
 .env.vercel.local
+tsconfig.tsbuildinfo
