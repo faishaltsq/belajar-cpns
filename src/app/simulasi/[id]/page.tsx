@@ -20,6 +20,7 @@ import { ExamType, EXAM_MODES } from '@/lib/examMode';
 import { mapKeyToAction } from '@/lib/examShortcuts';
 import { shuffleWithinSections, getQuestionSections } from '@/lib/questionSections';
 import { calculateTimePerQuestion } from '@/lib/timeTracker';
+import { TRYOUT_LIST } from '@/lib/loadPackage';
 
 const EXAM_DURATION = 6000; // 100 minutes
 
@@ -440,10 +441,66 @@ export default function SimulasiPage({ params }: { params: { id: string } }) {
     ? Math.max(0, examDuration - elapsedRef.current)
     : examDuration;
 
+  const pkg = TRYOUT_LIST.find((p) => p.id === params.id);
+
   if (!hydrated || loadingQuestions) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-xs text-[var(--muted-foreground)]">
-        Memuat sesi ujian...
+      <div className="min-h-screen max-w-2xl mx-auto px-4 sm:px-6 py-12">
+        {pkg ? (
+          <>
+            <nav className="text-xs text-[var(--muted-foreground)] mb-6">
+              <a href="/simulasi" className="hover:text-[var(--primary)]">Simulasi CAT</a>
+              <span className="mx-1.5">/</span>
+              <span>{pkg.label}</span>
+            </nav>
+
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--foreground)]">
+              {pkg.label} — Simulasi CAT SKD CPNS 2027
+            </h1>
+            <p className="mt-3 text-sm text-[var(--muted-foreground)] leading-relaxed">{pkg.desc}</p>
+
+            <dl className="mt-6 grid grid-cols-3 gap-3 text-center">
+              <div className="card-modern p-3">
+                <dt className="text-[10px] uppercase tracking-wider text-[var(--muted-foreground)]">Butir Soal</dt>
+                <dd className="font-bold text-lg">{pkg.questionCount}</dd>
+              </div>
+              <div className="card-modern p-3">
+                <dt className="text-[10px] uppercase tracking-wider text-[var(--muted-foreground)]">Durasi</dt>
+                <dd className="font-bold text-lg">{pkg.durationMin}<span className="text-xs font-normal"> mnt</span></dd>
+              </div>
+              <div className="card-modern p-3">
+                <dt className="text-[10px] uppercase tracking-wider text-[var(--muted-foreground)]">Materi</dt>
+                <dd className="font-bold text-lg">TWK·TIU·TKP</dd>
+              </div>
+            </dl>
+
+            <p className="mt-6 text-xs text-[var(--muted-foreground)]">Menyiapkan sesi ujian…</p>
+
+            <section className="mt-10">
+              <h2 className="text-lg font-semibold mb-3">Paket Tryout Lainnya</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {TRYOUT_LIST.filter((p) => p.id !== pkg.id).slice(0, 8).map((p) => (
+                  <li key={p.id}>
+                    <a href={`/simulasi/${p.id}`} className="card-modern p-3 block text-xs hover:border-[var(--primary)]">
+                      <span className="font-semibold text-[var(--foreground)]">{p.label}</span>
+                      <span className="text-[var(--muted-foreground)]"> · {p.questionCount} soal</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <a href="/simulasi" className="inline-block mt-4 text-xs font-semibold text-[var(--primary)]">
+                Lihat semua 37 paket tryout →
+              </a>
+            </section>
+          </>
+        ) : (
+          <>
+            <h1 className="text-2xl font-bold">Paket tryout tidak ditemukan</h1>
+            <p className="mt-2 text-sm text-[var(--muted-foreground)]">
+              Paket dengan ID ini tidak tersedia. <a href="/simulasi" className="text-[var(--primary)] font-semibold">Lihat daftar paket</a>.
+            </p>
+          </>
+        )}
       </div>
     );
   }

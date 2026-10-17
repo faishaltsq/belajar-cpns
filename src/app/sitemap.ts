@@ -19,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/psikotes/penalaran`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/flashcard`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/journey`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/login`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const drillPages: MetadataRoute.Sitemap = DRILL_TOPICS.map((topic) => ({
@@ -33,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE_URL}/simulasi/${pkg.id}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    priority: pkg.section === 'starter' ? 0.9 : 0.7,
   }));
 
   return [...staticPages, ...drillPages, ...tryoutPages];

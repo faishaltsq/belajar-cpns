@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import {
   ArrowRight,
   Timer,
@@ -11,9 +13,49 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import MiniTryout from '@/components/MiniTryout';
 
+export const metadata: Metadata = pageMeta({
+  title: 'Lolos.in — Simulasi CAT SKD CPNS 2027 & Psikotes Online Terlengkap',
+  description: 'Platform simulasi ujian CAT SKD CPNS 2027 standar BKN dan tes psikotes online (Kraepelin, Kecermatan, PAPI Kostick). 37 paket tryout 110 butir, skor otomatis TWK, TIU, TKP. Gratis tanpa login.',
+  path: '/',
+  keywords: ['simulasi cpns', 'simulasi cat bkn', 'tryout cpns 2027', 'psikotes cpns', 'latihan soal cpns', 'tes kraepelin online'],
+});
+
+const FAQ_ITEMS = [
+  {
+    q: 'Berapa passing grade resmi SKD CPNS 2027?',
+    a: 'Sesuai Kepmen PANRB 321/2024, nilai ambang batas umum: TWK 65, TIU 80, dan TKP 166. Anda wajib melampaui batas minimal di ketiga kategori secara bersamaan.',
+  },
+  {
+    q: 'Berapa lama durasi pengerjaan ujian?',
+    a: 'Total waktu 100 menit untuk 110 butir soal bagi pelamar umum, atau 130 menit untuk pelamar berkebutuhan khusus.',
+  },
+  {
+    q: 'Apakah ada pengurangan nilai (sistem minus) jika salah?',
+    a: 'Tidak ada sistem minus di sistem CAT BKN resmi. Soal TWK dan TIU bernilai 5 jika benar dan 0 jika salah. TKP selalu bernilai antara 1 sampai 5. Sangat disarankan menjawab seluruh soal.',
+  },
+  {
+    q: 'Apakah soal di platform ini sesuai kisi-kisi terbaru?',
+    a: 'Seluruh paket disusun mengacu pada kisi-kisi BKN dan materi aktual seleksi CPNS, mencakup pilar negara, integritas ASN, logika analogi, numerik, dan jejaring kerja.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_ITEMS.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 export default function LandingPage() {
   return (
     <div className="min-h-screen text-[var(--foreground)]" style={{ backgroundColor: 'var(--background)' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Background warm radial gradient */}
       <div
         className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[420px] opacity-30 blur-3xl"
@@ -333,24 +375,7 @@ export default function LandingPage() {
           </div>
 
           <div className="max-w-2xl mx-auto space-y-3">
-            {[
-              {
-                q: 'Berapa passing grade resmi SKD CPNS 2027?',
-                a: 'Sesuai Kepmen PANRB 321/2024, nilai ambang batas umum: TWK 65, TIU 80, dan TKP 166. Anda wajib melampaui batas minimal di ketiga kategori secara bersamaan.',
-              },
-              {
-                q: 'Berapa lama durasi pengerjaan ujian?',
-                a: 'Total waktu 100 menit untuk 110 butir soal bagi pelamar umum, atau 130 menit untuk pelamar berkebutuhan khusus.',
-              },
-              {
-                q: 'Apakah ada pengurangan nilai (sistem minus) jika salah?',
-                a: 'Tidak ada sistem minus di sistem CAT BKN resmi. Soal TWK dan TIU bernilai 5 jika benar dan 0 jika salah. TKP selalu bernilai antara 1 sampai 5. Sangat disarankan menjawab seluruh soal.',
-              },
-              {
-                q: 'Apakah soal di platform ini sesuai kisi-kisi terbaru?',
-                a: 'Seluruh paket disusun mengacu pada kisi-kisi BKN dan materi aktual seleksi CPNS, mencakup pilar negara, integritas ASN, logika analogi, numerik, dan jejaring kerja.',
-              },
-            ].map((faq, i) => (
+            {FAQ_ITEMS.map((faq, i) => (
               <div key={i} className="card-modern p-5">
                 <h4 className="font-semibold text-sm text-[var(--foreground)] mb-1.5 flex items-center gap-2">
                   <Question size={16} className="text-[var(--muted-foreground)] shrink-0" />

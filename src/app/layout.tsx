@@ -28,9 +28,6 @@ export const metadata: Metadata = {
   },
   description: 'Platform simulasi ujian CAT SKD CPNS 2027 standar BKN dan tes psikotes online (Kraepelin, Kecermatan, PAPI Kostick). 37 paket tryout 110 butir, skor otomatis TWK, TIU, TKP. Gratis tanpa login.',
   metadataBase: new URL('https://lolosin.com'),
-  alternates: {
-    canonical: 'https://lolosin.com',
-  },
   keywords: [
     'simulasi cpns',
     'simulasi cat bkn',
