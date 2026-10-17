@@ -25,7 +25,7 @@ vi.mock('@/lib/db', () => ({
 }));
 
 const mockCheckRateLimit = vi.fn();
-const mockGetClientIp = vi.fn(() => '192.168.1.100');
+const mockGetClientIp = vi.fn((..._args: any[]) => '192.168.1.100');
 
 vi.mock('@/lib/rateLimit', () => ({
   checkRateLimit: (...args: any[]) => mockCheckRateLimit(...args),

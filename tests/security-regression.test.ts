@@ -78,7 +78,7 @@ vi.mock('next/headers', () => ({
 }));
 
 vi.mock('fs', async (importOriginal) => {
-  const actual = await importOriginal<FsModule>();
+  const actual = await importOriginal<typeof import('fs')>();
   return {
     ...actual,
     default: {

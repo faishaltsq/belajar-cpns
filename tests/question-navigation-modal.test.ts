@@ -4,10 +4,10 @@ import { Question, ExamAnswer } from '../src/lib/types';
 
 describe('Question Navigation Modal Helper Logic', () => {
   const dummyQuestions: Question[] = [
-    { id: 1, text: 'Soal 1', category: 'TWK', subCategory: 'Nasionalisme', options: [] },
-    { id: 2, text: 'Soal 2', category: 'TWK', subCategory: 'Integritas', options: [] },
-    { id: 3, text: 'Soal 3', category: 'TIU', subCategory: 'Deret', options: [] },
-    { id: 4, text: 'Soal 4', category: 'TKP', subCategory: 'Pelayanan Publik', options: [] },
+    { id: 1, text: 'Soal 1', category: 'TWK', subCategory: 'Nasionalisme', options: [], explanation: '' },
+    { id: 2, text: 'Soal 2', category: 'TWK', subCategory: 'Integritas', options: [], explanation: '' },
+    { id: 3, text: 'Soal 3', category: 'TIU', subCategory: 'Deret', options: [], explanation: '' },
+    { id: 4, text: 'Soal 4', category: 'TKP', subCategory: 'Pelayanan Publik', options: [], explanation: '' },
   ];
 
   it('correctly maps sections and answered statuses', () => {

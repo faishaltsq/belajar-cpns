@@ -81,7 +81,7 @@ describe('drill explanation integrity', () => {
         const eWords = words(exp);
         const stem = new Set(words(q.text));
         const answer = new Set(words(q.options.slice().sort((a, b) => b.score - a.score)[0]?.text ?? ''));
-        const sub = new Set(words(q.subCategory ?? ''));
+        const sub = new Set(words((q as { subCategory?: string }).subCategory ?? ''));
         if (eWords.some((w) => stem.has(w) || answer.has(w) || sub.has(w))) bound++;
       }
       const ratio = bound / total;
