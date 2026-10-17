@@ -97,7 +97,7 @@ describe('drill explanation integrity', () => {
 // Latihan Kilat must confirm before the user navigates away mid-session
 // ---------------------------------------------------------
 describe('drill navigation guard', () => {
-  const DRILL = 'src/app/drill/[category]/[subCategory]/page.tsx';
+  const DRILL = 'src/app/drill/[category]/[subCategory]/DrillSession.tsx';
   const src = read(DRILL);
 
   it('intercepts internal link clicks while a session is running', () => {
