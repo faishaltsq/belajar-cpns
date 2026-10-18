@@ -62,9 +62,10 @@ const nextConfig = {
   },
 };
 module.exports = withSentryConfig(nextConfig, {
-  // Upload source maps so stack traces resolve to real source, but only when a
-  // build-time auth token is present (SENTRY_AUTH_TOKEN). Without it the SDK
-  // skips upload silently instead of failing the build.
+  org: 'faishaltsq',
+  project: 'lolosin',
+  // Source maps upload only when this build-time Vercel secret is set.
+  authToken: process.env.SENTRY_AUTH_TOKEN,
   sourcemaps: { deleteSourcemapsAfterUpload: true },
   // Proxy browser envelopes through same-origin /monitoring so error capture
   // survives ad-blockers and the strict CSP (browser only; server SDK unaffected).
