@@ -80,6 +80,9 @@ export const metadata: Metadata = {
     description: '37 Paket Tryout CAT Standar BKN · 3.898 Soal · Tes Kraepelin & Kecermatan · Skor Otomatis TWK/TIU/TKP · Gratis tanpa login.',
   },
   manifest: '/manifest.json',
+  alternates: {
+    canonical: '/',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
