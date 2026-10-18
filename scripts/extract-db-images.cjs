@@ -33,6 +33,9 @@ function extFor(mime) {
 
 (async () => {
   const sql = neon(env.DATABASE_URL);
+  const tHost = (env.DATABASE_URL.match(/@([^/]+)\//) || [])[1] || '?';
+  const tDb = (env.DATABASE_URL.match(/\/([^/?]+)(\?|$)/) || [])[1] || '?';
+  console.log(`[db-target] host=${tHost} db=${tDb} (source: .env.local)${DRY ? ' — DRY-RUN' : ''}`);
   const rows = await sql`
     SELECT id, package_id, number, image FROM questions
     WHERE image LIKE 'data:image/%' ORDER BY package_id, number

@@ -47,6 +47,9 @@ function allStaticPackages() {
 
 (async () => {
   const sql = neon(env.DATABASE_URL);
+  const tHost = (env.DATABASE_URL.match(/@([^/]+)\//) || [])[1] || '?';
+  const tDb = (env.DATABASE_URL.match(/\/([^/?]+)(\?|$)/) || [])[1] || '?';
+  console.log(`[db-target] host=${tHost} db=${tDb} (source: .env.local)${DRY ? ' — DRY-RUN' : ''}`);
   let scanned = 0;
   let fixed = 0;
   const fixedByPkg = {};

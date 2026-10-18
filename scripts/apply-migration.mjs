@@ -30,6 +30,11 @@ if (!file) {
   process.exit(1);
 }
 const q = neon(url);
+{
+  const tHost = (url.match(/@([^/]+)\//) || [])[1] || '?';
+  const tDb = (url.match(/\/([^/?]+)(\?|$)/) || [])[1] || '?';
+  console.log(`[db-target] host=${tHost} db=${tDb} (source: .env.local)`);
+}
 const body = readFileSync(file, 'utf8');
 
 const statements = body

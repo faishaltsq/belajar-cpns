@@ -1,3 +1,5 @@
+const { withSentryConfig } = require("@sentry/nextjs");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
@@ -13,7 +15,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com",
               "font-src 'self' data:",
-              "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://va.vercel-scripts.com https://*.vercel-insights.com",
+              "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://va.vercel-scripts.com https://*.vercel-insights.com https://*.ingest.sentry.io https://*.ingest.us.sentry.io https://*.ingest.de.sentry.io",
               "frame-ancestors 'none'",
               "form-action 'self'",
               "base-uri 'self'",
@@ -59,4 +61,13 @@ const nextConfig = {
     ];
   },
 };
-module.exports = nextConfig;
+module.exports = withSentryConfig(nextConfig, {
+  // Upload source maps so stack traces resolve to real source, but only when a
+  // build-time auth token is present (SENTRY_AUTH_TOKEN). Without it the SDK
+  // skips upload silently instead of failing the build.
+  sourcemaps: { deleteSourcemapsAfterUpload: true },
+  // Proxy browser envelopes through same-origin /monitoring so error capture
+  // survives ad-blockers and the strict CSP (browser only; server SDK unaffected).
+  tunnelRoute: "/monitoring",
+  telemetry: false,
+});
