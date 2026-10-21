@@ -1,0 +1,211 @@
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+Running 10 tests using 6 workers
+
+[WebServer] (node:34096) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+[WebServer] (Use `node --trace-deprecation ...` to show where the warning was created)
+[WebServer] The `fetchConnectionCache` option is deprecated (now always `true`)
+  ok  5 [tablet-768] › tests\e2e\daily-mission.spec.ts:10:5 › shows an unmet mission to a fresh visitor (2.6s)
+  ok  4 [laptop-1280] › tests\e2e\daily-mission.spec.ts:10:5 › shows an unmet mission to a fresh visitor (2.8s)
+  ok  2 [desktop-1440] › tests\e2e\daily-mission.spec.ts:10:5 › shows an unmet mission to a fresh visitor (2.9s)
+  ok  8 [mobile-320] › tests\e2e\daily-mission.spec.ts:10:5 › shows an unmet mission to a fresh visitor (1.9s)
+  ok  9 [mobile-390] › tests\e2e\daily-mission.spec.ts:10:5 › shows an unmet mission to a fresh visitor (1.9s)
+  x   6 [tablet-768] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list (14.2s)
+  x   3 [laptop-1280] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list (14.5s)
+  x   1 [desktop-1440] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list (14.7s)
+  x   7 [mobile-390] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list (12.3s)
+  x  10 [mobile-320] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list (11.2s)
+
+
+  1) [desktop-1440] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/) with timeout 10000ms
+      - waiting for getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+
+
+      30 |   const card = page.getByRole('region', { name: 'Misi Harian' });
+      31 |   await expect(card).toBeVisible();
+    > 32 |   await expect(card.getByText(/Target hari ini selesai/)).toBeVisible();
+         |                                                           ^
+      33 |   await expect(card.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+      34 | });
+      35 |
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\daily-mission.spec.ts:32:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-desktop-1440\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-desktop-1440\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [laptop-1280] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/) with timeout 10000ms
+      - waiting for getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+
+
+      30 |   const card = page.getByRole('region', { name: 'Misi Harian' });
+      31 |   await expect(card).toBeVisible();
+    > 32 |   await expect(card.getByText(/Target hari ini selesai/)).toBeVisible();
+         |                                                           ^
+      33 |   await expect(card.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+      34 | });
+      35 |
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\daily-mission.spec.ts:32:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-laptop-1280\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-laptop-1280\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-laptop-1280\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-laptop-1280\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [tablet-768] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/) with timeout 10000ms
+      - waiting for getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+
+
+      30 |   const card = page.getByRole('region', { name: 'Misi Harian' });
+      31 |   await expect(card).toBeVisible();
+    > 32 |   await expect(card.getByText(/Target hari ini selesai/)).toBeVisible();
+         |                                                           ^
+      33 |   await expect(card.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+      34 | });
+      35 |
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\daily-mission.spec.ts:32:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-tablet-768\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-tablet-768\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-tablet-768\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-tablet-768\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [mobile-390] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/) with timeout 10000ms
+      - waiting for getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+
+
+      30 |   const card = page.getByRole('region', { name: 'Misi Harian' });
+      31 |   await expect(card).toBeVisible();
+    > 32 |   await expect(card.getByText(/Target hari ini selesai/)).toBeVisible();
+         |                                                           ^
+      33 |   await expect(card.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+      34 | });
+      35 |
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\daily-mission.spec.ts:32:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-mobile-390\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-mobile-390\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-mobile-390\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-mobile-390\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [mobile-320] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/) with timeout 10000ms
+      - waiting for getByRole('region', { name: 'Misi Harian' }).getByText(/Target hari ini selesai/)
+
+
+      30 |   const card = page.getByRole('region', { name: 'Misi Harian' });
+      31 |   await expect(card).toBeVisible();
+    > 32 |   await expect(card.getByText(/Target hari ini selesai/)).toBeVisible();
+         |                                                           ^
+      33 |   await expect(card.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+      34 | });
+      35 |
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\daily-mission.spec.ts:32:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-mobile-320\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-mobile-320\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-mobile-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\daily-mission-marks-the-mi-ddc03-lready-in-the-activity-list-mobile-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [desktop-1440] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+    [laptop-1280] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+    [tablet-768] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+    [mobile-390] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+    [mobile-320] › tests\e2e\daily-mission.spec.ts:18:5 › marks the mission met once today is already in the activity list 
+  5 passed (22.5s)

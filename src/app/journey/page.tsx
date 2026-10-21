@@ -18,6 +18,7 @@ function todayStr(): string {
 }
 
 import { calcStreak } from '@/lib/journeyHelper';
+import DailyMissionCard from '@/components/DailyMissionCard';
 
 function prevDateStr(dateStr: string): string {
   const dt = new Date(dateStr);
@@ -308,6 +309,9 @@ export default function JourneyPage() {
               🔥 Kamu sudah belajar {streak} hari berturut-turut. Jangan putus besok!
             </p>
           )}
+
+          {/* Daily mission reads the same activity list the streak above uses. */}
+          <DailyMissionCard streakDates={streakDates} />
         </div>
 
         {/* Timeline per phase */}

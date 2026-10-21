@@ -37,7 +37,11 @@ export async function GET() {
           { packages: pkgs },
           {
             headers: {
-              'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+              // Public, user-agnostic catalog: the same rows answer every
+              // visitor, so the CDN can hold them. Admin package edits appear
+              // after s-maxage (5 min) instead of costing every cold request a
+              // full render (measured TTFB 1.94s while it was no-store).
+              'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=1800',
             },
           }
         );

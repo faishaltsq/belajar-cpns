@@ -7,11 +7,19 @@ import { BUNDLE_SIZE } from '@/lib/pricing';
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
-  // Authorize via CRON_SECRET or ADMIN_API_KEY
+  // Authorize via CRON_SECRET (or ADMIN_SECRET for manual runs).
   const authHeader = req.headers.get('authorization');
   const cronSecret = process.env.CRON_SECRET || process.env.ADMIN_SECRET;
 
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+  // Fail closed. With no secret configured the old guard skipped the check
+  // entirely, so anyone who found this URL could make the server send reminder
+  // email to every abandoned order — an unauthenticated job that talks to a
+  // real mailer is worse than no job at all. Cron is expected to be configured;
+  // an operator running it by hand sets the header instead.
+  if (!cronSecret) {
+    return NextResponse.json({ error: 'Not configured' }, { status: 503 });
+  }
+  if (authHeader !== `Bearer ${cronSecret}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

@@ -1,11 +1,67 @@
 import { neon, neonConfig } from '@neondatabase/serverless';
+import { Pool as PgPool } from 'pg';
 
 neonConfig.fetchConnectionCache = true;
 
-export function getDb() {
+// FIX P2-12: getDb() used to return neon(url) no matter what — that driver
+// rewrites the connection string into an HTTPS endpoint, so a plain Postgres
+// URL failed with `TypeError: Invalid URL` (or `https://api.<ip>/sql`).
+// Transport is now negotiated per connection string:
+// - host under .neon.tech  -> neon() HTTP-per-query (production path unchanged)
+// - anything else          -> TCP `pg` Pool (verified against Docker Postgres)
+// Both expose the same tagged-template `sql` shape every call site already
+// uses, so no call site changes. The pg Pool is processed and cached; nothing
+// in this codebase opens a transaction, same constraint as the HTTP path.
+
+const NEON_HOST_RE = /\.neon\.tech$/i;
+
+export function resolveTransport(url: string): 'neon-http' | 'postgres-tcp' {
+  try {
+    return NEON_HOST_RE.test(new URL(url).hostname) ? 'neon-http' : 'postgres-tcp';
+  } catch {
+    return 'postgres-tcp';
+  }
+}
+
+// `query` is the "raw text" escape hatch used by admin/migrate. The Neon HTTP
+// driver types it as (text, params) and the pg branch below supplies its own,
+// so it is declared leniently here rather than at 14 call sites.
+type SqlLike = ((
+  strings: readonly string[],
+  ...values: unknown[]
+) => Promise<any[]>) & { query: (text: string, values?: unknown[]) => Promise<any[]> };
+
+let pgPool: PgPool | null = null;
+
+function ensurePool(url: string): PgPool {
+  if (!pgPool) {
+    pgPool = new PgPool({ connectionString: url, max: 10, connectionTimeoutMillis: 15000 });
+  }
+  return pgPool;
+}
+
+export function getDb(): SqlLike | null {
   const url = process.env.DATABASE_URL || process.env.POSTGRES_URL;
   if (!url) return null;
-  return neon(url);
+
+  if (resolveTransport(url) === 'neon-http') {
+    return neon(url) as unknown as SqlLike;
+  }
+
+  const runQuery = async (text: string, values: unknown[] = []) => {
+    const r = await ensurePool(url).query(text, values as never[]);
+    return r.rows;
+  };
+
+  const sql = Object.assign(
+    (strings: readonly string[], ...values: unknown[]) =>
+      runQuery(
+        strings.reduce((acc, s, i) => acc + s + (i < values.length ? `$${i + 1}` : ''), ''),
+        values
+      ),
+    { query: (text: string, values: unknown[] = []) => runQuery(text, values) }
+  );
+  return sql;
 }
 
 export async function isDbConnected(): Promise<boolean> {

@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
 import { pageMeta } from '@/lib/seo';
+import { CATALOG_TOTAL, STANDARD_110_TOTAL } from '@/lib/catalogStats';
+import { QUESTION_LIMITS, EXAM_YEAR, skdLabel } from '@/lib/examRules';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Simulasi CAT SKD CPNS 2027 Online Standar BKN',
-  description: 'Simulasi CAT SKD CPNS 2027 standar resmi BKN. 37 paket tryout TWK, TIU, TKP 110 butir soal, timer 100 menit, skor otomatis, dan pembahasan soal.',
+  title: `Simulasi ${skdLabel()} Online Standar BKN`,
+  description: `Simulasi CAT ${skdLabel()} standar acuan BKN. ${CATALOG_TOTAL} paket tryout TWK, TIU, TKP ${QUESTION_LIMITS.TOTAL} butir soal, timer 100 menit, skor otomatis, dan pembahasan soal.`,
   path: '/simulasi',
   keywords: [
     'simulasi cpns',
     'simulasi cat bkn',
     'tryout cpns online',
-    'tryout cpns 2027',
+    `tryout cpns ${EXAM_YEAR}`,
     'soal cat bkn',
     'tryout skd gratis',
     'passing grade cpns',

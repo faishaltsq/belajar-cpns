@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useUser } from '@/lib/useUser';
+import { usePrices, priceBreakdown } from '@/lib/usePrices';
 import {
   Crown,
   QrCode,
@@ -17,7 +18,8 @@ import {
   Package,
   Copy,
 } from '@phosphor-icons/react';
-import { TOTAL_TRYOUT_PACKAGES, TRYOUT_STANDARD_RANGE, TRYOUT_LIST } from '@/lib/loadPackage';
+// Catalog data only — loadPackage pulls db.ts into the client bundle.
+import { TOTAL_TRYOUT_PACKAGES, TRYOUT_STANDARD_RANGE, TRYOUT_LIST } from '@/lib/tryoutCatalog';
 import { BUNDLE_SIZE, FREE_PACKAGE_IDS } from '@/lib/pricing';
 
 interface UpgradeProModalProps {
@@ -48,6 +50,9 @@ export function UpgradeProModal({
 }: UpgradeProModalProps) {
   const { user, loading: userLoading } = useUser();
   const pathname = usePathname();
+  // Prices come from GET /api/pricing (same table create-order charges from).
+  const prices = usePrices();
+  const breakdown = priceBreakdown(prices);
 
   const [selectedPlan, setSelectedPlan] = useState<'single' | 'bundle' | 'pro'>('pro');
   const [step, setStep] = useState<'info' | 'pay' | 'success' | 'already_pro'>('info');
@@ -125,6 +130,11 @@ export function UpgradeProModal({
     const initialPlan = packageId && triggerPackage ? 'single' : 'pro';
     setSelectedPlan(initialPlan);
 
+    // Order TIDAK dibuat di sini. Membuka modal (klik paket / klik Upgrade PRO)
+    // tidak boleh membuat transaksi di merchant — efek ini juga re-run tiap kali
+    // objek `user` berganti, jadi fetchOrder di sini pernah membuat 4 transaksi
+    // pending hanya dalam satu detik. Transaksi dibuat hanya saat tombol Bayar
+    // ditekan (handleProceedToPay).
     fetch('/api/user/status')
       .then((r) => r.json())
       .then((d) => {
@@ -135,15 +145,9 @@ export function UpgradeProModal({
           setBundleIds((prev) => prev.filter((id) => !d.unlocked_packages.includes(id)));
         }
         // Guard: jika user sudah Pro, langsung tampilkan layar konfirmasi
-        if (d.is_pro) {
-          setStep('already_pro');
-          return;
-        }
-        fetchOrder(initialPlan);
+        if (d.is_pro) setStep('already_pro');
       })
-      .catch(() => {
-        fetchOrder(initialPlan);
-      });
+      .catch(() => undefined);
 
     return () => {
       if (pollTimerRef.current) clearInterval(pollTimerRef.current);
@@ -189,9 +193,13 @@ export function UpgradeProModal({
 
   function handleSelectPlan(plan: 'single' | 'bundle' | 'pro') {
     setErrorMessage('');
+    // Ganti rencana bayar → order lama dibuang dari state supaya tombol Bayar
+    // selalu menyiapkan order untuk paket yang baru dipilih (server tetap akan
+    // memakai ulang order pending yang sama kalau paketnya cocok).
+    setOrderInfo(null);
     setSelectedPlan(plan);
     if (plan === 'bundle') {
-      // Isi pilihan sampai penuh dari paket yang masih bisa dibeli, lalu mint order
+      // Isi pilihan sampai penuh dari paket yang masih bisa dibeli
       const valid = bundleIds.filter((id) => bundleSelectable.some((p) => p.id === id));
       const ids = valid.length === BUNDLE_SIZE
         ? valid
@@ -202,12 +210,9 @@ export function UpgradeProModal({
       setBundleIds(ids);
       if (ids.length !== BUNDLE_SIZE) {
         setErrorMessage(`Paket yang masih bisa dibeli tinggal ${ids.length}. Upgrade PRO untuk membuka semuanya.`);
-        return;
       }
-      fetchOrder('bundle', ids);
       return;
     }
-    fetchOrder(plan);
   }
 
   function toggleBundleId(id: string) {
@@ -220,16 +225,25 @@ export function UpgradeProModal({
   }
 
   async function handleProceedToPay() {
-    // Pilihan bundle bisa berubah setelah QR dibuat — mint ulang supaya server
-    // menyimpan daftar paket terbaru pada order yang sama (nominal bundle flat).
+    // Satu-satunya tempat transaksi QRIS dibuat. Klik Bayar → server membuat
+    // (atau memakai ulang) order pending lalu baru tampilkan QR-nya.
+    if (loading) return;
+
     if (selectedPlan === 'bundle') {
       if (bundleIds.length !== BUNDLE_SIZE) {
         setErrorMessage(`Pilih tepat ${BUNDLE_SIZE} paket dulu.`);
         return;
       }
-      const ok = await fetchOrder('bundle', bundleIds);
-      if (!ok) return;
+      // Pilihan bundle bisa berubah setelah QR dibuat — mint ulang supaya server
+      // menyimpan daftar paket terbaru pada order yang sama (nominal bundle flat).
+      const okBundle = await fetchOrder('bundle', bundleIds);
+      if (!okBundle) return;
+      setStep('pay');
+      return;
     }
+
+    const ok = await fetchOrder(selectedPlan);
+    if (!ok) return;
     setStep('pay');
   }
 
@@ -364,7 +378,7 @@ export function UpgradeProModal({
                       Paket Ini Saja
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp 5.000
+                      {prices.labels.single}
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       Buka {triggerPackage || '1 paket'}
@@ -381,17 +395,17 @@ export function UpgradeProModal({
                     }`}
                   >
                     <span className="absolute top-0 right-0 bg-emerald-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-bl">
-                      HEMAT 28%
+                      HEMAT {breakdown.hematPct}%
                     </span>
                     <div className="flex items-center gap-1.5 font-bold text-xs text-emerald-700">
                       <Package size={14} weight="duotone" />
-                      Bundle 5 Paket
+                      Bundle {BUNDLE_SIZE} Paket,
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp 18.000
+                      {prices.labels.bundle}
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
-                      Rp 3.600 per paket
+                      {breakdown.perPaket} per paket
                     </div>
                   </button>
 
@@ -412,7 +426,7 @@ export function UpgradeProModal({
                       PRO All-Access
                     </div>
                     <div className="text-base font-extrabold text-[var(--foreground)] mt-1">
-                      Rp 59.000
+                      {prices.labels.pro}
                     </div>
                     <div className="text-[10px] text-[var(--muted-foreground)] mt-0.5">
                       {TRYOUT_STANDARD_RANGE}
@@ -525,7 +539,7 @@ export function UpgradeProModal({
                   </div>
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
-                    Hemat 28% dibanding membeli satuan (Rp 25.000)
+                    Hemat {breakdown.hematPct}% dibanding membeli satuan ({prices.labels.singleOfBundle})
                   </div>
                   <div className="flex items-center gap-2 text-[var(--foreground)]">
                     <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
@@ -571,7 +585,7 @@ export function UpgradeProModal({
               <button
                 type="button"
                 onClick={handleProceedToPay}
-                disabled={loading || !orderInfo || (selectedPlan === 'bundle' && bundleIds.length !== BUNDLE_SIZE)}
+                disabled={loading || (selectedPlan === 'bundle' && bundleIds.length !== BUNDLE_SIZE)}
                 className="btn-primary w-full py-3 flex items-center justify-center gap-2 text-sm font-bold shadow-sm disabled:opacity-60"
               >
                 {loading ? (
@@ -581,7 +595,9 @@ export function UpgradeProModal({
                 ) : (
                   <>
                     <QrCode size={18} weight="bold" />
-                    Bayar Rp {(orderInfo?.baseAmount ?? 0).toLocaleString('id-ID')} via QRIS
+                    {orderInfo?.baseAmount
+                      ? `Bayar Rp ${orderInfo.baseAmount.toLocaleString('id-ID')} via QRIS`
+                      : 'Siapkan QRIS & Bayar'}
                     <ArrowRight size={14} weight="bold" />
                   </>
                 )}

@@ -12,6 +12,14 @@ export function calculateSubcategoryDiagnostic(
   const ansMap = new Map<number, string | null>();
   answers.forEach((a) => ansMap.set(a.questionId, a.selectedOptionId));
 
+  // A conclusion needs evidence: with almost nothing answered, every subtopic
+  // reads 0% and "this topic is weak" would be an invention, not a measurement.
+  const answeredCount = answers.filter(
+    (a) => a.selectedOptionId !== null && a.selectedOptionId !== undefined && a.selectedOptionId !== ''
+  ).length;
+  const MIN_ANSWERED_FOR_A_CONCLUSION = 10;
+  const insufficientData = answeredCount < MIN_ANSWERED_FOR_A_CONCLUSION;
+
   const statsMap = new Map<
     string,
     {
@@ -83,10 +91,18 @@ export function calculateSubcategoryDiagnostic(
     .filter((w) => w.status === 'LEMAH')
     .map((w) => w.name);
 
-  const recommendationNote =
-    weakNames.length > 0
+  const recommendationNote = insufficientData
+    ? 'Kerjakan lebih banyak latihan untuk melihat analisis kemampuanmu.'
+    : weakNames.length > 0
       ? `Prioritas belajar: Perdalam materi ${weakNames.join(', ')} untuk mendongkrak skor Passing Grade.`
       : 'Performa merata di semua subtopik, pertahankan latihan rutin!';
 
-  return { weakestSubcategories, strongestSubcategories, allSubcategories, recommendationNote };
+  return {
+    weakestSubcategories,
+    strongestSubcategories,
+    allSubcategories,
+    recommendationNote,
+    answeredCount,
+    insufficientData,
+  };
 }

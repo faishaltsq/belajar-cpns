@@ -10,8 +10,8 @@ import { FinishExamModal } from '@/components/FinishExamModal';
 import { ExamModeModal } from '@/components/ExamModeModal';
 import { PauseExamModal } from '@/components/PauseExamModal';
 import { ExitExamModal } from '@/components/ExitExamModal';
-import { calculateExamScore } from '@/lib/scoring';
-import { ExamAnswer, Question } from '@/lib/types';
+import { UpgradeProModal } from '@/components/UpgradeProModal';
+import { ExamAnswer, ExamResult, Question } from '@/lib/types';
 import { useUser } from '@/lib/useUser';
 import { scopedKey } from '@/lib/userStorage';
 import { CaretLeft, CaretRight, Desktop, Pause, SignOut, Warning, SquaresFour } from '@phosphor-icons/react';
@@ -20,15 +20,17 @@ import { ExamType, EXAM_MODES } from '@/lib/examMode';
 import { mapKeyToAction } from '@/lib/examShortcuts';
 import { shuffleWithinSections, getQuestionSections } from '@/lib/questionSections';
 import { calculateTimePerQuestion } from '@/lib/timeTracker';
-
-const EXAM_DURATION = 6000; // 100 minutes
+import { elapsedSeconds, shiftDeadlineForPause } from '@/lib/examClock';
 
 export default function ExamSession({ params }: { params: { id: string } }) {
   const router = useRouter();
-  const { user } = useUser();
+  const { user, loading: userLoading } = useUser();
   const userId = user?.id ?? null;
   const storageKey = scopedKey(`exam_answers_${params.id}`, userId);
   const startKey = scopedKey(`exam_start_${params.id}`, userId);
+  // Written while a practice pause is open, so a reload inside the pause can
+  // give the paused minutes back instead of silently spending them.
+  const pausedKey = scopedKey(`exam_paused_at_${params.id}`, userId);
   const modeKey = scopedKey(`exam_mode_${params.id}`, userId);
   const indexKey = scopedKey(`exam_index_${params.id}`, userId);
 
@@ -38,6 +40,11 @@ export default function ExamSession({ params }: { params: { id: string } }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Map<number, ExamAnswer>>(() => new Map());
   const [hydrated, setHydrated] = useState(false);
+  // 403 from /api/questions: the package is behind the paywall or the visitor
+  // is not signed in. Kept separate from "no questions" so the user gets a
+  // real next step instead of a dead end.
+  const [lockedReason, setLockedReason] = useState<'login_required' | 'payment_required' | null>(null);
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
 
   // Modals
   const [showFinishModal, setShowFinishModal] = useState(false);
@@ -70,7 +77,14 @@ export default function ExamSession({ params }: { params: { id: string } }) {
   // Load package questions
   useEffect(() => {
     fetch(`/api/questions/${params.id}`)
-      .then((r) => (r.ok ? r.json() : { questions: [] }))
+      .then(async (r) => {
+        if (r.status === 403) {
+          const body = await r.json().catch(() => ({}));
+          setLockedReason(body?.reason === 'login_required' ? 'login_required' : 'payment_required');
+          return { questions: [] as Question[] };
+        }
+        return r.ok ? r.json() : { questions: [] };
+      })
       .then((d) => {
         let loaded: Question[] = d.questions || [];
         const meta = d.meta;
@@ -98,7 +112,14 @@ export default function ExamSession({ params }: { params: { id: string } }) {
   }, [params.id]);
 
   // Restore state from localStorage on mount
+  //
+  // Waits for the auth probe to settle first. `useUser()` resolves
+  // asynchronously, so `userId` is null on the first render and flips ~200 ms
+  // later; without this gate every key below is minted under the guest scope
+  // and then re-read from the account scope mid-exam, which silently swapped a
+  // half-finished paper for an older draft and restarted the clock.
   useEffect(() => {
+    if (userLoading) return;
     try {
       const savedAnswers = localStorage.getItem(storageKey);
       if (savedAnswers) {
@@ -128,20 +149,63 @@ export default function ExamSession({ params }: { params: { id: string } }) {
 
     // Initial time event
     timeEventsRef.current = [{ questionIndex: 0, timestamp: Date.now() }];
-  }, [storageKey, modeKey]);
+  }, [storageKey, modeKey, indexKey, userLoading]);
 
   const examDuration = examDurationSec;
   const elapsedRef = useRef(0);
 
   useEffect(() => {
+    if (userLoading) return;
     const stored = localStorage.getItem(startKey);
     if (!stored) {
       localStorage.setItem(startKey, String(Date.now()));
+      localStorage.removeItem(pausedKey);
     } else {
-      const elapsed = Math.floor((Date.now() - Number(stored)) / 1000);
-      elapsedRef.current = Math.min(elapsed, examDuration);
+      // Credit back any pause that was still open when the browser closed.
+      const pausedAt = Number(localStorage.getItem(pausedKey));
+      if (Number.isFinite(pausedAt) && pausedAt > 0) {
+        const pausedFor = Date.now() - pausedAt;
+        const shifted = shiftDeadlineForPause(Number(stored), pausedFor, examDuration);
+        if (shifted !== Number(stored)) localStorage.setItem(startKey, String(shifted));
+        localStorage.removeItem(pausedKey);
+      }
+      const start = Number(localStorage.getItem(startKey) ?? stored);
+      elapsedRef.current = elapsedSeconds(start, Date.now(), examDuration);
     }
-  }, [startKey, examDuration]);
+  }, [startKey, pausedKey, examDuration, userLoading]);
+
+  // Practice mode lets the learner pause. The countdown pauses inside <Timer/>,
+  // but `startKey` is the wall-clock deadline that every reload and the final
+  // `durationUsed` are computed from — so without shifting it the paused
+  // minutes are still charged against the paper, and because the value is
+  // wall-clock the loss becomes permanent the moment the tab is closed while
+  // paused.
+  const pausedAtRef = useRef<number | null>(null);
+  const endPause = useCallback(() => {
+    const at = pausedAtRef.current;
+    if (at === null) return;
+    pausedAtRef.current = null;
+    const pausedFor = Date.now() - at;
+    if (pausedFor <= 0) return;
+    try {
+      const stored = localStorage.getItem(startKey);
+      if (stored) {
+        const shifted = shiftDeadlineForPause(Number(stored), pausedFor, examDuration);
+        if (shifted !== Number(stored)) localStorage.setItem(startKey, String(shifted));
+      }
+      localStorage.removeItem(pausedKey);
+    } catch {}
+  }, [startKey, pausedKey, examDuration]);
+
+  useEffect(() => {
+    if (!showPauseModal) return undefined;
+    const at = Date.now();
+    pausedAtRef.current = at;
+    try {
+      localStorage.setItem(pausedKey, String(at));
+    } catch {}
+    return endPause;
+  }, [showPauseModal, endPause, pausedKey]);
 
   // Autosave answers
   useEffect(() => {
@@ -157,14 +221,17 @@ export default function ExamSession({ params }: { params: { id: string } }) {
   }, [currentIndex, indexKey, hydrated]);
 
   // Konfirmasi sebelum meninggalkan halaman (tutup tab / refresh / navigasi luar)
+  // Hanya dipasang ketika sesi ujian benar-benar sedang berjalan — halaman
+  // terkunci (paywall) dan halaman gagal-muat tidak boleh memunculkan dialog.
   useEffect(() => {
+    if (questions.length === 0) return;
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
       e.preventDefault();
       e.returnValue = '';
     };
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, []);
+  }, [questions.length]);
 
   // Keluar fullscreen otomatis saat unmount (navigasi keluar halaman ujian)
   useEffect(() => {
@@ -177,6 +244,8 @@ export default function ExamSession({ params }: { params: { id: string } }) {
 
   // Konfirmasi saat back/forward browser (Next.js router)
   useEffect(() => {
+    // Tanpa sesi berjalan, tombol back harus berperilaku normal.
+    if (questions.length === 0) return;
     const handlePopState = () => {
       // Tampilkan ExitExamModal alih-alih langsung navigasi
       setShowExitModal(true);
@@ -187,7 +256,7 @@ export default function ExamSession({ params }: { params: { id: string } }) {
     history.pushState(null, '', window.location.href);
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+  }, [questions.length]);
 
   // Tab switch listener (Official Mode)
   useEffect(() => {
@@ -279,48 +348,87 @@ export default function ExamSession({ params }: { params: { id: string } }) {
   };
 
   // Submit Exam
+  //
+  // The exam questions arrive without option scores (see questionPayload.ts), so
+  // the browser cannot compute a real result on its own — a local
+  // `calculateExamScore` over those options sums `undefined` and yields NaN, and
+  // in practice it printed a screenful of "NaN" instead of a score. The server
+  // is therefore the only scorer, and a failed POST must not be papered over:
+  // the draft is left intact so the learner can retry instead of losing the
+  // paper they just spent 100 minutes on.
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
   const submitExam = useCallback(
     async (answersMap: Map<number, ExamAnswer>) => {
       if (submittingRef.current) return;
       submittingRef.current = true;
+      setSubmitting(true);
+      setSubmitError(null);
 
       const startTime = Number(localStorage.getItem(startKey) ?? Date.now());
       const durationSeconds = Math.min(
         Math.floor((Date.now() - startTime) / 1000),
-        EXAM_DURATION
+        examDuration
       );
       const answerArr = Array.from(answersMap.values());
       const answerRecord = Object.fromEntries(
         answerArr.map((a) => [a.questionId, a.selectedOptionId])
       );
       const resultId = `${params.id}-${Date.now()}`;
+      const isPractice = !EXAM_MODES[examType].publishToLeaderboard;
 
-      // The questions payload no longer carries option scores, so the server is
-      // the only thing that can score a submission. POST first and use the
-      // returned result as the number of record; the local computation is only
-      // a fallback for the offline/failed case (audit F2).
-      let result = calculateExamScore(questions, answerArr, durationSeconds);
       let serverResultId: string | null = null;
+      let result: ExamResult | null = null;
       let scoreSnapshot: { questionId: number; score: number; maxScore: number }[] = [];
+      let reviewSnapshot: Question[] | null = null;
 
-      if (EXAM_MODES[examType].publishToLeaderboard) {
-        try {
-          const res = await fetch('/api/results', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              packageId: params.id,
-              answers: answerRecord,
-              durationUsed: durationSeconds,
-            }),
-          });
-          if (res.ok) {
-            const data = await res.json();
-            if (data?.result) result = data.result;
-            if (typeof data?.id === 'string' && data.id) serverResultId = data.id;
-            if (Array.isArray(data?.questionScores)) scoreSnapshot = data.questionScores;
-          }
-        } catch {}
+      try {
+        const res = await fetch('/api/results', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            packageId: params.id,
+            answers: answerRecord,
+            durationUsed: durationSeconds,
+            practice: isPractice,
+          }),
+        });
+
+        if (res.status === 403) {
+          const body = await res.json().catch(() => ({}));
+          setLockedReason(body?.reason === 'login_required' ? 'login_required' : 'payment_required');
+          setSubmitError('Sesi ujianmu tidak lagi punya akses ke paket ini.');
+          submittingRef.current = false;
+          setSubmitting(false);
+          return;
+        }
+
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+
+        const data = await res.json();
+        if (data?.result) result = data.result;
+        if (typeof data?.id === 'string' && data.id) serverResultId = data.id;
+        if (Array.isArray(data?.questionScores)) scoreSnapshot = data.questionScores;
+        if (Array.isArray(data?.review)) reviewSnapshot = data.review;
+      } catch {
+        // Network drop or server error: keep every draft key so the answers and
+        // the original start timestamp survive, and let the learner retry.
+        setSubmitError(
+          'Koneksi terputus saat mengirim jawaban. Jawabanmu masih tersimpan — tekan "Selesai" lagi untuk mencoba ulang.'
+        );
+        submittingRef.current = false;
+        setSubmitting(false);
+        return;
+      }
+
+      if (!result) {
+        setSubmitError('Server tidak mengembalikan hasil ujian. Coba kirim ulang.');
+        submittingRef.current = false;
+        setSubmitting(false);
+        return;
       }
 
       // Hitung durasi per soal dari events
@@ -330,15 +438,18 @@ export default function ExamSession({ params }: { params: { id: string } }) {
         timePerQuestionRecord[q.id] = timeMap.get(idx) ?? 0;
       });
 
-      // Simpan data: user login pakai localStorage (permanen), guest pakai sessionStorage (temporary)
       // The score snapshot is what the wrong-answer collector reads, since the
-      // stored questions no longer carry per-option scores (audit F3).
+      // stored questions do not carry per-option scores (audit F3).
       const scoreMap: Record<string, { score: number; maxScore: number }> = {};
       for (const s of scoreSnapshot) scoreMap[String(s.questionId)] = { score: s.score, maxScore: s.maxScore };
 
+      // Practice results are not stored server-side, so the review payload the
+      // server returned is what /simulasi/hasil renders instead of the exam key.
+      const questionsForReview = reviewSnapshot ?? questions;
+
       if (userId) {
         localStorage.setItem(scopedKey(`exam_result_${resultId}`, userId), JSON.stringify(result));
-        localStorage.setItem(scopedKey(`exam_questions_${resultId}`, userId), JSON.stringify(questions));
+        localStorage.setItem(scopedKey(`exam_questions_${resultId}`, userId), JSON.stringify(questionsForReview));
         localStorage.setItem(scopedKey(`exam_user_answers_${resultId}`, userId), JSON.stringify(answerArr));
         localStorage.setItem(scopedKey(`exam_time_per_q_${resultId}`, userId), JSON.stringify(timePerQuestionRecord));
         localStorage.setItem(scopedKey(`exam_scores_${resultId}`, userId), JSON.stringify(scoreMap));
@@ -348,7 +459,7 @@ export default function ExamSession({ params }: { params: { id: string } }) {
       } else {
         try {
           sessionStorage.setItem(`guest_exam_result_${resultId}`, JSON.stringify(result));
-          sessionStorage.setItem(`guest_exam_questions_${resultId}`, JSON.stringify(questions));
+          sessionStorage.setItem(`guest_exam_questions_${resultId}`, JSON.stringify(questionsForReview));
           sessionStorage.setItem(`guest_exam_user_answers_${resultId}`, JSON.stringify(answerArr));
           sessionStorage.setItem(`guest_exam_time_per_q_${resultId}`, JSON.stringify(timePerQuestionRecord));
           sessionStorage.setItem(`guest_exam_scores_${resultId}`, JSON.stringify(scoreMap));
@@ -358,13 +469,17 @@ export default function ExamSession({ params }: { params: { id: string } }) {
         } catch {}
       }
 
+      // Only now — the result is persisted and navigable — is the draft retired.
       localStorage.removeItem(storageKey);
       localStorage.removeItem(startKey);
       localStorage.removeItem(indexKey);
+      localStorage.removeItem(pausedKey);
       if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       router.push(`/simulasi/hasil/${resultId}`);
     },
-    [params.id, storageKey, startKey, indexKey, router, questions, examType, userId]
+    // examDuration is the resolved per-package duration; EXAM_DURATION (6000)
+    // was hardcoded here and would clamp a 130-minute special-needs paper.
+    [params.id, storageKey, startKey, indexKey, pausedKey, router, questions, examType, userId, examDuration]
   );
 
   const answersRef = useRef(answers);
@@ -445,6 +560,51 @@ export default function ExamSession({ params }: { params: { id: string } }) {
     return (
       <div className="min-h-screen flex items-center justify-center text-xs text-[var(--muted-foreground)]">
         Menyiapkan sesi ujian...
+      </div>
+    );
+  }
+
+  if (lockedReason && questions.length === 0) {
+    // The server refused the package. Show a real next step rather than the
+    // generic "not available" screen — the package exists, it is simply locked.
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 text-center p-6">
+        <div className="card-modern max-w-md w-full p-6">
+          <p className="text-xl font-bold text-[var(--foreground)]">
+            {lockedReason === 'login_required' ? 'Masuk untuk melanjutkan' : 'Paket ini bagian dari akses berbayar'}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--muted-foreground)]">
+            {lockedReason === 'login_required'
+              ? 'Kamu bisa mengerjakan paket gratis tanpa akun. Paket ini tersimpan di akunmu setelah kamu masuk.'
+              : 'Paket ini terbuka untuk pengguna yang sudah membeli paket ini, bundle, atau akses PRO.'}
+          </p>
+          <div className="mt-5 flex flex-col sm:flex-row gap-2 justify-center">
+            <button
+              onClick={() => router.push(`/login?redirect=/simulasi/${params.id}`)}
+              className="btn-secondary text-xs py-2.5 px-5"
+            >
+              Masuk
+            </button>
+            <button
+              onClick={() => setUpgradeOpen(true)}
+              className="btn-primary text-xs py-2.5 px-5"
+            >
+              Lihat Paket Akses
+            </button>
+            <button
+              onClick={() => router.push('/simulasi')}
+              className="text-xs py-2.5 px-3 text-[var(--muted-foreground)] hover:text-[var(--foreground)] underline underline-offset-4"
+            >
+              Paket gratis
+            </button>
+          </div>
+        </div>
+        <UpgradeProModal
+          isOpen={upgradeOpen}
+          onClose={() => setUpgradeOpen(false)}
+          packageId={params.id}
+          triggerPackage={params.id.replace('tryout-', 'Paket Tryout ')}
+        />
       </div>
     );
   }
@@ -732,6 +892,7 @@ export default function ExamSession({ params }: { params: { id: string } }) {
             localStorage.removeItem(storageKey);
             localStorage.removeItem(startKey);
             localStorage.removeItem(modeKey);
+            localStorage.removeItem(pausedKey);
           } catch {}
           setShowExitModal(false);
           router.push('/simulasi');
@@ -754,12 +915,46 @@ export default function ExamSession({ params }: { params: { id: string } }) {
         totalQuestions={questions.length}
         answeredCount={answered}
         flaggedCount={flagged}
+        isSubmitting={submitting}
+        errorMessage={submitError}
         onCancel={() => setShowFinishModal(false)}
         onConfirm={() => {
-          setShowFinishModal(false);
+          // The dialog stays open while the POST is in flight. submitExam
+          // navigates away on success and only returns here on failure, so the
+          // retry button and the error are exactly where the learner left off.
           submitExam(answers);
         }}
       />
+
+      {/* Failures from the time-up path arrive with no dialog open, so the
+          retryable state has to be visible on the paper itself. */}
+      {submitError && !showFinishModal && (
+        <div
+          role="alert"
+          className="fixed inset-x-3 bottom-3 z-50 mx-auto flex max-w-lg items-start gap-2 rounded-2xl border border-red-300/60 bg-white p-3 shadow-lg dark:bg-neutral-900 sm:inset-x-6 sm:bottom-5"
+        >
+          <Warning size={16} className="mt-0.5 shrink-0 text-red-600" />
+          <div className="min-w-0 flex-1">
+            <p className="text-xs leading-relaxed text-red-700 dark:text-red-400">{submitError}</p>
+            <div className="mt-2 flex gap-2">
+              <button
+                type="button"
+                onClick={() => setShowFinishModal(true)}
+                className="rounded-lg bg-red-600 px-3 py-1.5 text-[11px] font-bold text-white hover:bg-red-700 transition"
+              >
+                Coba Kirim Ulang
+              </button>
+              <button
+                type="button"
+                onClick={() => setSubmitError(null)}
+                className="rounded-lg border border-[var(--border)] px-3 py-1.5 text-[11px] font-semibold text-[var(--foreground)] hover:bg-[var(--muted)] transition"
+              >
+                Nanti saja
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

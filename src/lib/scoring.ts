@@ -1,8 +1,9 @@
 import { Question, ExamAnswer, ExamResult, QuestionCategory, CategoryScoreResult } from './types';
+import { MAX_SCORES, PASSING_GRADES, QUESTION_LIMITS } from './examRules';
 
-export const PASSING_GRADES = { TWK: 65, TIU: 80, TKP: 166 } as const;
-export const QUESTION_LIMITS = { TWK: 30, TIU: 35, TKP: 45, TOTAL: 110 } as const;
-export const MAX_SCORES = { TWK: 150, TIU: 175, TKP: 225, TOTAL: 550 } as const;
+// The figures live in examRules.ts so a page that displays a passing grade
+// imports the same constant the scorer uses, instead of restating it by hand.
+export { MAX_SCORES, PASSING_GRADES, QUESTION_LIMITS, EXAM_YEAR } from './examRules';
 
 // Proportional PG ratio from standard test
 const PG_RATIO = {

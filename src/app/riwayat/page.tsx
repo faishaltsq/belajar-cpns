@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import ProgressSnapshotCard from '@/components/ProgressSnapshotCard';
+import { ExamSessionSummary } from '@/lib/progressAnalytics';
 import Link from 'next/link';
 import {
   ClockCounterClockwise,
@@ -22,7 +24,10 @@ import {
 import { UpgradeProModal } from '@/components/UpgradeProModal';
 import { GuestLimitModal } from '@/components/GuestLimitModal';
 import { useUser } from '@/lib/useUser';
-import { TOTAL_TRYOUT_PACKAGES } from '@/lib/loadPackage';
+import { usePrices } from '@/lib/usePrices';
+// Catalog data only — importing from loadPackage would drag db.ts (and the
+// Neon driver) into this client bundle.
+import { TOTAL_TRYOUT_PACKAGES } from '@/lib/tryoutCatalog';
 import { scopedKey } from '@/lib/userStorage';
 
 interface DraftItem {
@@ -75,6 +80,7 @@ type TransactionFilter = 'all' | 'paid' | 'pending' | 'cancelled';
 
 export default function RiwayatPage() {
   const { user, loading: userLoading } = useUser();
+  const prices = usePrices();
   const userId = user?.id ?? null;
   const [activeTab, setActiveTab] = useState<MainTab>('exam');
   const [showGuestModal, setShowGuestModal] = useState(false);
@@ -428,6 +434,23 @@ export default function RiwayatPage() {
               )}
             </div>
 
+            {/* Personal progress: same rows the table below shows, aggregated.
+                Sourced from the history state so the card and the table can
+                never disagree about what the user has actually done. */}
+            {history.length > 0 && (
+              <ProgressSnapshotCard
+                sessions={history.map(
+                  (item): ExamSessionSummary => ({
+                    packageId: item.packageId,
+                    finishedAt: item.completedAt,
+                    totalScore: item.totalScore,
+                    isPassed: item.isPassedAll,
+                    durationUsed: item.durationSeconds,
+                  })
+                )}
+              />
+            )}
+
             {history.length === 0 ? (
               <div className="card-modern p-12 text-center text-[var(--muted-foreground)] space-y-3">
                 <ClockCounterClockwise size={36} className="mx-auto opacity-30" />
@@ -621,13 +644,13 @@ export default function RiwayatPage() {
                           className="btn-primary inline-flex items-center gap-1.5 text-xs py-1.5 px-3.5 shadow-sm"
                         >
                           <Sparkle size={14} weight="fill" />
-                          Upgrade ke PRO (Rp 59.000)
+                          Upgrade ke PRO ({prices.labels.pro})
                         </button>
                         <Link
                           href="/simulasi"
                           className="btn-secondary inline-flex items-center gap-1.5 text-xs py-1.5 px-3.5"
                         >
-                          Beli Paket Satuan Mulai Rp 5.000
+                          Beli Paket Satuan Mulai {prices.labels.single}
                         </Link>
                       </div>
                     </div>

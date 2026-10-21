@@ -1,4 +1,5 @@
 import QRCode from 'qrcode';
+import { MIN_GATEWAY_AMOUNT } from './pricing';
 
 export interface CreateTransactionParams {
   orderId: string;
@@ -36,6 +37,20 @@ export async function createKlikQrisTransaction(
   const merchantId = params.merchantId || process.env.KLIKQRIS_MERCHANT_ID;
   const env = params.env || (process.env.KLIKQRIS_ENV === 'production' ? 'production' : 'sandbox');
   const baseUrl = getKlikQrisBaseUrl(env);
+
+  // Pre-flight: the gateway answers 422 "Validation Error" for anything under
+  // its floor, so reject it here with a message that names the real limit.
+  if (!Number.isInteger(params.amount) || params.amount < MIN_GATEWAY_AMOUNT) {
+    return {
+      success: false,
+      orderId: params.orderId,
+      amount: params.amount,
+      uniqueCode: 0,
+      totalAmount: params.amount,
+      status: 'FAILED',
+      error: `Nominal Rp ${params.amount} di bawah minimum QRIS (Rp ${MIN_GATEWAY_AMOUNT}).`,
+    };
+  }
 
   // If no API key configured (e.g. offline dev mode), fallback to mock synthesized QR
   if (!apiKey || !merchantId) {
@@ -76,7 +91,12 @@ export async function createKlikQrisTransaction(
     });
 
     const json = await res.json();
-    console.log('[KlikQRIS create] HTTP', res.status, '| status:', json.status, '| message:', json.message);
+    console.log(
+      '[KlikQRIS create] HTTP', res.status,
+      '| status:', json.status,
+      '| message:', json.message,
+      json.errors ? '| errors: ' + JSON.stringify(json.errors) : ''
+    );
     if (!res.ok || !json.status) {
       return {
         success: false,

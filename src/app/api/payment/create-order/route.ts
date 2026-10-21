@@ -138,63 +138,73 @@ export async function POST(req: NextRequest) {
       if (existing.length > 0) {
         const order = existing[0];
 
-        // Jika order lama sudah punya QRIS tersimpan (base64 real), langsung pakai — skip re-call KlikQRIS
-        // Tolak sandbox dummy URL (storage/sandbox) agar order baru di-generate ulang
-        const hasRealQris = order.qris_image?.startsWith('data:image') || 
-          (order.qris_url && !order.qris_url.includes('/sandbox/'));
-        if (hasRealQris) {
-          // Pilihan bundle bisa berubah antar-klik (nominal bundle flat, QRIS tetap
-          // valid): samakan package_ids tersimpan dengan pilihan terbaru supaya
-          // webhook membuka tepat paket yang dipilih saat bayar.
-          const finalBundleIds = bundleIds;
-          if (orderType === 'bundle' && bundleIds) {
-            const stored: string[] = Array.isArray(order.package_ids) ? order.package_ids : [];
-            const same = stored.length === bundleIds.length && bundleIds.every((id) => stored.includes(id));
-            if (!same) {
-              await sql`
-                UPDATE payment_orders
-                SET package_ids = ${JSON.stringify(bundleIds)}::jsonb
-                WHERE id = ${order.id}
-              `;
+        // Harga berubah (mis. harga test diturunkan) tapi order pending lama
+        // masih memakai nominal lama. Buang supaya pembeli tidak ditagih harga
+        // yang sudah tidak berlaku — QRIS baru dibuat dengan nominal terkini.
+        if (Number(order.base_amount) !== baseAmount) {
+          await sql`DELETE FROM payment_orders WHERE id = ${order.id}`;
+        } else {
+          // Jika order lama sudah punya QRIS tersimpan (base64 real), langsung pakai — skip re-call KlikQRIS
+          // Tolak sandbox dummy URL (storage/sandbox) agar order baru di-generate ulang
+          const hasRealQris = order.qris_image?.startsWith('data:image') ||
+            (order.qris_url && !order.qris_url.includes('/sandbox/'));
+          if (hasRealQris) {
+            // Pilihan bundle bisa berubah antar-klik (nominal bundle flat, QRIS tetap
+            // valid): samakan package_ids tersimpan dengan pilihan terbaru supaya
+            // webhook membuka tepat paket yang dipilih saat bayar.
+            const finalBundleIds = bundleIds;
+            if (orderType === 'bundle' && bundleIds) {
+              const stored: string[] = Array.isArray(order.package_ids) ? order.package_ids : [];
+              const same = stored.length === bundleIds.length && bundleIds.every((id) => stored.includes(id));
+              if (!same) {
+                await sql`
+                  UPDATE payment_orders
+                  SET package_ids = ${JSON.stringify(bundleIds)}::jsonb
+                  WHERE id = ${order.id}
+                `;
+              }
             }
+
+            return NextResponse.json({
+              success: true,
+              orderId: order.id,
+              invoiceCode: `INV-${order.id}`,
+              baseAmount: order.base_amount,
+              uniqueCode: order.unique_code,
+              exactAmount: order.exact_amount,
+              packageId: effectivePackageId,
+              packageIds: finalBundleIds,
+              orderType,
+              userEmail,
+              qrisUrl: order.qris_url || '',
+              qrisImage: order.qris_image || '',
+              gateway: 'klikqris',
+            });
           }
 
-          return NextResponse.json({
-            success: true,
-            orderId: order.id,
-            invoiceCode: `INV-${order.id}`,
-            baseAmount: order.base_amount,
-            uniqueCode: order.unique_code,
-            exactAmount: order.exact_amount,
-            packageId: effectivePackageId,
-            packageIds: finalBundleIds,
-            orderType,
-            userEmail,
-            qrisUrl: order.qris_url || '',
-            qrisImage: order.qris_image || '',
-            gateway: 'klikqris',
-          });
+          // Order pending ada tapi QRIS kosong (dibuat saat API key salah) — hapus & buat ulang
+          await sql`DELETE FROM payment_orders WHERE id = ${order.id}`;
         }
-
-        // Order pending ada tapi QRIS kosong (dibuat saat API key salah) — hapus & buat ulang
-        await sql`DELETE FROM payment_orders WHERE id = ${order.id}`;
       }
     }
 
     // 2. Simpan order baru di database (unique_code & exact_amount diupdate setelah response KlikQRIS)
-    const inserted = await sql`
-      INSERT INTO payment_orders (
-        user_id, user_email, package_id, order_type,
-        base_amount, unique_code, exact_amount, status, package_ids
-      ) VALUES (
-        ${userId}, ${userEmail}, ${effectivePackageId}, ${orderType},
-        ${baseAmount}, ${0}, ${baseAmount}, 'pending',
-        ${bundleIds ? JSON.stringify(bundleIds) : null}::jsonb
-      )
-      RETURNING id
-    `;
+    const insertOrderRow = async (): Promise<number> => {
+      const inserted = await sql`
+        INSERT INTO payment_orders (
+          user_id, user_email, package_id, order_type,
+          base_amount, unique_code, exact_amount, status, package_ids
+        ) VALUES (
+          ${userId}, ${userEmail}, ${effectivePackageId}, ${orderType},
+          ${baseAmount}, ${0}, ${baseAmount}, 'pending',
+          ${bundleIds ? JSON.stringify(bundleIds) : null}::jsonb
+        )
+        RETURNING id
+      `;
+      return inserted[0].id;
+    };
 
-    const orderId = inserted[0].id;
+    let orderId = await insertOrderRow();
     const keterangan = orderType === 'single'
       ? `Lolos.in - Akses ${packageId}`
       : orderType === 'bundle'
@@ -204,12 +214,34 @@ export async function POST(req: NextRequest) {
     // 4. Hubungi API KlikQRIS untuk generate dynamic QRIS
     // Kirim baseAmount murni — KlikQRIS yang akan mengenerate totalAmount dan kode uniknya sendiri
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://lolosin.com';
-    const klikQrisRes = await createKlikQrisTransaction({
-      orderId: `INV-${orderId}`,
-      amount: baseAmount,
-      keterangan,
-      callbackUrl: `${appUrl}/api/webhooks/klikqris`,
-    });
+    const callGateway = () =>
+      createKlikQrisTransaction({
+        orderId: `INV-${orderId}`,
+        amount: baseAmount,
+        keterangan,
+        callbackUrl: `${appUrl}/api/webhooks/klikqris`,
+      });
+
+    let klikQrisRes = await callGateway();
+
+    // KlikQRIS kadang menolak transaksi baru dengan "Collision detected":
+    // total (nominal + kode unik) bentrok dengan transaksi pending lain milik
+    // merchant — biasanya sisa order yang baris lokalnya sudah terhapus saat
+    // percobaan sebelumnya gagal di tengah jalan. Order lama dibuang lalu dibuat
+    // ulang dengan id (dan kode unik) baru sampai gateway menerimanya.
+    const MAX_GATEWAY_ATTEMPTS = 3;
+    for (
+      let attempt = 1;
+      !klikQrisRes.success &&
+      /collision/i.test(klikQrisRes.error || '') &&
+      attempt < MAX_GATEWAY_ATTEMPTS;
+      attempt++
+    ) {
+      await sql`DELETE FROM payment_orders WHERE id = ${orderId}`;
+      await new Promise((resolve) => setTimeout(resolve, 400 * attempt));
+      orderId = await insertOrderRow();
+      klikQrisRes = await callGateway();
+    }
 
     // Jika KlikQRIS gagal, rollback order & return error dengan pesan jelas
     if (!klikQrisRes.success) {

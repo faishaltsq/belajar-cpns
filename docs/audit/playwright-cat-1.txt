@@ -1,0 +1,263 @@
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+Running 6 tests using 6 workers
+
+[WebServer] The `fetchConnectionCache` option is deprecated (now always `true`)
+[WebServer] The `fetchConnectionCache` option is deprecated (now always `true`)
+[WebServer] (node:34152) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+[WebServer] (Use `node --trace-deprecation ...` to show where the warning was created)
+  ok 2 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:135:7 › CAT SKD tryout engine › refuses a premium paper on the server for a guest (1.5s)
+  x  5 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:148:7 › CAT SKD tryout engine › offers the mode choice on a first visit and remembers it (11.1s)
+  x  1 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:48:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette (12.4s)
+  x  4 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:117:7 › CAT SKD tryout engine › submits and reports a result (1.0m)
+  x  3 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:103:7 › CAT SKD tryout engine › keeps a second answer without losing the first (1.0m)
+  x  6 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:72:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload (1.0m)
+
+
+  1) [desktop-1440] › tests\e2e\cat-tryout.spec.ts:48:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: /No\. 1 \/ 110/ })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: /No\. 1 \/ 110/ }) with timeout 10000ms
+      - waiting for getByRole('button', { name: /No\. 1 \/ 110/ })
+
+
+      55 |     // the browser rather than assumed.
+      56 |     await expect(page.getByRole('button', { name: /Selanjutnya/ })).toBeVisible();
+    > 57 |     await expect(page.getByRole('button', { name: /No\. 1 \/ 110/ })).toBeVisible();
+         |                                                                       ^
+      58 |
+      59 |     // A countdown is running, not a frozen placeholder.
+      60 |     const first = await page.getByText(/^\d{1,2}:\d{2}$/).first().textContent();
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:57:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-desktop-1440\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-desktop-1440\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [desktop-1440] › tests\e2e\cat-tryout.spec.ts:72:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload 
+
+    Test timeout of 60000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-desktop-1440\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-desktop-1440\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [desktop-1440] › tests\e2e\cat-tryout.spec.ts:103:7 › CAT SKD tryout engine › keeps a second answer without losing the first 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for locator('button.flex-1.text-left').nth(2)
+        - locator resolved to <button type="button" class="flex-1 text-left py-2.5 px-3 sm:py-3.5 sm:px-4 flex items-start gap-2.5 sm:gap-3 text-sm disabled:cursor-not-allowed">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="flex items-start gap-3">…</div> from <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="flex items-start gap-3">…</div> from <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> subtree intercepts pointer events
+      2 × retrying click action
+          - waiting 100ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> intercepts pointer events
+      27 × retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <div class="flex items-start gap-3">…</div> from <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <div class="flex items-start gap-3">…</div> from <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> intercepts pointer events
+      2 × retrying click action
+          - waiting 500ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="flex items-start gap-3">…</div> from <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      29 |
+      30 | async function answerOption(page: Page, n: number) {
+    > 31 |   await option(page, n).click();
+         |                         ^
+      32 |   await expect
+      33 |     .poll(async () => isSelected(page, n), { message: `option ${n} should show as selected` })
+      34 |     .toBe(true);
+        at answerOption (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:31:25)
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:108:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--b6b3e-er-without-losing-the-first-desktop-1440\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--b6b3e-er-without-losing-the-first-desktop-1440\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--b6b3e-er-without-losing-the-first-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--b6b3e-er-without-losing-the-first-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [desktop-1440] › tests\e2e\cat-tryout.spec.ts:117:7 › CAT SKD tryout engine › submits and reports a result 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for locator('button.flex-1.text-left').first()
+        - locator resolved to <button type="button" class="flex-1 text-left py-2.5 px-3 sm:py-3.5 sm:px-4 flex items-start gap-2.5 sm:gap-3 text-sm disabled:cursor-not-allowed">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        111 × waiting for element to be visible, enabled and stable
+            - element is visible, enabled and stable
+            - scrolling into view if needed
+            - done scrolling
+            - <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">…</div> intercepts pointer events
+          - retrying click action
+            - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+
+
+      29 |
+      30 | async function answerOption(page: Page, n: number) {
+    > 31 |   await option(page, n).click();
+         |                         ^
+      32 |   await expect
+      33 |     .poll(async () => isSelected(page, n), { message: `option ${n} should show as selected` })
+      34 |     .toBe(true);
+        at answerOption (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:31:25)
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:122:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--5795c-ubmits-and-reports-a-result-desktop-1440\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--5795c-ubmits-and-reports-a-result-desktop-1440\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--5795c-ubmits-and-reports-a-result-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--5795c-ubmits-and-reports-a-result-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [desktop-1440] › tests\e2e\cat-tryout.spec.ts:148:7 › CAT SKD tryout engine › offers the mode choice on a first visit and remembers it 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "latihan"
+    Received: "practice"
+
+    Call Log:
+    - Timeout 10000ms exceeded while waiting on the predicate
+
+      154 |     await expect
+      155 |       .poll(async () => page.evaluate((k) => localStorage.getItem(k), scopedKeys.mode('tryout-1')))
+    > 156 |       .toBe('latihan');
+          |        ^
+      157 |
+      158 |     await page.reload({ waitUntil: 'load' });
+      159 |     await expect(page.getByText('Pilih Mode Ujian')).toHaveCount(0);
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:156:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61508-irst-visit-and-remembers-it-desktop-1440\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--61508-irst-visit-and-remembers-it-desktop-1440\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61508-irst-visit-and-remembers-it-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--61508-irst-visit-and-remembers-it-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [desktop-1440] › tests\e2e\cat-tryout.spec.ts:48:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+    [desktop-1440] › tests\e2e\cat-tryout.spec.ts:72:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload 
+    [desktop-1440] › tests\e2e\cat-tryout.spec.ts:103:7 › CAT SKD tryout engine › keeps a second answer without losing the first 
+    [desktop-1440] › tests\e2e\cat-tryout.spec.ts:117:7 › CAT SKD tryout engine › submits and reports a result 
+    [desktop-1440] › tests\e2e\cat-tryout.spec.ts:148:7 › CAT SKD tryout engine › offers the mode choice on a first visit and remembers it 
+  1 passed (1.1m)

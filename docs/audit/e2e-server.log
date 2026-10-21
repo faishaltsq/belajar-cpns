@@ -1,0 +1,9 @@
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3100
+
+ ✓ Starting...
+ ✓ Ready in 1220ms
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+(node:18984) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)

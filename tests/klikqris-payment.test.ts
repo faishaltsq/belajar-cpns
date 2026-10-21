@@ -19,10 +19,31 @@ vi.mock('@/lib/auth', () => ({
 
 import { POST as klikQrisWebhook } from '@/app/api/webhooks/klikqris/route';
 import { GET as getOrderStatus } from '@/app/api/payment/order-status/route';
+import { createKlikQrisTransaction } from '@/lib/klikqris';
+
+describe('createKlikQrisTransaction amount floor', () => {
+  it('rejects a sub-minimum amount without calling the gateway', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch');
+    const res = await createKlikQrisTransaction({
+      orderId: 'INV-FLOOR',
+      amount: 100,
+      apiKey: 'test-key',
+      merchantId: 'test-merchant',
+    });
+    expect(res.success).toBe(false);
+    expect(res.error).toMatch(/minimum QRIS/i);
+    expect(fetchSpy).not.toHaveBeenCalled();
+    fetchSpy.mockRestore();
+  });
+});
 
 describe('POST /api/webhooks/klikqris', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    // Drop any mockResolvedValueOnce rows a previous test left queued. Once
+    // values survive clearAllMocks(), so a route that now issues one query
+    // fewer silently hands the next test's first query the leftover row.
+    mockSql.mockReset();
   });
 
   it('rejects payload missing order_id with 400', async () => {
@@ -183,6 +204,10 @@ describe('POST /api/webhooks/klikqris', () => {
 describe('GET /api/payment/order-status', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    // Drop any mockResolvedValueOnce rows a previous test left queued. Once
+    // values survive clearAllMocks(), so a route that now issues one query
+    // fewer silently hands the next test's first query the leftover row.
+    mockSql.mockReset();
   });
 
   it('rejects request missing both orderId and exactAmount with 400', async () => {

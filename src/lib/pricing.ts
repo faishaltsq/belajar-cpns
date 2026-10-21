@@ -1,6 +1,17 @@
 export type OrderType = 'single' | 'bundle' | 'pro';
 
 /**
+ * Lowest nominal KlikQRIS accepts. Below it the gateway answers HTTP 422
+ * "Validation Error" — an opaque message the buyer cannot act on, so the floor
+ * is enforced here instead of surfacing at pay time. Tunable without a code
+ * change in case the acquirer moves the limit.
+ */
+export const MIN_GATEWAY_AMOUNT = (() => {
+  const n = Number(process.env.KLIKQRIS_MIN_AMOUNT);
+  return Number.isInteger(n) && n > 0 ? n : 1000;
+})();
+
+/**
  * Server-authoritative price table. The client never supplies an amount —
  * create-order reads only this table, so a posted `baseAmount` can no longer
  * set what the buyer pays.
@@ -18,7 +29,8 @@ function readPrice(key: string, fallback: number): number {
   const raw = process.env[key];
   if (!raw) return fallback;
   const n = Number(raw);
-  return Number.isInteger(n) && n > 0 ? n : fallback;
+  if (!Number.isInteger(n) || n <= 0) return fallback;
+  return Math.max(n, MIN_GATEWAY_AMOUNT);
 }
 
 export function priceFor(orderType: OrderType): number {

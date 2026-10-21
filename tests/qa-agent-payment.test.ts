@@ -233,9 +233,9 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
       mockSql.mockResolvedValueOnce([
         {
           id: 400,
-          base_amount: 150000,
+          base_amount: 59000,
           unique_code: 88,
-          exact_amount: 150088,
+          exact_amount: 59088,
           status: 'pending',
           expires_at: new Date(Date.now() + 3600000).toISOString(),
           qris_image: 'data:image/png;base64,existingQRIS',
@@ -252,9 +252,58 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
       expect(res.status).toBe(200);
       const json = await res.json();
       expect(json.orderId).toBe(400);
-      expect(json.exactAmount).toBe(150088);
+      expect(json.exactAmount).toBe(59088);
       // Ensure KlikQRIS API create was NOT called again (cached)
       expect(mockCreateKlikQris).not.toHaveBeenCalled();
+    });
+
+    it('replaces a pending order minted at a stale price instead of reusing it', async () => {
+      mockCookieStore.get.mockReturnValue({ value: 'token-stale' });
+      mockVerifyToken.mockResolvedValue({ userId: 'u-stale', email: 'stale@test.com' });
+
+      // 1. SELECT user guard
+      mockSql.mockResolvedValueOnce([{ is_pro: false, unlocked_packages: [], email: 'stale@test.com' }]);
+      // 2. Pending order minted at the old Rp 59.000 tier — price has since dropped
+      mockSql.mockResolvedValueOnce([
+        {
+          id: 420,
+          base_amount: 59000,
+          unique_code: 12,
+          exact_amount: 59012,
+          status: 'pending',
+          expires_at: new Date(Date.now() + 3600000).toISOString(),
+          qris_image: 'data:image/png;base64,staleQRIS',
+          qris_url: 'https://klikqris.com/storage/qris_420.png',
+        },
+      ]);
+      mockSql.mockResolvedValueOnce([]); // DELETE of the stale order
+      mockSql.mockResolvedValueOnce([{ id: 421 }]); // INSERT at the current price
+      mockSql.mockResolvedValueOnce([]); // UPDATE with fresh QRIS
+
+      mockCreateKlikQris.mockResolvedValueOnce({
+        success: true,
+        orderId: 'INV-421',
+        amount: 5000,
+        uniqueCode: 17,
+        totalAmount: 5017,
+        status: 'PENDING',
+        qrisUrl: 'https://klikqris.com/storage/qris_421.png',
+        qrisImage: 'data:image/png;base64,freshQRIS',
+        signature: 'sig-421',
+      });
+
+      const req = new NextRequest('http://localhost:3000/api/payment/create-order', {
+        method: 'POST',
+        body: JSON.stringify({ orderType: 'single', packageId: 'tryout-9' }),
+      });
+
+      const res = await createOrderHandler(req);
+      expect(res.status).toBe(200);
+      const json = await res.json();
+      expect(json.orderId).toBe(421);
+      expect(json.baseAmount).toBe(5000);
+      expect(json.exactAmount).toBe(5017);
+      expect(mockCreateKlikQris).toHaveBeenCalledTimes(1);
     });
 
     it('rolls back database entry and returns 502 when KlikQRIS API returns error', async () => {
@@ -288,6 +337,59 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
       expect(res.status).toBe(502);
       const json = await res.json();
       expect(json.error).toContain('Merchant limit exceeded');
+      // error non-transien: tidak di-retry, cukup satu percobaan gateway
+      expect(mockCreateKlikQris).toHaveBeenCalledTimes(1);
+    });
+
+    it('retries with a fresh order id when the gateway answers "Collision detected"', async () => {
+      mockCookieStore.get.mockReturnValue({ value: 'valid-token' });
+      mockVerifyToken.mockResolvedValue({ userId: 'u-105', email: 'user5@test.com' });
+
+      mockSql.mockResolvedValueOnce([{ is_pro: false, unlocked_packages: [], email: 'user5@test.com' }]); // guard
+      mockSql.mockResolvedValueOnce([]); // no reusable pending order
+      mockSql.mockResolvedValueOnce([{ id: 610 }]); // INSERT attempt 1
+      mockSql.mockResolvedValueOnce([]); // DELETE of the collided order
+      mockSql.mockResolvedValueOnce([{ id: 611 }]); // INSERT attempt 2
+      mockSql.mockResolvedValueOnce([]); // UPDATE with QRIS details
+
+      mockCreateKlikQris
+        .mockResolvedValueOnce({
+          success: false,
+          orderId: 'INV-610',
+          amount: 5000,
+          uniqueCode: 0,
+          totalAmount: 5000,
+          status: 'FAILED',
+          error: 'Collision detected. Please try again.',
+        })
+        .mockResolvedValueOnce({
+          success: true,
+          orderId: 'INV-611',
+          amount: 5000,
+          uniqueCode: 77,
+          totalAmount: 5077,
+          status: 'PENDING',
+          qrisUrl: 'https://klikqris.com/qris_611.png',
+          qrisImage: 'data:image/png;base64,mockqr611',
+          signature: 'sig-611',
+        });
+
+      const req = new NextRequest('http://localhost:3000/api/payment/create-order', {
+        method: 'POST',
+        body: JSON.stringify({ orderType: 'single', packageId: 'tryout-9' }),
+      });
+
+      const res = await createOrderHandler(req);
+      expect(res.status).toBe(200);
+      const json = await res.json();
+
+      expect(json.success).toBe(true);
+      expect(json.orderId).toBe(611);
+      expect(json.invoiceCode).toBe('INV-611');
+      expect(json.exactAmount).toBe(5077);
+      expect(mockCreateKlikQris).toHaveBeenCalledTimes(2);
+      // order id kedua harus berbeda supaya tidak membentrok lagi
+      expect(mockCreateKlikQris.mock.calls[1][0]).toMatchObject({ orderId: 'INV-611' });
     });
   });
 
@@ -479,8 +581,9 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
           signature: 'sig-705',
         },
       ]);
-      // UPDATE payment_orders SET status = 'expired'
-      mockSql.mockResolvedValueOnce([]);
+      // UPDATE payment_orders SET status = 'expired' ... AND status = 'pending'
+      // RETURNING id — the guard matched, so one row comes back.
+      mockSql.mockResolvedValueOnce([{ id: 705 }]);
 
       const req = new NextRequest('http://localhost:3000/api/webhooks/klikqris', {
         method: 'POST',

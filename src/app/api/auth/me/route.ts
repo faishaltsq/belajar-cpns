@@ -9,24 +9,19 @@ export const revalidate = 0;
 export async function GET() {
   const cookieStore = cookies();
   const token = cookieStore.get('cpns_token')?.value;
+  const store = { 'Cache-Control': 'no-store, no-cache, must-revalidate' };
+
+  // This is a session probe, not a protected resource: the navbar asks it on
+  // every page for every visitor. Answering "not logged in" with 401 made the
+  // browser log a 401 console error on every page load for every guest.
   if (!token) {
-    return NextResponse.json(
-      { error: 'Tidak terautentikasi' },
-      {
-        status: 401,
-        headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate' },
-      }
-    );
+    return NextResponse.json({ user: null }, { headers: store });
   }
+
   const payload = await verifyToken(token);
   if (!payload) {
-    return NextResponse.json(
-      { error: 'Token tidak valid' },
-      {
-        status: 401,
-        headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate' },
-      }
-    );
+    // Same answer as a missing token — the client treats both as "logged out".
+    return NextResponse.json({ user: null, session_expired: true }, { headers: store });
   }
 
   // Ambil detail nama & profil user dari database
@@ -42,7 +37,7 @@ export async function GET() {
       },
     },
     {
-      headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate' },
+      headers: store,
     }
   );
 }

@@ -1,5 +1,8 @@
 import type { NeonQueryFunction } from '@neondatabase/serverless';
 
+/** Any executor that supports neon-style tagged templates (HTTP or pg adapter). */
+export type SqlExecutor = (strings: readonly string[], ...values: unknown[]) => Promise<any[]>;
+
 /** Order row fields the entitlement grant needs. */
 export interface EntitlementOrder {
   id: number;
@@ -20,7 +23,7 @@ export function toEntitlementOrder(row: Record<string, unknown>): EntitlementOrd
   if (!Number.isInteger(id)) return null;
   return {
     id,
-    user_id: typeof row.user_id === 'string' ? row.user_id : null,
+    user_id: typeof row.user_id === 'string' && row.user_id.trim() !== '' ? row.user_id : null,
     user_email: typeof row.user_email === 'string' ? row.user_email : null,
     package_id: typeof row.package_id === 'string' ? row.package_id : null,
     order_type: typeof row.order_type === 'string' ? row.order_type : null,
@@ -36,7 +39,7 @@ export function toEntitlementOrder(row: Record<string, unknown>): EntitlementOrd
  * Unknown order types grant nothing — they must never fall through to PRO.
  */
 export async function grantEntitlement(
-  sql: NeonQueryFunction<false, false>,
+  sql: SqlExecutor,
   order: EntitlementOrder
 ): Promise<void> {
   let userId = order.user_id;
@@ -68,19 +71,24 @@ export async function grantEntitlement(
     }
     if (toUnlock.length === 0) return;
 
-    const userRows = await sql`SELECT unlocked_packages FROM users WHERE id = ${userId} LIMIT 1`;
-    if (userRows.length === 0) return;
-    const current: string[] = Array.isArray(userRows[0].unlocked_packages)
-      ? userRows[0].unlocked_packages : [];
-    const merged = [...current];
-    for (const id of toUnlock) if (!merged.includes(id)) merged.push(id);
-    if (merged.length !== current.length) {
-      await sql`
-        UPDATE users
-        SET unlocked_packages = ${JSON.stringify(merged)}::jsonb
-        WHERE id = ${userId}
-      `;
-    }
+    // One statement, no read-modify-write. getDb() is the Neon HTTP driver —
+    // every query runs standalone, so there is no transaction and no FOR UPDATE
+    // to hold across two statements. "SELECT then UPDATE" here let two
+    // simultaneous grants for the same user (a bundle plus a single package paid
+    // in the same second, or two tabs) overwrite each other, dropping whichever
+    // unlock was written second. Appending only the ids that are not already
+    // present keeps the old merge behaviour — no duplicates, existing order
+    // preserved — while making the update itself atomic.
+    await sql`
+      UPDATE users
+      SET unlocked_packages = COALESCE(unlocked_packages, '[]'::jsonb)
+        || (
+          SELECT COALESCE(jsonb_agg(DISTINCT missing), '[]'::jsonb)
+          FROM jsonb_array_elements_text(${JSON.stringify(toUnlock)}::jsonb) AS missing
+          WHERE NOT COALESCE(users.unlocked_packages, '[]'::jsonb) ? missing
+        )
+      WHERE id = ${userId}
+    `;
     return;
   }
 

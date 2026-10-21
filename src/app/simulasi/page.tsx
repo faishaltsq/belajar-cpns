@@ -7,10 +7,19 @@ import {
   MagnifyingGlass, X, Gift, Certificate, ImageSquare, Brain, Barbell,
   ListBullets, Play
 } from '@phosphor-icons/react';
-import { TRYOUT_LIST, TOTAL_TRYOUT_PACKAGES, SECTION_META, type TryoutSection, type PkgItem } from '@/lib/loadPackage';
+// Catalog data only — loadPackage also exports the loader, which pulls db.ts
+// (and the Neon driver) into this client bundle.
+import {
+  TRYOUT_LIST,
+  TOTAL_TRYOUT_PACKAGES,
+  SECTION_META,
+  type TryoutSection,
+  type PkgItem,
+} from '@/lib/tryoutCatalog';
 import { FREE_PACKAGE_IDS } from '@/lib/pricing';
 import { UpgradeProModal } from '@/components/UpgradeProModal';
 import { useUser } from '@/lib/useUser';
+import { usePrices } from '@/lib/usePrices';
 import { scopedKey } from '@/lib/userStorage';
 
 const SECTION_ORDER: TryoutSection[] = ['starter', 'standard', 'special', 'hots', 'drill'];
@@ -45,6 +54,7 @@ function badgeClasses(badge: string | null): string {
 
 export default function SimulasiPage() {
   const { user } = useUser();
+  const prices = usePrices();
   const userId = user?.id ?? null;
 
   const [packages, setPackages] = useState<PkgItem[]>(TRYOUT_LIST);
@@ -303,8 +313,8 @@ export default function SimulasiPage() {
                   className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition whitespace-nowrap shrink-0"
                 >
                   <Crown size={14} weight="fill" className="text-amber-500" />
-                  <span className="hidden sm:inline">Upgrade PRO — Rp 59.000</span>
-                  <span className="sm:hidden">PRO Rp 59.000</span>
+                  <span className="hidden sm:inline">Upgrade PRO — {prices.labels.pro}</span>
+                  <span className="sm:hidden">PRO {prices.labels.pro}</span>
                 </button>
               </div>
             )}

@@ -10,6 +10,10 @@ interface FinishExamModalProps {
   flaggedCount: number;
   onCancel: () => void;
   onConfirm: () => void;
+  /** Submission is in flight — the dialog must not be dismissible. */
+  isSubmitting?: boolean;
+  /** Last failed submission attempt, shown inside the dialog. */
+  errorMessage?: string | null;
 }
 
 export function FinishExamModal({
@@ -19,6 +23,8 @@ export function FinishExamModal({
   flaggedCount,
   onCancel,
   onConfirm,
+  isSubmitting = false,
+  errorMessage = null,
 }: FinishExamModalProps) {
   if (!isOpen) return null;
 
@@ -27,7 +33,7 @@ export function FinishExamModal({
   return (
     <div
       className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4"
-      onClick={onCancel}
+      onClick={isSubmitting ? undefined : onCancel}
     >
       <div
         className="card-modern max-w-md w-full p-6"
@@ -58,19 +64,40 @@ export function FinishExamModal({
           </div>
         </div>
 
+        {errorMessage && (
+          <div
+            role="alert"
+            className="mb-5 flex items-start gap-2 rounded-xl border border-red-300/60 bg-red-50 p-3"
+          >
+            <Warning size={16} className="text-red-600 mt-0.5 shrink-0" />
+            <p className="text-xs leading-relaxed text-red-700">{errorMessage}</p>
+          </div>
+        )}
+
         <div className="flex gap-3">
           <button
             onClick={onCancel}
-            className="btn-secondary flex-1 py-2.5 text-sm"
+            disabled={isSubmitting}
+            className="btn-secondary flex-1 py-2.5 text-sm disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Lanjut Mengerjakan
           </button>
           <button
             onClick={onConfirm}
-            className="btn-primary flex-1 py-2.5 text-sm"
+            disabled={isSubmitting}
+            className="btn-primary flex-1 py-2.5 text-sm flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <CheckCircle size={16} weight="duotone" />
-            <span>Kumpulkan</span>
+            {isSubmitting ? (
+              <>
+                <span className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                <span>Mengirim…</span>
+              </>
+            ) : (
+              <>
+                <CheckCircle size={16} weight="duotone" />
+                <span>{errorMessage ? 'Coba Kirim Ulang' : 'Kumpulkan'}</span>
+              </>
+            )}
           </button>
         </div>
       </div>

@@ -1,0 +1,576 @@
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+Running 30 tests using 6 workers
+
+[WebServer] The `fetchConnectionCache` option is deprecated (now always `true`)
+[WebServer] The `fetchConnectionCache` option is deprecated (now always `true`)
+[WebServer] (node:17432) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+[WebServer] (Use `node --trace-deprecation ...` to show where the warning was created)
+  ok  5 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:144:7 › CAT SKD tryout engine › refuses a premium paper on the server for a guest (1.4s)
+[WebServer] [rateLimit] DB store unavailable, failing open to memory: NeonDbError: Error connecting to database: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]     at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3180)
+[WebServer]     at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]     at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+[WebServer]     at async e_.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+[WebServer]     at async e_.handle (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943)
+[WebServer]     at async doRender (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1366:42)
+[WebServer]     at async cacheEntry.responseCache.get.routeKind (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1588:28)
+[WebServer]     at async NextNodeServer.renderToResponseWithComponentsImpl (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1496:28) {
+[WebServer]   severity: undefined,
+[WebServer]   code: undefined,
+[WebServer]   detail: undefined,
+[WebServer]   hint: undefined,
+[WebServer]   position: undefined,
+[WebServer]   internalPosition: undefined,
+[WebServer]   internalQuery: undefined,
+[WebServer]   where: undefined,
+[WebServer]   schema: undefined,
+[WebServer]   table: undefined,
+[WebServer]   column: undefined,
+[WebServer]   dataType: undefined,
+[WebServer]   constraint: undefined,
+[WebServer]   file: undefined,
+[WebServer]   line: undefined,
+[WebServer]   routine: undefined,
+[WebServer]   sourceError: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]       at new Request (node:internal/deps/undici/undici:12717:19)
+[WebServer]       at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]       ... 6 lines matching cause stack trace ...
+[WebServer]       at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]       at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337 {
+[WebServer]     [cause]: TypeError: Invalid URL
+[WebServer]         at new URL (node:internal/url:862:25)
+[WebServer]         at new Request (node:internal/deps/undici/undici:12715:25)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]         at V (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:8939)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:11301
+[WebServer]         at h.trace (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:17590)
+[WebServer]         at u (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:5790)
+[WebServer]         at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3107)
+[WebServer]         at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]         at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416) {
+[WebServer]       code: 'ERR_INVALID_URL',
+[WebServer]       input: 'https://api.0.0.1/sql'
+[WebServer]     }
+[WebServer]   }
+[WebServer] }
+  ok  4 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:113:7 › CAT SKD tryout engine › keeps a second answer without losing the first (3.1s)
+  ok  1 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:127:7 › CAT SKD tryout engine › submits and reports a result (3.3s)
+  ok  6 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:157:7 › CAT SKD tryout engine › offers the mode choice on a first visit and remembers it (3.5s)
+  ok  3 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload (3.8s)
+  ok  8 [laptop-1280] › tests\e2e\cat-tryout.spec.ts:113:7 › CAT SKD tryout engine › keeps a second answer without losing the first (1.6s)
+  ok 11 [laptop-1280] › tests\e2e\cat-tryout.spec.ts:144:7 › CAT SKD tryout engine › refuses a premium paper on the server for a guest (1.2s)
+  ok  9 [laptop-1280] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload (2.2s)
+[WebServer] [rateLimit] DB store unavailable, failing open to memory: NeonDbError: Error connecting to database: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]     at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3180)
+[WebServer]     at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]     at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+[WebServer]     at async e_.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+[WebServer]     at async e_.handle (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943)
+[WebServer]     at async doRender (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1366:42)
+[WebServer]     at async cacheEntry.responseCache.get.routeKind (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1588:28)
+[WebServer]     at async NextNodeServer.renderToResponseWithComponentsImpl (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1496:28) {
+[WebServer]   severity: undefined,
+[WebServer]   code: undefined,
+[WebServer]   detail: undefined,
+[WebServer]   hint: undefined,
+[WebServer]   position: undefined,
+[WebServer]   internalPosition: undefined,
+[WebServer]   internalQuery: undefined,
+[WebServer]   where: undefined,
+[WebServer]   schema: undefined,
+[WebServer]   table: undefined,
+[WebServer]   column: undefined,
+[WebServer]   dataType: undefined,
+[WebServer]   constraint: undefined,
+[WebServer]   file: undefined,
+[WebServer]   line: undefined,
+[WebServer]   routine: undefined,
+[WebServer]   sourceError: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]       at new Request (node:internal/deps/undici/undici:12717:19)
+[WebServer]       at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]       ... 6 lines matching cause stack trace ...
+[WebServer]       at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]       at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337 {
+[WebServer]     [cause]: TypeError: Invalid URL
+[WebServer]         at new URL (node:internal/url:862:25)
+[WebServer]         at new Request (node:internal/deps/undici/undici:12715:25)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]         at V (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:8939)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:11301
+[WebServer]         at h.trace (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:17590)
+[WebServer]         at u (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:5790)
+[WebServer]         at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3107)
+[WebServer]         at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]         at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416) {
+[WebServer]       code: 'ERR_INVALID_URL',
+[WebServer]       input: 'https://api.0.0.1/sql'
+[WebServer]     }
+[WebServer]   }
+[WebServer] }
+  ok 10 [laptop-1280] › tests\e2e\cat-tryout.spec.ts:127:7 › CAT SKD tryout engine › submits and reports a result (2.3s)
+  ok 12 [laptop-1280] › tests\e2e\cat-tryout.spec.ts:157:7 › CAT SKD tryout engine › offers the mode choice on a first visit and remembers it (1.5s)
+  ok 15 [tablet-768] › tests\e2e\cat-tryout.spec.ts:113:7 › CAT SKD tryout engine › keeps a second answer without losing the first (1.2s)
+[WebServer] [rateLimit] DB store unavailable, failing open to memory: NeonDbError: Error connecting to database: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]     at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3180)
+[WebServer]     at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]     at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+[WebServer]     at async e_.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+[WebServer]     at async e_.handle (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943)
+[WebServer]     at async doRender (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1366:42)
+[WebServer]     at async cacheEntry.responseCache.get.routeKind (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1588:28)
+[WebServer]     at async NextNodeServer.renderToResponseWithComponentsImpl (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1496:28) {
+[WebServer]   severity: undefined,
+[WebServer]   code: undefined,
+[WebServer]   detail: undefined,
+[WebServer]   hint: undefined,
+[WebServer]   position: undefined,
+[WebServer]   internalPosition: undefined,
+[WebServer]   internalQuery: undefined,
+[WebServer]   where: undefined,
+[WebServer]   schema: undefined,
+[WebServer]   table: undefined,
+[WebServer]   column: undefined,
+[WebServer]   dataType: undefined,
+[WebServer]   constraint: undefined,
+[WebServer]   file: undefined,
+[WebServer]   line: undefined,
+[WebServer]   routine: undefined,
+[WebServer]   sourceError: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]       at new Request (node:internal/deps/undici/undici:12717:19)
+[WebServer]       at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]       ... 6 lines matching cause stack trace ...
+[WebServer]       at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]       at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337 {
+[WebServer]     [cause]: TypeError: Invalid URL
+[WebServer]         at new URL (node:internal/url:862:25)
+[WebServer]         at new Request (node:internal/deps/undici/undici:12715:25)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]         at V (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:8939)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:11301
+[WebServer]         at h.trace (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:17590)
+[WebServer]         at u (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:5790)
+[WebServer]         at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3107)
+[WebServer]         at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]         at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416) {
+[WebServer]       code: 'ERR_INVALID_URL',
+[WebServer]       input: 'https://api.0.0.1/sql'
+[WebServer]     }
+[WebServer]   }
+[WebServer] }
+  ok 16 [tablet-768] › tests\e2e\cat-tryout.spec.ts:127:7 › CAT SKD tryout engine › submits and reports a result (1.4s)
+  ok 17 [tablet-768] › tests\e2e\cat-tryout.spec.ts:144:7 › CAT SKD tryout engine › refuses a premium paper on the server for a guest (553ms)
+  ok 18 [tablet-768] › tests\e2e\cat-tryout.spec.ts:157:7 › CAT SKD tryout engine › offers the mode choice on a first visit and remembers it (863ms)
+  x   2 [desktop-1440] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette (12.3s)
+  ok 21 [mobile-390] › tests\e2e\cat-tryout.spec.ts:113:7 › CAT SKD tryout engine › keeps a second answer without losing the first (744ms)
+[WebServer] [rateLimit] DB store unavailable, failing open to memory: NeonDbError: Error connecting to database: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]     at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3180)
+[WebServer]     at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]     at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+[WebServer]     at async e_.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+[WebServer]     at async e_.handle (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943)
+[WebServer]     at async doRender (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1366:42)
+[WebServer]     at async cacheEntry.responseCache.get.routeKind (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1588:28)
+[WebServer]     at async NextNodeServer.renderToResponseWithComponentsImpl (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1496:28) {
+[WebServer]   severity: undefined,
+[WebServer]   code: undefined,
+[WebServer]   detail: undefined,
+[WebServer]   hint: undefined,
+[WebServer]   position: undefined,
+[WebServer]   internalPosition: undefined,
+[WebServer]   internalQuery: undefined,
+[WebServer]   where: undefined,
+[WebServer]   schema: undefined,
+[WebServer]   table: undefined,
+[WebServer]   column: undefined,
+[WebServer]   dataType: undefined,
+[WebServer]   constraint: undefined,
+[WebServer]   file: undefined,
+[WebServer]   line: undefined,
+[WebServer]   routine: undefined,
+[WebServer]   sourceError: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]       at new Request (node:internal/deps/undici/undici:12717:19)
+[WebServer]       at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]       ... 6 lines matching cause stack trace ...
+[WebServer]       at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]       at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337 {
+[WebServer]     [cause]: TypeError: Invalid URL
+[WebServer]         at new URL (node:internal/url:862:25)
+[WebServer]         at new Request (node:internal/deps/undici/undici:12715:25)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]         at V (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:8939)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:11301
+[WebServer]         at h.trace (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:17590)
+[WebServer]         at u (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:5790)
+[WebServer]         at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3107)
+[WebServer]         at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]         at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416) {
+[WebServer]       code: 'ERR_INVALID_URL',
+[WebServer]       input: 'https://api.0.0.1/sql'
+[WebServer]     }
+[WebServer]   }
+[WebServer] }
+  ok 22 [mobile-390] › tests\e2e\cat-tryout.spec.ts:127:7 › CAT SKD tryout engine › submits and reports a result (799ms)
+  x   7 [laptop-1280] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette (11.4s)
+  ok 23 [mobile-390] › tests\e2e\cat-tryout.spec.ts:144:7 › CAT SKD tryout engine › refuses a premium paper on the server for a guest (321ms)
+  ok 24 [mobile-390] › tests\e2e\cat-tryout.spec.ts:157:7 › CAT SKD tryout engine › offers the mode choice on a first visit and remembers it (849ms)
+  x  13 [tablet-768] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette (10.9s)
+  ok 27 [mobile-320] › tests\e2e\cat-tryout.spec.ts:113:7 › CAT SKD tryout engine › keeps a second answer without losing the first (771ms)
+[WebServer] [rateLimit] DB store unavailable, failing open to memory: NeonDbError: Error connecting to database: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]     at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3180)
+[WebServer]     at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]     at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337
+[WebServer]     at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+[WebServer]     at async e_.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+[WebServer]     at async e_.handle (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943)
+[WebServer]     at async doRender (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1366:42)
+[WebServer]     at async cacheEntry.responseCache.get.routeKind (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1588:28)
+[WebServer]     at async NextNodeServer.renderToResponseWithComponentsImpl (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\node_modules\next\dist\server\base-server.js:1496:28) {
+[WebServer]   severity: undefined,
+[WebServer]   code: undefined,
+[WebServer]   detail: undefined,
+[WebServer]   hint: undefined,
+[WebServer]   position: undefined,
+[WebServer]   internalPosition: undefined,
+[WebServer]   internalQuery: undefined,
+[WebServer]   where: undefined,
+[WebServer]   schema: undefined,
+[WebServer]   table: undefined,
+[WebServer]   column: undefined,
+[WebServer]   dataType: undefined,
+[WebServer]   constraint: undefined,
+[WebServer]   file: undefined,
+[WebServer]   line: undefined,
+[WebServer]   routine: undefined,
+[WebServer]   sourceError: TypeError: Failed to parse URL from https://api.0.0.1/sql
+[WebServer]       at new Request (node:internal/deps/undici/undici:12717:19)
+[WebServer]       at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]       ... 6 lines matching cause stack trace ...
+[WebServer]       at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416)
+[WebServer]       at async C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\4891.js:18:75337 {
+[WebServer]     [cause]: TypeError: Invalid URL
+[WebServer]         at new URL (node:internal/url:862:25)
+[WebServer]         at new Request (node:internal/deps/undici/undici:12715:25)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:2049
+[WebServer]         at V (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:8939)
+[WebServer]         at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:11301
+[WebServer]         at h.trace (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:17590)
+[WebServer]         at u (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\9085.js:2:5790)
+[WebServer]         at NeonQueryPromise.execute (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\chunks\1989.js:31:3107)
+[WebServer]         at async o (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:8436)
+[WebServer]         at async h (C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\.next\server\app\api\results\route.js:1:4416) {
+[WebServer]       code: 'ERR_INVALID_URL',
+[WebServer]       input: 'https://api.0.0.1/sql'
+[WebServer]     }
+[WebServer]   }
+[WebServer] }
+  ok 28 [mobile-320] › tests\e2e\cat-tryout.spec.ts:127:7 › CAT SKD tryout engine › submits and reports a result (809ms)
+  ok 29 [mobile-320] › tests\e2e\cat-tryout.spec.ts:144:7 › CAT SKD tryout engine › refuses a premium paper on the server for a guest (300ms)
+  ok 30 [mobile-320] › tests\e2e\cat-tryout.spec.ts:157:7 › CAT SKD tryout engine › offers the mode choice on a first visit and remembers it (547ms)
+  x  19 [mobile-390] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette (10.7s)
+  x  25 [mobile-320] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette (10.8s)
+  x  14 [tablet-768] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload (1.0m)
+  x  20 [mobile-390] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload (1.0m)
+  x  26 [mobile-320] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload (1.0m)
+
+
+  1) [desktop-1440] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first() with timeout 10000ms
+      - waiting for getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+
+
+      66 |     // the browser rather than assumed.
+      67 |     await expect(page.getByRole('button', { name: /Selanjutnya/ })).toBeVisible();
+    > 68 |     await expect(page.getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()).toBeVisible();
+         |                                                                                     ^
+      69 |
+      70 |     // A countdown is running, not a frozen placeholder.
+      71 |     const first = await page.getByText(/^\d{1,2}:\d{2}$/).first().textContent();
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:68:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-desktop-1440\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-desktop-1440\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [laptop-1280] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first() with timeout 10000ms
+      - waiting for getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+
+
+      66 |     // the browser rather than assumed.
+      67 |     await expect(page.getByRole('button', { name: /Selanjutnya/ })).toBeVisible();
+    > 68 |     await expect(page.getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()).toBeVisible();
+         |                                                                                     ^
+      69 |
+      70 |     // A countdown is running, not a frozen placeholder.
+      71 |     const first = await page.getByText(/^\d{1,2}:\d{2}$/).first().textContent();
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:68:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-laptop-1280\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-laptop-1280\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-laptop-1280\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-laptop-1280\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [tablet-768] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first() with timeout 10000ms
+      - waiting for getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+
+
+      66 |     // the browser rather than assumed.
+      67 |     await expect(page.getByRole('button', { name: /Selanjutnya/ })).toBeVisible();
+    > 68 |     await expect(page.getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()).toBeVisible();
+         |                                                                                     ^
+      69 |
+      70 |     // A countdown is running, not a frozen placeholder.
+      71 |     const first = await page.getByText(/^\d{1,2}:\d{2}$/).first().textContent();
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:68:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-tablet-768\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-tablet-768\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-tablet-768\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-tablet-768\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [tablet-768] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: /^2$/ }).first()
+
+
+       97 |
+       98 |     // Jump via the palette, then reload the whole document.
+    >  99 |     await page.getByRole('button', { name: /^2$/ }).first().click();
+          |                                                             ^
+      100 |     await expect(page.getByText(/Soal nomor 2/)).toBeVisible();
+      101 |
+      102 |     await page.reload({ waitUntil: 'load' });
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:99:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-tablet-768\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-tablet-768\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-tablet-768\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-tablet-768\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [mobile-390] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first() with timeout 10000ms
+      - waiting for getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+
+
+      66 |     // the browser rather than assumed.
+      67 |     await expect(page.getByRole('button', { name: /Selanjutnya/ })).toBeVisible();
+    > 68 |     await expect(page.getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()).toBeVisible();
+         |                                                                                     ^
+      69 |
+      70 |     // A countdown is running, not a frozen placeholder.
+      71 |     const first = await page.getByText(/^\d{1,2}:\d{2}$/).first().textContent();
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:68:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-mobile-390\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-mobile-390\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-mobile-390\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-mobile-390\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [mobile-390] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: /^2$/ }).first()
+
+
+       97 |
+       98 |     // Jump via the palette, then reload the whole document.
+    >  99 |     await page.getByRole('button', { name: /^2$/ }).first().click();
+          |                                                             ^
+      100 |     await expect(page.getByText(/Soal nomor 2/)).toBeVisible();
+      101 |
+      102 |     await page.reload({ waitUntil: 'load' });
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:99:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-mobile-390\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-mobile-390\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-mobile-390\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-mobile-390\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [mobile-320] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first() with timeout 10000ms
+      - waiting for getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()
+
+
+      66 |     // the browser rather than assumed.
+      67 |     await expect(page.getByRole('button', { name: /Selanjutnya/ })).toBeVisible();
+    > 68 |     await expect(page.getByText(/No\.\s*1\s*\/\s*110/).locator(':visible').first()).toBeVisible();
+         |                                                                                     ^
+      69 |
+      70 |     // A countdown is running, not a frozen placeholder.
+      71 |     const first = await page.getByText(/^\d{1,2}:\d{2}$/).first().textContent();
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:68:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-mobile-320\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-mobile-320\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-mobile-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--f380c-d-the-full-question-palette-mobile-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [mobile-320] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: /^2$/ }).first()
+
+
+       97 |
+       98 |     // Jump via the palette, then reload the whole document.
+    >  99 |     await page.getByRole('button', { name: /^2$/ }).first().click();
+          |                                                             ^
+      100 |     await expect(page.getByText(/Soal nomor 2/)).toBeVisible();
+      101 |
+      102 |     await page.reload({ waitUntil: 'load' });
+        at C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\cat-tryout.spec.ts:99:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-mobile-320\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-mobile-320\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-mobile-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cat-tryout-CAT-SKD-tryout--61671-oss-navigation-and-a-reload-mobile-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8 failed
+    [desktop-1440] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+    [laptop-1280] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+    [tablet-768] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+    [tablet-768] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload 
+    [mobile-390] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+    [mobile-390] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload 
+    [mobile-320] › tests\e2e\cat-tryout.spec.ts:61:7 › CAT SKD tryout engine › opens a paper with a countdown and the full question palette 
+    [mobile-320] › tests\e2e\cat-tryout.spec.ts:83:7 › CAT SKD tryout engine › records an answer and keeps it across navigation and a reload 
+  22 passed (1.3m)

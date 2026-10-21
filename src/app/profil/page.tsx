@@ -1,5 +1,7 @@
 'use client';
 
+import { EXAM_RULES, MAX_SCORES, PASSING_GRADES, SubTestKey } from '@/lib/examRules';
+
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -246,13 +248,13 @@ export default function ProfilPage() {
           <div className="card-modern p-5 space-y-3">
             <div className="flex items-center justify-between">
               <h2 className="text-sm font-bold text-[var(--foreground)]">Target Lulus SKD</h2>
-              <span className="text-[10px] text-[var(--muted-foreground)]">Passing Grade Resmi BKN 2024</span>
+              <span className="text-[10px] text-[var(--muted-foreground)]">
+                {EXAM_RULES.verification === 'official' ? 'Passing Grade Resmi' : 'Acuan Passing Grade'} {EXAM_RULES.citedSource}
+              </span>
             </div>
-            {[
-              { label: 'TWK', passing: 65, maxScore: 150 },
-              { label: 'TIU', passing: 80, maxScore: 175 },
-              { label: 'TKP', passing: 166, maxScore: 225 },
-            ].map(({ label, passing, maxScore }) => {
+            {(Object.keys(PASSING_GRADES) as SubTestKey[]).map((label) => {
+              const passing = PASSING_GRADES[label];
+              const maxScore = MAX_SCORES[label];
               // Estimasi skor per sub-tes dari rata-rata (proporsional dari stats.avgScore/550)
               const ratio = maxScore / 550;
               const estimatedScore = Math.round((stats?.avgScore ?? 0) * ratio);

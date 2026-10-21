@@ -1,4 +1,7 @@
 import { ImageResponse } from 'next/og';
+import { CATALOG_QUESTION_TOTAL, CATALOG_TOTAL } from '@/lib/catalogStats';
+
+const fmt = (n: number) => n.toLocaleString('id-ID');
 
 export const runtime = 'edge';
 export const alt = 'Lolos.in — Simulasi CAT SKD CPNS 2027 & Tes Psikotes Online';
@@ -76,7 +79,7 @@ export default async function Image() {
               lineHeight: 1.4,
             }}
           >
-            37 Paket Tryout CAT · 3.898 Soal TWK, TIU, TKP · Tes Kraepelin &amp; Kecermatan · Skor Otomatis
+            {`${CATALOG_TOTAL} Paket Tryout CAT · ${fmt(CATALOG_QUESTION_TOTAL)} Soal TWK, TIU, TKP · Tes Kraepelin & Kecermatan · Skor Otomatis`}
           </p>
         </div>
 
@@ -93,7 +96,9 @@ export default async function Image() {
               }}
             >
               <span style={{ fontSize: '12px', color: '#8c887b', fontWeight: 600 }}>TRYOUT CAT</span>
-              <span style={{ fontSize: '20px', fontWeight: 700, color: '#2d2b22' }}>37 Paket</span>
+              <span style={{ fontSize: '20px', fontWeight: 700, color: '#2d2b22' }}>
+                {CATALOG_TOTAL} Paket
+              </span>
             </div>
             <div
               style={{

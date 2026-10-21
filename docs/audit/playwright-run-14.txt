@@ -1,0 +1,19 @@
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+SyntaxError: C:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\tests\e2e\daily-mission.spec.ts: Unexpected token (60:0)
+
+  58 |   await expect(card.getByText(/Target hari ini selesai/)).toBeVisible();
+  59 |   await expect(card.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+> 60 | });
+     | ^
+  61 |
+
+   at daily-mission.spec.ts:60
+
+  58 |   await expect(card.getByText(/Target hari ini selesai/)).toBeVisible();
+  59 |   await expect(card.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+> 60 | });
+  61 |
+Error: No tests found.
+Make sure that arguments are regular expressions matching test files.
+You may need to escape symbols like "$" or "*" and quote the arguments.
+

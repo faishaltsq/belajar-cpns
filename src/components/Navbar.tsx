@@ -47,8 +47,10 @@ export default function Navbar() {
           <Logo size="sm" />
         </Link>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden sm:flex items-center gap-1">
+        {/* Desktop Nav Links — inline from lg up. Below that the row cannot fit
+            logo + links + auth at 768px and pushed the header 86px past the
+            viewport, giving every page a horizontal scrollbar. */}
+        <nav className="hidden lg:flex items-center gap-1">
           {NAV_LINKS.map(({ href, label }) => {
             const active = pathname === href || (href !== '/' && pathname.startsWith(href));
             return (
@@ -69,7 +71,7 @@ export default function Navbar() {
 
         {/* Desktop Auth */}
         {!loading && (
-          <div className="hidden sm:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             {user ? (
               <>
                 <Link
@@ -123,7 +125,7 @@ export default function Navbar() {
 
         {/* Mobile menu toggle */}
         <button
-          className="sm:hidden p-2 rounded-lg"
+          className="lg:hidden p-2 rounded-lg"
           style={{ color: 'var(--muted-foreground)' }}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
@@ -135,7 +137,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div
-          className="sm:hidden px-4 pb-4 pt-2 flex flex-col gap-1"
+          className="lg:hidden px-4 pb-4 pt-2 flex flex-col gap-1"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           {NAV_LINKS.map(({ href, label }) => (

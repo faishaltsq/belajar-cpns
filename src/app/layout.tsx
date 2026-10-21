@@ -7,6 +7,13 @@ import Footer from '@/components/Footer';
 import { SupportFloatingButton } from '@/components/SupportFloatingButton';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { catalogHeadline, catalogMetaDescription, CATALOG_TOTAL, STANDARD_110_TOTAL } from '@/lib/catalogStats';
+import { EXAM_RULES, EXAM_YEAR, QUESTION_LIMITS, skdLabel } from '@/lib/examRules';
+
+/** Shared by the Open Graph and Twitter cards so the two cannot drift apart. */
+const OG_DESCRIPTION = catalogHeadline(
+  'Tes Kraepelin & Kecermatan · Skor Otomatis TWK/TIU/TKP · Gratis tanpa login.'
+);
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -23,15 +30,18 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Lolos.in — Simulasi CAT SKD CPNS 2027 & Psikotes Online Terlengkap',
+    default: `Lolos.in — Simulasi ${skdLabel()} & Psikotes Online Terlengkap`,
     template: '%s | Lolos.in',
   },
-  description: 'Platform simulasi ujian CAT SKD CPNS 2027 standar BKN dan tes psikotes online (Kraepelin, Kecermatan, PAPI Kostick). 37 paket tryout 110 butir, skor otomatis TWK, TIU, TKP. Gratis tanpa login.',
+  description: catalogMetaDescription(
+    `Platform simulasi ujian CAT ${skdLabel()} standar BKN dan tes psikotes online (Kraepelin, Kecermatan, PAPI Kostick).`,
+    'skor otomatis TWK, TIU, TKP. Gratis tanpa login.'
+  ),
   metadataBase: new URL('https://lolosin.com'),
   keywords: [
     'simulasi cpns',
     'simulasi cat bkn',
-    'tryout cpns 2027',
+    `tryout cpns ${EXAM_YEAR}`,
     'psikotes cpns',
     'tes psikotes online',
     'latihan soal cpns',
@@ -68,7 +78,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Lolos.in — Simulasi CAT SKD CPNS 2027 & Psikotes Online',
-    description: '37 Paket Tryout CAT Standar BKN · 3.898 Soal · Tes Kraepelin & Kecermatan · Skor Otomatis TWK/TIU/TKP · Gratis tanpa login.',
+    description: OG_DESCRIPTION,
     url: 'https://lolosin.com',
     siteName: 'Lolos.in',
     locale: 'id_ID',
@@ -77,7 +87,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Lolos.in — Simulasi CAT SKD CPNS 2027 & Psikotes Online',
-    description: '37 Paket Tryout CAT Standar BKN · 3.898 Soal · Tes Kraepelin & Kecermatan · Skor Otomatis TWK/TIU/TKP · Gratis tanpa login.',
+    description: OG_DESCRIPTION,
   },
   manifest: '/manifest.json',
   alternates: {
@@ -118,7 +128,7 @@ const jsonLd = {
       '@type': 'Course',
       '@id': 'https://lolosin.com/#course',
       name: 'Simulasi CAT SKD CPNS 2027 Standar BKN',
-      description: '37 paket tryout 110 butir soal TWK, TIU, TKP dengan timer 100 menit, pembahasan soal, dan skoring otomatis KepmenPANRB 321/2024.',
+      description: `${CATALOG_TOTAL} paket tryout (${STANDARD_110_TOTAL} di antaranya ${QUESTION_LIMITS.TOTAL} butir) soal TWK, TIU, TKP dengan timer 100 menit, pembahasan soal, dan skoring otomatis ${EXAM_RULES.citedSource}.`,
       provider: {
         '@type': 'Organization',
         name: 'Lolos.in',

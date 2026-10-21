@@ -56,7 +56,7 @@ export function DiagnosticReportCard({ report }: DiagnosticReportCardProps) {
           <Lightbulb size={18} weight="fill" />
         </div>
         <div>
-          <p className="text-xs font-bold text-[var(--primary)] mb-1">Rekomendasi Belajar</p>
+          <p className="text-xs font-bold text-[var(--primary)] mb-1">Fokus Belajar Berikutnya</p>
           <p className="text-xs text-[var(--foreground)] leading-relaxed">
             {report.recommendationNote}
           </p>
@@ -102,7 +102,8 @@ export function DiagnosticReportCard({ report }: DiagnosticReportCardProps) {
                       <Link
                         href={`/drill/${cat}/${encodeURIComponent(stat.name)}`}
                         className="shrink-0 px-2 py-1 rounded-md text-[10px] font-bold text-white bg-[var(--primary)] hover:opacity-90 transition flex items-center gap-1"
-                        title={`Latihan 10 soal kilat topik ${stat.name}`}
+                        title={`Latih Topik Ini — ${stat.name}`}
+                        aria-label={`Latih Topik Ini: ${stat.name}`}
                       >
                         <Lightning size={11} weight="fill" />
                         <span>Latih</span>

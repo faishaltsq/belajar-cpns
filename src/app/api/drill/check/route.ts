@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { loadPackage } from '@/lib/loadPackage';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
+import { checkPackageAccess } from '@/lib/entitlement';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,9 +13,12 @@ export const dynamic = 'force-dynamic';
  * That endpoint now strips scores, so drill asks here instead: it sends the
  * question id and its chosen option, and gets back only that question's key.
  *
- * Deliberately unauthenticated — drill is a free study feature and the request
- * is scoped to a single question the caller has already attempted. Rate-limited
- * because walking a whole package one question at a time is the abuse case.
+ * Deliberately readable without a login for free packages — drill is a free
+ * study feature and the request is scoped to a single question the caller has
+ * already attempted. A paid package is rejected here, because this response
+ * carries the answer key and the explanation: without the check, walking a
+ * whole paid package one question at a time was an answer-key oracle.
+ * Rate-limited because walking a whole package is still the abuse case.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -28,6 +32,20 @@ export async function POST(req: NextRequest) {
 
     if (typeof packageId !== 'string' || !packageId) {
       return NextResponse.json({ error: 'packageId is required' }, { status: 400 });
+    }
+
+    const access = await checkPackageAccess(packageId);
+    if (!access.allowed) {
+      return NextResponse.json(
+        {
+          error:
+            access.reason === 'login_required'
+              ? 'Silakan masuk terlebih dahulu.'
+              : 'Paket ini memerlukan akses berbayar.',
+          reason: access.reason,
+        },
+        { status: 403 }
+      );
     }
 
     const numericQuestionId = Number(questionId);

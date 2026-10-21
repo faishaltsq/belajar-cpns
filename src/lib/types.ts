@@ -66,6 +66,10 @@ export interface SubcategoryDiagnosticReport {
   strongestSubcategories: SubcategoryStat[];
   allSubcategories: SubcategoryStat[];
   recommendationNote: string;
+  /** How many questions actually carried an answer — drives the data threshold. */
+  answeredCount: number;
+  /** Too little answered work to call anything weak. */
+  insufficientData: boolean;
 }
 
 export interface KraepelinColumn {

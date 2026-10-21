@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { EXAM_RULES, QUESTION_LIMITS, passingGradeListItem } from '@/lib/examRules';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { WhatsappLogo, EnvelopeSimple, WarningCircle } from '@phosphor-icons/react';
@@ -55,9 +56,9 @@ export default function Footer() {
                 Info Seleksi 2027
               </h4>
               <ul className="space-y-1.5 text-xs">
-                <li>Kepmen PANRB 321/2024</li>
-                <li>Passing Grade: TWK 65, TIU 80, TKP 166</li>
-                <li>Total Soal: 110 Butir / 100 Menit</li>
+                <li>{EXAM_RULES.citedSource}</li>
+                <li>{passingGradeListItem()}</li>
+                <li>Total Soal: {QUESTION_LIMITS.TOTAL} Butir / 100 Menit</li>
                 <li>Sistem CAT BKN Tanpa Pengurangan Nilai</li>
               </ul>
             </div>

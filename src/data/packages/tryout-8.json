@@ -661,7 +661,7 @@
         "score": 0
       }
     ],
-    "explanation": "Jumlah siswa kelas 7 = 0,3×400=1200,3 \\times 400 = 1200,3×400=120 siswa, jumlah siswa kelas 8 = 0,25×400=1000,25 \\times 400 = 1000,25×400=100 siswa. Jumlah siswa kelas 9 = 400 - 120 - 100 = 180 siswa.",
+    "explanation": "Jumlah siswa kelas 7 = 0,3 × 400 = 120 siswa, jumlah siswa kelas 8 = 0,25 × 400 = 100 siswa.",
     "difficulty": "medium"
   },
   {
@@ -3193,7 +3193,7 @@
         "score": 4
       }
     ],
-    "explanation": "Jumlah karyawan perempuan = 30% dari 80 = 0,3×80=240,3 \\times 80 = 240,3×80=24. Jadi, jumlah karyawan perempuan adalah 24 orang.",
+    "explanation": "Jumlah karyawan perempuan = 30% dari 80 = 0,3 × 80 = 24 orang.",
     "difficulty": "easy"
   },
   {

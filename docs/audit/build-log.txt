@@ -1,0 +1,114 @@
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+  - Experiments (use with caution):
+    · instrumentationHook
+
+   Creating an optimized production build ...
+[@sentry/nextjs] DEPRECATION WARNING: It is recommended renaming your `sentry.client.config.ts` file, or moving its content to `instrumentation-client.ts`. When using Turbopack `sentry.client.config.ts` will no longer work. Read more about the `instrumentation-client.ts` file: https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation-client
+[@sentry/nextjs - Node.js] Warning: No auth token provided. Will not upload source maps. Please set the `authToken` option. You can find information on how to generate a Sentry auth token here: https://docs.sentry.io/api/auth/
+[@sentry/nextjs - Edge] Warning: No auth token provided. Will not upload source maps. Please set the `authToken` option. You can find information on how to generate a Sentry auth token here: https://docs.sentry.io/api/auth/
+[@sentry/nextjs - Client] Warning: No auth token provided. Will not upload source maps. Please set the `authToken` option. You can find information on how to generate a Sentry auth token here: https://docs.sentry.io/api/auth/
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/50) ...
+[adminAuth] ADMIN_PIN is unset — admin routes are disabled.
+[adminAuth] ADMIN_PIN is unset — admin routes are disabled.
+[adminAuth] ADMIN_PIN is unset — admin routes are disabled.
+   Generating static pages (12/50) 
+   Generating static pages (24/50) 
+The `fetchConnectionCache` option is deprecated (now always `true`)
+   Generating static pages (37/50) 
+The `fetchConnectionCache` option is deprecated (now always `true`)
+The `fetchConnectionCache` option is deprecated (now always `true`)
+ ✓ Generating static pages (50/50)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    1.9 kB          164 kB
+├ ○ /_not-found                          1.03 kB         160 kB
+├ ○ /admin-kelola                        20.7 kB         183 kB
+├ ƒ /api/admin/db-status                 0 B                0 B
+├ ƒ /api/admin/figural-images            0 B                0 B
+├ ƒ /api/admin/figural-img               0 B                0 B
+├ ƒ /api/admin/generate-custom           0 B                0 B
+├ ƒ /api/admin/generate-ebook            0 B                0 B
+├ ƒ /api/admin/migrate                   0 B                0 B
+├ ƒ /api/admin/normalize-images          0 B                0 B
+├ ƒ /api/admin/packages                  0 B                0 B
+├ ƒ /api/admin/question-bank             0 B                0 B
+├ ƒ /api/admin/save-cropped-image        0 B                0 B
+├ ƒ /api/admin/upload                    0 B                0 B
+├ ƒ /api/auth/forgot-password            0 B                0 B
+├ ƒ /api/auth/login                      0 B                0 B
+├ ƒ /api/auth/logout                     0 B                0 B
+├ ƒ /api/auth/me                         0 B                0 B
+├ ƒ /api/auth/register                   0 B                0 B
+├ ƒ /api/auth/reset-password             0 B                0 B
+├ ƒ /api/auth/verify-link                0 B                0 B
+├ ƒ /api/auth/verify-otp                 0 B                0 B
+├ ƒ /api/drill/check                     0 B                0 B
+├ ƒ /api/leaderboard/[packageId]         0 B                0 B
+├ ƒ /api/packages                        0 B                0 B
+├ ƒ /api/payment/abandoned-reminders     0 B                0 B
+├ ƒ /api/payment/cancel                  0 B                0 B
+├ ƒ /api/payment/create-order            0 B                0 B
+├ ƒ /api/payment/history                 0 B                0 B
+├ ƒ /api/payment/order-status            0 B                0 B
+├ ƒ /api/payment/sync                    0 B                0 B
+├ ƒ /api/pro/recap                       0 B                0 B
+├ ƒ /api/questions/[id]                  0 B                0 B
+├ ƒ /api/results                         0 B                0 B
+├ ƒ /api/results/[id]/review             0 B                0 B
+├ ƒ /api/support/report                  0 B                0 B
+├ ƒ /api/user/change-password            0 B                0 B
+├ ƒ /api/user/profile                    0 B                0 B
+├ ƒ /api/user/status                     0 B                0 B
+├ ƒ /api/webhooks/klikqris               0 B                0 B
+├ ○ /drill                               8.81 kB         171 kB
+├ ƒ /drill/[category]/[subCategory]      12.4 kB         174 kB
+├ ○ /drill/ulang-salah                   6.64 kB         169 kB
+├ ○ /flashcard                           13.6 kB         176 kB
+├ ○ /icon.svg                            0 B                0 B
+├ ○ /journey                             14.3 kB         176 kB
+├ ○ /login                               14.2 kB         176 kB
+├ ○ /manifest.webmanifest                0 B                0 B
+├ ƒ /opengraph-image                     0 B                0 B
+├ ○ /profil                              14.7 kB         177 kB
+├ ○ /psikotes                            8.42 kB         170 kB
+├ ○ /psikotes/hasil                      10.5 kB         172 kB
+├ ○ /psikotes/kecermatan-angka           545 B           169 kB
+├ ○ /psikotes/kecermatan-huruf           555 B           169 kB
+├ ○ /psikotes/kepribadian                7.79 kB         170 kB
+├ ○ /psikotes/kraepelin                  5.86 kB         168 kB
+├ ○ /psikotes/penalaran                  9.71 kB         172 kB
+├ ○ /rekap                               5.45 kB         167 kB
+├ ○ /riwayat                             14.1 kB         235 kB
+├ ○ /robots.txt                          0 B                0 B
+├ ○ /simulasi                            11.6 kB         232 kB
+├ ƒ /simulasi/[id]                       27 kB           189 kB
+├ ƒ /simulasi/hasil/[resultId]           25.6 kB         188 kB
+└ ○ /sitemap.xml                         0 B                0 B
++ First Load JS shared by all            159 kB
+  ├ chunks/2293-7e41bb0e36b509ba.js      102 kB
+  ├ chunks/48274fab-770d2b0bea84edea.js  53.8 kB
+  └ other shared chunks (total)          3.5 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

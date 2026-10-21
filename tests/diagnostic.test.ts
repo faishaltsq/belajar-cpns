@@ -77,7 +77,12 @@ describe('calculateSubcategoryDiagnostic', () => {
 
     expect(report.weakestSubcategories[0].name).toBe('Silogisme');
     expect(report.strongestSubcategories[0].name).toBe('Pelayanan Publik');
-    expect(report.recommendationNote).toContain('Silogisme');
+
+    // Four answers is below the data threshold, so the report shows the
+    // "work on more practice" note instead of naming a topic. The naming case
+    // above the threshold lives in tests/diagnostic-threshold.test.ts.
+    expect(report.insufficientData).toBe(true);
+    expect(report.recommendationNote).toContain('Kerjakan lebih banyak latihan');
   });
 
   it('menangani jawaban kosong tanpa melempar error', () => {

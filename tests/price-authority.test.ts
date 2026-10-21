@@ -226,3 +226,51 @@ describe('UpgradeProModal sends no price to the server', () => {
     expect(src).toContain('orderInfo?.baseAmount');
   });
 });
+
+// ---------------------------------------------------------
+// Opening the modal must not mint a merchant transaction
+// ---------------------------------------------------------
+describe('UpgradeProModal creates the order only when Pay is pressed', () => {
+  const readModal = async () => {
+    const fs = await import('fs');
+    const path = await import('path');
+    return fs.readFileSync(
+      path.join(process.cwd(), 'src/components/UpgradeProModal.tsx'),
+      'utf8'
+    );
+  };
+
+  const block = (src: string, startMarker: string, endMarker: string) => {
+    const start = src.indexOf(startMarker);
+    expect(start, `marker not found: ${startMarker}`).toBeGreaterThan(-1);
+    const end = src.indexOf(endMarker, start + startMarker.length);
+    expect(end, `end marker not found: ${endMarker}`).toBeGreaterThan(start);
+    return src.slice(start, end);
+  };
+
+  it('does not call create-order while the modal is opening', async () => {
+    const src = await readModal();
+    const openEffect = block(src, "fetch('/api/user/status')", '}, [isOpen,');
+    // opening (or re-opening) the modal used to mint a QRIS transaction, and the
+    // effect re-runs on every `user` object change — several pending orders per click
+    expect(openEffect).not.toMatch(/fetchOrder\(/);
+    // it still loads the account state it needs
+    expect(openEffect).toContain('unlocked_packages');
+  });
+
+  it('does not call create-order when a plan is selected', async () => {
+    const src = await readModal();
+    const selectPlan = block(src, 'function handleSelectPlan', 'function toggleBundleId');
+    expect(selectPlan).not.toMatch(/fetchOrder\(/);
+  });
+
+  it('mints the order in handleProceedToPay for every tier', async () => {
+    const src = await readModal();
+    const pay = block(src, 'async function handleProceedToPay', 'function copyAmount');
+    expect(pay).toMatch(/await fetchOrder\(selectedPlan\)/);
+    expect(pay).toMatch(/await fetchOrder\('bundle', bundleIds\)/);
+    // the pay button must be clickable before an order exists
+    const button = block(src, 'onClick={handleProceedToPay}', 'Bayar Rp');
+    expect(button).not.toMatch(/!orderInfo/);
+  });
+});

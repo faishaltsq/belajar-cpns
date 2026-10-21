@@ -1,0 +1,28 @@
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+  - Experiments (use with caution):
+    · instrumentationHook
+
+   Creating an optimized production build ...
+[@sentry/nextjs] DEPRECATION WARNING: It is recommended renaming your `sentry.client.config.ts` file, or moving its content to `instrumentation-client.ts`. When using Turbopack `sentry.client.config.ts` will no longer work. Read more about the `instrumentation-client.ts` file: https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation-client
+[@sentry/nextjs - Node.js] Warning: No auth token provided. Will not create release. Please set the `authToken` option. You can find information on how to generate a Sentry auth token here: https://docs.sentry.io/api/auth/
+[@sentry/nextjs - Node.js] Warning: No auth token provided. Will not upload source maps. Please set the `authToken` option. You can find information on how to generate a Sentry auth token here: https://docs.sentry.io/api/auth/
+[@sentry/nextjs - Edge] Warning: No auth token provided. Will not create release. Please set the `authToken` option. You can find information on how to generate a Sentry auth token here: https://docs.sentry.io/api/auth/
+[@sentry/nextjs - Edge] Warning: No auth token provided. Will not upload source maps. Please set the `authToken` option. You can find information on how to generate a Sentry auth token here: https://docs.sentry.io/api/auth/
+[@sentry/nextjs - Client] Warning: No auth token provided. Will not create release. Please set the `authToken` option. You can find information on how to generate a Sentry auth token here: https://docs.sentry.io/api/auth/
+[@sentry/nextjs - Client] Warning: No auth token provided. Will not upload source maps. Please set the `authToken` option. You can find information on how to generate a Sentry auth token here: https://docs.sentry.io/api/auth/
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./src/app/simulasi/[id]/ExamSession.tsx:339:19
+Type error: Cannot find name 'ExamResult'.
+
+[0m [90m 337 |[39m[0m
+[0m [90m 338 |[39m       [36mlet[39m serverResultId[33m:[39m string [33m|[39m [36mnull[39m [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 339 |[39m       [36mlet[39m result[33m:[39m [33mExamResult[39m [33m|[39m [36mnull[39m [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m [90m     |[39m                   [31m[1m^[22m[39m[0m
+[0m [90m 340 |[39m       [36mlet[39m scoreSnapshot[33m:[39m { questionId[33m:[39m number[33m;[39m score[33m:[39m number[33m;[39m maxScore[33m:[39m number }[] [33m=[39m [][33m;[39m[0m
+[0m [90m 341 |[39m       [36mlet[39m reviewSnapshot[33m:[39m [33mQuestion[39m[] [33m|[39m [36mnull[39m [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m [90m 342 |[39m[0m
+Next.js build worker exited with code: 1 and signal: null

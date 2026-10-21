@@ -12,18 +12,28 @@ import {
   Sparkle,
 } from '@phosphor-icons/react/dist/ssr';
 import MiniTryout from '@/components/MiniTryout';
+import {
+  CATALOG_TOTAL,
+  CATALOG_QUESTION_TOTAL,
+  FREE_PACKAGE_TOTAL,
+  catalogMetaDescription,
+} from '@/lib/catalogStats';
+import { EXAM_YEAR, skdLabel } from '@/lib/examRules';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Lolos.in — Simulasi CAT SKD CPNS 2027 & Psikotes Online Terlengkap',
-  description: 'Platform simulasi ujian CAT SKD CPNS 2027 standar BKN dan tes psikotes online (Kraepelin, Kecermatan, PAPI Kostick). 37 paket tryout 110 butir, skor otomatis TWK, TIU, TKP. Gratis tanpa login.',
+  title: `Lolos.in — Simulasi ${skdLabel()} & Psikotes Online Terlengkap`,
+  description: catalogMetaDescription(
+    `Platform simulasi ujian CAT ${skdLabel()} standar BKN dan tes psikotes online (Kraepelin, Kecermatan, PAPI Kostick).`,
+    'skor otomatis TWK, TIU, TKP. Gratis tanpa login.'
+  ),
   path: '/',
-  keywords: ['simulasi cpns', 'simulasi cat bkn', 'tryout cpns 2027', 'psikotes cpns', 'latihan soal cpns', 'tes kraepelin online'],
+  keywords: ['simulasi cpns', 'simulasi cat bkn', `tryout cpns ${EXAM_YEAR}`, 'psikotes cpns', 'latihan soal cpns', 'tes kraepelin online'],
 });
 
 const FAQ_ITEMS = [
   {
-    q: 'Berapa passing grade resmi SKD CPNS 2027?',
-    a: 'Sesuai Kepmen PANRB 321/2024, nilai ambang batas umum: TWK 65, TIU 80, dan TKP 166. Anda wajib melampaui batas minimal di ketiga kategori secara bersamaan.',
+    q: 'Berapa passing grade SKD CPNS 2027?',
+    a: 'Mengacu pada Kepmen PANRB 321/2024 yang terverifikasi sebagai acuan penyusunan paket, nilai ambang batas umum: TWK 65, TIU 80, dan TKP 166. Anda wajib melampaui batas minimal di ketiga kategori secara bersamaan. Perlu diingat: angka ini adalah rujukan peraturan, bukan pengumuman resmi BKN per periode seleksi.',
   },
   {
     q: 'Berapa lama durasi pengerjaan ujian?',
@@ -31,7 +41,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Apakah ada pengurangan nilai (sistem minus) jika salah?',
-    a: 'Tidak ada sistem minus di sistem CAT BKN resmi. Soal TWK dan TIU bernilai 5 jika benar dan 0 jika salah. TKP selalu bernilai antara 1 sampai 5. Sangat disarankan menjawab seluruh soal.',
+    a: 'Tidak ada sistem minus di sistem CAT BKN (acuan penyelenggaraan BKN). Soal TWK dan TIU bernilai 5 jika benar dan 0 jika salah. TKP selalu bernilai antara 1 sampai 5. Sangat disarankan menjawab seluruh soal.',
   },
   {
     q: 'Apakah soal di platform ini sesuai kisi-kisi terbaru?',
@@ -99,8 +109,10 @@ export default function LandingPage() {
             style={{ boxShadow: '0 0 0 1px var(--border)' }}
           >
             <div className="flex items-center gap-1.5">
-              <span className="font-semibold text-[var(--foreground)]">36 Paket</span>
-              <span>(3.816 Soal)</span>
+              <span className="font-semibold text-[var(--foreground)]">
+                {CATALOG_TOTAL} Paket
+              </span>
+              <span>({CATALOG_QUESTION_TOTAL.toLocaleString('id-ID')} Soal)</span>
             </div>
             <span className="w-1 h-1 rounded-full bg-slate-300" />
             <div className="flex items-center gap-1.5">
@@ -402,7 +414,8 @@ export default function LandingPage() {
               Siap Memulai Latihan Hari Ini?
             </h2>
             <p className="text-xs sm:text-sm text-[var(--muted-foreground)] mt-2 max-w-md mx-auto leading-relaxed">
-              Pilih dari 6 paket tryout lengkap atau latih ketahanan psikotes Kraepelin Anda sekarang tanpa biaya.
+              Pilih dari {CATALOG_TOTAL} paket tryout lengkap ({FREE_PACKAGE_TOTAL} di antaranya bisa diakses
+              langsung tanpa biaya) atau latih ketahanan psikotes Kraepelin Anda sekarang.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/simulasi" className="btn-primary text-sm px-6 py-2.5 w-full sm:w-auto">

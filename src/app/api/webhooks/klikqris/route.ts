@@ -120,11 +120,21 @@ export async function POST(req: NextRequest) {
     }
 
     if (status === 'EXPIRED') {
-      await sql`
+      // Guarded on 'pending', exactly like the PAID branch above. Without it a
+      // late or replayed EXPIRED delivery flips an already-paid order back to
+      // 'expired': the entitlement stays granted, but the history lies and the
+      // next delivery of a PAID webhook passes the idempotency check and
+      // grants the package a second time.
+      const expired = await sql`
         UPDATE payment_orders
         SET status = 'expired'
         WHERE id = ${order.id}
+          AND status = 'pending'
+        RETURNING id
       `;
+      if (expired.length === 0) {
+        return NextResponse.json({ success: true, message: 'Already processed' }, { status: 200 });
+      }
       return NextResponse.json({ success: true, message: 'Order marked expired' }, { status: 200 });
     }
 

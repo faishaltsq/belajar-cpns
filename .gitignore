@@ -12,3 +12,8 @@ extracted/
 __pycache__/
 .env.vercel.local
 tsconfig.tsbuildinfo
+
+# Playwright artifacts
+test-results/
+playwright-report/
+blob-report/

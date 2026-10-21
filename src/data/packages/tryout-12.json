@@ -101,7 +101,7 @@
         "score": 0
       }
     ],
-    "explanation": "Total harga beras A = 40×15.000=600.00040 \\times 15.000 = 600.00040×15.000=600.000 rupiah. Total harga beras B = 60×12.000=720.00060 \\times 12.000 = 720.00060×12.000=720.000 rupiah. Total harga jual kedua jenis beras = 600.000+720.000=1.320.000600.000 + 720.000 = 1.320.000600.000+720.000=1.320.000 rupiah. Untuk mendapatkan keuntungan 25%, harga jual harus menjadi 1.020.000×125%=1.275.0001.020.000 \\times 125\\% = 1.275.0001.020.000×125%=1.275.000 rupiah. Harga jual beras A = 1.275.000−720.000=555.0001.275.000 - 720.000 = 555.0001.275.000−720.000=555.000 rupiah. Jumlah kg beras A yang harus dijual = 555.00015.000=37\\frac{555.000}{15.000} = 3715.000555.000=37 kg.",
+    "explanation": "Total harga beras A = 40 × 15.000 = 600.000 rupiah. Total harga beras B = 60 × 12.000 = 720.000 rupiah.",
     "difficulty": "medium"
   },
   {

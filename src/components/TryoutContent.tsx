@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { TRYOUT_LIST } from '@/lib/loadPackage';
+// Catalog data only — loadPackage pulls db.ts into the client bundle.
+import { TRYOUT_LIST } from '@/lib/tryoutCatalog';
 import { TRYOUT_SEO } from '@/data/tryoutSeo';
 
 /**
@@ -54,7 +55,7 @@ export default function TryoutContent({ id }: { id: string }) {
             </span>
           ))}
           . Total {pkg.questionCount} butir dikerjakan dalam {pkg.durationMin} menit, mengikuti
-          pembagian waktu resmi CAT BKN.
+          pembagian waktu acuan CAT BKN.
         </p>
       </section>
 

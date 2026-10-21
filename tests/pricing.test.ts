@@ -7,6 +7,16 @@ describe('pricing module', () => {
     vi.resetModules();
   });
 
+  it('raises a below-floor override to the gateway minimum', async () => {
+    // Rp 100 used to reach KlikQRIS and come back as an opaque 422
+    // "Validation Error"; the floor belongs in the table, not the gateway.
+    vi.stubEnv('KLIKQRIS_PRO_PRICE', '100');
+    vi.resetModules();
+    const mod = await import('@/lib/pricing');
+    expect(mod.MIN_GATEWAY_AMOUNT).toBe(1000);
+    expect(mod.priceFor('pro')).toBe(1000);
+  });
+
   it('returns server-authoritative prices that ignore client input', () => {
     expect(priceFor('single')).toBe(5000);
     expect(priceFor('pro')).toBe(59000);
@@ -128,11 +138,13 @@ describe('simulasi upsell banner', () => {
     );
   };
 
-  it('prices the PRO button at the PRO tier, not the single-package tier', async () => {
+  it('prices the PRO button from the pricing route, not a typed number', async () => {
     const src = await readSim();
     const cta = src.match(/Upgrade PRO[^<]*<\/span>/)?.[0] ?? '';
-    expect(cta).toContain('59.000');
-    expect(cta).not.toContain('5.000');
+    // P2-14: label comes from usePrices() -> /api/pricing (same table as
+    // create-order); typed '59.000' would drift from the server table.
+    expect(cta).toMatch(/prices\.labels\.pro/);
+    expect(cta).not.toMatch(/Rp \d/);
   });
 
   it('does not advertise the free drill feature as a PRO perk', async () => {

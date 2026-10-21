@@ -1,0 +1,24 @@
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+Running 10 tests using 6 workers
+
+[WebServer] (node:41904) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+[WebServer] (Use `node --trace-deprecation ...` to show where the warning was created)
+[WebServer] The `fetchConnectionCache` option is deprecated (now always `true`)
+  ok  3 [desktop-1440] › tests\e2e\daily-mission.spec.ts:16:5 › shows an unmet mission to a fresh visitor (1.7s)
+  ok  5 [tablet-768] › tests\e2e\daily-mission.spec.ts:16:5 › shows an unmet mission to a fresh visitor (1.6s)
+  ok  1 [laptop-1280] › tests\e2e\daily-mission.spec.ts:16:5 › shows an unmet mission to a fresh visitor (1.7s)
+  ok  6 [tablet-768] › tests\e2e\daily-mission.spec.ts:24:5 › a guest without a session is never shown a met mission, even with stored dates (3.3s)
+  ok  2 [laptop-1280] › tests\e2e\daily-mission.spec.ts:24:5 › a guest without a session is never shown a met mission, even with stored dates (3.6s)
+  ok  4 [desktop-1440] › tests\e2e\daily-mission.spec.ts:24:5 › a guest without a session is never shown a met mission, even with stored dates (3.6s)
+  ok  9 [mobile-390] › tests\e2e\daily-mission.spec.ts:16:5 › shows an unmet mission to a fresh visitor (1.1s)
+  ok  8 [mobile-320] › tests\e2e\daily-mission.spec.ts:16:5 › shows an unmet mission to a fresh visitor (1.2s)
+  ok  7 [mobile-390] › tests\e2e\daily-mission.spec.ts:24:5 › a guest without a session is never shown a met mission, even with stored dates (1.4s)
+  ok 10 [mobile-320] › tests\e2e\daily-mission.spec.ts:24:5 › a guest without a session is never shown a met mission, even with stored dates (584ms)
+
+  10 passed (8.6s)
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

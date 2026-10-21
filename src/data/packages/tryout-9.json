@@ -486,7 +486,7 @@
         "score": 0
       }
     ],
-    "explanation": "Total harga wortel = 30×8.000=240.00030 \\times 8.000 = 240.00030×8.000=240.000 rupiah. Total harga kubis = 20×5.000=100.00020 \\times 5.000 = 100.00020×5.000=100.000 rupiah. Total harga jual kedua jenis sayuran = 240.000+100.000=340.000240.000 + 100.000 = 340.000240.000+100.000=340.000 rupiah. Untuk mendapatkan keuntungan 20%, harga jual harus menjadi 300.000×120%=360.000300.000 \\times 120\\% = 360.000300.000×120%=360.000 rupiah. Keuntungan pedagang = 360.000−340.000=20.000360.000 - 340.000 = 20.000360.000−340.000=20.000 rupiah.",
+    "explanation": "Total harga wortel = 30 × 8.000 = 240.000 rupiah. Total harga kubis = 20 × 5.000 = 100.000 rupiah.",
     "difficulty": "medium"
   },
   {
@@ -696,7 +696,7 @@
         "score": 0
       }
     ],
-    "explanation": "Harga beli per lembar kain = 6.000.000400=15.000\\frac{6.000.000}{400} = 15.0004006.000.000=15.000 rupiah. Jumlah kain yang dijual = 12×400=200\\frac{1}{2} \\times 400 = 20021×400=200 lembar. Harga jual per lembar kain = 32×15.000=22.500\\frac{3}{2} \\times 15.000 = 22.50023×15.000=22.500 rupiah. Total pendapatan dari penjualan = 200×22.500=4.500.000200 \\times 22.500 = 4.500.000200×22.500=4.500.000 rupiah. Keuntungan = 4.500.000−3.000.000=1.500.0004.500.000 - 3.000.000 = 1.500.0004.500.000−3.000.000=1.500.000 rupiah.",
+    "explanation": "Harga beli per lembar kain = 6.000.000 ÷ 400 = 15.000 rupiah.",
     "difficulty": "medium"
   },
   {

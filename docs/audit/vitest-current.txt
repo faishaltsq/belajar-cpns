@@ -1,0 +1,151 @@
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Users/cubeb/OneDrive/Documents/coding/projects/belajar-cpns-saas[39m
+
+ [32m✓[39m tests/qa-agent-exam-engine.test.ts [2m([22m[2m21 tests[22m[2m)[22m[90m 26[2mms[22m[39m
+[90mstderr[2m | tests/payment-grant-integrity.test.ts[2m > [22m[2mgrantEntitlement[2m > [22m[2mdoes nothing when a single order names no package
+[22m[39m[grantEntitlement] Unknown order_type "single" for order #1 — access not granted
+
+[90mstderr[2m | tests/payment-grant-integrity.test.ts[2m > [22m[2mgrantEntitlement[2m > [22m[2mgrants nothing for an unknown order type — never a PRO fallthrough
+[22m[39m[grantEntitlement] Unknown order_type "vip" for order #1 — access not granted
+
+ [32m✓[39m tests/payment-grant-integrity.test.ts [2m([22m[2m17 tests[22m[2m)[22m[90m 21[2mms[22m[39m
+ [32m✓[39m tests/entitlement-gate.test.ts [2m([22m[2m21 tests[22m[2m)[22m[90m 67[2mms[22m[39m
+ [32m✓[39m tests/pricing.test.ts [2m([22m[2m24 tests[22m[2m)[22m[90m 27[2mms[22m[39m
+[90mstderr[2m | tests/mailer.test.ts[2m > [22m[2mMailer[2m > [22m[2mreturns failure when neither Resend nor SMTP is configured
+[22m[39m[mailer] Tidak ada provider email yang terkonfigurasi.
+
+[90mstderr[2m | tests/mailer.test.ts[2m > [22m[2mMailer[2m > [22m[2mrefuses to send from the @resend.dev sandbox (it cannot reach real users)
+[22m[39m[mailer] Gagal via Resend: MAIL_FROM masih memakai sandbox @resend.dev — hanya bisa kirim ke email pemilik akun. Verifikasi domain di dashboard Resend lalu set MAIL_FROM=noreply@lolosin.com.
+
+[90mstderr[2m | tests/mailer.test.ts[2m > [22m[2mMailer[2m > [22m[2msurfaces the Resend error and does not claim success
+[22m[39m[mailer] Gagal via Resend: validation_error: domain is not verified
+
+[90mstderr[2m | tests/mailer.test.ts[2m > [22m[2mMailer[2m > [22m[2mfalls back to SMTP when Resend fails and SMTP is configured
+[22m[39m[mailer] Gagal via Resend: rate_limit: too many
+
+[90mstderr[2m | tests/mailer.test.ts[2m > [22m[2mMailer[2m > [22m[2mdoes not fall back to SMTP when Resend fails and SMTP is absent
+[22m[39m[mailer] Gagal via Resend: rate_limit: too many
+
+ [32m✓[39m tests/mailer.test.ts [2m([22m[2m12 tests[22m[2m)[22m[90m 20[2mms[22m[39m
+[90mstderr[2m | tests/security-regression.test.ts[2m > [22m[2mA01 — payment webhook authenticity[2m > [22m[2mrejects a forged signature
+[22m[39m[KlikQRIS Webhook] Signature mismatch for order #5
+
+[90mstderr[2m | tests/klikqris-payment.test.ts[2m > [22m[2mPOST /api/webhooks/klikqris[2m > [22m[2mrejects webhook with mismatched signature (403)
+[22m[39m[KlikQRIS Webhook] Signature mismatch for order #104
+
+[90mstderr[2m | tests/security-regression.test.ts[2m > [22m[2mA01 — payment webhook authenticity[2m > [22m[2mdoes not grant entitlement when the signature is absent
+[22m[39m[KlikQRIS Webhook] Missing signature for order #5
+
+ [32m✓[39m tests/klikqris-payment.test.ts [2m([22m[2m12 tests[22m[2m)[22m[90m 24[2mms[22m[39m
+[90mstderr[2m | tests/security-regression.test.ts[2m > [22m[2mA01 — payment webhook authenticity[2m > [22m[2mrejects a webhook for a legacy order with no stored signature (audit F1)
+[22m[39m[KlikQRIS Webhook] Missing signature for order #5
+
+[90mstderr[2m | tests/security-regression.test.ts[2m > [22m[2mA01 — payment webhook authenticity[2m > [22m[2mrejects a webhook whose amount is below the order total (audit F1b)
+[22m[39m[KlikQRIS Webhook] Underpaid order #5: 1 < 5001
+
+ [32m✓[39m tests/price-authority.test.ts [2m([22m[2m21 tests[22m[2m)[22m[90m 124[2mms[22m[39m
+ [32m✓[39m tests/bundle-order.test.ts [2m([22m[2m18 tests[22m[2m)[22m[90m 128[2mms[22m[39m
+[90mstderr[2m | tests/security-regression.test.ts[2m > [22m[2mA02 — admin guard has no default PIN[2m > [22m[2mdenies access when ADMIN_PIN is unset (audit F7)
+[22m[39m[adminAuth] ADMIN_PIN is unset — admin routes are disabled.
+
+ [32m✓[39m tests/scoring.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 9[2mms[22m[39m
+ [32m✓[39m tests/security-regression.test.ts [2m([22m[2m16 tests[22m[2m)[22m[90m 232[2mms[22m[39m
+[90mstderr[2m | tests/qa-agent-payment.test.ts[2m > [22m[2mQA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite[2m > [22m[2m1. Order Creation & Pricing Logic (POST /api/payment/create-order)[2m > [22m[2mrolls back database entry and returns 502 when KlikQRIS API returns error
+[22m[39m[create-order] KlikQRIS gagal: Merchant limit exceeded
+
+[90mstderr[2m | tests/qa-agent-auth.test.ts[2m > [22m[2mAgent 1 QA Audit: Authentication, Session Lifecycle & Storage Hygiene[2m > [22m[2m2. JWT Token Lifecycle & Jose HS256 Validation[2m > [22m[2msigns token with HS256 algorithm in protected header
+[22m[39m[auth] JWT_SECRET is not set — using an insecure development secret. Never deploy without JWT_SECRET.
+
+[90mstderr[2m | tests/seo-sitemap.test.ts
+[22m[39mThe `fetchConnectionCache` option is deprecated (now always `true`)
+
+[90mstderr[2m | tests/qa-agent-payment.test.ts[2m > [22m[2mQA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite[2m > [22m[2m2. Webhook Signature Security & Idempotency (POST /api/webhooks/klikqris)[2m > [22m[2mrejects tampered or missing signature with 403 Forbidden when order has registered signature
+[22m[39m[KlikQRIS Webhook] Signature mismatch for order #701
+
+ [32m✓[39m tests/qa-agent-payment.test.ts [2m([22m[2m46 tests[22m[2m)[22m[33m 532[2mms[22m[39m
+   [33m[2m✓[22m[39m QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite[2m > [22m1. Order Creation & Pricing Logic (POST /api/payment/create-order)[2m > [22mretries with a fresh order id when the gateway answers "Collision detected" [33m408[2mms[22m[39m
+ [32m✓[39m tests/psikotes.test.ts [2m([22m[2m13 tests[22m[2m)[22m[90m 13[2mms[22m[39m
+[90mstderr[2m | tests/content-consistency.test.ts
+[22m[39mThe `fetchConnectionCache` option is deprecated (now always `true`)
+
+ [32m✓[39m tests/drill-integrity.test.ts [2m([22m[2m9 tests[22m[2m)[22m[90m 29[2mms[22m[39m
+ [32m✓[39m tests/progress-analytics.test.ts [2m([22m[2m13 tests[22m[2m)[22m[90m 25[2mms[22m[39m
+ [32m✓[39m tests/wrong-answer-recap.test.ts [2m([22m[2m11 tests[22m[2m)[22m[90m 10[2mms[22m[39m
+ [32m✓[39m tests/content-consistency.test.ts [2m([22m[2m9 tests[22m[2m)[22m[90m 204[2mms[22m[39m
+ [32m✓[39m tests/qa-agent-auth.test.ts [2m([22m[2m26 tests[22m[2m)[22m[33m 1943[2mms[22m[39m
+   [33m[2m✓[22m[39m Agent 1 QA Audit: Authentication, Session Lifecycle & Storage Hygiene[2m > [22m1. Password Hashing & Bcrypt Security[2m > [22mgenerates different salts and distinct hashes for identical plaintexts [33m517[2mms[22m[39m
+ [32m✓[39m tests/pro-recap.test.ts [2m([22m[2m9 tests[22m[2m)[22m[90m 19[2mms[22m[39m
+ [32m✓[39m tests/bundle-fulfilment.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 14[2mms[22m[39m
+ [32m✓[39m tests/seo-sitemap.test.ts [2m([22m[2m15 tests[22m[2m)[22m[90m 14[2mms[22m[39m
+ [32m✓[39m tests/question-sections.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 7[2mms[22m[39m
+ [32m✓[39m tests/support-report.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 42[2mms[22m[39m
+ [32m✓[39m tests/streak-timezone.test.ts [2m([22m[2m9 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m tests/diagnostic.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m tests/custom-test.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m tests/auth-session-probe.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 12[2mms[22m[39m
+ [32m✓[39m tests/generate-soal.test.ts [2m([22m[2m155 tests[22m[2m)[22m[33m 3284[2mms[22m[39m
+ [32m✓[39m tests/mailer-resend-wire.test.ts [2m([22m[2m1 test[22m[2m)[22m[90m 76[2mms[22m[39m
+ [32m✓[39m tests/diagnostic-threshold.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m tests/mailer-smtp-transport.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 358[2mms[22m[39m
+   [33m[2m✓[22m[39m SMTP relay transport[2m > [22msends a multipart message with text, html, Reply-To and own-domain From [33m356[2mms[22m[39m
+ [32m✓[39m tests/admin-guard.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 489[2mms[22m[39m
+[90mstdout[2m | tests/klikqris-client.test.ts[2m > [22m[2mKlikQRIS Client Library[2m > [22m[2mformats create transaction payload and handles successful API response
+[22m[39m[KlikQRIS create] HTTP [90mundefined[39m | status: [33mtrue[39m | message: Transaction Created Successfully 
+
+ [32m✓[39m tests/klikqris-client.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 46[2mms[22m[39m
+ [32m✓[39m tests/payment-history.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 10[2mms[22m[39m
+ [32m✓[39m tests/kecermatan.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 8[2mms[22m[39m
+ [32m✓[39m tests/abandoned-reminders-auth.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 17[2mms[22m[39m
+ [32m✓[39m tests/exam-clock.test.ts [2m([22m[2m10 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m tests/question-navigation-modal.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m tests/questions.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 33[2mms[22m[39m
+ [32m✓[39m tests/webhook-klikqris.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m tests/leaderboard.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32m✓[39m tests/payment-cancel.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 13[2mms[22m[39m
+ [32m✓[39m tests/questions-api.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 28[2mms[22m[39m
+[90mstderr[2m | tests/rate-limit-store.test.ts[2m > [22m[2mDB-backed rate limit store[2m > [22m[2mFAILS OPEN to memory fallback when DB throws
+[22m[39m[rateLimit] DB store unavailable, failing open to memory: Error: neon cold start
+    at [90mC:\Users\cubeb\OneDrive\Documents\coding\projects\belajar-cpns-saas\[39mtests\rate-limit-store.test.ts:33:31
+    at [90mfile:///C:/Users/cubeb/OneDrive/Documents/coding/projects/belajar-cpns-saas/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:146:14
+    at [90mfile:///C:/Users/cubeb/OneDrive/Documents/coding/projects/belajar-cpns-saas/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:533:11
+    at runWithTimeout [90m(file:///C:/Users/cubeb/OneDrive/Documents/coding/projects/belajar-cpns-saas/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:39:7[90m)[39m
+    at runTest [90m(file:///C:/Users/cubeb/OneDrive/Documents/coding/projects/belajar-cpns-saas/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1056:17[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at runSuite [90m(file:///C:/Users/cubeb/OneDrive/Documents/coding/projects/belajar-cpns-saas/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1205:15[90m)[39m
+    at runSuite [90m(file:///C:/Users/cubeb/OneDrive/Documents/coding/projects/belajar-cpns-saas/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1205:15[90m)[39m
+    at runFiles [90m(file:///C:/Users/cubeb/OneDrive/Documents/coding/projects/belajar-cpns-saas/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1262:5[90m)[39m
+    at startTests [90m(file:///C:/Users/cubeb/OneDrive/Documents/coding/projects/belajar-cpns-saas/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1271:3[90m)[39m
+
+ [32m✓[39m tests/rate-limit-store.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 14[2mms[22m[39m
+ [32m✓[39m tests/abandoned-reminder.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 24[2mms[22m[39m
+ [32m✓[39m tests/keyboard-navigation.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m tests/guest-limit-modal.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32m✓[39m tests/daily-mission.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m tests/phone.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m tests/time-tracking.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m tests/share-result.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m tests/exam-flow.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32m✓[39m tests/rate-limit-ip.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m tests/explanation-parser.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m tests/kepribadian.test.ts [2m([22m[2m1 test[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32m✓[39m tests/pwa-manifest.test.ts [2m([22m[2m1 test[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m tests/penalaran.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 13[2mms[22m[39m
+[90mstderr[2m | tests/package-badge.test.ts
+[22m[39mThe `fetchConnectionCache` option is deprecated (now always `true`)
+
+ [32m✓[39m tests/package-badge.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32m✓[39m tests/exam-mode.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+[90mstderr[2m | tests/auth.test.ts[2m > [22m[2mAuth Security Helper[2m > [22m[2mgenerates and decodes JWT session token
+[22m[39m[auth] JWT_SECRET is not set — using an insecure development secret. Never deploy without JWT_SECRET.
+
+ [32m✓[39m tests/auth.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 341[2mms[22m[39m
+   [33m[2m✓[22m[39m Auth Security Helper[2m > [22mhashes and verifies password securely [33m332[2mms[22m[39m
+ [32m✓[39m tests/qa-agent-ancillary.test.ts [2m([22m[2m30 tests[22m[2m)[22m[33m 19128[2mms[22m[39m
+   [33m[2m✓[22m[39m Agent 4: Ancillary Modules, Psikotes, PWA & Security Edge[2m > [22mSecurity Edge Headers (next.config.js)[2m > [22mexports all critical security headers including CSP, nosniff, and HSTS [33m19024[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m60 passed[39m[22m[90m (60)[39m
+[2m      Tests [22m [1m[32m665 passed[39m[22m[90m (665)[39m
+[2m   Start at [22m 09:22:22
+[2m   Duration [22m 20.86s[2m (transform 8.47s, setup 0ms, collect 18.63s, tests 27.52s, environment 14ms, prepare 11.48s)[22m
+
