@@ -358,3 +358,32 @@ Indexes match the three real access patterns: `idx_payment_orders_user_pending (
 - Lint/build/E2E: build 0, tsc 0, vitest **64 files / 678 passed**, E2E (run 21) in flight.
 
 **Remaining nuance (documented, not a defect):** a fresh pending order has `expires_at = NULL`, so the create-order dedupe ("pending AND expires_at > NOW()") never matches new rows — that means duplicates can only be prevented by the gateway-collision delete-retry loop, not the SELECT. This is pre-existing behaviour in `create-order:110-137`; noted for a future P3 since it is not a data-loss or money bug (payment still goes through a single active QRIS via KlikQRIS collision handling).
+
+---
+
+## P1-10 — Cancel raced a settling payment and could unpick a paid order (2026-10-21)
+
+- **Severity:** P1
+- **Affected feature:** Order cancellation, billing history, entitlement
+- **Status:** FIXED
+- **Root cause:** `src/app/api/payment/cancel/route.ts` read the order, checked `status === 'pending'`, then wrote `UPDATE payment_orders SET status='cancelled', expires_at=NOW()` with **no status predicate**. The pre-check is not atomic with the write, so a PAID webhook (or the sync poller) landing in that window was overwritten: a paid order became `cancelled`. Two consequences — the billing history denied a payment the learner had actually made, and `expires_at = NOW()` freed the unique code while the money was already taken. This is the same class as P1-7 (unguarded status write), which is why the webhook's other two branches already carried the guard and this one did not.
+- **Fix:** the write is guarded on `AND status = 'pending' RETURNING id`, matching the webhook transitions. A guard that matches no row means the payment won the race, and the route answers **409** `"Pesanan sudah diproses dan tidak dapat dibatalkan."` instead of a false success. The guard makes settle-or-cancel depend on one atomic statement rather than on the order of two round-trips.
+- **Regression test:** `tests/entitlement-lifetime.test.ts` — "writes the cancel with a status guard so it cannot overwrite a paid row" (asserts the predicate is in the statement) and "reports a conflict instead of a false success when the guard matches nothing" (asserts 409). Mutation-checked: removing only the guard fails those two and nothing else.
+- **Remaining risk:** the entitlement grant is unaffected by a lost cancel (it was never written on the cancel path), so no access is lost — this was a record-integrity defect, not a paywall bypass.
+
+---
+
+## Entitlement expiry after purchase — CLOSED (2026-10-21)
+
+The audit carried this as "no expiry-of-entitlement-after-purchase test exists", which assumed the product had a time-limited entitlement. It does not: `src/components/UpgradeProModal.tsx:531` sells "Akses aktif selamanya sampai kamu lulus CPNS", and `src/app/api/user/status` returns `is_pro` with no date comparison anywhere. There is no expiry to test, so the item is restated as its real risk — **can a granted entitlement be revoked by a later move of the order?** — and closed by `tests/entitlement-lifetime.test.ts` (15 cases):
+
+- EXPIRED replayed after PAID leaves access granted and history untouched (P1-7's guarantee, now pinned from the lifetime side too);
+- a duplicate PAID delivery grants nothing extra;
+- a paid order cannot be cancelled (400), and a cancel that loses the race answers 409 (P1-10);
+- the sync poller reports `paid` without re-granting when the webhook already settled the order;
+- exactly-once grant holds on both payment paths, including the losing side of each transition;
+- an unknown `order_type` never falls through to PRO on either path;
+- unlocks are additive (a second purchase keeps the first) and idempotent (no duplicate ids), and a single-package grant never downgrades PRO.
+
+If a time-limited PRO tier is ever introduced, this suite is the place to add the boundary cases (exactly-at-expiry, clock skew) — the current code has no such boundary to test.
+

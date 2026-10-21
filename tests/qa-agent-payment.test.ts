@@ -678,8 +678,8 @@ describe('QA Agent 2: Payment, KlikQRIS & Order Lifecycle Suite', () => {
       mockSql.mockResolvedValueOnce([
         { id: 805, user_id: 'owner-id', user_email: 'owner@test.com', status: 'pending' },
       ]);
-      // UPDATE payment_orders status = 'cancelled'
-      mockSql.mockResolvedValueOnce([]);
+      // UPDATE payment_orders status = 'cancelled' — guarded, returns the row
+      mockSql.mockResolvedValueOnce([{ id: 805 }]);
 
       const req = new NextRequest('http://localhost:3000/api/payment/cancel', {
         method: 'POST',

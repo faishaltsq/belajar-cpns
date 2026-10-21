@@ -41,8 +41,8 @@ describe('POST /api/payment/cancel', () => {
     mockSql.mockResolvedValueOnce([
       { id: 10, user_id: 'user-1', user_email: 'u1@test.com', status: 'pending' },
     ]);
-    // 2. Update order
-    mockSql.mockResolvedValueOnce([]);
+    // 2. Update order — a guarded UPDATE that won returns the row it changed
+    mockSql.mockResolvedValueOnce([{ id: 10 }]);
 
     const req = new NextRequest('http://localhost:3000/api/payment/cancel', {
       method: 'POST',

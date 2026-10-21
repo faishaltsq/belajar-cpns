@@ -56,13 +56,29 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Set status = cancelled and expire immediately so unique code is freed
-    await sql`
+    // Set status = cancelled and expire immediately so unique code is freed.
+    //
+    // Guarded on 'pending', like the webhook's transitions (audit P1-7). The
+    // pre-check above is not enough on its own: it reads the row, then this
+    // statement writes it, and a PAID delivery can land in between. Without
+    // the guard that race flips a genuinely paid order to 'cancelled', so the
+    // billing history denies a payment the learner actually made. The guard
+    // makes the settle-or-cancel outcome depend on one atomic statement.
+    const cancelled = await sql`
       UPDATE payment_orders
       SET status = 'cancelled',
           expires_at = NOW()
       WHERE id = ${orderId}
+        AND status = 'pending'
+      RETURNING id
     `;
+
+    if (cancelled.length === 0) {
+      return NextResponse.json(
+        { error: 'Pesanan sudah diproses dan tidak dapat dibatalkan.' },
+        { status: 409 }
+      );
+    }
 
     return NextResponse.json({ success: true, message: 'Pesanan berhasil dibatalkan.' });
   } catch (error: unknown) {

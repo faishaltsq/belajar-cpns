@@ -158,3 +158,45 @@ Runs 11, 12 and 14 failed on the same second case and are kept as evidence: run 
 - build: PASS (`BUILD=0`, `build-log-run21.txt`).
 - Playwright (run 21, `playwright-run-21.txt`): **115 passed (1.8m)**, 0 failed.
 - Migration chain proof: fresh Postgres 16 - 001..011 + 012 all apply clean, 17 columns confirmed, INSERT/SELECT roundtrip OK (docs in BUG_REPORT P2-11 section).
+
+### Run 22 — entitlement lifetime + cancel-race guard (2026-10-21)
+
+Closed the audit's "entitlement expiry after purchase" open item. The finding
+inverted the original question: the product sells **permanent** access
+(`UpgradeProModal.tsx:531` — "Akses aktif selamanya sampai kamu lulus CPNS"),
+so what needed proving is that a granted entitlement is never revoked by a
+later move of the *order*.
+
+| Gate | Result |
+| --- | --- |
+| `tsc --noEmit` | **PASS** (exit 0) |
+| `vitest` | **PASS** — 64 files / **692 tests** (+15) |
+| `next build` | **PASS** (`BUILD_EXIT=0`, First Load 158 kB unchanged) |
+| `playwright` run 22 | **PASS** — **115 passed / 0 failed**, 58.7 s (`docs/audit/playwright-run-22.txt`) |
+
+**Defect found and fixed while writing the test: `POST /api/payment/cancel`
+wrote status unguarded.** The handler read the order, checked
+`status === 'pending'`, then ran `UPDATE ... SET status='cancelled'` with no
+status predicate. A PAID webhook landing between the read and the write was
+overwritten — a genuinely paid order became `cancelled`, so the billing history
+denied a payment the learner had made, and the `expires_at = NOW()` write also
+freed the unique code for reuse. Fixed by guarding the write on
+`AND status = 'pending' RETURNING id` and answering `409` when the guard
+matches nothing (the payment won the race), mirroring the webhook transitions
+from P1-7.
+
+**Mutation check (the test is not vacuous):** reverting only the guard fails
+exactly the two cancel-race cases and nothing else — 2 failed / 13 passed.
+
+**Two pre-existing tests updated to the real contract,** not weakened: both
+mocked the successful cancel UPDATE as returning `[]`, which under the guarded
+statement now means "matched no row". They return `[{ id }]`, the shape a won
+guarded `RETURNING` actually produces.
+
+New suite `tests/entitlement-lifetime.test.ts` (15 cases) covers: EXPIRED
+replayed after PAID, duplicate PAID delivery, a paid order refusing cancel, the
+sync poller answering without re-granting, cancel losing the race (409),
+cross-account cancel refusal, exactly-once grant across both payment paths
+(webhook and sync, including the losing side of each transition), unknown
+order_type never falling through to PRO, and additive/idempotent unlocks
+(second purchase does not drop the first, no duplicate ids, no PRO downgrade).
