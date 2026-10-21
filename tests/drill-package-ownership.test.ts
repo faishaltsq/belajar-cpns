@@ -22,7 +22,7 @@ describe('drill package ownership', () => {
 
   it('question ids collide across drill packages — the precondition of the bug', () => {
     const sets = loaded.map((r) => new Set(r.questions.map((q) => q.id)));
-    const shared = [...sets[0]].filter((id) => sets[1].has(id) && sets[2].has(id));
+    const shared = Array.from(sets[0]).filter((id) => sets[1].has(id) && sets[2].has(id));
     expect(shared.length).toBeGreaterThan(100);
   });
 
