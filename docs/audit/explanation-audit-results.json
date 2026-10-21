@@ -1,0 +1,5280 @@
+[
+ {
+  "pkg": "tryout-10",
+  "id": 7,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan isi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 21,
+  "cls": "A",
+  "alasan": "Generik, tidak merujuk PP 10/2014 spesifik",
+  "exp": "Peraturan Pemerintah sering mengatur tentang pengelolaan sumber daya alam danau dan waduk di Indonesia."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 22,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak jelaskan dekrit apa/tanggal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 24,
+  "cls": "A",
+  "alasan": "Generik, tidak merujuk Perpres 20/2023 spesifik",
+  "exp": "Peraturan Presiden seringkali mengatur kebijakan nasional termasuk standar nasional pendidikan."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 34,
+  "cls": "A",
+  "alasan": "hanya kunci, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 39,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 42,
+  "cls": "A",
+  "alasan": "Hanya kunci tanpa penjelasan makna bebas aktif.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 66,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tak jelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 68,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tak jelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 69,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 71,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 76,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tak jelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 80,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci C tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 86,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 88,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 89,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 91,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 92,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 93,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 100,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tidak menjelaskan pola deret.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 101,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 102,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 105,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tidak membahas soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 108,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tidak membahas soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 2,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tidak menjelaskan tokoh",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 5,
+  "cls": "A",
+  "alasan": "Hanya kunci tanpa penjelasan konsep Daerah Tingkat II",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 8,
+  "cls": "A",
+  "alasan": "Hanya kunci tanpa dasar pasal UUD 1945",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 13,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa alasan kenapa Sila Kelima",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 23,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci jawaban tanpa penjelasan isi perundingan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 24,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci jawaban tanpa alasan B jadi pengecualian",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 29,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa penjelasan arti kata",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 30,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa alasan pemilihan tokoh",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 31,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa langkah perhitungan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 32,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa analisis opsi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 37,
+  "cls": "A",
+  "alasan": "Hanya kata \"Sangat jelas\", tanpa penjelasan pola",
+  "exp": "(Sangat jelas)"
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 38,
+  "cls": "A",
+  "alasan": "Hanya jawaban, tanpa langkah hitung (X*X-X)/X",
+  "exp": "Tidak bisa didefinisikan"
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 40,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci A, tanpa alasan Prancis campuran",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 46,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak jelaskan pola",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 49,
+  "cls": "A",
+  "alasan": "Hanya kunci, tanpa arti kata.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 50,
+  "cls": "A",
+  "alasan": "Hanya kunci, tanpa menjelaskan relasi analogi.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 54,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak jelaskan pola spesifik",
+  "exp": "Perhatikan pola urutan gambar dan temukan gambar yang melanjutkan pola tersebut."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 61,
+  "cls": "A",
+  "alasan": "Hanya ulang soal, tidak jelaskan pola spesifik",
+  "exp": "Cari gambar yang memiliki pola berbeda dari gambar-gambar lainnya."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 68,
+  "cls": "A",
+  "alasan": "tak jelaskan alasan kunci D",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 71,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 73,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 75,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 76,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 77,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 79,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 86,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak bahas sikap rapat",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 89,
+  "cls": "A",
+  "alasan": "hanya kunci, tak jelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 91,
+  "cls": "A",
+  "alasan": "hanya kunci, tak jelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 94,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 95,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 96,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 97,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tidak menjelaskan.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 99,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tidak menjelaskan.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 100,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tidak menjelaskan.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 101,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa alasan pemilihan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 102,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa alasan pemilihan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 103,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa alasan pemilihan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 104,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa alasan pemilihan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 2,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 29,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 31,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penyelesaian",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 43,
+  "cls": "A",
+  "alasan": "jawaban tanpa alasan, merujuk nomor 65",
+  "exp": "Cintya Lihat penjelasan nomor 65"
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 45,
+  "cls": "A",
+  "alasan": "Hanya jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 48,
+  "cls": "A",
+  "alasan": "Hanya jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 53,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan pola",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 57,
+  "cls": "A",
+  "alasan": "hanya kunci resmi, tak jelaskan pola",
+  "exp": "Kunci resmi Ebook Paket 1: Gambar A."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 66,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 67,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 71,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci jawaban tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 73,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 75,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 76,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 77,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 83,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa jelaskan pola",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 84,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 94,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 95,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 101,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 104,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 105,
+  "cls": "A",
+  "alasan": "hanya kunci, tak bahas pengendalian ketat",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 106,
+  "cls": "A",
+  "alasan": "hanya kunci, tak jelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 109,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 110,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 5,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan konsep",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 22,
+  "cls": "A",
+  "alasan": "Hanya definisi, tidak pilih opsi",
+  "exp": "Nasionalisme adalah ideologi yang mengutamakan kepentingan dan identitas bangsa atau negara sendiri."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 36,
+  "cls": "A",
+  "alasan": "pembahasan hanya kunci jawaban tanpa pola",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 37,
+  "cls": "A",
+  "alasan": "Pembahasan terlalu generik, tidak jelaskan pola spesifik",
+  "exp": "Deret ini memiliki pola penambahan yang kompleks (perkalian, penambahan, dan lain-lain)."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 40,
+  "cls": "A",
+  "alasan": "Hanya nyatakan jawaban, tidak tunjukkan pola deret",
+  "exp": "Deret ini memiliki pola penambahan yang tidak konstan. Angka ke-10 adalah 74."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 53,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa jelaskan pola",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 58,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan pola",
+  "exp": "Kunci resmi Ebook Paket 1: Gambar B."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 66,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 71,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 78,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 80,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 83,
+  "cls": "A",
+  "alasan": "hanya kunci A, tanpa alasan relevan ke soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 84,
+  "cls": "A",
+  "alasan": "hanya kunci E, tanpa penjelasan relevan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 86,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak jelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 88,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak jelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 89,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tanpa membahas soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 91,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tanpa membahas soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 92,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tanpa membahas soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 96,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 107,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 108,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 2,
+  "cls": "A",
+  "alasan": "tak menjelaskan alasan, hanya kunci C",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 4,
+  "cls": "A",
+  "alasan": "hanya kunci E, tanpa alasan asas",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 7,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 11,
+  "cls": "A",
+  "alasan": "hanya kunci, tak jelaskan pidato 1 Juni",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 23,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa menjelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 26,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 31,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa hitungan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 32,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa analogi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 43,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 49,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan makna",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 55,
+  "cls": "A",
+  "alasan": "Terlalu generik, tidak jelaskan pola spesifik soal 14",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 58,
+  "cls": "A",
+  "alasan": "Generik, tidak menjelaskan pola spesifik soal.",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 59,
+  "cls": "A",
+  "alasan": "Generik, tidak menjelaskan pola spesifik soal.",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 63,
+  "cls": "A",
+  "alasan": "Hanya ulang instruksi soal",
+  "exp": "Cari gambar yang memiliki pola berbeda dari gambar-gambar lainnya."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 65,
+  "cls": "A",
+  "alasan": "hanya sebut jawaban, tak jelaskan rotasi",
+  "exp": "Berdasarkan rotasi 3D dan orientasi pola, sisi yang tepat sesuai jaring awal adalah Gambar E."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 67,
+  "cls": "A",
+  "alasan": "pembahasan generik, tak bahas soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 70,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci D tanpa menjelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 72,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci C tanpa menjelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 74,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 77,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 78,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 83,
+  "cls": "A",
+  "alasan": "tak menjelaskan alasan, hanya kunci",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 84,
+  "cls": "A",
+  "alasan": "tak menjelaskan alasan, hanya kunci",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 86,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 87,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 88,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 89,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 91,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci salah tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 92,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 93,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 96,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 97,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa jelaskan pola",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 100,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 102,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 109,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak bahas soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 3,
+  "cls": "A",
+  "alasan": "Generik, tidak merujuk PP 25/2021 spesifik",
+  "exp": "Peraturan Pemerintah sering mengatur tentang kebijakan peningkatan kesejahteraan guru, termasuk kenaikan gaji pokok."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 16,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa jelaskan Mosi Integral Natsir",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 20,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa jelaskan peran Polri",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 21,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 25,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 26,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 27,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 40,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 41,
+  "cls": "A",
+  "alasan": "Tidak menjelaskan pola deret; hanya menulis \"Cukup jelas\".",
+  "exp": "(Cukup jelas)"
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 52,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci B tanpa hitungan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 54,
+  "cls": "A",
+  "alasan": "Pembahasan generik tidak spesifik soal 13",
+  "exp": "Cari gambar yang memiliki pola berbeda dari gambar-gambar lainnya."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 62,
+  "cls": "A",
+  "alasan": "Terlalu generik, tidak jelaskan pola spesifik",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 70,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 72,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 74,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 75,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 78,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 79,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 80,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 81,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 83,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 88,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 89,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tanpa penjelasan sikap",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 90,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tanpa penjelasan gizi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 91,
+  "cls": "A",
+  "alasan": "hanya kunci jawaban, tanpa penjelasan tindakan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 97,
+  "cls": "A",
+  "alasan": "pembahasan hanya kunci jawaban, tak jelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 98,
+  "cls": "A",
+  "alasan": "pembahasan hanya kunci jawaban, tak jelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 102,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 103,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 1,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan fungsi legislasi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 8,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan paradigma",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 17,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak membedakan opsi",
+  "exp": "UU No. 2 Tahun 2002 mengatur tentang kepolisian negara Republik Indonesia."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 18,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 19,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa definisi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 21,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak jawab mekanisme harga PP 30/2020",
+  "exp": "Peraturan Pemerintah sering mengatur tentang kebijakan harga bahan bakar minyak dan pengaturan dalam sektor energi."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 25,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa penjelasan kenapa",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 30,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 34,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 36,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 41,
+  "cls": "A",
+  "alasan": "Hanya eliminasi, tidak jelaskan logika urutan",
+  "exp": "M, O, dan P tidak memenuhi ketentuan untuk di posisi pertama"
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 46,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 47,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa perhitungan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 50,
+  "cls": "A",
+  "alasan": "Tidak ada analisis logika keluarga, hanya klaim generik",
+  "exp": "Tidak ada pernyataan yang salah Semua Jawaban bisa sesuai dengan ketetentuan atau peraturan."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 55,
+  "cls": "A",
+  "alasan": "Template generik tidak spesifik",
+  "exp": "Empat pilihan lain memiliki karakteristik yang sama berdasarkan elemen terbuka. Gambar A adalah anomali yang berbeda."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 56,
+  "cls": "A",
+  "alasan": "Hanya ulang soal tanpa penjelasan",
+  "exp": "Cari gambar yang memiliki pola berbeda dari gambar-gambar lainnya."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 57,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak jelaskan pola spesifik",
+  "exp": "Perhatikan pola urutan gambar dan temukan gambar yang melanjutkan pola tersebut."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 59,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak jelaskan pola spesifik",
+  "exp": "Perhatikan pola urutan gambar dan temukan gambar yang melanjutkan pola tersebut."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 60,
+  "cls": "A",
+  "alasan": "Hanya jawaban kunci, tanpa penalaran hubungan",
+  "exp": "Kunci resmi Ebook Paket 2: Gambar E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 61,
+  "cls": "A",
+  "alasan": "Generik, hanya ulang perintah soal",
+  "exp": "Perhatikan pola urutan gambar dan temukan gambar yang melanjutkan pola tersebut."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 62,
+  "cls": "A",
+  "alasan": "Generik, hanya ulang perintah soal",
+  "exp": "Cari gambar yang memiliki pola berbeda dari gambar-gambar lainnya."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 64,
+  "cls": "A",
+  "alasan": "Generik, tidak jelaskan analogi spesifik",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 65,
+  "cls": "A",
+  "alasan": "Generik, tidak jelaskan soal spesifik",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 66,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 67,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 71,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 79,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci D tanpa jelaskan mengapa jabatan jadi perbedaan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 82,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 83,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 84,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 85,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak jelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 89,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 91,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 92,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 94,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 95,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 99,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa pembahasan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 101,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 102,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 104,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 6,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 7,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 20,
+  "cls": "A",
+  "alasan": "Pembahasan generik tidak menjawab PP 30/2020 spesifik",
+  "exp": "Peraturan Pemerintah sering mengatur tentang mekanisme pembinaan dan pengawasan kinerja guru di tingkat daerah."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 22,
+  "cls": "A",
+  "alasan": "Generik, tidak merujuk PP 22/2017 spesifik",
+  "exp": "Peraturan Pemerintah sering mengatur tentang kebijakan peningkatan pemanfaatan teknologi informasi dalam pendidikan di Indonesia."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 24,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci C tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 25,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 26,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 30,
+  "cls": "A",
+  "alasan": "Hanya nyatakan jawaban tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 32,
+  "cls": "A",
+  "alasan": "Hanya nyatakan jawaban tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 34,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa jelaskan pola",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 36,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penalaran logika",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 38,
+  "cls": "A",
+  "alasan": "Hanya jawaban, tanpa penjelasan metode",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 39,
+  "cls": "A",
+  "alasan": "Hanya jawaban, tanpa dasar hukum",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 45,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 53,
+  "cls": "A",
+  "alasan": "Hanya komentar 'cukup jelas', tidak ada penjelasan",
+  "exp": "cukup jelas"
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 57,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan pola",
+  "exp": "Kunci resmi Ebook Paket 3: Gambar B."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 60,
+  "cls": "A",
+  "alasan": "Generik tidak spesifik ke soal ini",
+  "exp": "Perhatikan pola urutan gambar dan temukan gambar yang melanjutkan pola tersebut."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 74,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa menjelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 75,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa menjelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 79,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa jelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 81,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci, tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 82,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci, tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 83,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci, tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 84,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci, tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 85,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 86,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 87,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 92,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 95,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 98,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 101,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 102,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 104,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 105,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 106,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 108,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-18",
+  "id": 67,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak menjawab opsi",
+  "exp": "Daya konsentrasi penuh dan determinasi tinggi menghadapi masalah mutlak dibutuhkan demi penyelesaian tugas prima."
+ },
+ {
+  "pkg": "tryout-19",
+  "id": 67,
+  "cls": "A",
+  "alasan": "Terlalu generik, tidak menjawab skenario spesifik",
+  "exp": "Integritas dan profesionalisme tinggi dalam mencegah benturan kepentingan keluarga."
+ },
+ {
+  "pkg": "tryout-19",
+  "id": 69,
+  "cls": "A",
+  "alasan": "Pembahasan terlalu generik, tidak spesifik ke skenario phishing",
+  "exp": "Kesadaran keamanan informasi TIK tinggi dengan aksi proteksi diri dan lingkungan kerja."
+ },
+ {
+  "pkg": "tryout-19",
+  "id": 77,
+  "cls": "A",
+  "alasan": "Pembahasan generik tidak menjawab skenario spesifik dialog antaretnis",
+  "exp": "Kecakapan sosial budaya dalam merajut kerukunan dan meredam friksi horizontal."
+ },
+ {
+  "pkg": "tryout-21",
+  "id": 4,
+  "cls": "A",
+  "alasan": "Pembahasan tidak menjelaskan kaidah, hanya merujuk kunci jawaban",
+  "exp": "Pilihan mempertahankan butir sistem pertanggungjawaban kebijakan para menteri di hadapan DPR sesuai opsi kunci jawaban yang telah ditetapkan pada bank soal."
+ },
+ {
+  "pkg": "tryout-22",
+  "id": 20,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak menunjuk opsi spesifik",
+  "exp": "Fungsi Wawasan Nusantara dalam pembangunan nasional terbagi ke dalam beberapa dimensi, salah satunya adalah wawasan pertahanan dan keamanan yang mengarahkan per"
+ },
+ {
+  "pkg": "tryout-22",
+  "id": 101,
+  "cls": "A",
+  "alasan": "Generik, tidak merujuk opsi spesifik",
+  "exp": "Berani melawan ketidakadilan kultural struktural, melindungi kelompok rentan, dan memberi teladan profesional."
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 66,
+  "cls": "A",
+  "alasan": "Hanya kunci skor, tidak jelaskan soal",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda dalam mengemukakan pendapat dengan bijak tanpa menyakiti orang lain. Pilihan Jawaban Poin Nilai A 5 "
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 67,
+  "cls": "A",
+  "alasan": "Hanya kunci skor, tidak jelaskan soal",
+  "exp": "Soal ini bertujuan untuk mengetahui kepedulian Anda terhadap kesulitan yang dialami atasan atau rekan kerja Anda dalam menyelesaikan pekerjaan mereka. Pilihan J"
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 68,
+  "cls": "A",
+  "alasan": "Hanya kunci skor, tidak jelaskan soal",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda dalam melakukan perencanaan guna mengatasi sebuah masalah. Pilihan Jawaban Poin Nilai: A 3, B 1, C 2"
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 71,
+  "cls": "A",
+  "alasan": "Pembahasan generik tidak menjelaskan skenario spesifik soal",
+  "exp": "Sikap tegas meluruskan penyimpangan ideologi secara terbuka dan menempuh jalur pelaporan regulasi ASN."
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 85,
+  "cls": "A",
+  "alasan": "Pembahasan terlalu generik, tidak merujuk opsi spesifik",
+  "exp": "Adaptasi cerdas menghormati kearifan lokal tanpa menabrak kepatuhan dan integritas operasional kerja."
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 101,
+  "cls": "A",
+  "alasan": "Pembahasan hanya kunci jawaban, tidak membahas soal",
+  "exp": "Soal ini mengukur pemahaman kandidat mengenai pentingnya kualifikasi pendidikan dalam pengembangan kapabilitas kerja. Poin: A=5, C=4, B=3, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-29",
+  "id": 64,
+  "cls": "A",
+  "alasan": "Tidak menjelaskan logika/ketentuan, hanya nyatakan jawaban",
+  "exp": "Dua kecamatan yang dapat dikunjungi sesudah Kecamatan N sesuai urutan yang sah adalah Kecamatan L dan Kecamatan M."
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 65,
+  "cls": "A",
+  "alasan": "pembahasan hanya ulang soal tanpa penjelasan",
+  "exp": "Ruang kerja yang paling ideal untuk Pak Mara adalah ruang nomor 3."
+ },
+ {
+  "pkg": "tryout-31",
+  "id": 74,
+  "cls": "A",
+  "alasan": "pembahasan generik tidak kaitkan opsi/tugas krusial",
+  "exp": "Profesionalisme diwujudkan lewat manajemen prioritas, dedikasi pada tugas penting, dan tanggung jawab penuh."
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 15,
+  "cls": "A",
+  "alasan": "Tidak merujuk kalimat/paragraf spesifik",
+  "exp": "Penyuntingan kalimat memerlukan ketepatan struktur dan kehematan kata. Bentuk jamak berulang seperti 'upaya-upaya' dipadatkan menjadi 'berbagai upaya', kata per"
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 66,
+  "cls": "A",
+  "alasan": "Hanya beri skor, tidak jelaskan alasan B benar",
+  "exp": "Tujuan soal ini adalah untuk mengukur inisiatif dan tanggung jawab Anda dalam menyelesaikan permasalahan. Nilai: A=1, B=5, C=4, D=3, E=2."
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 67,
+  "cls": "A",
+  "alasan": "Hanya beri skor, tidak jelaskan alasan A benar",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui inisiatif Anda dalam memberikan gagasan demi kemajuan organisasi. Pilihan Jawaban Poin Nilai: A = 5, B = 1, C = 2, "
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 81,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak jelaskan motivasi karier PNS",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda menempatkan diri dalam situasi dan kondisi apa pun. Poin Nilai: B=5, C=4, D=3, A=2, E=1."
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 84,
+  "cls": "A",
+  "alasan": "Pembahasan generik sopan bijak, tidak jelaskan deeskalasi amarah",
+  "exp": "Soal ini bertujuan untuk mengetahui kemauan Anda untuk selalu bersikap sopan dan bijak pada situasi dan kondisi apa pun. Pilihan Jawaban Poin Nilai: A=3, B=2, C"
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 92,
+  "cls": "A",
+  "alasan": "Pembahasan generik tidak jelaskan motivasi jadi PNS",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda menempatkan diri dalam situasi dan kondisi apa pun. Poin Nilai: C=5, B=4, E=3, A=2, D=1."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 66,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak menjawab skenario spesifik rekan enggan migrasi",
+  "exp": "Kompetensi TIK ditunjukkan dengan adopsi teknologi secara proaktif dan kemampuan mendorong digitalisasi di lingkungan kerja."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 109,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak jelaskan fokus pidato penerimaan penghargaan",
+  "exp": "Soal ini bertujuan untuk melihat kepedulian Anda terhadap lingkungan dan orang lain. Pilihan Jawaban Poin Nilai: A=5, B=4, C=1, D=2, E=3."
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 17,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak hubungkan ke profesi medis sukarela",
+  "exp": "Pembahasan: Pasal 9 ayat (2) UU No. 3 Tahun 2002 menyebutkan keikutsertaan bela negara diselenggarakan melalui PKn, pelatihan dasar kemiliteran, prajurit TNI, d"
+ },
+ {
+  "pkg": "tryout-7",
+  "id": 66,
+  "cls": "A",
+  "alasan": "Pembahasan terlalu generik, tidak menjelaskan opsi D spesifik",
+  "exp": "Membangun jejaring kolaborasi profesional lintas profesi demi memastikan keselamatan tindakan medis."
+ },
+ {
+  "pkg": "tryout-7",
+  "id": 67,
+  "cls": "A",
+  "alasan": "Pembahasan terlalu generik, tidak menjelaskan opsi E spesifik",
+  "exp": "Kemitraan kerja kolaboratif dengan pemecahan masalah bersama untuk efektivitas alur pelayanan."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 4,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 5,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa jelaskan pola",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 8,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa hitungan skala",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 15,
+  "cls": "A",
+  "alasan": "Tidak menjelaskan perhitungan, hanya kunci jawaban",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 17,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa penjelasan sejarah",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 20,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban, tanpa dasar hukum",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 23,
+  "cls": "A",
+  "alasan": "Generik, tidak pilih opsi",
+  "exp": "Akuntabilitas dalam manajemen organisasi adalah prinsip yang menuntut pertanggungjawaban atas penggunaan sumber daya dan keputusan yang diambil."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 29,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci, tidak menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 36,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa langkah hitung",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 47,
+  "cls": "A",
+  "alasan": "Hanya jawaban, tidak jelaskan analogi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 59,
+  "cls": "A",
+  "alasan": "Hanya ulang soal tanpa pola jawaban",
+  "exp": "Cari gambar yang memiliki pola berbeda dari gambar-gambar lainnya."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 62,
+  "cls": "A",
+  "alasan": "Hanya referensi kunci, tidak jelaskan pola",
+  "exp": "Kunci resmi Ebook Paket 3: Gambar E."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 72,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 74,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 79,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 81,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 84,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 85,
+  "cls": "A",
+  "alasan": "Hanya nyetujui kunci tanpa menjelaskan konsep atasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 88,
+  "cls": "A",
+  "alasan": "Hanya nyetujui kunci tanpa menjelaskan sikap cadangan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 93,
+  "cls": "A",
+  "alasan": "Pembahasan hanya menyatakan kunci jawaban A tanpa menjelaskan alasan pemilihan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 100,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 101,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak jelaskan pola",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 102,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak jelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 104,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tidak jelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 106,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 108,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 109,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan relevansi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 110,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan relevansi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 4,
+  "cls": "A",
+  "alasan": "Hanya jawaban tanpa penjelasan sila kelima",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 21,
+  "cls": "A",
+  "alasan": "Hanya nyetujui kunci tanpa jelaskan analogi",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 23,
+  "cls": "A",
+  "alasan": "Hanya nyetujui kunci tanpa konteks sejarah",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 28,
+  "cls": "A",
+  "alasan": "Hanya berikan kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 30,
+  "cls": "A",
+  "alasan": "Generik, tidak spesifik Perpres 12/2019",
+  "exp": "Peraturan Presiden seringkali mengatur tentang kebijakan khusus untuk peningkatan kesejahteraan guru, termasuk gaji pokok."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 31,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci, tanpa penyelesaian",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 32,
+  "cls": "A",
+  "alasan": "Tidak ada pembahasan, hanya \"Cukup Jelas\"",
+  "exp": "Cukup Jelas."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 39,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 57,
+  "cls": "A",
+  "alasan": "Generik, tidak jelaskan pola spesifik",
+  "exp": "Perhatikan pola urutan gambar dan temukan gambar yang melanjutkan pola tersebut."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 59,
+  "cls": "A",
+  "alasan": "Generik, hanya ulang perintah soal",
+  "exp": "Cari gambar yang memiliki pola berbeda dari gambar-gambar lainnya."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 66,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 68,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 69,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 72,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 74,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 75,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 76,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 77,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 79,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 82,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci jawaban tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 85,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 87,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 88,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 90,
+  "cls": "A",
+  "alasan": "Hanya kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 95,
+  "cls": "A",
+  "alasan": "Tidak menjelaskan soal, hanya nyatakan kunci",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 98,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 102,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 103,
+  "cls": "A",
+  "alasan": "Kunci E tidak masuk akal, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 105,
+  "cls": "A",
+  "alasan": "Hanya nyatakan kunci tanpa alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 107,
+  "cls": "A",
+  "alasan": "Generik, tidak jawab soal spesifik",
+  "exp": "Peraturan Daerah sering mengatur tentang organisasi dan penyelenggaraan pelayanan kesehatan di tingkat daerah."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 110,
+  "cls": "A",
+  "alasan": "Hanya menyatakan kunci jawaban tanpa penjelasan relevan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 65,
+  "cls": "A",
+  "alasan": "Hanya jawaban, tidak menjelaskan",
+  "exp": "Jaring-jaring yang benar untuk bangun ruang tersebut adalah opsi A."
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 66,
+  "cls": "A",
+  "alasan": "Hanya jawaban, tidak menjelaskan",
+  "exp": "Bangun ruang yang terbentuk dari jaring-jaring adalah opsi D."
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 67,
+  "cls": "A",
+  "alasan": "Hanya jawaban, tidak menjelaskan",
+  "exp": "Jaring-jaring yang benar untuk gambar tersebut adalah opsi D."
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 68,
+  "cls": "A",
+  "alasan": "Hanya jawaban, tidak menjelaskan",
+  "exp": "Bangun yang benar untuk jaring-jaring tersebut adalah opsi B."
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 78,
+  "cls": "A",
+  "alasan": "Hanya mengulang soal tanpa penjelasan",
+  "exp": "Cari gambar terbalik dari soal (pencerminan)."
+ },
+ {
+  "pkg": "tryout-mini",
+  "id": 5,
+  "cls": "A",
+  "alasan": "Pembahasan generik, tidak jelaskan opsi C",
+  "exp": "Pembahasan: Nasionalisme menuntut penghormatan terhadap keberagaman dan penegakan etika berbangsa di lingkungan kerja ASN."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 17,
+  "cls": "B",
+  "alasan": "hanya menyebut deret, tidak menghitung hasil",
+  "exp": "Deret ini merupakan deret perkalian empat berturut-turut."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 52,
+  "cls": "B",
+  "alasan": "hanya menyebut kunci jawaban, tanpa perhitungan susul-menyusul",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 82,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci tanpa menjelaskan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 84,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci tanpa menjelaskan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 97,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci jawaban, tidak menjelaskan alasan.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 52,
+  "cls": "B",
+  "alasan": "Tidak menjelaskan pola, hanya menyebut deret pangkat lima.",
+  "exp": "Deret ini merupakan deret pangkat lima."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 105,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 7,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci jawaban tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 99,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci jawaban, tanpa menjelaskan soal.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 9,
+  "cls": "B",
+  "alasan": "Tidak menyebut isi Perda No. 6 Tahun 2017",
+  "exp": "Peraturan Daerah sering mengatur tentang pengelolaan sumber daya alam danau serta pemanfaatannya untuk kepentingan masyarakat setempat."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 19,
+  "cls": "B",
+  "alasan": "hanya menyebut kunci jawaban, tidak menjelaskan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 51,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci jawaban, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 52,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci jawaban, tanpa penjelasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 65,
+  "cls": "B",
+  "alasan": "tidak menyebut D, hanya hasil A",
+  "exp": "Pola transformasi dari A ke B adalah tambah titik. Menerapkan aturan yang sama pada C menghasilkan Gambar A."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 41,
+  "cls": "B",
+  "alasan": "hanya menyebut jawaban tanpa penjelasan",
+  "exp": "A adalah adik perempuan"
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 57,
+  "cls": "B",
+  "alasan": "Hanya menyebut rotasi, tanpa langkah penentuan.",
+  "exp": "Berdasarkan rotasi 3D dan orientasi pola, sisi yang tepat sesuai jaring awal adalah Gambar D."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 47,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci E, tidak menjelaskan perhitungan skala.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 106,
+  "cls": "B",
+  "alasan": "hanya menyebut kunci jawaban tanpa menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 43,
+  "cls": "B",
+  "alasan": "Menybut warna yang tidak ada di soal",
+  "exp": "D, E, O, F, G, P, H, … (I) Abjad berwarna hitam memiliki pola abjad (+1), dan abjad berwarna merah juga memiliki pola abjad (+1)."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 62,
+  "cls": "B",
+  "alasan": "Pembahasan generik, tidak menyebut pola spesifik",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 66,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut Pilihan A tapi deskripsi cocok Pilihan C",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan integritas tinggi melalui argumentasi berbasis data objektif dan aturan perundang-undangan (akuntabilitas publik), mengu"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 67,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut Pilihan A tapi deskripsi cocok Pilihan B",
+  "exp": "Pilihan A bernilai 5 karena tidak hanya menjaga kerahasiaan jabatan secara mandiri, tetapi juga proaktif memitigasi konflik kepentingan institusional melalui me"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 69,
+  "cls": "B",
+  "alasan": "Pembahasan sebut Pilihan A tapi deskripsi cocok Pilihan D",
+  "exp": "Pilihan A bernilai 5 karena menolak gratifikasi secara langsung di muka, memberikan edukasi etika, dan mendokumentasikan kejadian demi transparansi hukum."
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 77,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut B tapi deskripsi cocok D/E",
+  "exp": "Pilihan B bernilai 5 karena memberikan asistensi tuntas (edukatif dan solutif), memastikan pemohon terlayani sekaligus mandiri untuk pengurusan berikutnya."
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 78,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut A tapi deskripsi cocok E",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan komunikasi krisis yang terbuka, memitigasi ketidakpastian publik, dan tetap berorientasi menjaga kepastian pelayanan."
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 79,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut B tapi deskripsi cocok E",
+  "exp": "Pilihan B bernilai 5 karena mengedepankan kontrol emosi prima, menjaga marwah instansi tanpa melempar kesalahan, dan proaktif mencari solusi konkret."
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 80,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut A tapi deskripsi cocok B",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan inisiatif berbasis evaluasi performa, menghadirkan inovasi sistemik yang berkelanjutan, dan berdampak langsung pada kec"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 89,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut A tapi alasan cocok untuk E",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan integritas pengendalian emosi di bawah tekanan benturan kepentingan pribadi, mengutamakan kewajiban ASN tanpa bersikap "
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 90,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut B tapi alasan cocok untuk A",
+  "exp": "Pilihan B bernilai 5 karena mampu menahan ego pribadi dalam konflik nilai, mengarahkan kembali dialog secara rasional dan objektif demi konsensus profesional."
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 91,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut A tapi alasan cocok untuk C",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan inisiatif, tanggung jawab penuh, dan kemampuan menyelesaikan tugas tanpa ketergantungan pada pengawasan langsung saat me"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 92,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut A tapi alasan cocok untuk E",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan kemandirian tingkat tinggi, proaktivitas membaca dasar hukum, dan daya adaptasi mandiri dalam situasi minim arahan."
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 93,
+  "cls": "B",
+  "alasan": "Pembahasan kontradiktif dengan opsi A yang pasif menunggu",
+  "exp": "Pilihan A bernilai 5 karena berorientasi solusi, tidak pasif menunggu bantuan teknis, dan mengambil tindakan antisipatif agar target kerja pribadi tetap terpenu"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 95,
+  "cls": "B",
+  "alasan": "Pembahasan memuji opsi A yang justru menyerah parsial",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan kapabilitas problem-solving otonom, ketegasan mengambil keputusan di lapangan, dan komitmen tinggi terhadap tuntasnya mi"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 97,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi C/D, bukan A",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan dorongan mendalam untuk memahami substansi baru secara holistik, mengevaluasi celah kekurangan diri, dan berkonsultasi "
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 98,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi C/D, bukan A",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan growth mindset positif; memandang kesenjangan kompetensi bukan sebagai hambatan, melainkan motivasi untuk proaktif mempe"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 100,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi B/D, bukan A",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan kemampuan disiplin manajemen diri tinggi untuk memprioritaskan pemutakhiran wawasan tanpa melalaikan tanggung jawab oper"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 103,
+  "cls": "B",
+  "alasan": "Pembahasan opsi A tapi deskripsi cocok opsi B",
+  "exp": "Pembahasan: Skor 5 pada opsi A merefleksikan orientasi pada hasil bersama dan kepentingan publik (berbasis bukti/data riil), serta mengajak anggota tim menyeles"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 104,
+  "cls": "B",
+  "alasan": "Pembahasan opsi B tapi deskripsi cocok opsi D",
+  "exp": "Pembahasan: Skor 5 pada opsi B memadukan pemecahan masalah jangka pendek (target tim aman via redistribusi tugas) dan jangka panjang (pemberdayaan kompetensi re"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 105,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi D bukan A",
+  "exp": "Pembahasan: Skor 5 pada opsi A memperlihatkan inisiatif tinggi dalam situasi krisis tim: mengintegrasikan hasil lama untuk meminimalisasi perasaan sia-sia sekal"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 106,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi D/E bukan A",
+  "exp": "Pilihan A bernilai 5 karena pemimpin efektif tidak memihak, mampu mengintegrasikan perbedaan perspektif, solutif, serta menjaga produktivitas tim melalui pembag"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 107,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi C bukan A",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan kepemimpinan adaptif, kemampuan memotivasi bawahan di situasi krisis, serta pengambilan keputusan kolaboratif dan terara"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 108,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi D bukan A",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan integritas kepemimpinan, berani pasang badan atas hasil kerja tim, sekaligus membina pengembangan kapasitas bawahan sec"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 110,
+  "cls": "B",
+  "alasan": "Pembahasan opsi A tapi deskripsi cocok opsi C",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan kepemimpinan transformasional: inklusif, memberdayakan kolaborasi lintas generasi (mentoring), persuasif, dan menjaga ke"
+ },
+ {
+  "pkg": "tryout-22",
+  "id": 2,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut poin kedua tapi pilih poin pertama",
+  "exp": "Poin-poin ikrar Sumpah Pemuda 28 Oktober 1928: pertama bertumpah darah satu tanah Indonesia; kedua berbangsa satu bangsa Indonesia; ketiga menjunjung bahasa per"
+ },
+ {
+  "pkg": "tryout-24",
+  "id": 82,
+  "cls": "B",
+  "alasan": "menyebut warga berkebutuhan khusus, tidak ada di soal",
+  "exp": "Integritas pelayanan publik ditunjukkan lewat fleksibilitas kemanusiaan (extra-mile) melayani warga berkebutuhan khusus."
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 27,
+  "cls": "B",
+  "alasan": "Penjelasan menukar opsi D dan E",
+  "exp": "Pembahasan: Kalimat D memiliki Subjek ('Seluruh pegawai') dan Predikat ('wajib mengunggah') yang jelas tanpa preposisi perusak struktur. A kehilangan subjek kar"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 28,
+  "cls": "B",
+  "alasan": "Penjelasan menukar opsi D dan E",
+  "exp": "Pembahasan: Tanda koma wajib digunakan jika anak kalimat mendahului induk kalimat ('Meskipun cuaca buruk, ...'). Pada B dan C koma salah tempat, D kurang koma s"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 67,
+  "cls": "B",
+  "alasan": "Pembahasan memuji opsi A padahal opsi A menerima dan membagikan gratifikasi",
+  "exp": "Pilihan A bernilai 5 karena memenuhi prinsip integritas pencegahan korupsi: menolak gratifikasi aktif, mengedukasi mitra tentang kode etik ASN, dan mematuhi pro"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 68,
+  "cls": "B",
+  "alasan": "Pembahasan memuji opsi A padahal opsi A konsultasi atasan, bukan menolak",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan keteguhan prinsip moral dan profesionalisme: menolak nepotisme tanpa kompromi, menegakkan asas keadilan bagi semua pelam"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 81,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut \"cepat menguasai teknologi baru, penggerak perubahan\" cocok ",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan kemampuan adaptasi tingkat tinggi: cepat menguasai teknologi baru sekaligus menjadi penggerak perubahan positif bagi li"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 84,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut \"menyelaraskan gaya kerja dengan kepemimpinan baru\" cocok op",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan fleksibilitas interpersonal: cepat menyelaraskan ritme dan gaya kerja dengan kepemimpinan baru demi produktivitas tim."
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 85,
+  "cls": "B",
+  "alasan": "Pembahasan sebut opsi A tapi deskripsi cocok opsi B",
+  "exp": "Pilihan A bernilai 5 karena memiliki 'growth mindset' dan antusiasme belajar tinggi: melihat perubahan dan tantangan baru sebagai momentum pengembangan diri ASN"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 89,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan opsi B tapi label opsi A",
+  "exp": "Skor 5 pada opsi A menunjukkan penguasaan diri matang, tidak defensif secara irasional, serta mengandalkan data konkret untuk meluruskan masalah."
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 90,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan opsi D/E tapi label opsi A",
+  "exp": "Skor 5 pada opsi A mencerminkan profesionalisme, pengendalian diri dari respons reaktif, serta pemecahan masalah konstruktif demi edukasi publik."
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 91,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan opsi E tapi label opsi A",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan kemandirian tinggi, inisiatif, dan tanggung jawab penuh dalam menuntaskan tugas mendesak berbasis regulasi tanpa bergan"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 93,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan perilaku opsi B tapi label opsi A",
+  "exp": "Pilihan A bernilai 5 karena memperlihatkan keberanian mengambil keputusan profesional secara mandiri berbasis regulasi dalam kondisi darurat/terisolir tanpa men"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 94,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan perilaku opsi E tapi label opsi A",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan etos kerja mandiri, tidak merepotkan lingkungan kerja yang sedang berbeban tinggi, serta memiliki manajemen waktu pers"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 96,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan belajar mandiri opsi C tapi label opsi A",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan inisiatif proaktif, kemauan berkorban waktu belajar mandiri, dan komitmen adaptasi cepat terhadap digitalisasi kerja."
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 99,
+  "cls": "B",
+  "alasan": "Pembahasan menjelaskan opsi E tapi menyebut A",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan kerendahan hati untuk belajar (unlearning/relearning), meniadakan hierarki usia/senioritas demi akuisisi keterampilan ba"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 110,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut Pilihan C tapi deskripsi cocok Pilihan D",
+  "exp": "Pilihan C bernilai 5 karena seorang pemimpin transformasional tidak hanya menggunakan otoritas instruktif, melainkan mampu mengelola manajemen perubahan melalui"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 67,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut Pilihan A tapi deskripsi cocok Pilihan E",
+  "exp": "Pilihan A teguh pada kepatuhan aturan verifikasi faktual tanpa mengorbankan integritas dokumen negara, sembari proaktif memberi solusi teknis legal (lembur) gun"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 68,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut Pilihan D tapi deskripsi cocok Pilihan B",
+  "exp": "Pilihan D menerapkan prinsip deklarasi benturan kepentingan (conflict of interest). Mengalihkan proses evaluasi ke pihak independen menjamin objektivitas sistem"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 91,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan perilaku opsi E tapi menyebut opsi A",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan kompetensi bekerja mandiri yang unggul: proaktif mempelajari regulasi tanpa supervisi konstan, mampu menyelesaikan tuga"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 92,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan perilaku opsi D tapi menyebut opsi A",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan inisiatif, ketahanan kerja, dan kemandirian dalam mengambil solusi taktis sesuai regulasi (SOP kontinjensi) agar pelayan"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 94,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut sumber daya alternatif, opsi A hanya mengosongkan bagian dat",
+  "exp": "Pilihan A bernilai 5 karena ASN berkarakter mandiri memiliki orientasi hasil (result-oriented) tinggi, mampu memanfaatkan sumber daya alternatif secara legal gu"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 101,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut Pilihan A tapi alasan cocok untuk D",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan inisiatif solutif, kepemimpinan situasional, dan prinsip kolaborasi aktif tanpa mengorbankan kualitas maupun rekan kerja"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 102,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut Pilihan A tapi alasan cocok untuk D",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan objektivitas, regulasi, sinergi ide, dan pemecahan masalah bersama demi efektivitas organisasi."
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 103,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut Pilihan A tapi alasan cocok untuk C",
+  "exp": "Pilihan A bernilai 5 karena menyelesaikan masalah secara sistemik melalui komunikasi tim terbuka, menjaga soliditas, dan menata alur kerja kolektif secara adil."
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 104,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut Pilihan A tapi alasan cocok untuk C",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan komunikasi interpersonal suportif, klarifikasi kendala kerja, dan pembangunan komitmen kerja terstruktur."
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 105,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut A tapi deskripsi cocok B",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan tanggung jawab kolektif, tindakan kolaboratif cepat di bawah tekanan waktu, dan menjaga akurasi hasil kerja tim."
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 106,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut A tapi deskripsi cocok E",
+  "exp": "Pilihan A bernilai 5 karena pemimpin ideal menunjukkan ketenangan dalam krisis, kemampuan manajerial adaptif (re-prioritisasi dan alokasi sumber daya), serta me"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 107,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut A tapi deskripsi cocok B",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan kompetensi mediasi dan penyelesaian masalah substantif. Pemimpin menggali perspektif secara adil, mendudukkan masalah s"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 66,
+  "cls": "B",
+  "alasan": "Penjelasan menyebut Pilihan A tapi isi menolak",
+  "exp": "Pembahasan: Pilihan A bernilai 5 karena integritas tertinggi ditunjukkan dengan penolakan langsung secara persuasif dan santun pada kesempatan pertama, mengeduk"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 74,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan opsi D tapi label opsi A",
+  "exp": "Pilihan A mencerminkan resiliensi, orientasi solusi berbasis data, serta komitmen menyempurnakan hasil kerja yang belum optimal menjadi karya yang berhasil dan "
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 76,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan opsi C tapi label opsi A",
+  "exp": "Pembahasan: Skor 5 pada opsi A karena mencerminkan responsivitas tinggi, empati kepada kelompok rentan (lansia), dan kerelaan melayani masyarakat di luar kenyam"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 81,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan perilaku opsi B tapi label opsi A",
+  "exp": "Pilihan A menunjukkan inisiatif adaptasi tertinggi: menguasai perubahan regulasi/teknologi secara mandiri sekaligus menjadi agen perubahan yang memfasilitasi ad"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 82,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan perilaku opsi D tapi label opsi E",
+  "exp": "Pilihan E mencerminkan ketangguhan adaptif: proaktif memahami konteks lingkungan baru dan memodifikasi strategi operasional secara mandiri demi kesinambungan la"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 83,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan perilaku opsi B tapi label opsi A",
+  "exp": "Pilihan A bernilai 5 karena mengambil tindakan konstruktif untuk menjembatani benturan budaya organisasi, mendorong integrasi tim tanpa memaksakan kehendak sepi"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 84,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan perilaku opsi D tapi label opsi E",
+  "exp": "Pilihan E menunjukkan fleksibilitas kognitif dan operasional: segera menganalisis regulasi baru, mengkalibrasi ulang rencana kerja, dan tetap menjaga akuntabili"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 89,
+  "cls": "B",
+  "alasan": "Pembahasan memuji opsi B (menerima suap) sebagai integritas",
+  "exp": "Pilihan B bernilai 5 karena mendemonstrasikan integritas tinggi melalui pengendalian impuls/keinginan pribadi, serta mampu mengedukasi masyarakat secara empatik"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 98,
+  "cls": "B",
+  "alasan": "Pembahasan opsi A tapi deskripsi cocok opsi C",
+  "exp": "Pilihan A bernilai 5 karena mengidentifikasi 'knowledge gap' secara terstruktur dan mengambil tindakan konkret berbasis riset mandiri untuk menguasai domain bar"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 99,
+  "cls": "B",
+  "alasan": "Pembahasan opsi A tapi deskripsi cocok opsi E",
+  "exp": "Pilihan A bernilai 5 karena menggabungkan determinasi belajar cepat dengan keberanian mengambil tantangan karier, mengoptimalkan jeda waktu untuk menutup kekura"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 100,
+  "cls": "B",
+  "alasan": "Pembahasan opsi A tapi deskripsi cocok opsi C",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan kemandirian belajar tingkat tinggi yang langsung dikombinasikan dengan eksperimen nyata untuk memvalidasi efektivitas me"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 105,
+  "cls": "B",
+  "alasan": "Pembahasan sebut Pilihan A tapi deskripsi cocok Pilihan D",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan inisiatif integratif yang mengoptimalkan potensi beragam generasi untuk efektivitas organisasi."
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 106,
+  "cls": "B",
+  "alasan": "Pembahasan sebut Pilihan A tapi deskripsi cocok Pilihan E",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan kepemimpinan yang solutif, memberdayakan tim (peer mentoring), dan bertanggung jawab menjaga target kolektif tanpa memi"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 107,
+  "cls": "B",
+  "alasan": "Pembahasan sebut Pilihan A tapi deskripsi cocok Pilihan B",
+  "exp": "Pilihan A bernilai 5 karena pemimpin efektif mengarahkan konflik gagasan menjadi kolaborasi berbasis data objektif dan aturan, tanpa otoriter atau tergesa-gesa "
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 81,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi E, bukan A",
+  "exp": "Opsi A bernilai 5 karena mencerminkan adaptasi tingkat tinggi: proaktif menguasai perubahan teknologi baru secara mandiri sekaligus menunjukkan resiliensi sosia"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 83,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi D, bukan A",
+  "exp": "Opsi A bernilai 5 karena menampilkan keterbukaan terhadap inovasi kepemimpinan, kelincahan berpikir (cognitive flexibility), serta kemauan segera menyelaraskan "
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 84,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsi cocok opsi E, bukan A",
+  "exp": "Opsi A bernilai 5 karena merefleksikan daya tahan menghadapi ketidakpastian (tolerance for ambiguity) dan kemampuan pemecahan masalah secara adaptif tanpa lari "
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 89,
+  "cls": "B",
+  "alasan": "Pembahasan opsi A tapi deskripsi cocok opsi D/E",
+  "exp": "Skor 5 pada opsi A memprioritaskan pemecahan masalah kritis ketimbang ego pribadi, menekan impuls defensif atas ketidakadilan, dan langsung bertindak solutif."
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 94,
+  "cls": "B",
+  "alasan": "Pembahasan opsi A tapi deskripsi cocok opsi C (riset mandiri)",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan kemampuan memecahkan masalah tanpa preseden (autonomous problem solving), riset mandiri, dan kreasi solutif tanpa memi"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 96,
+  "cls": "B",
+  "alasan": "Pembahasan opsi A tapi alasan cocok opsi D (belajar mandiri luar jam)",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan inisiatif tinggi, kemandirian belajar (continuous learning), dan kemauan mengalokasikan waktu ekstra demi adaptasi cepa"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 101,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan opsi C tapi menyebut A",
+  "exp": "Pilihan A bernilai 5 karena berinisiatif aktif menciptakan sinergi tim secara inklusif, menghargai keberagaman perspektif, dan membangun kesepakatan sistemik be"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 104,
+  "cls": "B",
+  "alasan": "Pembahasan deskripsikan opsi E tapi menyebut B",
+  "exp": "Pilihan B bernilai 5 karena menunjukkan tanggung jawab kolektif, kesediaan membina (mentoring), dan investasi jangka panjang demi kekuatan kapabilitas seluruh a"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 105,
+  "cls": "B",
+  "alasan": "Pembahasan pilih B tapi alasan kontradiktif dengan isi opsi B",
+  "exp": "Pilihan B bernilai 5 karena mengedepankan etika kerja sama, menjaga kehormatan rekan kerja, bersikap proaktif mengatasi masalah (problem-solving), dan memikul t"
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 90,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci C, tanpa menjelaskan relevansinya terhadap revolusi.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 92,
+  "cls": "B",
+  "alasan": "Hanya menyebut kunci A, tanpa menjelaskan penyebab kehilangan kesempatan usaha.",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 12,
+  "cls": "B",
+  "alasan": "Pembahasan generik, tidak menyebut Perda No.7/2020 spesifik",
+  "exp": "Peraturan Daerah sering mengatur tentang kebijakan dan perlindungan hak anak di daerah."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 62,
+  "cls": "B",
+  "alasan": "Pembahasan generik, tidak menyebut pola spesifik atau jawaban",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-mini",
+  "id": 25,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut opsi A tapi deskripsi cocok opsi C",
+  "exp": "Pilihan A bernilai 5 karena memandang kritik sebagai peluang belajar, berkomitmen memperbarui kompetensi lewat literatur terkini, dan menjaga akuntabilitas lewa"
+ },
+ {
+  "pkg": "tryout-mini",
+  "id": 27,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut opsi A tapi deskripsi cocok opsi B",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan integritas kepemimpinan, berani pasang badan atas hasil kerja tim, sekaligus membina pengembangan kapasitas bawahan sec"
+ },
+ {
+  "pkg": "tryout-mini",
+  "id": 28,
+  "cls": "B",
+  "alasan": "Pembahasan menyebut opsi A tapi deskripsi cocok opsi C",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan tanggung jawab kolektif, tindakan kolaboratif cepat di bawah tekanan waktu, dan menjaga akurasi hasil kerja tim."
+ },
+ {
+  "pkg": "tryout-mini",
+  "id": 29,
+  "cls": "B",
+  "alasan": "Pembahasan kontradiktif dengan isi opsi A",
+  "exp": "Pilihan A bernilai 5 karena memperlihatkan kapasitas kerja di bawah ketidakpastian dan perubahan mendadak: berpikir solutif, kolaboratif, serta tidak membuang w"
+ },
+ {
+  "pkg": "tryout-mini",
+  "id": 30,
+  "cls": "B",
+  "alasan": "Pembahasan kontradiktif dengan isi opsi A",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan kapabilitas problem-solving otonom, ketegasan mengambil keputusan di lapangan, dan komitmen tinggi terhadap tuntasnya mi"
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 108,
+  "cls": "C",
+  "alasan": "Sila kelima, bukan keempat",
+  "exp": "Tujuan utama dari sila keempat Pancasila adalah untuk menjamin keadilan sosial dan ekonomi bagi seluruh rakyat Indonesia, sehingga tercipta masyarakat yang lebi"
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 12,
+  "cls": "C",
+  "alasan": "soal tanya tahun, pembahasan benar tapi keliru fakta",
+  "exp": "Indonesia mengadakan Asian Games untuk pertama kalinya pada tahun 1958 di Jakarta."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 24,
+  "cls": "C",
+  "alasan": "Soal tidak jelas, pembahasan definisi generik",
+  "exp": "Mikrobiologi adalah ilmu yang mempelajari tentang mikroorganisme, seperti bakteri dan virus."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 23,
+  "cls": "C",
+  "alasan": "Menjawab siapa mengatur, bukan siapa bertanggung jawab",
+  "exp": "Pengelolaan keuangan daerah diatur oleh DPRD sesuai dengan perundang- undangan yang berlaku."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 52,
+  "cls": "C",
+  "alasan": "Menghitung total peminum teh, bukan hanya teh",
+  "exp": "13 25 = 17 + B – 8 + 3 25 = 12 + B B = 13"
+ },
+ {
+  "pkg": "tryout-19",
+  "id": 81,
+  "cls": "C",
+  "alasan": "Pembahasan soal sistemik, bukan sikap individu",
+  "exp": "Sikap anti radikalisme terarah lewat perbaikan mekanisme institusional panitia internal."
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 84,
+  "cls": "C",
+  "alasan": "Pembahasan cocok opsi C, bukan A",
+  "exp": "Pembahasan: Pilihan A bernilai 5 karena mengindikasikan kesiapan berkembang (growth mindset), kesediaan keluar dari zona nyaman, cepat memetakan kebutuhan adapt"
+ },
+ {
+  "pkg": "tryout-21",
+  "id": 34,
+  "cls": "C",
+  "alasan": "Membahas 'Sangkil', bukan 'Efisien'",
+  "exp": "Sangkil memiliki arti tepat guna atau mengena sasaran. Kebalikan dari tepat sasaran adalah MENYIMPANG."
+ },
+ {
+  "pkg": "tryout-25",
+  "id": 85,
+  "cls": "C",
+  "alasan": "Bahas pentingnya pendidikan, bukan hakikat sekolah",
+  "exp": "Soal ini bertujuan untuk mengetahui pemahaman Anda mengenai pentingnya pendidikan dalam kehidupan seseorang. Pilihan Jawaban dan Poin Nilai: A = 4, B = 5, C = 2"
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 83,
+  "cls": "C",
+  "alasan": "Soal tentang kepedulian anak, pembahasan tentang benturan kepentingan pekerjaan.",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui rasa kepedulian Anda terhadap pekerjaan ketika kepentingan pribadi Anda berbenturan dengan kepentingan pekerjaan. P"
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 90,
+  "cls": "C",
+  "alasan": "Membahas adaptasi, bukan motivasi lingkungan kerja.",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui cara Anda beradaptasi dengan lingkungan dan rekan kerja yang baru. Pilihan Jawaban Poin Nilai A 4 B 2 C 5 D 3 E 1"
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 95,
+  "cls": "C",
+  "alasan": "Pembahasan soal motivasi belajar, bukan persepsi nilai akademik",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui pemahaman dan kemampuan Anda dalam memotivasi diri untuk terus belajar dan berkembang. Pilihan Jawaban Poin Nilai: "
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 81,
+  "cls": "C",
+  "alasan": "Pembahasan tentang adaptasi, bukan penampilan kerja.",
+  "exp": "Tujuan dari soal ini adalah untuk mengukur cara Anda beradaptasi terhadap lingkungan dan rekan kerja. Pilihan Jawaban Nilai: A 2, B 4, C 5, D 3, E 1."
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 88,
+  "cls": "C",
+  "alasan": "Pembahasan salah sasaran; soal tanya reaksi emosional pasca-meyakinkan, bukan in",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui inisiatif Anda dalam bernegosiasi dengan orang lain. Pilihan Jawaban Poin Nilai A 5 B 4 C 3 D 2 E 1"
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 107,
+  "cls": "C",
+  "alasan": "Membahas inisiatif ambil keputusan, bukan memimpin diskusi",
+  "exp": "Soal ini bertujuan untuk mengetahui inisiatif Anda ketika berada pada situasi yang memaksa Anda untuk mengambil keputusan. Pilihan Jawaban Poin Nilai A 4 B 5 C "
+ },
+ {
+  "pkg": "tryout-29",
+  "id": 71,
+  "cls": "C",
+  "alasan": "Fokus pembahasan salah (negosiasi bukan integritas)",
+  "exp": "Soal ini bertujuan untuk mengetahui kemampuan Anda untuk mengemukakan pendapat dan bernegosiasi dengan orang lain. Pilihan Jawaban Poin Nilai: A: 3, B: 2, C: 5,"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 79,
+  "cls": "C",
+  "alasan": "Pembahasan tidak cocok opsi A (kotak evaluasi bukan real-time)",
+  "exp": "Pilihan A bernilai 5 karena responsif menangani umpan balik layanan secara langsung (real-time adaptif) agar tujuan edukasi publik tercapai optimal."
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 52,
+  "cls": "C",
+  "alasan": "soal tak sertakan teks penataan ruang, pembahasan tak bisa diverifikasi",
+  "exp": "Ruang kerja terjauh dari Pak Bono adalah ruang kerja Pak Dedi. Pak Bono bersebelahan dengan Pak Mara, sementara Pak Dedi ditempatkan di ujung ruangan demi mengh"
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 70,
+  "cls": "C",
+  "alasan": "Pembahasan soal konflik kepentingan, bukan sosok PNS ideal",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui rasa kepedulian Anda terhadap pekerjaan ketika kepentingan pribadi Anda berbenturan dengan kepentingan pekerjaan. P"
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 79,
+  "cls": "C",
+  "alasan": "Soal soal tanggung jawab koreksi kesalahan, bukan kreativitas inovasi",
+  "exp": "Soal ini bertujuan untuk mengetahui seberapa kreatif Anda dalam memberikan gagasan dan inovasi bagi perkembangan organisasi Anda. Pilihan Jawaban Poin Nilai: A "
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 87,
+  "cls": "C",
+  "alasan": "Pembahasan mengukur kemampuan kerja, soal menanyakan kewajiban etos kerja univer",
+  "exp": "Soal ini bertujuan untuk mengetahui kemampuan Anda untuk bekerja tuntas dalam situasi dan kondisi apa pun. Pilihan Jawaban Poin Nilai A 5 B 4 C 3 D 2 E 1"
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 108,
+  "cls": "C",
+  "alasan": "Menggeser topik ke adaptasi, bukan hubungan harmonis.",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui cara Anda beradaptasi dengan lingkungan dan rekan kerja. Pilihan Jawaban Poin Nilai A 3 B 4 C 2 D 1 E 5"
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 109,
+  "cls": "C",
+  "alasan": "Pembahasan soal kreativitas, bukan kebiasaan kerja",
+  "exp": "Soal ini bertujuan untuk mengetahui seberapa kreatif Anda dalam memberikan gagasan dan inovasi bagi perkembangan organisasi Anda. Pilihan Jawaban Poin Nilai: A "
+ },
+ {
+  "pkg": "tryout-31",
+  "id": 96,
+  "cls": "C",
+  "alasan": "Pembahasan mengukur kepedulian lingkungan, soal menanyakan respons sosial ke ora",
+  "exp": "Soal ini bertujuan untuk mengukur tingkat kepedulian Anda terhadap lingkungan serta masyarakat sekitar. Bobot nilai: A = 4, B = 3, C = 2, D = 5, E = 1."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 70,
+  "cls": "C",
+  "alasan": "Pembahasan soal lain (kesempatan/tantangan, bukan atasan)",
+  "exp": "Soal ini bertujuan untuk mengetahui sikap Anda ketika berhadapan dengan kesempatan dan tantangan dalam mencapai tujuan. Pilihan Jawaban Poin Nilai: A = 3, B = 4"
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 82,
+  "cls": "C",
+  "alasan": "Pembahasan soal gangguan kerja, bukan lingkungan idaman.",
+  "exp": "Soal ini bertujuan untuk mengetahui sikap Anda ketika dihadapkan pada situasi yang memaksa Anda untuk tetap bekerja dengan baik meskipun ada gangguan. Pilihan J"
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 93,
+  "cls": "C",
+  "alasan": "Pembahasan soal kontribusi tim, bukan mengemukakan pendapat forum",
+  "exp": "Soal ini bertujuan untuk mengetahui pemahaman Anda atas pentingnya kontribusi tim atau rekan kerja dalam mencapai tujuan-tujuan organisasi. Pilihan Jawaban Poin"
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 29,
+  "cls": "C",
+  "alasan": "Soal minta kelanjutan teks, bukan gagasan utama",
+  "exp": "Paragraf kedua menggunakan alur deduktif dengan gagasan utama pada kalimat pertama, yakni upaya pemanfaatan energi alternatif oleh pemerintah belum terealisasi "
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 69,
+  "cls": "C",
+  "alasan": "Tujuan pembahasan membahas produktivitas bukan loyalitas",
+  "exp": "Soal ini bertujuan untuk menilai keterampilan Anda dalam membina jejaring relasi kerja untuk mendorong produktivitas tim. Nilai: A=2, B=3, C=4, D=5, E=1."
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 72,
+  "cls": "C",
+  "alasan": "Tujuan pembahasan membahas prioritas bukan keberhasilan program",
+  "exp": "Soal ini bertujuan untuk mengetahui kemampuan Anda bekerja terorganisasi sesuai rencana dan menentukan skala prioritas tugas. Pilihan Jawaban Poin Nilai: A=2, B"
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 82,
+  "cls": "C",
+  "alasan": "Pembahasan soal konflik kepentingan, bukan prinsip sukses",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui rasa kepedulian Anda terhadap pekerjaan ketika kepentingan pribadi Anda berbenturan dengan kepentingan pekerjaan. P"
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 86,
+  "cls": "C",
+  "alasan": "Pembahasan soal tim, bukan komunikasi audiens",
+  "exp": "Soal ini bertujuan untuk mengetahui pemahaman Anda atas pentingnya kontribusi tim atau rekan kerja dalam mencapai tujuan organisasi."
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 102,
+  "cls": "C",
+  "alasan": "Topik soal komunikasi, pembahasan bicara kepedulian lingkungan",
+  "exp": "Soal ini bertujuan untuk mengetahui kepedulian Anda terhadap lingkungan dan masyarakat di sekitar Anda. Pilihan Jawaban Poin Nilai A 3 B 2 C 4 D 1 E 5"
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 104,
+  "cls": "C",
+  "alasan": "Topik soal inisiatif tangani pekerjaan terbengkalai, pembahasan bicara kreativit",
+  "exp": "Soal ini bertujuan untuk mengetahui seberapa kreatif Anda dalam memberikan gagasan dan inovasi bagi perkembangan organisasi Anda. Pilihan Jawaban Poin Nilai: A "
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 93,
+  "cls": "C",
+  "alasan": "Pembahasan deskripsi opsi A tidak cocok; opsi A mendelegasikan, bukan mengerjaka",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan tanggung jawab penuh, daya juang individu, dan kemampuan membedah persoalan tanpa membebani rekan kerja yang sedang me"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 67,
+  "cls": "C",
+  "alasan": "Penjelasan cocok Pilihan D, bukan A",
+  "exp": "Pembahasan: Pilihan A bernilai 5 karena memegang teguh SOP dan kepatuhan hukum tanpa kompromi, menolak intervensi secara beretika, sekaligus memberikan solusi s"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 77,
+  "cls": "C",
+  "alasan": "Pembahasan puji opsi A (tutup loket) tapi opsi A justru menutup pelayanan, bukan",
+  "exp": "Pembahasan: Skor 5 pada opsi A karena berorientasi pada pemecahan masalah (solutif), proaktif mengambil inisiatif mitigasi tanpa melanggar akuntabilitas, serta "
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 97,
+  "cls": "C",
+  "alasan": "Pembahasan opsi A tidak cocok isi opsi A (baca ringkasan, bukan belajar mandiri ",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan sikap proaktif menggali pengetahuan baru secara mandiri dan analitis, serta membangun ruang diskusi demi pemahaman kolek"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 99,
+  "cls": "C",
+  "alasan": "Pembahasan opsi A tidak cocok isi opsi A (memberi kesempatan lain, bukan orienta",
+  "exp": "Pilihan A bernilai 5 karena memperlihatkan orientasi belajar lintas bidang, komitmen waktu untuk berkembang, serta orientasi kemanfaatan ilmu bagi unit kerja/or"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 100,
+  "cls": "C",
+  "alasan": "Pembahasan opsi A tidak cocok isi opsi A (jalankan seadanya, bukan pemanfaatan a",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan sikap proaktif, pemanfaatan berbagai sumber belajar (arsip, regulasi, mentoring), dan kegigihan mempercepat kurva pembel"
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 31,
+  "cls": "D",
+  "alasan": "Perhitungan jumlah salah (420 bukan 180)",
+  "exp": "Deret ini merupakan deret aritmatika dengan selisih 2. Jumlah deret = n/2 * (a + l), dengan n = 20, a = 2, l = 40. Jadi, 20/2 * (2 + 40) = 180."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 32,
+  "cls": "D",
+  "alasan": "Pola penambahan salah (harus +7 jadi Y)",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah R + 5 = W."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 37,
+  "cls": "D",
+  "alasan": "Tidak jelaskan pola analogi",
+  "exp": "Sangat jelas. Hiruk : Pikuk"
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 61,
+  "cls": "D",
+  "alasan": "Penjelasan mengulang soal, tidak menjawab",
+  "exp": "Pola transformasi dari A ke B adalah persegi ke lingkaran. Menerapkan aturan yang sama pada C menghasilkan Gambar C."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 10,
+  "cls": "D",
+  "alasan": "tidak jelaskan pola huruf AB",
+  "exp": "Deret ini merupakan deret perkalian angka dan urutan alfabet pada huruf. Hasilnya adalah 531441AB."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 33,
+  "cls": "D",
+  "alasan": "Pola beda salah, jawaban 23 salah",
+  "exp": "Deret ini memiliki pola penambahan yang tidak konstan. Jadi, berikutnya adalah 14 + 9 = 23."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 35,
+  "cls": "D",
+  "alasan": "Pola beda lompat ke 15, seharusnya 11",
+  "exp": "Deret ini memiliki pola penambahan yang berbeda-beda (3, 5, 7, 9, dst). Jadi, berikutnya adalah 26 + 15 = 41."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 3,
+  "cls": "D",
+  "alasan": "menghitung total, tidak menjawab kg untuk untung 25%",
+  "exp": "Total harga beras A = 40 × 15.000 = 600.000 rupiah. Total harga beras B = 60 × 12.000 = 720.000 rupiah."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 32,
+  "cls": "D",
+  "alasan": "Perhitungan tidak koheren (5×7×6×5≠630)",
+  "exp": "630 5 . 7 . 6 . 5 = 5 x 7 x 6 x 5 = 630"
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 34,
+  "cls": "D",
+  "alasan": "Logika salah, P adalah suku ke-4 bukan dasar ke-15",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Huruf ke-15 adalah P + 5 = U."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 21,
+  "cls": "D",
+  "alasan": "Tidak menghitung hasil akhir",
+  "exp": "Deret ini merupakan deret pembagian bilangan berturut-turut."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 43,
+  "cls": "D",
+  "alasan": "Perhitungan peluang salah, jawaban tidak sesuai",
+  "exp": "3/8 3/5×5/8=3/8"
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 44,
+  "cls": "D",
+  "alasan": "Huruf berikutnya salah, seharusnya 40X bukan 40Z",
+  "exp": "Deret ini memiliki pola penambahan angka (kelipatan 8) dan huruf (berdasarkan urutan alfabet). Jadi, berikutnya adalah 40Z."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 46,
+  "cls": "D",
+  "alasan": "Pola salah, T bukan suku ke-25",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Huruf ke-25 adalah T + 5 = Y."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 5,
+  "cls": "D",
+  "alasan": "Tidak menjawab siapa spesifik sesuai opsi",
+  "exp": "Peraturan Pemerintah sering mengatur tentang tugas dan tanggung jawab dalam kebijakan energi nasional termasuk energi terbarukan."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 6,
+  "cls": "D",
+  "alasan": "Tidak menghubungkan ke opsi jawaban",
+  "exp": "Konsep sila pertama Pancasila dapat diaplikasikan dalam TIK dengan memperkuat keamanan, menjaga nilai-nilai etika, dan memastikan bahwa teknologi tersebut digun"
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 20,
+  "cls": "D",
+  "alasan": "Hasil 104 tidak ada di opsi",
+  "exp": "Jumlah siswa yang lulus = 0,6 × 120 + 0,4 × 80 = 72 + 32 = 104 siswa."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 45,
+  "cls": "D",
+  "alasan": "Pola kuadrat tapi hitung 16+8=24 salah",
+  "exp": "Deret ini merupakan deret kuadrat dari bilangan bulat positif. Jadi, 16 + 8 = 24."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 12,
+  "cls": "D",
+  "alasan": "Pembahasan salah jawaban dan tidak menjelaskan soal",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah D."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 36,
+  "cls": "D",
+  "alasan": "Tidak menunjuk opsi yang benar",
+  "exp": "Deret ini merupakan deret dari hasil perkalian faktorial dan penambahan."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 43,
+  "cls": "D",
+  "alasan": "Hanya menampilkan susunan; tidak menghitung peluang A dan B berdampingan.",
+  "exp": "½ AB | C | D BA | C | D ½"
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 50,
+  "cls": "D",
+  "alasan": "Penjelasan tidak koheren, angka 12/52 salah",
+  "exp": "4/13 12/52 = 4/13 3 2"
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 51,
+  "cls": "D",
+  "alasan": "Pola huruf salah, jawaban 20V tidak sesuai logika",
+  "exp": "Deret ini memiliki pola penambahan angka (kelipatan 4) dan huruf (berdasarkan urutan alfabet). Jadi, berikutnya adalah 20V."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 49,
+  "cls": "D",
+  "alasan": "Jawaban salah (harus 25Y), penjelasan pola huruf tidak jelas",
+  "exp": "Deret ini memiliki pola penambahan angka (kelipatan 5) dan huruf (berdasarkan urutan alfabet). Jadi, berikutnya adalah 25Z."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 51,
+  "cls": "D",
+  "alasan": "Jawaban salah (harus 21), nol penjelasan metode perhitungan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah A."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 41,
+  "cls": "D",
+  "alasan": "Pola +7 tidak konsisten ke E",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah E + 5 = J."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 93,
+  "cls": "D",
+  "alasan": "Kunci salah, tidak menjelaskan alasan",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-18",
+  "id": 3,
+  "cls": "D",
+  "alasan": "Tidak identifikasi opsi kecuali",
+  "exp": "RPJPN 2005-2025 memprioritaskan akselerasi kawasan potensial di luar Jawa-Bali dan Sumatra guna pemerataan, sembari mempertahankan laju pertumbuhan wilayah Jawa"
+ },
+ {
+  "pkg": "tryout-18",
+  "id": 16,
+  "cls": "D",
+  "alasan": "Tidak menunjuk opsi spesifik",
+  "exp": "Tujuan administratif desentralisasi mencakup penataan urusan pemerintahan, kelembagaan birokrasi, serta peningkatan kualitas sumber daya aparatur daerah yang di"
+ },
+ {
+  "pkg": "tryout-19",
+  "id": 89,
+  "cls": "D",
+  "alasan": "Pembahasan definisi ideal, tidak menjawab soal respons yang \"kerap didapatkan\"",
+  "exp": "Komunikasi efektif tidak sekadar transfer informasi, melainkan membangkitkan antusiasme dan keterlibatan aktif penerima pesan."
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 26,
+  "cls": "D",
+  "alasan": "Kontradiksi fungsi bahasa negara vs nasional, tidak menentukan jawaban",
+  "exp": "Pembahasan: Fungsi bahasa Indonesia sebagai bahasa negara meliputi: bahasa resmi kenegaraan, bahasa pengantar pendidikan, alat perhubungan tingkat nasional (adm"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 29,
+  "cls": "D",
+  "alasan": "Pembahasan salah rujuk opsi C, seharusnya opsi A untuk koma sebelum 'dan'",
+  "exp": "Pembahasan: Opsi C menggunakan tanda koma secara tepat pada perincian lebih dari dua unsur (tanda koma sebelum kata hubung 'dan'). Opsi A salah karena titik dua"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 53,
+  "cls": "D",
+  "alasan": "Pembahasan salah menilai opsi B yang justnya benar",
+  "exp": "Pembahasan: Premis 1: Semua A adalah B (Stres -> Konseling). Premis 2: Sebagian C bukan A (Sebagian anak rehabilitasi tidak stres). Kesimpulan pasti berbasis si"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 74,
+  "cls": "D",
+  "alasan": "Pembahasan salah deskripsikan opsi A (dasar ≠ continuous learning)",
+  "exp": "Pilihan A menunjukkan nilai 5 lewat kemauan belajar berkelanjutan (continuous learning) tanpa bergantung pada fasilitas kantor, bertujuan mendorong peningkatan "
+ },
+ {
+  "pkg": "tryout-22",
+  "id": 14,
+  "cls": "D",
+  "alasan": "Hanya bahas APBN, tak jawab opsi lain",
+  "exp": "Berdasarkan Pasal 22D UUD 1945, DPD berhak memberikan pertimbangan atas RUU RAPBN (rancangan anggaran), bukan terhadap APBN yang telah disahkan."
+ },
+ {
+  "pkg": "tryout-22",
+  "id": 26,
+  "cls": "D",
+  "alasan": "Tidak membedakan ayat 1 dan 2 Pasal 32",
+  "exp": "Ketentuan mengenai kebudayaan dan perlindungan bahasa daerah termaktub pada rumpun Bab Kebudayaan Nasional Pasal 32 UUD 1945 (opsi B merujuk pasal perlindungan "
+ },
+ {
+  "pkg": "tryout-23",
+  "id": 29,
+  "cls": "D",
+  "alasan": "Tidak menjawab kecuali, hanya daftar fungsi umum",
+  "exp": "Wawasan Nusantara berfungsi sebagai pedoman, dorongan, motivasi, dan rambu-rambu dalam proses perumusan keputusan maupun tindakan bagi aparatur negara dan selur"
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 72,
+  "cls": "D",
+  "alasan": "Pembahasan salah sasaran (inisiatif vs etos kerja)",
+  "exp": "Soal ini bertujuan untuk mengetahui inisiatif Anda ketika berada pada situasi yang memaksa Anda untuk mengambil keputusan. Pilihan Jawaban Poin Nilai A: 3, B: 5"
+ },
+ {
+  "pkg": "tryout-27",
+  "id": 7,
+  "cls": "D",
+  "alasan": "Tidak tunjuk opsi non-prinsip",
+  "exp": "Berdasarkan UUD 1945, sistem pemerintahan Republik Indonesia mengatur bahwa Indonesia berdasar atas hukum, pemerintahan berdasar sistem konstitusi, kekuasaan te"
+ },
+ {
+  "pkg": "tryout-27",
+  "id": 56,
+  "cls": "D",
+  "alasan": "Tidak menentukan jawaban final dari opsi",
+  "exp": "250 pon = 125 kg; 6,75 ton = 6.750 kg; 36.000 ons = 3.600 kg (asumsi 1 ons = 0,1 kg) atau 1.800 kg (ons Belanda); 15 kuintal = 1.500 kg; 1.500 dag = 15 kg. Tota"
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 20,
+  "cls": "D",
+  "alasan": "Tidak menjawab lembaga mana yg porsi dominasinya dipangkas",
+  "exp": "Perubahan UUD 1945 bertujuan mereformasi sistem yang mulanya terlalu berpusat pada presiden (executive heavy) menjadi lebih berimbang, memperkuat fungsi pengawa"
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 53,
+  "cls": "D",
+  "alasan": "Tidak menganalisis opsi untuk temukan kombinasi 4 hari valid",
+  "exp": "Roby akan mengambil empat kelas di luar hari Minggu agar tidak berbenturan dengan waktu latihan basket."
+ },
+ {
+  "pkg": "tryout-29",
+  "id": 6,
+  "cls": "D",
+  "alasan": "Tidak jelaskan opsi mana yang BUKAN fungsi",
+  "exp": "Fungsi hukum di Indonesia meliputi sarana kontrol sosial, media perubahan dan keadilan sosial, pemelihara ketertiban masyarakat, pelindung kepentingan warga, se"
+ },
+ {
+  "pkg": "tryout-29",
+  "id": 32,
+  "cls": "D",
+  "alasan": "Jawaban 2,5 salah, seharusnya 4,5",
+  "exp": "Pola deret melompat satu angka: suku ganjil bertambah 1 menghasilkan suku ganjil berikutnya, dan suku genap bertambah 1 menghasilkan suku genap berikutnya. Angk"
+ },
+ {
+  "pkg": "tryout-29",
+  "id": 70,
+  "cls": "D",
+  "alasan": "Skor pembahasan terbalik dari logika soal",
+  "exp": "Soal ini bertujuan untuk mengetahui sikap Anda ketika melihat hal yang tidak semestinya terjadi di hadapan Anda. Pilihan Jawaban Poin Nilai: A: 1, B: 5, C: 4, D"
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 32,
+  "cls": "D",
+  "alasan": "SOAL teks tidak lengkap",
+  "exp": "Tiga staf perokok semestinya ditempatkan di ruangan 1, 2, dan 3 agar tidak berdampingan langsung dengan Bu Heni yang menempati ruang 5."
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 48,
+  "cls": "D",
+  "alasan": "Kesimpulan salah, all A are B ≠ all B are A",
+  "exp": "Kedua premis menyatakan A dan C tercakup di dalam himpunan B. Berdasarkan opsi yang tersedia, kesimpulannya adalah tidak ada anggota B yang bukan anggota A."
+ },
+ {
+  "pkg": "tryout-31",
+  "id": 19,
+  "cls": "D",
+  "alasan": "pembahasan rincian pasal, tak jawab jumlah pasal amendemen III",
+  "exp": "Rincian perubahan pasal UUD 1945: Amendemen I (9 pasal), Amendemen II (27 pasal), Amendemen III (23 pasal), dan Amendemen IV (19 pasal)."
+ },
+ {
+  "pkg": "tryout-31",
+  "id": 36,
+  "cls": "D",
+  "alasan": "Pola +3/+2 tidak cocok deret huruf B,C,L; penjelasan keliru",
+  "exp": "Pola bergantian antara huruf dan angka dengan penambahan konstan +3 dan +2. Huruf berlanjut ke Q dan angka bertambah menjadi 20."
+ },
+ {
+  "pkg": "tryout-31",
+  "id": 48,
+  "cls": "D",
+  "alasan": "Hasil 0,005 tidak ada di opsi",
+  "exp": "0,04 : (4 / 0,5) = (4/100) : 8 = 4/800 = 1/200 = 0,005."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 1,
+  "cls": "D",
+  "alasan": "Tidak menegaskan opsi yang bukan klasifikasi sumber",
+  "exp": "Penggolongan hukum menurut sumbernya secara umum mencakup undang-undang, kebiasaan, traktat, yurisprudensi, dan doktrin."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 16,
+  "cls": "D",
+  "alasan": "Mengutip pasal salah, jawaban seharusnya DPD",
+  "exp": "Pengawasan terhadap pelaksanaan undang-undang mengenai otonomi daerah diselenggarakan oleh Dewan Perwakilan Rakyat yang dipilih langsung lewat pemilu berkala se"
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 84,
+  "cls": "D",
+  "alasan": "Pembahasan pentingnya pendidikan, tidak menjawab peran lulusan.",
+  "exp": "Soal ini bertujuan untuk mengetahui pemahaman Anda mengenai pentingnya pendidikan bagi masa depan Anda. Pilihan Jawaban Poin Nilai: A=5, B=3, C=4, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 110,
+  "cls": "D",
+  "alasan": "Hanya membela opsi A, tidak jelaskan soal",
+  "exp": "Opsi A menunjukkan fokus penuh pada pencapaian target kerja dan solusi proaktif meski ada kendala mendadak."
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 94,
+  "cls": "D",
+  "alasan": "Membahas pelaporan formal, tidak ada di opsi",
+  "exp": "Integritas penuh diwujudkan lewat penolakan tegas atas potensi benturan kepentingan yang dibarengi pelaporan formal ke unit pengawas gratifikasi."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 21,
+  "cls": "D",
+  "alasan": "Tidak menjawab opsi soal",
+  "exp": "Rumusan Ketuhanan Yang Maha Esa pada Pembukaan UUD 1945 menegaskan sifat khas Indonesia: bukan negara sekuler yang memisahkan agama dari urusan negara, dan buka"
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 29,
+  "cls": "D",
+  "alasan": "Tidak menjawab \"kecuali\", hanya daftar kewenangan",
+  "exp": "Kewenangan MK menurut UUD 1945 mencakup: menguji UU terhadap UUD 1945, memutus sengketa kewenangan lembaga negara yang kewenangannya diberikan oleh UUD 1945, me"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 51,
+  "cls": "D",
+  "alasan": "Tidak konsisten, terputus, tak jelas",
+  "exp": "Pembahasan: Pola tiap baris: (Kolom 1 x Kolom 2) + (Kolom 1 - Kolom 2) = Kolom 3 salah, periksa pola: (Kolom 1 + 1) * Kolom 2 - 2 -> baris 1: (4+1)*6 - 2 = 28. "
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 70,
+  "cls": "D",
+  "alasan": "Pembahasan salah pilih B, B justru menggunakan dana tidak sah",
+  "exp": "Pilihan B menunjukkan kejujuran spontan dan akuntabilitas personal terhadap hak keuangan negara tanpa menunggu proses penagihan atau audit pihak lain."
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 72,
+  "cls": "D",
+  "alasan": "Pembahasan salah pilih A, A gagasan sederhana sekadar memenuhi kuota",
+  "exp": "Pilihan A (Skor 5) mencerminkan kemauan menantang diri sendiri (keluar dari zona nyaman), kepekaan terhadap peningkatan mutu berkelanjutan, dan upaya menghasilk"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 48,
+  "cls": "D",
+  "alasan": "Pembahasan salah baca opsi B, klaim kecenderungan tapi opsi B nyatakan kepastian",
+  "exp": "Pembahasan: Penalaran induktif menarik generalisasi dari sampel spesifik (cabai, tomat, terung famili Solanaceae). Kesimpulan yang valid tidak boleh melampaui b"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 58,
+  "cls": "D",
+  "alasan": "Angka soal diubah, perhitungan tidak konsisten",
+  "exp": "Pembahasan: Beban sisa pekerjaan jika normal = sisa hari × jumlah pekerja = (40 - 10) × 15 = 30 × 15 = 450 orang-hari. Waktu tersisa aktual = 30 - 6 = 24 hari. "
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 66,
+  "cls": "D",
+  "alasan": "Pembahasan salah opsi A (menerima vs menolak)",
+  "exp": "Pilihan A menunjukkan integritas diri tertinggi (skor 5) karena memadukan penolakan tegas, edukasi regulasi kepada pihak ketiga, dan transparansi melalui pelapo"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 67,
+  "cls": "D",
+  "alasan": "Pembahasan salah opsi A (menuruti vs menolak)",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan kepatuhan teguh pada prinsip kebenaran data, akuntabilitas anggaran publik, serta keberanian moral menolak intervensi n"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 68,
+  "cls": "D",
+  "alasan": "Pembahasan salah opsi A (memberi sandi vs menolak)",
+  "exp": "Pilihan A mendapatkan skor 5 karena mempertahankan integritas keamanan informasi serta mematuhi tata kelola sistem identitas digital negara, sembari tetap membe"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 77,
+  "cls": "D",
+  "alasan": "Pembahasan salah opsi (sebut A, isi E)",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan empati, kesigapan, perlakuan inklusif, dan bantuan tuntas tanpa lempar tanggung jawab bagi kelompok rentan."
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 78,
+  "cls": "D",
+  "alasan": "Pembahasan salah opsi (sebut A, isi C)",
+  "exp": "Pilihan A bernilai 5 karena berfokus pada dampak kritis penerima layanan (urgensi beasiswa) dengan kerelaan mendedikasikan waktu tambahan demi kemaslahatan masy"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 79,
+  "cls": "D",
+  "alasan": "Pembahasan salah opsi (sebut A, isi B)",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan kematangan emosi, akuntabilitas institusi tanpa defensif, serta pemberian solusi konkret yang mengembalikan kepercayaan "
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 19,
+  "cls": "D",
+  "alasan": "Perhitungan tidak lengkap, jawaban tidak ditemukan",
+  "exp": "Jumlah siswa kelas 7 = 0,3 × 400 = 120 siswa, jumlah siswa kelas 8 = 0,25 × 400 = 100 siswa."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 21,
+  "cls": "D",
+  "alasan": "Tanggal jawaban tidak ada di opsi",
+  "exp": "Peristiwa G30S terjadi pada tanggal 30 September 1965."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 28,
+  "cls": "D",
+  "alasan": "Penjelasan tidak menunjuk opsi jawaban yang benar",
+  "exp": "Matahari menerangi siang hari, sedangkan bulan hadir di malam hari."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 30,
+  "cls": "D",
+  "alasan": "Tidak menghitung hasil, hanya sebut pola",
+  "exp": "Deret ini merupakan deret perkalian berturut-turut."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 48,
+  "cls": "D",
+  "alasan": "Perhitungan salah, logika tidak dijelaskan",
+  "exp": "36 4 x 3 x 2 x 3 = 36"
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 20,
+  "cls": "D",
+  "alasan": "Pembahasan tidak lengkap, tidak hitung keuntungan",
+  "exp": "Harga beli per lembar kain = 6.000.000 ÷ 400 = 15.000 rupiah."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 36,
+  "cls": "D",
+  "alasan": "Pola +5 tidak konsisten (selisih: 5,7,7), penjelasan terlalu sederhana",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, Z + 5 = E."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 41,
+  "cls": "D",
+  "alasan": "Salah lanjut pola: operasi berikut kali 2 bukan bagi 8",
+  "exp": "Deret ini merupakan deret pembagian 8, perkalian 2 berturut-turut. Jadi, 8 / 8 = 1, kemudian 1 * 2 = 2."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 65,
+  "cls": "D",
+  "alasan": "Tidak menganalisis pola gambar spesifik",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 93,
+  "cls": "D",
+  "alasan": "Pembahasan salah istilah, gender hanya perempuan",
+  "exp": "Perlindungan HAM di masyarakat yang fokus pada perlindungan terhadap kelompok rentan seperti perempuan, anak-anak, dan penyandang disabilitas dikenal sebagai pe"
+ },
+ {
+  "pkg": "tryout-figural",
+  "id": 22,
+  "cls": "D",
+  "alasan": "Tidak jelas mana yang berbeda di antara lima",
+  "exp": "Ketiga gambar bersatu."
+ },
+ {
+  "pkg": "tryout-figural",
+  "id": 29,
+  "cls": "D",
+  "alasan": "Tidak jelaskan cara bedakan",
+  "exp": "Gambarnya berpotongan."
+ },
+ {
+  "pkg": "tryout-mini",
+  "id": 13,
+  "cls": "D",
+  "alasan": "Pembahasan salah baca opsi B, klaim lawan isi opsi",
+  "exp": "Pembahasan: Penalaran induktif menarik generalisasi dari sampel spesifik (cabai, tomat, terung famili Solanaceae). Kesimpulan yang valid tidak boleh melampaui b"
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 8,
+  "cls": "E",
+  "alasan": "Pembahasan terputus belum selesai hitung",
+  "exp": "Misalkan harga 1 buah pulpen adalah x rupiah. Karena pensil Rp2.000 lebih mahal dari pulpen, harga 1 buah pensil adalah x + 2.000 rupiah."
+ },
+ {
+  "pkg": "tryout-10",
+  "id": 77,
+  "cls": "E",
+  "alasan": "Jawaban B kontradiktif dengan soal PNS baik",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah B."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 12,
+  "cls": "E",
+  "alasan": "jawab 30 Sept, opsi tak ada",
+  "exp": "Peristiwa G30S/PKI terjadi pada tanggal 30 September 1965."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 16,
+  "cls": "E",
+  "alasan": "Tidak klasifikasikan jenis pelanggaran HAM yang ditanyakan",
+  "exp": "Kasus pelanggaran HAM di Bosnia dan Herzegovina adalah salah satu contoh pelanggaran HAM yang terkenal."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 17,
+  "cls": "E",
+  "alasan": "pembahasan sebut 27 September, tak ada di opsi",
+  "exp": "Secara resmi, terbentuknya TNI sebagai satu kesatuan angkatan bersenjata dilakukan pada tanggal 27 September 1945."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 18,
+  "cls": "E",
+  "alasan": "pembahasan November, tak ada di opsi",
+  "exp": "Pasukan Jepang di Jawa menyerah kepada tentara Sekutu pada November 1945 setelah Jepang secara ..."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 22,
+  "cls": "E",
+  "alasan": "Hanya hitung pendapatan saat ini, tidak jawab harga target keuntungan 20%",
+  "exp": "Total harga jeruk = 40 × 10.000 = 400.000 rupiah. Total harga apel = 60 × 8.000 = 480.000 rupiah."
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 42,
+  "cls": "E",
+  "alasan": "warna tidak ada di soal; pola tak jelas",
+  "exp": "A, D, C, B, F, E, C, … (H) Abjad berwarna hitam berpola abjad (+1), dan yang berwarna merah dan biru masing masing berpola abjad (+2)"
+ },
+ {
+  "pkg": "tryout-11",
+  "id": 48,
+  "cls": "E",
+  "alasan": "Rujuk gambar tidak tersedia, soal terpotong",
+  "exp": "RUMPY RAGDO PERSI SPHINX ANGGOR MAG MOTOR SAMS Lihat gambar di atas, Ragdoll dan Sphinx ada di sebelah orang Magelang"
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 33,
+  "cls": "E",
+  "alasan": "Pembahasan hanya komentar, tidak menjelaskan",
+  "exp": "Sangat jelas"
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 37,
+  "cls": "E",
+  "alasan": "Tidak menjelaskan logika pemilihan jawaban",
+  "exp": "Penyelaisaian Perhatikan kalimat yang tidak didahului oleh kata semua atau beberapa maka maksudnya adalah semua. Kakak Tua adalah sebagian dari burung yang terb"
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 64,
+  "cls": "E",
+  "alasan": "Hanya mengulang soal, tanpa analisis pola spesifik",
+  "exp": "Cari gambar yang memiliki pola berbeda dari gambar-gambar lainnya."
+ },
+ {
+  "pkg": "tryout-12",
+  "id": 80,
+  "cls": "E",
+  "alasan": "Sebut opsi C tapi jelaskan isi opsi E",
+  "exp": "Sikap inklusif terhadap agama dapat mendukung semangat Bhinneka Tunggal Ika di masyarakat dengan mengharmoniskan perbedaan keyakinan, sehingga jawaban yang tepa"
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 32,
+  "cls": "E",
+  "alasan": "Penjelasan tidak untuk suku ke-10",
+  "exp": "Deret ini memiliki pola penambahan angka dan huruf berdasarkan kelipatan. Huruf ke-10 adalah L, sehingga angka ke-10 adalah 30L, berikutnya adalah 40N."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 45,
+  "cls": "E",
+  "alasan": "Tidak menyatakan hubungan X<Y",
+  "exp": "X = 1/ 17 = 0, 0588 Y = 0,17"
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 59,
+  "cls": "E",
+  "alasan": "Hanya mengulang perintah soal tanpa solusi",
+  "exp": "Cari gambar yang memiliki pola berbeda dari gambar-gambar lainnya."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 63,
+  "cls": "E",
+  "alasan": "Jawaban menunjuk opsi E bukan D",
+  "exp": "Pola transformasi dari A ke B adalah inversi warna. Menerapkan aturan yang sama pada C menghasilkan Gambar E."
+ },
+ {
+  "pkg": "tryout-13",
+  "id": 99,
+  "cls": "E",
+  "alasan": "Pembahasan sebut pilihan D, padahal jawaban benar E",
+  "exp": "Memahami dan menghargai Bhinneka Tunggal Ika dalam kehidupan bermasyarakat penting untuk memperkuat persatuan dan harmoni sosial, sehingga jawaban yang tepat ad"
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 8,
+  "cls": "E",
+  "alasan": "Hanya bahas satu opsi, abaikan \"semua benar\"",
+  "exp": "Pancasila mendorong toleransi dan kebersamaan untuk menjaga kerukunan."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 13,
+  "cls": "E",
+  "alasan": "Tidak hitung eksponen, hanya sebut deret",
+  "exp": "Deret ini merupakan deret pangkat tiga."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 33,
+  "cls": "E",
+  "alasan": "pola E+5 tak sesuai deret H,O,V,E",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah E + 5 = J."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 51,
+  "cls": "E",
+  "alasan": "Pola pembagian 8 bukan pembagian 2",
+  "exp": "Deret ini merupakan deret dengan pola pembagian dua."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 64,
+  "cls": "E",
+  "alasan": "Hanya jelaskan metode umum",
+  "exp": "Lihat pola hubungan antara gambar pertama dan kedua, kemudian terapkan pola yang sama."
+ },
+ {
+  "pkg": "tryout-14",
+  "id": 104,
+  "cls": "E",
+  "alasan": "Penjelasan cocok opsi E tapi jawab A",
+  "exp": "\"Bhinneka Tunggal Ika\" berarti hidup dalam harmoni meski berbeda-beda, sehingga jawaban yang tepat adalah pilihan A."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 39,
+  "cls": "E",
+  "alasan": "Pola +3,+4,+5 tapi jelas +5 lagi",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah N + 5 = S."
+ },
+ {
+  "pkg": "tryout-15",
+  "id": 68,
+  "cls": "E",
+  "alasan": "Tidak menjelaskan alasan pilihan C",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah C."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 39,
+  "cls": "E",
+  "alasan": "referensi ilustrasi eksternal tidak ada di soal",
+  "exp": "Biru Dari ilustrasi gambar di penjelasan soal nomor 63, warna hijau berhadapan dengan warna biru, jadi kalau hijau di atas maka Biru akan ada di bawah sebagai a"
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 44,
+  "cls": "E",
+  "alasan": "Termasuk kunci jawaban soal lain tidak relevan",
+  "exp": "1 : 48 Luas Belah Ketupat 1 : Luas Belah Ketupat 2 1/2 x d1 x d2 : 1/2 x (6d1) x (8d2) = 1 : 48 M M NO A B C D E 71 4 5 2 1 3 72 5 4 3 2 1 73 3 2 1 5 4 74 1 4 3"
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 52,
+  "cls": "E",
+  "alasan": "Mengacu tabel soal lain, tidak menjelaskan logika soal ini",
+  "exp": "Anggora, lihat di tabel pembahasan nomor 58"
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 53,
+  "cls": "E",
+  "alasan": "Pola +5 tidak cocok deret",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, Z + 5 = E."
+ },
+ {
+  "pkg": "tryout-16",
+  "id": 75,
+  "cls": "E",
+  "alasan": "Penjelasan pilih B tapi jawab C",
+  "exp": "Sikap inklusif terhadap budaya asli dapat mendukung Bhinneka Tunggal Ika dalam kehidupan bermasyarakat dengan mengharmoniskan perbedaan dalam kesetaraan, sehing"
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 4,
+  "cls": "E",
+  "alasan": "tidak menjelaskan isi sidang",
+  "exp": "Pembahasan: Kunci jawaban yang tepat adalah E."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 44,
+  "cls": "E",
+  "alasan": "Pola sebenarnya +3,+4,+5,+6 bukan +5",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah N + 5 = S."
+ },
+ {
+  "pkg": "tryout-18",
+  "id": 89,
+  "cls": "E",
+  "alasan": "Pembahasan kontradiktif, menyalahkan opsi C yang benar",
+  "exp": "Tindakan yang diharapkan adalah berinisiatif membangkitkan daya juang rekan-rekan secara konsisten tanpa diminta, karena tim yang kehilangan motivasi membutuhka"
+ },
+ {
+  "pkg": "tryout-19",
+  "id": 18,
+  "cls": "E",
+  "alasan": "Discusses executive role, not supervisory authority",
+  "exp": "Kepala Desa memiliki tanggung jawab memimpin penyelenggaraan tata pemerintahan desa, membina ketenteraman masyarakat, serta merumuskan peraturan desa bersama un"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 30,
+  "cls": "E",
+  "alasan": "Pembahasan tukar opsi C dan D, opsi C justru pleonastis 'sangat amat cepat sekal",
+  "exp": "Pembahasan: Opsi C efektif dan tidak pleonastis. Opsi A redundan ('seluruh peserta-peserta'), Opsi B redundan ('demi untuk'), Opsi D redundan ('sangat amat cepa"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 76,
+  "cls": "E",
+  "alasan": "Pembahasan kontradiktif — opsi A justru burokratis, tidak empati",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan empati, solutif, proaktif melayani kelompok rentan (lansia/daerah terpencil) tanpa mengabaikan regulasi kelengkapan do"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 85,
+  "cls": "E",
+  "alasan": "Pilihan A pasif, pembahasan deskripsikan aktif",
+  "exp": "Pembahasan: Pilihan A bernilai 5 karena ASN adaptif tidak kaku terhadap sekat sektoral, mampu menjembatani disparitas budaya kerja lintas institusi (interoperab"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 86,
+  "cls": "E",
+  "alasan": "Pilihan A diam, pembahasan deskripsikan merespons",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan kematangan emosi tinggi: tidak terpancing provokasi, tetap tenang, dan merespons secara rasional berbasis fakta demi tuj"
+ },
+ {
+  "pkg": "tryout-2",
+  "id": 88,
+  "cls": "E",
+  "alasan": "Pilihan A lapor atasan, pembahasan deskripsikan abaikan",
+  "exp": "Pilihan A bernilai 5 karena mengedepankan kontrol emosi internal, tidak membuang energi pada konflik horizontal, dan berfokus pada kinerja profesional."
+ },
+ {
+  "pkg": "tryout-20",
+  "id": 13,
+  "cls": "E",
+  "alasan": "Fungsi konstitusional bukan pengawasan",
+  "exp": "Kewenangan MPR melantik serta menentukan suksesi kepemimpinan nasional ketika terjadi kekosongan kepresidenan merupakan perwujudan dari fungsi pengawasan terhad"
+ },
+ {
+  "pkg": "tryout-20",
+  "id": 39,
+  "cls": "E",
+  "alasan": "Pembahasan tidak relevan ke soal BAMBU",
+  "exp": "Opas atau penjaga rendahan setara bawahan pelaksana. Lawan kata strata tersebut adalah ATASAN."
+ },
+ {
+  "pkg": "tryout-20",
+  "id": 61,
+  "cls": "E",
+  "alasan": "Penjelasan pola tidak cocok struktur soal",
+  "exp": "Deret merupakan urutan alfabet mundur dengan pengurangan 3 langkah (-3) di mana setiap abjad ditulis ganda: SS, PP, MM, JJ. Huruf pelengkap deret adalah S dan P"
+ },
+ {
+  "pkg": "tryout-23",
+  "id": 43,
+  "cls": "E",
+  "alasan": "Pembahasan tidak membahas makna ADISI",
+  "exp": "Kecenderungan kedekatan rasa sepadan dengan empati."
+ },
+ {
+  "pkg": "tryout-25",
+  "id": 8,
+  "cls": "E",
+  "alasan": "Tidak analisis struktur kalimat paragraf",
+  "exp": "Paragraf tersebut tersusun dengan logika kausalitas (sebab-akibat), di mana gagasan utama menghubungkan faktor pemicu (penyebab) dengan fluktuasi mata uang sert"
+ },
+ {
+  "pkg": "tryout-25",
+  "id": 10,
+  "cls": "E",
+  "alasan": "tak sebut aktual dinamis antisipatif",
+  "exp": "Ciri khas ideologi terbuka mencakup penggalian nilai dasar dari budaya dan keyakinan masyarakat, keterbukaan menerima perubahan zaman, serta akuntabilitas pemer"
+ },
+ {
+  "pkg": "tryout-25",
+  "id": 39,
+  "cls": "E",
+  "alasan": "Istilah \"teladan\" tidak ada di soal; kesimpulan melampaui premis",
+  "exp": "Aktif mengimplikasikan teladan, dan teladan mengimplikasikan populer di Jakarta. Maka, staf PT X yang aktif dipastikan populer di Jakarta."
+ },
+ {
+  "pkg": "tryout-25",
+  "id": 56,
+  "cls": "E",
+  "alasan": "Asumsi subsidi agraris tidak ada di soal",
+  "exp": "Dana terpakai: Bandara ($4 juta) + Subsidi agraris ($2 juta) = $6 juta. Sisa anggaran: $7 juta - $6 juta = $1 juta. Program yang pas menyerap $1 juta adalah pro"
+ },
+ {
+  "pkg": "tryout-25",
+  "id": 82,
+  "cls": "E",
+  "alasan": "pembahasan tidak menjelaskan soal purnatugas",
+  "exp": "Soal ini bertujuan untuk mengukur kepedulian sosial Anda terhadap lingkungan dan masyarakat sekitar. Poin penilaian: A: 5, B: 2, C: 3, D: 4, E: 1."
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 82,
+  "cls": "E",
+  "alasan": "Pembahasan tentang benturan kepentingan, soal tentang mediasi perselisihan.",
+  "exp": "Soal ini bertujuan untuk mengetahui sikap dan kedewasaan Anda saat kepentingan pribadi berbenturan dengan kepentingan tim atau kelompok. Pilihan Jawaban Poin Ni"
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 87,
+  "cls": "E",
+  "alasan": "Menginterpretasikan soal sebagai inovasi, padahal soal cek kualitas",
+  "exp": "Tujuan soal ini adalah untuk mengetahui semangat Anda berinovasi dan berkreasi dalam bekerja untuk mencapai tujuan Anda. Pilihan Jawaban Poin Nilai A: 3, B: 4, "
+ },
+ {
+  "pkg": "tryout-27",
+  "id": 26,
+  "cls": "E",
+  "alasan": "Tidak bandingkan perdata-pidana, hanya jelas perdata",
+  "exp": "Ciri khas perkara perdata antara lain mengatur sengketa privat antarpihak/keluarga, inisiatif gugatan berasal dari pihak yang dirugikan (penggugat), serta prose"
+ },
+ {
+  "pkg": "tryout-27",
+  "id": 31,
+  "cls": "E",
+  "alasan": "Logika kategori terpaksa, remote bukan objek dikendalikan",
+  "exp": "Robot, remote, televisi, dan AC berkaitan erat dengan pengoperasian kendali jarak jauh, sedangkan dispenser tidak menggunakan remote."
+ },
+ {
+  "pkg": "tryout-27",
+  "id": 36,
+  "cls": "E",
+  "alasan": "Tanpa penalaran atau premis",
+  "exp": "Jika B bekerja pada hari Kamis, simpulan yang mutlak benar adalah C bertugas pada hari Jumat."
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 71,
+  "cls": "E",
+  "alasan": "Pembahasan tidak cocok soal preferensi kenyamanan mal",
+  "exp": "Soal ini bertujuan untuk mengukur kepedulian Anda terhadap lingkungan dan masyarakat di sekitar Anda. Bobot nilai: A=1, B=2, C=3, D=5, E=4."
+ },
+ {
+  "pkg": "tryout-29",
+  "id": 66,
+  "cls": "E",
+  "alasan": "Tujuan soal tidak cocok, scoring tidak menjelaskan indikator etos kerja",
+  "exp": "Soal ini bertujuan untuk mengetahui sikap Anda dalam melihat kelebihan seseorang, apakah hal tersebut memotivasi Anda untuk menjadi lebih baik atau tidak. Poin "
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 62,
+  "cls": "E",
+  "alasan": "Mengubah parameter soal untuk memaksakan jawaban",
+  "exp": "Pembahasan: Jarak tempuh mobil X hingga 08.30 (selama 0,5 jam) = 60 × 0,5 = 30 km. Sisa jarak pukul 08.30 = 210 - 30 = 180 km. Waktu temu = Sisa jarak / (Vx + V"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 69,
+  "cls": "E",
+  "alasan": "Pembahasan puji opsi A tapi opsi A bocorkan data rahasia",
+  "exp": "Pilihan A bernilai 5 karena menegakkan integritas penjagaan rahasia negara/jabatan, tidak tergiur imbalan reputasi instan, serta mengarahkan alur informasi sesu"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 70,
+  "cls": "E",
+  "alasan": "Pembahasan puji opsi A tapi opsi A hanya menyindir santai",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan integritas aktif: berani meluruskan penyimpangan disiplin kerja secara konstruktif, bertindak langsung pada sumber masa"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 71,
+  "cls": "E",
+  "alasan": "Pembahasan puji opsi A tapi opsi A hanya kerjakan sendiri",
+  "exp": "Pilihan A (skor 5) cerminkan inisiatif proaktif tinggi. Tidak pasrah kendala teknis. Selesaikan masalah substantif, dorong peningkatan kinerja tim melalui kapab"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 86,
+  "cls": "E",
+  "alasan": "Pembahasan sebut opsi A tapi perilaku cocok opsi B",
+  "exp": "Skor 5 pada opsi A karena menunjukkan kematangan kendali emosi, ketenangan menghadapi provokasi, empati pada masyarakat, serta orientasi pada solusi pelayanan."
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 87,
+  "cls": "E",
+  "alasan": "Pembahasan sebut opsi A tapi de-eskalasi cocok opsi D/E",
+  "exp": "Skor 5 pada opsi A karena mampu mengontrol impuls pribadi sekaligus bertindak de-eskalatif untuk meredakan tensi konflik di ruang kerja."
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 88,
+  "cls": "E",
+  "alasan": "Pembahasan sebut opsi A tapi resiliensi cocok opsi C/E",
+  "exp": "Skor 5 pada opsi A merefleksikan resiliensi tinggi, kendali diri di bawah tekanan ekstrem, serta orientasi penyelesaian tugas tanpa reaksi destruktif."
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 95,
+  "cls": "E",
+  "alasan": "Pembahasan deskripsikan problem-solving mandiri tapi opsi A adalah menunggu IT",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan problem-solving personal, daya juang menghadapi hambatan operasional rutin, serta minimnya ketergantungan pada pihak ke"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 101,
+  "cls": "E",
+  "alasan": "Pembahasan deskripsikan opsi C/E tapi nilai opsi A",
+  "exp": "Pembahasan: Skor 5 pada opsi A karena menunjukkan inisiatif kolaboratif proaktif, mengutamakan integrasi data, dan meredam ketegangan tanpa mengorbankan kualita"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 102,
+  "cls": "E",
+  "alasan": "Pembahasan klaim bagi beban merata tapi opsi A kerjakan sendirian",
+  "exp": "Pembahasan: Skor 5 pada opsi A mencerminkan kepemimpinan kolegial, gotong royong terukur, dan tanggung jawab hasil tim. Beban dibagi merata agar penyelesaian op"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 103,
+  "cls": "E",
+  "alasan": "Pembahasan deskripsikan opsi D/E tapi nilai opsi B",
+  "exp": "Pembahasan: Skor 5 pada opsi B karena menawarkan solusi sistematis dan integratif. Menggabungkan substansi pengalaman senior dengan metode modern pegawai baru m"
+ },
+ {
+  "pkg": "tryout-3",
+  "id": 104,
+  "cls": "E",
+  "alasan": "Pembahasan deskripsikan opsi A tapi nilai opsi B",
+  "exp": "Pembahasan: Skor 5 pada opsi B mengedepankan pendekatan personal, komunikasi persuasif, dan pencarian solusi komitmen bersama tanpa langsung mempermalukan rekan"
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 67,
+  "cls": "E",
+  "alasan": "pembahasan soal beda konteks (pendapat ditolak vs persoalan sepele)",
+  "exp": "Soal ini bertujuan untuk mengetahui kemampuan Anda dalam mengendalikan diri ketika pendapat Anda ditolak oleh orang lain. Apakah kondisi tersebut menyulut emosi"
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 74,
+  "cls": "E",
+  "alasan": "pembahasan inisiatif, soal manfaatkan waktu kerja",
+  "exp": "Soal ini bertujuan untuk mengetahui inisiatif Anda dalam memberikan gagasan dan inovasi bagi perkembangan organisasi Anda. Pilihan Jawaban Poin Nilai: A 1, B 4,"
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 75,
+  "cls": "E",
+  "alasan": "pembahasan negosiasi, soal pungli",
+  "exp": "Soal ini bertujuan untuk mengukur kemampuan Anda dalam menyampaikan pendapat dan bernegosiasi dengan orang lain secara konstruktif."
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 76,
+  "cls": "E",
+  "alasan": "pembahasan kritik, soal kelalaian tugas",
+  "exp": "Soal ini bertujuan untuk melihat sikap Anda dalam menanggapi pendapat dan kritik yang dikemukakan orang lain. Pilihan Jawaban Poin Nilai A 4 B 5 C 3 D 2 E 1"
+ },
+ {
+  "pkg": "tryout-30",
+  "id": 96,
+  "cls": "E",
+  "alasan": "Perspektif tidak sesuai, soal posisi bawahan pembahasan bicara kepemimpinan bawa",
+  "exp": "Soal ini bertujuan untuk mengukur kecakapan kepemimpinan Anda dalam mengelola serta mengarahkan bawahan saat menghadapi situasi sulit."
+ },
+ {
+  "pkg": "tryout-31",
+  "id": 10,
+  "cls": "E",
+  "alasan": "membahas kalimat 2 dan 9, teks hanya 5 kalimat",
+  "exp": "Kalimat tidak efektif ditemukan pada nomor 2 dan 9. Kalimat ke-2 rancu karena hanya memuat fungsi keterangan tanpa struktur SPOK lengkap. Kalimat ke-9 tidak efe"
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 49,
+  "cls": "E",
+  "alasan": "tidak mengecek opsi jawaban; hanya bahas posisi 0",
+  "exp": "Jika angka 0 tidak berada di urutan ketiga, maka angka 0 pasti hanya akan berada di urutan keempat. Hal itu karena angka pertama dan kedua harus 1, 2, atau 4 da"
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 77,
+  "cls": "E",
+  "alasan": "Pembahasan soal kreativitas, soal soal reaksi beban kerja tim lain",
+  "exp": "Soal ini bertujuan untuk mengetahui seberapa kreatif Anda dalam memberikan gagasan dan inovasi bagi perkembangan organisasi Anda. Pilihan Jawaban Poin Nilai A 1"
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 80,
+  "cls": "E",
+  "alasan": "Pembahasan soal delegasi, soal soal meminta bantuan rekan kerja",
+  "exp": "Soal ini bertujuan untuk mengetahui kemampuan Anda mendelegasikan tugas dan wewenang sesuai porsinya dan kepada orang yang tepat. Pilihan Jawaban Poin Nilai: A="
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 90,
+  "cls": "E",
+  "alasan": "pembahasan soal pendidikan, soal harapan keluarga",
+  "exp": "Soal ini bertujuan untuk mengetahui pemahaman Anda mengenai pentingnya pendidikan bagi masa depan Anda. Pilihan Jawaban Poin Nilai: A=2, B=1, C=5, D=4, E=3."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 92,
+  "cls": "E",
+  "alasan": "pembahasan relasi kinerja, soal bantu biaya sakit",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda menjalin relasi dengan orang lain guna meningkatkan kinerja. Poin: D=5, C=4, B=3, E=2, A=1."
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 49,
+  "cls": "E",
+  "alasan": "Variabel beda (W/MD vs M/O/S/T/R)",
+  "exp": "Berdasarkan premis (iv), MD mengimplikasikan WB dan YB. Ketika krayon W berada pada deretan belakang, krayon S dipastikan berada di deretan depan, baik pada ske"
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 56,
+  "cls": "E",
+  "alasan": "Pembahasan merujuk premis/konteks yang tidak ada di soal",
+  "exp": "Krayon V dan Y berada pada baris yang berlawanan arah dengan O, T, dan P. Kondisi ini mewajibkan W berada di depan dan S di belakang. Dengan menerapkan kontrapo"
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 77,
+  "cls": "E",
+  "alasan": "Soal soal pribadi, bahas relasi tim",
+  "exp": "Soal ini bertujuan untuk mengetahui kemampuan Anda menjalin relasi guna meningkatkan kinerja tim. Nilai: A=5, B=4, C=3, D=1, E=2."
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 83,
+  "cls": "E",
+  "alasan": "Pembahasan sikap internal, soal tanya persepsi rekan kerja",
+  "exp": "Soal ini bertujuan untuk mengetahui kemauan Anda untuk selalu bersikap sopan dan bijak pada situasi dan kondisi apa pun. Poin Nilai: C=5, D=4, E=3, A=2, B=1."
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 91,
+  "cls": "E",
+  "alasan": "Opsi soal tidak cocok skenario antrean kasir",
+  "exp": "Soal ini bertujuan untuk melihat kepedulian dan kesigapan Anda ketika melihat orang lain mengalami kesulitan namun berbenturan dengan kepentingan pribadi Anda. "
+ },
+ {
+  "pkg": "tryout-33",
+  "id": 98,
+  "cls": "E",
+  "alasan": "Liburan tidak ukur adaptasi lingkungan baru",
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui cara Anda beradaptasi dengan lingkungan yang baru. Poin Nilai: A=5, C=4, B=3, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 44,
+  "cls": "E",
+  "alasan": "Data kandidat tidak ada di soal",
+  "exp": "Calon D berhasil memperoleh 45 suara dan mengusung program kerja bidang olahraga, sehingga memenuhi kriteria pemilihan ketua seksi olahraga."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 60,
+  "cls": "E",
+  "alasan": "Data tidak ada di soal",
+  "exp": "Perolehan suara terendah adalah Calon E yang hanya mendapatkan 30 suara dari program peningkatan kesejahteraan."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 70,
+  "cls": "E",
+  "alasan": "Soal tanya nilai diri, bahas tanggapan pujian",
+  "exp": "Soal ini bertujuan untuk mengetahui kemampuan Anda dalam mengendalikan diri ketika menerima pujian dari orang lain, apakah pujian tersebut menjadi motivasi kerj"
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 100,
+  "cls": "E",
+  "alasan": "Mengukur etika profesional bukan kepedulian lingkungan",
+  "exp": "Soal ini bertujuan untuk mengetahui kepedulian Anda terhadap lingkungan dan masyarakat di sekitar Anda. Pilihan Jawaban Poin Nilai: A=4, B=2, C=5, D=1, E=3."
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 73,
+  "cls": "E",
+  "alasan": "Pembahasan puji kreativitas tapi opsi A usulkan penundaan",
+  "exp": "Pilihan A (Skor 5) menunjukkan persistensi dan kreativitas dalam menyelesaikan target kerja di bawah batasan sumber daya ketat, membuktikan orientasi hasil yang"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 74,
+  "cls": "E",
+  "alasan": "Pembahasan sebut analitis tapi opsi A hanya bagi tugas merata",
+  "exp": "Pilihan A (Skor 5) memperlihatkan dorongan mengambil tanggung jawab dengan risiko terukur (calculated risk), kemampuan perencanaan analitis berstandar tinggi, d"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 76,
+  "cls": "E",
+  "alasan": "Pembahasan sebut inisiatif digital tapi opsi A tolak per SOP",
+  "exp": "Skor 5 pada opsi A karena menunjukkan inisiatif, empati tinggi, dan orientasi tindakan solutif tanpa melanggar regulasi substantif melalui pemanfaatan komunikas"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 77,
+  "cls": "E",
+  "alasan": "Pembahasan opsi A tidak cocok deskripsi opsi A soal",
+  "exp": "Skor 5 pada opsi A mencerminkan responsivitas, keterbukaan informasi, kesediaan mitigasi layanan alternatif manual secara cepat, serta meminimalkan kerugian wak"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 79,
+  "cls": "E",
+  "alasan": "Pembahasan opsi A tidak cocok deskripsi opsi A soal",
+  "exp": "Skor 5 pada opsi A menghadirkan solusi struktural dan edukatif berkelanjutan, menjamin inklusivitas pelayanan bagi kelompok gagap teknologi tanpa menghilangkan "
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 80,
+  "cls": "E",
+  "alasan": "Pembahasan opsi A tidak cocok deskripsi opsi A soal",
+  "exp": "Skor 5 pada opsi A menegakkan asas keadilan pelayanan publik yang bebas diskriminasi dan bebas gratifikasi/kolusi, disampaikan melalui komunikasi asertif, persu"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 96,
+  "cls": "E",
+  "alasan": "Pembahasan cocok opsi E (belajar mandiri), tapi menilai opsi A (minta bantuan re",
+  "exp": "Opsi A bernilai 5 karena mencerminkan inisiatif proaktif tinggi untuk belajar mandiri tanpa mengorbankan jam operasional pelayanan publik, disertai orientasi pe"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 97,
+  "cls": "E",
+  "alasan": "Pembahasan deskripsikan perilaku Opsi B (riset mandiri) tapi nilai Opsi C (minta",
+  "exp": "Opsi C bernilai 5 karena menunjukkan kemandirian belajar (self-regulated learning) yang agresif, cepat tanggap terhadap tantangan baru melalui riset literatur d"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 98,
+  "cls": "E",
+  "alasan": "Pembahasan deskripsikan perilaku Opsi C (kursus mandiri) tapi nilai Opsi A (kons",
+  "exp": "Opsi A bernilai 5 karena mengombinasikan penerimaan evaluasi secara terbuka dengan aksi konkret pengembangan kompetensi mandiri dan perbaikan berkelanjutan."
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 100,
+  "cls": "E",
+  "alasan": "Pembahasan deskripsikan motivasi daftar (Opsi A) tapi nilai Opsi B (tidak daftar",
+  "exp": "Opsi B bernilai 5 karena menunjukkan motivasi intrinsik kuat untuk meningkatkan kapabilitas diri aparatur jangka panjang dengan kesiapan manajemen waktu yang ma"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 109,
+  "cls": "E",
+  "alasan": "Pembahasan sebut Pilihan A tapi isi opsi C",
+  "exp": "Pilihan A bernilai 5 karena mengaplikasikan manajemen perubahan yang humanis dan berdaya guna. Melalui skema pendampingan sebaya (*peer-mentoring*) dan pemahama"
+ },
+ {
+  "pkg": "tryout-4",
+  "id": 110,
+  "cls": "E",
+  "alasan": "Pembahasan sebut Pilihan A tapi isi opsi D",
+  "exp": "Pilihan A bernilai 5 karena menyentuh akar masalah sistemik: redistribusi beban kerja berbasis data riil disertai program peningkatan kapasitas (*coaching*) bag"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 29,
+  "cls": "E",
+  "alasan": "Pembahasan opsi tidak cocok soal",
+  "exp": "Pembahasan: Opsi A benar karena 'upacara labuhan' bukan nama diri resmi/geografi bergelar. Opsi B salah karena gelar 'jenderal' tidak diikuti nama diri orang/in"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 78,
+  "cls": "E",
+  "alasan": "Pembahasan puji opsi A (arahkan komplain) tapi opsi A buang tanggung jawab, buka",
+  "exp": "Pembahasan: Skor 5 pada opsi A karena menunjukkan pengendalian emosi prima, pengakuan kekeliruan instansi tanpa defensif, serta pemberian solusi tuntas (bimbing"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 79,
+  "cls": "E",
+  "alasan": "Pembahasan puji opsi A (minta izin antrean) tapi opsi A membuat keadilan bersyar",
+  "exp": "Pembahasan: Skor 5 pada opsi A karena menjunjung tinggi asas keadilan (nondiskriminatif) dan integritas pelayanan publik tanpa tunduk pada tekanan relasi kuasa,"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 85,
+  "cls": "E",
+  "alasan": "Pembahasan pilih E, soal butuh strategi tim inklusif",
+  "exp": "Pilihan E memperlihatkan adaptabilitas relasional tinggi: mampu melepas sekat ego sektoral, menyelaraskan persepsi multi-pihak, dan fokus pada target bersama."
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 87,
+  "cls": "E",
+  "alasan": "Pembahasan puji B \"seadanya\", kontradiktif dengan akuntabilitas",
+  "exp": "Pilihan B bernilai 5 karena menunjukkan kemampuan menstabilkan emosi negatif, memitigasi dampak personal secara matang, dan mempertahankan komitmen akuntabilita"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 91,
+  "cls": "E",
+  "alasan": "Pembahasan klaim mandiri tapi opsi A adalah berkonsultasi",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan kompetensi bekerja mandiri yang paripurna: berinisiatif mengambil tanggung jawab saat pimpinan berhalangan, menuntaskan"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 95,
+  "cls": "E",
+  "alasan": "Pembahasan pujian fokus/self-regulation tapi opsi A adalah ikut mengobrol",
+  "exp": "Pilihan A bernilai 5 karena mengindikasikan ketahanan fokus, regulasi diri internal (self-regulation), ketegasan profesional yang asertif tanpa lari dari lingku"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 96,
+  "cls": "E",
+  "alasan": "Pembahasan pujian proaktif mandiri tapi opsi A adalah menunggu instruksi",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan inisiatif proaktif dalam mengasah kompetensi secara mandiri serta memiliki semangat 'knowledge sharing' untuk mendorong"
+ },
+ {
+  "pkg": "tryout-5",
+  "id": 110,
+  "cls": "E",
+  "alasan": "Pembahasan merujuk opsi A tapi opsi A adalah menutupi kecurangan",
+  "exp": "Pilihan A bernilai 5 karena menegakkan prinsip integritas mutlak seorang pemimpin ASN: menindak tegas penyimpangan secara terukur, memulihkan validitas data, da"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 25,
+  "cls": "E",
+  "alasan": "Pembahasan tidak cocok opsi soal; analisis subjek/predikat merujuk opsi lain",
+  "exp": "Pembahasan: Opsi C efektif karena memiliki unsur Subjek (Pemerintah) dan Predikat (menugaskan) yang jelas. Opsi A dan B kehilangan subjek akibat preposisi di aw"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 27,
+  "cls": "E",
+  "alasan": "Pembahasan tanda baca tidak sesuai opsi; merujuk kalimat lain",
+  "exp": "Pembahasan: Opsi C tepat karena tanda titik koma (;) dapat dipakai sebagai pengganti konjungsi untuk memisahkan klausa setara dalam kalimat majemuk. Opsi A sala"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 30,
+  "cls": "E",
+  "alasan": "Pembahasan opsi tidak cocok soal (Selat Sunda ada di E tapi dibahas di A)",
+  "exp": "Pembahasan: Opsi A benar karena 'Selat Sunda' adalah nama diri geografi. Opsi B salah karena nama jenis buah ditulis huruf kecil (jeruk bali) dan 'Pulau Dewata'"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 74,
+  "cls": "E",
+  "alasan": "Pembahasan deskripsi opsi A tapi pilih B",
+  "exp": "Pilihan B berbobot 5 karena menunjukkan kepemimpinan berorientasi prestasi: memetakan potensi sumber daya, menetapkan target tinggi yang terukur, dan mengawal p"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 76,
+  "cls": "E",
+  "alasan": "Pembahasan memuji A tapi A suruh warga pulang",
+  "exp": "Pilihan A bernilai 5 karena mencerminkan responsivitas tinggi, kepedulian terhadap waktu warga, dan inisiatif solusi cepat (contingency plan) tanpa mengorbankan"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 92,
+  "cls": "E",
+  "alasan": "Pembahasan klaim tida membebani rekan tapi opsi A minta demo rekan",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan sikap proaktif, adaptabilitas belajar mandiri (resourceful), dan orientasi pada penyelesaian target tanpa membebani reka"
+ },
+ {
+  "pkg": "tryout-6",
+  "id": 93,
+  "cls": "E",
+  "alasan": "Pembahasan opsi A tapi alasan tidak cocok skenario verifikasi data",
+  "exp": "Pilihan A bernilai 5 karena menunjukkan ketegasan mengambil keputusan berbasis SOP dan integritas profesional saat bertugas mandiri di medan sulit tanpa pengawa"
+ },
+ {
+  "pkg": "tryout-7",
+  "id": 40,
+  "cls": "E",
+  "alasan": "Tidak menarik kesimpulan logis utama",
+  "exp": "Perenang yang tidak lolos kualifikasi nasional otomatis tidak bertanding di olimpiade."
+ },
+ {
+  "pkg": "tryout-7",
+  "id": 44,
+  "cls": "E",
+  "alasan": "Mengubah total soal dari 12 jadi 10",
+  "exp": "Ubah parameter: Total = 10 -> P + 2P + P+2 = 10 -> 4P=8 -> P=2."
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 42,
+  "cls": "E",
+  "alasan": "Menggunakan 243 bukan 234 dari soal",
+  "exp": "9360 m2 Dari deskripsi dala soal, Pak Rindra memiliki kebun berbentuk trapesium. Luas trapesium = (jumlah sisi sejajar) x tinggi / 2 = 243 x 80 / 2 = 9.360 m2 U"
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 43,
+  "cls": "E",
+  "alasan": "Rujuk soal lain, tidak evaluasi opsi",
+  "exp": "Sisi merah berhadapan dengan sisi biru Kondisi Awal Merah Ungu Putih Biru Kuning hijau Merah Ungu Putih Biru Kuning hijau Kondisi sesuai dengan permintaan di so"
+ },
+ {
+  "pkg": "tryout-8",
+  "id": 52,
+  "cls": "E",
+  "alasan": "Fractions not in question",
+  "exp": "Misal luas bidang tanah total = x Sisa tanah = x – (2/5 x + ¼ x) = x – 13/20 x = 7/20 x 2/3 sisa tanah = luas pekarangan (112 m2) 2/3 ( 7/20 x) = 112, 7/30 x = "
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 14,
+  "cls": "E",
+  "alasan": "Tidak hitung keuntungan 20% dari total penjualan",
+  "exp": "Total harga wortel = 30 × 8.000 = 240.000 rupiah. Total harga kubis = 20 × 5.000 = 100.000 rupiah."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 34,
+  "cls": "E",
+  "alasan": "Menggunakan contoh berbeda (ketua RT/koperasi) bukan soal caleg/panti asuhan",
+  "exp": "Penyelesaian Sebagian ketua RT pernah menjadi pengurus koperasi maka sebagian ketua RT seharusnya berjiwa sosial."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 35,
+  "cls": "E",
+  "alasan": "Tidak menjelaskan pola deret angka sama sekali",
+  "exp": "Polanya sudah jelas."
+ },
+ {
+  "pkg": "tryout-9",
+  "id": 52,
+  "cls": "E",
+  "alasan": "Asumsi pecahan 3/5 langsung, tidak selesaikan sistem, jawab soal kedua hilang",
+  "exp": "x+1= 3, x= 2; y+2= 5, y= 3"
+ },
+ {
+  "pkg": "tryout-figural",
+  "id": 8,
+  "cls": "E",
+  "alasan": "Static feature, not relational pattern",
+  "exp": "Segiempat hitam di tengah."
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 73,
+  "cls": "E",
+  "alasan": "Soal minta \"yang benar\", bahas \"berbeda\"",
+  "exp": "Gambar A memiliki perbedaan pola dari yang lain."
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 74,
+  "cls": "E",
+  "alasan": "Soal minta \"yang benar\", bahas \"kelanjutan/berbeda\"",
+  "exp": "Gambar E merupakan kelanjutan atau pola yang berbeda dari kelompoknya."
+ },
+ {
+  "pkg": "tryout-17",
+  "id": 42,
+  "cls": "K",
+  "alasan": "Penjelasan kosong hanya placeholder",
+  "exp": "(Sangat jelas)"
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 3,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 4,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 6,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 7,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 9,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 10,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 11,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 12,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 14,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 15,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 16,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 17,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 18,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 19,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 20,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 21,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 22,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 23,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 24,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 25,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 26,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 27,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 28,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 29,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 30,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 31,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 32,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 33,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 34,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 35,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 36,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 37,
+  "cls": "K",
+  "alasan": "Pembahasan kosong, tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 38,
+  "cls": "K",
+  "alasan": "Pembahasan kosong, tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 39,
+  "cls": "K",
+  "alasan": "Pembahasan kosong, tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 40,
+  "cls": "K",
+  "alasan": "Pembahasan kosong, tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 41,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 42,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 43,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 44,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 45,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 46,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 47,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 48,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 49,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 50,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 51,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 52,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 53,
+  "cls": "K",
+  "alasan": "Pembahasan kosong tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 54,
+  "cls": "K",
+  "alasan": "Pembahasan kosong tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 55,
+  "cls": "K",
+  "alasan": "Pembahasan kosong tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 56,
+  "cls": "K",
+  "alasan": "Pembahasan kosong tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 57,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 58,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 59,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 60,
+  "cls": "K",
+  "alasan": "Pembahasan kosong",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 61,
+  "cls": "K",
+  "alasan": "Pembahasan kosong tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 62,
+  "cls": "K",
+  "alasan": "Pembahasan kosong tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 63,
+  "cls": "K",
+  "alasan": "Pembahasan kosong tidak menjelaskan soal",
+  "exp": ""
+ },
+ {
+  "pkg": "tryout-figural-2",
+  "id": 64,
+  "cls": "K",
+  "alasan": "Pembahasan kosong tidak menjelaskan soal",
+  "exp": ""
+ }
+]

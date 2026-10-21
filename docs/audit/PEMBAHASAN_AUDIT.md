@@ -219,3 +219,59 @@ Angka 156 BAD itu *lower bound*, bukan total.
 
 Regression test: `tests/drill-package-ownership.test.ts` (8 kasus),
 `tests/pembahasan-quality.test.ts` (4 kasus).
+
+---
+
+## Hasil audit semantik penuh (tuntas)
+
+Bagian di atas ditulis saat audit masih berjalan. Run terakhir menuntaskan
+seluruhnya — **3.882 dari 3.898 soal (99,6%)** dinilai, tersisa 16 soal dan 4 batch
+yang gagal. Daftar lengkap per butir ada di
+`docs/audit/explanation-audit-results.json`.
+
+**754 pembahasan rusak (19,3% dari total)**, terbagi enam kelas:
+
+| Kelas | Jumlah | Artinya |
+|-------|--------|---------|
+| A | **340** | isinya cuma kunci jawaban, template generik, atau ulang soal tanpa menjelaskan |
+| E | 129 | sisa — perlu dibaca manual sebelum diperbaiki |
+| D | **81** | salah hitung, hasil tidak ada di opsi, atau tidak menjawab yang ditanya |
+| B | **104** | salah huruf: deskripsinya milik opsi lain |
+| K | 60 | pembahasan kosong total |
+| C | **40** | topik berbeda dari soalnya |
+
+Kelas C hanya 40 — itu bentuk paling ekstrem yang dilaporkan pengguna (soal Pancasila
+dibahas Kakawin Sutasoma). Kelas B yang 104 lebih umum: pembahasan memuji "Pilihan A"
+padahal deskripsinya milik opsi C atau E. Contohnya `tryout-5#89` memuji opsi A sebagai
+integritas, padahal isinya menerima suap.
+
+**Sebaran menunjukkan sumber tunggal:**
+
+| Kelas | Terkonsentrasi di |
+|-------|-------------------|
+| A (kunci saja) | tryout-16 (40), 11 (38), 17 (36), 14 (35), 9 (31) |
+| B (salah huruf) | tryout-2 (23), 3 (15), 5 (14), 4 (12), 6 (9) |
+| C (topik beda) | tryout-33 (7), 30 (6), 26 (3), 28 (3) |
+| D (salah hitung) | tryout-6 (7), 15 (5), 8 (5), 9 (5) |
+
+Dua blok berbeda, dua cacat berbeda, dua proses impor berbeda:
+
+- **tryout-8…17** → kelas A + K. Satu batch impor lama menghasilkan pembahasan yang
+  hanya berisi kunci.
+- **tryout-2…6 + mini** → kelas B. Batch lain memetakan penjelasan opsi ke huruf yang
+  salah — pola yang sama dengan 137 kasus `Pilihan X bernilai N` yang terdeteksi
+  deterministik sebelumnya. Dua metode tak bergantian menunjuk ke tempat yang sama.
+
+### Yang perlu diketahui sebelum memperbaiki
+
+**Angka 754 itu deteksi mesin, bukan konfirmasi.** Dua alasan:
+
+1. Tidak ada penyuntingan manusia terhadap 754 butir. Kalibrasi membuktikan
+   presisinya (6/6 pertukaran sengaja tertangkap), tapi itu sampel, bukan jaminan.
+2. Kelas E (129) sengaja tidak diklasifikasi lebih jauh — sebagian mungkin salah
+   baca model.
+
+**Perbaikan harus butir per butir.** Kelas A bisa ditulis ulang dari soalnya sendiri.
+Kelas B dan C tidak bisa — harus dibaca, dan kunci jawabannya mungkin ikut salah
+(`tryout-29#70` dilaporkan skor terbalik dari logika soalnya). Jangan di-generate
+massal.
