@@ -18,13 +18,17 @@ export default function TryoutContent({ id }: { id: string }) {
   const topicList = seo.topics.slice(0, 12);
 
   return (
-    <article className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 text-[var(--foreground)]">
+    <article className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 text-[var(--foreground)] overflow-x-hidden">
       <h1 className="text-2xl sm:text-3xl font-bold tracking-tight leading-tight">
         {pkg.label} — Simulasi CAT SKD CPNS 2027
       </h1>
       <p className="mt-3 text-sm leading-relaxed text-[var(--muted-foreground)]">{pkg.desc}</p>
 
-      <dl className="mt-6 grid grid-cols-3 gap-3 text-center">
+      {/* Three columns on a 320px screen leave ~96px per card, which is narrower
+          than the label's own min-content width — the row then pushed the whole
+          document to 342px. Two columns below 380px keeps every card readable
+          and the page inside the viewport. */}
+      <dl className="mt-6 grid grid-cols-2 min-[380px]:grid-cols-3 gap-3 text-center">
         <div className="card-modern p-3">
           <dt className="text-[10px] uppercase tracking-wider text-[var(--muted-foreground)]">Butir Soal</dt>
           <dd className="font-bold text-lg">{pkg.questionCount}</dd>

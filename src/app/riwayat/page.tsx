@@ -301,6 +301,16 @@ export default function RiwayatPage() {
     return true;
   });
 
+  // The guest purge above is deliberate (a shared device must not leak the
+  // previous visitor's results), so the banner cannot promise a guest the
+  // storage they are about to lose. Same `userId` signal as the purge.
+  // A guest's result does exist — ExamSession writes it to sessionStorage and
+  // /simulasi/hasil reads it back — so the copy says exactly how long it lives
+  // (the tab) instead of claiming it is stored for later.
+  const storageNotice = userId
+    ? 'Riwayat pengerjaan soal disimpan di peramban ini.'
+    : 'Sebagai tamu, hasil tryout tidak masuk riwayat dan hanya tersimpan selama tab ini terbuka. Masuk agar riwayat tersimpan.';
+
   return (
     <div className="min-h-screen flex items-start justify-center p-4 py-8">
       <div className="max-w-2xl w-full space-y-5">
@@ -411,7 +421,7 @@ export default function RiwayatPage() {
             >
               <div className="flex items-center gap-2">
                 <BookOpen size={14} className="shrink-0" />
-                Riwayat pengerjaan soal disimpan di peramban ini.
+                {storageNotice}
               </div>
               {history.length > 0 && (
                 <button

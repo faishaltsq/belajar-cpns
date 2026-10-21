@@ -40,3 +40,54 @@ describe('P2-15 - copy never calls unconfirmed numbers official', () => {
     expect(src).toMatch(/waktu acuan CAT BKN/);
   });
 });
+
+/**
+ * P3-16: /riwayat purges every `lolos_guest_exam_*` key and returns before the
+ * list is built, so a guest's history is empty by design. The banner used to
+ * promise that history was stored, which was false for exactly the visitors the
+ * purge protects. The purge stays; the promise becomes conditional on the same
+ * `userId` signal the purge reads. A signed-in user's sentence must not change.
+ */
+describe('P3-16 - the /riwayat banner never promises a guest storage it purges', () => {
+  const readPage = async () => {
+    const fs = await import('fs');
+    const path = await import('path');
+    return fs.readFileSync(path.join(process.cwd(), 'src/app/riwayat/page.tsx'), 'utf8');
+  };
+
+  it('still purges guest results before building the list (the privacy behaviour is kept)', async () => {
+    const src = await readPage();
+    expect(src).toMatch(/startsWith\('lolos_guest_exam_'\)/);
+    expect(src).toMatch(/guestKeys\.forEach\(k => localStorage\.removeItem\(k\)\)/);
+    // the purge branch must still bail out before any history is assembled
+    expect(src).toMatch(/if \(!userId\) \{[\s\S]{0,400}?return;[\s\S]{0,80}?\}/);
+  });
+
+  it('renders the banner copy from the userId branch, not as an unconditional promise', async () => {
+    const src = await readPage();
+    expect(src).toMatch(/\{storageNotice\}/);
+    // the old defect: the promise sat directly after the icon as a text node
+    expect(src).not.toMatch(
+      /<BookOpen size=\{14\} className="shrink-0" \/>\s*Riwayat pengerjaan soal disimpan di peramban ini\./
+    );
+  });
+
+  it('leaves the signed-in sentence exactly as it was', async () => {
+    const src = await readPage();
+    expect(src).toMatch(
+      /userId\s*\?\s*'Riwayat pengerjaan soal disimpan di peramban ini\.'/
+    );
+  });
+
+  it('tells a guest the result is not saved to history and points at signing in', async () => {
+    const src = await readPage();
+    const guest = src.match(/:\s*'([^']*tamu[^']*)'/)?.[1] ?? '';
+    expect(guest).not.toBe('');
+    // the claim the defect was about: a guest is not told it is kept in the browser
+    expect(guest).not.toMatch(/disimpan di peramban ini/);
+    expect(guest).toMatch(/tidak masuk riwayat/);
+    // and it names the real lifetime (sessionStorage dies with the tab)
+    expect(guest).toMatch(/selama tab ini terbuka/);
+    expect(guest).toMatch(/Masuk/);
+  });
+});

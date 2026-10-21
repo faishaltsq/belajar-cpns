@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import FiguralCropEditor from '@/components/admin/FiguralCropEditor';
+import CustomTestCreator from '@/components/admin/CustomTestCreator';
 import {
   Gear,
   PencilSimple,
@@ -14,6 +15,7 @@ import {
   SignOut,
   FolderOpen,
   Database,
+  MagicWand,
 } from '@phosphor-icons/react';
 import { Question } from '@/lib/types';
 
@@ -35,7 +37,7 @@ export default function AdminPage() {
   const [authError, setAuthError] = useState('');
 
   // Dashboard state
-  const [tab, setTab] = useState<'packages' | 'media'>('packages');
+  const [tab, setTab] = useState<'packages' | 'custom' | 'media'>('packages');
 
   const [packages, setPackages] = useState<PackageMeta[]>([]);
   const [selectedPkgId, setSelectedPkgId] = useState<string>('tryout-1');
@@ -109,6 +111,14 @@ export default function AdminPage() {
     sessionStorage.removeItem('admin_pin');
     setAuthed(false);
     setPin('');
+  }
+
+  // Refresh the package list after the Custom Test Maker writes a new package
+  function refreshPackageList() {
+    fetch('/api/admin/packages', { headers: { 'x-admin-pin': pin } })
+      .then((r) => r.json())
+      .then((data) => setPackages(data.packages || []))
+      .catch(() => null);
   }
 
   // Load questions for selected package
@@ -375,6 +385,17 @@ export default function AdminPage() {
         >
           <FolderOpen size={14} className="inline mr-1.5 -mt-0.5" />
           Editor Seluruh Paket ({packages.length})
+        </button>
+        <button
+          onClick={() => setTab('custom')}
+          className={`px-4 py-2 rounded-lg text-xs font-semibold transition ${
+            tab === 'custom'
+              ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
+              : 'text-[var(--muted-foreground)] hover:bg-[var(--muted)]'
+          }`}
+        >
+          <MagicWand size={14} className="inline mr-1.5 -mt-0.5" />
+          Custom Test Maker
         </button>
         <button
           onClick={() => setTab('media')}
@@ -851,6 +872,11 @@ export default function AdminPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* TAB: CUSTOM TEST MAKER */}
+      {tab === 'custom' && (
+        <CustomTestCreator adminPin={pin} onPackageCreated={refreshPackageList} />
       )}
 
       {/* TAB: MEDIA & FIGURAL IMAGE GALLERY */}

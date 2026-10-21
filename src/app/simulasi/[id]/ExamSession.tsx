@@ -811,18 +811,23 @@ export default function ExamSession({ params }: { params: { id: string } }) {
                 className="btn-secondary text-xs sm:text-sm py-2.5 px-3 sm:px-4 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 shrink-0"
               >
                 <CaretLeft size={16} weight="bold" />
-                <span>Sebelumnya <span className="opacity-50 text-[10px] hidden sm:inline">[←]</span></span>
+                {/* Visually hidden below 360px to keep the row inside a 320px
+                    screen, but kept in the accessibility tree: `hidden` would
+                    remove the button's only accessible name and leave an
+                    unlabelled icon-only control. */}
+                <span className="sr-only min-[360px]:not-sr-only">Sebelumnya</span>
+                <span className="opacity-50 text-[10px] hidden sm:inline">[←]</span>
               </button>
 
               {/* Mobile Quick-jump button */}
               <button
                 type="button"
                 onClick={() => setShowMobileNavModal(true)}
-                className="flex-1 max-w-[200px] py-2.5 px-2 sm:px-3 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--primary)] text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-xs transition active:scale-98 lg:hidden"
+                className="flex-1 min-w-0 max-w-[200px] py-2.5 px-2 sm:px-3 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--primary)] text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-xs transition active:scale-98 lg:hidden"
                 title="Buka daftar nomor soal"
               >
-                <SquaresFour size={16} weight="bold" className="text-[var(--primary)]" />
-                <span>No. {currentIndex + 1} / {questions.length}</span>
+                <SquaresFour size={16} weight="bold" className="text-[var(--primary)] shrink-0" />
+                <span className="truncate">No. {currentIndex + 1} / {questions.length}</span>
               </button>
 
               <button
@@ -830,7 +835,8 @@ export default function ExamSession({ params }: { params: { id: string } }) {
                 disabled={currentIndex === questions.length - 1}
                 className="btn-primary text-xs sm:text-sm py-2.5 px-3 sm:px-4 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 shrink-0"
               >
-                <span>Selanjutnya <span className="opacity-75 text-[10px] hidden sm:inline">[→]</span></span>
+                <span className="sr-only min-[360px]:not-sr-only">Selanjutnya</span>
+                <span className="opacity-75 text-[10px] hidden sm:inline">[→]</span>
                 <CaretRight size={16} weight="bold" />
               </button>
             </div>

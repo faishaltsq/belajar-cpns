@@ -387,3 +387,141 @@ The audit carried this as "no expiry-of-entitlement-after-purchase test exists",
 
 If a time-limited PRO tier is ever introduced, this suite is the place to add the boundary cases (exactly-at-expiry, clock skew) — the current code has no such boundary to test.
 
+---
+
+## P2-11 addendum — production column set verified against migration 012 (2026-10-21)
+
+The production `payment_orders` column set was verified read-only against `migrations/012_create_payment_orders.sql` on **2026-10-21**. **Verdict: MISMATCH** — the migration does not describe the production table. Full method, side-by-side tables and per-discrepancy blast radius: [`docs/audit/MIGRATION_012_VERIFICATION.md`](./MIGRATION_012_VERIFICATION.md).
+
+Headline corrections to the record above, none of which change the fix's usefulness but all of which change what it may be claimed to be:
+
+- **012 is not a no-op on production.** `CREATE TABLE IF NOT EXISTS` is skipped, but both `CREATE INDEX IF NOT EXISTS` statements and the `COMMENT ON TABLE` **do** execute, because neither index exists and the table has no comment. The mutation is benign (two indexes `PERFORMANCE_REPORT.md` M27 asks for, on a 91-row table) but it is DDL, not a no-op.
+- **The column sets do not agree.** 17 claimed / 17 actual, but only 5 match exactly. `last_reminded_at` exists **only** in the migration; `saweria_donation_id` exists **only** in production (47 rows have a NULL `user_id`, all legacy Saweria rows). Types differ on `id` (integer, not BIGSERIAL), `base_amount`/`exact_amount` (integer, not BIGINT), and four `varchar(n)` vs `TEXT` columns. Nullability differs on `user_id`, `order_type`, `unique_code`, `status`, `created_at`.
+- **`last_reminded_at` is a live production bug, not just drift.** The column does not exist anywhere in the database, so `POST /api/payment/abandoned-reminders` fails with `column "last_reminded_at" does not exist` on every invocation. Abandoned-cart reminders have never run in production.
+- **`expires_at` does have a production default** — `now() + interval '3 hours'` — contradicting the "no default on purpose" rationale recorded above. Production's `create-order` dedupe (`expires_at > NOW()`) works precisely because of that default; a fresh provision built from 012 would insert NULL and the dedupe branch could never match.
+- **The FK has no `ON DELETE CASCADE`** in production (`confdeltype = 'a'`, NO ACTION), and **both access-pattern indexes are absent** from production; `idx_payment_orders_amount (exact_amount, status)` exists there and in no migration file.
+
+Read-only throughout: no DDL, no `INSERT`/`UPDATE`/`DELETE` against production. The temporary Vercel env file was written outside the repo and deleted after use.
+
+---
+
+## P3-16 — guest banner FIXED; repeatedText 219 triaged (2026-10-21)
+
+### P3-16 · FIXED — the guest banner no longer promises storage the page deletes
+
+**Product decision taken:** keep the purge (deliberate privacy behaviour on a shared device), soften the banner for guests only. A signed-in user's sentence is untouched because for them it is true.
+
+**Root cause, confirmed at the line level:** `loadExamData()` returns early for `!userId` after `guestKeys.forEach(k => localStorage.removeItem(k))` (`src/app/riwayat/page.tsx:114-126`), so `history` is always `[]` for a guest. The banner text was an unconditional JSX text node after the icon, outside that branch.
+
+**The change** (`src/app/riwayat/page.tsx`): one derived constant beside the existing `filteredTransactions`, keyed on the same `userId` the purge reads (no second source of truth), and the banner renders `{storageNotice}` instead of a literal.
+
+| state | before | after |
+|---|---|---|
+| signed in | `Riwayat pengerjaan soal disimpan di peramban ini.` | `Riwayat pengerjaan soal disimpan di peramban ini.` (unchanged) |
+| guest | `Riwayat pengerjaan soal disimpan di peramban ini.` | `Sebagai tamu, hasil tryout tidak masuk riwayat dan hanya tersimpan selama tab ini terbuka. Masuk agar riwayat tersimpan.` |
+
+The guest sentence is specific rather than vague: `ExamSession.tsx:459-470` writes a guest result to **sessionStorage** (`guest_exam_result_*`) and `/simulasi/hasil/[resultId]` reads it back, so "only while this tab is open" is literally true, while "not saved to history" is what the purge enforces. The sign-in affordance already exists on this page — `GuestLimitModal` opens automatically for a guest (`page.tsx:88-92`), and the billing tab has its own "Masuk Sekarang" — so the copy points at it in words instead of adding a third control.
+
+**Regression test:** `tests/copy-claims.test.ts`, new `describe('P3-16 …')` with 4 cases (file 4 → 8 tests). Chosen over the Playwright spec because the defect was the copy itself, and `tests/e2e/progress-card.spec.ts` already pins the purge behaviourally. The cases assert (1) the purge still exists and still returns before the list is built, (2) the banner renders `{storageNotice}` and the old literal no longer sits after the icon, (3) the signed-in sentence is byte-identical, (4) the guest sentence says "tidak masuk riwayat", names the tab lifetime, points at "Masuk", and does **not** contain "disimpan di peramban ini".
+
+**Mutation proof:** restoring the old literal (deleting `storageNotice`) fails 3 of 8 —
+`renders the banner copy from the userId branch…`, `leaves the signed-in sentence exactly as it was`, `tells a guest the result is not saved to history…` — and all 8 pass again on restore.
+
+**Gates:** `unset NODE_ENV && npx tsc --noEmit` → exit 0. `npx vitest run tests/copy-claims.test.ts` → 8/8. Full suite → **64 files / 696 tests passed** (baseline 692 + these 4; nothing else moved).
+
+---
+
+### repeatedText: 219 — CLOSED as "not the defect the number implies", with two real defects split out
+
+`node scripts/_content_scan.mjs` still reports `repeatedText: 219` over 37 packages / 3.898 questions (3.679 distinct stems). Every one of the 219 repeat events was classified directly from the JSON by a throwaway script kept in `$TMPDIR` (nothing added to the repo). The decomposition sums exactly to 219:
+
+| bucket | events | what it is |
+|---|---|---|
+| intra-paper figural instruction, distinct image per item | 114 | `"Lengkapilah pola gambar di bawah ini."` ×14, `"Tentukan satu gambar yang tidak mempunyai persamaan…"` ×20, etc. The payload is the picture: all 10 such stems (124 questions) carry a **distinct** image per item, 0 reused. |
+| cross-package exact duplicate | 54 | same stem + same options + same key in two papers. `tryout-19 ↔ tryout-23` (29) and `tryout-mini` reusing items from `tryout-2/3/4/5/6` (25). |
+| intra-paper exact duplicate | 43 | the same complete item twice **inside one paper** — see P3-17. |
+| cross-package same key, options reordered/reworded | 6 | e.g. `NISBI >< ...` in four papers, all keying "Mutlak"; `PROGRESIF >< ...`, `SPORADIS >< ...`. Benign. |
+| cross-package different options **and** different key | 2 | `AFIRMASI =` and `Pilihlah kata yang tidak termasuk dalam kelompoknya!` — both legitimate, see below. |
+
+**Answer-key contradictions found by the text scan: zero.** No stem in the corpus shares the same option set with a different key. The two "different key" stems are generic instructions whose payload is their option list, and each key is correct for its own options:
+- `AFIRMASI =` — `tryout-3.json#41` key "Penegasan" (KBBI: *penetapan yang positif; penegasan*), `tryout-30.json#35` key "Konfirmasi" (also a listed synonym). Neither paper offers the other's key text as an option, so no learner can be marked wrong for a right answer.
+- `Pilihlah kata yang tidak termasuk dalam kelompoknya!` — `tryout-28.json#55` (office roles → "Pedagang") vs `tryout-31.json#42` (office supplies → "Ponsel"). Different option lists, different keys, both correct.
+
+**Options and answer agree on every exact duplicate.** All 43 intra-paper pairs and 54 cross-package groups were compared down to `[option.id, option.text, option.score]` + key + explanation + image: **43/43 intra pairs fully identical, 0 differing in options or scores.**
+
+**Verdict: (c) mixed, but not in the way the count suggests.** The 219 is dominated by benign reuse (114 figural + 54 cross-package + 6 reorder = 174). Two real defects came out of the investigation, and neither is "shared questions are bad":
+
+#### P3-17 (new, OPEN) · Four packages deliver the same item twice in one sitting
+
+The same complete item appears twice inside one paper — same stem, same options, same scores, same key, same explanation. A learner pays for a 110-item paper and gets fewer distinct items:
+
+| package | duplicated items | of 110 | categories |
+|---|---|---|---|
+| `tryout-23.json` | 12 | 11% | TKP 12 |
+| `tryout-24.json` | 16 | 15% | TIU 8, TKP 8 |
+| `tryout-25.json` | 10 | 9% | TWK 2, TIU 3, TKP 5 |
+| `tryout-32.json` | 5 | 5% | TIU 4, TKP 1 |
+
+Full pair list — `tryout-23`: `#66=#71 #67=#85 #72=#108 #73=#74 #78=#82 #79=#110 #83=#96 #84=#87 #88=#106 #89=#97 #99=#100 #104=#105`; `tryout-24`: `#33=#44 #34=#45 #35=#57 #36=#61 #37=#60 #40=#54 #46=#53 #52=#64 #71=#110 #74=#105 #79=#98 #80=#84 #93=#108 #95=#107 #99=#101 #102=#109`; `tryout-25`: `#4=#26 #21=#27 #35=#57 #42=#61 #50=#51 #67=#110 #71=#101 #78=#106 #81=#87 #92=#109`; `tryout-32`: `#32=#58 #35=#48 #42=#53 #45=#59 #97=#110`.
+
+**Why it matters beyond variety:** 26 of the 43 are TKP, which is scored by the chosen option's weight. A duplicated TKP item is a second 5-point opportunity the paper did not intend, so the achievable TKP total is inflated against a 45-item section (max 225). TIU/TWK duplicates inflate nothing but waste an item slot.
+
+**Not fixed here, deliberately.** Fixing it means writing 43 replacement items — authoring work, not a mechanical edit. Deleting the duplicates would drop each paper below the 110-item SKD composition (30 TWK / 35 TIU / 45 TKP), which would break the scoring normalisation in `src/lib/scoring.ts:38-42` (`totalQ === standardTotal` decides whether the standard max/passing grade applies). The scanner already reports these, but buries them inside `repeatedText` alongside the 114 benign figural stems, which is why the raw 219 looked alarming.
+
+#### P3-18 (new, OPEN) · The same figure is keyed differently in different packages
+
+The text scanner cannot see this: the stems differ (they carry different "No. N" labels), so these never reach `repeatedText`. Comparing `image` by SHA-1 across the corpus, **13 image values are used by more than one question; 5 of those are answered with a different key.** Since the option lists are identical five-way `Gambar A…E` panels, a conflicting key on the same figure means one of the two papers marks the same picture wrong:
+
+| figure | question A | question B (and C) |
+|---|---|---|
+| `57b59c6ff2` (inline PNG) | `tryout-12.json#57` → **Gambar A** | `tryout-13.json#58` → **Gambar B** |
+| `7cf628587c` (inline PNG) | `tryout-12.json#64` → **Gambar E** | `tryout-9.json#59` → **Gambar D** |
+| `c11a089a90` (inline PNG) | `tryout-13.json#59` → **Gambar E** | `tryout-15.json#54` → **Gambar B**; `tryout-8.json#59` → **Gambar C** |
+| `c9610e0419` (inline PNG) | `tryout-16.json#61` → **Gambar D** | `tryout-9.json#57` → **Gambar B** |
+| `a4c407c834` (`/images/questions/fig_serial_05.png`) | `tryout-figural.json#36` → **Gambar B** | `tryout-mini.json#19` → **Gambar A** |
+
+The remaining 8 reused images agree on the key, so reuse itself is fine — only these 5 are contradictions. Note the shape of the strongest evidence: `tryout-12#64` and `tryout-9#59` share the identical stem pattern *and* the identical 288 KB figure, yet key "Gambar E" vs "Gambar D". Same for `c11a089a90`, which is keyed E, B and C across three papers. One of each set is wrong, and resolving it needs the figure looked at — exactly the blocker already recorded for P2-13's 59 figural explanations, so this is filed OPEN rather than guessed at.
+
+**Severity P2** — a learner who practises both papers is told two different answers for the same picture, which is the "contradictory keys" failure the repeatedText question was asking about, just not reachable through `text`.
+
+**Standing totals:** `dupIds 0`, `emptyOptions 0`, `noMaxScore 0`, `latexGarbled 0`, `missingExplanation 59` (unchanged, figural, blocked on image analysis), `repeatedText 219` (now explained: 174 benign + 43 P3-17 + 2 benign generic).
+
+---
+
+## P1-11 — The exam nav row overflowed a 320px screen and made the retry unreachable (2026-10-21)
+
+- **Severity:** P1 (on the smallest supported phone, a failed submission could not be retried)
+- **Affected feature:** Exam session nav, failed-submission recovery
+- **Status:** FIXED
+- **Found by:** writing the P1-3 browser regression test (see Run 23 in `docs/testing/TEST_RESULTS.md`).
+- **Root cause:** the nav row holds three `shrink-0`-ish items — "Sebelumnya", the mobile quick-jump button, and "Selanjutnya". At a 320px viewport their combined width exceeded the screen, so the document scrolled to **348px**. Because the failure banner is `position: fixed`, its bottom then sat below the visual viewport: the "Coba Kirim Ulang" button was **5.5px on screen** and a centre click was intercepted by the error paragraph underneath. The retry therefore existed in the DOM and was unreachable in practice.
+- **Fix:** `src/app/simulasi/[id]/ExamSession.tsx` — the two nav labels are visually hidden below 360px with `sr-only min-[360px]:not-sr-only`, the quick-jump button gets `min-w-0` + `truncate` so it can actually shrink, and its icon gets `shrink-0`. `sr-only` rather than `hidden` on purpose: `hidden` removes the label from the accessibility tree, which turns both buttons into unlabelled icon-only controls. A first attempt used `hidden` and the full suite caught it — `cat-tryout.spec.ts` locates these buttons by accessible name and failed 3 cases on mobile-320 (157 passed / 3 failed). With `sr-only` the full suite is **160/160**.
+- **Second, independent cause:** with the nav fixed the page still measured 342px. The `<dl className="grid grid-cols-3">` stats row in `src/components/TryoutContent.tsx` gives each card ~96px at 320px, narrower than the label's own min-content width, pushing the document wide. Fixed with `grid-cols-2 min-[380px]:grid-cols-3` plus `overflow-x-hidden` on the article.
+- **Regression test:** `tests/e2e/exam-resilience.spec.ts` → "the paper never overflows the viewport horizontally", which asserts `scrollWidth <= clientWidth + 1` and that the nav row's box sits inside the viewport. Mutation-checked: reverting both fixes fails it at mobile-320 with `scrollWidth 342 > 321`, and nothing else.
+
+---
+
+## P1-3 / P1-4 / P1-5 — regression tests no longer NOT RUN (2026-10-21)
+
+All three were already FIXED; what was missing was browser-level proof. `tests/e2e/exam-resilience.spec.ts` (9 cases × 5 viewports = 45, all passing, `docs/audit/playwright-run-23.txt`) now covers:
+
+- **P1-3** — a failed `POST /api/results` keeps every draft key and the retry then succeeds and only then clears them; the confirm dialog cannot be dismissed mid-flight; a 403 at submit keeps the paper and reports lost access; the time-up path (no dialog) shows the retryable banner on the paper and leaves the start timestamp untouched.
+- **P1-4** — a delayed `/api/auth/me` never lets the guest scope write storage; a guest draft survives the delayed resolution with answers and start timestamp intact.
+- **P1-5** — the submitted `durationSeconds` reports the package's own duration past the old 6000-second cap and never exceeds what the package allows.
+
+**Honest limit:** P1-4's exact pre-fix failure mode (an account draft displacing the guest paper) cannot be reproduced deterministically without a signed session, which the E2E server deliberately lacks. The case pins the observable half — that the guest draft is untouched across a late auth resolution — rather than claiming to reproduce the swap.
+
+---
+
+## P1-12 — 21 TKP items carry duplicate weights and are silently re-ranked at load (2026-10-21)
+
+- **Severity:** P1 (a TKP answer's point value differs from what the package JSON says)
+- **Affected feature:** TKP scoring, every package containing one of these items
+- **Status:** OPEN — found, verified, not fixed (fixing needs an authored weight per item, see below)
+- **Found by:** the master audit (`docs/qa-master-audit-final.md` §7.1), then verified independently here by direct scan.
+- **Root cause:** TKP items are supposed to score 1–5 across their five options, i.e. a permutation of `1,2,3,4,5`. Twenty-one items ship **duplicate** weights instead — e.g. `[4,5,2,1,4]`, `[4,3,2,5,4]`, `[1,2,5,1,3]`. `normalizeQuestionScores` (`src/lib/loadPackage.ts:5-24`) detects any non-clean ladder and **deterministically re-ranks** the options to 1..5 by sorting their relative order. The learner is therefore scored against weights the package never declares, and the served score differs from the JSON score for those items.
+- **Verified count and location** (`node` scan of `src/data/packages/*.json`, reproducible): exactly **21**, in `tryout-22` (3), `tryout-27` (3), `tryout-28` (1), `tryout-29` (1), `tryout-30` (3), `tryout-31` (3), `tryout-33` (5), `tryout-34` (2). Full list: `tryout-22#75,82,98`, `tryout-27#73,94,96`, `tryout-28#77`, `tryout-29#79`, `tryout-30#96,100,105`, `tryout-31#81,84,99`, `tryout-33#75,96,103,105,107`, `tryout-34#87,110`.
+- **Why it is not fixed here:** a correct fix is a judgement about each item's intended weight ladder, which is content authoring, not a mechanical repair. Re-ranking is arguably the least-bad runtime behaviour (it keeps the item scorable and preserves relative order); the defect is that the JSON is wrong and nothing surfaces it.
+- **Cheapest safe next step:** a scanner assertion that fails on any non-permutation TKP ladder, so the 21 cannot grow while they are being rewritten. Not added yet — it would fail the suite immediately until the content is fixed.
+- **Note:** `normalizeQuestionScores` is also the reason these items do not produce a crash or a NaN. Removing it without fixing the content would be worse.
+

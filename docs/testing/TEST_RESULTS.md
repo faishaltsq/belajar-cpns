@@ -200,3 +200,70 @@ cross-account cancel refusal, exactly-once grant across both payment paths
 (webhook and sync, including the losing side of each transition), unknown
 order_type never falling through to PRO, and additive/idempotent unlocks
 (second purchase does not drop the first, no duplicate ids, no PRO downgrade).
+
+### Run 23 — exam resilience (P1-3 / P1-4 / P1-5 browser coverage) + two layout defects found by it
+
+The three client-side defects fixed earlier were the only entries in
+`docs/audit/BUG_REPORT.md` marked FIXED with a regression test **NOT RUN**. They
+now have browser coverage, and writing it surfaced two real layout defects that
+had nothing to do with the original bugs.
+
+| Gate | Result |
+| --- | --- |
+| `next build` | **PASS** (`BUILD_EXIT=0`) |
+| `playwright tests/e2e/exam-resilience.spec.ts` | **PASS** — **45 passed / 0 failed** (9 cases × 5 viewports), 50.0 s |
+| `playwright` full suite | **PASS** — **160 passed / 0 failed**, 1.7 m (`docs/audit/playwright-run-23.txt`) |
+
+**Coverage added — `tests/e2e/exam-resilience.spec.ts`:**
+
+- *P1-3*: a failed `POST /api/results` keeps every draft key (`exam_answers_*`,
+  `exam_start_*`), surfaces `Coba Kirim Ulang`, and the retry then succeeds and
+  only then clears the drafts; the confirm dialog cannot be dismissed while a
+  submission is in flight; a 403 at submit keeps the paper and reports lost
+  access instead of pretending to fail; a failed **time-up** submission (no
+  dialog open) shows the retryable banner on the paper itself and leaves the
+  start timestamp untouched.
+- *P1-4*: a delayed `/api/auth/me` never lets the guest scope write storage, and
+  a guest draft survives the delayed resolution with its answers and start
+  timestamp intact.
+- *P1-5*: the submitted `durationSeconds` reports the package's own duration
+  past the old 6000-second cap, and never exceeds what the package allows.
+- Plus a viewport-integrity case (see below).
+
+**Defect found while writing it — `ExamSession.tsx` nav row overflowed 320px.**
+At the 320px viewport the three-button nav row ("Sebelumnya" + quick-jump +
+"Selanjutnya") was wider than the screen: the document scrolled to 348px, so the
+`position: fixed` failure banner's bottom sat below the visual viewport. Its
+retry button was **5.5px on screen** and a centre click was intercepted by the
+error text underneath — the retry was unreachable on the smallest supported
+phone. Fixed by making the two nav labels visually hidden below 360px
+(`sr-only min-[360px]:not-sr-only`), adding `min-w-0` + `truncate` to the
+quick-jump button so it can shrink, and `shrink-0` on its icon.
+
+**A first attempt at that fix was itself a regression, caught by the full
+suite.** Using `hidden min-[360px]:inline` removed the label from the
+accessibility tree, so both nav buttons became unlabelled icon-only controls and
+`cat-tryout.spec.ts` — which finds them by `getByRole('button', { name:
+/Selanjutnya/ })` — failed on mobile-320 in 3 cases (157 passed / 3 failed).
+`sr-only` hides visually while keeping the accessible name; the full suite is
+160/160 with it. This is the reason the full matrix is run and not just the new
+spec: the targeted run was green while the change had broken an existing
+contract.
+
+**Defect found by the new viewport assertion — `TryoutContent.tsx` SEO block.**
+With the nav row fixed the page still measured 342px at 320px. The cause was the
+`<dl className="grid grid-cols-3">` stats row: three columns on a 320px screen
+leave ~96px per card, narrower than the label's own min-content width, so the
+row pushed the whole document wide. Fixed with `grid-cols-2
+min-[380px]:grid-cols-3` and `overflow-x-hidden` on the article.
+
+**Mutation check (the new case is not vacuous):** reverting both layout fixes
+fails exactly the viewport case at mobile-320 (`scrollWidth 342 > 321`) and
+nothing else.
+
+**Still NOT RUN:** screen-reader announcement of the exam timer (visual timer is
+asserted, its accessible name is not); the progress card rendered for a
+logged-in user (needs a signed `cpns_token`/`JWT_SECRET`, absent from the E2E
+server by design); P1-4's exact pre-fix failure mode cannot be reproduced
+deterministically in a browser, so the case pins the observable half (answers
+and start timestamp preserved across the delayed auth resolution).
