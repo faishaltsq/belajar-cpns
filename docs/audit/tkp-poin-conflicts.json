@@ -1,0 +1,458 @@
+[
+ {
+  "pkg": "tryout-25",
+  "id": 76,
+  "category": "TKP",
+  "wrong_claims": {
+   "A": "2",
+   "B": "1",
+   "C": "4",
+   "D": "3"
+  },
+  "actual": {
+   "A": 4,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 5
+  },
+  "exp": "Soal ini bertujuan untuk mengukur pemahaman Anda mengenai pentingnya lingkungan kerja yang kondusif guna meningkatkan produktivitas. Pilihan Jawaban dan Poin: A=2, B=1, C=4, D=3, E=5."
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 88,
+  "category": "TKP",
+  "wrong_claims": {
+   "A": "3",
+   "B": "1",
+   "C": "4",
+   "D": "2"
+  },
+  "actual": {
+   "A": 4,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 5
+  },
+  "exp": "Soal ini mengukur kegigihan dan tanggung jawab dalam menuntaskan amanah pekerjaan. Poin: A=3, B=1, C=4, D=2, E=5."
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 98,
+  "category": "TKP",
+  "wrong_claims": {
+   "B": "1",
+   "C": "3",
+   "D": "2"
+  },
+  "actual": {
+   "A": 4,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 5
+  },
+  "exp": "Soal ini menilai integritas, profesionalisme, serta kepatuhan menjaga rahasia jabatan. Poin: A=4, B=1, C=3, D=2, E=5."
+ },
+ {
+  "pkg": "tryout-26",
+  "id": 103,
+  "category": "TKP",
+  "wrong_claims": {
+   "C": "4",
+   "D": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini mengukur motivasi kerja dan nilai spiritual dalam memandang profesi. Poin: A=5, B=3, C=4, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-27",
+  "id": 67,
+  "category": "TKP",
+  "wrong_claims": {
+   "C": "4",
+   "D": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk mengukur kemampuan bekerja secara terorganisasi sesuai rencana kerja dan skala prioritas. Poin: A=5, B=3, C=4, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-27",
+  "id": 97,
+  "category": "TKP",
+  "wrong_claims": {
+   "D": "4",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk mengukur pemahaman terhadap nilai penting pendidikan bagi masa depan. Poin: A=5, B=3, C=2, D=4, E=1."
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 82,
+  "category": "TKP",
+  "wrong_claims": {
+   "B": "4",
+   "C": "3",
+   "D": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan mengetahui rasa tanggung jawab sebagai pemimpin ketika melakukan kekeliruan. Poin: A=5, B=4, C=3, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 85,
+  "category": "TKP",
+  "wrong_claims": {
+   "D": "4",
+   "C": "3",
+   "E": "2",
+   "B": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini menilai integritas dan daya juang dalam menuntaskan amanah kerja yang menantang. Poin: A=5, D=4, C=3, E=2, B=1."
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 101,
+  "category": "TKP",
+  "wrong_claims": {
+   "C": "4",
+   "D": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini mengukur pemahaman kandidat mengenai pentingnya kualifikasi pendidikan dalam pengembangan kapabilitas kerja. Poin: A=5, C=4, B=3, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 105,
+  "category": "TKP",
+  "wrong_claims": {
+   "D": "4",
+   "C": "3",
+   "B": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan mengukur profesionalitas kerja saat berada di lingkungan yang kurang kondusif atau memiliki rekan yang kurang suportif. Poin: A=5, D=4, C=3, B=2, E=1."
+ },
+ {
+  "pkg": "tryout-28",
+  "id": 108,
+  "category": "TKP",
+  "wrong_claims": {
+   "B": "4",
+   "D": "3",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini mengukur pola pikir positif dalam memandang rintangan sebagai peluang berkembang. Poin: A=5, B=4, D=3, C=2, E=1."
+ },
+ {
+  "pkg": "tryout-31",
+  "id": 87,
+  "category": "TKP",
+  "wrong_claims": {
+   "A": "1",
+   "B": "4",
+   "C": "3",
+   "D": "2"
+  },
+  "actual": {
+   "A": 4,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 5
+  },
+  "exp": "Soal ini bertujuan untuk mengukur kemampuan beradaptasi dengan lingkungan kerja baru dan dinamika rekan kerja. Poin: A=1, B=4, C=3, D=2, E=5."
+ },
+ {
+  "pkg": "tryout-31",
+  "id": 103,
+  "category": "TKP",
+  "wrong_claims": {
+   "A": "2",
+   "C": "1",
+   "D": "4"
+  },
+  "actual": {
+   "A": 4,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 5
+  },
+  "exp": "Soal ini mengukur resiliensi dan daya tanggap solutif saat rencana kerja gagal total. Poin: A=2, B=3, C=1, D=4, E=5."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 68,
+  "category": "TKP",
+  "wrong_claims": {
+   "C": "4",
+   "D": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda menjalin relasi dengan orang lain guna meningkatkan kinerja. Poin: A=5, C=4, B=3, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 83,
+  "category": "TKP",
+  "wrong_claims": {
+   "B": "4",
+   "E": "3",
+   "D": "2",
+   "C": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk mengukur kemampuan beradaptasi dengan lingkungan baru serta rekan kerja setempat. Poin: A=5, B=4, E=3, D=2, C=1."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 94,
+  "category": "TKP",
+  "wrong_claims": {
+   "D": "4",
+   "E": "3",
+   "B": "2",
+   "C": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda menjalin relasi dengan orang lain guna meningkatkan kinerja. Poin: A=5, D=4, E=3, B=2, C=1."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 102,
+  "category": "TKP",
+  "wrong_claims": {
+   "B": "4",
+   "C": "3",
+   "A": "2"
+  },
+  "actual": {
+   "A": 4,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 5
+  },
+  "exp": "Soal ini bertujuan untuk mengetahui skala prioritas nilai hidup serta kematangan orientasi spiritual Anda. Poin: E=5, B=4, C=3, A=2, D=1."
+ },
+ {
+  "pkg": "tryout-32",
+  "id": 105,
+  "category": "TKP",
+  "wrong_claims": {
+   "B": "4",
+   "C": "3",
+   "D": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Tujuan dari soal ini adalah untuk mengetahui kemampuan Anda menjalin relasi dengan orang lain guna meningkatkan kinerja. Poin: A=5, B=4, C=3, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 71,
+  "category": "TKP",
+  "wrong_claims": {
+   "B": "4",
+   "C": "3",
+   "D": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk mengukur keberanian dan inisiatif Anda dalam mengambil tindakan saat berada di bawah tekanan darurat. Poin: A=5, B=4, C=3, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 80,
+  "category": "TKP",
+  "wrong_claims": {
+   "D": "4",
+   "C": "3",
+   "B": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk melihat kepercayaan diri dan motivasi dalam mencapai tujuan bersama kelompok. Poin: A=5, D=4, C=3, B=2, E=1."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 82,
+  "category": "TKP",
+  "wrong_claims": {
+   "D": "2",
+   "C": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk menilai daya inovasi serta komitmen Anda dalam memberikan kontribusi pemikiran strategis bagi perkembangan organisasi. Poin: A=5, E=4, B=3, D=2, C=1."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 94,
+  "category": "TKP",
+  "wrong_claims": {
+   "C": "4",
+   "D": "2",
+   "E": "1"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk mengukur inisiatif dan kematangan emosional Anda saat menghadapi situasi konflik di lingkungan kerja. Poin: A=5, C=4, B=3, D=2, E=1."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 103,
+  "category": "TKP",
+  "wrong_claims": {
+   "C": "4",
+   "E": "2"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk mengukur tanggung jawab atas konsekuensi keputusan yang diambil. Poin: A=5, C=4, B=3, E=2, D=1."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 104,
+  "category": "TKP",
+  "wrong_claims": {
+   "B": "4",
+   "E": "3"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk mengukur tingkat empati sosial serta kepekaan moral Anda dalam membantu orang lain pada situasi krisis. Poin: A=5, B=4, E=3, C=2, D=1."
+ },
+ {
+  "pkg": "tryout-34",
+  "id": 106,
+  "category": "TKP",
+  "wrong_claims": {
+   "C": "3",
+   "B": "2"
+  },
+  "actual": {
+   "A": 5,
+   "B": 3,
+   "C": 2,
+   "D": 1,
+   "E": 4
+  },
+  "exp": "Soal ini bertujuan untuk mengukur motivasi serta visi karier jangka panjang Anda sebagai ASN. Poin: A=5, E=4, C=3, B=2, D=1."
+ }
+]

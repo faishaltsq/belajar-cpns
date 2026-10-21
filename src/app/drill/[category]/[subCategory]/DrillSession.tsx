@@ -20,7 +20,8 @@ import {
   SignOut,
 } from '@phosphor-icons/react';
 
-import { stripQuestionPrefix, matchSubCategory } from '@/lib/drillHelper';
+import { matchSubCategory, mergeDrillPackages } from '@/lib/drillHelper';
+import type { OwnedQuestion } from '@/lib/drillHelper';
 
 export default function DrillSession({
   params,
@@ -32,7 +33,7 @@ export default function DrillSession({
   const userId = user?.id ?? null;
   const subCategoryDecoded = decodeURIComponent(params.subCategory);
 
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<OwnedQuestion[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -113,17 +114,11 @@ export default function DrillSession({
       )
     )
       .then((results) => {
-        // Remember which package each question came from — /api/drill/check
-        // needs the package id to look the answer key up.
-        const owner: Record<number, string> = {};
-        for (const r of results) for (const q of r.questions) owner[q.id] = r.pkg;
-        setPackageByQuestion(owner);
-
-        const all: Question[] = results.flatMap((r) => r.questions).map((q) => ({
-          ...q,
-          text: stripQuestionPrefix(q.text),
-        }));
-        let matched: Question[];
+        // Ids restart at 1 in every package, so each question carries the
+        // package that served it — /api/drill/check needs that packageId to
+        // look up the right key and pembahasan.
+        const all = mergeDrillPackages(results);
+        let matched: OwnedQuestion[];
         if (isFigural) {
           // Hanya soal yang benar-benar punya gambar
           matched = all.filter((q) => Boolean(q.image));
@@ -154,7 +149,6 @@ export default function DrillSession({
   const [revealByQuestion, setRevealByQuestion] = useState<
     Record<number, { isCorrect: boolean; explanation: string; correctOptionId: string | null; userScore: number; maxScore: number }>
   >({});
-  const [packageByQuestion, setPackageByQuestion] = useState<Record<number, string>>({});
   const reveal = currentQ ? revealByQuestion[currentQ.id] : undefined;
 
   const handleSelect = (optId: string) => {
@@ -165,7 +159,7 @@ export default function DrillSession({
     const q = currentQ;
     setAnswersMap((prev) => ({ ...prev, [q.id]: optId }));
 
-    const pkg = packageByQuestion[q.id];
+    const pkg = q.sourcePackage;
     if (!pkg) return;
 
     fetch('/api/drill/check', {
@@ -213,10 +207,17 @@ export default function DrillSession({
         // snapshots carry no option scores (audit F3), so this is the only
         // record of how the learner did — wrongAnswers.ts reads it.
         const drillScores: Record<string, { score: number; maxScore: number }> = {};
+        const drillExplanations: Record<string, string> = {};
         for (const [qId, r] of Object.entries(revealByQuestion)) {
           drillScores[qId] = { score: r.userScore, maxScore: r.maxScore };
+          // The payload from /api/questions/ has no explanation, so without
+          // this the Ulang Salah review of a drill answer had an empty
+          // "Pembahasan" box. Written only at finish, after every answer has
+          // been revealed, so it cannot leak a key up front.
+          if (r.explanation) drillExplanations[qId] = r.explanation;
         }
         localStorage.setItem(scopedKey(`drill_scores_${sessionId}`, userId), JSON.stringify(drillScores));
+        localStorage.setItem(scopedKey(`drill_explanations_${sessionId}`, userId), JSON.stringify(drillExplanations));
 
         // Batasi riwayat drill: simpan max 20 sesi terakhir untuk user ini
         const prefix = scopedKey('drill_questions_', userId);
@@ -230,6 +231,7 @@ export default function DrillSession({
           localStorage.removeItem(k);
           localStorage.removeItem(scopedKey(`drill_answers_${id}`, userId));
           localStorage.removeItem(scopedKey(`drill_scores_${id}`, userId));
+          localStorage.removeItem(scopedKey(`drill_explanations_${id}`, userId));
           });
           } catch { /* localStorage penuh atau private mode */ }
           setIsFinished(true);

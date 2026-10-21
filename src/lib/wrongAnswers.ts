@@ -86,8 +86,15 @@ export function collectWrongQuestions(userId?: string | null): WrongQuestionItem
         const qRaw = localStorage.getItem(key);
         const aRaw = localStorage.getItem(`lolos_${scope}_drill_answers_${sessionId}`);
         const sRaw = localStorage.getItem(`lolos_${scope}_drill_scores_${sessionId}`);
+        // Explained after the fact: the question snapshot itself never carried
+        // an explanation, so review of a drill mistake had nothing to show.
+        const eRaw = localStorage.getItem(`lolos_${scope}_drill_explanations_${sessionId}`);
         if (qRaw && aRaw) {
           const questions: Question[] = JSON.parse(qRaw);
+          const explanations: Record<string, string> = eRaw ? JSON.parse(eRaw) : {};
+          for (const q of questions) {
+            if (!q.explanation) q.explanation = explanations[String(q.id)] ?? '';
+          }
           const answers: { questionId: number; selectedOptionId: string }[] = JSON.parse(aRaw);
           const scores: QuestionScoreMap = sRaw ? JSON.parse(sRaw) : {};
           const ansMap = new Map(answers.map((a) => [a.questionId, a.selectedOptionId]));

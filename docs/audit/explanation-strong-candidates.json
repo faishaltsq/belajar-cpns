@@ -1,0 +1,272 @@
+[
+ {
+  "pkg": "tryout-14.json",
+  "id": 13,
+  "own": 0,
+  "best": 0.6666666666666666,
+  "bestId": 51,
+  "bestStem": "Deret 512, 64, 8, 1, ... merupakan deret:",
+  "exp": "Deret ini merupakan deret pangkat tiga.",
+  "mine": "Tentukan hasil dari 3^1 * 3^2 * 3^3 * 3^4 * 3^5"
+ },
+ {
+  "pkg": "tryout-8.json",
+  "id": 30,
+  "own": 0,
+  "best": 0.4,
+  "bestId": 53,
+  "bestStem": "Deret 4, 12, 36, 108, ... merupakan deret:",
+  "exp": "Deret ini merupakan deret perkalian berturut-turut.",
+  "mine": "Tentukan hasil dari 3 * 6 * 12 * 24 * 48"
+ },
+ {
+  "pkg": "tryout-26.json",
+  "id": 47,
+  "own": 0.0625,
+  "best": 0.45454545454545453,
+  "bestId": 59,
+  "bestStem": "Berdasarkan bagan yang tersedia, siapa sajakah yang berjenis kelamin p",
+  "exp": "Berdasarkan data bagan: K(M), E(F), H(F), I(M), L(M), G(F), J(M), dan F(M) dengan kode M = Laki-laki dan F = Perempuan. ",
+  "mine": "Berdasarkan silsilah keluarga tersebut, manakah pernyataan yang benar mengenai J dan K?"
+ },
+ {
+  "pkg": "tryout-31.json",
+  "id": 60,
+  "own": 0.045454545454545456,
+  "best": 0.40540540540540543,
+  "bestId": 39,
+  "bestStem": "Teks bacaan untuk soal nomor 56-60:\nLima kawan sekamar (Randy, Sally, ",
+  "exp": "Vernon tidak menyedot debu, memotong rumput, maupun menyapu. Randy bertugas menyedot debu, Sally memotong rumput, dan Te",
+  "mine": "Tugas apa yang menjadi tanggung jawab Vernon?"
+ },
+ {
+  "pkg": "tryout-10.json",
+  "id": 17,
+  "own": 0,
+  "best": 0.3333333333333333,
+  "bestId": 43,
+  "bestStem": "Deret 1, 1, 2, 3, 5, 8, ... merupakan deret:",
+  "exp": "Deret ini merupakan deret perkalian empat berturut-turut.",
+  "mine": "Tentukan hasil dari 4 * 16 * 64 * 256 * 1024"
+ },
+ {
+  "pkg": "tryout-26.json",
+  "id": 35,
+  "own": 0,
+  "best": 0.3333333333333333,
+  "bestId": 61,
+  "bestStem": "Jika x/y = 2/3 dan y/z = 3/4, berapakah nilai dari x/z?",
+  "exp": "x = (24/100) * 150 = 36; y = (15/100) * 240 = 36. Nilai x sama dengan y.",
+  "mine": "Jika x = 24% dari 150 dan y = 15% dari 240, maka hubungan antara x dan y adalah..."
+ },
+ {
+  "pkg": "tryout-11.json",
+  "id": 10,
+  "own": 0,
+  "best": 0.3,
+  "bestId": 43,
+  "bestStem": "Deret angka 2^1, 4^2, 8^3, 16^4, ... merupakan deret:",
+  "exp": "Deret ini merupakan deret perkalian angka dan urutan alfabet pada huruf. Hasilnya adalah 531441AB.",
+  "mine": "Tentukan hasil dari 3C * 9I * 27W * 81AA"
+ },
+ {
+  "pkg": "tryout-8.json",
+  "id": 12,
+  "own": 0,
+  "best": 0.3,
+  "bestId": 37,
+  "bestStem": "Deret angka 1, 3, 9, 27, 81, ... merupakan deret:",
+  "exp": "Deret ini merupakan deret perkalian angka dan urutan alfabet pada huruf. Hasilnya adalah 1500S.",
+  "mine": "Tentukan hasil dari 5E * 10J * 15O * 20T"
+ },
+ {
+  "pkg": "tryout-13.json",
+  "id": 21,
+  "own": 0,
+  "best": 0.2857142857142857,
+  "bestId": 41,
+  "bestStem": "Deret angka 625 / 25 * 5 / 25 * 5 / 25 merupakan deret:",
+  "exp": "Deret ini merupakan deret pembagian bilangan berturut-turut.",
+  "mine": "Tentukan hasil dari 81 / 9 / 3 / 3 / 1"
+ },
+ {
+  "pkg": "tryout-23.json",
+  "id": 43,
+  "own": 0,
+  "best": 0.2857142857142857,
+  "bestId": 57,
+  "bestStem": "Kata OSTENTASI memiliki arti yang sepadan dengan ....",
+  "exp": "Kecenderungan kedekatan rasa sepadan dengan empati.",
+  "mine": "ADISI"
+ },
+ {
+  "pkg": "tryout-19.json",
+  "id": 50,
+  "own": 0.05,
+  "best": 0.3333333333333333,
+  "bestId": 32,
+  "bestStem": "Huruf pengganti tanda rumpang pada urutan abjad A, C, E, F, …, …, M ad",
+  "exp": "Pembahasan: Setiap tiga abjad berurutan disusun dengan menukar urutan dua huruf terakhir: L-(M-N menjadi N-M), O-(P-Q me",
+  "mine": "Isian yang benar untuk mengisi posisi kosong pada susunan L, …, …, O, Q, P, R, T, S adalah"
+ },
+ {
+  "pkg": "tryout-15.json",
+  "id": 48,
+  "own": 0.08333333333333333,
+  "best": 0.36363636363636365,
+  "bestId": 34,
+  "bestStem": "Suatu deret angka adalah 256, 64, 16, 4, ... Berikutnya adalah:",
+  "exp": "Deret ini memiliki pola penambahan angka (kelipatan 6) dan huruf (berdasarkan urutan alfabet). Jadi, berikutnya adalah 3",
+  "mine": "Deret: 6F, 12L, 18R, 24X, ... merupakan deret:"
+ },
+ {
+  "pkg": "tryout-14.json",
+  "id": 38,
+  "own": 0,
+  "best": 0.25,
+  "bestId": 52,
+  "bestStem": "Banyaknya himpunan x yang ada pada 10 < x< 78 yang habis dibagi 5 adal",
+  "exp": "72 A - - - -> B - - - ->C Banyaknya rute = 4 x 3 x 2 x 3 = 72",
+  "mine": "Dari kota X ke kota Y dilayani oleh 4 bus dan dari Y ke Z oleh 3 bus. Seseorang berangkat "
+ },
+ {
+  "pkg": "tryout-26.json",
+  "id": 88,
+  "own": 0.0625,
+  "best": 0.3076923076923077,
+  "bestId": 99,
+  "bestStem": "Setelah berhasil menuntaskan sebuah tanggung jawab pekerjaan dengan ba",
+  "exp": "Soal ini mengukur kegigihan dan tanggung jawab dalam menuntaskan amanah pekerjaan. Poin: A=3, B=1, C=4, D=2, E=5.",
+  "mine": "Jika atasan menugaskan suatu pekerjaan namun hasil akhirnya kurang memuaskan, sikap saya.."
+ },
+ {
+  "pkg": "tryout-16.json",
+  "id": 48,
+  "own": 0.09090909090909091,
+  "best": 0.3333333333333333,
+  "bestId": 45,
+  "bestStem": "Deret 1, 2, 4, 8, 16, ... merupakan deret:",
+  "exp": "Deret ini merupakan deret pembagian bilangan berturut-turut. Jadi, 2 / 2 = 1.",
+  "mine": "Jika deret 1024 / 8 / 2 / 2 melanjutkan polanya, berikutnya adalah:"
+ },
+ {
+  "pkg": "tryout-23.json",
+  "id": 46,
+  "own": 0.06666666666666667,
+  "best": 0.3,
+  "bestId": 54,
+  "bestStem": "Nilai tiga suku berikutnya pada barisan 16, 18, 21, 25, ..., ..., ... ",
+  "exp": "Barisan memuat tiga alur berkala:\n1. Suku ke-1, 4, 7, 10: 28, 25, ..., 19 (pola berkurang 3). Suku ke-7 = 25 - 3 = 22.\n2",
+  "mine": "Tiga angka yang tepat untuk mengisi bagian rumpang pada pola 28, 30, 47, 25, 33, 50, ..., "
+ },
+ {
+  "pkg": "tryout-29.json",
+  "id": 84,
+  "own": 0.0625,
+  "best": 0.2857142857142857,
+  "bestId": 105,
+  "bestStem": "Menurut penilaian rekan-rekan kerja, saya adalah pribadi yang ...",
+  "exp": "Tujuan dari soal ini adalah untuk mengukur kemampuan beradaptasi dengan lingkungan serta rekan kerja. Poin penilaian: A ",
+  "mine": "Pola kerja seperti apa yang paling membuat Anda nyaman?"
+ },
+ {
+  "pkg": "tryout-15.json",
+  "id": 39,
+  "own": 0.09090909090909091,
+  "best": 0.3,
+  "bestId": 34,
+  "bestStem": "Suatu deret angka adalah 256, 64, 16, 4, ... Berikutnya adalah:",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah N + 5 = S.",
+  "mine": "Deret abjad yang benar dari: B, E, I, N, ..."
+ },
+ {
+  "pkg": "tryout-figural-2.json",
+  "id": 72,
+  "own": 0.09090909090909091,
+  "best": 0.2857142857142857,
+  "bestId": 75,
+  "bestStem": "Manakah gambar yang tidak sama?",
+  "exp": "Gambar E memiliki jumlah elemen/pola yang tidak konsisten.",
+  "mine": "Tentukan gambar atau jaring-jaring yang benar untuk soal berikut."
+ },
+ {
+  "pkg": "tryout-19.json",
+  "id": 42,
+  "own": 0.0625,
+  "best": 0.25,
+  "bestId": 59,
+  "bestStem": "Bilangan-bilangan pengisi kelanjutan barisan 14, 30, 20, 18, 25, 20, …",
+  "exp": "Pola barisan adalah pengurangan konstan sebesar 11 antarbilangan (-11). Perhitungan kelanjutan: 56 - 11 = 45; 45 - 11 = ",
+  "mine": "Karakteristik pola bilangan berikut: 100, 89, 78, 67, 56, …, …, … memiliki kelanjutan bert"
+ },
+ {
+  "pkg": "tryout-22.json",
+  "id": 46,
+  "own": 0.06666666666666667,
+  "best": 0.25,
+  "bestId": 34,
+  "bestStem": "Huruf pengganti titik-titik pada deret G, H, I, L, K, …, M, …, O adala",
+  "exp": "Pola deret melompati dua huruf (+3) dan setiap huruf ditulis dobel: H(8), K(11), N(14), Q(17). Deret lengkap: H, H, K, K",
+  "mine": "Tentukan dua huruf pengganti titik-titik pada susunan berikut: H, H, K, …, …, N, Q, Q"
+ },
+ {
+  "pkg": "tryout-17.json",
+  "id": 31,
+  "own": 0.09090909090909091,
+  "best": 0.2727272727272727,
+  "bestId": 48,
+  "bestStem": "Jika deret 81 / 9 * 3 / 9 * 3 / 9 melanjutkan polanya, berikutnya adal",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah R + 5 = W.",
+  "mine": "Deret abjad yang benar dari: C, G, L, R, ..."
+ },
+ {
+  "pkg": "tryout-17.json",
+  "id": 41,
+  "own": 0.09090909090909091,
+  "best": 0.2727272727272727,
+  "bestId": 48,
+  "bestStem": "Jika deret 81 / 9 * 3 / 9 * 3 / 9 melanjutkan polanya, berikutnya adal",
+  "exp": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah E + 5 = J.",
+  "mine": "Deret abjad yang benar dari: H, O, V, E, ..."
+ },
+ {
+  "pkg": "tryout-10.json",
+  "id": 40,
+  "own": 0.08333333333333333,
+  "best": 0.25,
+  "bestId": 32,
+  "bestStem": "Deret huruf yang benar dari: C, G, L, R, ...",
+  "exp": "Deret ini memiliki pola perkalian tiga pada angka dan urutan alfabet pada huruf.",
+  "mine": "Jika deret 4D, 12L, 36T, 108Z, ... melanjutkan polanya, berikutnya adalah:"
+ },
+ {
+  "pkg": "tryout-12.json",
+  "id": 47,
+  "own": 0.08333333333333333,
+  "best": 0.25,
+  "bestId": 49,
+  "bestStem": "Deret angka dan huruf yang benar: 2B, 8H, 18R, 32Z, ...",
+  "exp": "Deret ini memiliki pola penambahan angka (kelipatan 7) dan huruf (berdasarkan urutan alfabet). Jadi, berikutnya adalah 3",
+  "mine": "Deret: 7G, 14M, 21S, 28Y, ... merupakan deret:"
+ },
+ {
+  "pkg": "tryout-15.json",
+  "id": 45,
+  "own": 0.08333333333333333,
+  "best": 0.25,
+  "bestId": 36,
+  "bestStem": "Deret angka 1, 4, 18, 96, ... merupakan deret:",
+  "exp": "Deret ini memiliki pola perkalian tiga pada angka dan urutan alfabet pada huruf.",
+  "mine": "Jika deret 10J, 30L, 90N, 270P, ... melanjutkan polanya, berikutnya adalah:"
+ },
+ {
+  "pkg": "tryout-17.json",
+  "id": 48,
+  "own": 0.09090909090909091,
+  "best": 0.25,
+  "bestId": 40,
+  "bestStem": "Deret 3125, 125, 5, 0.2, ... merupakan deret:",
+  "exp": "Deret ini merupakan deret pembagian 9, perkalian 3 berturut-turut. Jadi, 9 / 9 = 1, kemudian 1 * 3 = 3.",
+  "mine": "Jika deret 81 / 9 * 3 / 9 * 3 / 9 melanjutkan polanya, berikutnya adalah:"
+ }
+]

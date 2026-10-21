@@ -1,8 +1,34 @@
+import type { Question } from '@/lib/types';
+
 export interface DrillTopic {
   category: 'TWK' | 'TIU' | 'TKP';
   subCategory: string;
   label: string;
   icon: string;
+}
+
+/** A drill question tagged with the package that served it. */
+export type OwnedQuestion = Question & { sourcePackage: string };
+
+/**
+ * Merge several drill packages into one list, carrying each question's source
+ * package through the merge.
+ *
+ * Question ids restart at 1 in every package, so a map keyed by id built after
+ * the merge collapses onto whichever package came last, and `/api/drill/check`
+ * — which takes a packageId and looks the key up there by id — then answers
+ * with a different question's key and pembahasan.
+ */
+export function mergeDrillPackages(
+  results: { pkg: string; questions: Question[] }[]
+): OwnedQuestion[] {
+  return results.flatMap((r) =>
+    r.questions.map((q) => ({
+      ...q,
+      text: stripQuestionPrefix(q.text),
+      sourcePackage: r.pkg,
+    }))
+  );
 }
 
 export const DRILL_TOPICS: DrillTopic[] = [
@@ -29,8 +55,16 @@ export const DRILL_TOPICS: DrillTopic[] = [
   { category: 'TKP', subCategory: 'Sosial Budaya', label: 'Sosial & Budaya', icon: '🎭' },
 ];
 
+/**
+ * Drops the `Soal nomor 12 (Topik): ` prelude so the learner only sees the
+ * sentence. The subcategory itself may contain parentheses
+ * (`Pilar Negara (Pancasila)`), so a plain `\([^)]*\)` stops at the inner
+ * closing bracket and leaves a stray `): ` in front of the question.
+ */
 export function stripQuestionPrefix(text: string): string {
-  return text.replace(/^Soal\s+(?:nomor|no\.?)\s+\d+(?:\s*\([^)]*\))?\s*:\s*/i, '').trim();
+  return text
+    .replace(/^Soal\s+(?:nomor|no\.?)\s+\d+(?:\s*\((?:[^()]|\([^()]*\))*\))?\s*:\s*/i, '')
+    .trim();
 }
 
 export function matchSubCategory(qSub: string | undefined, target: string, text?: string): boolean {

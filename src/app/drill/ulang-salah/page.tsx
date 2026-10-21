@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen, WarningCircle, CheckCircle, ArrowRight, ArrowClockwise } from '@phosphor-icons/react';
 import { collectWrongQuestions, markMastered, WrongQuestionItem } from '@/lib/wrongAnswers';
+import { stripQuestionPrefix } from '@/lib/drillHelper';
 import { useUser } from '@/lib/useUser';
 
 export default function UlangSalahPage() {
@@ -18,6 +19,17 @@ export default function UlangSalahPage() {
   const [done, setDone] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
+  /** Wrong-answer set for one round, prefix-stripped so restart() shows the same text as the first load. */
+  function pickWrongItems(): WrongQuestionItem[] {
+    return collectWrongQuestions(userId)
+      .map((item) => ({
+        ...item,
+        question: { ...item.question, text: stripQuestionPrefix(item.question.text) },
+      }))
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 10);
+  }
+
   useEffect(() => {
     if (userLoading) return;
     // Hanya tampilkan soal salah untuk user yang login — guest tidak punya riwayat personal
@@ -26,15 +38,7 @@ export default function UlangSalahPage() {
       setLoaded(true);
       return;
     }
-    const wrong = collectWrongQuestions(userId).map((item) => ({
-      ...item,
-      question: {
-        ...item.question,
-        text: item.question.text.replace(/^Soal\s+(?:nomor|no\.?)\s+\d+(?:\s*\([^)]*\))?\s*:\s*/i, '').trim(),
-      },
-    }));
-    const shuffled = wrong.sort(() => Math.random() - 0.5);
-    setItems(shuffled.slice(0, 10));
+    setItems(pickWrongItems());
     setLoaded(true);
   }, [userId, userLoading]);
 
@@ -65,8 +69,7 @@ export default function UlangSalahPage() {
   }
 
   function restart() {
-    const fresh = collectWrongQuestions(userId).sort(() => Math.random() - 0.5).slice(0, 10);
-    setItems(fresh);
+    setItems(pickWrongItems());
     setIdx(0);
     setSelectedId(null);
     setRevealed(false);
@@ -262,7 +265,9 @@ export default function UlangSalahPage() {
                 <BookOpen size={18} weight="fill" className="text-blue-600 mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs font-bold text-blue-700 mb-1">Pembahasan</p>
-                  <p className="text-sm text-blue-900 leading-relaxed">{q.explanation}</p>
+                  <p className="text-sm text-blue-900 leading-relaxed">
+                    {q.explanation || 'Pembahasan belum tersedia untuk butir ini.'}
+                  </p>
                 </div>
               </div>
             </div>
