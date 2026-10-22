@@ -229,19 +229,27 @@ seluruhnya — **3.882 dari 3.898 soal (99,6%)** dinilai, tersisa 16 soal dan 4 
 yang gagal. Daftar lengkap per butir ada di
 `docs/audit/explanation-audit-results.json`.
 
-**754 pembahasan rusak (19,3% dari total)**, terbagi enam kelas:
+**649 pembahasan rusak (16,7% dari seluruh bank)** — setelah mengecualikan 105 soal
+bergambar, yang pemilik produk nyatakan tidak memerlukan pembahasan sama sekali.
+Daftar lengkap per butir ada di `docs/audit/explanation-audit-results.json`.
 
 | Kelas | Jumlah | Artinya |
 |-------|--------|---------|
-| A | **340** | isinya cuma kunci jawaban, template generik, atau ulang soal tanpa menjelaskan |
-| E | 129 | sisa — perlu dibaca manual sebelum diperbaiki |
-| D | **81** | salah hitung, hasil tidak ada di opsi, atau tidak menjawab yang ditanya |
-| B | **104** | salah huruf: deskripsinya milik opsi lain |
-| K | 60 | pembahasan kosong total |
+| E | **122** | sisa — perlu dibaca manual sebelum diperbaiki |
+| A | **309** | isinya cuma kunci jawaban, template generik, atau ulang soal tanpa menjelaskan |
+| B | **100** | salah huruf: deskripsinya milik opsi lain |
+| D | **77** | salah hitung, hasil tidak ada di opsi, atau tidak menjawab yang ditanya |
 | C | **40** | topik berbeda dari soalnya |
+| K | 1 | pembahasan kosong (berikutnya) |
+
+**105 butir bergambar dibuang dari hitungan cacat** — 59 di antaranya kelas K yang
+selama ini tercatat sebagai `tryout-figural-2` 59 pembahasan kosong. Mereka memang
+tidak perlu diisi, jadi bukan cacat. Aturannya ditekankan di lapis penerapan
+(`apply-fixes.mjs`), bukan di generator, supaya berlaku juga pada hasil yang sudah
+terlanjur diproduksi.
 
 Kelas C hanya 40 — itu bentuk paling ekstrem yang dilaporkan pengguna (soal Pancasila
-dibahas Kakawin Sutasoma). Kelas B yang 104 lebih umum: pembahasan memuji "Pilihan A"
+dibahas Kakawin Sutasoma). Kelas B yang 100 lebih umum: pembahasan memuji "Pilihan A"
 padahal deskripsinya milik opsi C atau E. Contohnya `tryout-5#89` memuji opsi A sebagai
 integritas, padahal isinya menerima suap.
 
@@ -249,10 +257,10 @@ integritas, padahal isinya menerima suap.
 
 | Kelas | Terkonsentrasi di |
 |-------|-------------------|
-| A (kunci saja) | tryout-16 (40), 11 (38), 17 (36), 14 (35), 9 (31) |
-| B (salah huruf) | tryout-2 (23), 3 (15), 5 (14), 4 (12), 6 (9) |
-| C (topik beda) | tryout-33 (7), 30 (6), 26 (3), 28 (3) |
-| D (salah hitung) | tryout-6 (7), 15 (5), 8 (5), 9 (5) |
+| A (kunci saja) | tryout-16, 11, 17, 14, 9 |
+| B (salah huruf) | tryout-2, 3, 5, 4, 6, mini |
+| C (topik beda) | tryout-33, 30, 26, 28 |
+| D (salah hitung) | tryout-6, 15, 8, 9 |
 
 Dua blok berbeda, dua cacat berbeda, dua proses impor berbeda:
 

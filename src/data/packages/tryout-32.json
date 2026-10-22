@@ -1809,7 +1809,7 @@
     ],
     "correctAnswer": "C",
     "tkpScores": null,
-    "explanation": "Jika angka 0 tidak berada di urutan ketiga, maka angka 0 pasti hanya akan berada di urutan keempat. Hal itu karena angka pertama dan kedua harus 1, 2, atau 4 dan angka kelima nilainya harus lebih besar dari angka ketiga.",
+    "explanation": "Pembahasan: Kode terdiri dari angka 1, 2, 3, 4, 0 dengan syarat angka kelima lebih besar dari angka ketiga. Jika digit ketiga bukan 0, maka 0 harus menempati posisi lain yang memenuhi syarat, yaitu posisi keempat, sehingga digit keempat adalah 0.",
     "difficulty": "medium"
   },
   {
@@ -2586,7 +2586,7 @@
     ],
     "correctAnswer": "C",
     "tkpScores": null,
-    "explanation": "Soal ini bertujuan untuk mengetahui sikap Anda ketika berhadapan dengan kesempatan dan tantangan dalam mencapai tujuan. Pilihan Jawaban Poin Nilai: A = 3, B = 4, C = 5, D = 2, E = 1.",
+    "explanation": "Pembahasan: Soal menguji cara menyikapi perbedaan pendapat dengan atasan. Sikap terbaik adalah menyampaikan alternatif solusi secara diplomatis agar tercapai jalan tengah tanpa terkesan menggurui (skor 5). Menyanggah tersirat (4) dan terbuka apa adanya (3) kurang efektif menjaga hubungan kerja; diam (2) atau sekadar menyetujui demi jabatan (1) paling tidak konstruktif. Karena ini TKP, semua opsi bernilai 1-5 dan tidak ada kunci tunggal.",
     "difficulty": "medium"
   },
   {
@@ -2845,7 +2845,7 @@
     ],
     "correctAnswer": "C",
     "tkpScores": null,
-    "explanation": "Soal ini bertujuan untuk mengetahui seberapa kreatif Anda dalam memberikan gagasan dan inovasi bagi perkembangan organisasi Anda. Pilihan Jawaban Poin Nilai A 1 B 2 C 5 D 3 E 4",
+    "explanation": "Pembahasan: Sebagai TKP, semua opsi bernilai 1-5 tanpa kunci tunggal. Opsi C paling tinggi (5) karena menunjukkan kepedulian dan kesiapan membantu tim lain; opsi E (4) menyampaikan aspirasi secara terbuka; opsi D (3) menerima dinamika kerja; opsi B (2) hanya prihatin tanpa tindakan; opsi A (1) menertawakan beban rekan.",
     "difficulty": "medium"
   },
   {
@@ -3030,7 +3030,7 @@
     ],
     "correctAnswer": "E",
     "tkpScores": null,
-    "explanation": "Soal ini bertujuan untuk mengetahui sikap Anda ketika dihadapkan pada situasi yang memaksa Anda untuk tetap bekerja dengan baik meskipun ada gangguan. Pilihan Jawaban Poin Nilai A 1 B 3 C 2 D 4 E 5",
+    "explanation": "Pembahasan: Soal menguji gambaran lingkungan kerja yang diidamkan. Kondisi paling ideal adalah yang mampu memicu motivasi untuk terus bekerja dan berprestasi (skor 5), karena mendorong kinerja berkelanjutan. Pengembangan potensi (1) justru diberi bobot terendah dan penghasilan tambahan (4) terlalu materialistis sehingga kurang mencerminkan orientasi pelayanan. Sebagai TKP, seluruh opsi bernilai 1-5 tanpa kunci tunggal.",
     "difficulty": "medium"
   },
   {
@@ -4066,7 +4066,7 @@
     ],
     "correctAnswer": "A",
     "tkpScores": null,
-    "explanation": "Opsi A menunjukkan fokus penuh pada pencapaian target kerja dan solusi proaktif meski ada kendala mendadak.",
+    "explanation": "Pembahasan: Sebagai TKP, semua opsi bernilai 1-5 tanpa kunci tunggal. Opsi A paling tinggi (5) karena proaktif mencari solusi dan menyelesaikan target tepat waktu; opsi B (4) berusaha mandiri tetapi kurang efektif; opsi C (3) pasif menyerahkan pada dispensasi; opsi D (2) menunggu tanpa tindakan; opsi E (1) hanya mengumpulkan bukti tanpa menyelesaikan laporan.",
     "difficulty": "medium"
   }
 ]

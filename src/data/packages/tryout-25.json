@@ -1439,7 +1439,7 @@
     ],
     "correctAnswer": "D",
     "tkpScores": null,
-    "explanation": "Aktif mengimplikasikan teladan, dan teladan mengimplikasikan populer di Jakarta. Maka, staf PT X yang aktif dipastikan populer di Jakarta.",
+    "explanation": "Pembahasan: Premis 1 dan 2 membentuk rantai silogisme: aktif → berprestasi → populer di Jakarta. Oleh karena itu, karyawan PT X yang berstatus aktif (jika ada) pasti populer di Jakarta. Opsi lain tidak terjamin karena premis 3 hanya menyatakan 'beberapa staf populer', bukan semua atau yang aktif.",
     "difficulty": "medium"
   },
   {
@@ -2068,7 +2068,7 @@
     ],
     "correctAnswer": "A",
     "tkpScores": null,
-    "explanation": "Dana terpakai: Bandara ($4 juta) + Subsidi agraris ($2 juta) = $6 juta. Sisa anggaran: $7 juta - $6 juta = $1 juta. Program yang pas menyerap $1 juta adalah program musik sekolah ($0,5 juta) dan lembaga penyiaran radio ($0,5 juta).",
+    "explanation": "Pembahasan: Bandara internasional ($4 juta) + Subsidi sektor agraris ($2 juta) = $6 juta terpakai. Sisa anggaran $7 juta - $6 juta = $1 juta. Kombinasi program musik sekolah ($0,5 juta) dan lembaga penyiaran radio ($0,5 juta) tepat menyerap $1 juta.",
     "difficulty": "medium"
   },
   {
@@ -3030,7 +3030,7 @@
     ],
     "correctAnswer": "A",
     "tkpScores": null,
-    "explanation": "Soal ini bertujuan untuk mengukur kepedulian sosial Anda terhadap lingkungan dan masyarakat sekitar. Poin penilaian: A: 5, B: 2, C: 3, D: 4, E: 1.",
+    "explanation": "Pembahasan: Soal TKP mengukur orientasi nilai masa purnatugas. Opsi A (membangun tempat ibadah) mencerminkan kepedulian sosial tinggi (skor 5). Opsi E (berkumpul keluarga) skor 4. Opsi B (mandiri dari anak cucu) skor 3. Opsi C (tenang di panti wreda) skor 2. Opsi D (amal kebaikan) skor 1. Tidak ada jawaban benar/salah; skor mencerminkan kecenderungan pribadi.",
     "difficulty": "medium"
   },
   {
@@ -3141,7 +3141,7 @@
     ],
     "correctAnswer": "B",
     "tkpScores": null,
-    "explanation": "Soal ini bertujuan untuk mengetahui pemahaman Anda mengenai pentingnya pendidikan dalam kehidupan seseorang. Pilihan Jawaban dan Poin Nilai: A = 4, B = 5, C = 2, D = 1, E = 3.",
+    "explanation": "Pembahasan: Soal TKP menanyakan hakikat sekolah. Opsi B (skor 5) paling tepat karena sekolah secara definisi adalah lembaga formal yang diselenggarakan secara sistematis untuk menyelenggarakan pendidikan (Dasar: UU No. 20/2003 Pasal 13). Opsi A salah karena ada pendidikan non-formal/informal. Opsi C dan D bertentangan dengan prinsip inklusif. Opsi E hanya fungsi sosial, bukan hakikat.",
     "difficulty": "medium"
   },
   {

@@ -915,7 +915,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pembahasan: Kalimat D memiliki Subjek ('Seluruh pegawai') dan Predikat ('wajib mengunggah') yang jelas tanpa preposisi perusak struktur. A kehilangan subjek karena 'Kepada', B mubazir 'membahas tentang', C kehilangan subjek karena 'Dalam', E pleonasme 'demi untuk'."
+    "explanation": "Pembahasan: Kalimat E memiliki Subjek ('Seluruh pegawai') dan Predikat ('wajib mengunggah') yang jelas tanpa preposisi perusak struktur. A kehilangan subjek karena 'Dalam', B mubazir 'membahas tentang', C kehilangan subjek karena 'Kepada', D pleonasme 'demi untuk'."
   },
   {
     "id": 28,
@@ -949,7 +949,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Tanda koma wajib digunakan jika anak kalimat mendahului induk kalimat ('Meskipun cuaca buruk, ...'). Pada B dan C koma salah tempat, D kurang koma sebelum 'dan', E wajib koma setelah konjungsi antarkalimat 'Jadi,'."
+    "explanation": "Pembahasan: Tanda koma wajib digunakan jika anak kalimat mendahului induk kalimat ('Meskipun cuaca buruk, ...'). Pada A dan B koma salah tempat (sebelum 'meskipun'/'karena' yang menghubungkan dua klausa setara), C tidak perlu koma setelah 'Jadi' di awal kalimat, E kurang koma serial sebelum 'dan' dalam deretan tiga jabatan."
   },
   {
     "id": 29,
@@ -2275,7 +2275,7 @@
         "score": 4
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena memenuhi prinsip integritas pencegahan korupsi: menolak gratifikasi aktif, mengedukasi mitra tentang kode etik ASN, dan mematuhi prosedur pelaporan resmi ke Unit Pengendalian Gratifikasi (UPG)."
+    "explanation": "Pembahasan: Opsi D bernilai 5 (paling tepat) karena menolak gratifikasi secara tegas, menyampaikan alasan hukum/etika, dan melaporkan ke UPG sesuai Peraturan Kepala BKN Nomor 1 Tahun 2021. Opsi E bernilai 4 (kurang lengkap) karena tidak menyebut pelaporan ke UPG. Opsi A, B, C melanggar larangan penerimaan gratifikasi (skor 1-3)."
   },
   {
     "id": 68,
@@ -2309,7 +2309,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena menunjukkan keteguhan prinsip moral dan profesionalisme: menolak nepotisme tanpa kompromi, menegakkan asas keadilan bagi semua pelamar, serta mengomunikasikannya dengan baik kepada keluarga."
+    "explanation": "Pembahasan: Opsi E bernilai 5 (tertinggi) karena menegakkan integritas dan netralitas ASN sesuai PP 94/2021 tentang Disiplin Pegawai Negeri Sipil: menolak intervensi nepotisme, tetap menolak berkas yang tidak memenuhi syarat, menjelaskan dasar hukum, serta memberikan arahan konstruktif bagi kerabat. Opsi A (skor 2) justru meminta izin pertimbangan khusus ke atasan, berpotensi melanggar prinsip meritokrasi."
   },
   {
     "id": 69,
@@ -2343,7 +2343,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena menegakkan integritas penjagaan rahasia negara/jabatan, tidak tergiur imbalan reputasi instan, serta mengarahkan alur informasi sesuai SOP PPID/Humas instansi."
+    "explanation": "Pembahasan: Data zonasi kerentanan bersifat rahasia dinas, sehingga tidak boleh dibuka sebagian pun meski atas dasar relasi pribadi atau janji citra positif. Sikap terbaik adalah menolak tegas, menjelaskan klasifikasi kerahasiaan, dan mengarahkan permintaan melalui prosedur resmi Humas/PPID. Opsi A justru berpotensi membocorkan data rahasia sehingga tidak layak dipuji."
   },
   {
     "id": 70,
@@ -2377,7 +2377,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mencerminkan integritas aktif: berani meluruskan penyimpangan disiplin kerja secara konstruktif, bertindak langsung pada sumber masalah, dan siap mengambil langkah pelaporan struktural jika pelanggaran tetap terjadi."
+    "explanation": "Pembahasan: Opsi E (skor 5) tepat karena menerapkan pendekatan progresif: tegur pribadi bersifat edukatif, mengingatkan dampak ketidakjujuran terhadap disiplin ASN, serta menetapkan konsekuensi jelas (pelaporan ke atasan) jika perilaku diulang. Opsi A (skor 2) hanya menyindir santai tanpa tindakan nyata. Opsi B (skor 4) baik tapi mengandalkan ancaman deteksi teknis bukan internalisasi nilai. Opsi C (skor 1) pasif. Opsi D (skor 3) melompat ke pelaporan formal tanpa upaya perbaikan langsung."
   },
   {
     "id": 71,
@@ -2411,7 +2411,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pilihan A (skor 5) cerminkan inisiatif proaktif tinggi. Tidak pasrah kendala teknis. Selesaikan masalah substantif, dorong peningkatan kinerja tim melalui kapabilitas pribadi."
+    "explanation": "Pembahasan: Opsi D (skor 5) tepat karena menunjukkan inisiatif proaktif dan kolaboratif: menganalisis pola error, membuat panduan praktis, dan berbagi ke rekan kerja untuk mempercepat adaptasi tim. Opsi A (skor 2) individualistik. Opsi B (skor 4) reaktif hanya bila diminta. Opsi C (skor 3) pasif menunggu IT. Opsi E (skor 1) mundur ke sistem manual."
   },
   {
     "id": 72,
@@ -2683,7 +2683,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena responsif menangani umpan balik layanan secara langsung (real-time adaptif) agar tujuan edukasi publik tercapai optimal."
+    "explanation": "Pembahasan: Sebagai ketua pelaksana, keluhan peserta paling efektif ditangani saat kegiatan berlangsung dengan menyesuaikan contoh kasus lokal bersama narasumber dan membuka dialog dua arah, sehingga tujuan edukasi tercapai. Menampung kritik di kotak evaluasi (A) baru berdampak pada periode berikutnya, bukan pada peserta saat ini. Opsi B paling tepat karena responsif dan adaptif terhadap kebutuhan peserta."
   },
   {
     "id": 80,
@@ -2751,7 +2751,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mencerminkan kemampuan adaptasi tingkat tinggi: cepat menguasai teknologi baru sekaligus menjadi penggerak perubahan positif bagi lingkungan kerja tanpa melanggar regulasi."
+    "explanation": "Pembahasan: Opsi D bernilai 5 (tertinggi) karena menunjukkan adaptabilitas tinggi dan kepemimpinan transformasional: mempelajari sistem baru mendalam serta berinisiatif mendampingi rekan senior agar tim segera selaras, sesuai kompetensi ASN dalam menghadapi perubahan organisasi. Opsi A (skor 4) hanya pasif menunggu rekan bertanya, kurang proaktif."
   },
   {
     "id": 82,
@@ -2853,7 +2853,7 @@
         "score": 4
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mengedepankan fleksibilitas interpersonal: cepat menyelaraskan ritme dan gaya kerja dengan kepemimpinan baru demi produktivitas tim."
+    "explanation": "Pembahasan: Opsi D bernilai 5 (tertinggi) karena menunjukkan fleksibilitas interpersonal dan orientasi kinerja: menyesuaikan gaya komunikasi dan alur kerja agar sejalan dengan ekspektasi atasan baru demi efisiensi unit, sesuai kompetensi manajemen perubahan. Opsi A (skor 3) mempertahankan ritme lama, tidak adaptif. Opsi E (skor 4) hanya pasif menerima tanpa penyesuaian aktif."
   },
   {
     "id": 85,
@@ -2887,7 +2887,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena memiliki 'growth mindset' dan antusiasme belajar tinggi: melihat perubahan dan tantangan baru sebagai momentum pengembangan diri ASN."
+    "explanation": "Pembahasan: Opsi B bernilai 5 karena menunjukkan growth mindset dengan proaktif mencari referensi analitik data mandiri untuk menyelesaikan proyek, mengubah tantangan baru menjadi peluang pengembangan kompetensi ASN."
   },
   {
     "id": 86,
@@ -2921,7 +2921,7 @@
         "score": 4
       }
     ],
-    "explanation": "Skor 5 pada opsi A karena menunjukkan kematangan kendali emosi, ketenangan menghadapi provokasi, empati pada masyarakat, serta orientasi pada solusi pelayanan."
+    "explanation": "Pembahasan: Opsi B (skor 5) tepat karena menggabungkan kendali emosi, empati (mendengarkan keluhan), komunikasi assertif (jelaskan kendala teknis sopan), dan orientasi solusi (tawarkan opsi pengecekan berkala). Opsi A (skor 2) pasif diam saja. Opsi C (skor 3) serahkan ke orang lain terlalu cepat. Opsi D (skor 1) konfrontif. Opsi E (skor 4) baik tapi kurang proaktif dalam tawarkan solusi konkret."
   },
   {
     "id": 87,
@@ -2955,7 +2955,7 @@
         "score": 5
       }
     ],
-    "explanation": "Skor 5 pada opsi A karena mampu mengontrol impuls pribadi sekaligus bertindak de-eskalatif untuk meredakan tensi konflik di ruang kerja."
+    "explanation": "Pembahasan: Opsi E (skor 5) paling tepat karena menahan diri dari dorongan berpihak, tetap tenang, lalu menengahi serta mengalihkan pembicaraan ke topik netral. Sikap tersebut meredakan tensi tanpa memperbesar konflik."
   },
   {
     "id": 88,
@@ -2989,7 +2989,7 @@
         "score": 4
       }
     ],
-    "explanation": "Skor 5 pada opsi A merefleksikan resiliensi tinggi, kendali diri di bawah tekanan ekstrem, serta orientasi penyelesaian tugas tanpa reaksi destruktif."
+    "explanation": "Pembahasan: Opsi C (skor 5) menunjukkan resiliensi melalui pengaturan emosi, penerimaan terhadap instruksi, dan penyusunan prioritas penyelesaian pekerjaan. Reaksi tersebut tetap profesional tanpa menghambat tugas dari pimpinan."
   },
   {
     "id": 89,
@@ -3023,7 +3023,7 @@
         "score": 1
       }
     ],
-    "explanation": "Skor 5 pada opsi A menunjukkan penguasaan diri matang, tidak defensif secara irasional, serta mengandalkan data konkret untuk meluruskan masalah."
+    "explanation": "Pembahasan: Opsi B bernilai 5 karena menunjukkan pengendalian emosi matang dengan tetap tenang, lalu meluruskan tuduhan secara objektif menggunakan bukti tanda terima dan riwayat mutasi berkas yang runtut."
   },
   {
     "id": 90,
@@ -3057,7 +3057,7 @@
         "score": 4
       }
     ],
-    "explanation": "Skor 5 pada opsi A mencerminkan profesionalisme, pengendalian diri dari respons reaktif, serta pemecahan masalah konstruktif demi edukasi publik."
+    "explanation": "Pembahasan: Opsi D bernilai 5 karena menahan respons defensif, menganalisis akar kesalahpahaman, dan menyusun klarifikasi berbasis data regulasi yang mudah dipahami publik untuk mendidik dan menenangkan situasi."
   },
   {
     "id": 91,
@@ -3091,7 +3091,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mencerminkan kemandirian tinggi, inisiatif, dan tanggung jawab penuh dalam menuntaskan tugas mendesak berbasis regulasi tanpa bergantung pada supervisi ketat."
+    "explanation": "Pembahasan: Opsi E bernilai 5 karena menunjukkan kemandirian tinggi, inisiatif proaktif, dan tanggung jawab penuh dalam menyelesaikan tugas mendesak berbasis regulasi dan data yang tersedia tanpa menunggu arahan langsung atasan."
   },
   {
     "id": 92,
@@ -3159,7 +3159,7 @@
         "score": 4
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena memperlihatkan keberanian mengambil keputusan profesional secara mandiri berbasis regulasi dalam kondisi darurat/terisolir tanpa mengorbankan akuntabilitas."
+    "explanation": "Pembahasan: Opsi B bernilai 5 karena memperlihatkan keberanian mengambil keputusan profesional secara mandiri berdasarkan kewenangan SOP teknis dalam kondisi darurat terisolir, sambil menjaga akuntabilitas dengan mencatat diskrepansi dan melaporkannya."
   },
   {
     "id": 94,
@@ -3193,7 +3193,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mengedepankan etos kerja mandiri, tidak merepotkan lingkungan kerja yang sedang berbeban tinggi, serta memiliki manajemen waktu personal yang matang."
+    "explanation": "Pembahasan: Opsi E bernilai 5 karena mengedepankan etos kerja mandiri dengan manajemen waktu personal yang matang, mengeksekusi tugas kompleks secara fokus tanpa mengganggu rekan kerja yang sedang berbeban tinggi."
   },
   {
     "id": 95,
@@ -3227,7 +3227,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mencerminkan problem-solving personal, daya juang menghadapi hambatan operasional rutin, serta minimnya ketergantungan pada pihak ketiga untuk masalah teknis dasar."
+    "explanation": "Pembahasan: Opsi C (skor 5) paling tepat karena menunjukkan problem-solving mandiri melalui pencarian solusi dan penerapan penanganan sistematis. Opsi A hanya menunggu tim IT sehingga penundaan pekerjaan lebih besar."
   },
   {
     "id": 96,
@@ -3261,7 +3261,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mencerminkan inisiatif proaktif, kemauan berkorban waktu belajar mandiri, dan komitmen adaptasi cepat terhadap digitalisasi kerja."
+    "explanation": "Pembahasan: Pilihan C bernilai 5 karena mencerminkan inisiatif proaktif belajar mandiri di luar jam kerja serta aktif berkonsultasi dengan tim IT, menunjukkan komitmen adaptasi cepat dan kemandirian dalam menguasai sistem digital baru. Pilihan A (skor 3) hanya meminta pendampingan rekan, kurang menunjukkan kemandirian belajar. Pilihan D (skor 2) dan E (skor 1) bersifat pasif/menghindar, sedangkan B (skor 4) baik tapi kurang komprehensif dari C."
   },
   {
     "id": 97,
@@ -3363,7 +3363,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena menunjukkan kerendahan hati untuk belajar (unlearning/relearning), meniadakan hierarki usia/senioritas demi akuisisi keterampilan baru."
+    "explanation": "Pembahasan: Pilihan E bernilai 5 karena menunjukkan kerendahan hati (unlearning), proaktif meminta bimbingan dari atasan yang lebih muda, dan meniadakan ego/hierarki usia demi menguasai keterampilan digital baru. Pilihan D (skor 4) belajar mandiri via tutorial baik tapi kurang kolaboratif. Pilihan C (skor 3) partisipasi pasif. Pilihan A (skor 2) menghindar zona nyaman, B (skor 1) bergantung pada orang lain."
   },
   {
     "id": 100,
@@ -3533,7 +3533,7 @@
         "score": 2
       }
     ],
-    "explanation": "Pembahasan: Skor 5 pada opsi B mengedepankan pendekatan personal, komunikasi persuasif, dan pencarian solusi komitmen bersama tanpa langsung mempermalukan rekan kerja atau melempar masalah ke atasan."
+    "explanation": "Pembahasan: Opsi A (skor 5) paling tepat karena menerapkan pendekatan kolaboratif melalui diskusi empat mata untuk memahami akar masalah, lalu menyepakati target waktu bersama yang mengikat kedua belah pihak. Pendekatan ini membangun komitmen internal rekan kerja tanpa mempermalukannya di forum tim (hindari D) atau melempar ke atasan terlalu dini (hindari E). Mengambil alih pekerjaan (B) justru menutupi masalah sistemik dan menciptakan ketergantungan, sedangkan menyesuaikan ritme lambat (C) menurunkan kinerja tim."
   },
   {
     "id": 105,
@@ -3737,6 +3737,6 @@
         "score": 2
       }
     ],
-    "explanation": "Pilihan C bernilai 5 karena seorang pemimpin transformasional tidak hanya menggunakan otoritas instruktif, melainkan mampu mengelola manajemen perubahan melalui edukasi, pemecahan akar masalah, dan penanaman kesadaran integritas."
+    "explanation": "Pembahasan: Pilihan D bernilai 5 karena mengadopsi pendekatan manajemen perubahan komprehensif: mengidentifikasi akar resistensi, menyelenggarakan pendampingan teknis intensif, dan menegaskan transparansi akuntabilitas, sejalan dengan prinsip transformational leadership. Pilihan C (skor 4) menggunakan pendekatan koersif (instruksi + ancaman sanksi) yang berisiko menimbulkan resistensi lebih lanjut. Pilihan B (skor 3) paralel sistem tak terbatas menciptakan inkonsistensi. Pilihan E (skor 2) diskriminatif usia. Pilihan A (skor 1) menunda transformasi."
   }
 ]

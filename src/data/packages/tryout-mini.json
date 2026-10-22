@@ -167,7 +167,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Nasionalisme menuntut penghormatan terhadap keberagaman dan penegakan etika berbangsa di lingkungan kerja ASN."
+    "explanation": "Pembahasan: Opsi C tepat karena PNS wajib menjaga kehormatan martabat manusia dan mencegah diskriminasi sesuai Pasal 6 PP 94/2021 jo. Pasal 28D ayat (1) UUD 1945. Menegur sopan dan melaporkan ke atasan/bagian kepatuhan merupakan pelaksanaan kewajiban melaporkan pelanggaran kode etik (Pasal 18 PP 94/2021) serta upaya pembinaan bukan sekadar hukuman."
   },
   {
     "id": 6,
@@ -439,7 +439,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Penalaran induktif menarik generalisasi dari sampel spesifik (cabai, tomat, terung famili Solanaceae). Kesimpulan yang valid tidak boleh melampaui batasan sampel secara berlebihan (overgeneralization). Pilihan B tepat karena menyimpulkan kecenderungan pada kelompok famili yang diuji."
+    "explanation": "Pembahasan: Penalaran induktif menarik generalisasi dari observasi spesifik (cabai, tomat, terung famili Solanaceae diberi pupuk organik → berbuah lebat). Kesimpulan yang valid terbatas pada populasi yang diamati (famili Solanaceae) dan bersifat kecenderungan (cenderung), bukan kepastian mutlak. Opsi A tepat karena menggeneralisasi pada famili yang diuji dengan kata \"cenderung\". Opsi B, C, D, E salah karena overgeneralization (meluas ke tanaman lain), terlalu absolut (\"hanya\", \"semua\", \"dipastikan\", \"tidak dapat\"), atau mengabaikan bukti empiris."
   },
   {
     "id": 14,
@@ -850,7 +850,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena memandang kritik sebagai peluang belajar, berkomitmen memperbarui kompetensi lewat literatur terkini, dan menjaga akuntabilitas lewat bimbingan atasan."
+    "explanation": "Pembahasan: Opsi C bernilai 5 (skor tertinggi TKP) karena mencerminkan sikap terbuka terhadap umpan balik (openness to feedback), inisiatif mandiri memperbarui kompetensi (continuous learning), dan akuntabilitas melalui koordinasi atasan (accountability). Opsi A skor 1 bersifat defensif, B skor 2 pasif, D skor 4 kurang proaktif metodologi, E skor 3 mendelegasikan tanggung jawab pribadi."
   },
   {
     "id": 26,
@@ -918,7 +918,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mencerminkan integritas kepemimpinan, berani pasang badan atas hasil kerja tim, sekaligus membina pengembangan kapasitas bawahan secara sistemik."
+    "explanation": "Pembahasan: Opsi B bernilai 5 (skor tertinggi TKP) karena pemimpin bertanggung jawab penuh atas kesalahan tim (accountability), membimbing bawahan evaluasi root cause (coaching), dan memperbaiki sistem kendali mutu bersama (systemic improvement). Opsi A skor 2 melempar tanggung jawab ke bawahan, C skor 3 tidak sistemik, D skor 4 kurang pembinaan, E skor 1 menghindari pengembangan bawahan."
   },
   {
     "id": 28,
@@ -952,7 +952,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mengedepankan tanggung jawab kolektif, tindakan kolaboratif cepat di bawah tekanan waktu, dan menjaga akurasi hasil kerja tim."
+    "explanation": "Pembahasan: Opsi C bernilai 5 karena mengajak tim memverifikasi dan merevisi bersama menjamin akurasi data, membagi beban kerja di bawah tekanan waktu, dan mempertahankan kohesi tim sebelum briefing akhir. Opsi D (skor 4) baik karena cepat tapi berisiko melewatkan kesalahan lain tanpa verifikasi silang. Opsi A (skor 3) terlalu pasif menyerahkan sepenuhnya ke rekan tanpa pengawasan kolektif. Opsi B (skor 2) menunda keputusan ke koordinator saat waktu kritis. Opsi E (skor 1) menunda koreksi ke sesi tanya jawab berbahaya untuk kredibilitas."
   },
   {
     "id": 29,
@@ -986,7 +986,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena memperlihatkan kapasitas kerja di bawah ketidakpastian dan perubahan mendadak: berpikir solutif, kolaboratif, serta tidak membuang waktu mengeluh."
+    "explanation": "Pembahasan: Opsi E bernilai 5 karena respons proaktif: cepat mempelajari regulasi, memetakan gap, dan menyusun strategi kolaboratif untuk menuntaskan tepat waktu. Opsi C (skor 4) mulai konversi data tanpa pemetaan perubahan terlebih dulu berisiko kerja ulang. Opsi B (skor 3) pasif menunggu instruksi saat tenggat ketat. Opsi A (skor 2) mengeluhkan kebijakan tanpa solusi operasional. Opsi D (skor 1) menyerah pakai format lama mengabaikan kewajiban patuh regulasi baru."
   },
   {
     "id": 30,
@@ -1020,6 +1020,6 @@
         "score": 4
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena menunjukkan kapabilitas problem-solving otonom, ketegasan mengambil keputusan di lapangan, dan komitmen tinggi terhadap tuntasnya misi kerja."
+    "explanation": "Pembahasan: Opsi B bernilai 5 karena menunjukkan otonomi lapangan: menyesuaikan rute taktis berbasis peta dan tetap menuntaskan target survei tanpa bergantung pusat. Opsi E (skor 4) baik berkoordinasi lokal tapi kurang otonom dalam pengambilan keputusan rute. Opsi D (skor 3) menurunkan standar validasi hanya ke titik mudah dijangkau. Opsi A (skor 2) menghentikan misi menunggu kontak pusat tidak efisien. Opsi C (skor 1) batal survei total mengabaikan fleksibilitas tugas."
   }
 ]

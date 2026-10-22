@@ -2253,7 +2253,7 @@
     ],
     "correctAnswer": "B",
     "tkpScores": null,
-    "explanation": "Deret merupakan urutan alfabet mundur dengan pengurangan 3 langkah (-3) di mana setiap abjad ditulis ganda: SS, PP, MM, JJ. Huruf pelengkap deret adalah S dan P.",
+    "explanation": "Pembahasan: Deret S, __, __, P, M, M, J, J mengikuti pola huruf berpasangan (ganda) dengan selisih -3: S-S, P-P, M-M, J-J. Huruf ke-2 adalah S, huruf ke-3 adalah P, sehingga deret lengkap: S, S, P, P, M, M, J, J.",
     "difficulty": "medium"
   },
   {

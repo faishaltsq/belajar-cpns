@@ -1396,7 +1396,7 @@
         "score": 0
       }
     ],
-    "explanation": "Perenang yang tidak lolos kualifikasi nasional otomatis tidak bertanding di olimpiade.",
+    "explanation": "Pembahasan: Premis 1: Semua atlet olimpiade lolos kualifikasi nasional (Semua O adalah K). Premis 2: Sebagian perenang kontingen X tidak lolos kualifikasi (Sebagian P bukan K). Kesimpulan logis: Sebagian perenang kontingen X bukan atlet olimpiade (Sebagian P bukan O), sesuai opsi D. Opsi A, B, C, E tidak valid secara logis.",
     "subCategory": "TIU"
   },
   {
@@ -2306,7 +2306,7 @@
         "score": 2
       }
     ],
-    "explanation": "Membangun jejaring kolaborasi profesional lintas profesi demi memastikan keselamatan tindakan medis.",
+    "explanation": "Pembahasan: Opsi D (skor 5) tepat karena memprioritaskan keselamatan pasien dengan menunda sesi dan memfasilitasi koordinasi langsung dokter-perawat untuk menyelaraskan rencana terapi. Opsi B (skor 4) mendengarkan perawat tapi mengabaikan anjuran tertulis dokter spesialis. Opsi C (skor 3) mengikuti dokter tapi mengabaikan catatan pemantauan harian perawat. Opsi A (skor 1) beraksi sendiri tanpa koordinasi, berbahaya. Opsi E (skor 2) mengeluh ke media sosial, tidak profesional.",
     "subCategory": "TKP"
   },
   {
@@ -2341,7 +2341,7 @@
         "score": 5
       }
     ],
-    "explanation": "Kemitraan kerja kolaboratif dengan pemecahan masalah bersama untuk efektivitas alur pelayanan.",
+    "explanation": "Pembahasan: Opsi E (skor 5) tepat karena mengajak tim farmasi menyusun SOP batas waktu terpadu yang realistis, solusi kolaboratif jangka panjang. Opsi A (skor 4) membuat laporan keluhan berkala, cukup konstruktif tapi bersifat adversarial. Opsi D (skor 3) mengirim formula tanpa verifikasi farmasi, melanggar protokol keamanan. Opsi C (skor 2) menyalahkan farmasi sepihak, tidak profesional. Opsi B (skor 1) menutup komunikasi dan menyerahkan ke pimpinan, pasif.",
     "subCategory": "TKP"
   },
   {

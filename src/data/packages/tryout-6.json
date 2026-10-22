@@ -847,7 +847,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pembahasan: Opsi C efektif karena memiliki unsur Subjek (Pemerintah) dan Predikat (menugaskan) yang jelas. Opsi A dan B kehilangan subjek akibat preposisi di awal kalimat. Opsi D pleonasme ('para hadirin sekalian'). Opsi E tidak efektif karena verba transitif 'membicarakan' tidak memerlukan preposisi 'tentang'."
+    "explanation": "Pembahasan: Kalimat efektif wajib memiliki subjek dan predikat jelas serta tidak boros kata. Opsi E memenuhi syarat itu: subjek 'Pemerintah' dan predikat 'menugaskan'. Opsi A kehilangan subjek karena didahului preposisi 'Berdasarkan', opsi B pleonasme ('para hadirin sekalian'), opsi C mubazir karena 'membicarakan' sudah transitif sehingga 'tentang' berlebihan, dan opsi D salah karena preposisi 'Bagi' di awal menghilangkan subjek."
   },
   {
     "id": 26,
@@ -915,7 +915,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Opsi C tepat karena tanda titik koma (;) dapat dipakai sebagai pengganti konjungsi untuk memisahkan klausa setara dalam kalimat majemuk. Opsi A salah karena tanda titik dua tidak dipakai jika pengantar berakhir pada verba tanpa kata penunjuk. Opsi B dan D salah karena titik koma tidak diletakkan sebelum konjungsi antarklausa subordinatif/koordinatif. Opsi E salah dalam penulisan gelar magister (seharusnya M.Si.)."
+    "explanation": "Pembahasan: Titik koma dipakai memisahkan dua klausa setara yang berhubungan erat, seperti pada opsi A ('Malam makin larut; pekerjaan belum selesai juga'). Opsi B salah karena perincian setelah titik dua seharusnya didahului kata pengantar lengkap dan tidak perlu titik dua di situ; opsi C salah penulisan gelar ('M.Si.' bukan 'M,Si.'); opsi D dan E salah karena titik koma tidak dipakai sebelum konjungsi 'sementara' dan 'karena'."
   },
   {
     "id": 28,
@@ -1017,7 +1017,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pembahasan: Opsi A benar karena 'Selat Sunda' adalah nama diri geografi. Opsi B salah karena nama jenis buah ditulis huruf kecil (jeruk bali) dan 'Pulau Dewata' harusnya kapital kedua unsur. Opsi C salah karena 'Jawa barat' seharusnya 'Jawa Barat'. Opsi D salah karena nama hari 'jumat' harus kapital ('Jumat'). Opsi E salah karena penunjuk arah mata angin 'timur' ditulis kecil jika bukan nama daerah/wilayah geopolitik."
+    "explanation": "Pembahasan: Opsi E tepat karena 'Selat Sunda' merupakan nama diri geografi sehingga kedua unsurnya ditulis kapital. Opsi A salah karena 'Timur' di sini penunjuk arah mata angin, bukan nama daerah, sehingga harus ditulis 'timur'. Opsi B salah karena 'jeruk bali' nama jenis buah ditulis kecil dan 'Pulau Dewata' seharusnya kapital pada unsur 'Dewata'. Opsi C salah karena seharusnya 'Jawa Barat'. Opsi D salah karena seharusnya 'Jumat'."
   },
   {
     "id": 31,
@@ -1969,7 +1969,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Beban sisa pekerjaan jika normal = sisa hari × jumlah pekerja = (40 - 10) × 15 = 30 × 15 = 450 orang-hari. Waktu tersisa aktual = 30 - 6 = 24 hari. Jumlah pekerja yang dibutuhkan = 450 / 24 = 18,75 -> (perhitungan bulat: 30 hari x 15 orang = 450; 450 / 24 = 18,75 tidak bulat, ganti angka: 45 hari normal, berjalan 15 hari, henti 6 hari -> sisa 24 hari. 30 x 16 = 480 -> 480 / 24 = 20 orang. Tambahan = 20 - 16 = 4 orang). Koreksi angka: total 40 hari, 16 pekerja. Berjalan 10 hari, henti 6 hari. Sisa waktu = 40 - 10 - 6 = 24 hari. Beban sisa = (40 - 10) × 16 = 480. Pekerja dibutuhkan = 480 / 24 = 20 pekerja. Tambahan pekerja = 20 - 16 = 4 orang. Menghindari inkonsistensi teks: Gunakan data: 40 hari, 15 pekerja, henti 5 hari -> sisa 25 hari -> 30 × 15 = 450 / 25 = 18 pekerja. Pekerja tambahan = 18 - 15 = 3 orang. Menyesuaikan teks: 40 hari, 15 pekerja. Berjalan 15 hari, henti 5 hari -> sisa hari 20. Beban tersisa = (40 - 15) x 15 = 25 x 15 = 375 tidak bulat. Data bersih: Sisa pekerjaan normal = 30 hari x 16 orang = 480. Waktu tersisa = 24 hari. Kebutuhan = 480 / 24 = 20 orang. Tambahan = 20 - 16 = 4. Alternatif: 40 hari oleh 12 pekerja. Berjalan 10 hari, libur 6 hari. Sisa hari = 24. Beban = 30 × 12 = 360. Butuh = 360 / 24 = 15 orang. Tambahan = 15 - 12 = 3 orang. Pilihan C = 5 orang jika: 40 hari 15 pekerja. Henti 6 hari (sisa 24). 40 hari 20 pekerja -> henti 5 hari (sisa 25). Beban sisa = 30 × 20 = 600. Butuh = 600 / 24 = 25. Tambahan = 5 orang."
+    "explanation": "Pembahasan: Sisa pekerjaan = 30 hari × 15 pekerja = 450 orang-hari. Waktu tersisa setelah terhenti 6 hari = 24 hari. Kebutuhan pekerja = 450 / 24 = 18,75, dibulatkan ke atas 19 orang, sehingga tambahan = 19 − 15 = 4 orang."
   },
   {
     "id": 59,
@@ -2241,7 +2241,7 @@
         "score": 2
       }
     ],
-    "explanation": "Pilihan A menunjukkan integritas diri tertinggi (skor 5) karena memadukan penolakan tegas, edukasi regulasi kepada pihak ketiga, dan transparansi melalui pelaporan resmi guna mencegah potensi benturan kepentingan serta tindak pidana korupsi."
+    "explanation": "Pembahasan: Opsi B bernilai tertinggi karena menolak tegas, mengingatkan kode etik, dan melaporkan indikasi gratifikasi ke APIP — sesuai prinsip integritas dan transparansi pengadaan. Fasilitas dari vendor rekanan berpotensi benturan kepentingan dan gratifikasi, sehingga menerima (A/E) atau mengalihkan jadi diskon (D) tetap tidak etis."
   },
   {
     "id": 67,
@@ -2275,7 +2275,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mencerminkan kepatuhan teguh pada prinsip kebenaran data, akuntabilitas anggaran publik, serta keberanian moral menolak intervensi non-prosedural secara profesional berbasis fakta regulasi."
+    "explanation": "Pembahasan: Opsi E bernilai tertinggi karena menolak dengan data faktual disertai penjelasan konsekuensi hukum manipulasi anggaran, menjaga akuntabilitas data publik. Menuruti revisi (A/D) atau meminta instruksi tertulis (C) tetap membuka ruang manipulasi; opsi B baik namun tidak menyelesaikan inti permintaan atasan."
   },
   {
     "id": 68,
@@ -2309,7 +2309,7 @@
         "score": 4
       }
     ],
-    "explanation": "Pilihan A mendapatkan skor 5 karena mempertahankan integritas keamanan informasi serta mematuhi tata kelola sistem identitas digital negara, sembari tetap memberikan solusi operasional melalui jalur resmi."
+    "explanation": "Pembahasan: Opsi C (skor 5) paling tepat karena menegakkan keamanan siber dengan menolak berbagi kredensial (larangan standar keamanan informasi), tetap bersikap solutif dengan mendampingi rekan melapor ke tim IT untuk pemulihan akses resmi, serta siap membantu data mendesak yang sah. Opsi A (skor 2) melanggar prinsip non-repudiation dan audit trail dengan berbagi sandi sementara. Opsi B (skor 3) tetap melibatkan akses tidak resmi. Opsi D (skor 1) mengabaikan risiko keamanan. Opsi E (skor 4) benar menolak tapi kurang proaktif dalam bantuan mendesak."
   },
   {
     "id": 69,
@@ -2513,7 +2513,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pilihan B berbobot 5 karena menunjukkan kepemimpinan berorientasi prestasi: memetakan potensi sumber daya, menetapkan target tinggi yang terukur, dan mengawal progres demi kualitas hasil puncak."
+    "explanation": "Pembahasan: Opsi A paling tepat karena memetakan keahlian anggota, menetapkan standar tinggi, dan membuat milestone pemantauan berkala mencerminkan kepemimpinan berorientasi prestasi. Opsi B hanya menekankan rapat harian tanpa strategi pengembangan kapasitas tim. Opsi C kurang strategis, D tidak kolaboratif, dan E terlalu pasif menunggu arahan."
   },
   {
     "id": 75,
@@ -2581,7 +2581,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mencerminkan responsivitas tinggi, kepedulian terhadap waktu warga, dan inisiatif solusi cepat (contingency plan) tanpa mengorbankan fungsi pelayanan publik dasar."
+    "explanation": "Pembahasan: Opsi D paling tepat karena responsif dan solutif: menjelaskan gangguan secara transparan, tetap melayani warga dengan pencatatan manual, serta berkoordinasi dengan tim IT. Opsi B cukup baik tetapi hanya membagikan nomor antrean tanpa solusi pelayanan. Opsi A justru mengabaikan pelayanan, C menghambat layanan, dan E kurang inisiatif."
   },
   {
     "id": 77,
@@ -2615,7 +2615,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mengedepankan empati, kesigapan, perlakuan inklusif, dan bantuan tuntas tanpa lempar tanggung jawab bagi kelompok rentan."
+    "explanation": "Pembahasan: Opsi E (skor 5) paling tepat karena menunjukan empati proaktif, inklusif, dan tuntas: mendatangi warga lanjut usia yang kesulitan, mendampingi langkah demi langkah dengan sabar hingga selesai, tidak melempar tanggung jawab. Opsi A (skor 1) pasif dan mengandalkan orang lain. Opsi B (skor 2) menyerahkan beban ke keluarga. Opsi C (skor 3) hanya memberi panduan cetak, kurang asistif. Opsi D (skor 4) mendelegasikan ke staf lain saat sendiri sibuk, kurang personal."
   },
   {
     "id": 78,
@@ -2649,7 +2649,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena berfokus pada dampak kritis penerima layanan (urgensi beasiswa) dengan kerelaan mendedikasikan waktu tambahan demi kemaslahatan masyarakat."
+    "explanation": "Pembahasan: Opsi C (skor 5) paling tepat karena mengutamakan kemaslahatan masyarakat (urgensi beasiswa batas malam) dengan komitmen menyelesaikan legalisasi hingga tuntas meskipun melewati jam kerja, mencerminkan dedikasi pelayanan publik. Opsi A (skor 4) baik tapi butuh izin pimpinan, belum pasti tuntas malam ini. Opsi B (skor 2) kaku, mengabaikan urgensi. Opsi D (skor 1) menolak total. Opsi E (skor 3) menunda penandatanganan ke besok, berisiko melewati batas unggah."
   },
   {
     "id": 79,
@@ -2683,7 +2683,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena menunjukkan kematangan emosi, akuntabilitas institusi tanpa defensif, serta pemberian solusi konkret yang mengembalikan kepercayaan publik."
+    "explanation": "Pembahasan: Pada TKP tidak ada kunci tunggal; setiap opsi bernilai 1-5 sesuai kadar kompetensi. Opsi B berskor 5 karena menggabungkan empati, permintaan maaf, pelacakan berkas saat itu, dan komitmen jadwal pasti yang menyelesaikan masalah warga secara langsung. Opsi D (4) sudah solutif namun belum memberi komitmen jadwal; A (2), E (3), dan C (1) makin lemah karena cenderung menghindar dari tanggung jawab kelalaian instansi."
   },
   {
     "id": 80,
@@ -2751,7 +2751,7 @@
         "score": 5
       }
     ],
-    "explanation": "Opsi A bernilai 5 karena mencerminkan adaptasi tingkat tinggi: proaktif menguasai perubahan teknologi baru secara mandiri sekaligus menunjukkan resiliensi sosial dengan membantu lingkungan sekitar berakselerasi dalam masa transisi."
+    "explanation": "Pembahasan: Opsi E bernilai 5 karena menunjukkan adaptasi proaktif dengan mempelajari sistem baru secara mandiri mendalam serta berinisiatif mendampingi rekan senior, memastikan unit kerja bertransisi tepat waktu tanpa menunggu arahan."
   },
   {
     "id": 82,
@@ -2819,7 +2819,7 @@
         "score": 3
       }
     ],
-    "explanation": "Opsi A bernilai 5 karena menampilkan keterbukaan terhadap inovasi kepemimpinan, kelincahan berpikir (cognitive flexibility), serta kemauan segera menyelaraskan diri demi optimalisasi output organisasi."
+    "explanation": "Pembahasan: Opsi D bernilai 5 karena mencerminkan kelincahan kognitif dengan cepat memahami mekanisme agile baru, menyesuaikan komunikasi lintas tim, dan aktif mencari peluang perbaikan kinerja dalam sistem baru."
   },
   {
     "id": 84,
@@ -2853,7 +2853,7 @@
         "score": 5
       }
     ],
-    "explanation": "Opsi A bernilai 5 karena merefleksikan daya tahan menghadapi ketidakpastian (tolerance for ambiguity) dan kemampuan pemecahan masalah secara adaptif tanpa lari dari tanggung jawab batas waktu."
+    "explanation": "Pembahasan: Opsi E bernilai 5 karena menunjukkan toleransi terhadap ketidakpastian dan pemecahan masalah adaptif: mempelajari pembaruan teknis mandiri, berkoordinasi dengan helpdesk pusat, dan mencari metode alternatif sah agar rekonsiliasi tetap tepat waktu."
   },
   {
     "id": 85,
@@ -3023,7 +3023,7 @@
         "score": 4
       }
     ],
-    "explanation": "Skor 5 pada opsi A memprioritaskan pemecahan masalah kritis ketimbang ego pribadi, menekan impuls defensif atas ketidakadilan, dan langsung bertindak solutif."
+    "explanation": "Pembahasan: Opsi B paling tepat karena memprioritaskan penangananriruwa kritis, yaitu menahan reaksi emosional, menghubungi tim IT pusat, serta menyiapkan berkas cadangan. Tindakan tersebut menunjukkan profesionalisme,solutions-oriented, dan tanggung jawab."
   },
   {
     "id": 90,
@@ -3125,7 +3125,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena menunjukkan sikap proaktif, adaptabilitas belajar mandiri (resourceful), dan orientasi pada penyelesaian target tanpa membebani rekan kerja atau menunggu instruksi formal."
+    "explanation": "Pembahasan: Opsi C bernilai 5 karena menunjukkan inisiatif belajar mandiri (self-directed learning), adaptabilitas tinggi, dan orientasi hasil dengan menyelesaikan target tepat waktu tanpa bergantung pada pihak lain. Opsi A (skor 4) kurang optimal karena masih membebani rekan kerja untuk demonstrasi awal. Opsi B (skor 3) terlalu bergantung pada bantuan eksternal berkelanjutan. Opsi D (skor 2) tidak efisien dengan ganda kerja manual-digital. Opsi E (skor 1) pasif dan menghentikan layanan publik."
   },
   {
     "id": 93,
@@ -3159,7 +3159,7 @@
         "score": 4
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena menunjukkan ketegasan mengambil keputusan berbasis SOP dan integritas profesional saat bertugas mandiri di medan sulit tanpa pengawasan langsung."
+    "explanation": "Pembahasan: Opsi D bernilai 5 karena menunjukkan integritas profesional, kemampuan mengambil keputusan mandiri berbasis bukti fisik (verifikasi silang dokumen), dan tanggung jawab menyelesaikan tugas lapangan meski terisolasi komunikasi. Opsi E (skor 4) baik tapi menunda penyelesaian tugas untuk mencari sinyal. Opsi B (skor 3) menyerahkan kewenangan verifikasi ke pihak non-kompeten (kepala desa). Opsi A (skor 2) melanggar prinsip keadilan dengan melewatkan warga data tidak sinkron. Opsi C (skor 1) menyerah dan meninggalkan tugas."
   },
   {
     "id": 94,
@@ -3193,7 +3193,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mengedepankan kemampuan memecahkan masalah tanpa preseden (autonomous problem solving), riset mandiri, dan kreasi solutif tanpa memindahkan beban ke pimpinan atau rekan."
+    "explanation": "Pembahasan: Opsi C paling tepat karena llorar deadline, riset literatur dan regulasi, merancang instrumen sistematis, lalu mempresentasikannya. Sikap tersebut menunjukkan kemandirian, kreativitas, serta kemampuan menyelesaikan tugas tanpa preseden."
   },
   {
     "id": 95,
@@ -3261,7 +3261,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena mencerminkan inisiatif tinggi, kemandirian belajar (continuous learning), dan kemauan mengalokasikan waktu ekstra demi adaptasi cepat terhadap instrumen kerja baru."
+    "explanation": "Pembahasan: Opsi D paling tepat karena menunjukkan kemandirian belajar, kesediaaninfected waktu ekstra, serta inisiatif berkonsultasi dengan tim teknis. Strategi tersebut membantu menguasai sistem baru secara cepat menghadapi target pelaporan yang dekat."
   },
   {
     "id": 97,
@@ -3295,7 +3295,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena menunjukkan sikap proaktif menggali pengetahuan baru secara mandiri dan analitis, serta membangun ruang diskusi demi pemahaman kolektif yang optimal."
+    "explanation": "Pembahasan: Opsi B bernilai 5 karena menunjukkan sikap proaktif dan analitis dengan mempelajari regulasi secara mendalam, membuat catatan komparatif, serta berdiskusi dengan rekan dan pimpinan untuk membangun pemahaman kolektif. Opsi A (skor 2) pasif mengandalkan ringkasan orang lain. Opsi C (skor 3) menunggu instruksi, kurang inisiatif. Opsi D (skor 4) baik tapi terbatas pada penanyaan ke hukum, belum kolaboratif menyeluruh. Opsi E (skor 1) menolak adaptasi, bertahan pada pola lama."
   },
   {
     "id": 98,
@@ -3363,7 +3363,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena memperlihatkan orientasi belajar lintas bidang, komitmen waktu untuk berkembang, serta orientasi kemanfaatan ilmu bagi unit kerja/organisasi."
+    "explanation": "Pembahasan: Opsi E bernilai 5 karena memperlihatkan orientasi belajar lintas bidang, komitmen mengorbankan waktu luang, dan niat mentransfer wawasan untuk mendukung tim kerja (orientasi kemanfaatan organisasi). Opsi A (skor 2) menyerah peluang, kurang dorongan pengembangan diri. Opsi B (skor 4) baik untuk portofolio pribadi tapi belum eksplisit berbagi ke tim. Opsi C (skor 3) konsultatif tapi pasif menunggu keputusan atasan. Opsi D (skor 1) menolak peluang, fokus kenyamanan pribadi."
   },
   {
     "id": 100,
@@ -3397,7 +3397,7 @@
         "score": 2
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena menunjukkan sikap proaktif, pemanfaatan berbagai sumber belajar (arsip, regulasi, mentoring), dan kegigihan mempercepat kurva pembelajaran demi kesiapan tugas."
+    "explanation": "Pembahasan: Opsi B bernilai 5 karena menunjukkan sikap proaktif, pemanfaatan berbagai sumber belajar (arsip kasus, dasar hukum, mentoring senior), dan kegigihan mempercepat kurva pembelajaran demi kesiapan tugas lapangan. Opsi A (skor 1) 'seadanya' tanpa persiapan, risiko kesalahan tinggi. Opsi C (skor 4) baik tapi pasif hanya baca SOP dan amati, belum aktif konsultasi. Opsi D (skor 3) mengikuti arahan, reaktif saat kendala. Opsi E (skor 2) menghindar tanggung jawab lapangan, minta peran administrasi."
   },
   {
     "id": 101,
@@ -3431,7 +3431,7 @@
         "score": 3
       }
     ],
-    "explanation": "Pilihan A bernilai 5 karena berinisiatif aktif menciptakan sinergi tim secara inklusif, menghargai keberagaman perspektif, dan membangun kesepakatan sistemik bersama demi kelancaran pencapaian target kolektif."
+    "explanation": "Pembahasan: Pilihan C memperoleh skor 5 karena mengusulkan forum koordinasi terbuka untuk menyepakati alur kerja yang memadukan kehati-hatian metode konvensional dan efisiensi digital. Langkah ini membangun kesepakatan, menghargai perbedaan gaya kerja, serta mengatasi hambatan komunikasi secara bersama."
   },
   {
     "id": 102,
@@ -3533,7 +3533,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan B bernilai 5 karena menunjukkan tanggung jawab kolektif, kesediaan membina (mentoring), dan investasi jangka panjang demi kekuatan kapabilitas seluruh anggota tim."
+    "explanation": "Pembahasan: Pilihan E memperoleh skor 5 karena menyusun panduan ringkas sistem kerja serta mendampingi anggota baru pindahan hingga mampu bekerja mandiri. Tindakan ini mempercepat verifikasi berkas sekaligus meningkatkan kapabilitas anggota tim."
   },
   {
     "id": 105,
@@ -3567,7 +3567,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pilihan B bernilai 5 karena mengedepankan etika kerja sama, menjaga kehormatan rekan kerja, bersikap proaktif mengatasi masalah (problem-solving), dan memikul tanggung jawab akuntabilitas bersama."
+    "explanation": "Pembahasan: Pilihan E memperoleh skor 5 karena menunjukkan inkonsistensi kepada rekan yangosefensif dan memperbaikinya bersama sebelum presentasi. Sikap ini menjaga kehormatan rekan, memastikan ketepatan data, serta mencegah paparan yang keliru."
   },
   {
     "id": 106,
