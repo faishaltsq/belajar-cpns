@@ -1116,7 +1116,7 @@
         "score": 5
       }
     ],
-    "explanation": "630 5 . 7 . 6 . 5 = 5 x 7 x 6 x 5 = 630",
+    "explanation": "Pembahasan: Bilangan antara 3000 dan 6000, angka ribuan hanya bisa 3, 4, atau 5 (3 pilihan). Angka ribuan dari {0,...} sisa 7 pilihan, ratusan 6, puluhan 5, satuan 4, sedangkan satuan cukup dengan 3×7×6×5=630. Karena tidak ada pengulangan angka, hasilnya 630.",
     "difficulty": "medium"
   },
   {

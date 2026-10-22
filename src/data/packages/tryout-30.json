@@ -1752,7 +1752,7 @@
       {
         "id": "B",
         "text": "Tidak ada anggota B yang bukan anggota A.",
-        "score": 5
+        "score": 0
       },
       {
         "id": "C",
@@ -1767,12 +1767,12 @@
       {
         "id": "E",
         "text": "Tidak ada simpulan yang benar.",
-        "score": 0
+        "score": 5
       }
     ],
     "correctAnswer": "B",
     "tkpScores": null,
-    "explanation": "Kedua premis menyatakan A dan C tercakup di dalam himpunan B. Berdasarkan opsi yang tersedia, kesimpulannya adalah tidak ada anggota B yang bukan anggota A.",
+    "explanation": "Pembahasan: Premis hanya menyatakan A ⊆ B dan C ⊆ B, sehingga tidak dapat disimpulkan hubungan antara A dan C maupun sebaliknya. Kesimpulan yang sah hanyalah bahwa A dan C sama-sama bagian dari B; pernyataan \"tidak ada anggota B yang bukan anggota A\" justru terbalik dan tidak valid. Karena itu, tidak ada simpulan yang benar di antara opsi yang tersedia.",
     "difficulty": "medium"
   },
   {
@@ -2808,7 +2808,7 @@
     ],
     "correctAnswer": "B",
     "tkpScores": null,
-    "explanation": "Soal ini bertujuan untuk melihat sikap Anda dalam menanggapi pendapat dan kritik yang dikemukakan orang lain. Pilihan Jawaban Poin Nilai A 4 B 5 C 3 D 2 E 1",
+    "explanation": "Pembahasan: Soal mengukur sikap tanggap terhadap kelalaian diri dalam tugas kedinasan. Langkah pertama yang paling tepat adalah segera membenahi kelalaian agar tidak menimbulkan kerugian (skor 5), karena tindakan korektif langsung mencegah dampak buruk. Meminta bantuan (4), konsultasi atasan (3), minta maaf (2), dan mengundurkan diri (1) bernilai lebih rendah karena kurang responsif atau berlebihan.",
     "difficulty": "medium"
   },
   {
@@ -3548,7 +3548,7 @@
     ],
     "correctAnswer": "B",
     "tkpScores": null,
-    "explanation": "Soal ini bertujuan untuk mengukur kecakapan kepemimpinan Anda dalam mengelola serta mengarahkan bawahan saat menghadapi situasi sulit.",
+    "explanation": "Pembahasan: Soal mengukur sikap sebagai bawahan menghadapi pemimpin yang kasar dan sewenang-wenang. Respons terbaik adalah menempuh jalur resmi melalui pelaporan ke dewan direksi agar pimpinan dievaluasi (skor 5), karena sesuai prosedur dan tidak melanggar aturan. Membalas dengan kekerasan atau pasrah sepenuhnya (4) tidak tepat, menyelesaikan sendiri (2) kurang efektif, dan mengajak rekan tanpa jalur resmi (1) berisiko.",
     "difficulty": "medium"
   },
   {

@@ -941,7 +941,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah E.",
+    "explanation": "Pembahasan: PDRI dibentuk di Bukittinggi pada 22 Desember 1948, dipicu Agresi Militer Belanda II yang menangkap Soekarno-Hatta pada 19 Desember 1948. PDRI dipimpin Syafruddin Prawiranegara untuk menjaga keberlangsungan pemerintahan RI. Jadi tanggal pendiriannya 22 Desember 1948.",
     "difficulty": "medium"
   },
   {
@@ -1431,7 +1431,7 @@
         "score": 0
       }
     ],
-    "explanation": "(Cukup jelas)",
+    "explanation": "Pembahasan: Pola dua deret berselang-seling. Deret ganjil: A, B, C, … naik satu huruf → berikutnya D. Deret genap: B, B, B, … konstan. Suku ke-7 adalah deret ganjil ke-4, yaitu D.",
     "difficulty": "medium"
   },
   {
@@ -1768,7 +1768,7 @@
       {
         "id": "C",
         "text": "20T",
-        "score": 0
+        "score": 5
       },
       {
         "id": "D",
@@ -1778,10 +1778,10 @@
       {
         "id": "E",
         "text": "20V",
-        "score": 5
+        "score": 0
       }
     ],
-    "explanation": "Deret ini memiliki pola penambahan angka (kelipatan 4) dan huruf (berdasarkan urutan alfabet). Jadi, berikutnya adalah 20V.",
+    "explanation": "Pembahasan: Angka naik +4: 4, 8, 12, 16, 20. Huruf naik +4 posisi: D(4), H(8), L(12), P(16), lalu T(20). Jadi berikutnya 20T.",
     "difficulty": "medium"
   },
   {
@@ -2388,7 +2388,7 @@
         "score": 1
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah C.",
+    "explanation": "Pembahasan: Dalam situasi darurat tanpa atasan, sikap terbaik adalah berkoordinasi dengan rekan kerja (musyawarah) agar keputusan diambil dengan pertimbangan bersama—ini mencerminkan kerja sama dan kesiapan mengambil tanggung jawab secara bijak, sesuai bobot tertinggi pada opsi B. Opsi C mengambil keputusan sendiri cenderung egois, sementara A, D, dan E pasif serta menghindari tanggung jawab. Sebagai soal TKP, setiap opsi tetap bernilai 1–5 sesuai kadar perilaku efektifnya, bukan kunci tunggal.",
     "difficulty": "easy"
   },
   {

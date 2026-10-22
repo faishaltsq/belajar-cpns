@@ -1291,7 +1291,7 @@
         "score": 5
       }
     ],
-    "explanation": "(Sangat jelas)",
+    "explanation": "Pembahasan: Deret terdiri dari dua pola berselang-seling. Huruf posisi ganjil: c, g, k, o (loncat +4, +4, +4) sehingga berikutnya s. Huruf posisi genap: e, e, e tetap e. Jadi dua huruf selanjutnya adalah s e.",
     "difficulty": "medium"
   },
   {
@@ -1326,7 +1326,7 @@
         "score": 5
       }
     ],
-    "explanation": "Tidak bisa didefinisikan",
+    "explanation": "Pembahasan: Misal bilangan itu N. Operasinya: (N·X − X) ÷ X = (N − 1) untuk X ≠ 0, sedangkan untuk X = 0 operasi tidak terdefinisi (pembagian nol). Karena soal tidak menetapkan nilai N maupun memastikan X ≠ 0, hasilnya tidak dapat dipastikan.",
     "difficulty": "medium"
   },
   {

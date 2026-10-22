@@ -731,7 +731,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini merupakan deret pembagian bilangan berturut-turut.",
+    "explanation": "Pembahasan: Pembagian dikerjakan berurutan dari kiri: 81 ÷ 9 = 9; 9 ÷ 3 = 3; 3 ÷ 3 = 1; 1 ÷ 1 = 1. Hasil akhirnya 1.",
     "difficulty": "medium"
   },
   {
@@ -1483,7 +1483,7 @@
       {
         "id": "B",
         "text": "3/28",
-        "score": 0
+        "score": 5
       },
       {
         "id": "C",
@@ -1493,7 +1493,7 @@
       {
         "id": "D",
         "text": "3/8",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -1501,7 +1501,7 @@
         "score": 0
       }
     ],
-    "explanation": "3/8 3/5×5/8=3/8",
+    "explanation": "Pembahasan: Peluang terambil 2 bola merah dari kotak I adalah C(3,2)/C(5,2) = 3/10. Peluang terambil 2 bola biru dari kotak II adalah C(5,2)/C(8,2) = 10/28. Karena kedua pengambilan bebas, peluang gabungannya 3/10 x 10/28 = 30/280 = 3/28, yaitu opsi B.",
     "difficulty": "medium"
   },
   {
@@ -1513,7 +1513,7 @@
       {
         "id": "A",
         "text": "40X",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
@@ -1523,7 +1523,7 @@
       {
         "id": "C",
         "text": "40Z",
-        "score": 5
+        "score": 0
       },
       {
         "id": "D",
@@ -1536,7 +1536,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini memiliki pola penambahan angka (kelipatan 8) dan huruf (berdasarkan urutan alfabet). Jadi, berikutnya adalah 40Z.",
+    "explanation": "Pembahasan: Angka membentuk kelipatan 8: 8, 16, 24, 32, maka berikutnya 40. Huruf berjarak +4: H(8), L(12), P(16), T(20), maka berikutnya X(24). Jadi jawabannya 40X.",
     "difficulty": "medium"
   },
   {
@@ -1606,7 +1606,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Huruf ke-25 adalah T + 5 = Y.",
+    "explanation": "Pembahasan: Selisih hurufnya bertambah: B(2)→G(7) +5, G→M(13) +6, M→T(20) +7, maka berikutnya +8 → 28, yaitu B(28-26)=B setara huruf ke-28; lanjut pola hingga huruf ke-25 tidak cukup dari data ini. Dengan pola loncat +5,+6,+7,+8, suku ke-4 adalah T(20), suku ke-5 = 28 → B. Huruf ke-25 deret ini sebenarnya Z(26) bila diteruskan dengan selisih tetap bertambah satu.",
     "difficulty": "medium"
   },
   {
@@ -1851,7 +1851,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah E.",
+    "explanation": "Pembahasan: Setiap suku dikali 3 dari suku sebelumnya: 1×3=3, 3×3=9, 9×3=27, maka 27×3=81 dan 81×3=243. Jadi dua suku berikutnya 81 dan 243.",
     "difficulty": "medium"
   },
   {

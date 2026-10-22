@@ -136,7 +136,7 @@
         "score": 5
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah E.",
+    "explanation": "Pembahasan: Mahkamah Konstitusi (MK) berwenang menguji undang-undang terhadap UUD 1945 dan menjaga konstitusionalisme, sesuai Pasal 24C ayat (1) UUD 1945. Lembaga lain seperti DPR, MA, Polri, dan TNI menjalankan fungsi masing-masing, tetapi tidak memiliki kewenangan utama sebagai penjaga konstitusi.",
     "difficulty": "medium"
   },
   {
@@ -148,7 +148,7 @@
       {
         "id": "A",
         "text": "P dan V",
-        "score": 5
+        "score": 0
       },
       {
         "id": "B",
@@ -168,10 +168,10 @@
       {
         "id": "E",
         "text": "S dan W",
-        "score": 0
+        "score": 5
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "explanation": "Pembahasan: Deret terdiri atas dua pola berselang. Huruf pertama tiap pasangan berurutan G, Z, J, Y, M, X, P, ... membentuk pola G (+3) J (+3) M (+3) P, sehingga huruf berikutnya P (+3) = S. Huruf kedua berurutan G, J, M, P dengan loncatan +3, lalu berbalik urutan alfabet Y, X, ... sehingga setelah P pola menurun: W. Jadi jawabannya S dan W.",
     "difficulty": "medium"
   },
   {
@@ -1816,7 +1816,7 @@
         "score": 5
       }
     ],
-    "explanation": "Misal luas bidang tanah total = x Sisa tanah = x – (2/5 x + ¼ x) = x – 13/20 x = 7/20 x 2/3 sisa tanah = luas pekarangan (112 m2) 2/3 ( 7/20 x) = 112, 7/30 x = 112, x = 112*(30/7) = 16*30 = 480",
+    "explanation": "Pembahasan: Misal luas tanah total x. Gudang = 2/5 x, kolam = 1/4 x, maka sisa = x − (2/5 + 1/4)x = x − 13/20 x = 7/20 x. Pekarangan = 2/3 dari sisa = 2/3 × 7/20 x = 7/30 x = 112, sehingga x = 112 × 30/7 = 480 m².",
     "difficulty": "medium"
   },
   {

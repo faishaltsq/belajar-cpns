@@ -748,7 +748,7 @@
       {
         "id": "A",
         "text": "Merupakan negara sekuler",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
@@ -758,7 +758,7 @@
       {
         "id": "C",
         "text": "Soekarno, Moh. Yamin, dan Hatta",
-        "score": 5
+        "score": 0
       },
       {
         "id": "D",
@@ -773,7 +773,7 @@
     ],
     "correctAnswer": "C",
     "tkpScores": null,
-    "explanation": "Rumusan Ketuhanan Yang Maha Esa pada Pembukaan UUD 1945 menegaskan sifat khas Indonesia: bukan negara sekuler yang memisahkan agama dari urusan negara, dan bukan pula negara teokrasi yang didasarkan pada agama tertentu.",
+    "explanation": "Pembahasan: Prinsip Ketuhanan Yang Maha Esa dalam Pembukaan UUD 1945 menegaskan Indonesia bukan negara sekuler yang memisahkan agama dari negara, dan bukan negara teokrasi berdasarkan satu agama tertentu. Identitas khas ini menjadikan Indonesia negara kebangsaan yang berketuhanan, dengan sila pertama sebagai dasar moral dan spiritual penyelenggaraan negara.",
     "difficulty": "medium"
   },
   {
