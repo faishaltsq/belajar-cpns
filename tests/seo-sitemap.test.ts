@@ -137,3 +137,37 @@ describe('Server-rendered SEO content', () => {
     expect(new Set(descs).size).toBe(descs.length);
   });
 });
+
+describe('sitemap lastmod is a real signal', () => {
+  it('does not stamp every URL with the current time', () => {
+    // A sitemap whose lastmod is always "now" teaches Google to ignore the
+    // field, so a genuinely new page gets no freshness signal at all.
+    const before = Date.now();
+    const items = sitemap();
+    const after = Date.now();
+
+    for (const item of items) {
+      const t = new Date(item.lastModified as string | Date).getTime();
+      expect(t, `${item.url} lastmod looks like build time`).toBeLessThan(before);
+      expect(t).toBeLessThan(after);
+    }
+  });
+
+  it('groups pages by the data that actually fills them', () => {
+    const items = sitemap();
+    const byUrl = new Map(items.map((i) => [i.url, new Date(i.lastModified as string | Date).getTime()]));
+
+    // Two tryout pages share their content source, so they must share lastmod.
+    expect(byUrl.get('https://lolosin.com/simulasi/tryout-1')).toBe(
+      byUrl.get('https://lolosin.com/simulasi/tryout-2')
+    );
+    // Every drill topic comes from one data file, so they move together.
+    expect(byUrl.get('https://lolosin.com/drill/TWK/Pancasila')).toBe(
+      byUrl.get('https://lolosin.com/drill/TIU/Analogi')
+    );
+    // Pages filled by unrelated sources must not share a stamp.
+    expect(byUrl.get('https://lolosin.com/drill/TWK/Pancasila')).not.toBe(
+      byUrl.get('https://lolosin.com/flashcard')
+    );
+  });
+});
