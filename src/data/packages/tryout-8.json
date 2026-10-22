@@ -163,15 +163,15 @@
       {
         "id": "D",
         "text": "P dan W",
-        "score": 0
+        "score": 5
       },
       {
         "id": "E",
         "text": "S dan W",
-        "score": 5
+        "score": 0
       }
     ],
-    "explanation": "Pembahasan: Deret terdiri atas dua pola berselang. Huruf pertama tiap pasangan berurutan G, Z, J, Y, M, X, P, ... membentuk pola G (+3) J (+3) M (+3) P, sehingga huruf berikutnya P (+3) = S. Huruf kedua berurutan G, J, M, P dengan loncatan +3, lalu berbalik urutan alfabet Y, X, ... sehingga setelah P pola menurun: W. Jadi jawabannya S dan W.",
+    "explanation": "Pembahasan: Deret tersusun dalam kelompok tiga: (G, G, Z), (J, J, Y), (M, M, X). Unsur pertama tiap kelompok naik 3 huruf (G, J, M, P) dan unsur ketiga turun satu huruf (Z, Y, X, W). Kelompok keempat karena itu berbunyi P, P, W, sehingga dua suku berikutnya adalah P dan W.",
     "difficulty": "medium"
   },
   {

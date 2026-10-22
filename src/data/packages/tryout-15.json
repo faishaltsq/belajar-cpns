@@ -1382,7 +1382,7 @@
       },
       {
         "id": "C",
-        "text": "42, 45, 51, 54, 60, 63, 66, 69",
+        "text": "42, 45, 51, 54, 57, 63, 66, 69",
         "score": 5
       },
       {
@@ -1396,7 +1396,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah C.",
+    "explanation": "Pembahasan: Kelipatan 3 antara 40 dan 70 adalah 42, 45, 48, 51, 54, 57, 60, 63, 66, 69. Yang juga kelipatan 4 (48 dan 60) dibuang, sehingga tersisa 42, 45, 51, 54, 57, 63, 66, dan 69.",
     "difficulty": "medium"
   },
   {

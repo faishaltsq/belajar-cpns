@@ -938,12 +938,12 @@
       {
         "id": "B",
         "text": "Pasal 32 ayat 1",
-        "score": 5
+        "score": 0
       },
       {
         "id": "C",
         "text": "Pasal 32 ayat 2",
-        "score": 0
+        "score": 5
       },
       {
         "id": "D",
@@ -958,7 +958,7 @@
     ],
     "correctAnswer": "B",
     "tkpScores": null,
-    "explanation": "Pembahasan: Pasal 32 ayat (1) UUD 1945 menyatakan negara memajukan kebudayaan nasional, termasuk mengakui dan melestarikan bahasa daerah sebagai unsur kebudayaan. Pasal 32 ayat (2) mengatur hak masyarakat adat, bukan bahasa daerah. Jadi jawaban B.",
+    "explanation": "Pembahasan: Jaminan konstitusional bagi bahasa daerah terdapat pada Pasal 32 ayat (2) UUD 1945, yang menyatakan bahwa bahasa daerah yang dipelihara oleh masyarakat pemakainya dihormati dan dipelihara oleh negara sebagai bagian dari kebudayaan nasional. Pasal 32 ayat (1) berbicara tentang kebudayaan nasional secara umum, bukan khusus bahasa daerah.",
     "difficulty": "medium"
   },
   {
