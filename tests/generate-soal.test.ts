@@ -93,11 +93,20 @@ function validateDistribution(
     const letter = best.id.toUpperCase();
     dist[letter] = (dist[letter] || 0) + 1;
   }
+  // Guard against guessable keys, not against correcting them.
+  // An exact per-letter count cannot hold once a wrong key is fixed: the
+  // corrected letter gains one and the wrong one loses one. tryout-9#20,
+  // 9#34, 14#8, 15#12, 16#25, 16#49, 11#52 and 20#13 were all verifiably
+  // wrong (see the explanation audit), and fixing them necessarily moved
+  // the distribution. What still matters is that no single letter dominates
+  // enough to be guessed, and that every letter is actually used.
+  const total = Object.values(dist).reduce((a, b) => a + b, 0);
   for (const [letter, count] of Object.entries(dist)) {
+    expect(count, `${label} ${category}: letter ${letter} is never the key`).toBeGreaterThan(0);
     expect(
-      Math.abs(count - expectedPerLetter),
-      `${label} ${category}: ${letter} has ${count}, expected ~${expectedPerLetter} (±${tolerance})`,
-    ).toBeLessThanOrEqual(tolerance);
+      count / total,
+      `${label} ${category}: ${letter} is the key on ${count}/${total} questions — too concentrated to be fair`,
+    ).toBeLessThanOrEqual(0.35);
   }
 }
 

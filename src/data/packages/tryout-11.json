@@ -1793,12 +1793,12 @@
       {
         "id": "A",
         "text": "625^4",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
         "text": "3125^5",
-        "score": 5
+        "score": 0
       },
       {
         "id": "C",
@@ -1816,7 +1816,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini merupakan deret pangkat lima.",
+    "explanation": "Pembahasan: Perhatikan basis dan pangkatnya terpisah. Basis: 5, 25, 125, ... masing-masing dikali 5, sehingga basis berikutnya 625. Pangkat: 1, 2, 3, ... naik satu, sehingga pangkat berikutnya 4. Jadi suku keempat adalah 625^4.",
     "difficulty": "medium"
   },
   {
@@ -3788,7 +3788,7 @@
         "score": 4
       }
     ],
-    "explanation": "Tujuan utama dari sila keempat Pancasila adalah untuk menjamin keadilan sosial dan ekonomi bagi seluruh rakyat Indonesia, sehingga tercipta masyarakat yang lebih adil dan sejahtera secara ekonomi.",
+    "explanation": "Pembahasan: Keadilan sosial dan ekonomi bagi seluruh rakyat adalah tujuan sila kelima Pancasila, bukan sila keempat. Sila keempat menekankan musyawarah dan kerakyatan dalam pengambilan keputusan. Karena itu opsi yang tepat adalah C.",
     "difficulty": "easy"
   },
   {

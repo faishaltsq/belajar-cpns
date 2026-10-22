@@ -452,7 +452,7 @@
       {
         "id": "A",
         "text": "Konstitusional",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
@@ -467,7 +467,7 @@
       {
         "id": "D",
         "text": "Pengawasan",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -477,7 +477,7 @@
     ],
     "correctAnswer": "D",
     "tkpScores": null,
-    "explanation": "Kewenangan MPR melantik serta menentukan suksesi kepemimpinan nasional ketika terjadi kekosongan kepresidenan merupakan perwujudan dari fungsi pengawasan terhadap keberlanjutan roda pemerintahan.",
+    "explanation": "Pembahasan: Kewenangan MPR melantik Presiden/Wakil Presiden, mengisi kekosongan jabatan Wakil Presiden, dan menentukan suksesi kepemimpinan negara diatur dalam Pasal 3 ayat (2), Pasal 7A, dan Pasal 8 UUD 1945 yang merupakan fungsi konstitusional MPR, bukan fungsi pengawasan. Fungsi pengawasan MPR tercantum dalam Pasal 3 ayat (1) UUD 1945 berupa pemeriksaan laporan tahunan Presiden.",
     "difficulty": "medium"
   },
   {

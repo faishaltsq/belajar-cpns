@@ -673,7 +673,7 @@
       {
         "id": "A",
         "text": "Rp 1.500.000",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
@@ -688,7 +688,7 @@
       {
         "id": "D",
         "text": "Rp 2.400.000",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -696,7 +696,7 @@
         "score": 0
       }
     ],
-    "explanation": "Harga beli per lembar kain = 6.000.000 ÷ 400 = 15.000 rupiah.",
+    "explanation": "Pembahasan: Harga beli per lembar = Rp6.000.000 ÷ 400 = Rp15.000. Separuh kain = 200 lembar dijual dengan harga 3/2 × Rp15.000 = Rp22.500 per lembar, sehingga hasil penjualan = 200 × Rp22.500 = Rp4.500.000. Keuntungan = Rp4.500.000 − (setengah modal, Rp3.000.000) = Rp1.500.000. Catatan: jika dihitung terhadap seluruh modal, hasil Rp4.500.000 − Rp6.000.000 justru rugi; opsi D (Rp2.400.000) tidak dapat dihasilkan dari data soal.",
     "difficulty": "medium"
   },
   {
@@ -1178,15 +1178,15 @@
       {
         "id": "D",
         "text": "Sebagian caleg seharusnya berjiwa social",
-        "score": 0
+        "score": 5
       },
       {
         "id": "E",
         "text": "Semua pengurus panti asuhan berjiwa sosial",
-        "score": 5
+        "score": 0
       }
     ],
-    "explanation": "Penyelesaian Sebagian ketua RT pernah menjadi pengurus koperasi maka sebagian ketua RT seharusnya berjiwa sosial.",
+    "explanation": "Pembahasan: Silogisme: pengurus panti asuhan seharusnya berjiwa sosial (premis umum). Sebagian caleg pernah menjadi pengurus panti asuhan, maka sebagian caleg tersebut seharusnya berjiwa sosial. Jawaban yang tepat adalah opsi D. Opsi E salah karena premis hanya menyatakan 'seharusnya', bukan 'semua berjiwa sosial'.",
     "difficulty": "medium"
   },
   {
@@ -3263,7 +3263,7 @@
         "score": 4
       }
     ],
-    "explanation": "Perlindungan HAM di masyarakat yang fokus pada perlindungan terhadap kelompok rentan seperti perempuan, anak-anak, dan penyandang disabilitas dikenal sebagai perlindungan gender.",
+    "explanation": "Pembahasan: Perlindungan khusus (special protection) adalah perlindungan yang diberikan kepada kelompok rentan yang membutuhkan perlakuan berbeda karena kondisi khusus, seperti perempuan, anak-anak, dan penyandang disabilitas. Konsep ini berbeda dari perlindungan gender yang hanya mencakup isu kesetaraan gender. Opsi D paling tepat menggambarkan cakupan kelompok rentan tersebut.",
     "difficulty": "easy"
   },
   {

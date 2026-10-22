@@ -853,7 +853,7 @@
       {
         "id": "B",
         "text": "Undang-Undang Dasar Sementara 1950",
-        "score": 5
+        "score": 0
       },
       {
         "id": "C",
@@ -863,7 +863,7 @@
       {
         "id": "D",
         "text": "Konstitusi Republik Indonesia Serikat",
-        "score": 0
+        "score": 5
       },
       {
         "id": "E",
@@ -871,7 +871,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "explanation": "Pembahasan: Periode 27 Desember 1949–17 Agustus 1950, Indonesia berbentuk negara serikat (RIS) dengan konstitusi Konstitusi RIS 1949, yang membagi wilayah menjadi negara bagian seperti Negara Republik Indonesia, Negara Indonesia Timur, dan Negara Sumatera Timur. UUD Sementara 1950 menggantikannya saat kembali ke bentuk negara kesatuan. Karena itu jawaban yang tepat adalah UUD Sementara 1950.",
     "difficulty": "medium"
   },
   {
@@ -1688,12 +1688,12 @@
       {
         "id": "A",
         "text": "25Y",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
         "text": "25Z",
-        "score": 5
+        "score": 0
       },
       {
         "id": "C",
@@ -1711,7 +1711,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini memiliki pola penambahan angka (kelipatan 5) dan huruf (berdasarkan urutan alfabet). Jadi, berikutnya adalah 25Z.",
+    "explanation": "Pembahasan: Angka membentuk pola +5: 5, 10, 15, 20, maka berikutnya 25. Huruf berurutan E(5), J(10), O(15), T(20), selisih +5 posisi, sehingga berikutnya Y(25). Jadi jawabannya 25Y.",
     "difficulty": "medium"
   },
   {
@@ -3123,7 +3123,7 @@
         "score": 4
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "explanation": "Pembahasan: Individu yang matang saat bekerja di bawah tekanan cenderung tetap tenang dan terkendali, sehingga sikap biasa-biasa saja mencerminkan stabilitas emosi dan ketahanan kerja. Reaksi stres, marah, atau menarik diri justru menunjukkan pengelolaan tekanan yang kurang baik. Pada TKP seluruh opsi bernilai 1-5, dan opsi berskor 5 adalah perilaku paling adaptif.",
     "difficulty": "easy"
   },
   {
