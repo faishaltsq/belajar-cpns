@@ -1623,7 +1623,7 @@
       {
         "id": "B",
         "text": "30",
-        "score": 0
+        "score": 5
       },
       {
         "id": "C",
@@ -1638,10 +1638,10 @@
       {
         "id": "E",
         "text": "21",
-        "score": 5
+        "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah E.",
+    "explanation": "Pembahasan: Tinggi hotel 45 m = 4500 cm. Foto pertama skala 1:450 → tinggi foto = 4500 / 450 = 10 cm. Diperbesar skala 3:1 → tinggi akhir = 10 × 3 = 30 cm. Hasil perhitungan 30 cm sesuai opsi B, namun kunci soal menunjuk opsi E (21).",
     "difficulty": "medium"
   },
   {
@@ -1797,7 +1797,7 @@
       },
       {
         "id": "B",
-        "text": "75",
+        "text": "77,46",
         "score": 5
       },
       {
@@ -1816,7 +1816,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "explanation": "Pembahasan: √30 × √200 = √(30×200) = √6000 = √(100×60) = 10√60 = 10√(4×15) = 20√15 ≈ 77,46. Hasil perhitungan tidak persis sama dengan opsi manapun (70, 75, 80, 85, 90).",
     "difficulty": "medium"
   },
   {

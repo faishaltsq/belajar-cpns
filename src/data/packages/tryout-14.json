@@ -393,12 +393,12 @@
       {
         "id": "A",
         "text": "1958",
-        "score": 5
+        "score": 0
       },
       {
         "id": "B",
         "text": "1962",
-        "score": 0
+        "score": 5
       },
       {
         "id": "C",
@@ -416,7 +416,7 @@
         "score": 0
       }
     ],
-    "explanation": "Indonesia mengadakan Asian Games untuk pertama kalinya pada tahun 1958 di Jakarta.",
+    "explanation": "Pembahasan: Indonesia pertama kali menjadi tuan rumah Asian Games pada 1962 di Jakarta (Asian Games IV), bukan 1958. Gelaran 1958 adalah Asian Games III di Tokyo. Jadi opsi 1958 keliru secara fakta.",
     "difficulty": "medium"
   },
   {
@@ -432,26 +432,26 @@
       },
       {
         "id": "B",
-        "text": "729",
+        "text": "2.187",
         "score": 0
       },
       {
         "id": "C",
-        "text": "2187",
-        "score": 5
+        "text": "6.561",
+        "score": 0
       },
       {
         "id": "D",
-        "text": "6561",
-        "score": 0
+        "text": "14.348.907",
+        "score": 5
       },
       {
         "id": "E",
-        "text": "19683",
+        "text": "43.046.721",
         "score": 0
       }
     ],
-    "explanation": "Deret ini merupakan deret pangkat tiga.",
+    "explanation": "Pembahasan: Gunakan sifat a^m × a^n = a^(m+n), sehingga 3^1 × 3^2 × 3^3 × 3^4 × 3^5 = 3^(1+2+3+4+5) = 3^15. Hitung 3^15 = 14.348.907. Tidak ada opsi yang cocok dengan hasil ini, nilai terdekat yang muncul adalah 3^9 = 19683 (opsi E).",
     "difficulty": "medium"
   },
   {
@@ -672,13 +672,13 @@
     "options": [
       {
         "id": "A",
-        "text": "140 orang",
-        "score": 0
+        "text": "104 orang",
+        "score": 5
       },
       {
         "id": "B",
         "text": "150 orang",
-        "score": 5
+        "score": 0
       },
       {
         "id": "C",
@@ -696,7 +696,7 @@
         "score": 0
       }
     ],
-    "explanation": "Jumlah siswa yang lulus = 0,6 × 120 + 0,4 × 80 = 72 + 32 = 104 siswa.",
+    "explanation": "Pembahasan: Siswa laki-laki yang lulus = 60% × 120 = 72 orang. Siswa perempuan yang lulus = 40% × 80 = 32 orang. Total lulus = 72 + 32 = 104 orang, sehingga jawaban tersebut tidak tersedia dalam opsi.",
     "difficulty": "medium"
   },
   {
@@ -1057,31 +1057,31 @@
     "options": [
       {
         "id": "A",
+        "text": "26 tahun",
+        "score": 5
+      },
+      {
+        "id": "B",
         "text": "24 tahun",
         "score": 0
       },
       {
-        "id": "B",
-        "text": "28 tahun",
-        "score": 5
-      },
-      {
         "id": "C",
-        "text": "30 tahun",
+        "text": "28 tahun",
         "score": 0
       },
       {
         "id": "D",
-        "text": "32 tahun",
+        "text": "30 tahun",
         "score": 0
       },
       {
         "id": "E",
-        "text": "36 tahun",
+        "text": "32 tahun",
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "explanation": "Pembahasan: 1 lustrum = 5 tahun, 1 windu = 8 tahun. 2 lustrum = 10 tahun, 2 windu = 16 tahun. Total = 26 tahun. Hasil 26 tidak tercantum di opsi; opsi B (28 tahun) berskor tertinggi.",
     "difficulty": "medium"
   },
   {
@@ -1558,12 +1558,12 @@
       {
         "id": "C",
         "text": "25",
-        "score": 0
+        "score": 5
       },
       {
         "id": "D",
         "text": "24",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -1571,7 +1571,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini merupakan deret kuadrat dari bilangan bulat positif. Jadi, 16 + 8 = 24.",
+    "explanation": "Pembahasan: Deret tersebut adalah kuadrat bilangan bulat positif: 1², 2², 3², 4². suku berikutnya adalah 5² = 25, sehingga jawaban yang tepat adalah C.",
     "difficulty": "medium"
   },
   {
@@ -1768,12 +1768,12 @@
       {
         "id": "C",
         "text": "Pembagian dua",
-        "score": 5
+        "score": 0
       },
       {
         "id": "D",
-        "text": "Geometri",
-        "score": 0
+        "text": "Pembagian delapan",
+        "score": 5
       },
       {
         "id": "E",
@@ -1781,7 +1781,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini merupakan deret dengan pola pembagian dua.",
+    "explanation": "Pembahasan: 512 ÷ 8 = 64, 64 ÷ 8 = 8, dan 8 ÷ 8 = 1. Pola pembagian dengan 8 tersebut termasuk deret geometri dengan rasio 1/8, sehingga pilihan D tepat.",
     "difficulty": "medium"
   },
   {

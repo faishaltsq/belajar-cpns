@@ -1501,7 +1501,7 @@
         "score": 0
       }
     ],
-    "explanation": "D, E, O, F, G, P, H, … (I) Abjad berwarna hitam memiliki pola abjad (+1), dan abjad berwarna merah juga memiliki pola abjad (+1).",
+    "explanation": "Pembahasan: Deret terdiri dari dua kelompok huruf yang berselang-seling. Huruf berposisi ganjil (D, O, G, H) tidak membentuk pola konsisten, sedangkan huruf berposisi genap adalah E, F, P, dan seterusnya. Karena penjelasan pola tidak dapat dipastikan dari data yang ada, jawaban mengikuti kunci, yaitu I.",
     "difficulty": "medium"
   },
   {
@@ -1758,12 +1758,12 @@
       {
         "id": "A",
         "text": "18",
-        "score": 5
+        "score": 0
       },
       {
         "id": "B",
         "text": "21",
-        "score": 0
+        "score": 5
       },
       {
         "id": "C",
@@ -1781,7 +1781,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "explanation": "Pembahasan: Posisi urutan 9 dari atas dan 13 dari bawah. Jumlah siswa = 9 + 13 − 1 = 21. Angka 1 dikurangkan karena siswa tersebut terhitung dua kali (dari atas dan dari bawah). Jadi jumlah siswa di kelas adalah 21.",
     "difficulty": "medium"
   },
   {

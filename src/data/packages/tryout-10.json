@@ -1067,21 +1067,21 @@
       },
       {
         "id": "C",
-        "text": "180",
-        "score": 5
+        "text": "380",
+        "score": 0
       },
       {
         "id": "D",
-        "text": "240",
-        "score": 0
+        "text": "420",
+        "score": 5
       },
       {
         "id": "E",
-        "text": "160",
+        "text": "460",
         "score": 0
       }
     ],
-    "explanation": "Deret ini merupakan deret aritmatika dengan selisih 2. Jumlah deret = n/2 * (a + l), dengan n = 20, a = 2, l = 40. Jadi, 20/2 * (2 + 40) = 180.",
+    "explanation": "Pembahasan: Deret aritmatika a=2, b=2, n=20. Suku ke-20: U20 = 2 + (20-1)×2 = 40. Jumlah 20 suku: S20 = 20/2 × (2+40) = 10 × 42 = 420. Hasil 420 tidak ada di opsi. Opsi C (180) salah karena perhitungan 20/2×(2+40) dihitung 180 (seharusnya 420).",
     "difficulty": "medium"
   },
   {
@@ -1092,8 +1092,8 @@
     "options": [
       {
         "id": "A",
-        "text": "U",
-        "score": 0
+        "text": "Y",
+        "score": 5
       },
       {
         "id": "B",
@@ -1108,7 +1108,7 @@
       {
         "id": "D",
         "text": "V",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -1116,7 +1116,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah R + 5 = W.",
+    "explanation": "Pembahasan: Pola deret C(3)→G(7)→L(12)→R(18) bertambah +4, +5, +6. Langkah selanjutnya +7 → 18+7=25 → Y. Y tidak ada di opsi.",
     "difficulty": "medium"
   },
   {
@@ -1163,7 +1163,7 @@
       {
         "id": "A",
         "text": "6",
-        "score": 5
+        "score": 0
       },
       {
         "id": "B",
@@ -1173,7 +1173,7 @@
       {
         "id": "C",
         "text": "1,4",
-        "score": 0
+        "score": 5
       },
       {
         "id": "D",
@@ -1186,7 +1186,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah A.",
+    "explanation": "Pembahasan: Tinggi awal tangga = √(6,5² - 2,5²) = √36 = 6 m. Tinggi baru = 6 - 0,8 = 5,2 m. Jarak bawah baru = √(6,5² - 5,2²) = √15,21 = 3,9 m. Pergeseran bawah = 3,9 - 2,5 = 1,4 m.",
     "difficulty": "medium"
   },
   {

@@ -322,31 +322,31 @@
     "options": [
       {
         "id": "A",
-        "text": "531441AB",
+        "text": "59.049 AB",
         "score": 5
       },
       {
         "id": "B",
-        "text": "531441AC",
+        "text": "531.441 AB",
         "score": 0
       },
       {
         "id": "C",
-        "text": "531441AD",
+        "text": "531.441 AC",
         "score": 0
       },
       {
         "id": "D",
-        "text": "531441AE",
+        "text": "59.049 AC",
         "score": 0
       },
       {
         "id": "E",
-        "text": "531441AF",
+        "text": "531.441 AD",
         "score": 0
       }
     ],
-    "explanation": "Deret ini merupakan deret perkalian angka dan urutan alfabet pada huruf. Hasilnya adalah 531441AB.",
+    "explanation": "Pembahasan: Angka dikalikan berurutan: 3 x 9 x 27 x 81 = 59.049, bukan 531.441. Perhatikan 3 = 3^1, 9 = 3^2, 27 = 3^3, 81 = 3^4, sehingga hasilnya 3^(1+2+3+4) = 3^10 = 59.049. Huruf mengikuti urutan alfabet C, I, W, AA (pola melompat), dan lanjutan yang konsisten adalah AB. Jadi hasilnya 59.049AB.",
     "difficulty": "medium"
   },
   {
@@ -743,7 +743,7 @@
       {
         "id": "A",
         "text": "12",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
@@ -758,7 +758,7 @@
       {
         "id": "D",
         "text": "13.5",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -766,7 +766,7 @@
         "score": 0
       }
     ],
-    "explanation": "Total harga jeruk = 40 × 10.000 = 400.000 rupiah. Total harga apel = 60 × 8.000 = 480.000 rupiah.",
+    "explanation": "Pembahasan: Pemasukan saat ini Rp 800.000 (40 × 10.000 + 60 × 8.000 = 400.000 + 480.000). Keuntungan 20% berarti target penjualan = 800.000 × 1,2 = Rp 960.000, sehingga kenaikan yang diperlukan Rp 160.000. Jika apel tetap Rp 8.000/kg, jeruk harus dijual (800.000 + 160.000 − 480.000) ÷ 40 = 480.000 ÷ 40 = Rp 12.000/kg, tetapi opsi tidak memuat angka itu secara bulat.",
     "difficulty": "medium"
   },
   {
@@ -1057,31 +1057,31 @@
     "options": [
       {
         "id": "A",
-        "text": "6 km",
-        "score": 0
-      },
-      {
-        "id": "B",
-        "text": "7 km",
+        "text": "1,875 km",
         "score": 5
       },
       {
+        "id": "B",
+        "text": "2,5 km",
+        "score": 0
+      },
+      {
         "id": "C",
-        "text": "8 km",
+        "text": "3 km",
         "score": 0
       },
       {
         "id": "D",
-        "text": "9 km",
+        "text": "4 km",
         "score": 0
       },
       {
         "id": "E",
-        "text": "10 km",
+        "text": "5 km",
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "explanation": "Pembahasan: Jarak awal Sinta = 4 × (25/60) = 5/3 km. Kecepatan)temanBo = 36 − 4 = 32 km/jam, sehingga waktu menyusul = (5/3) ÷ 32 = 5/96 jam; jarak teman = 36 × 5/96 = 1,875 km. Jadi, temannya menyusul Sinta pada jarak 1,875 km, yang tidak terdapat dalam opsi.",
     "difficulty": "medium"
   },
   {
@@ -1138,12 +1138,12 @@
       {
         "id": "C",
         "text": "20",
-        "score": 0
+        "score": 5
       },
       {
         "id": "D",
         "text": "23",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -1151,7 +1151,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini memiliki pola penambahan yang tidak konstan. Jadi, berikutnya adalah 14 + 9 = 23.",
+    "explanation": "Pembahasan: Pola selisih deret bertambah 1 setiap langkah: 2→5 (+3), 5→9 (+4), 9→14 (+5), sehingga selisih berikutnya +6. Hasil: 14 + 6 = 20 (opsi C).",
     "difficulty": "medium"
   },
   {
@@ -1202,13 +1202,13 @@
       },
       {
         "id": "B",
-        "text": "38",
-        "score": 0
+        "text": "37",
+        "score": 5
       },
       {
         "id": "C",
         "text": "41",
-        "score": 5
+        "score": 0
       },
       {
         "id": "D",
@@ -1221,7 +1221,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini memiliki pola penambahan yang berbeda-beda (3, 5, 7, 9, dst). Jadi, berikutnya adalah 26 + 15 = 41.",
+    "explanation": "Pembahasan: Pola selisih deret bilangan ganjil berurutan: 2→5 (+3), 5→10 (+5), 10→17 (+7), 17→26 (+9), sehingga selisih berikutnya +11. Hasil: 26 + 11 = 37.",
     "difficulty": "medium"
   },
   {

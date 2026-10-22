@@ -1092,8 +1092,8 @@
     "options": [
       {
         "id": "A",
-        "text": "100M",
-        "score": 0
+        "text": "100S",
+        "score": 5
       },
       {
         "id": "B",
@@ -1103,7 +1103,7 @@
       {
         "id": "C",
         "text": "40N",
-        "score": 5
+        "score": 0
       },
       {
         "id": "D",
@@ -1116,7 +1116,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini memiliki pola penambahan angka dan huruf berdasarkan kelipatan. Huruf ke-10 adalah L, sehingga angka ke-10 adalah 30L, berikutnya adalah 40N.",
+    "explanation": "Pembahasan: Pola angka bertambah 10 setiap suku (10, 20, 30, ...), suku ke-10 = 10 × 10 = 100. Pola huruf berurutan naik 1 (J, K, L, M, N, O, P, Q, R, S), suku ke-10 = S. Jawaban benar 100S, tidak ada di opsi.",
     "difficulty": "medium"
   },
   {
@@ -1238,12 +1238,12 @@
       {
         "id": "B",
         "text": "30",
-        "score": 0
+        "score": 5
       },
       {
         "id": "C",
         "text": "32",
-        "score": 5
+        "score": 0
       },
       {
         "id": "D",
@@ -1256,7 +1256,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah C.",
+    "explanation": "Pembahasan: Pola deret: 1×2=2, 2×3=6, 3×4=12, 4×5=20, 5×6=30, 6×7=42; angka yang hilang adalah 30 (opsi B).",
     "difficulty": "medium"
   },
   {

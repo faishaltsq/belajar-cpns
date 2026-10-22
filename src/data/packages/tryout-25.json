@@ -267,7 +267,7 @@
       {
         "id": "A",
         "text": "kalimat utamanya menegaskan relasi kausalitas, dengan kalimat awal menjelaskan penyebab dan kalimat berikutnya memaparkan dampak",
-        "score": 5
+        "score": 0
       },
       {
         "id": "B",
@@ -282,7 +282,7 @@
       {
         "id": "D",
         "text": "kalimat pertama dan kedua memaparkan dampak, sementara kalimat sesudahnya menguraikan penyebab",
-        "score": 0
+        "score": 5
       },
       {
         "id": "E",
@@ -292,7 +292,7 @@
     ],
     "correctAnswer": "A",
     "tkpScores": null,
-    "explanation": "Paragraf tersebut tersusun dengan logika kausalitas (sebab-akibat), di mana gagasan utama menghubungkan faktor pemicu (penyebab) dengan fluktuasi mata uang serta tindakan protektif pelaku pasar (akibat).",
+    "explanation": "Pembahasan: Paragraf mengembangkan pola sebab-akibat dengan struktur: kalimat 1 memaparkan fenomena (Rupiah melemah), kalimat 2 menjelaskan penyebab (minim sentimen positif ekonomi domestik), kalimat 3 memaparkan akibat (pelaku pasar mengamankan aset dengan membeli dolar). Opsi E sesuai: kalimat terakhir (3) adalah akibat utama, kalimat sebelumnya (1-2) merinci latar belakang.",
     "difficulty": "medium"
   },
   {
@@ -346,7 +346,7 @@
       {
         "id": "B",
         "text": "aktual, dinamis, dan antisipatif",
-        "score": 0
+        "score": 5
       },
       {
         "id": "C",
@@ -356,7 +356,7 @@
       {
         "id": "D",
         "text": "faktual, dinamis, dan preventif",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -366,7 +366,7 @@
     ],
     "correctAnswer": "D",
     "tkpScores": null,
-    "explanation": "Ciri khas ideologi terbuka mencakup penggalian nilai dasar dari budaya dan keyakinan masyarakat, keterbukaan menerima perubahan zaman, serta akuntabilitas pemerintah kepada rakyat sebagai pemegang kedaulatan.",
+    "explanation": "Pembahasan: Pancasila sebagai ideologi terbuka memiliki ciri: aktual (relevan dengan zaman), dinamis (mampu berkembang), dan antisipatif/responsif (mengantisipasi perubahan). Hal ini sesuai pemikiran Notonagoro dan Bahan Pendidikan Kewarganegaraan. Opsi B (aktual, dinamis, antisipatif) tepat. Opsi D (faktual, dinamis, preventif) kurang tepat karena 'faktual' dan 'preventif' bukan ciri standar ideologi terbuka.",
     "difficulty": "medium"
   },
   {

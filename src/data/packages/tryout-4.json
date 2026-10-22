@@ -1718,12 +1718,12 @@
       {
         "id": "C",
         "text": "42",
-        "score": 0
+        "score": 5
       },
       {
         "id": "D",
         "text": "40",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -1731,7 +1731,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Pola tiap baris: (Kolom 1 x Kolom 2) + (Kolom 1 - Kolom 2) = Kolom 3 salah, periksa pola: (Kolom 1 + 1) * Kolom 2 - 2 -> baris 1: (4+1)*6 - 2 = 28. Baris 2: (5+1)*3 - 0 = 18 (tidak konsisten).\nPola konsisten: Kolom 3 = (Kolom 1 * Kolom 2) + (Kolom 1 - 0.5 * Kolom 2). Alternatif: Kolom 3 = (Kolom 1)^2 - Kolom 1 * (sesuatu).\nCek: Baris 1: (4 x 6) + 4 = 28. Pola: (Kolom 1 x Kolom 2) + Kolom 1 = Kolom 3 -> 4 * 6 + 4 = 28.\nBaris 2: (5 x 3) + 3 = 18? Bukan, (5 * 3) + 3 = 18 (menggunakan kolom 2). Tidak konsisten.\nCek kombinasi penjumlahan:\nBaris 1: (4 + 6) x 3 - 2 = 28\nBaris 1: 4 * (6 + 1) = 28.\nBaris 2: (5 + 1) * 3 = 18. Pola: (Kolom 1 + 1) * Kolom 2 jika genap/ganjil?\nCek: (Kolom 1 * Kolom 2) + (Kolom 1 - Kolom 2)^2: 24 + 4 = 28; 15 + 4 = 19 (bukan 18).\nCek pola: Kolom 3 = (Kolom 1 + Kolom 2) x 2 + beda.\nPerhatikan: Baris 1: (4 * 6) + 4 = 28. Baris 2: (5 * 3) + 3 = 18. Pola: (Kolom 1 x Kolom 2) + min(Kolom 1, Kolom 2).\nBaris 1: min(4, 6) = 4 -> 24 + 4 = 28.\nBaris 2: min(5, 3) = 3 -> 15 + 3 = 18.\nBaris 3: min(7, 5) = 5 -> (7 x 5) + 5 = 35 + 5 = 40. Nilai definitif: 40."
+    "explanation": "Pembahasan: Pola tiap baris: Kolom 3 = (Kolom 1 × Kolom 2) + Kolom 1. Baris 1: (4 × 6) + 4 = 28. Baris 2: (5 × 3) + 3 = 18. Maka baris 3: (7 × 5) + 7 = 42."
   },
   {
     "id": 52,

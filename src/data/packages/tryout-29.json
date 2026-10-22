@@ -1154,8 +1154,8 @@
     "options": [
       {
         "id": "A",
-        "text": "1 1/2",
-        "score": 0
+        "text": "4,5",
+        "score": 5
       },
       {
         "id": "B",
@@ -1164,8 +1164,8 @@
       },
       {
         "id": "C",
-        "text": "2 1/2",
-        "score": 5
+        "text": "2,5",
+        "score": 0
       },
       {
         "id": "D",
@@ -1174,13 +1174,13 @@
       },
       {
         "id": "E",
-        "text": "3 1/2",
+        "text": "3,5",
         "score": 0
       }
     ],
     "correctAnswer": "C",
     "tkpScores": null,
-    "explanation": "Pola deret melompat satu angka: suku ganjil bertambah 1 menghasilkan suku ganjil berikutnya, dan suku genap bertambah 1 menghasilkan suku genap berikutnya. Angka lanjutan yang dicari adalah 2 1/2.",
+    "explanation": "Pembahasan: Deret aritmatika dengan beda 0,5. Suku ke-8 = 4 + 0,5 = 4,5 (4 1/2). Opsi yang tersedia tidak mengandung 4 1/2, sehingga kunci soal bermasalah.",
     "difficulty": "medium"
   },
   {

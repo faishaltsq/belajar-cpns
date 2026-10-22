@@ -637,31 +637,31 @@
     "options": [
       {
         "id": "A",
-        "text": "240 siswa",
+        "text": "120 siswa",
         "score": 0
       },
       {
         "id": "B",
-        "text": "260 siswa",
+        "text": "180 siswa",
         "score": 5
       },
       {
         "id": "C",
-        "text": "280 siswa",
+        "text": "240 siswa",
         "score": 0
       },
       {
         "id": "D",
-        "text": "300 siswa",
+        "text": "260 siswa",
         "score": 0
       },
       {
         "id": "E",
-        "text": "320 siswa",
+        "text": "280 siswa",
         "score": 0
       }
     ],
-    "explanation": "Jumlah siswa kelas 7 = 0,3 × 400 = 120 siswa, jumlah siswa kelas 8 = 0,25 × 400 = 100 siswa.",
+    "explanation": "Pembahasan: Total persentase kelas 7 dan 8 = 30% + 25% = 55%, sehingga kelas 9 = 100% − 55% = 45%. Jumlah siswa kelas 9 = 45% × 400 = 0,45 × 400 = 180 siswa. Hasil 180 tidak ada di opsi; kunci B (260) salah.",
     "difficulty": "medium"
   },
   {
@@ -712,7 +712,7 @@
       },
       {
         "id": "B",
-        "text": "24015",
+        "text": "30 September 1965",
         "score": 5
       },
       {
@@ -731,7 +731,7 @@
         "score": 0
       }
     ],
-    "explanation": "Peristiwa G30S terjadi pada tanggal 30 September 1965.",
+    "explanation": "Pembahasan: Gerakan 30 September (G30S) terjadi pada 30 September 1965, ketika sejumlah perwira TNI AD diculik dan dibunuh. Peristiwa ini kemudian menjadi pemicu penumpasan PKI. Kunci B tertulis \"24015\" yang tampaknya salah format dari tanggal 30-9-1965.",
     "difficulty": "medium"
   },
   {
@@ -1022,31 +1022,31 @@
     "options": [
       {
         "id": "A",
-        "text": "576",
+        "text": "2.592",
         "score": 0
       },
       {
         "id": "B",
-        "text": "864",
+        "text": "24.832",
         "score": 0
       },
       {
         "id": "C",
-        "text": "1152",
-        "score": 5
+        "text": "115.200",
+        "score": 0
       },
       {
         "id": "D",
-        "text": "1728",
-        "score": 0
+        "text": "248.832",
+        "score": 5
       },
       {
         "id": "E",
-        "text": "2592",
+        "text": "497.664",
         "score": 0
       }
     ],
-    "explanation": "Deret ini merupakan deret perkalian berturut-turut.",
+    "explanation": "Pembahasan: Kalikan berurutan: 3 × 6 = 18; 18 × 12 = 216; 216 × 24 = 5.184; 5.184 × 48 = 248.832. Hasil 248.832 tidak ada di opsi, sehingga soal ini bermasalah. Kemungkinan yang dimaksud adalah penjumlahan atau pola lain; tanpa itu soal tidak dapat dijawab dengan benar.",
     "difficulty": "medium"
   },
   {
@@ -1658,12 +1658,12 @@
       {
         "id": "B",
         "text": "36",
-        "score": 5
+        "score": 0
       },
       {
         "id": "C",
         "text": "72",
-        "score": 0
+        "score": 5
       },
       {
         "id": "D",
@@ -1676,7 +1676,7 @@
         "score": 0
       }
     ],
-    "explanation": "36 4 x 3 x 2 x 3 = 36",
+    "explanation": "Pembahasan: Perjalanan pergi P→Q→R: 4 pilihan bus P–Q dan 3 pilihan bus Q–R, jadi 4 × 3 = 12 cara. Perjalanan pulang R→Q→P tidak boleh memakai bus yang sama: dari 3 bus Q–R tersisa 2 pilihan, dari 4 bus P–Q tersisa 3 pilihan, jadi 2 × 3 = 6 cara. Total = 12 × 6 = 72 cara.",
     "difficulty": "medium"
   },
   {

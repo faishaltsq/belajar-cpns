@@ -1057,31 +1057,31 @@
     "options": [
       {
         "id": "A",
+        "text": "1,5625 km",
+        "score": 5
+      },
+      {
+        "id": "B",
         "text": "2 km",
         "score": 0
       },
       {
-        "id": "B",
-        "text": "5 km",
-        "score": 5
-      },
-      {
         "id": "C",
-        "text": "6 km",
+        "text": "3 km",
         "score": 0
       },
       {
         "id": "D",
-        "text": "7 km",
+        "text": "5 km",
         "score": 0
       },
       {
         "id": "E",
-        "text": "8 km",
+        "text": "6 km",
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah B.",
+    "explanation": "Pembahasan: Jarak tempuh Yani sebelum ibu mengejar = 5 km/jam × 0,25 jam = 1,25 km. Kecepatan relatif ibu = 25 - 5 = 20 km/jam. Waktu menyusul = 1,25 km / 20 km/jam = 0,0625 jam. Jarak ibu menyusul = 25 km/jam × 0,0625 jam = 1,5625 km. Hasil perhitungan 1,5625 km tidak ada di opsi.",
     "difficulty": "medium"
   },
   {

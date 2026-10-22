@@ -50,12 +50,12 @@
       {
         "id": "B",
         "text": "Kami putra dan putri Indonesia, mengaku berbangsa yang satu, bangsa Indonesia.",
-        "score": 0
+        "score": 5
       },
       {
         "id": "C",
         "text": "Kami putra dan putri Indonesia, mengaku bertumpah darah yang satu, tanah Indonesia.",
-        "score": 5
+        "score": 0
       },
       {
         "id": "D",
@@ -70,7 +70,7 @@
     ],
     "correctAnswer": "C",
     "tkpScores": null,
-    "explanation": "Poin-poin ikrar Sumpah Pemuda 28 Oktober 1928: pertama bertumpah darah satu tanah Indonesia; kedua berbangsa satu bangsa Indonesia; ketiga menjunjung bahasa persatuan bahasa Indonesia. Pada konteks kunci soal, poin ikrar tumpah darah menempati opsi terpilih.",
+    "explanation": "Pembahasan: Poin kedua Sumpah Pemuda 28 Oktober 1928 berbunyi: \"Kami putra dan putri Indonesia, mengaku berbangsa yang satu, bangsa Indonesia\" (opsi B). Kunci soal (opsi C skor 5) menunjuk poin pertama (bertumpah darah), tidak sesuai pertanyaan yang menanyakan poin kedua.",
     "difficulty": "medium"
   },
   {

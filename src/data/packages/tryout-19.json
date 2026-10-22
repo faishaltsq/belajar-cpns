@@ -637,7 +637,7 @@
       {
         "id": "A",
         "text": "BPD",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
@@ -652,7 +652,7 @@
       {
         "id": "D",
         "text": "Kepala Desa",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -662,7 +662,7 @@
     ],
     "correctAnswer": "D",
     "tkpScores": null,
-    "explanation": "Kepala Desa memiliki tanggung jawab memimpin penyelenggaraan tata pemerintahan desa, membina ketenteraman masyarakat, serta merumuskan peraturan desa bersama unsur permusyawaratan.",
+    "explanation": "Pembahasan: Berdasarkan UU No. 6/2014 Ps. 56, BPD berfungsi mengawasi penyelenggaraan pemerintahan desa DAN membahas serta menyetujui Rancangan Peraturan Desa bersama Kepala Desa. Kepala Desa (eksekutif) merumuskan dan melaksanakan, bukan mengawasi. Kunci D (Kepala Desa) tidak sesuai kewenangan pengawasan.",
     "difficulty": "medium"
   },
   {

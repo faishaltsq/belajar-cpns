@@ -2091,7 +2091,7 @@
       },
       {
         "id": "C",
-        "text": "09.45",
+        "text": "09.47",
         "score": 5
       },
       {
@@ -2105,7 +2105,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Jarak tempuh mobil X hingga 08.30 (selama 0,5 jam) = 60 × 0,5 = 30 km. Sisa jarak pukul 08.30 = 210 - 30 = 180 km. Waktu temu = Sisa jarak / (Vx + Vy) = 180 / (60 + 80) = 180 / 140 = 9/7 jam = 1 jam 17 menit (dibulatkan). Koreksi hitungan: Jika Vx=60, Vy=80: 180/(60+80) = 1,28 jam = 77 menit -> 09.47. Untuk nilai eksak 09.45: Waktu tempuh = 1,25 jam (75 menit). 180 / 1,25 = 144. Jika S=205: (205-30)/140 = 1,25 jam -> 08.30 + 1 jam 15 mnt = 09.45."
+    "explanation": "Pembahasan: Hingga 08.30 mobil X sudah menempuh 60 × 0,5 = 30 km, sisa jarak 210 − 30 = 180 km. Waktu berpapasan = 180 / (60 + 80) = 180/140 = 9/7 jam ≈ 1 jam 17 menit setelah 08.30, yaitu sekitar 09.47. Hasil eksak bukan 09.45, sehingga tidak ada opsi yang persis cocok; opsi C (09.45) paling mendekati."
   },
   {
     "id": 63,

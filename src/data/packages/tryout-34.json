@@ -1054,12 +1054,12 @@
       {
         "id": "C",
         "text": "Menyelesaikan sengketa kewenangan lembaga negara yang mandatnya tidak diatur UUD 1945",
-        "score": 0
+        "score": 5
       },
       {
         "id": "D",
         "text": "Memutus perselisihan mengenai penetapan hasil pemilihan umum",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -1069,7 +1069,7 @@
     ],
     "correctAnswer": "D",
     "tkpScores": null,
-    "explanation": "Kewenangan MK menurut UUD 1945 mencakup: menguji UU terhadap UUD 1945, memutus sengketa kewenangan lembaga negara yang kewenangannya diberikan oleh UUD 1945, memutus pembubaran partai politik, memutus perselisihan hasil pemilu, serta memutus pendapat DPR mengenai dugaan pelanggaran oleh Presiden/Wakil Presiden.",
+    "explanation": "Pembahasan: Kewenangan MK menurut Pasal 24C ayat (1) UUD 1945 meliputi menguji UU terhadap UUD, memutus sengketa kewenangan lembaga negara yang kewenangannya diberikan oleh UUD, memutus pembubaran partai politik, dan memutus perselisihan hasil pemilu. Opsi C keliru karena sengketa yang dimaksud justru yang kewenangannya diberikan UUD, bukan yang tidak diatur UUD. Dengan demikian yang bukan kewenangan MK adalah C, sehingga kunci seharusnya C, bukan D.",
     "difficulty": "medium"
   },
   {

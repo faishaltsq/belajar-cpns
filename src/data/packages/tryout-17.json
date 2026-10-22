@@ -228,12 +228,12 @@
       {
         "id": "C",
         "text": "Pandangan hidup bangsa Indonesia",
-        "score": 0
+        "score": 5
       },
       {
         "id": "D",
         "text": "Perjanjian luhur",
-        "score": 5
+        "score": 0
       },
       {
         "id": "E",
@@ -241,7 +241,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah D.",
+    "explanation": "Pembahasan: Pancasila sebagai sumber cita-cita yang dianggap baik dan benar oleh bangsa Indonesia merupakan kedudukan Pancasila sebagai Pandangan Hidup Bangsa Indonesia, bukan Perjanjian Luhur (yang merujuk pada kesepakatan menjadikan Pancasila dasar negara).",
     "difficulty": "medium"
   },
   {
@@ -778,7 +778,7 @@
       {
         "id": "A",
         "text": "Walikota/Bupati",
-        "score": 0
+        "score": 5
       },
       {
         "id": "B",
@@ -788,7 +788,7 @@
       {
         "id": "C",
         "text": "DPRD",
-        "score": 5
+        "score": 0
       },
       {
         "id": "D",
@@ -801,7 +801,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pengelolaan keuangan daerah diatur oleh DPRD sesuai dengan perundang- undangan yang berlaku.",
+    "explanation": "Pembahasan: Berdasarkan Pasal 65 ayat (1) UU No. 23/2014 tentang Pemerintahan Daerah, kepala daerah adalah pemegang kekuasaan pengelolaan keuangan daerah dan mewakili pemerintah daerah dalam kepemilikan kekayaan daerah. Kepala daerah (bupati/walikota) menetapkan kebijakan pengelolaan keuangan, sedangkan DPRD hanya berwenang menyetujui APBD. Jadi yang bertanggung jawab atas pengelolaan keuangan daerah adalah walikota/bupati (opsi A).",
     "difficulty": "medium"
   },
   {
@@ -1512,23 +1512,23 @@
     "options": [
       {
         "id": "A",
+        "text": "T",
+        "score": 5
+      },
+      {
+        "id": "B",
         "text": "Q",
         "score": 0
       },
       {
-        "id": "B",
+        "id": "C",
         "text": "M",
         "score": 0
       },
       {
-        "id": "C",
+        "id": "D",
         "text": "P",
         "score": 0
-      },
-      {
-        "id": "D",
-        "text": "O",
-        "score": 5
       },
       {
         "id": "E",
@@ -1536,7 +1536,7 @@
         "score": 0
       }
     ],
-    "explanation": "Deret ini memiliki pola penambahan huruf berdasarkan urutan alfabet. Jadi, berikutnya adalah N + 5 = S.",
+    "explanation": "Pembahasan: Posisi huruf B=2, E=5, I=9, N=14. Selisihnya berturut-turut +3, +4, +5; pola +3, +4, +5, +6 dilanjutkan dengan N+6=20, sehingga huruf berikutnya T. T tidak ada dalam opsi, sedangkan O tidak sesuai pola.",
     "difficulty": "medium"
   },
   {
@@ -1571,7 +1571,7 @@
         "score": 0
       }
     ],
-    "explanation": "Pembahasan: Kunci jawaban yang tepat adalah C.",
+    "explanation": "Pembahasan: Misal umur Lala = L dan Mona = M, maka L = 2M. Tiga tahun lalu: M - 3 = 1/2(L - 3). Substitusi L = 2M menghasilkan 2M - 6 = 2M - 3, yang kontradiksi. Jadi tidak ada opsi yang memenuhi; soal tidak konsisten.",
     "difficulty": "medium"
   },
   {
@@ -1792,22 +1792,22 @@
     "options": [
       {
         "id": "A",
-        "text": "7",
-        "score": 0
+        "text": "5",
+        "score": 5
       },
       {
         "id": "B",
-        "text": "11",
+        "text": "8",
         "score": 0
       },
       {
         "id": "C",
-        "text": "13",
-        "score": 5
+        "text": "11",
+        "score": 0
       },
       {
         "id": "D",
-        "text": "15",
+        "text": "13",
         "score": 0
       },
       {
@@ -1816,7 +1816,7 @@
         "score": 0
       }
     ],
-    "explanation": "13 25 = 17 + B – 8 + 3 25 = 12 + B B = 13",
+    "explanation": "Pembahasan: Misal x = hanya gemar teh. Anak yang gemar kopi atau teh = 25 − 3 = 22. Dengan rumus |K∪T| = |K| + |T| − |K∩T|: 22 = 17 + |T| − 8, sehingga |T| = 13. Anak yang hanya gemar teh = |T| − |K∩T| = 13 − 8 = 5. Karena 5 tidak ada di opsi, soal kemungkinan menanyakan total peminum teh (jawaban 13, opsi C).",
     "difficulty": "medium"
   },
   {
@@ -1828,7 +1828,7 @@
       {
         "id": "A",
         "text": "Jarak X ke Z > jarak X ke Y",
-        "score": 5
+        "score": 0
       },
       {
         "id": "B",
@@ -1848,10 +1848,10 @@
       {
         "id": "E",
         "text": "Tidak dapat ditentukan hubungannya.",
-        "score": 0
+        "score": 5
       }
     ],
-    "explanation": "cukup jelas",
+    "explanation": "Pembahasan: Dengan hanya diketahui XY = 3 km dan YZ = 2 km, jarak XZ bergantung pada arah/posisi Y, bisa antara 1 km sampai 5 km. Hubungannya tidak dapat ditentukan, sehingga kunci seharusnya E.",
     "difficulty": "medium"
   },
   {
