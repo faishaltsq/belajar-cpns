@@ -8,6 +8,9 @@ import { DRILL_CONTENT } from '@/data/drillContent';
 import { DRILL_TOPICS } from '@/lib/drillHelper';
 import { TRYOUT_LIST } from '@/lib/loadPackage';
 import { TRYOUT_SEO } from '@/data/tryoutSeo';
+import kepribadianQuestions from '@/data/psikotes_kepribadian.json';
+import { evaluateKepribadianResults } from '@/lib/kepribadian';
+import { metadata as kepribadianMeta } from '@/app/psikotes/kepribadian/layout';
 
 describe('SEO & Search Engine Indexing Suite', () => {
   it('robots.txt points to canonical lolosin.com sitemap and allows public paths', () => {
@@ -169,5 +172,36 @@ describe('sitemap lastmod is a real signal', () => {
     expect(byUrl.get('https://lolosin.com/drill/TWK/Pancasila')).not.toBe(
       byUrl.get('https://lolosin.com/flashcard')
     );
+  });
+});
+
+describe('Kepribadian meta description matches the delivered assessment', () => {
+  it('advertises the real item count and no mismatched figure', () => {
+    // Ground truth from the data and the scoring engine, never a literal here.
+    const itemCount = kepribadianQuestions.length;
+    const dimensionCount = Object.keys(evaluateKepribadianResults({}).dimensions).length;
+    const desc = String(kepribadianMeta.description ?? '');
+
+    expect(itemCount).toBeGreaterThan(0);
+    expect(dimensionCount).toBeGreaterThan(0);
+
+    // Every "<number> pasang|dimensi|butir" figure in the copy, extracted generically.
+    const countsOf = (unit: string): number[] =>
+      Array.from(desc.matchAll(new RegExp(`(\\d+)\\s+${unit}`, 'gi')), (m) => Number(m[1]));
+
+    const pairCounts = countsOf('pasang');
+    const dimensionCounts = countsOf('dimensi');
+    const butirCounts = countsOf('butir');
+
+    // The real figures must be present...
+    expect(pairCounts, `description must advertise ${itemCount} pasang`).toContain(itemCount);
+    expect(dimensionCounts, `description must advertise ${dimensionCount} dimensi`).toContain(dimensionCount);
+
+    // ...and no stale figure may survive alongside them.
+    for (const n of pairCounts) expect(n, `wrong item count in description: ${n} pasang`).toBe(itemCount);
+    for (const n of dimensionCounts) expect(n, `wrong dimension count in description: ${n} dimensi`).toBe(dimensionCount);
+    for (const n of butirCounts) expect(n, `wrong butir count in description: ${n} butir`).toBe(itemCount);
+
+    expect(desc.length).toBeLessThan(160);
   });
 });
