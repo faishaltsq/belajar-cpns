@@ -11,43 +11,12 @@ import {
   evaluateKraepelinResults,
 } from '@/lib/psikotes';
 import type { KraepelinColumn, KraepelinInput } from '@/lib/types';
-import { ArrowLeft, Play, Timer } from '@phosphor-icons/react';
+import { ArrowLeft, Play } from '@phosphor-icons/react';
+import { KRAEPELIN_MODES, type KraepelinMode } from '@/lib/psikotesModes';
+import { KRAEPELIN_GUIDE } from '@/data/psikotesContent';
+import PsikotesGuide from '@/components/psikotes/PsikotesGuide';
 import { useUser } from '@/lib/useUser';
 import { setScopedJSON } from '@/lib/userStorage';
-
-type KraepelinMode = 'kilat' | 'standar' | 'simulasi';
-
-interface KraepelinModeConfig {
-  columns: number;
-  durationPerCol: number;
-  numbersPerCol: number;
-  label: string;
-  desc: string;
-}
-
-const MODES: Record<KraepelinMode, KraepelinModeConfig> = {
-  kilat: {
-    columns: 3,
-    durationPerCol: 15,
-    numbersPerCol: 20,
-    label: 'Latihan Kilat',
-    desc: '3 Kolom · 15 detik/kolom (Pemanasan cepat)',
-  },
-  standar: {
-    columns: 5,
-    durationPerCol: 30,
-    numbersPerCol: 35,
-    label: 'Standar Latihan',
-    desc: '5 Kolom · 30 detik/kolom (Rekomendasi adaptasi ritme)',
-  },
-  simulasi: {
-    columns: 10,
-    durationPerCol: 30,
-    numbersPerCol: 45,
-    label: 'Simulasi Penuh Kedinasan / BKN',
-    desc: '10 Kolom · 30 detik/kolom (Uji ketahanan mental penuh)',
-  },
-};
 
 export default function KraepelinRunnerPage() {
   const router = useRouter();
@@ -66,11 +35,11 @@ export default function KraepelinRunnerPage() {
   const pairStartRef = useRef(Date.now());
   const advancingRef = useRef(false);
 
-  const config = MODES[selectedMode];
+  const config = KRAEPELIN_MODES[selectedMode];
 
   const handleStart = (m: KraepelinMode) => {
     setSelectedMode(m);
-    const cfg = MODES[m];
+    const cfg = KRAEPELIN_MODES[m];
     setColumns(
       Array.from({ length: cfg.columns }, (_, i) =>
         generateKraepelinColumn(i, cfg.numbersPerCol)
@@ -190,7 +159,7 @@ export default function KraepelinRunnerPage() {
   // Lobby
   if (phase === 'lobby') {
     return (
-      <div className="min-h-screen px-4 py-10 flex flex-col items-center">
+      <main className="min-h-screen px-4 py-10 flex flex-col items-center">
         <div className="w-full max-w-xl flex flex-col gap-6">
           <Link
             href="/psikotes"
@@ -204,12 +173,12 @@ export default function KraepelinRunnerPage() {
               Tes Kraepelin / Pauli (Koran)
             </h1>
             <p className="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
-              Tes penjumlahan angka cepat dari bawah ke atas untuk mengukur kecepatan, ketelitian, kestabilan emosi, dan ketahanan kerja di bawah tekanan waktu.
+              Tes penjumlahan angka cepat berurutan untuk mengukur kecepatan, ketelitian, kestabilan emosi, dan ketahanan kerja di bawah tekanan waktu.
             </p>
           </div>
 
           <div className="card-modern p-5 bg-amber-50/50 border border-amber-200/60 rounded-2xl flex flex-col gap-2.5">
-            <h3 className="text-xs font-bold text-amber-800 uppercase tracking-wider">Aturan Pengerjaan:</h3>
+            <h2 className="text-xs font-bold text-amber-800 uppercase tracking-wider">Aturan Pengerjaan:</h2>
             <ul className="text-xs text-amber-900/80 space-y-1.5 list-disc list-inside leading-relaxed">
               <li>Jumlahkan 2 angka yang berdekatan.</li>
               <li>Tuliskan <strong>satuan terakhir</strong> saja (contoh: 8 + 7 = 15, masukkan angka <strong>5</strong>).</li>
@@ -223,8 +192,8 @@ export default function KraepelinRunnerPage() {
               Pilih Mode Simulasi:
             </span>
             <div className="grid gap-2.5">
-              {(Object.keys(MODES) as KraepelinMode[]).map((mKey) => {
-                const cfg = MODES[mKey];
+              {(Object.keys(KRAEPELIN_MODES) as KraepelinMode[]).map((mKey) => {
+                const cfg = KRAEPELIN_MODES[mKey];
                 const active = selectedMode === mKey;
                 return (
                   <button
@@ -257,7 +226,9 @@ export default function KraepelinRunnerPage() {
             <Play size={18} weight="fill" /> Mulai Simulasi Kraepelin
           </button>
         </div>
-      </div>
+
+        <PsikotesGuide content={KRAEPELIN_GUIDE} idPrefix="kraepelin" />
+      </main>
     );
   }
 

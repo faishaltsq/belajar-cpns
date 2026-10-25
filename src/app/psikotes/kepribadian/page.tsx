@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, CheckCircle, Info } from '@phosphor-icons/react';
 import questions from '@/data/psikotes_kepribadian.json';
 import { evaluateKepribadianResults } from '@/lib/kepribadian';
+import { KEPRIBADIAN_GUIDE, KEPRIBADIAN_DIMENSION_COUNT } from '@/data/psikotesContent';
+import PsikotesGuide from '@/components/psikotes/PsikotesGuide';
 import { useUser } from '@/lib/useUser';
 import { setScopedJSON } from '@/lib/userStorage';
 
@@ -40,7 +42,7 @@ export default function KepribadianPage() {
 
   if (!started) {
     return (
-      <div className="min-h-screen px-4 py-10 flex flex-col items-center">
+      <main className="min-h-screen px-4 py-10 flex flex-col items-center">
         <div className="w-full max-w-xl flex flex-col gap-6">
           <Link
             href="/psikotes"
@@ -51,10 +53,11 @@ export default function KepribadianPage() {
 
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold text-[var(--foreground)] tracking-tight mb-2">
-              Tes Karakteristik Pribadi Kerja (PAPI Kostick)
+              Tes Karakteristik Pribadi Kerja (PAPI Kostick) — Versi Latihan
             </h1>
             <p className="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
-              Pemetaan gaya kerja dan orientasi perilaku profesional ASN berdasarkan 5 dimensi kompetensi kerja.
+              Pemetaan gaya kerja dan orientasi perilaku profesional ASN berdasarkan{' '}
+              {KEPRIBADIAN_DIMENSION_COUNT} dimensi kompetensi kerja.
             </p>
           </div>
 
@@ -64,7 +67,7 @@ export default function KepribadianPage() {
               <span>Prinsip Pengisian Asesmen:</span>
             </div>
             <ul className="text-xs text-amber-900/80 space-y-1.5 list-disc list-inside leading-relaxed">
-              <li>Tes terdiri dari <strong>30 butir pasangan pernyataan</strong> pilihan terpaksa (<em>forced-choice</em>).</li>
+              <li>Tes terdiri dari <strong>{totalQuestions} butir pasangan pernyataan</strong> pilihan terpaksa (<em>forced-choice</em>).</li>
               <li><strong>Tidak ada jawaban benar atau salah.</strong> Pilihlah pernyataan yang paling mencerminkan kecenderungan gaya kerja alami Anda.</li>
               <li>Jawablah secara jujur dan spontan tanpa terlalu lama menganalisis.</li>
               <li>Hasil akan memetakan dimensi <strong>Kepemimpinan, Prestasi, Ketelitian, Relasi Sosial, dan Integritas Regulasi</strong>.</li>
@@ -73,7 +76,7 @@ export default function KepribadianPage() {
 
           <div className="card-modern p-5 flex items-center justify-between">
             <div className="text-xs text-[var(--muted-foreground)]">
-              <p className="font-semibold text-[var(--foreground)] text-sm">30 Butir Soal</p>
+              <p className="font-semibold text-[var(--foreground)] text-sm">{totalQuestions} Butir Soal</p>
               <p>Estimasi waktu pengerjaan: 5 - 10 menit</p>
             </div>
             <button
@@ -84,14 +87,16 @@ export default function KepribadianPage() {
             </button>
           </div>
         </div>
-      </div>
+
+        <PsikotesGuide content={KEPRIBADIAN_GUIDE} idPrefix="kepribadian" />
+      </main>
     );
   }
 
   const selectedAnswer = answers[q.id];
 
   return (
-    <div className="min-h-screen flex flex-col items-center px-4 py-8">
+    <main className="min-h-screen flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-xl flex flex-col gap-5">
         {/* Header */}
         <div className="flex items-center justify-between text-xs">
@@ -208,6 +213,6 @@ export default function KepribadianPage() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
