@@ -36,8 +36,19 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
   const [activeTab, setActiveTab] = useState<'summary' | 'review' | 'leaderboard'>('summary');
   const [timeSpent, setTimeSpent] = useState<Record<number, number>>({});
   const [shareCopied, setShareCopied] = useState(false);
+  // Server id of this run (uuid). The leaderboard API needs it to guarantee the
+  // row for THIS attempt comes back even when the user sits outside the top 50.
+  const [serverResultId, setServerResultId] = useState<string | null>(null);
 
-  const tryoutId = params.resultId.split('-').slice(0, -1).join('-');
+  // resultId is `<packageId>-<Date.now()>`. Only strip the trailing segment when
+  // it is actually a millisecond timestamp (13 digits), so a package id whose
+  // last segment is a number — `tryout-1`, `tryout-figural-2` — is never
+  // truncated into a package that does not exist.
+  const resultIdParts = params.resultId.split('-');
+  const lastPart = resultIdParts[resultIdParts.length - 1] ?? '';
+  const tryoutId = /^\d{10,}$/.test(lastPart)
+    ? resultIdParts.slice(0, -1).join('-')
+    : params.resultId;
   const retryPath = tryoutId ? `/simulasi/${tryoutId}` : '/simulasi/tryout-1';
 
   const userId = user?.id ?? null;
@@ -76,6 +87,7 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
       if (rawQ) setQuestions(JSON.parse(rawQ));
       if (rawA) setUserAnswers(JSON.parse(rawA));
       if (rawTime) setTimeSpent(JSON.parse(rawTime));
+      if (serverId) setServerResultId(serverId);
 
       // The pre-exam questions payload has no option scores or explanations, so
       // the review tab needs the authoritative copy. Results written before
@@ -317,7 +329,11 @@ export default function HasilPage({ params }: { params: { resultId: string } }) 
             />
           )}
           {activeTab === 'leaderboard' && (
-            <LeaderboardCard packageId={tryoutId || 'tryout-1'} currentScore={result.totalScore} />
+            <LeaderboardCard
+              packageId={tryoutId || 'tryout-1'}
+              resultId={serverResultId}
+              currentScore={result.totalScore}
+            />
           )}
         </div>
 

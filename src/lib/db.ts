@@ -158,30 +158,197 @@ export async function createUser(email: string, passwordHash: string, name: stri
   return rows[0] as DbUser;
 }
 
-/** Leaderboard: BKN tie-breaker (total → TKP → TIU → TWK → duration) */
-export async function getPackageLeaderboard(packageId: string, limit = 50) {
+/**
+ * Leaderboard per paket.
+ *
+ * Dua hal yang sebelumnya salah dan sekarang dijaga di sini:
+ *
+ * 1. Papan ini milik SATU paket. `WHERE er.package_id = $1` adalah satu-satunya
+ *    filter yang menentukan isi papan — skor tryout-4 tidak pernah muncul di
+ *    peringkat tryout-mini, sekalipun nilainya lebih tinggi.
+ *
+ * 2. Peringkat dihitung per PESERTA, bukan per baris `exam_results`. Dulu satu
+ *    user yang mengerjakan paket yang sama lima kali menempati lima baris dan
+ *    mendorong peserta lain keluar dari 50 besar — jadi "semua user bisa masuk"
+ *    tidak benar. Sekarang tiap peserta diwakili percobaan TERBAIKNYA
+ *    (`ROW_NUMBER() ... attempt_no = 1`) dan jumlah percobaannya tetap
+ *    dilaporkan lewat `attempt_count`.
+ *
+ * Tamu tidak punya identitas, jadi tiap hasil tamu berdiri sebagai pesertanya
+ * sendiri (`anon:<result id>`) — tidak ada cara menggabungkannya tanpa akun.
+ *
+ * Urutan peringkat = tie-breaker BKN (Kepmen PANRB 321/2024): total → TKP →
+ * TIU → TWK → durasi tercepat, diterapkan langsung pada ORDER BY di query ini.
+ * `RANK()` dipakai supaya nilai yang benar-benar identik berbagi
+ * peringkat, bukan mendapat nomor acak.
+ *
+ * `userId` / `resultId` opsional: kalau diisi, baris milik pemanggil ikut
+ * dikembalikan walau peringkatnya di luar `limit`, sehingga setiap user selalu
+ * bisa melihat posisinya di papan nasional.
+ */
+export interface LeaderboardRow {
+  rank: number;
+  user_id: string | null;
+  user_name: string | null;
+  total_score: number;
+  score_tkp: number;
+  score_tiu: number;
+  score_twk: number;
+  duration_used: number | null;
+  is_passed: boolean;
+  finished_at: string;
+  attempt_count: number;
+}
+
+export interface PackageLeaderboard {
+  rows: LeaderboardRow[];
+  me: LeaderboardRow | null;
+  totalParticipants: number;
+}
+
+export interface LeaderboardQuery {
+  limit?: number;
+  userId?: string | null;
+  resultId?: string | null;
+}
+
+const EMPTY_BOARD: PackageLeaderboard = { rows: [], me: null, totalParticipants: 0 };
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/**
+ * `resultId` comes from the URL, so it can be any string. Casting it to uuid in
+ * SQL would raise 22P02 (invalid input syntax) and turn a bad query parameter
+ * into a 500; anything that is not a uuid simply matches nothing instead.
+ */
+function asUuidOrNull(value: string | null | undefined): string | null {
+  if (typeof value !== 'string') return null;
+  return UUID_RE.test(value) ? value : null;
+}
+
+export async function getPackageLeaderboard(
+  packageId: string,
+  options: LeaderboardQuery = {}
+): Promise<PackageLeaderboard> {
   const sql = getDb();
-  if (!sql) return [];
-  return sql`
+  if (!sql || !packageId) return EMPTY_BOARD;
+
+  const limit =
+    Number.isFinite(options.limit) && Number(options.limit) > 0
+      ? Math.floor(Number(options.limit))
+      : 50;
+  const userId = asUuidOrNull(options.userId);
+  const resultId = asUuidOrNull(options.resultId);
+
+  // Database down / query gagal → papan kosong, bukan 500. Route hanya punya
+  // handler 500 generik, jadi satu blip database sesaat akan mengubah seluruh
+  // tab leaderboard di halaman hasil jadi kartu error — lebih baik tampilkan
+  // papan kosong yang akan terisi saat fetch berikutnya.
+  // result_id hanya dipakai untuk mencocokkan baris milik tamu, lalu dibuang
+  // sebelum payload keluar: id hasil adalah kunci /api/results/[id]/review, dan
+  // untuk baris anonim route itu tidak memeriksa kepemilikan.
+  let raw;
+  try {
+    raw = await sql`
+    WITH attempts AS (
+      SELECT
+        er.id AS result_id,
+        er.user_id,
+        COALESCE(er.user_id::text, 'anon:' || er.id::text) AS participant_key,
+        er.total_score,
+        er.score_tkp,
+        er.score_tiu,
+        er.score_twk,
+        er.duration_used,
+        er.is_passed,
+        er.finished_at,
+        u.name AS user_name
+      FROM exam_results er
+      LEFT JOIN users u ON er.user_id = u.id
+      WHERE er.package_id = ${packageId}
+    ),
+    best AS (
+      SELECT
+        a.*,
+        (ROW_NUMBER() OVER (
+          PARTITION BY a.participant_key
+          ORDER BY
+            a.total_score DESC,
+            a.score_tkp DESC,
+            a.score_tiu DESC,
+            a.score_twk DESC,
+            a.duration_used ASC NULLS LAST,
+            a.finished_at ASC
+        ))::int AS attempt_no,
+        (COUNT(*) OVER (PARTITION BY a.participant_key))::int AS attempt_count
+      FROM attempts a
+    ),
+    board AS (
+      SELECT
+        b.*,
+        (RANK() OVER (
+          ORDER BY
+            b.total_score DESC,
+            b.score_tkp DESC,
+            b.score_tiu DESC,
+            b.score_twk DESC,
+            b.duration_used ASC NULLS LAST,
+            b.finished_at ASC
+        ))::int AS rank,
+        (COUNT(*) OVER ())::int AS total_participants
+      FROM best b
+      WHERE b.attempt_no = 1
+    )
     SELECT
-      er.id,
-      er.total_score,
-      er.score_tkp,
-      er.score_tiu,
-      er.score_twk,
-      er.duration_used,
-      er.is_passed,
-      er.finished_at,
-      u.name AS user_name
-    FROM exam_results er
-    LEFT JOIN users u ON er.user_id = u.id
-    WHERE er.package_id = ${packageId}
-    ORDER BY
-      er.total_score DESC,
-      er.score_tkp DESC,
-      er.score_tiu DESC,
-      er.score_twk DESC,
-      er.duration_used ASC
-    LIMIT ${limit}
+      rank, result_id, user_id, user_name, total_score, score_tkp, score_tiu,
+      score_twk, duration_used, is_passed, finished_at, attempt_count,
+      total_participants
+    FROM board
+    WHERE rank <= ${limit}
+       OR (${userId}::uuid IS NOT NULL AND user_id = ${userId}::uuid)
+       OR (${resultId}::uuid IS NOT NULL AND result_id = ${resultId}::uuid)
+    ORDER BY rank ASC
   `;
+  } catch {
+    return EMPTY_BOARD;
+  }
+
+  if (!raw || raw.length === 0) return EMPTY_BOARD;
+
+  // Setiap baris membawa `total_participants` yang sama (COUNT(*) OVER ()), tapi
+  // mengambilnya dari baris pertama saja rapuh terhadap perubahan urutan —
+  // ambil nilai terbesar supaya tetap benar apa pun urutannya.
+  const totalParticipants = raw.reduce(
+    (max, r) => Math.max(max, Number(r.total_participants ?? 0)),
+    0
+  );
+  let me: LeaderboardRow | null = null;
+  const rows: LeaderboardRow[] = [];
+
+  for (const r of raw) {
+    const row: LeaderboardRow = {
+      rank: Number(r.rank),
+      user_id: (r.user_id as string | null) ?? null,
+      user_name: (r.user_name as string | null) ?? null,
+      total_score: Number(r.total_score ?? 0),
+      score_tkp: Number(r.score_tkp ?? 0),
+      score_tiu: Number(r.score_tiu ?? 0),
+      score_twk: Number(r.score_twk ?? 0),
+      duration_used: r.duration_used == null ? null : Number(r.duration_used),
+      is_passed: Boolean(r.is_passed),
+      finished_at:
+        r.finished_at instanceof Date
+          ? r.finished_at.toISOString()
+          : String(r.finished_at ?? ''),
+      attempt_count: Number(r.attempt_count ?? 1),
+    };
+    rows.push(row);
+
+    const isMine =
+      (userId !== null && row.user_id === userId) ||
+      (resultId !== null && String(r.result_id) === resultId);
+    if (isMine && !me) me = row;
+  }
+
+  return { rows, me, totalParticipants };
 }
